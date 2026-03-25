@@ -180,25 +180,15 @@ img {
   margin: 0 auto;
 }
 
-/* Line Divider */
-.line-divider {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
+/* Wave Divider */
+.wave-divider {
+  display: block;
+  background-color: #ffffff; /* igual que la sección superior */
+  margin: 0;
+  padding: 0;
   line-height: 0;
-  z-index: 10;
-  margin-top: -1px;
-  margin-bottom: -1px;
-}
-
-.line-divider svg {
-  display: block;
   width: 100%;
-  height: 100%;
-}
-
-.line-divider svg {
-  display: block;
+  height: 60px;
 }
 
 /* Catalog Grid */
