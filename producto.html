@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auriculares Silence Pro - EcoZox</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">EcoZox.</a>
+            <a href="carrito.html" class="cart-icon-wrapper">
+                <svg class="cart-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                </svg>
+                <span class="cart-count">0</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="product-detail-section">
+        <div class="container">
+            <div class="product-detail-grid">
+                
+                <!-- Galería -->
+                <div class="product-gallery">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=800&h=600" alt="Auriculares Silence Pro Vista Principal" class="gallery-main" id="mainImage">
+                    
+                    <div class="gallery-thumbnails">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=200&h=200" alt="Miniatura 1" class="thumbnail active">
+                        <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&q=80&w=200&h=200" alt="Miniatura 2" class="thumbnail">
+                        <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&q=80&w=200&h=200" alt="Miniatura 3" class="thumbnail">
+                        <img src="https://images.unsplash.com/photo-1524678606370-a47ad25cb82a?auto=format&fit=crop&q=80&w=200&h=200" alt="Miniatura 4" class="thumbnail">
+                    </div>
+                </div>
+
+                <!-- Info -->
+                <div class="product-info-detail">
+                    <h1>Auriculares Silence Pro</h1>
+                    <div class="price">$249.00</div>
+                    <p class="description">
+                        Experimenta un sonido envolvente con cancelación de ruido activa de última generación. 
+                        Diseño ergonómico y minimalista que garantiza comodidad durante horas. Batería de larga duración 
+                        con carga rápida. El compañero perfecto para tu música, trabajo y viajes.
+                    </p>
+
+                    <div class="quantity-selector">
+                        <span>Cantidad:</span>
+                        <div class="quantity-controls">
+                            <button class="qty-btn minus" aria-label="Disminuir cantidad">-</button>
+                            <input type="number" class="qty-input" value="1" min="1" aria-label="Cantidad">
+                            <button class="qty-btn plus" aria-label="Aumentar cantidad">+</button>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" onclick="window.location.href='carrito.html'">Comprar ahora</button>
+                        <button class="btn btn-secondary" onclick="addToCart(event)">Añadir a la cesta</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>

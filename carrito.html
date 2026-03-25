@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Carrito - EcoZox</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">EcoZox.</a>
+            <a href="carrito.html" class="cart-icon-wrapper">
+                <svg class="cart-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                </svg>
+                <span class="cart-count">2</span> <!-- Hardcoded for demo purposes -->
+            </a>
+        </div>
+    </header>
+
+    <main class="cart-section">
+        <div class="container">
+            <h1 style="margin-bottom: 2rem;">Tu Carrito de Compra</h1>
+            
+            <div class="cart-layout">
+                
+                <!-- Listado de Productos -->
+                <div class="cart-items">
+                    
+                    <!-- Item 1 -->
+                    <div class="cart-item">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=200&h=200" alt="Auriculares Silence Pro" class="cart-item-img">
+                        <div class="cart-item-details">
+                            <h3 class="cart-item-title">Auriculares Silence Pro</h3>
+                            <div class="cart-item-price">$249.00</div>
+                        </div>
+                        <div class="cart-item-actions">
+                            <div class="quantity-controls">
+                                <button class="qty-btn minus">-</button>
+                                <input type="number" class="qty-input" value="1" min="1">
+                                <button class="qty-btn plus">+</button>
+                            </div>
+                        </div>
+                        <button class="btn btn-danger">Eliminar</button>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="cart-item">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=200&h=200" alt="Reloj Classic Mono" class="cart-item-img">
+                        <div class="cart-item-details">
+                            <h3 class="cart-item-title">Reloj Classic Mono</h3>
+                            <div class="cart-item-price">$129.00</div>
+                        </div>
+                        <div class="cart-item-actions">
+                            <div class="quantity-controls">
+                                <button class="qty-btn minus">-</button>
+                                <input type="number" class="qty-input" value="1" min="1">
+                                <button class="qty-btn plus">+</button>
+                            </div>
+                        </div>
+                        <button class="btn btn-danger">Eliminar</button>
+                    </div>
+
+                </div>
+
+                <!-- Resumen de Pedido -->
+                <div class="cart-summary">
+                    <h2>Resumen del Pedido</h2>
+                    <div style="margin-top: 1.5rem;">
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span>$378.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Envío</span>
+                            <span>Gratis</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Impuestos estimados</span>
+                            <span>$26.46</span>
+                        </div>
+                        <div class="summary-total">
+                            <span>Total</span>
+                            <span>$404.46</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary checkout-btn" onclick="alert('Iniciando proceso de pago...')">Proceder al pago</button>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
