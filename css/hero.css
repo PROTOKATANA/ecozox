@@ -1,0 +1,22 @@
+/* ========================================
+   Hero Section
+   ======================================== */
+
+.hero {
+  padding: 4rem 0;
+  text-align: center;
+  background-color: white;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.hero p {
+  font-size: 1.125rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}

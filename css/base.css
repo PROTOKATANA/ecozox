@@ -1,0 +1,53 @@
+/* ========================================
+   Base - Variables, Reset & Typography
+   ======================================== */
+
+:root {
+  --primary-color: #111827;
+  --secondary-color: #4b5563;
+  --accent-color: #3b82f6;
+  --bg-color: #f9fafb;
+  --card-bg: #ffffff;
+  --border-color: #e5e7eb;
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --transition: all 0.3s ease;
+  --border-radius: 8px;
+
+  /* Grid Variables */
+  --grid-min-width: 250px;
+  --grid-max-columns: 4;
+  --grid-gap: 1.3rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}

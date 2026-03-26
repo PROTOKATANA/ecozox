@@ -1,0 +1,75 @@
+/* ========================================
+   Header & Cart Button Widget
+   ======================================== */
+
+.header {
+  position: sticky;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+  z-index: 100;
+  padding: 1rem 0;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--primary-color);
+}
+
+/* Cart Button Component */
+.cart-button {
+  display: inline-flex;
+  align-items: center;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  padding: 0.5rem 0.875rem;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  color: var(--primary-color);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.cart-button:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.cart-btn-icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.cart-btn-divider {
+  width: 1px;
+  height: 16px;
+  background-color: var(--border-color);
+  margin: 0 0.65rem;
+  flex-shrink: 0;
+}
+
+.cart-button .cart-count {
+  position: static;
+  background: none;
+  color: var(--primary-color);
+  font-size: 0.875rem;
+  font-weight: 600;
+  width: auto;
+  height: auto;
+  min-width: 1.2ch;
+  border-radius: 0;
+  line-height: 1;
+}

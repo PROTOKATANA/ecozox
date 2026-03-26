@@ -8,20 +8,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="components/header.js" defer></script>
+    <script src="components/footer.js" defer></script>
+    <script src="components/product-card.js" defer></script>
 </head>
 <body>
 
-    <header class="header">
-        <div class="container">
-            <a href="index.html" class="logo">EcoZox.</a>
-            <a href="carrito.html" class="cart-icon-wrapper">
-                <svg class="cart-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
-                </svg>
-                <span class="cart-count">0</span>
-            </a>
-        </div>
-    </header>
+    <div data-component="header" data-base=""></div>
 
     <section class="hero">
         <div class="container">
@@ -31,10 +24,10 @@
     </section>
 
     <!-- Separador de Onda Dinámico -->
-    <div class="line-divider" 
-         data-wave-width="56" 
-         data-wave-height="23" 
-         data-stroke-width="12" 
+    <div class="line-divider"
+         data-wave-width="56"
+         data-wave-height="23"
+         data-stroke-width="12"
          data-stroke-color="#e5e7eb"
          data-fill-top="#ffffff"
          data-fill-bottom="#f9fafb">
@@ -42,121 +35,12 @@
 
     <main class="catalog-section">
         <div class="container">
-            <div class="product-grid">
-                
-                <!-- Producto 1 -->
-                <a href="producto.html" class="product-card">
-                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=600&h=600" alt="Reloj Minimalista" class="product-image" loading="lazy">
-                    <div class="product-info">
-                        <h2 class="product-title">Reloj Classic Mono</h2>
-                        <span class="product-price">$129.00</span>
-                        <button class="btn btn-primary add-to-cart-btn" onclick="addToCart(event)">Añadir al carrito</button>
-                    </div>
-                </a>
-
-                <!-- Producto 2 -->
-                <a href="producto.html" class="product-card">
-                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=600&h=600" alt="Auriculares Inalámbricos" class="product-image" loading="lazy">
-                    <div class="product-info">
-                        <h2 class="product-title">Auriculares Silence Pro</h2>
-                        <span class="product-price">$249.00</span>
-                        <button class="btn btn-primary add-to-cart-btn" onclick="addToCart(event)">Añadir al carrito</button>
-                    </div>
-                </a>
-
-                <!-- Producto 3 -->
-                <a href="producto.html" class="product-card">
-                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=600&h=600" alt="Zapatillas Deportivas" class="product-image" loading="lazy">
-                    <div class="product-info">
-                        <h2 class="product-title">Zapatillas Urban Walk</h2>
-                        <span class="product-price">$89.99</span>
-                        <button class="btn btn-primary add-to-cart-btn" onclick="addToCart(event)">Añadir al carrito</button>
-                    </div>
-                </a>
-
-                <!-- Producto 4 -->
-                <a href="producto.html" class="product-card">
-                    <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&q=80&w=600&h=600" alt="Cámara Vintage" class="product-image" loading="lazy">
-                    <div class="product-info">
-                        <h2 class="product-title">Cámara Retro Lens</h2>
-                        <span class="product-price">$350.00</span>
-                        <button class="btn btn-primary add-to-cart-btn" onclick="addToCart(event)">Añadir al carrito</button>
-                    </div>
-                </a>
-                
-                <!-- Producto 5 -->
-                <a href="producto.html" class="product-card">
-                    <img src="https://images.unsplash.com/photo-1584916201218-f4242ceb4809?auto=format&fit=crop&q=80&w=600&h=600" alt="Mochila Canvas" class="product-image" loading="lazy">
-                    <div class="product-info">
-                        <h2 class="product-title">Mochila Canvas Explorer</h2>
-                        <span class="product-price">$65.00</span>
-                        <button class="btn btn-primary add-to-cart-btn" onclick="addToCart(event)">Añadir al carrito</button>
-                    </div>
-                </a>
-
-                <!-- Producto 6 -->
-                <a href="producto.html" class="product-card">
-                    <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?auto=format&fit=crop&q=80&w=600&h=600" alt="Taza Cerámica" class="product-image" loading="lazy">
-                    <div class="product-info">
-                        <h2 class="product-title">Set Tazas Matte</h2>
-                        <span class="product-price">$24.00</span>
-                        <button class="btn btn-primary add-to-cart-btn" onclick="addToCart(event)">Añadir al carrito</button>
-                    </div>
-                </a>
-
-            </div>
+            <div data-component="product-grid"></div>
         </div>
     </main>
 
-    <!-- Separador de Onda Dinámico para el Footer -->
-    <div class="line-divider footer-wave" 
-         data-wave-width="56" 
-         data-wave-height="23" 
-         data-stroke-width="12" 
-         data-stroke-color="#374151" 
-         data-fill-top="#f9fafb"
-         data-fill-bottom="#111827">
-    </div>
+    <div data-component="footer" data-base="" data-pages-base="pages/"></div>
 
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>EcoZox.</h3>
-                    <p style="color: #9ca3af; margin-bottom: 1rem;">Simplicidad, funcionalidad y elegancia para el día a día.</p>
-                </div>
-                <div class="footer-col">
-                    <h3>Enlaces Legales</h3>
-                    <ul>
-                        <li><a href="footer/terminos.html">Términos y Condiciones</a></li>
-                        <li><a href="footer/privacidad.html">Política de Privacidad</a></li>
-                        <li><a href="footer/envios.html">Envíos y Devoluciones</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h3>Soporte</h3>
-                    <ul>
-                        <li><span style="color: #9ca3af;">Email:</span> <a href="mailto:ecozox@support@gmail.com">ecozox@support@gmail.com</a></li>
-                        <li><span style="color: #9ca3af;">Teléfono:</span> <a href="tel:+34912345678">+34 912 345 678</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Ecozox. Todos los derechos reservados.</p>
-				<div class="payment-icons">
-				    <img src="../assets/mastercard.svg" alt="Mastercard" style="height: 32px; background: white; padding: 3px; border-radius: 4px;">
-				    <img src="../assets/visa.svg" alt="Visa" style="height: 32px; background: white; padding: 1px; border-radius: 4px;">
-				    <img src="../assets/google.svg" alt="Google-Pay" style="height: 32px; background: white; padding: 6px; border-radius: 4px;">
-					<img src="../assets/apple.svg" alt="Apple-Pay" style="height: 32px; background: white; padding: 6px; border-radius: 4px;">
-				    <img src="../assets/paypal.svg" alt="PayPal" style="height: 32px; background: white; padding: 6px; border-radius: 4px;">
-				    <img src="../assets/klarna.svg" alt="Klarna" style="height: 32px; background: #F4B6C7; padding: 7.5px; border-radius: 4px;">
-				    <img src="../assets/stripe.svg" alt="Stripe" style="height: 32px; background: #6772E5; padding: 7px; border-radius: 4px;">
-				    <img src="../assets/woo.svg" alt="Woo-Pay" style="height: 32px; background: white; padding: 11px 4px; border-radius: 4px;">
-				</div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="main.js"></script>
+    <script src="app.js" defer></script>
 </body>
 </html>
