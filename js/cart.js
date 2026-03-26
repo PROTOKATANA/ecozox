@@ -14,7 +14,13 @@
             event.stopPropagation();
         }
 
-        cartCount++;
+        let quantity = 1;
+        const qtyInput = document.querySelector('.qty-input');
+        if (qtyInput) {
+            quantity = parseInt(qtyInput.value) || 1;
+        }
+
+        cartCount += quantity;
         cartCountElements.forEach(el => { el.textContent = cartCount; });
 
         if (cartButton) {
@@ -26,9 +32,9 @@
         if (event && event.target) {
             const btn = event.target.closest('button');
             if (btn) {
-                const originalText = btn.textContent;
-                btn.textContent = '¡Añadido!';
-                setTimeout(() => { btn.textContent = originalText; }, 1000);
+                const originalHTML = btn.innerHTML;
+                btn.innerHTML = '¡Añadido!';
+                setTimeout(() => { btn.innerHTML = originalHTML; }, 1000);
             }
         }
     };
