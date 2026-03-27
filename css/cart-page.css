@@ -91,6 +91,21 @@
   margin-top: 2rem;
 }
 
+.cart-empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-muted);
+}
+
+.cart-empty p {
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+}
+
+.cart-item {
+  transition: opacity 0.3s ease;
+}
+
 @media (max-width: 640px) {
   .cart-item {
     flex-direction: column;

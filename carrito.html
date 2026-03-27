@@ -20,52 +20,16 @@
 
             <div class="cart-layout">
 
-                <!-- Listado de Productos -->
-                <div class="cart-items">
-
-                    <!-- Item 1 -->
-                    <div class="cart-item">
-                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=200&h=200" alt="Auriculares Silence Pro" class="cart-item-img">
-                        <div class="cart-item-details">
-                            <h3 class="cart-item-title">Auriculares Silence Pro</h3>
-                            <div class="cart-item-price">$249.00</div>
-                        </div>
-                        <div class="cart-item-actions">
-                            <div class="quantity-controls">
-                                <button class="qty-btn minus">-</button>
-                                <input type="number" class="qty-input" value="1" min="1">
-                                <button class="qty-btn plus">+</button>
-                            </div>
-                        </div>
-                        <button class="btn btn-danger">Eliminar</button>
-                    </div>
-
-                    <!-- Item 2 -->
-                    <div class="cart-item">
-                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=200&h=200" alt="Reloj Classic Mono" class="cart-item-img">
-                        <div class="cart-item-details">
-                            <h3 class="cart-item-title">Reloj Classic Mono</h3>
-                            <div class="cart-item-price">$129.00</div>
-                        </div>
-                        <div class="cart-item-actions">
-                            <div class="quantity-controls">
-                                <button class="qty-btn minus">-</button>
-                                <input type="number" class="qty-input" value="1" min="1">
-                                <button class="qty-btn plus">+</button>
-                            </div>
-                        </div>
-                        <button class="btn btn-danger">Eliminar</button>
-                    </div>
-
-                </div>
+                <!-- Listado de Productos (renderizado dinámico desde localStorage) -->
+                <div class="cart-items"></div>
 
                 <!-- Resumen de Pedido -->
                 <div class="cart-summary">
                     <h2>Resumen del Pedido</h2>
-                    <div style="margin-top: 1.5rem;">
+                    <div class="summary-body" style="margin-top: 1.5rem;">
                         <div class="summary-row">
                             <span>Subtotal</span>
-                            <span>$378.00</span>
+                            <span>$0.00</span>
                         </div>
                         <div class="summary-row">
                             <span>Envío</span>
@@ -73,11 +37,11 @@
                         </div>
                         <div class="summary-row">
                             <span>Impuestos estimados</span>
-                            <span>$26.46</span>
+                            <span>$0.00</span>
                         </div>
                         <div class="summary-total">
                             <span>Total</span>
-                            <span>$404.46</span>
+                            <span>$0.00</span>
                         </div>
                     </div>
                     <button class="btn btn-primary checkout-btn" onclick="alert('Iniciando proceso de pago...')">Proceder al pago</button>

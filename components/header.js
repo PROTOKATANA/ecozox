@@ -19,7 +19,7 @@
             <a href="${base}carrito.html" class="cart-button">
                 <img src="${base}assets/bag.svg" alt="Carrito" class="cart-btn-icon">
                 <span class="cart-btn-divider"></span>
-                <span class="cart-count">0</span>
+                <span class="cart-count">${(function(){try{return (JSON.parse(localStorage.getItem('ecozox_cart'))||[]).reduce(function(s,i){return s+i.quantity},0)}catch(e){return 0}}())}</span>
             </a>
         </div>
     </header>`;

@@ -1,0 +1,736 @@
+❯ ol: Actúa como un desarrollador frontend Senior experto en Vanilla JavaScript.
+
+Contexto: Estoy desarrollando un e-commerce minimalista llamado "EcoZox" utilizando únicamente HTML, CSS y Vanilla JS (sin
+frameworks como React o Vue).
+
+Problema actual: Mi lógica del carrito (ubicada en cart.js) funciona correctamente para sumar productos al contador, pero el
+estado solo existe en la memoria de la sesión actual. Al recargar la página o navegar entre vistas (por ejemplo, de
+producto.html a carrito.html), los datos se pierden y el contador vuelve a cero.
+
+Objetivo: Necesito refactorizar la lógica de mi carrito utilizando localStorage para lograr persistencia de datos.
+
+Requisitos técnicos y funcionales:
+
+Persistencia: Todo lo que se añada al carrito debe sobrevivir a recargas de página y cierres del navegador.
+
+Estado inicial seguro: Si es la primera vez que el usuario visita la tienda (no hay datos en localStorage), el carrito debe
+inicializarse de forma segura como un array vacío, sin romper el código.
+
+Reactividad en la vista del carrito: En la página del carrito (carrito.html), la lista de productos debe generarse dinámicamente
+ leyendo el localStorage. Si el usuario añade, elimina o cambia la cantidad de un ítem, la vista debe actualizarse
+inmediatamente (incluyendo la lista de productos, el subtotal y el total).
+
+Sincronización del contador: El icono flotante del carrito en el header debe leer la cantidad total de productos desde el
+localStorage al cargar cualquier página para mantener el número correcto.
+
+● Explore(Explore ecozox project structure)
+  ⎿  Done (24 tool uses · 42.6k tokens · 59s)
+  (ctrl+o to expand)
+
+● Tengo una visión completa del proyecto. Ahora voy a leer los archivos clave que necesito modificar.
+
+  Read 8 files (ctrl+o to expand)
+
+● Perfecto. Tengo todo el contexto. Voy a refactorizar los archivos necesarios para implementar persistencia con localStorage. El
+   plan:
+
+  1. cart.js — Reescribir como módulo central con API global (window.EcoCart) que persiste un array de productos en localStorage
+  2. product-card.js — Añadir data-product-* a cada botón para que addToCart capture los datos del producto
+  3. producto.html — Añadir data-product-* al botón de añadir
+  4. carrito.html — Eliminar ítems hardcodeados, dejar contenedor vacío para renderizado dinámico
+  5. cart-items.js — Reescribir para renderizar la vista del carrito desde localStorage, manejar eliminación, cantidad y totales
+  6. header.js — Leer contador desde localStorage al renderizar
+
+  Empiezo con todos los archivos:
+
+● Write(js/cart.js)
+  ⎿  Added 132 lines, removed 19 lines
+        1  /* ========================================
+        2     Cart Logic
+        3 -   Manages cart count, animations & UI feedback
+        3 +   Persistent cart using localStorage
+        4 +   Exposes window.EcoCart API
+        5     ======================================== */
+        6
+        7  (function () {
+        7 -    let cartCount = 0;
+        8 -    const cartCountElements = document.querySelectorAll('.cart-count');
+        9 -    const cartButton = document.querySelector('.cart-button');
+        8 +    const STORAGE_KEY = 'ecozox_cart';
+        9
+       10 +    /* ---------- Helpers ---------- */
+       11 +
+       12 +    function getCart() {
+       13 +        try {
+       14 +            return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+       15 +        } catch (e) {
+       16 +            return [];
+       17 +        }
+       18 +    }
+       19 +
+       20 +    function saveCart(cart) {
+       21 +        localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+       22 +    }
+       23 +
+       24 +    function getCount() {
+       25 +        return getCart().reduce((sum, item) => sum + item.quantity, 0);
+       26 +    }
+       27 +
+       28 +    function getSubtotal() {
+       29 +        return getCart().reduce((sum, item) => sum + item.price * item.quantity, 0);
+       30 +    }
+       31 +
+       32 +    /* ---------- DOM updates ---------- */
+       33 +
+       34 +    function syncCounterUI() {
+       35 +        const count = getCount();
+       36 +        document.querySelectorAll('.cart-count').forEach(el => {
+       37 +            el.textContent = count;
+       38 +        });
+       39 +    }
+       40 +
+       41 +    function bounceCartButton() {
+       42 +        const cartButton = document.querySelector('.cart-button');
+       43 +        if (cartButton) {
+       44 +            cartButton.classList.remove('animate-bounce');
+       45 +            void cartButton.offsetWidth;
+       46 +            cartButton.classList.add('animate-bounce');
+       47 +        }
+       48 +    }
+       49 +
+       50 +    /* ---------- Cart operations ---------- */
+       51 +
+       52 +    function addItem(product, quantity) {
+       53 +        const cart = getCart();
+       54 +        const existing = cart.find(item => item.id === product.id);
+       55 +
+       56 +        if (existing) {
+       57 +            existing.quantity += quantity;
+       58 +        } else {
+       59 +            cart.push({
+       60 +                id: product.id,
+       61 +                title: product.title,
+       62 +                price: product.price,
+       63 +                image: product.image,
+       64 +                quantity: quantity
+       65 +            });
+       66 +        }
+       67 +
+       68 +        saveCart(cart);
+       69 +        syncCounterUI();
+       70 +    }
+       71 +
+       72 +    function removeItem(productId) {
+       73 +        const cart = getCart().filter(item => item.id !== productId);
+       74 +        saveCart(cart);
+       75 +        syncCounterUI();
+       76 +    }
+       77 +
+       78 +    function updateQuantity(productId, newQty) {
+       79 +        const cart = getCart();
+       80 +        const item = cart.find(i => i.id === productId);
+       81 +        if (item) {
+       82 +            item.quantity = Math.max(1, newQty);
+       83 +            saveCart(cart);
+       84 +            syncCounterUI();
+       85 +        }
+       86 +    }
+       87 +
+       88 +    function clearCart() {
+       89 +        localStorage.removeItem(STORAGE_KEY);
+       90 +        syncCounterUI();
+       91 +    }
+       92 +
+       93 +    /* ---------- Global addToCart (used by onclick) ---------- */
+       94 +
+       95      window.addToCart = function (event) {
+       96          if (event) {
+       97              event.preventDefault();
+       98              event.stopPropagation();
+       99          }
+      100
+      101 +        // Read product data from data-attributes on the button or its parent card
+      102 +        let btn = null;
+      103 +        if (event && event.target) {
+      104 +            btn = event.target.closest('button');
+      105 +        }
+      106 +        if (!btn) return;
+      107 +
+      108 +        const card = btn.closest('[data-product-id]') || btn;
+      109 +        const productId = card.dataset.productId || btn.dataset.productId;
+      110 +        const productTitle = card.dataset.productTitle || btn.dataset.productTitle;
+      111 +        const productPrice = parseFloat(card.dataset.productPrice || btn.dataset.productPrice);
+      112 +        const productImage = card.dataset.productImage || btn.dataset.productImage;
+      113 +
+      114 +        if (!productId || !productTitle || isNaN(productPrice)) return;
+      115 +
+      116 +        // Get quantity from .qty-input (product detail page) or default to 1
+      117          let quantity = 1;
+       18 -        const qtyInput = document.querySelector('.qty-input');
+      118 +        const qtyInput = document.querySelector('.product-info-detail .qty-input');
+      119          if (qtyInput) {
+      120              quantity = parseInt(qtyInput.value) || 1;
+      121          }
+      122
+       23 -        cartCount += quantity;
+       24 -        cartCountElements.forEach(el => { el.textContent = cartCount; });
+      123 +        addItem(
+      124 +            { id: productId, title: productTitle, price: productPrice, image: productImage },
+      125 +            quantity
+      126 +        );
+      127
+       26 -        if (cartButton) {
+       27 -            cartButton.classList.remove('animate-bounce');
+       28 -            void cartButton.offsetWidth;
+       29 -            cartButton.classList.add('animate-bounce');
+       30 -        }
+      128 +        bounceCartButton();
+      129
+       32 -        if (event && event.target) {
+       33 -            const btn = event.target.closest('button');
+       34 -            if (btn) {
+       35 -                const originalHTML = btn.innerHTML;
+       36 -                btn.innerHTML = '¡Añadido!';
+       37 -                setTimeout(() => { btn.innerHTML = originalHTML; }, 1000);
+       38 -            }
+      130 +        // Visual feedback on button
+      131 +        if (btn) {
+      132 +            const originalHTML = btn.innerHTML;
+      133 +            btn.innerHTML = '¡Añadido!';
+      134 +            setTimeout(() => { btn.innerHTML = originalHTML; }, 1000);
+      135          }
+      136      };
+      137 +
+      138 +    /* ---------- Public API ---------- */
+      139 +
+      140 +    window.EcoCart = {
+      141 +        getCart: getCart,
+      142 +        saveCart: saveCart,
+      143 +        getCount: getCount,
+      144 +        getSubtotal: getSubtotal,
+      145 +        addItem: addItem,
+      146 +        removeItem: removeItem,
+      147 +        updateQuantity: updateQuantity,
+      148 +        clearCart: clearCart,
+      149 +        syncCounterUI: syncCounterUI
+      150 +    };
+      151 +
+      152 +    /* ---------- Init: sync header counter on page load ---------- */
+      153 +    syncCounterUI();
+      154  })();
+
+● Write(js/cart-items.js)
+  ⎿  Added 120 lines, removed 10 lines
+        1  /* ========================================
+        2 -   Cart Item Removal
+        3 -   Fade-out animation + remove from DOM
+        2 +   Cart Page Renderer
+        3 +   Reads localStorage and renders cart items,
+        4 +   handles quantity changes, removal & totals
+        5     ======================================== */
+        6
+        7  (function () {
+        7 -    const removeButtons = document.querySelectorAll('.btn-danger');
+        8 +    const cartItemsContainer = document.querySelector('.cart-items');
+        9 +    const cartSummary = document.querySelector('.cart-summary');
+       10
+        9 -    removeButtons.forEach(btn => {
+       10 -        btn.addEventListener('click', function () {
+       11 -            const cartItem = this.closest('.cart-item');
+       12 -            if (cartItem) {
+       11 +    // Only run on the cart page
+       12 +    if (!cartItemsContainer || !cartSummary) return;
+       13 +
+       14 +    function formatPrice(num) {
+       15 +        return '$' + num.toFixed(2);
+       16 +    }
+       17 +
+       18 +    function renderCart() {
+       19 +        const cart = window.EcoCart.getCart();
+       20 +
+       21 +        if (cart.length === 0) {
+       22 +            cartItemsContainer.innerHTML = `
+       23 +                <div class="cart-empty">
+       24 +                    <p>Tu carrito está vacío.</p>
+       25 +                    <a href="index.html" class="btn btn-primary">Ver productos</a>
+       26 +                </div>`;
+       27 +            renderSummary(0);
+       28 +            return;
+       29 +        }
+       30 +
+       31 +        cartItemsContainer.innerHTML = cart.map(item => `
+       32 +            <div class="cart-item" data-product-id="${item.id}">
+       33 +                <img src="${item.image}" alt="${item.title}" class="cart-item-img">
+       34 +                <div class="cart-item-details">
+       35 +                    <h3 class="cart-item-title">${item.title}</h3>
+       36 +                    <div class="cart-item-price">${formatPrice(item.price)}</div>
+       37 +                </div>
+       38 +                <div class="cart-item-actions">
+       39 +                    <div class="quantity-controls">
+       40 +                        <button class="qty-btn minus" aria-label="Disminuir cantidad">-</button>
+       41 +                        <input type="number" class="qty-input" value="${item.quantity}" min="1" aria-label="Can
+          +tidad">
+       42 +                        <button class="qty-btn plus" aria-label="Aumentar cantidad">+</button>
+       43 +                    </div>
+       44 +                </div>
+       45 +                <button class="btn btn-danger">Eliminar</button>
+       46 +            </div>
+       47 +        `).join('');
+       48 +
+       49 +        bindEvents();
+       50 +        renderSummary(window.EcoCart.getSubtotal());
+       51 +    }
+       52 +
+       53 +    function renderSummary(subtotal) {
+       54 +        const tax = subtotal * 0.07;
+       55 +        const total = subtotal + tax;
+       56 +
+       57 +        const summaryBody = cartSummary.querySelector('.summary-body');
+       58 +        if (summaryBody) {
+       59 +            summaryBody.innerHTML = `
+       60 +                <div class="summary-row">
+       61 +                    <span>Subtotal</span>
+       62 +                    <span>${formatPrice(subtotal)}</span>
+       63 +                </div>
+       64 +                <div class="summary-row">
+       65 +                    <span>Envío</span>
+       66 +                    <span>Gratis</span>
+       67 +                </div>
+       68 +                <div class="summary-row">
+       69 +                    <span>Impuestos estimados</span>
+       70 +                    <span>${formatPrice(tax)}</span>
+       71 +                </div>
+       72 +                <div class="summary-total">
+       73 +                    <span>Total</span>
+       74 +                    <span>${formatPrice(total)}</span>
+       75 +                </div>`;
+       76 +        }
+       77 +    }
+       78 +
+       79 +    function bindEvents() {
+       80 +        // Remove buttons
+       81 +        cartItemsContainer.querySelectorAll('.btn-danger').forEach(btn => {
+       82 +            btn.addEventListener('click', function () {
+       83 +                const cartItem = this.closest('.cart-item');
+       84 +                const productId = cartItem.dataset.productId;
+       85 +
+       86                  cartItem.style.opacity = '0';
+       14 -                setTimeout(() => { cartItem.remove(); }, 300);
+       15 -            }
+       87 +                setTimeout(() => {
+       88 +                    window.EcoCart.removeItem(productId);
+       89 +                    renderCart();
+       90 +                }, 300);
+       91 +            });
+       92          });
+       17 -    });
+       93 +
+       94 +        // Quantity controls
+       95 +        cartItemsContainer.querySelectorAll('.cart-item').forEach(cartItem => {
+       96 +            const productId = cartItem.dataset.productId;
+       97 +            const minusBtn = cartItem.querySelector('.minus');
+       98 +            const plusBtn = cartItem.querySelector('.plus');
+       99 +            const input = cartItem.querySelector('.qty-input');
+      100 +
+      101 +            minusBtn.addEventListener('click', () => {
+      102 +                let val = parseInt(input.value) || 1;
+      103 +                if (val > 1) {
+      104 +                    input.value = val - 1;
+      105 +                    window.EcoCart.updateQuantity(productId, val - 1);
+      106 +                    renderSummary(window.EcoCart.getSubtotal());
+      107 +                }
+      108 +            });
+      109 +
+      110 +            plusBtn.addEventListener('click', () => {
+      111 +                let val = parseInt(input.value) || 1;
+      112 +                input.value = val + 1;
+      113 +                window.EcoCart.updateQuantity(productId, val + 1);
+      114 +                renderSummary(window.EcoCart.getSubtotal());
+      115 +            });
+      116 +
+      117 +            input.addEventListener('change', () => {
+      118 +                let val = parseInt(input.value);
+      119 +                if (isNaN(val) || val < 1) val = 1;
+      120 +                input.value = val;
+      121 +                window.EcoCart.updateQuantity(productId, val);
+      122 +                renderSummary(window.EcoCart.getSubtotal());
+      123 +            });
+      124 +        });
+      125 +    }
+      126 +
+      127 +    renderCart();
+      128  })();
+
+● Ahora actualizo el HTML del carrito, el componente de product cards, el producto.html y el header:
+
+● Update(carrito.html)
+  ⎿  Added 6 lines, removed 42 lines
+      20
+      21              <div class="cart-layout">
+      22
+      23 -                <!-- Listado de Productos -->
+      24 -                <div class="cart-items">
+      23 +                <!-- Listado de Productos (renderizado dinámico desde localStorage) -->
+      24 +                <div class="cart-items"></div>
+      25
+      26 -                    <!-- Item 1 -->
+      27 -                    <div class="cart-item">
+      28 -                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=c
+         -rop&q=80&w=200&h=200" alt="Auriculares Silence Pro" class="cart-item-img">
+      29 -                        <div class="cart-item-details">
+      30 -                            <h3 class="cart-item-title">Auriculares Silence Pro</h3>
+      31 -                            <div class="cart-item-price">$249.00</div>
+      32 -                        </div>
+      33 -                        <div class="cart-item-actions">
+      34 -                            <div class="quantity-controls">
+      35 -                                <button class="qty-btn minus">-</button>
+      36 -                                <input type="number" class="qty-input" value="1" min="1">
+      37 -                                <button class="qty-btn plus">+</button>
+      38 -                            </div>
+      39 -                        </div>
+      40 -                        <button class="btn btn-danger">Eliminar</button>
+      41 -                    </div>
+      42 -
+      43 -                    <!-- Item 2 -->
+      44 -                    <div class="cart-item">
+      45 -                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=c
+         -rop&q=80&w=200&h=200" alt="Reloj Classic Mono" class="cart-item-img">
+      46 -                        <div class="cart-item-details">
+      47 -                            <h3 class="cart-item-title">Reloj Classic Mono</h3>
+      48 -                            <div class="cart-item-price">$129.00</div>
+      49 -                        </div>
+      50 -                        <div class="cart-item-actions">
+      51 -                            <div class="quantity-controls">
+      52 -                                <button class="qty-btn minus">-</button>
+      53 -                                <input type="number" class="qty-input" value="1" min="1">
+      54 -                                <button class="qty-btn plus">+</button>
+      55 -                            </div>
+      56 -                        </div>
+      57 -                        <button class="btn btn-danger">Eliminar</button>
+      58 -                    </div>
+      59 -
+      60 -                </div>
+      61 -
+      26                  <!-- Resumen de Pedido -->
+      27                  <div class="cart-summary">
+      28                      <h2>Resumen del Pedido</h2>
+      65 -                    <div style="margin-top: 1.5rem;">
+      29 +                    <div class="summary-body" style="margin-top: 1.5rem;">
+      30                          <div class="summary-row">
+      31                              <span>Subtotal</span>
+      68 -                            <span>$378.00</span>
+      32 +                            <span>$0.00</span>
+      33                          </div>
+      34                          <div class="summary-row">
+      35                              <span>Envío</span>
+     ...
+      37                          </div>
+      38                          <div class="summary-row">
+      39                              <span>Impuestos estimados</span>
+      76 -                            <span>$26.46</span>
+      40 +                            <span>$0.00</span>
+      41                          </div>
+      42                          <div class="summary-total">
+      43                              <span>Total</span>
+      80 -                            <span>$404.46</span>
+      44 +                            <span>$0.00</span>
+      45                          </div>
+      46                      </div>
+      47                      <button class="btn btn-primary checkout-btn" onclick="alert('Iniciando proceso de pago...')"
+          >Proceder al pago</button>
+
+● Update(components/product-card.js)
+  ⎿  Added 30 lines, removed 8 lines
+      10
+      11      const products = [
+      12          {
+      13 +            id: 'reloj-classic-mono',
+      14              title: 'Reloj Classic Mono',
+      14 -            price: '$129.00',
+      15 +            price: 129.00,
+      16 +            priceDisplay: '$129.00',
+      17              image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=600
+          &h=600',
+      18 +            imageThumb: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&
+         +w=200&h=200',
+      19              alt: 'Reloj Minimalista',
+      20              link: 'producto.html'
+      21          },
+      22          {
+      23 +            id: 'auriculares-silence-pro',
+      24              title: 'Auriculares Silence Pro',
+      21 -            price: '$249.00',
+      25 +            price: 249.00,
+      26 +            priceDisplay: '$249.00',
+      27              image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=600
+          &h=600',
+      28 +            imageThumb: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&
+         +w=200&h=200',
+      29              alt: 'Auriculares Inalámbricos',
+      30              link: 'producto.html'
+      31          },
+      32          {
+      33 +            id: 'zapatillas-urban-walk',
+      34              title: 'Zapatillas Urban Walk',
+      28 -            price: '$89.99',
+      35 +            price: 89.99,
+      36 +            priceDisplay: '$89.99',
+      37              image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=600&h=
+          600',
+      38 +            imageThumb: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=2
+         +00&h=200',
+      39              alt: 'Zapatillas Deportivas',
+      40              link: 'producto.html'
+      41          },
+      42          {
+      43 +            id: 'camara-retro-lens',
+      44              title: 'Cámara Retro Lens',
+      35 -            price: '$350.00',
+      45 +            price: 350.00,
+      46 +            priceDisplay: '$350.00',
+      47              image: 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&q=80&w=600
+          &h=600',
+      48 +            imageThumb: 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&q=80&
+         +w=200&h=200',
+      49              alt: 'Cámara Vintage',
+      50              link: 'producto.html'
+      51          },
+      52          {
+      53 +            id: 'mochila-canvas-explorer',
+      54              title: 'Mochila Canvas Explorer',
+      42 -            price: '$65.00',
+      55 +            price: 65.00,
+      56 +            priceDisplay: '$65.00',
+      57              image: 'https://images.unsplash.com/photo-1584916201218-f4242ceb4809?auto=format&fit=crop&q=80&w=600
+          &h=600',
+      58 +            imageThumb: 'https://images.unsplash.com/photo-1584916201218-f4242ceb4809?auto=format&fit=crop&q=80&
+         +w=200&h=200',
+      59              alt: 'Mochila Canvas',
+      60              link: 'producto.html'
+      61          },
+      62          {
+      63 +            id: 'set-tazas-matte',
+      64              title: 'Set Tazas Matte',
+      49 -            price: '$24.00',
+      65 +            price: 24.00,
+      66 +            priceDisplay: '$24.00',
+      67              image: 'https://images.unsplash.com/photo-1585386959984-a4155224a1ad?auto=format&fit=crop&q=80&w=600
+          &h=600',
+      68 +            imageThumb: 'https://images.unsplash.com/photo-1585386959984-a4155224a1ad?auto=format&fit=crop&q=80&
+         +w=200&h=200',
+      69              alt: 'Taza Cerámica',
+      70              link: 'producto.html'
+      71          }
+      72      ];
+      73
+      74      const cardsHTML = products.map(product => `
+      57 -        <a href="${product.link}" class="product-card">
+      75 +        <a href="${product.link}" class="product-card"
+      76 +           data-product-id="${product.id}"
+      77 +           data-product-title="${product.title}"
+      78 +           data-product-price="${product.price}"
+      79 +           data-product-image="${product.imageThumb}">
+      80              <img src="${product.image}" alt="${product.alt}" class="product-image" loading="lazy">
+      81              <div class="product-info">
+      82                  <h2 class="product-title">${product.title}</h2>
+      61 -                <span class="product-price">${product.price}</span>
+      83 +                <span class="product-price">${product.priceDisplay}</span>
+      84                  <button class="btn btn-primary add-to-cart-btn" onclick="addToCart(event)">Añadir al carrito</bu
+          tton>
+      85              </div>
+      86          </a>
+
+● Update(producto.html)
+  ⎿  Added 12 lines, removed 2 lines
+      50                      </div>
+      51
+      52                      <div class="action-buttons">
+      53 -                        <button class="btn btn-primary" onclick="addToCart(event)">
+      53 +                        <button class="btn btn-primary"
+      54 +                                data-product-id="auriculares-silence-pro"
+      55 +                                data-product-title="Auriculares Silence Pro"
+      56 +                                data-product-price="249.00"
+      57 +                                data-product-image="https://images.unsplash.com/photo-1505740420928-5e560c06d30e
+         +?auto=format&fit=crop&q=80&w=200&h=200"
+      58 +                                onclick="addToCart(event)">
+      59                              <img src="assets/bag.svg" alt="" class="btn-icon-white">
+      60                              Añadir al carrito
+      61                          </button>
+      57 -                        <button class="btn btn-secondary" onclick="addToCart(event); setTimeout(() => window.loc
+         -ation.href='carrito.html', 500)">Comprar ahora</button>
+      62 +                        <button class="btn btn-secondary"
+      63 +                                data-product-id="auriculares-silence-pro"
+      64 +                                data-product-title="Auriculares Silence Pro"
+      65 +                                data-product-price="249.00"
+      66 +                                data-product-image="https://images.unsplash.com/photo-1505740420928-5e560c06d30e
+         +?auto=format&fit=crop&q=80&w=200&h=200"
+      67 +                                onclick="addToCart(event); setTimeout(() => window.location.href='carrito.html',
+         + 500)">Comprar ahora</button>
+      68                      </div>
+      69                  </div>
+      70
+
+● Update(components/header.js)
+  ⎿  Added 1 line, removed 1 line
+      19              <a href="${base}carrito.html" class="cart-button">
+      20                  <img src="${base}assets/bag.svg" alt="Carrito" class="cart-btn-icon">
+      21                  <span class="cart-btn-divider"></span>
+      22 -                <span class="cart-count">0</span>
+      22 +                <span class="cart-count">${(function(){try{return (JSON.parse(localStorage.getItem('ecozox_cart'
+         +))||[]).reduce(function(s,i){return s+i.quantity},0)}catch(e){return 0}}())}</span>
+      23              </a>
+      24          </div>
+      25      </header>`;
+
+● Ahora añado estilos para el estado vacío del carrito:
+
+  Read 1 file (ctrl+o to expand)
+
+● Update(css/cart-page.css)
+  ⎿  Added 15 lines
+       91    margin-top: 2rem;
+       92  }
+       93
+       94 +.cart-empty {
+       95 +  text-align: center;
+       96 +  padding: 3rem 1rem;
+       97 +  color: var(--text-muted);
+       98 +}
+       99 +
+      100 +.cart-empty p {
+      101 +  font-size: 1.125rem;
+      102 +  margin-bottom: 1.5rem;
+      103 +}
+      104 +
+      105 +.cart-item {
+      106 +  transition: opacity 0.3s ease;
+      107 +}
+      108 +
+      109  @media (max-width: 640px) {
+      110    .cart-item {
+      111      flex-direction: column;
+
+● Todos los archivos están actualizados. Verifiquemos que todo esté consistente:
+
+  Read 2 files (ctrl+o to expand)
+
+● Todo está correcto. Aquí el resumen de los cambios realizados:
+
+  ---
+  Archivos modificados (6):
+
+  js/cart.js — Reescrito completamente:
+  - Usa localStorage con clave ecozox_cart para persistir un array de productos {id, title, price, image, quantity}
+  - getCart() con try/catch para estado inicial seguro (devuelve [] si no hay datos o hay JSON corrupto)
+  - Operaciones CRUD: addItem, removeItem, updateQuantity, clearCart
+  - syncCounterUI() actualiza todos los .cart-count del DOM leyendo desde localStorage
+  - addToCart(event) lee datos del producto desde data-product-* attributes
+  - Expone window.EcoCart como API pública para que otros módulos accedan al carrito
+
+  js/cart-items.js — Reescrito completamente:
+  - Renderiza dinámicamente la lista de ítems en carrito.html leyendo EcoCart.getCart()
+  - Muestra estado vacío con enlace a productos cuando el carrito está vacío
+  - Botones +/- y eliminación actualizan localStorage en tiempo real
+  - Recalcula subtotal, impuestos y total inmediatamente en cada cambio
+  - Fade-out animation preservada en eliminación
+
+  carrito.html — Eliminados los 2 ítems hardcodeados, dejando .cart-items vacío y .summary-body como contenedor para renderizado
+  dinámico
+
+  components/product-card.js — Cada producto ahora incluye id, precio numérico, e imageThumb. Los <a> del grid llevan
+  data-product-id/title/price/image
+
+  producto.html — Los botones "Añadir al carrito" y "Comprar ahora" llevan data-product-* attributes
+
+  components/header.js — El <span class="cart-count"> se inicializa leyendo el total desde localStorage en lugar de "0" estático
+
+  css/cart-page.css — Añadidos estilos para .cart-empty y transición de opacidad en .cart-item
+
+✻ Cooked for 2m 49s
+
+❯ hay un problema.
+Cuando selecciono un elemento del Grid y paso a la vista del articulo.
+selecciono una cantidad (x) digase 4 y luego pulso el boton añadir al carrito, no se añade nada.
+
+● Déjame verificar el estado actual del archivo y comprobar si hay algún error de sintaxis en el JS.
+
+  Read 1 file (ctrl+o to expand)
+
+● Bash(node -c /home/katana/ecozox/js/cart.js 2>&1 && echo "OK" || echo "SYNTAX ERROR")
+  ⎿  OK
+
+● Bash(node -c /home/katana/ecozox/components/header.js 2>&1 && echo "OK" || echo "SYNTAX ERROR")
+  ⎿  OK
+
+● Déjame investigar posibles conflictos o problemas de ejecución.
+
+  Searched for 1 pattern (ctrl+o to expand)
+
+● Bash(node -e "
+      // Simulate addToCart logic…)
+  ⎿  productId: auriculares-silence-pro
+     productTitle: Auriculares Silence Pro
+     productPrice: 249
+     … +2 lines (ctrl+o to expand)
+
+● Bash(node -c /home/katana/ecozox/js/cart-items.js 2>&1 && node -c /home/katana/ecozox/components/product-card.js 2>&1 && echo
+      "All JS files syntax OK")
+  ⎿  All JS files syntax OK
+
+● La sintaxis es correcta en todos los archivos, la lógica de addToCart traza correctamente, y addToCart solo se define una vez.
+  Déjame verificar si hay algo en el CSS que pueda interferir con los clicks.
+
+  Searched for 1 pattern, read 1 file (ctrl+o to expand)
+
+● No hay pointer-events bloqueando clicks. El CSS es limpio. He verificado exhaustivamente:
+
+  - Sintaxis de todos los JS: OK
+  - Lógica de addToCart: traza correctamente
+  - Data attributes en producto.html: presentes
+  - addToCart solo se define una vez
+  - Sin conflictos CSS
+
+  El código debería funcionar. Necesito que verifiques algo en el navegador:
+
+  1. Abre la consola del navegador (F12 → Console)
+  2. Haz un hard refresh (Ctrl+Shift+R) para limpiar caché
+  3. Navega a producto.html, ajusta la cantidad y pulsa "Añadir al carrito"
+  4. Dime si ves algún error rojo en la consola
+
+  Mientras tanto, voy a añadir un fallback defensivo en addToCart para que, si por alguna razón los data attributes no se leen,
+  extraiga la info del DOM de la página de producto:
+
+● Update(js/cart.js)
+  ⎿  Added 17 lines, removed 4 lines
+      106          if (!btn) return;
+      107
+      108          const card = btn.closest('[data-product-id]') || btn;
+      109 -        const productId = card.dataset.productId || btn.dataset.productId;
+      110 -        const productTitle = card.dataset.productTitle || btn.dataset.productTitle;
+      111 -        const productPrice = parseFloat(card.dataset.productPrice || btn.dataset.productPrice);
+      112 -        const productImage = card.dataset.productImage || btn.dataset.productImage;
+      109 +        let productId = card.dataset.productId || btn.dataset.productId;
+      110 +        let productTitle = card.dataset.productTitle || btn.dataset.productTitle;
+      111 +        let productPrice = parseFloat(card.dataset.productPrice || btn.dataset.productPrice);
+      112 +        let productImage = card.dataset.productImage || btn.dataset.productImage;
+      113
+      114 +        // Fallback: read product info from the DOM (producto.html)
+      115 +        if (!productId || !productTitle || isNaN(productPrice)) {
+      116 +            const detailSection = document.querySelector('.product-info-detail');
+      117 +            if (detailSection) {
+      118 +                productTitle = productTitle || (detailSection.querySelector('h1') || {}).textContent;
+      119 +                const priceText = (detailSection.querySelector('.price') || {}).textContent || '';
+      120 +                productPrice = isNaN(productPrice) ? parseFloat(priceText.replace(/[^0-9.]/g, '')) : productPri
+          +ce;
+      121 +                productId = productId || (productTitle || '').toLowerCase().replace(/\s+/g, '-');
+      122 +                const mainImg = document.querySelector('.gallery-main');
+      123 +                productImage = productImage || (mainImg ? mainImg.src : '');
+      124 +            }
+      125 +        }
+      126 +
+      127          if (!productId || !productTitle || isNaN(productPrice)) return;
+      128
+      129          // Get quantity from .qty-input (product detail page) or default to 1
+  ⎿  You've hit your limit · resets 8pm (Europe/Madrid)
+
+✻ Brewed for 12m 1s
