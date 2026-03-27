@@ -8,7 +8,6 @@
     const STORAGE_KEY = 'ecozox_cart';
 
     /* ---------- Helpers ---------- */
-
     function getCart() {
         try {
             return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
@@ -30,7 +29,6 @@
     }
 
     /* ---------- DOM updates ---------- */
-
     function syncCounterUI() {
         const count = getCount();
         document.querySelectorAll('.cart-count').forEach(el => {
@@ -48,7 +46,6 @@
     }
 
     /* ---------- Cart operations ---------- */
-
     function addItem(product, quantity) {
         const cart = getCart();
         const existing = cart.find(item => item.id === product.id);
@@ -90,20 +87,13 @@
         syncCounterUI();
     }
 
-    /* ---------- Global addToCart (used by onclick) ---------- */
-
-    window.addToCart = function (event) {
-        if (event) {
-            event.preventDefault();
-            event.stopPropagation();
-        }
-
-        // Read product data from data-attributes on the button or its parent card
-        let btn = null;
-        if (event && event.target) {
-            btn = event.target.closest('button');
-        }
+    /* ---------- Event Delegation (Reemplaza a onclick) ---------- */
+    document.addEventListener('click', function (event) {
+        const btn = event.target.closest('.js-add-to-cart');
         if (!btn) return;
+
+        event.preventDefault();
+        event.stopPropagation();
 
         const card = btn.closest('[data-product-id]') || btn;
         let productId = card.dataset.productId || btn.dataset.productId;
@@ -141,15 +131,18 @@
         bounceCartButton();
 
         // Visual feedback on button
-        if (btn) {
-            const originalHTML = btn.innerHTML;
-            btn.innerHTML = '¡Añadido!';
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = '¡Añadido!';
+        
+        // Si tiene la clase js-buy-now, redirigir al carrito
+        if (btn.classList.contains('js-buy-now')) {
+            setTimeout(() => window.location.href = 'carrito.html', 500);
+        } else {
             setTimeout(() => { btn.innerHTML = originalHTML; }, 1000);
         }
-    };
+    });
 
     /* ---------- Public API ---------- */
-
     window.EcoCart = {
         getCart: getCart,
         saveCart: saveCart,

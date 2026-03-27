@@ -19,11 +19,8 @@
             <h1 style="margin-bottom: 2rem;">Tu Carrito de Compra</h1>
 
             <div class="cart-layout">
-
-                <!-- Listado de Productos (renderizado dinámico desde localStorage) -->
                 <div class="cart-items"></div>
 
-                <!-- Resumen de Pedido -->
                 <div class="cart-summary">
                     <h2>Resumen del Pedido</h2>
                     <div class="summary-body" style="margin-top: 1.5rem;">
@@ -44,9 +41,8 @@
                             <span>$0.00</span>
                         </div>
                     </div>
-                    <button class="btn btn-primary checkout-btn" onclick="alert('Iniciando proceso de pago...')">Proceder al pago</button>
+                    <button class="btn btn-primary checkout-btn" onclick="window.EcoToast('Iniciando proceso de pago...')">Proceder al pago</button>
                 </div>
-
             </div>
         </div>
     </main>

@@ -16,15 +16,13 @@
 
     <main class="contact-section">
         <div class="container">
-            
             <div class="contact-header">
                 <h1>REEMBOLSO</h1>
             </div>
 
             <div class="contact-grid">
-                
                 <div>
-                    <form class="contact-form" onsubmit="event.preventDefault(); alert('Solicitud enviada. Nos pondremos en contacto contigo en breve.');">
+                    <form class="contact-form" onsubmit="event.preventDefault(); window.EcoToast('Solicitud enviada. Nos pondremos en contacto contigo en breve.'); this.reset();">
                         <div class="form-group">
                             <label for="name">Nombre completo</label>
                             <input type="text" id="name" class="form-control" placeholder="Ej. Ana García" required>
@@ -64,7 +62,6 @@
                         </li>
                     </ul>
                 </div>
-
             </div>
         </div>
     </main>

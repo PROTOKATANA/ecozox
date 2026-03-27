@@ -22,6 +22,7 @@ const appScript = document.querySelector('script[src$="app.js"]');
 const base = appScript ? appScript.src.replace('app.js', '') : '';
 
 const modules = [
+	'js/toast.js',
     'js/cart.js',
     'js/gallery.js',
     'js/quantity.js',

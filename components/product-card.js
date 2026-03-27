@@ -81,7 +81,7 @@
             <div class="product-info">
                 <h2 class="product-title">${product.title}</h2>
                 <span class="product-price">${product.priceDisplay}</span>
-                <button class="btn btn-primary add-to-cart-btn" onclick="addToCart(event)">Añadir al carrito</button>
+                <button class="btn btn-primary add-to-cart-btn js-add-to-cart">Añadir al carrito</button>
             </div>
         </a>
     `).join('');
