@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto y Reembolsos - EcoZox</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="components/header.js" defer></script>
+</head>
+<body>
+
+    <div data-component="header" data-base=""></div>
+
+    <main class="contact-section">
+        <div class="container">
+            
+            <div class="contact-header">
+                <h1>REEMBOLSO</h1>
+            </div>
+
+            <div class="contact-grid">
+                
+                <div>
+                    <form class="contact-form" onsubmit="event.preventDefault(); alert('Solicitud enviada. Nos pondremos en contacto contigo en breve.');">
+                        <div class="form-group">
+                            <label for="name">Nombre completo</label>
+                            <input type="text" id="name" class="form-control" placeholder="Ej. Ana García" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo electrónico</label>
+                            <input type="email" id="email" class="form-control" placeholder="tu@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Teléfono</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="+34 600 000 000">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje o motivo de devolución</label>
+                            <textarea id="message" class="form-control" placeholder="Describe el problema con tu pedido o tu consulta para que podamos ayudarte..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">Enviar Solicitud</button>
+                    </form>
+                </div>
+
+                <div class="trust-message">
+                    <h2>Tu tranquilidad es lo primero</h2>
+                    <p>Sabemos que comprar online requiere confianza. Si tu producto no cumple con tus expectativas o tiene algún defecto, no te preocupes. Hemos diseñado un proceso de devolución enfocado en tu comodidad.</p>
+                    
+                    <ul class="trust-features">
+                        <li>
+                            <svg class="trust-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            Flexibles opciones de devolución (Return options) hasta 30 días después de recibir tu pedido.
+                        </li>
+                        <li>
+                            <svg class="trust-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            Proceso fácil y sin complicaciones: reembolso garantizado en 48h tras la validación.
+                        </li>
+                        <li>
+                            <svg class="trust-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            Atención al cliente humana para guiarte en cada paso.
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <div data-component="footer" data-base="" data-pages-base="pages/"></div>
+
+    <script src="components/footer.js" defer></script>
+    <script src="app.js" defer></script>
+</body>
+</html>

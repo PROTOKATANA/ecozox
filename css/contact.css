@@ -1,0 +1,121 @@
+/* ========================================
+   Contact & Refund Page
+   ======================================== */
+
+.contact-section {
+  padding: 5rem 0;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.contact-header h1 {
+  font-size: 3rem;
+  letter-spacing: -1px;
+  color: var(--primary-color);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Formulario */
+.contact-form {
+  background: var(--card-bg);
+  padding: 2.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 500;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.form-control {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-family: var(--font-family);
+  font-size: 1rem;
+  background-color: var(--bg-color);
+  transition: var(--transition);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background-color: #fff;
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Mensaje de Confianza */
+.trust-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: var(--border-radius);
+}
+
+.trust-message h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.trust-message p {
+  color: #d1d5db;
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.trust-features {
+  list-style: none;
+  padding: 0;
+}
+
+.trust-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  color: #f9fafb;
+  font-weight: 500;
+}
+
+.trust-icon {
+  width: 24px;
+  height: 24px;
+  fill: var(--accent-color); /* Usamos tu color de acento azul */
+  flex-shrink: 0;
+  margin-top: 2px;
+}

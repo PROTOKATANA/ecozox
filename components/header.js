@@ -1,9 +1,6 @@
 /* ========================================
    Header Component
-   Renders: logo + cart button widget
-   Usage: <div data-component="header" data-base=""></div>
    ======================================== */
-
 (function () {
     const el = document.querySelector('[data-component="header"]');
     if (!el) return;
@@ -12,8 +9,13 @@
 
     el.outerHTML = `
     <header class="header">
-        <div class="container">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
             <a href="${base}index.html" class="logo">EcoZox.</a>
+            
+            <nav class="header-nav">
+                <a href="${base}contacto.html" class="nav-link">Contacto</a>
+            </nav>
+
             <a href="${base}carrito.html" class="cart-button">
                 <img src="${base}assets/bag.svg" alt="Carrito" class="cart-btn-icon">
                 <span class="cart-btn-divider"></span>
