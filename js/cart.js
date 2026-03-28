@@ -36,15 +36,6 @@
         });
     }
 
-    function bounceCartButton() {
-        const cartButton = document.querySelector('.cart-button');
-        if (cartButton) {
-            cartButton.classList.remove('animate-bounce');
-            void cartButton.offsetWidth;
-            cartButton.classList.add('animate-bounce');
-        }
-    }
-
     /* ---------- Cart operations ---------- */
     function addItem(product, quantity) {
         const cart = getCart();
@@ -93,7 +84,7 @@
         return window.EcoI18n ? window.EcoI18n.t(key) : key;
     }
 
-    /* ---------- Event Delegation (Reemplaza a onclick) ---------- */
+    /* ---------- Event Delegation ---------- */
     document.addEventListener('click', function (event) {
         const btn = event.target.closest('.js-add-to-cart');
         if (!btn) return;
@@ -136,9 +127,7 @@
             quantity
         );
 
-        bounceCartButton();
-
-        // Visual feedback on button
+        // Visual feedback on button (cambia el texto a "¡Añadido!")
         const originalHTML = btn.innerHTML;
         btn.innerHTML = ti('btn_added');
 
