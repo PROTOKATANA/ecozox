@@ -76,7 +76,8 @@
            data-product-id="${product.id}"
            data-product-title="${product.title}"
            data-product-price="${product.price}"
-           data-product-image="${product.imageThumb}">
+           data-product-image="${product.imageThumb}"
+           data-product-link="${product.link}">
             <img src="${product.image}" alt="${product.alt}" class="product-image" loading="lazy">
             <div class="product-info">
                 <h2 class="product-title" data-i18n="${product.titleKey}">${product.title}</h2>

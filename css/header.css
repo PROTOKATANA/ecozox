@@ -19,10 +19,16 @@
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: -0.5px;
-  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.logo-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  transform: scale(1.8);
+  transform-origin: left center;
 }
 
 /* ========================================

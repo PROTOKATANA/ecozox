@@ -36,11 +36,13 @@
 
         cartItemsContainer.innerHTML = cart.map(item => `
             <div class="cart-item" data-product-id="${item.id}">
-                <img src="${item.image}" alt="${item.title}" class="cart-item-img">
-                <div class="cart-item-details">
-                    <h3 class="cart-item-title">${item.title}</h3>
-                    <div class="cart-item-price">${formatPrice(item.price)}</div>
-                </div>
+                <a href="${item.link || 'producto.html'}" class="cart-item-link">
+                    <img src="${item.image}" alt="${item.title}" class="cart-item-img">
+                    <div class="cart-item-details">
+                        <h3 class="cart-item-title">${item.title}</h3>
+                        <div class="cart-item-price">${formatPrice(item.price)}</div>
+                    </div>
+                </a>
                 <div class="cart-item-actions">
                     <div class="quantity-controls">
                         <button class="qty-btn minus" data-i18n-aria="aria_decrease" aria-label="${ti('aria_decrease')}">-</button>

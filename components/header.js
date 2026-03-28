@@ -29,8 +29,9 @@
     el.outerHTML = `
     <header class="header">
         <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-            <a href="${base}index.html" class="logo">EcoZox.</a>
-
+			<a href="${base}index.html" class="logo">
+			    <img src="${base}assets/logo.png" alt="EcoZox Logo" class="logo-img">
+			</a>
             <div class="header-actions" style="display: flex; gap: 0.75rem; align-items: center;">
                 
                 <a href="${base}contacto.html" class="cart-button icon-only-btn" aria-label="Contacto" data-i18n-label="nav_contact">

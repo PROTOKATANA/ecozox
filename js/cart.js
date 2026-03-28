@@ -58,6 +58,7 @@
                 title: product.title,
                 price: product.price,
                 image: product.image,
+                link: product.link || null,
                 quantity: quantity
             });
         }
@@ -105,6 +106,7 @@
         let productTitle = card.dataset.productTitle || btn.dataset.productTitle;
         let productPrice = parseFloat(card.dataset.productPrice || btn.dataset.productPrice);
         let productImage = card.dataset.productImage || btn.dataset.productImage;
+        let productLink = card.dataset.productLink || btn.dataset.productLink || null;
 
         // Fallback: read product info from the DOM (producto.html)
         if (!productId || !productTitle || isNaN(productPrice)) {
@@ -116,6 +118,7 @@
                 productId = productId || (productTitle || '').toLowerCase().replace(/\s+/g, '-');
                 const mainImg = document.querySelector('.gallery-main');
                 productImage = productImage || (mainImg ? mainImg.src : '');
+                productLink = productLink || window.location.pathname.split('/').pop();
             }
         }
 
@@ -129,7 +132,7 @@
         }
 
         addItem(
-            { id: productId, title: productTitle, price: productPrice, image: productImage },
+            { id: productId, title: productTitle, price: productPrice, image: productImage, link: productLink },
             quantity
         );
 
