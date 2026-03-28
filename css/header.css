@@ -87,7 +87,7 @@
 .icon-only-btn {
   padding: 0.5rem; /* Padding uniforme para que sea cuadrado */
   justify-content: center;
-  min-width: 42px; /* Altura aproximada del botón del carrito */
+  min-width: 43px; /* Altura aproximada del botón del carrito */
 }
 
 /* ========================================
