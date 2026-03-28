@@ -128,13 +128,54 @@
 
 @media (max-width: 640px) {
   .cart-item {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .cart-item-actions {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto; /* Crea 2 columnas abajo: la izquierda crece, la derecha se ajusta al botón */
+    gap: 1rem;
     align-items: center;
+    padding: 1rem 0;
   }
+  
+  .cart-item-link {
+    grid-column: 1 / -1; /* Obliga al enlace (imagen + textos) a ocupar TODA la primera fila */
+    width: 100%;
+  }
+  
+  .cart-item-actions {
+    grid-column: 1 / 2; /* Se coloca en la segunda fila, a la izquierda */
+    justify-self: start; 
+  }
+  
+  .cart-item > .btn-danger {
+    grid-column: 2 / 3; /* Se coloca en la segunda fila, a la derecha */
+    justify-self: end;
+    margin: 0; /* Evita que márgenes heredados lo descoloquen */
+  }
+}
+
+/* ========================================
+   Tamaño específico del selector en el carrito
+   ======================================== */
+
+/* Contenedor general: Aquí ajustas la altura total */
+.cart-item .quantity-controls {
+  height: 45px; /* <--- Sube o baja este número para cambiar la altura */
+  border-radius: 6px; /* <--- Añade esta línea para controlar las curvas */
+  overflow: hidden;
+}
+
+/* Botones de + y - en el carrito */
+.cart-item .qty-btn {
+  padding: 0 0.8rem; /* Controla el ancho de los botones */
+  font-size: 1.2rem; /* Tamaño del + y el - */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Cuadro de texto del número en el carrito */
+.cart-item .qty-input {
+  width: 70px;
+  height: 100%; /* Toma automáticamente la altura del contenedor padre (44px) */
+  padding: 0;
+  font-size: 1rem;
 }
