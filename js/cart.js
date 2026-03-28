@@ -87,6 +87,11 @@
         syncCounterUI();
     }
 
+    /* ---------- i18n helper ---------- */
+    function ti(key) {
+        return window.EcoI18n ? window.EcoI18n.t(key) : key;
+    }
+
     /* ---------- Event Delegation (Reemplaza a onclick) ---------- */
     document.addEventListener('click', function (event) {
         const btn = event.target.closest('.js-add-to-cart');
@@ -132,8 +137,8 @@
 
         // Visual feedback on button
         const originalHTML = btn.innerHTML;
-        btn.innerHTML = '¡Añadido!';
-        
+        btn.innerHTML = ti('btn_added');
+
         // Si tiene la clase js-buy-now, redirigir al carrito
         if (btn.classList.contains('js-buy-now')) {
             setTimeout(() => window.location.href = 'carrito.html', 500);

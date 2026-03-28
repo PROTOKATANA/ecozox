@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-i18n-title="title_cart">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,32 +16,32 @@
 
     <main class="cart-section">
         <div class="container">
-            <h1 style="margin-bottom: 2rem;">Tu Carrito de Compra</h1>
+            <h1 style="margin-bottom: 2rem;" data-i18n="cart_title">Tu Carrito de Compra</h1>
 
             <div class="cart-layout">
                 <div class="cart-items"></div>
 
                 <div class="cart-summary">
-                    <h2>Resumen del Pedido</h2>
+                    <h2 data-i18n="cart_summary_title">Resumen del Pedido</h2>
                     <div class="summary-body" style="margin-top: 1.5rem;">
                         <div class="summary-row">
-                            <span>Subtotal</span>
+                            <span data-i18n="cart_subtotal">Subtotal</span>
                             <span>$0.00</span>
                         </div>
                         <div class="summary-row">
-                            <span>Envío</span>
-                            <span>Gratis</span>
+                            <span data-i18n="cart_shipping">Envío</span>
+                            <span data-i18n="cart_shipping_free">Gratis</span>
                         </div>
                         <div class="summary-row">
-                            <span>Impuestos estimados</span>
+                            <span data-i18n="cart_tax">Impuestos estimados</span>
                             <span>$0.00</span>
                         </div>
                         <div class="summary-total">
-                            <span>Total</span>
+                            <span data-i18n="cart_total">Total</span>
                             <span>$0.00</span>
                         </div>
                     </div>
-                    <button class="btn btn-primary checkout-btn" onclick="window.EcoToast('Iniciando proceso de pago...')">Proceder al pago</button>
+                    <button class="btn btn-primary checkout-btn" onclick="window.EcoToast(window.EcoI18n ? window.EcoI18n.t('cart_checkout_toast') : 'Iniciando proceso de pago...')" data-i18n="cart_checkout">Proceder al pago</button>
                 </div>
             </div>
         </div>

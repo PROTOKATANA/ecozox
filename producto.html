@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-i18n-title="title_product">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,20 +30,20 @@
                 </div>
 
                 <div class="product-info-detail">
-                    <h1>Auriculares Silence Pro</h1>
-                    <div class="price">$249.00</div>
-                    <p class="description">
+                    <h1 data-i18n="product_silence_title">Auriculares Silence Pro</h1>
+                    <div class="price" data-i18n-price="249.00">$249.00</div>
+                    <p class="description" data-i18n="product_silence_desc">
                         Experimenta un sonido envolvente con cancelación de ruido activa de última generación.
                         Diseño ergonómico y minimalista que garantiza comodidad durante horas. Batería de larga duración
                         con carga rápida. El compañero perfecto para tu música, trabajo y viajes.
                     </p>
 
                     <div class="quantity-selector">
-                        <span>Cantidad:</span>
+                        <span data-i18n="quantity_label">Cantidad:</span>
                         <div class="quantity-controls">
-                            <button class="qty-btn minus" aria-label="Disminuir cantidad">-</button>
-                            <input type="number" class="qty-input" value="1" min="1" aria-label="Cantidad">
-                            <button class="qty-btn plus" aria-label="Aumentar cantidad">+</button>
+                            <button class="qty-btn minus" data-i18n-aria="aria_decrease" aria-label="Disminuir cantidad">-</button>
+                            <input type="number" class="qty-input" value="1" min="1" data-i18n-aria="aria_quantity" aria-label="Cantidad">
+                            <button class="qty-btn plus" data-i18n-aria="aria_increase" aria-label="Aumentar cantidad">+</button>
                         </div>
                     </div>
 
@@ -54,13 +54,14 @@
                                 data-product-price="249.00"
                                 data-product-image="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=200&h=200">
                             <img src="assets/bag.svg" alt="" class="btn-icon-white">
-                            Añadir al carrito
+                            <span data-i18n="btn_add_to_cart">Añadir al carrito</span>
                         </button>
                         <button class="btn btn-secondary js-add-to-cart js-buy-now"
                                 data-product-id="auriculares-silence-pro"
                                 data-product-title="Auriculares Silence Pro"
                                 data-product-price="249.00"
-                                data-product-image="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=200&h=200">Comprar ahora</button>
+                                data-product-image="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=200&h=200"
+                                data-i18n="btn_buy_now">Comprar ahora</button>
                     </div>
                 </div>
 

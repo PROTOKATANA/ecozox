@@ -27,26 +27,26 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <h3>EcoZox.</h3>
-                    <p class="text-muted">Simplicidad, funcionalidad y elegancia para el día a día.</p>
+                    <p class="text-muted" data-i18n="footer_tagline">Simplicidad, funcionalidad y elegancia para el día a día.</p>
                 </div>
                 <div class="footer-col">
-                    <h3>Enlaces Legales</h3>
+                    <h3 data-i18n="footer_legal_title">Enlaces Legales</h3>
                     <ul>
-                        <li><a href="${pagesBase}terminos.html">Términos y Condiciones</a></li>
-                        <li><a href="${pagesBase}privacidad.html">Política de Privacidad</a></li>
-                        <li><a href="${pagesBase}envios.html">Envíos y Devoluciones</a></li>
+                        <li><a href="${pagesBase}terminos.html" data-i18n="footer_terms">Términos y Condiciones</a></li>
+                        <li><a href="${pagesBase}privacidad.html" data-i18n="footer_privacy">Política de Privacidad</a></li>
+                        <li><a href="${pagesBase}envios.html" data-i18n="footer_shipping">Envíos y Devoluciones</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h3>Soporte</h3>
+                    <h3 data-i18n="footer_support_title">Soporte</h3>
                     <ul>
-                        <li><span class="text-muted">Email:</span> <a href="mailto:ecozox@support@gmail.com">ecozox@support@gmail.com</a></li>
-                        <li><span class="text-muted">Teléfono:</span> <a href="tel:+34912345678">+34 912 345 678</a></li>
+                        <li><span class="text-muted" data-i18n="footer_email_label">Email:</span> <a href="mailto:ecozox@support@gmail.com">ecozox@support@gmail.com</a></li>
+                        <li><span class="text-muted" data-i18n="footer_phone_label">Teléfono:</span> <a href="tel:+34912345678">+34 912 345 678</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Ecozox. Todos los derechos reservados.</p>
+                <p data-i18n="footer_copyright">&copy; 2026 Ecozox. Todos los derechos reservados.</p>
                 <div class="payment-icons">
                     <img src="${base}assets/mastercard.svg" alt="Mastercard" style="height: 32px; background: white; padding: 3px; border-radius: 4px;">
                     <img src="${base}assets/visa.svg" alt="Visa" style="height: 32px; background: white; padding: 1px; border-radius: 4px;">
