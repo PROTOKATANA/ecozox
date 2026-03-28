@@ -27,8 +27,7 @@ const modules = [
     'js/gallery.js',
     'js/quantity.js',
     'js/cart-items.js',
-    'js/wave-divider.js',
-    'js/i18n.js'
+    'js/wave-divider.js'
 ];
 
 modules.forEach(mod => loadScript(base + mod));
