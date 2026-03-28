@@ -70,7 +70,6 @@
 }
 
 .cart-button .cart-count, 
-.lang-toggle .lang-current-code,
 .cart-button .action-text {
   position: static;
   background: none;
@@ -84,11 +83,11 @@
   line-height: 1;
 }
 
-/* Ajuste específico para botones que SON SOLO ICONO (Contacto) */
-.cart-button.contact-only-icon {
+/* Ajuste general para botones que SON SOLO ICONO (Contacto, Idiomas) */
+.icon-only-btn {
   padding: 0.5rem; /* Padding uniforme para que sea cuadrado */
   justify-content: center;
-  min-width: 38px; /* Altura aproximada de los otros botones */
+  min-width: 42px; /* Altura aproximada del botón del carrito */
 }
 
 /* ========================================
