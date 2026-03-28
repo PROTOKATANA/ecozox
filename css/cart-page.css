@@ -32,6 +32,7 @@
   border-bottom: 1px solid var(--border-color);
   gap: 1.5rem;
   flex-wrap: wrap;
+  transition: opacity 0.3s ease;
 }
 
 .cart-item:last-child {
@@ -122,33 +123,48 @@
   margin-bottom: 1.5rem;
 }
 
-.cart-item {
-  transition: opacity 0.3s ease;
-}
-
+/* ========================================
+   Vista Móvil Mejorada (Grid Layout)
+   ======================================== */
 @media (max-width: 640px) {
   .cart-item {
     display: grid;
-    grid-template-columns: 1fr auto; /* Crea 2 columnas abajo: la izquierda crece, la derecha se ajusta al botón */
-    gap: 1rem;
-    align-items: center;
-    padding: 1rem 0;
+    /* 3 columnas: Imagen (110px), Espacio flexible (1fr), Botón eliminar (auto) */
+    grid-template-columns: 110px 1fr auto; 
+    grid-template-rows: auto auto;
+    gap: 0.5rem 1rem; 
+    padding: 1.5rem 0;
   }
-  
+
   .cart-item-link {
-    grid-column: 1 / -1; /* Obliga al enlace (imagen + textos) a ocupar TODA la primera fila */
-    width: 100%;
+    display: contents; 
   }
-  
+
+  .cart-item-img {
+    width: 110px;
+    height: 110px;
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+  }
+
+  .cart-item-details {
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+    align-self: end;
+  }
+
   .cart-item-actions {
-    grid-column: 1 / 2; /* Se coloca en la segunda fila, a la izquierda */
-    justify-self: start; 
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    align-self: start; 
+    display: flex;
   }
-  
+
   .cart-item > .btn-danger {
-    grid-column: 2 / 3; /* Se coloca en la segunda fila, a la derecha */
-    justify-self: end;
-    margin: 0; /* Evita que márgenes heredados lo descoloquen */
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+    align-self: start;
+    margin: 0;
   }
 }
 
@@ -156,26 +172,38 @@
    Tamaño específico del selector en el carrito
    ======================================== */
 
-/* Contenedor general: Aquí ajustas la altura total */
+/* Contenedor general */
 .cart-item .quantity-controls {
-  height: 45px; /* <--- Sube o baja este número para cambiar la altura */
-  border-radius: 6px; /* <--- Añade esta línea para controlar las curvas */
+  height: 45px;
+  border-radius: 6px;
   overflow: hidden;
+  display: flex;
+  width: 100%;
+  border: 1px solid var(--border-color);
 }
 
-/* Botones de + y - en el carrito */
+/* Botones de + y - */
 .cart-item .qty-btn {
-  padding: 0 0.8rem; /* Controla el ancho de los botones */
-  font-size: 1.2rem; /* Tamaño del + y el - */
+  flex: 0 0 auto;    /* Los botones mantienen su ancho fijo */
+  width: 40px;       
+  padding: 0;
+  font-size: 1.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: var(--card-bg);
 }
 
-/* Cuadro de texto del número en el carrito */
+/* Cuadro de texto del número (EL QUE SE EXPANDE) */
 .cart-item .qty-input {
-  width: 70px;
-  height: 100%; /* Toma automáticamente la altura del contenedor padre (44px) */
+  flex: 1;           /* El número ocupa todo el espacio central restante */
+  min-width: 0;
+  height: 100%;
   padding: 0;
   font-size: 1rem;
+  text-align: center;
+  border: none;
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  background: white;
 }
