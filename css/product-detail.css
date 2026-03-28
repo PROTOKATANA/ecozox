@@ -39,7 +39,7 @@
   object-fit: cover;
   border-radius: 4px;
   cursor: pointer;
-  opacity: 0.6;
+  opacity: 1;
   transition: var(--transition);
   border: 2px solid transparent;
 }
