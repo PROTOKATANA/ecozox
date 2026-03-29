@@ -1,0 +1,142 @@
+/* ========================================
+   Region Dialog — Idioma & Divisa
+   ======================================== */
+
+/* --- Dialog base --- */
+#region-dialog {
+  border: none;
+  border-radius: 14px;
+  padding: 0;
+  background: var(--card-bg);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.16);
+  width: min(420px, calc(100vw - 2rem));
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
+  outline: none;
+  font-family: var(--font-family);
+}
+
+#region-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+
+/* --- Header --- */
+.region-dialog__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.region-dialog__title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.region-dialog__close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  color: var(--text-muted);
+  transition: background 0.15s ease, color 0.15s ease;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.region-dialog__close:hover {
+  background: var(--bg-color);
+  color: var(--primary-color);
+}
+
+/* --- Body --- */
+.region-dialog__body {
+  padding: 1rem 0.6rem 1.25rem;
+}
+
+/* --- Secciones (idioma / divisa) --- */
+.region-section__label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  padding: 0 0.9rem;
+  margin: 0 0 0.35rem;
+}
+
+/* --- Separador --- */
+.region-dialog__divider {
+  border: none;
+  height: 1px;
+  background: var(--border-color);
+  margin: 0.65rem 0.9rem;
+}
+
+/* --- Lista de opciones --- */
+.region-options {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* --- Botón de opción individual --- */
+.region-option {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0.6rem 0.9rem;
+  font-family: var(--font-family);
+  font-size: 0.875rem;
+  font-weight: 450;
+  color: var(--text-main);
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.12s ease;
+  text-align: left;
+  gap: 0.5rem;
+  line-height: 1.3;
+}
+
+.region-option:hover {
+  background: var(--bg-color);
+}
+
+.region-option.active {
+  font-weight: 600;
+  color: var(--primary-color);
+  background: var(--bg-color);
+}
+
+/* --- Check SVG (solo visible en activo) --- */
+.region-option__check {
+  margin-left: auto;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  opacity: 0;
+  color: var(--primary-color);
+  transition: opacity 0.12s ease;
+}
+
+.region-option.active .region-option__check {
+  opacity: 1;
+}
+
+/* --- Texto secundario (código de idioma / divisa) --- */
+.region-option__secondary {
+  color: var(--text-muted);
+  font-weight: 400;
+}
