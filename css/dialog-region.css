@@ -14,6 +14,11 @@
   overflow-y: auto;
   outline: none;
   font-family: var(--font-family);
+  
+  /* --- Estas 3 líneas garantizan el centrado perfecto --- */
+  position: fixed;
+  inset: 0;
+  margin: auto;
 }
 
 #region-dialog::backdrop {
