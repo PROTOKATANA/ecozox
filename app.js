@@ -27,6 +27,7 @@ const modules = [
     'js/gallery.js',
     'js/quantity.js',
     'js/cart-items.js',
+    'js/urgency-banner.js',
     'js/wave-divider.js'
 ];
 
