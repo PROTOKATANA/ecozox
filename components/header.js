@@ -190,9 +190,6 @@
         }
 
         console.log('Idioma seleccionado:', lang);
-
-        // Cerrar con un pequeño delay para feedback visual
-        setTimeout(function () { dialog.close(); }, 280);
     });
 
     /* ---------- Selección de divisa — One-Click ---------- */
@@ -212,9 +209,6 @@
         localStorage.setItem('ecozox_currency', currency);
 
         console.log('Divisa seleccionada:', currency);
-
-        // Cerrar con delay
-        setTimeout(function () { dialog.close(); }, 280);
     });
 
 })();
