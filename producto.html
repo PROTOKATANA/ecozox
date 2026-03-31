@@ -142,6 +142,39 @@
         </div>
     </section>
 
+    <!-- Sticky Add to Cart Bar -->
+    <div id="sticky-cart-bar" class="sticky-cart-bar" aria-hidden="true" aria-label="Añadir al carrito rápido">
+        <div class="sticky-cart-bar__inner">
+
+            <!-- Izquierda: producto -->
+            <div class="sticky-cart-bar__product">
+                <img
+                    src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=200&h=200"
+                    alt="Auriculares Silence Pro"
+                    class="sticky-cart-bar__thumb"
+                    loading="lazy"
+                >
+                <div class="sticky-cart-bar__info">
+                    <span class="sticky-cart-bar__title">Auriculares Silence Pro</span>
+                    <span class="sticky-cart-bar__price">$249.00</span>
+                </div>
+            </div>
+
+            <!-- Derecha: botón -->
+            <div class="sticky-cart-bar__cta">
+                <button class="btn btn-primary js-add-to-cart"
+                        data-product-id="auriculares-silence-pro"
+                        data-product-title="Auriculares Silence Pro"
+                        data-product-price="249.00"
+                        data-product-image="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=200&h=200">
+                    <img src="assets/bag.svg" alt="" class="btn-icon-white">
+                    <span>Añadir al carrito</span>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
     <div data-component="footer" data-base="" data-pages-base="pages/"></div>
 
     <!-- Review Dialog -->
@@ -195,5 +228,6 @@
     <script src="components/footer.js" defer></script>
     <script src="js/i18n.js" defer></script>
     <script src="app.js" defer></script>
+    <script src="js/sticky-cart.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,105 @@
+/* ========================================
+   Sticky Add to Cart Bar
+   ======================================== */
+
+.sticky-cart-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: var(--card-bg);
+  border-top: 1px solid var(--border-color);
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
+
+  /* Oculto por defecto, fuera del viewport por debajo */
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.sticky-cart-bar.visible {
+  transform: translateY(0);
+}
+
+/* ── Layout interno ── */
+.sticky-cart-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+}
+
+/* ── Lado izquierdo: imagen + info ── */
+.sticky-cart-bar__product {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  min-width: 0; /* evita desbordamiento de texto */
+}
+
+.sticky-cart-bar__thumb {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--border-radius);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.sticky-cart-bar__info {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.sticky-cart-bar__title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sticky-cart-bar__price {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+/* ── Lado derecho: botón ── */
+.sticky-cart-bar__cta {
+  flex-shrink: 0;
+}
+
+/* ── Responsive: móvil ── */
+@media (max-width: 480px) {
+  .sticky-cart-bar__inner {
+    padding: 0.625rem 1rem;
+  }
+
+  /* Ocultar imagen y título — solo precio + botón */
+  .sticky-cart-bar__thumb,
+  .sticky-cart-bar__title {
+    display: none;
+  }
+
+  /* El precio ocupa el espacio sobrante */
+  .sticky-cart-bar__product {
+    flex: 0 0 auto;
+  }
+
+  /* El botón se expande para llenar el resto */
+  .sticky-cart-bar__cta {
+    flex: 1;
+  }
+
+  .sticky-cart-bar__cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
