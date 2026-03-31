@@ -52,12 +52,13 @@
   }());
 
   /* ---------- Helpers ---------- */
-  function getAllCartButtons() {
-    return document.querySelectorAll('.js-add-to-cart');
-  }
 
+  /* Update data-product-* on every .js-add-to-cart outside the sticky bar.
+     The sticky bar button is handled separately by syncStickyBar so that
+     both its data attributes and its visible text move in one atomic step. */
   function updateCartButtons(data) {
-    getAllCartButtons().forEach(function (btn) {
+    document.querySelectorAll('.js-add-to-cart').forEach(function (btn) {
+      if (stickyBar && stickyBar.contains(btn)) return; /* skip — handled below */
       btn.dataset.productId    = data.id;
       btn.dataset.productTitle = data.title;
       btn.dataset.productPrice = data.price;
@@ -65,18 +66,32 @@
     });
   }
 
-  /* Update the sticky bar's display text to reflect the selection */
-  function updateStickyBar(data) {
-    const titleEl = document.querySelector('.sticky-cart-bar__title');
-    const priceEl = document.querySelector('.sticky-cart-bar__price');
-    if (!titleEl || !priceEl) return;
+  /* Cache the sticky bar container once — null if it doesn't exist on this page */
+  const stickyBar = document.getElementById('sticky-cart-bar');
 
-    /* Preserve the currency prefix already rendered by i18n */
-    const currentText  = priceEl.textContent;
-    const currencyPrefix = currentText.replace(/[\d.,\s]/g, '').trim() || '$';
+  /* Sync sticky bar: data-product-* on its button + visible title/price text */
+  function syncStickyBar(data) {
+    if (!stickyBar) return;
 
-    titleEl.textContent = data.title;
-    priceEl.textContent = currencyPrefix + parseFloat(data.price).toFixed(2);
+    /* 1. Update the add-to-cart button inside the sticky bar */
+    const stickyBtn = stickyBar.querySelector('.js-add-to-cart');
+    if (stickyBtn) {
+      stickyBtn.dataset.productId    = data.id;
+      stickyBtn.dataset.productTitle = data.title;
+      stickyBtn.dataset.productPrice = data.price;
+      stickyBtn.dataset.productImage = data.image;
+    }
+
+    /* 2. Update visible title */
+    const titleEl = stickyBar.querySelector('.sticky-cart-bar__title');
+    if (titleEl) titleEl.textContent = data.title;
+
+    /* 3. Update visible price — preserve the currency prefix already in the DOM */
+    const priceEl = stickyBar.querySelector('.sticky-cart-bar__price');
+    if (priceEl) {
+      const prefix = priceEl.textContent.replace(/[\d.,\s]/g, '').trim() || '$';
+      priceEl.textContent = prefix + parseFloat(data.price).toFixed(2);
+    }
   }
 
   /* ---------- Selection logic ---------- */
@@ -102,12 +117,12 @@
       if (qtyWrapper) qtyWrapper.classList.add('purchase-option__qty--disabled');
       if (qtyInput)   qtyInput.value = '1';
       updateCartButtons(BUNDLE);
-      updateStickyBar(BUNDLE);
+      syncStickyBar(BUNDLE);
     } else {
       /* Restore quantity controls */
       if (qtyWrapper) qtyWrapper.classList.remove('purchase-option__qty--disabled');
       updateCartButtons(BASE);
-      updateStickyBar(BASE);
+      syncStickyBar(BASE);
     }
   }
 
