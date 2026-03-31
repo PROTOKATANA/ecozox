@@ -27,9 +27,29 @@
   const BUNDLE = {
     id:    bundleCard.dataset.bundleId,
     title: bundleCard.dataset.bundleTitle,
-    price: bundleCard.dataset.bundlePrice,
+    price: bundleCard.dataset.bundlePrice,   /* original price — overwritten below */
     image: bundleCard.dataset.bundleImage,
   };
+
+  /* Apply discount: data-bundle-discount="0.20" → 20% off
+     The original price is tachado; the sale price goes to cart. */
+  (function applyBundleDiscount() {
+    const discount = parseFloat(bundleCard.dataset.bundleDiscount || '0');
+    if (!discount) return;
+
+    const original = parseFloat(BUNDLE.price);
+    const sale     = (original * (1 - discount)).toFixed(2);
+    const currency = '$';   /* matches the rest of the page */
+
+    const originalEl = bundleCard.querySelector('.js-bundle-price-original');
+    const saleEl     = bundleCard.querySelector('.js-bundle-price-sale');
+
+    if (originalEl) originalEl.textContent = currency + original.toFixed(2);
+    if (saleEl)     saleEl.textContent     = currency + sale;
+
+    /* Cart receives the discounted price */
+    BUNDLE.price = sale;
+  }());
 
   /* ---------- Helpers ---------- */
   function getAllCartButtons() {
