@@ -29,7 +29,8 @@ const modules = [
     'js/cart-items.js',
     'js/urgency-banner.js',
     'js/reviews.js',
-    'js/wave-divider.js'
+    'js/wave-divider.js',
+    'js/purchase-options.js'
 ];
 
 modules.forEach(mod => loadScript(base + mod));

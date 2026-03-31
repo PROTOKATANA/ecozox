@@ -38,13 +38,67 @@
                         con carga rápida. El compañero perfecto para tu música, trabajo y viajes.
                     </p>
 
-                    <div class="quantity-selector">
-                        <span data-i18n="quantity_label">Cantidad:</span>
-                        <div class="quantity-controls">
-                            <button class="qty-btn minus" data-i18n-aria="aria_decrease" aria-label="Disminuir cantidad">-</button>
-                            <input type="number" class="qty-input" value="1" min="1" data-i18n-aria="aria_quantity" aria-label="Cantidad">
-                            <button class="qty-btn plus" data-i18n-aria="aria_increase" aria-label="Aumentar cantidad">+</button>
+                    <!-- Widget de Opciones de Compra -->
+                    <div class="purchase-options" id="purchaseOptions" role="radiogroup" aria-label="Opciones de compra">
+
+                        <!-- Opción A: Individual (seleccionada por defecto) -->
+                        <div class="purchase-option purchase-option--selected"
+                             data-option="individual"
+                             role="radio"
+                             aria-checked="true"
+                             tabindex="0">
+                            <div class="purchase-option__row">
+                                <span class="purchase-option__radio">
+                                    <svg class="radio-icon radio-icon--unchecked" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                        <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/>
+                                    </svg>
+                                    <svg class="radio-icon radio-icon--checked" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                        <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/>
+                                        <circle cx="10" cy="10" r="5" fill="currentColor"/>
+                                    </svg>
+                                </span>
+                                <span class="purchase-option__label">Comprar solo este artículo</span>
+                            </div>
+                            <div class="purchase-option__qty">
+                                <div class="quantity-controls">
+                                    <button class="qty-btn minus" data-i18n-aria="aria_decrease" aria-label="Disminuir cantidad">-</button>
+                                    <input type="number" class="qty-input" value="1" min="1" data-i18n-aria="aria_quantity" aria-label="Cantidad">
+                                    <button class="qty-btn plus" data-i18n-aria="aria_increase" aria-label="Aumentar cantidad">+</button>
+                                </div>
+                            </div>
                         </div>
+
+                        <!-- Opción B: Bundle -->
+                        <div class="purchase-option purchase-option--bundle"
+                             data-option="bundle"
+                             role="radio"
+                             aria-checked="false"
+                             tabindex="0"
+                             data-bundle-id="bundle-silence-pro-pack"
+                             data-bundle-title="Pack Silence Pro + Accesorios"
+                             data-bundle-price="289.00"
+                             data-bundle-image="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=200&h=200">
+                            <div class="purchase-option__row">
+                                <span class="purchase-option__radio">
+                                    <svg class="radio-icon radio-icon--unchecked" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                        <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/>
+                                    </svg>
+                                    <svg class="radio-icon radio-icon--checked" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                        <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/>
+                                        <circle cx="10" cy="10" r="5" fill="currentColor"/>
+                                    </svg>
+                                </span>
+                                <div class="purchase-option__bundle-info">
+                                    <span class="purchase-option__label">Pack Completo</span>
+                                    <span class="purchase-option__bundle-items">Auriculares + Soporte + Kit limpieza</span>
+                                </div>
+                                <div class="purchase-option__bundle-pricing">
+                                    <span class="purchase-option__badge">Ahorra 20%</span>
+                                    <span class="purchase-option__bundle-price">$289.00</span>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
 
                     <div class="action-buttons">
