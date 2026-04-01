@@ -92,7 +92,7 @@
                             </div>
                         </div>
 
-                        <!-- Opción B: Bundle -->
+                        <!-- Opción B: Bundle — Nested Card -->
                         <div class="purchase-option purchase-option--bundle"
                              data-option="bundle"
                              role="radio"
@@ -103,7 +103,37 @@
                              data-bundle-price="289.00"
                              data-bundle-discount="0.20"
                              data-bundle-image="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=200&h=200">
-                            <div class="purchase-option__row">
+
+                            <!-- Cabecera: nombre del pack + precios -->
+                            <div class="po-bundle__header">
+                                <h3 class="po-bundle__title">Pack Silence Pro</h3>
+                                <div class="po-bundle__prices">
+                                    <span class="po-bundle__price-original js-bundle-price-original">$289.00</span>
+                                    <span class="po-bundle__price-sale js-bundle-price-sale">$231.20</span>
+                                </div>
+                            </div>
+
+                            <!-- Cuerpo: desglose de artículos -->
+                            <ul class="po-bundle__body">
+                                <li class="po-bundle__item">
+                                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=80&h=80"
+                                         alt="Auriculares Silence Pro" class="po-bundle__item-img">
+                                    <span class="po-bundle__item-name">Auriculares Silence Pro</span>
+                                </li>
+                                <li class="po-bundle__item">
+                                    <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&q=80&w=80&h=80"
+                                         alt="Soporte para auriculares" class="po-bundle__item-img">
+                                    <span class="po-bundle__item-name">Soporte para auriculares</span>
+                                </li>
+                                <li class="po-bundle__item">
+                                    <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&q=80&w=80&h=80"
+                                         alt="Kit de limpieza" class="po-bundle__item-img">
+                                    <span class="po-bundle__item-name">Kit de limpieza</span>
+                                </li>
+                            </ul>
+
+                            <!-- Pie: radio + CTA -->
+                            <div class="po-bundle__footer">
                                 <span class="purchase-option__radio">
                                     <svg class="radio-icon radio-icon--unchecked" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                                         <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/>
@@ -113,37 +143,9 @@
                                         <circle cx="10" cy="10" r="5" fill="currentColor"/>
                                     </svg>
                                 </span>
-                                <div class="purchase-option__bundle-info">
-                                    <span class="purchase-option__label">Pack Completo</span>
-                                    <div class="purchase-option__bundle-imgs" aria-hidden="true">
-                                        <div class="purchase-option__bundle-item">
-                                            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=64&h=64"
-                                                 alt="Auriculares Silence Pro"
-                                                 class="purchase-option__bundle-img">
-                                            <span class="purchase-option__bundle-item-name">Auriculares</span>
-                                        </div>
-                                        <span class="purchase-option__bundle-img-sep">+</span>
-                                        <div class="purchase-option__bundle-item">
-                                            <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&q=80&w=64&h=64"
-                                                 alt="Soporte para auriculares"
-                                                 class="purchase-option__bundle-img">
-                                            <span class="purchase-option__bundle-item-name">Soporte</span>
-                                        </div>
-                                        <span class="purchase-option__bundle-img-sep">+</span>
-                                        <div class="purchase-option__bundle-item">
-                                            <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&q=80&w=64&h=64"
-                                                 alt="Kit de limpieza"
-                                                 class="purchase-option__bundle-img">
-                                            <span class="purchase-option__bundle-item-name">Kit limpieza</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="purchase-option__bundle-pricing">
-                                    <span class="purchase-option__badge">Ahorra 20%</span>
-                                    <span class="purchase-option__price-original js-bundle-price-original">$289.00</span>
-                                    <span class="purchase-option__bundle-price js-bundle-price-sale">$231.20</span>
-                                </div>
+                                <span class="po-bundle__cta">Comprar pack completo y ahorrar 20%</span>
                             </div>
+
                         </div>
 
                     </div>
