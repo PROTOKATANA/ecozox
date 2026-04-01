@@ -9,12 +9,14 @@
 .product-detail-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
+  gap: 2rem;
+  align-items: start;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .product-detail-grid {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 3rem;
   }
 }
 
@@ -25,6 +27,13 @@
   width: 100%;
   min-width: 0;
   display: block;
+}
+
+@media (min-width: 1024px) {
+  .product-gallery {
+    position: sticky;
+    top: calc(80px + 2rem); /* altura header fijo + margen */
+  }
 }
 
 /* ========================================
