@@ -23,54 +23,19 @@
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
   padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .cart-item {
   display: flex;
-  align-items: center;
-  padding: 1.5rem 0;
-  border-bottom: 1px solid var(--border-color);
-  gap: 1.5rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.25rem;
   transition: opacity 0.3s ease;
-}
-
-.cart-item:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.cart-item-link {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  flex: 1;
-  min-width: 0;
-  text-decoration: none;
-  color: inherit;
-}
-
-.cart-item-link:hover .cart-item-img,
-.cart-item-link:hover .cart-bundle-preview {
-  opacity: 0.85;
-  transform: scale(1.02);
-}
-
-.cart-item-link:hover .cart-item-title {
-  color: var(--accent-color);
-}
-
-.cart-item-img {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 4px;
-  flex-shrink: 0;
-  transition: var(--transition);
-}
-
-.cart-item-details {
-  min-width: 0;
 }
 
 .cart-item-title {
@@ -125,47 +90,11 @@
 }
 
 /* ========================================
-   Vista Móvil Mejorada (Grid Layout)
+   Vista Móvil
    ======================================== */
 @media (max-width: 640px) {
   .cart-item {
-    display: grid;
-    /* 3 columnas: Imagen (110px), Espacio flexible (1fr), Botón eliminar (auto) */
-    grid-template-columns: 110px 1fr auto; 
-    grid-template-rows: auto auto;
-    gap: 0.5rem 1rem; 
-    padding: 1.5rem 0;
-  }
-
-  .cart-item-link {
-    display: contents; 
-  }
-
-  .cart-item-img {
-    width: 110px;
-    height: 110px;
-    grid-column: 1 / 2;
-    grid-row: 1 / 3;
-  }
-
-  .cart-item-details {
-    grid-column: 2 / 4;
-    grid-row: 1 / 2;
-    align-self: end;
-  }
-
-  .cart-item-actions {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-    align-self: start; 
-    display: flex;
-  }
-
-  .cart-item > .btn-danger {
-    grid-column: 3 / 4;
-    grid-row: 2 / 3;
-    align-self: start;
-    margin: 0;
+    padding: 1rem;
   }
 }
 
@@ -283,96 +212,12 @@
 }
 
 /* ========================================
-   Bundle: Badge + Preview de imágenes
+   Tarjeta de artículo — estructura unificada
+   (normal e individual comparten el mismo layout)
    ======================================== */
 
-/* Contenedor que ocupa el mismo espacio que .cart-item-img */
-.cart-bundle-preview {
-  width: 80px;
-  height: 80px;
-  flex-shrink: 0;
-  border-radius: 4px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  transition: var(--transition);
-}
-
-/* Imagen principal — 65 % de la altura disponible */
-.cart-bundle-preview__main {
-  width: 100%;
-  height: 52px;
-  object-fit: cover;
-  display: block;
-}
-
-/* Fila de miniaturas de accesorios */
-.cart-bundle-preview__thumbs {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2px;
-  height: 26px;
-}
-
-.cart-bundle-preview__thumb {
-  height: 26px;
-  width: 34px;
-  object-fit: cover;
-  border-radius: 2px;
-  display: block;
-}
-
-.cart-bundle-preview__sep {
-  font-size: 0.625rem;
-  font-weight: 700;
-  color: var(--text-muted);
-  flex-shrink: 0;
-  line-height: 1;
-}
-
-/* Mobile: mismas dimensiones y posición en el grid que .cart-item-img */
-@media (max-width: 640px) {
-  .cart-bundle-preview {
-    width: 110px;
-    height: 110px;
-    /* Hereda la misma celda de grid que .cart-item-img */
-    grid-column: 1 / 2;
-    grid-row: 1 / 3;
-  }
-
-  .cart-bundle-preview__main {
-    height: 72px;
-  }
-
-  .cart-bundle-preview__thumbs {
-    height: 36px;
-  }
-
-  .cart-bundle-preview__thumb {
-    height: 36px;
-    width: 47px;
-  }
-}
-
-/* ========================================
-   Bundle anidado (Nested Bundle UI)
-   ======================================== */
-
-/* Tarjeta bundle: flex-column, fondo y borde diferenciados */
-.cart-item--is-bundle {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  background: var(--bg-color);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 1.25rem;
-}
-
-/* Cabecera: título + precio apilados */
-.cart-bundle-header {
+/* Cabecera: título + precio */
+.cart-item-header {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
@@ -381,8 +226,8 @@
   padding-right: 0;
 }
 
-/* Lista de sub-artículos */
-.bundle-breakdown-list {
+/* Cuerpo: artículo(s) con separador dashed */
+.cart-item-body {
   list-style: none;
   width: 100%;
   padding-left: 0;
@@ -392,18 +237,19 @@
   border-top: 1px dashed var(--border-color);
 }
 
-.bundle-breakdown-item {
+.cart-body-item {
   display: flex;
   align-items: center;
   gap: 10px;
   margin-bottom: 8px;
 }
 
-.bundle-breakdown-item:last-child {
+.cart-body-item:last-child {
   margin-bottom: 0;
 }
 
-.bundle-sub-img {
+/* Imagen miniatura (bundle: 40px) */
+.cart-body-img {
   width: 40px;
   height: 40px;
   border-radius: 4px;
@@ -411,22 +257,28 @@
   flex-shrink: 0;
 }
 
-.bundle-sub-title {
+/* Imagen artículo individual (más grande) */
+.cart-body-img--single {
+  width: 60px;
+  height: 60px;
+}
+
+.cart-body-title {
   flex: 1;
   font-size: 0.875rem;
   color: var(--text-main);
   min-width: 0;
 }
 
-.bundle-sub-included {
+.cart-body-included {
   font-size: 0.85rem;
   color: var(--text-muted);
   white-space: nowrap;
   flex-shrink: 0;
 }
 
-/* Pie: cantidad y botón eliminar, separados por línea dashed */
-.cart-bundle-footer {
+/* Pie: controles con separador dashed */
+.cart-item-footer {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -439,10 +291,7 @@
   border-top: 1px dashed var(--border-color);
 }
 
-/* Override del grid mobile para el bundle — usa flex simple */
-@media (max-width: 640px) {
-  .cart-item--is-bundle {
-    display: flex;
-    padding: 1rem;
-  }
+/* En el footer los quantity-controls no deben expandirse al 100% */
+.cart-item-footer .quantity-controls {
+  width: auto;
 }

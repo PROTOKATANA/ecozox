@@ -71,18 +71,24 @@
         const discountedPrice = item.price * (1 - DISCOUNT_PERCENT / 100);
         return `
             <div class="cart-item" data-product-id="${item.id}">
-                <a href="${item.link || 'producto.html'}" class="cart-item-link">
-                    <img src="${item.image}" alt="${item.title}" class="cart-item-img">
-                    <div class="cart-item-details">
-                        <h3 class="cart-item-title">${item.title}</h3>
-                        <div class="cart-item-price">
-                            <del class="price-original">${formatPrice(item.price)}</del>
-                            <span class="price-discounted">${formatPrice(discountedPrice)}</span>
-                        </div>
+                <div class="cart-item-header">
+                    <h3 class="cart-item-title">${item.title}</h3>
+                    <div class="cart-item-price">
+                        <del class="price-original">${formatPrice(item.price)}</del>
+                        <span class="price-discounted">${formatPrice(discountedPrice)}</span>
                     </div>
-                </a>
-                <div class="cart-item-actions">${qtyControls(item)}</div>
-                ${trashBtn()}
+                </div>
+                <ul class="cart-item-body">
+                    <li class="cart-body-item">
+                        <img src="${item.image}" alt="${item.title}"
+                             class="cart-body-img cart-body-img--single">
+                        <span class="cart-body-title">${item.title}</span>
+                    </li>
+                </ul>
+                <div class="cart-item-footer">
+                    <div class="cart-item-actions">${qtyControls(item)}</div>
+                    ${trashBtn()}
+                </div>
             </div>`;
     }
 
@@ -90,25 +96,25 @@
     function renderBundleItem(item) {
         const discountedPrice = item.price * (1 - DISCOUNT_PERCENT / 100);
         const subRows = BUNDLE_SUB_ITEMS.map(sub => `
-            <li class="bundle-breakdown-item">
-                <img src="${sub.img}" alt="${sub.title}" class="bundle-sub-img">
-                <span class="bundle-sub-title">${sub.title}</span>
-                <span class="bundle-sub-included">Incluido</span>
+            <li class="cart-body-item">
+                <img src="${sub.img}" alt="${sub.title}" class="cart-body-img">
+                <span class="cart-body-title">${sub.title}</span>
+                <span class="cart-body-included">Incluido</span>
             </li>`).join('');
 
         return `
-            <div class="cart-item cart-item--is-bundle" data-product-id="${item.id}">
-                <div class="cart-bundle-header">
+            <div class="cart-item" data-product-id="${item.id}">
+                <div class="cart-item-header">
                     <h3 class="cart-item-title">${item.title}</h3>
                     <div class="cart-item-price">
                         <del class="price-original">${formatPrice(item.price)}</del>
                         <span class="price-discounted">${formatPrice(discountedPrice)}</span>
                     </div>
                 </div>
-                <ul class="bundle-breakdown-list" aria-label="Contenido del pack">
+                <ul class="cart-item-body" aria-label="Contenido del pack">
                     ${subRows}
                 </ul>
-                <div class="cart-bundle-footer">
+                <div class="cart-item-footer">
                     <div class="cart-item-actions">${qtyControls(item)}</div>
                     ${trashBtn()}
                 </div>
