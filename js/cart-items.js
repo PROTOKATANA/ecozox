@@ -25,26 +25,96 @@
 
     /* ---------- Bundle helpers ---------- */
 
-    /* Accessory placeholder images reused from the product page */
-    const BUNDLE_ACC_IMGS = [
-        'https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&q=80&w=80&h=60',
-        'https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&q=80&w=80&h=60',
+    /* Sub-items that make up the bundle (placeholder data) */
+    const BUNDLE_SUB_ITEMS = [
+        {
+            img:   'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=80&h=80',
+            title: 'Auriculares Silence Pro',
+        },
+        {
+            img:   'https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&q=80&w=80&h=80',
+            title: 'Soporte para auriculares',
+        },
+        {
+            img:   'https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&q=80&w=80&h=80',
+            title: 'Kit de limpieza',
+        },
     ];
 
-    function renderItemMedia(item) {
-        if (!item.id.includes('bundle')) {
-            return `<img src="${item.image}" alt="${item.title}" class="cart-item-img">`;
-        }
+    /* Shared trash-icon button (reused in both item types) */
+    function trashBtn() {
         return `
-            <div class="cart-bundle-preview" aria-hidden="true">
-                <img src="${item.image}"
-                     alt="${item.title}"
-                     class="cart-bundle-preview__main">
-                <div class="cart-bundle-preview__thumbs">
-                    <img src="${BUNDLE_ACC_IMGS[0]}" alt="Accesorio 1" class="cart-bundle-preview__thumb">
-                    <span class="cart-bundle-preview__sep">+</span>
-                    <img src="${BUNDLE_ACC_IMGS[1]}" alt="Accesorio 2" class="cart-bundle-preview__thumb">
+            <button class="btn btn-danger" aria-label="${ti('btn_remove')}" title="${ti('btn_remove')}"
+                    style="width:63px;height:45px;padding:0.5rem;display:flex;align-items:center;justify-content:center;border-radius:6px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="3 6 5 6 21 6"></polyline>
+                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                    <line x1="10" y1="11" x2="10" y2="17"></line>
+                    <line x1="14" y1="11" x2="14" y2="17"></line>
+                </svg>
+            </button>`;
+    }
+
+    /* Quantity controls (reused in both item types) */
+    function qtyControls(item) {
+        return `
+            <div class="quantity-controls">
+                <button class="qty-btn minus" aria-label="${ti('aria_decrease')}">-</button>
+                <input type="number" class="qty-input" value="${item.quantity}" min="1" aria-label="${ti('aria_quantity')}">
+                <button class="qty-btn plus" aria-label="${ti('aria_increase')}">+</button>
+            </div>`;
+    }
+
+    /* --- Normal item template --- */
+    function renderNormalItem(item) {
+        const discountedPrice = item.price * (1 - DISCOUNT_PERCENT / 100);
+        return `
+            <div class="cart-item" data-product-id="${item.id}">
+                <a href="${item.link || 'producto.html'}" class="cart-item-link">
+                    <img src="${item.image}" alt="${item.title}" class="cart-item-img">
+                    <div class="cart-item-details">
+                        <h3 class="cart-item-title">${item.title}</h3>
+                        <div class="cart-item-price">
+                            <del class="price-original">${formatPrice(item.price)}</del>
+                            <span class="price-discounted">${formatPrice(discountedPrice)}</span>
+                        </div>
+                    </div>
+                </a>
+                <div class="cart-item-actions">${qtyControls(item)}</div>
+                ${trashBtn()}
+            </div>`;
+    }
+
+    /* --- Bundle item template (nested breakdown) --- */
+    function renderBundleItem(item) {
+        const discountedPrice = item.price * (1 - DISCOUNT_PERCENT / 100);
+        const subRows = BUNDLE_SUB_ITEMS.map(sub => `
+            <li class="bundle-breakdown-item">
+                <img src="${sub.img}" alt="${sub.title}" class="bundle-sub-img">
+                <span class="bundle-sub-title">${sub.title}</span>
+                <span class="bundle-sub-included">Incluido</span>
+            </li>`).join('');
+
+        return `
+            <div class="cart-item cart-item--is-bundle" data-product-id="${item.id}">
+                <div class="cart-bundle-header">
+                    <div class="cart-bundle-header__info">
+                        <span class="bundle-badge">✨ Pack Ahorro</span>
+                        <h3 class="cart-item-title">${item.title}</h3>
+                        <div class="cart-item-price">
+                            <del class="price-original">${formatPrice(item.price)}</del>
+                            <span class="price-discounted">${formatPrice(discountedPrice)}</span>
+                        </div>
+                    </div>
+                    <div class="cart-bundle-header__controls">
+                        <div class="cart-item-actions">${qtyControls(item)}</div>
+                        ${trashBtn()}
+                    </div>
                 </div>
+                <ul class="bundle-breakdown-list" aria-label="Contenido del pack">
+                    ${subRows}
+                </ul>
             </div>`;
     }
 
@@ -61,37 +131,9 @@
             return;
         }
 
-        cartItemsContainer.innerHTML = cart.map(item => {
-            const discountedPrice = item.price * (1 - DISCOUNT_PERCENT / 100);
-            return `
-            <div class="cart-item" data-product-id="${item.id}">
-                <a href="${item.link || 'producto.html'}" class="cart-item-link">
-                    ${renderItemMedia(item)}
-                    <div class="cart-item-details">
-                        <h3 class="cart-item-title">${item.title}</h3>
-                        <div class="cart-item-price">
-                            <del class="price-original">${formatPrice(item.price)}</del>
-                            <span class="price-discounted">${formatPrice(discountedPrice)}</span>
-                        </div>
-                    </div>
-                </a>
-                <div class="cart-item-actions">
-                    <div class="quantity-controls">
-                        <button class="qty-btn minus" data-i18n-aria="aria_decrease" aria-label="${ti('aria_decrease')}">-</button>
-                        <input type="number" class="qty-input" value="${item.quantity}" min="1" data-i18n-aria="aria_quantity" aria-label="${ti('aria_quantity')}">
-                        <button class="qty-btn plus" data-i18n-aria="aria_increase" aria-label="${ti('aria_increase')}">+</button>
-                    </div>
-                </div>
-                <button class="btn btn-danger" aria-label="${ti('btn_remove')}" title="${ti('btn_remove')}" style="width: 63px; height: 45px; padding: 0.5rem; display: flex; align-items: center; justify-content: center; border-radius: 6px;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="3 6 5 6 21 6"></polyline>
-                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                        <line x1="10" y1="11" x2="10" y2="17"></line>
-                        <line x1="14" y1="11" x2="14" y2="17"></line>
-                    </svg>
-                </button>
-            </div>`;
-        }).join('');
+        cartItemsContainer.innerHTML = cart.map(item =>
+            item.id.includes('bundle') ? renderBundleItem(item) : renderNormalItem(item)
+        ).join('');
 
         bindEvents();
         renderSummary(window.EcoCart.getSubtotal());
