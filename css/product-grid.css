@@ -39,6 +39,12 @@
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
+/* Sold-out card: sin elevación hover */
+.product-card--sold-out:hover {
+  transform: none;
+  box-shadow: none;
+}
+
 .product-img-wrapper {
   position: relative;
   overflow: hidden;
@@ -50,6 +56,37 @@
   object-fit: cover;
   background-color: #f3f4f6;
   display: block;
+}
+
+/* Overlay "AGOTADO" sobre la imagen */
+.sold-out-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  background-color: rgba(0, 0, 0, 0.35);
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #fbbf24;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Botón desactivado en tarjetas agotadas */
+.product-card--sold-out .add-to-cart-btn {
+  background-color: var(--border-color);
+  color: var(--text-muted);
+  cursor: not-allowed;
+  border: none;
+  font-size: 1.125rem;
+  font-weight: 700;
+  border-radius: 5px;
 }
 
 /* Badge "-30%" sobre la imagen */

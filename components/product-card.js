@@ -73,11 +73,12 @@
 
     const DISCOUNT = 0.30;
 
-    const cardsHTML = products.map(product => {
+    const cardsHTML = products.map((product, index, arr) => {
+        const soldOut       = index >= arr.length - 2;
         const salePrice     = product.price;
         const originalPrice = (salePrice / (1 - DISCOUNT)).toFixed(2);
         return `
-        <a href="${product.link}" class="product-card"
+        <a href="${product.link}" class="product-card${soldOut ? ' product-card--sold-out' : ''}"
            data-product-id="${product.id}"
            data-product-title="${product.title}"
            data-product-price="${salePrice}"
@@ -85,7 +86,10 @@
            data-product-link="${product.link}">
             <div class="product-img-wrapper">
                 <img src="${product.image}" alt="${product.alt}" class="product-image" loading="lazy">
-                <span class="discount-badge" aria-label="Descuento del 30%">-30%</span>
+                ${soldOut
+                    ? '<div class="sold-out-overlay" aria-label="Producto agotado">AGOTADO</div>'
+                    : '<span class="discount-badge" aria-label="Descuento del 30%">-30%</span>'
+                }
             </div>
             <div class="product-info">
                 <h2 class="product-title" data-i18n="${product.titleKey}">${product.title}</h2>
@@ -93,7 +97,10 @@
                     <span class="product-price" data-i18n-price="${salePrice}">$${salePrice.toFixed(2)}</span>
                     <span class="product-price-old">$${originalPrice}</span>
                 </div>
-                <button class="btn btn-primary add-to-cart-btn js-add-to-cart" data-i18n="btn_add_to_cart">Añadir al carrito</button>
+                ${soldOut
+                    ? '<button class="btn add-to-cart-btn" disabled aria-disabled="true">Agotado</button>'
+                    : '<button class="btn btn-primary add-to-cart-btn js-add-to-cart" data-i18n="btn_add_to_cart">Añadir al carrito</button>'
+                }
             </div>
         </a>`;
     }).join('');
