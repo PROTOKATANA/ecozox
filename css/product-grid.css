@@ -39,11 +39,33 @@
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
+.product-img-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
 .product-image {
   width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
   background-color: #f3f4f6;
+  display: block;
+}
+
+/* Badge "-30%" sobre la imagen */
+.discount-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  background: #111827;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.03em;
+  pointer-events: none;
 }
 
 .product-info {
@@ -60,11 +82,28 @@
   color: var(--primary-color);
 }
 
+/* Contenedor flex para precio actual + tachado */
+.product-price-wrapper {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+
 .product-price {
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--secondary-color);
-  margin-bottom: 1rem;
+  font-family: var(--font-heading);
+  color: var(--primary-color);
+}
+
+/* Precio original tachado */
+.product-price-old {
+  font-family: var(--font-heading);
+  font-size: 0.9em;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: line-through;
 }
 
 .add-to-cart-btn {

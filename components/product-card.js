@@ -71,21 +71,32 @@
         }
     ];
 
-    const cardsHTML = products.map(product => `
+    const DISCOUNT = 0.30;
+
+    const cardsHTML = products.map(product => {
+        const salePrice     = product.price;
+        const originalPrice = (salePrice / (1 - DISCOUNT)).toFixed(2);
+        return `
         <a href="${product.link}" class="product-card"
            data-product-id="${product.id}"
            data-product-title="${product.title}"
-           data-product-price="${product.price}"
+           data-product-price="${salePrice}"
            data-product-image="${product.imageThumb}"
            data-product-link="${product.link}">
-            <img src="${product.image}" alt="${product.alt}" class="product-image" loading="lazy">
+            <div class="product-img-wrapper">
+                <img src="${product.image}" alt="${product.alt}" class="product-image" loading="lazy">
+                <span class="discount-badge" aria-label="Descuento del 30%">-30%</span>
+            </div>
             <div class="product-info">
                 <h2 class="product-title" data-i18n="${product.titleKey}">${product.title}</h2>
-                <span class="product-price" data-i18n-price="${product.price}">$${product.price.toFixed(2)}</span>
+                <div class="product-price-wrapper">
+                    <span class="product-price" data-i18n-price="${salePrice}">$${salePrice.toFixed(2)}</span>
+                    <span class="product-price-old">$${originalPrice}</span>
+                </div>
                 <button class="btn btn-primary add-to-cart-btn js-add-to-cart" data-i18n="btn_add_to_cart">Añadir al carrito</button>
             </div>
-        </a>
-    `).join('');
+        </a>`;
+    }).join('');
 
     el.outerHTML = `
     <div class="product-grid">
