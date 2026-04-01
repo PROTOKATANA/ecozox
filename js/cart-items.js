@@ -23,6 +23,31 @@
         return '$' + num.toFixed(2);
     }
 
+    /* ---------- Bundle helpers ---------- */
+
+    /* Accessory placeholder images reused from the product page */
+    const BUNDLE_ACC_IMGS = [
+        'https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&q=80&w=80&h=60',
+        'https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&q=80&w=80&h=60',
+    ];
+
+    function renderItemMedia(item) {
+        if (!item.id.includes('bundle')) {
+            return `<img src="${item.image}" alt="${item.title}" class="cart-item-img">`;
+        }
+        return `
+            <div class="cart-bundle-preview" aria-hidden="true">
+                <img src="${item.image}"
+                     alt="${item.title}"
+                     class="cart-bundle-preview__main">
+                <div class="cart-bundle-preview__thumbs">
+                    <img src="${BUNDLE_ACC_IMGS[0]}" alt="Accesorio 1" class="cart-bundle-preview__thumb">
+                    <span class="cart-bundle-preview__sep">+</span>
+                    <img src="${BUNDLE_ACC_IMGS[1]}" alt="Accesorio 2" class="cart-bundle-preview__thumb">
+                </div>
+            </div>`;
+    }
+
     function renderCart() {
         const cart = window.EcoCart.getCart();
 
@@ -41,7 +66,7 @@
             return `
             <div class="cart-item" data-product-id="${item.id}">
                 <a href="${item.link || 'producto.html'}" class="cart-item-link">
-                    <img src="${item.image}" alt="${item.title}" class="cart-item-img">
+                    ${renderItemMedia(item)}
                     <div class="cart-item-details">
                         <h3 class="cart-item-title">${item.title}</h3>
                         <div class="cart-item-price">
