@@ -360,22 +360,6 @@
    Bundle anidado (Nested Bundle UI)
    ======================================== */
 
-/* Badge — reutilizado en la cabecera del bundle */
-.bundle-badge {
-  display: inline-block;
-  background: linear-gradient(135deg, #fef3c7, #fde68a);
-  color: #92400e;
-  font-size: 0.6875rem;
-  font-weight: 700;
-  padding: 0.2rem 0.55rem;
-  border-radius: 100px;
-  border: 1px solid #f59e0b;
-  letter-spacing: 0.03em;
-  white-space: nowrap;
-  line-height: 1.5;
-  margin-bottom: 0.3rem;
-}
-
 /* Tarjeta bundle: flex-column, fondo y borde diferenciados */
 .cart-item--is-bundle {
   display: flex;
@@ -387,31 +371,19 @@
   padding: 1.25rem;
 }
 
-/* Cabecera: info a la izquierda, controles a la derecha */
+/* Cabecera: título + precio apilados */
 .cart-bundle-header {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.cart-bundle-header__info {
-  display: flex;
   flex-direction: column;
-  min-width: 0;
-}
-
-.cart-bundle-header__controls {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  flex-shrink: 0;
+  gap: 0.25rem;
 }
 
 /* Lista de sub-artículos */
 .bundle-breakdown-list {
   list-style: none;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
   margin-top: 1rem;
   padding-top: 1rem;
   border-top: 1px dashed var(--border-color);
@@ -450,20 +422,24 @@
   flex-shrink: 0;
 }
 
+/* Pie: cantidad y botón eliminar, separados por línea dashed */
+.cart-bundle-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--border-color);
+}
+
 /* Override del grid mobile para el bundle — usa flex simple */
 @media (max-width: 640px) {
   .cart-item--is-bundle {
     display: flex;
     padding: 1rem;
-  }
-
-  .cart-bundle-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .cart-bundle-header__controls {
-    width: 100%;
-    justify-content: space-between;
   }
 }

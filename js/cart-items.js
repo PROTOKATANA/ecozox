@@ -99,22 +99,19 @@
         return `
             <div class="cart-item cart-item--is-bundle" data-product-id="${item.id}">
                 <div class="cart-bundle-header">
-                    <div class="cart-bundle-header__info">
-                        <span class="bundle-badge">✨ Pack Ahorro</span>
-                        <h3 class="cart-item-title">${item.title}</h3>
-                        <div class="cart-item-price">
-                            <del class="price-original">${formatPrice(item.price)}</del>
-                            <span class="price-discounted">${formatPrice(discountedPrice)}</span>
-                        </div>
-                    </div>
-                    <div class="cart-bundle-header__controls">
-                        <div class="cart-item-actions">${qtyControls(item)}</div>
-                        ${trashBtn()}
+                    <h3 class="cart-item-title">${item.title}</h3>
+                    <div class="cart-item-price">
+                        <del class="price-original">${formatPrice(item.price)}</del>
+                        <span class="price-discounted">${formatPrice(discountedPrice)}</span>
                     </div>
                 </div>
                 <ul class="bundle-breakdown-list" aria-label="Contenido del pack">
                     ${subRows}
                 </ul>
+                <div class="cart-bundle-footer">
+                    <div class="cart-item-actions">${qtyControls(item)}</div>
+                    ${trashBtn()}
+                </div>
             </div>`;
     }
 
