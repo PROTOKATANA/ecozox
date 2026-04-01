@@ -71,3 +71,29 @@
   margin-top: auto;
   width: 100%;
 }
+
+/* ========================================
+   CTA Button — Product Card overrides
+   Mirrors the action-buttons styling from
+   product-detail so both contexts son consistentes.
+   ======================================== */
+.product-card .btn-primary {
+  background-color: #111827;
+  color: #ffffff;
+  border: none;
+  padding: 1rem 1.75rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  border-radius: 5px;
+  letter-spacing: 0.01em;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.product-card .btn-primary:hover {
+  background-color: #1f2937;
+}
+
+.product-card .btn-primary:active {
+  background-color: #030712;
+  transform: scale(0.98);
+}
