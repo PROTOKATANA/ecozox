@@ -42,6 +42,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  align-self: stretch; /* iguala su altura a la tarjeta con imágenes de su fila */
   min-height: 280px; /* garantiza que el botón mantenga su tamaño en móvil */
 }
 
