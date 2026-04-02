@@ -175,20 +175,40 @@
                     </div>
 
                     <!-- Widget de Información de Envío -->
-                    <div class="shipping-info-widget" aria-label="Información de envío">
-                        <div class="shipping-info-widget__left">
-                            <svg class="shipping-info-widget__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <div class="shipping-info-card" aria-label="Información de envío">
+
+                        <!-- Capa 1: Cabecera — icono camión + título + badge -->
+                        <div class="sic__header">
+                            <svg class="sic__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <rect x="1" y="3" width="15" height="13" rx="1"/>
                                 <path d="M16 8h4l3 5v4h-7V8z"/>
                                 <circle cx="5.5" cy="18.5" r="2.5"/>
                                 <circle cx="18.5" cy="18.5" r="2.5"/>
                             </svg>
-                            <div class="shipping-info-widget__text">
-                                <p class="shipping-info-widget__title">Envío Gratis</p>
-                                <p class="shipping-info-widget__desc">Seguimiento en tiempo real con opciones de devolución y tiempos de entrega garantizados.</p>
-                            </div>
+                            <span class="sic__title">Envío Gratis</span>
+                            <span class="sic__badge">GRATIS</span>
                         </div>
-                        <span class="shipping-info-widget__price" aria-label="Precio de envío: gratis">GRATIS</span>
+
+                        <!-- Capa 2: Beneficios — lista -->
+                        <div class="sic__row">
+                            <ul class="sic__list">
+                                <li>Seguimiento de paquetes en tiempo real</li>
+                                <li>Devolución abierta en cualquier momento</li>
+                                <li>Plazos de entrega garantizados</li>
+                            </ul>
+                        </div>
+
+                        <!-- Capa 3: Urgencia — fecha dinámica -->
+                        <div class="sic__row">
+                            <svg class="sic__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                <line x1="16" y1="2" x2="16" y2="6"/>
+                                <line x1="8" y1="2" x2="8" y2="6"/>
+                                <line x1="3" y1="10" x2="21" y2="10"/>
+                            </svg>
+                            <span class="sic__text">Entrega en 4 días&thinsp;:&thinsp;<strong id="dynamic-delivery-date" class="delivery-highlight"></strong></span>
+                        </div>
+
                     </div>
 
                     <div class="action-buttons">
@@ -386,5 +406,6 @@
     <script src="js/i18n.js" defer></script>
     <script src="app.js" defer></script>
     <script src="js/sticky-cart.js" defer></script>
+    <script src="js/shipping-widget.js" defer></script>
 </body>
 </html>
