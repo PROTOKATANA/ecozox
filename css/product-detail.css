@@ -156,6 +156,12 @@
   padding: 1.15rem 1.10rem;
 }
 
+@media (max-width: 1023px) {
+  .product-info__scroll {
+    margin-bottom: 1rem;
+  }
+}
+
 .product-info__scroll .purchase-options {
   margin-bottom: 0;
 }
