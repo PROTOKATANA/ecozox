@@ -121,6 +121,11 @@
 
 /* .reviews-grid usa display:contents — sus hijos fluyen en .reviews-layout */
 
+/* El último review-card se estira para igualar la altura de su pareja de fila */
+.reviews-grid .review-card:last-child {
+  align-self: stretch;
+}
+
 /* ---- Review card — nested card structure ---- */
 .review-card {
   background: var(--card-bg);
