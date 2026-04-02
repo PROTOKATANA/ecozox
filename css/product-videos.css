@@ -3,7 +3,7 @@
    ======================================== */
 
 .product-videos-section {
-  padding: 4rem 0;
+  padding: 25px 0;
   background-color: var(--card-bg);
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
@@ -104,7 +104,7 @@
 
 @media (max-width: 480px) {
   .product-videos-section {
-    padding: 2.5rem 0;
+    padding: 25px 0;
   }
 
   .product-video-card {
