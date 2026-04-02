@@ -41,6 +41,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  min-height: 280px; /* garantiza que el botón mantenga su tamaño en móvil */
 }
 
 /* --- Cabecera: título --- */
@@ -100,11 +101,10 @@
 }
 
 /* --- Pie: CTA --- */
-/* --- Pie: CTA --- */
 .rsc__footer {
   flex: 1;
   display: flex;
-  align-items: stretch;           /* el botón se estira al alto completo */
+  align-items: stretch;
   padding: 0.875rem 1.25rem;
   width: 100%;
   box-sizing: border-box;
@@ -113,7 +113,7 @@
 
 .rsc__write-btn {
   width: 100%;
-  height: 100%;                   /* ocupa todo el alto disponible del footer */
+  height: 100%;
   border-radius: 6px;
 }
 
