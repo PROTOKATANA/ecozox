@@ -47,7 +47,7 @@
     flex: 1;
     min-height: 0;     /* permite que Flexbox recorte el contenido */
     overflow-y: auto;
-    padding-right: 1rem;
+    padding-right: 0.75rem; /* ligeramente menos que el resto para el scrollbar */
 
     /* Firefox */
     scrollbar-width: thin;
@@ -71,9 +71,8 @@
   /* Zona fija: envío + botones siempre visibles */
   .product-info__fixed {
     flex-shrink: 0;
-    padding-top: 1.5rem;
+    padding-top: 0.5rem;
     margin-top: auto;
-    border-top: 1px solid var(--border-color);
     background-color: var(--bg-color);
   }
 }
@@ -156,6 +155,16 @@
 .thumbnail.active {
   border-color: var(--primary-color);
   opacity: 1;
+}
+
+/* ========================================
+   Product Info — ListBuilder card
+   ======================================== */
+.product-info__scroll {
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background: var(--card-bg);
+  padding: 1.25rem;
 }
 
 .product-info-detail h1 {
