@@ -17,6 +17,7 @@
   .product-detail-grid {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 3rem;
+    align-items: stretch;
   }
 }
 
@@ -31,21 +32,20 @@
 
 @media (min-width: 1024px) {
   .product-gallery {
-    position: sticky;
-    top: calc(80px + 2rem); /* altura header fijo + margen */
+    height: 100%;
   }
 
   .product-info-detail {
-    position: sticky;
-    top: calc(80px + 2rem);
-    max-height: calc(100vh - 120px);
     display: flex;
     flex-direction: column;
+    height: 0;         /* no dicta la altura de la fila del grid… */
+    min-height: 100%;  /* …pero sí la ocupa completamente */
   }
 
   /* Zona scrolleable */
   .product-info__scroll {
     flex: 1;
+    min-height: 0;     /* permite que Flexbox recorte el contenido */
     overflow-y: auto;
     padding-right: 1rem;
 
