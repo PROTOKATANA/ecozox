@@ -35,9 +35,9 @@
    Primer ítem estático del grid de reseñas
    ======================================== */
 .review-summary-card {
-  background: var(--bg-color);
+  background: var(--card-bg);
   border: 1px solid var(--border-color);
-  border-radius: 12px;
+  border-radius: 8px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -123,7 +123,7 @@
 .review-card {
   background: var(--card-bg);
   border: 1px solid var(--border-color);
-  border-radius: var(--border-radius);
+  border-radius: 8px;
   padding: 1.25rem 1.5rem;
   display: flex;
   flex-direction: column;
