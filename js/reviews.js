@@ -8,7 +8,13 @@
     if (!grid) return;
 
     /* ---- Mock Data ---- */
+    /* Orden diseñado para el grid de 2 columnas:
+       Fila 1: summary-card (estático) | #1 CON imágenes
+       Fila 2: #2 CON imágenes         | #3 CON imágenes
+       Fila 3: #4 solo texto           | #5 solo texto
+       Fila 4: #6 CON imágenes         | #7 CON imágenes */
     const REVIEWS = [
+        /* ── Fila 1, col 2 ── */
         {
             id: 1,
             name: 'María García',
@@ -21,15 +27,7 @@
                 'https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&q=80&w=600&h=600',
             ]
         },
-        {
-            id: 2,
-            name: 'Carlos Martínez',
-            stars: 5,
-            date: '2025-10-22',
-            title: 'Mi compra del año',
-            body: 'Diseño minimalista y elegante, tal como lo describe la tienda. Son cómodos incluso después de 6 horas de uso continuo. La batería dura exactamente lo que prometen.',
-            images: []
-        },
+        /* ── Fila 2, col 1 ── */
         {
             id: 3,
             name: 'Sofía Rodríguez',
@@ -39,17 +37,11 @@
             body: 'Los uso en videollamadas y la gente siempre me dice que se me escucha perfecto. El micrófono captura la voz con mucha precisión y el aislamiento es notable.',
             images: [
                 'https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&q=80&w=600&h=600',
+                'https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&q=80&w=600&h=600',
+                'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=600&h=600',
             ]
         },
-        {
-            id: 4,
-            name: 'Andrés López',
-            stars: 5,
-            date: '2025-09-18',
-            title: 'Superan a marcas de mayor precio',
-            body: 'Venía de usar otra marca mucho más cara y la diferencia no justifica el coste. Estos EcoZox son superiores en comodidad y la cancelación de ruido activa es verdaderamente efectiva.',
-            images: []
-        },
+        /* ── Fila 2, col 2 ── */
         {
             id: 5,
             name: 'Laura Fernández',
@@ -63,15 +55,27 @@
                 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=600&h=600',
             ]
         },
+        /* ── Fila 3, col 1 — solo texto ── */
         {
-            id: 6,
-            name: 'Miguel Torres',
+            id: 2,
+            name: 'Carlos Martínez',
             stars: 5,
-            date: '2025-08-11',
-            title: 'Cómodos y duraderos',
-            body: 'A los 3 meses de uso intenso siguen como el primer día. La almohadilla es muy suave y los materiales transmiten una solidez que no esperaba a este precio.',
+            date: '2025-10-22',
+            title: 'Mi compra del año',
+            body: 'Diseño minimalista y elegante, tal como lo describe la tienda. Son cómodos incluso después de 6 horas de uso continuo. La batería dura exactamente lo que prometen.',
             images: []
         },
+        /* ── Fila 3, col 2 — solo texto ── */
+        {
+            id: 4,
+            name: 'Andrés López',
+            stars: 5,
+            date: '2025-09-18',
+            title: 'Superan a marcas de mayor precio',
+            body: 'Venía de usar otra marca mucho más cara y la diferencia no justifica el coste. Estos EcoZox son superiores en comodidad y la cancelación de ruido activa es verdaderamente efectiva.',
+            images: []
+        },
+        /* ── Fila 4, col 1 ── */
         {
             id: 7,
             name: 'Elena Vázquez',
@@ -80,6 +84,22 @@
             title: 'Muy buenos, con un pequeño pero',
             body: 'La calidad de sonido y el diseño son excelentes. Le quito una estrella porque la app de acompañamiento podría ser más intuitiva. De resto, una compra muy recomendable.',
             images: [
+                'https://images.unsplash.com/photo-1524678606370-a47ad25cb82a?auto=format&fit=crop&q=80&w=600&h=600',
+                'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=600&h=600',
+                'https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&q=80&w=600&h=600',
+            ]
+        },
+        /* ── Fila 4, col 2 ── */
+        {
+            id: 6,
+            name: 'Miguel Torres',
+            stars: 5,
+            date: '2025-08-11',
+            title: 'Cómodos y duraderos',
+            body: 'A los 3 meses de uso intenso siguen como el primer día. La almohadilla es muy suave y los materiales transmiten una solidez que no esperaba a este precio.',
+            images: [
+                'https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&q=80&w=600&h=600',
+                'https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&q=80&w=600&h=600',
                 'https://images.unsplash.com/photo-1524678606370-a47ad25cb82a?auto=format&fit=crop&q=80&w=600&h=600',
             ]
         }
