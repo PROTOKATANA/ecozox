@@ -65,13 +65,43 @@
                     <!-- Widget de Opciones de Compra -->
                     <div class="purchase-options" id="purchaseOptions" role="radiogroup" aria-label="Opciones de compra">
 
-                        <!-- Opción A: Individual (seleccionada por defecto) -->
+                        <!-- Opción A: Individual — Nested Card -->
                         <div class="purchase-option purchase-option--selected"
                              data-option="individual"
                              role="radio"
                              aria-checked="true"
                              tabindex="0">
-                            <div class="purchase-option__row">
+
+                            <!-- Cabecera: título + precios -->
+                            <div class="po-single__header">
+                                <h3 class="po-single__title">Artículo Individual</h3>
+                                <div class="po-single__prices">
+                                    <span class="po-single__price-original">$355.71</span>
+                                    <span class="po-single__price-sale">$249.00</span>
+                                </div>
+                            </div>
+
+                            <!-- Cuerpo: artículo único -->
+                            <ul class="po-single__body">
+                                <li class="po-single__item">
+                                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=80&h=80"
+                                         alt="Auriculares Silence Pro" class="po-single__item-img">
+                                    <span class="po-single__item-name">Auriculares Silence Pro</span>
+                                </li>
+                            </ul>
+
+                            <!-- Control de cantidad -->
+                            <div class="po-single__qty-row purchase-option__qty">
+                                <span class="po-single__qty-label" data-i18n="label_quantity">Cantidad:</span>
+                                <div class="quantity-controls">
+                                    <button class="qty-btn minus" data-i18n-aria="aria_decrease" aria-label="Disminuir cantidad">-</button>
+                                    <input type="number" class="qty-input" value="1" min="1" data-i18n-aria="aria_quantity" aria-label="Cantidad">
+                                    <button class="qty-btn plus" data-i18n-aria="aria_increase" aria-label="Aumentar cantidad">+</button>
+                                </div>
+                            </div>
+
+                            <!-- Pie: radio + CTA -->
+                            <div class="po-single__footer">
                                 <span class="purchase-option__radio">
                                     <svg class="radio-icon radio-icon--unchecked" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                                         <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/>
@@ -81,15 +111,9 @@
                                         <circle cx="10" cy="10" r="5" fill="currentColor"/>
                                     </svg>
                                 </span>
-                                <span class="purchase-option__label">Comprar solo este artículo</span>
-                                <div class="purchase-option__qty">
-                                    <div class="quantity-controls">
-                                        <button class="qty-btn minus" data-i18n-aria="aria_decrease" aria-label="Disminuir cantidad">-</button>
-                                        <input type="number" class="qty-input" value="1" min="1" data-i18n-aria="aria_quantity" aria-label="Cantidad">
-                                        <button class="qty-btn plus" data-i18n-aria="aria_increase" aria-label="Aumentar cantidad">+</button>
-                                    </div>
-                                </div>
+                                <span class="po-single__cta">Comprar solo este artículo</span>
                             </div>
+
                         </div>
 
                         <!-- Opción B: Bundle — Nested Card -->
