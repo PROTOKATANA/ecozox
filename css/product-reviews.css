@@ -7,43 +7,84 @@
   border-top: 1px solid var(--border-color);
 }
 
-.reviews-section__title {
-  font-size: 1.375rem;
-  font-weight: 700;
-  margin-bottom: 1.75rem;
-  color: var(--primary-color);
+/* ========================================
+   Reviews Layout — grid unificado
+   Summary card + review cards en la misma cuadrícula
+   ======================================== */
+.reviews-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
 }
 
-/* ---- Summary header ---- */
-.reviews-header {
+@media (min-width: 768px) {
+  .reviews-layout {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* display:contents disuelve el contenedor JS en el grid padre;
+   sus hijos (.review-card) fluyen directamente como ítems del grid.
+   El elemento sigue existiendo para el JS (innerHTML sigue funcionando). */
+.reviews-grid {
+  display: contents;
+}
+
+/* ========================================
+   Review Summary Card — Nested Card Layout
+   Primer ítem estático del grid de reseñas
+   ======================================== */
+.review-summary-card {
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Cabecera: título --- */
+.rsc__header {
+  padding: 0.875rem 1.25rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.rsc__title {
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* --- Cuerpo: puntuación + conteo --- */
+.rsc__body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1.25rem;
-  margin-bottom: 2.5rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid var(--border-color);
+  gap: 1rem;
+  padding: 0.875rem 1.25rem;
+  width: 100%;
+  box-sizing: border-box;
+  border-top: 1px dashed var(--border-color);
 }
 
-.reviews-summary {
+.rsc__score-group {
   display: flex;
   align-items: center;
-  gap: 0.875rem;
+  gap: 0.75rem;
 }
 
-.reviews-score {
-  font-size: 2.75rem;
+.rsc__score {
+  font-size: 2.5rem;
   font-weight: 800;
   line-height: 1;
   color: var(--primary-color);
-  letter-spacing: -0.02em;
-}
-
-.reviews-summary-stars {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
+  letter-spacing: -0.03em;
+  font-family: var(--font-heading);
 }
 
 #reviews-summary-stars {
@@ -51,23 +92,32 @@
   gap: 3px;
 }
 
-.reviews-count {
-  font-size: 0.85rem;
+.rsc__count {
+  font-size: 0.875rem;
   color: var(--text-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
-/* ---- Review grid ---- */
-.reviews-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
+/* --- Pie: CTA --- */
+.rsc__footer {
+  padding: 0.875rem 1.25rem;
+  width: 100%;
+  box-sizing: border-box;
+  border-top: 1px dashed var(--border-color);
 }
 
-@media (min-width: 768px) {
-  .reviews-grid {
-    grid-template-columns: repeat(2, 1fr);
+.rsc__write-btn {
+  border-radius: 6px;
+}
+
+@media (max-width: 640px) {
+  .rsc__write-btn {
+    width: 100%;
   }
 }
+
+/* .reviews-grid usa display:contents — sus hijos fluyen en .reviews-layout */
 
 /* ---- Review card ---- */
 .review-card {

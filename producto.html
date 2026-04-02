@@ -265,20 +265,37 @@
     <!-- Reviews -->
     <section class="reviews-section">
         <div class="container">
-            <h2 class="reviews-section__title">Reseñas de Clientes</h2>
+            <div class="reviews-layout">
 
-            <div class="reviews-header">
-                <div class="reviews-summary">
-                    <span class="reviews-score" id="reviews-summary-score">—</span>
-                    <div class="reviews-summary-stars">
-                        <div id="reviews-summary-stars"></div>
-                        <span class="reviews-count" id="reviews-summary-count"></span>
+                <!-- Primer ítem del grid: resumen de reseñas -->
+                <div class="review-summary-card">
+
+                    <!-- Cabecera: título -->
+                    <div class="rsc__header">
+                        <h2 class="rsc__title">Reseñas de Clientes</h2>
                     </div>
-                </div>
-                <button class="btn btn-primary" id="openReviewDialog">Escribir una reseña</button>
-            </div>
 
-            <div class="reviews-grid" id="reviews-grid"></div>
+                    <!-- Cuerpo: puntuación + conteo -->
+                    <div class="rsc__body">
+                        <div class="rsc__score-group">
+                            <span class="rsc__score" id="reviews-summary-score">—</span>
+                            <div id="reviews-summary-stars"></div>
+                        </div>
+                        <span class="rsc__count" id="reviews-summary-count"></span>
+                    </div>
+
+                    <!-- Pie: CTA -->
+                    <div class="rsc__footer">
+                        <button class="btn btn-primary rsc__write-btn" id="openReviewDialog">Escribir una reseña</button>
+                    </div>
+
+                </div>
+
+                <!-- JS llena este contenedor; display:contents lo disuelve
+                     en el grid padre para que sus hijos fluyan como pares -->
+                <div class="reviews-grid" id="reviews-grid"></div>
+
+            </div>
         </div>
     </section>
 
