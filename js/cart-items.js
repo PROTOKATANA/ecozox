@@ -149,7 +149,7 @@
 
         const savingsRow = subtotal > 0 ? `
                 <div class="cs__row">
-                    <span>• Descuento<span class="cs__row--green">(${DISCOUNT_PERCENT}%)</span></span>
+                    <span>• Descuento <span class="cs__row--green">(${DISCOUNT_PERCENT}%)</span></span>
                     <span class="cs__row--green">- ${formatPrice(savings)}</span>
                 </div>` : '';
 
