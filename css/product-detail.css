@@ -60,7 +60,6 @@
   /* Zona fija: envío + botones siempre visibles */
   .product-info__fixed {
     flex-shrink: 0;
-    padding-top: 0.5rem;
     margin-top: auto;
     background-color: var(--bg-color);
   }
@@ -156,10 +155,8 @@
   padding: 1.15rem 1.10rem;
 }
 
-@media (max-width: 1023px) {
-  .product-info__scroll {
-    margin-bottom: 1rem;
-  }
+.product-info__scroll {
+  margin-bottom: 0.8rem;
 }
 
 .product-info__scroll .purchase-options {
@@ -227,6 +224,13 @@
 .qty-input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.action-buttons-card {
+  background: var(--card-bg);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 0.5rem;
 }
 
 .action-buttons {
