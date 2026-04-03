@@ -22,26 +22,22 @@
                 <div class="cart-items"></div>
 
                 <div class="cart-summary">
-                    <h2 data-i18n="cart_summary_title">Resumen del Pedido</h2>
-                    <div class="summary-body" style="margin-top: 1.5rem;">
-                        <div class="summary-row">
-                            <span data-i18n="cart_subtotal">Subtotal</span>
-                            <span>$0.00</span>
+                    <div class="cs__inner">
+
+                        <!-- Cabecera -->
+                        <div class="cs__header">
+                            <h2 class="cs__title" data-i18n="cart_summary_title">Resumen del Pedido</h2>
                         </div>
-                        <div class="summary-row">
-                            <span data-i18n="cart_shipping">Envío</span>
-                            <span data-i18n="cart_shipping_free">Gratis</span>
+
+                        <!-- Filas dinámicas (JS las rellena) -->
+                        <div class="summary-body"></div>
+
+                        <!-- Botón de pago -->
+                        <div class="cs__footer">
+                            <button class="cs__pay-btn checkout-btn" data-i18n="cart_checkout">PAGAR</button>
                         </div>
-                        <div class="summary-row">
-                            <span data-i18n="cart_tax">Impuestos estimados</span>
-                            <span>$0.00</span>
-                        </div>
-                        <div class="summary-total">
-                            <span data-i18n="cart_total">Total</span>
-                            <span>$0.00</span>
-                        </div>
+
                     </div>
-					<button class="btn btn-primary checkout-btn" data-i18n="cart_checkout">Proceder al pago</button>
                 </div>
             </div>
         </div>

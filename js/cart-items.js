@@ -145,33 +145,30 @@
     function renderSummary(subtotal) {
         const discountedSubtotal = subtotal * (1 - DISCOUNT_PERCENT / 100);
         const savings = subtotal - discountedSubtotal;
-        const tax = discountedSubtotal * 0.07;
-        const total = discountedSubtotal + tax;
+        const total = discountedSubtotal;
 
         const savingsRow = subtotal > 0 ? `
-                <div class="summary-row summary-savings">
-                    <span>Ahorro (${DISCOUNT_PERCENT}%)</span>
-                    <span class="savings-amount">- ${formatPrice(savings)}</span>
+                <div class="cs__row">
+                    <span>• Descuento<span class="cs__row--green">(${DISCOUNT_PERCENT}%)</span></span>
+                    <span class="cs__row--green">- ${formatPrice(savings)}</span>
                 </div>` : '';
 
         const summaryBody = cartSummary.querySelector('.summary-body');
         if (summaryBody) {
             summaryBody.innerHTML = `
-                <div class="summary-row">
-                    <span data-i18n="cart_subtotal">${ti('cart_subtotal')}</span>
-                    <span>${subtotal > 0 ? `<del class="price-original">${formatPrice(subtotal)}</del>` : formatPrice(0)}</span>
+                <div class="cs__rows">
+                    <div class="cs__row">
+                        <span>• ${ti('cart_subtotal')}</span>
+                        <span>${subtotal > 0 ? `<del class="price-original">${formatPrice(subtotal)}</del>` : formatPrice(0)}</span>
+                    </div>
+                    ${savingsRow}
+                    <div class="cs__row">
+                        <span>• ${ti('cart_shipping')}</span>
+                        <span class="cs__free cs__row--green">GRATIS</span>
+                    </div>
                 </div>
-                ${savingsRow}
-                <div class="summary-row">
-                    <span data-i18n="cart_shipping">${ti('cart_shipping')}</span>
-                    <span data-i18n="cart_shipping_free">${ti('cart_shipping_free')}</span>
-                </div>
-                <div class="summary-row">
-                    <span data-i18n="cart_tax">${ti('cart_tax')}</span>
-                    <span>${formatPrice(tax)}</span>
-                </div>
-                <div class="summary-total">
-                    <span data-i18n="cart_total">${ti('cart_total')}</span>
+                <div class="cs__total">
+                    <span>${ti('cart_total')}</span>
                     <span>${formatPrice(total)}</span>
                 </div>`;
         }
