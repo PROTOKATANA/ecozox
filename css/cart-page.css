@@ -335,6 +335,21 @@
   height: 60px;
 }
 
+.cart-body-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+  flex: 1;
+  min-width: 0;
+}
+
+.cart-body-link:hover .cart-body-title,
+.cart-body-link:hover {
+  text-decoration: underline;
+}
+
 .cart-body-title {
   flex: 1;
   font-size: 0.875rem;

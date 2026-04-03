@@ -72,7 +72,9 @@
         return `
             <div class="cart-item" data-product-id="${item.id}">
                 <div class="cart-item-header">
-                    <h3 class="cart-item-title">${item.title}</h3>
+                    <h3 class="cart-item-title">
+                        <a href="producto.html" class="cart-body-link">${item.title}</a>
+                    </h3>
                     <div class="cart-item-price">
                         <del class="price-original">${formatPrice(item.price)}</del>
                         <span class="price-discounted">${formatPrice(discountedPrice)}</span>
@@ -105,7 +107,9 @@
         return `
             <div class="cart-item" data-product-id="${item.id}">
                 <div class="cart-item-header">
-                    <h3 class="cart-item-title">${item.title}</h3>
+                    <h3 class="cart-item-title">
+                        <a href="producto.html" class="cart-body-link">${item.title}</a>
+                    </h3>
                     <div class="cart-item-price">
                         <del class="price-original">${formatPrice(item.price)}</del>
                         <span class="price-discounted">${formatPrice(discountedPrice)}</span>
