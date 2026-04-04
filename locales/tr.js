@@ -122,8 +122,8 @@
         /* ---------- Footer ---------- */
         footer_tagline: 'Günlük yaşam için sadelik, işlevsellik ve zarafet.',
         footer_legal_title: 'Yasal Bağlantılar',
-        footer_terms: 'Terms & Conditions',
-        footer_privacy: 'Privacy Policy',
+        footer_terms: 'Şartlar ve Koşullar',
+        footer_privacy: 'Gizlilik Politikası',
         footer_shipping: 'Kargo ve İade',
         footer_support_title: 'Destek',
         footer_email_label: 'E-posta:',
@@ -147,6 +147,32 @@
         shipping_s4_title: '4. İade Politikası',
         shipping_s4_text: 'Ürün kullanılmamış ve orijinal durumunda olması koşuluyla, teslimattan sonra 30 güne kadar iade kabul ediyoruz. İade kargo masrafları düşülerek sipariş tutarının tamamını iade edeceğiz.',
         shipping_s5_title: '5. Hasarlı Ürünler',
-        shipping_s5_text: 'Siparişiniz herhangi bir şekilde hasarlı ulaşırsa, lütfen en kısa sürede sipariş numaranız ve ürünün durumunun fotoğrafı ile ecozox@support@gmail.com adresine e-posta gönderin. Her durumu ayrı ayrı değerlendiriyoruz ve tatmin edici bir çözüm bulmak için elimizden gelenin en iyisini yapacağız.'
+        shipping_s5_text: 'Siparişiniz herhangi bir şekilde hasarlı ulaşırsa, lütfen en kısa sürede sipariş numaranız ve ürünün durumunun fotoğrafı ile ecozox@support@gmail.com adresine e-posta gönderin. Her durumu ayrı ayrı değerlendiriyoruz ve tatmin edici bir çözüm bulmak için elimizden gelenin en iyisini yapacağız.',
+
+        /* ---------- Terms & Conditions ---------- */
+        terms_page_title: 'Şartlar ve Koşullar',
+        terms_s1_title: '1. Giriş',
+        terms_s1_text: 'EcoZox\'a hoş geldiniz. Bu şartlar ve koşullar, EcoZox web sitesinin kullanımına ilişkin kuralları ve düzenlemeleri açıklamaktadır. Bu web sitesine erişerek bu şartları tamamen kabul ettiğinizi varsayıyoruz.',
+        terms_s2_title: '2. Lisans',
+        terms_s2_text: 'Aksi belirtilmedikçe, EcoZox ve/veya lisans verenler EcoZox\'taki tüm materyaller üzerindeki fikri mülkiyet haklarına sahiptir. Tüm fikri mülkiyet hakları saklıdır.',
+        terms_s3_title: '3. Mağaza Kullanımı',
+        terms_s3_text: 'Mağazamızı kullanarak kişisel verileriniz ve ödeme yöntemleriniz hakkında doğru, kesin ve güncel bilgi sağlamayı kabul edersiniz. Bu web sitesinin yasa dışı veya izinsiz amaçlarla kullanılması yasaktır.',
+        terms_s4_title: '4. Hizmet ve Fiyat Değişiklikleri',
+        terms_s4_text: 'Ürünlerimizin fiyatları önceden bildirimde bulunulmaksızın değiştirilebilir. Hizmeti önceden bildirimde bulunmaksızın her zaman değiştirme veya durdurmak hakkımızı saklı tutarız.',
+        terms_s5_title: '5. Sorumluluk Sınırlaması',
+        terms_s5_text: 'Hiçbir koşulda EcoZox, yöneticileri, çalışanları veya bağlı şirketleri, hizmetin kullanımından kaynaklanan doğrudan veya dolaylı zararlardan sorumlu tutulmaz.',
+
+        /* ---------- Privacy Policy ---------- */
+        privacy_page_title: 'Gizlilik Politikası',
+        privacy_s1_title: '1. Topladığımız Bilgiler',
+        privacy_s1_text: 'Sitemizi ziyaret ettiğinizde web tarayıcınız, IP adresiniz, saat diliminiz ve çerezler dahil cihazınıza ilişkin bazı bilgileri otomatik olarak topluyoruz. Satın alma sırasında adınızı, adresinizi, ödeme bilgilerinizi ve e-postanızı da topluyoruz.',
+        privacy_s2_title: '2. Bilgilerinizi Nasıl Kullanıyoruz',
+        privacy_s2_text: 'Topladığımız bilgileri siparişleri işlemek, kargolama düzenlemek, sizinle iletişim kurmak ve dolandırıcılığı önlemek için kullanıyoruz.',
+        privacy_s3_title: '3. Bilgilerinizin Paylaşımı',
+        privacy_s3_text: 'Siteyi işletmemize ve siparişleri işlememize yardımcı olmak için Google Analytics dahil üçüncü taraflarla bilgilerinizi paylaşıyoruz.',
+        privacy_s4_title: '4. Veri Saklama',
+        privacy_s4_text: 'Sipariş verdiğinizde, silmemizi talep etmediğiniz sürece sipariş bilgilerinizi kayıtlarımızda saklıyoruz.',
+        privacy_s5_title: '5. Haklarınız',
+        privacy_s5_text: 'Kişisel bilgilerinize erişme, bunları düzeltme, güncelleme veya silme talep etme hakkınız vardır. Sitedeki iletişim bilgileri aracılığıyla bizimle iletişime geçin.'
     };
-})();
+})()

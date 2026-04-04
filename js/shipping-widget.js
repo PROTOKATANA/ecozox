@@ -1,19 +1,27 @@
 /* ========================================
    Shipping Widget — Dynamic Delivery Date
-   Calcula fecha actual + 4 días y la inyecta
-   en #dynamic-delivery-date
+   Calculates today + 4 days and renders it
+   in the current i18n locale.
    ======================================== */
 
 (function () {
-    const el = document.getElementById('dynamic-delivery-date');
+    var el = document.getElementById('dynamic-delivery-date');
     if (!el) return;
 
-    const delivery = new Date();
-    delivery.setDate(delivery.getDate() + 4);
+    function renderDate() {
+        var delivery = new Date();
+        delivery.setDate(delivery.getDate() + 4);
+        var locale = (window.EcoI18n && window.EcoI18n.getDateLocale)
+            ? window.EcoI18n.getDateLocale()
+            : 'es-ES';
+        el.textContent = new Intl.DateTimeFormat(locale, {
+            weekday: 'long',
+            day:     'numeric',
+            month:   'long'
+        }).format(delivery);
+    }
 
-    el.textContent = new Intl.DateTimeFormat('es-ES', {
-        weekday: 'long',
-        day:     'numeric',
-        month:   'long',
-    }).format(delivery);
+    renderDate();
+
+    window.EcoShippingWidget = { update: renderDate };
 })();

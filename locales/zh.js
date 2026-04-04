@@ -122,8 +122,8 @@
         /* ---------- Footer ---------- */
         footer_tagline: '为日常生活带来简约、实用与优雅。',
         footer_legal_title: '法律链接',
-        footer_terms: 'Terms & Conditions',
-        footer_privacy: 'Privacy Policy',
+        footer_terms: '条款和条件',
+        footer_privacy: '隐私政策',
         footer_shipping: '配送与退货',
         footer_support_title: '客户支持',
         footer_email_label: '邮箱：',
@@ -147,6 +147,32 @@
         shipping_s4_title: '4. 退货政策',
         shipping_s4_text: '我们接受交付后30天内的退货，前提是商品未使用且处于原始状态。我们将退还订单全额，扣除退货运费。',
         shipping_s5_title: '5. 损坏商品',
-        shipping_s5_text: '如果您的订单到达时有任何损坏，请尽快发送电子邮件至 ecozox@support@gmail.com，附上订单号和商品状况的照片。我们将逐案处理，尽最大努力找到令人满意的解决方案。'
+        shipping_s5_text: '如果您的订单到达时有任何损坏，请尽快发送电子邮件至 ecozox@support@gmail.com，附上订单号和商品状况的照片。我们将逐案处理，尽最大努力找到令人满意的解决方案。',
+
+        /* ---------- Terms & Conditions ---------- */
+        terms_page_title: '条款和条件',
+        terms_s1_title: '1. 简介',
+        terms_s1_text: '欢迎使用 EcoZox。这些条款和条件概述了使用 EcoZox 网站的规则和规定。访问本网站即表示您完全接受这些条款和条件。',
+        terms_s2_title: '2. 许可证',
+        terms_s2_text: '除非另有说明，EcoZox 及其许可方拥有 EcoZox 上所有材料的知识产权。所有知识产权保留。',
+        terms_s3_title: '3. 商店使用',
+        terms_s3_text: '使用我们的商店，您同意提供关于您个人数据和支付方式的真实、准确和最新的信息。禁止将本网站用于非法或未经授权的目的。',
+        terms_s4_title: '4. 服务和价格修改',
+        terms_s4_text: '我们产品的价格可能随时更改，恕不另行通知。我们保留随时修改或中止服务的权利。',
+        terms_s5_title: '5. 责任限制',
+        terms_s5_text: 'EcoZox 及其董事、员工或关联方在任何情况下均不对因使用本服务而产生的任何直接或间接损害承担责任。',
+
+        /* ---------- Privacy Policy ---------- */
+        privacy_page_title: '隐私政策',
+        privacy_s1_title: '1. 我们收集的信息',
+        privacy_s1_text: '访问我们的网站时，我们会自动收集有关您设备的某些信息，包括您的网络浏览器、IP 地址、时区和 Cookie。进行购买时，我们还会收集您的姓名、地址、支付信息和电子邮件。',
+        privacy_s2_title: '2. 我们如何使用您的信息',
+        privacy_s2_text: '我们使用收集的信息来处理订单、安排配送、与您沟通并防止欺诈。',
+        privacy_s3_title: '3. 共享您的信息',
+        privacy_s3_text: '我们与第三方共享您的信息以帮助我们运营网站和处理订单，包括 Google Analytics。',
+        privacy_s4_title: '4. 数据保留',
+        privacy_s4_text: '当您下订单时，我们会保留您的订单信息，除非您要求我们删除它。',
+        privacy_s5_title: '5. 您的权利',
+        privacy_s5_text: '您有权访问、更正或删除我们持有的您的个人信息。请通过网站联系方式与我们联系。'
     };
-})();
+})()

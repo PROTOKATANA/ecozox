@@ -147,6 +147,32 @@
         shipping_s4_title: '4. Política de Devoluciones',
         shipping_s4_text: 'Aceptamos devoluciones hasta 30 días después de la entrega, si el artículo no ha sido usado y está en su condición original. Le reembolsaremos el monto total del pedido menos los costos de envío de la devolución.',
         shipping_s5_title: '5. Artículos Dañados',
-        shipping_s5_text: 'En caso de que su pedido llegue dañado de alguna manera, envíenos un correo electrónico lo antes posible a ecozox@support@gmail.com con su número de pedido y una foto del estado del artículo. Abordamos esto caso por caso y haremos todo lo posible para encontrar una solución satisfactoria.'
+        shipping_s5_text: 'En caso de que su pedido llegue dañado de alguna manera, envíenos un correo electrónico lo antes posible a ecozox@support@gmail.com con su número de pedido y una foto del estado del artículo. Abordamos esto caso por caso y haremos todo lo posible para encontrar una solución satisfactoria.',
+
+        /* ---------- Terms & Conditions Page ---------- */
+        terms_page_title: 'Términos y Condiciones',
+        terms_s1_title: '1. Introducción',
+        terms_s1_text: 'Bienvenido a EcoZox. Estos términos y condiciones describen las reglas y regulaciones para el uso del sitio web de EcoZox. Al acceder a este sitio web, asumimos que aceptas estos términos y condiciones en su totalidad.',
+        terms_s2_title: '2. Licencia',
+        terms_s2_text: 'A menos que se indique lo contrario, EcoZox y/o sus licenciantes poseen los derechos de propiedad intelectual de todo el material en EcoZox. Todos los derechos de propiedad intelectual están reservados.',
+        terms_s3_title: '3. Uso de la Tienda',
+        terms_s3_text: 'Al utilizar nuestra tienda, te comprometes a proporcionar información veraz, precisa y actual sobre tus datos personales y formas de pago. Queda prohibido el uso de nuestro sitio web con fines ilícitos o no autorizados.',
+        terms_s4_title: '4. Modificaciones del Servicio y Precios',
+        terms_s4_text: 'Los precios de nuestros productos están sujetos a cambios sin previo aviso. Nos reservamos el derecho de modificar o discontinuar el Servicio sin previo aviso.',
+        terms_s5_title: '5. Limitación de Responsabilidad',
+        terms_s5_text: 'En ningún caso EcoZox, nuestros directores, funcionarios, empleados o afiliados serán responsables de ningún daño directo, indirecto, incidental, punitivo o consecuente que surja del uso del servicio.',
+
+        /* ---------- Privacy Policy Page ---------- */
+        privacy_page_title: 'Política de Privacidad',
+        privacy_s1_title: '1. Información que Recopilamos',
+        privacy_s1_text: 'Al visitar nuestro sitio, recopilamos automáticamente cierta información sobre tu dispositivo, incluida información sobre tu navegador web, dirección IP, zona horaria y cookies. Además, cuando realizas una compra, recopilamos tu nombre, dirección, información de pago y correo electrónico.',
+        privacy_s2_title: '2. Cómo Usamos tu Información',
+        privacy_s2_text: 'Usamos la información recopilada para procesar pedidos, gestionar envíos, comunicarnos contigo y prevenir fraudes.',
+        privacy_s3_title: '3. Compartir tu Información',
+        privacy_s3_text: 'Compartimos tu información con terceros para ayudarnos a operar el sitio y procesar pedidos. Utilizamos servicios como Google Analytics para comprender cómo los clientes usan el sitio.',
+        privacy_s4_title: '4. Retención de Datos',
+        privacy_s4_text: 'Cuando realizas un pedido, mantendremos tu información para nuestros registros a menos que nos pidas que la eliminemos.',
+        privacy_s5_title: '5. Tus Derechos',
+        privacy_s5_text: 'Si eres residente europeo, tienes derecho a acceder, corregir, actualizar o eliminar tu información personal. Comunícate con nosotros a través de la información de contacto del sitio.'
     };
 })();

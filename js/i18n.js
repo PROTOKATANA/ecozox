@@ -137,22 +137,25 @@
             currentLang = lang;
             localStorage.setItem(STORAGE_KEY, lang);
 
-            // Actualizar atributos del documento
             document.documentElement.lang = lang;
             document.documentElement.dir = isRTL(lang) ? 'rtl' : 'ltr';
 
-            applyTranslations();
-            applyPrices();
-            updateLangSelector();
-
-            // Re-render cart page si estamos en ella
-            if (window.EcoCartRenderer) {
-                window.EcoCartRenderer.renderCart();
+            function applyAll() {
+                applyTranslations();
+                applyPrices();
+                updateLangSelector();
+                if (window.EcoCartRenderer)    window.EcoCartRenderer.renderCart();
+                if (window.EcoUrgencyBanner)   window.EcoUrgencyBanner.update();
+                if (window.EcoShippingWidget)  window.EcoShippingWidget.update();
+                if (window.EcoProductCards)    window.EcoProductCards.update();
+                if (window.EcoReviews)         window.EcoReviews.update();
             }
 
-            // Re-render urgency banner
-            if (window.EcoUrgencyBanner && window.EcoUrgencyBanner.update) {
-                window.EcoUrgencyBanner.update();
+            var isCJK = ['zh','ja','ko'].indexOf(lang) !== -1;
+            if (isCJK && document.fonts && document.fonts.ready) {
+                document.fonts.ready.then(applyAll);
+            } else {
+                applyAll();
             }
         });
     }
@@ -265,16 +268,26 @@
 
         // Cargar inglés como fallback, luego el idioma actual
         loadLocale('en', function () {
-            if (currentLang === 'en') {
-                applyTranslations();
-                applyPrices();
-                updateLangSelector();
-            } else {
-                loadLocale(currentLang, function () {
+            var afterLoad = function () {
+                var isCJK = ['zh','ja','ko'].indexOf(currentLang) !== -1;
+                function applyAll() {
                     applyTranslations();
                     applyPrices();
                     updateLangSelector();
-                });
+                    if (window.EcoShippingWidget) window.EcoShippingWidget.update();
+                    if (window.EcoProductCards)   window.EcoProductCards.update();
+                    if (window.EcoReviews)        window.EcoReviews.update();
+                }
+                if (isCJK && document.fonts && document.fonts.ready) {
+                    document.fonts.ready.then(applyAll);
+                } else {
+                    applyAll();
+                }
+            };
+            if (currentLang === 'en') {
+                afterLoad();
+            } else {
+                loadLocale(currentLang, afterLoad);
             }
         });
     }

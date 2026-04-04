@@ -122,8 +122,8 @@
         /* ---------- Footer ---------- */
         footer_tagline: 'Simplicité, fonctionnalité et élégance au quotidien.',
         footer_legal_title: 'Liens juridiques',
-        footer_terms: 'Terms & Conditions',
-        footer_privacy: 'Privacy Policy',
+        footer_terms: 'Conditions Générales',
+        footer_privacy: 'Politique de Confidentialité',
         footer_shipping: 'Livraison & Retours',
         footer_support_title: 'Support',
         footer_email_label: 'E-mail :',
@@ -147,6 +147,32 @@
         shipping_s4_title: '4. Politique de retour',
         shipping_s4_text: 'Nous acceptons les retours jusqu\'à 30 jours après la livraison, si l\'article n\'a pas été utilisé et est dans son état d\'origine. Nous rembourserons le montant total de la commande moins les frais de retour.',
         shipping_s5_title: '5. Articles endommagés',
-        shipping_s5_text: 'Si votre commande arrive endommagée de quelque manière que ce soit, veuillez nous envoyer un e-mail dès que possible à ecozox@support@gmail.com avec votre numéro de commande et une photo de l\'état de l\'article. Nous traitons chaque cas individuellement et ferons de notre mieux pour trouver une solution satisfaisante.'
+        shipping_s5_text: 'Si votre commande arrive endommagée de quelque manière que ce soit, veuillez nous envoyer un e-mail dès que possible à ecozox@support@gmail.com avec votre numéro de commande et une photo de l\'état de l\'article. Nous traitons chaque cas individuellement et ferons de notre mieux pour trouver une solution satisfaisante.',
+
+        /* ---------- Terms & Conditions ---------- */
+        terms_page_title: 'Conditions Générales',
+        terms_s1_title: '1. Introduction',
+        terms_s1_text: 'Bienvenue chez EcoZox. Ces conditions générales décrivent les règles et réglementations relatives à l\'utilisation du site web d\'EcoZox. En accédant à ce site, nous supposons que vous acceptez entièrement ces conditions.',
+        terms_s2_title: '2. Licence',
+        terms_s2_text: 'Sauf indication contraire, EcoZox et/ou ses concédants détiennent les droits de propriété intellectuelle de tout le matériel sur EcoZox. Tous les droits de propriété intellectuelle sont réservés.',
+        terms_s3_title: '3. Utilisation de la Boutique',
+        terms_s3_text: 'En utilisant notre boutique, vous vous engagez à fournir des informations véridiques, exactes et à jour sur vos données personnelles et modes de paiement. L\'utilisation de ce site à des fins illicites ou non autorisées est interdite.',
+        terms_s4_title: '4. Modifications du Service et des Prix',
+        terms_s4_text: 'Les prix de nos produits sont susceptibles d\'être modifiés sans préavis. Nous nous réservons le droit de modifier ou d\'interrompre le Service à tout moment sans préavis.',
+        terms_s5_title: '5. Limitation de Responsabilité',
+        terms_s5_text: 'En aucun cas EcoZox, nos administrateurs, employés ou affiliés ne seront responsables des dommages directs ou indirects résultant de votre utilisation du service.',
+
+        /* ---------- Privacy Policy ---------- */
+        privacy_page_title: 'Politique de Confidentialité',
+        privacy_s1_title: '1. Informations que nous collectons',
+        privacy_s1_text: 'Lors de votre visite, nous collectons automatiquement des informations sur votre appareil, notamment le navigateur web, l\'adresse IP, le fuseau horaire et les cookies. Lors d\'un achat, nous collectons également votre nom, adresse, informations de paiement et e-mail.',
+        privacy_s2_title: '2. Comment nous utilisons vos informations',
+        privacy_s2_text: 'Nous utilisons les informations collectées pour traiter les commandes, organiser les livraisons, communiquer avec vous et prévenir la fraude.',
+        privacy_s3_title: '3. Partage de vos informations',
+        privacy_s3_text: 'Nous partageons vos informations avec des tiers pour nous aider à gérer le site et traiter les commandes, y compris Google Analytics.',
+        privacy_s4_title: '4. Conservation des données',
+        privacy_s4_text: 'Lors d\'une commande, nous conservons vos informations sauf si vous nous demandez de les supprimer.',
+        privacy_s5_title: '5. Vos droits',
+        privacy_s5_text: 'Vous avez le droit d\'accéder à vos données personnelles et d\'en demander la correction, la mise à jour ou la suppression. Contactez-nous via les coordonnées du site.'
     };
-})();
+})()

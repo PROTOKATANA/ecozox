@@ -122,8 +122,8 @@
         /* ---------- Footer ---------- */
         footer_tagline: 'Semplicità, funzionalità ed eleganza per la vita quotidiana.',
         footer_legal_title: 'Link legali',
-        footer_terms: 'Terms & Conditions',
-        footer_privacy: 'Privacy Policy',
+        footer_terms: 'Termini e Condizioni',
+        footer_privacy: 'Informativa sulla Privacy',
         footer_shipping: 'Spedizione e Resi',
         footer_support_title: 'Supporto',
         footer_email_label: 'Email:',
@@ -147,6 +147,32 @@
         shipping_s4_title: '4. Politica di reso',
         shipping_s4_text: 'Accettiamo resi fino a 30 giorni dalla consegna, se l\'articolo non è stato utilizzato e si trova nelle condizioni originali. Rimborseremo l\'importo totale dell\'ordine al netto delle spese di spedizione del reso.',
         shipping_s5_title: '5. Articoli danneggiati',
-        shipping_s5_text: 'Nel caso in cui il tuo ordine arrivi danneggiato in qualsiasi modo, inviaci un\'email il prima possibile a ecozox@support@gmail.com con il numero d\'ordine e una foto dello stato dell\'articolo. Trattiamo ogni caso singolarmente e faremo del nostro meglio per trovare una soluzione soddisfacente.'
+        shipping_s5_text: 'Nel caso in cui il tuo ordine arrivi danneggiato in qualsiasi modo, inviaci un\'email il prima possibile a ecozox@support@gmail.com con il numero d\'ordine e una foto dello stato dell\'articolo. Trattiamo ogni caso singolarmente e faremo del nostro meglio per trovare una soluzione soddisfacente.',
+
+        /* ---------- Terms & Conditions ---------- */
+        terms_page_title: 'Termini e Condizioni',
+        terms_s1_title: '1. Introduzione',
+        terms_s1_text: 'Benvenuto su EcoZox. Questi termini e condizioni descrivono le regole e i regolamenti per l\'utilizzo del sito web di EcoZox. Accedendo a questo sito, assumiamo che tu accetti integralmente questi termini e condizioni.',
+        terms_s2_title: '2. Licenza',
+        terms_s2_text: 'Salvo indicazione contraria, EcoZox e/o i suoi licenzianti possiedono i diritti di proprietà intellettuale su tutto il materiale presente su EcoZox. Tutti i diritti di proprietà intellettuale sono riservati.',
+        terms_s3_title: '3. Utilizzo del Negozio',
+        terms_s3_text: 'Utilizzando il nostro negozio, ti impegni a fornire informazioni veritiere, accurate e aggiornate sui tuoi dati personali e metodi di pagamento. L\'uso di questo sito per scopi illeciti o non autorizzati è vietato.',
+        terms_s4_title: '4. Modifiche al Servizio e ai Prezzi',
+        terms_s4_text: 'I prezzi dei nostri prodotti sono soggetti a modifiche senza preavviso. Ci riserviamo il diritto di modificare o interrompere il Servizio in qualsiasi momento senza preavviso.',
+        terms_s5_title: '5. Limitazione di Responsabilità',
+        terms_s5_text: 'In nessun caso EcoZox, i suoi amministratori, dipendenti o affiliati saranno responsabili per danni diretti o indiretti derivanti dall\'utilizzo del servizio.',
+
+        /* ---------- Privacy Policy ---------- */
+        privacy_page_title: 'Informativa sulla Privacy',
+        privacy_s1_title: '1. Informazioni che raccogliamo',
+        privacy_s1_text: 'Quando visiti il nostro sito, raccogliamo automaticamente informazioni sul tuo dispositivo, inclusi browser web, indirizzo IP, fuso orario e cookie. Durante un acquisto, raccogliamo anche nome, indirizzo, informazioni di pagamento ed e-mail.',
+        privacy_s2_title: '2. Come utilizziamo le tue informazioni',
+        privacy_s2_text: 'Utilizziamo le informazioni raccolte per elaborare ordini, organizzare spedizioni, comunicare con te e prevenire frodi.',
+        privacy_s3_title: '3. Condivisione delle tue informazioni',
+        privacy_s3_text: 'Condividiamo le tue informazioni con terze parti per aiutarci a gestire il sito ed elaborare ordini, incluso Google Analytics.',
+        privacy_s4_title: '4. Conservazione dei dati',
+        privacy_s4_text: 'Quando effettui un ordine, conserviamo le tue informazioni salvo richiesta di cancellazione.',
+        privacy_s5_title: '5. I tuoi diritti',
+        privacy_s5_text: 'Hai il diritto di accedere, correggere, aggiornare o eliminare le tue informazioni personali. Contattaci tramite le informazioni di contatto del sito.'
     };
-})();
+})()

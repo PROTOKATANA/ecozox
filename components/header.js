@@ -8,20 +8,34 @@
     var base = el.dataset.base || '';
 
     // Todos los idiomas soportados
+    // flag: código de país para flagcdn.com/24x18/{code}.png
     var languages = [
-        { code: 'es', flag: '\uD83C\uDDEA\uD83C\uDDF8', label: 'Español',    suffix: 'ES' },
-        { code: 'en', flag: '\uD83C\uDDFA\uD83C\uDDF8', label: 'English',    suffix: 'EN' },
-        { code: 'ar', flag: '\uD83C\uDDF8\uD83C\uDDE6', label: 'العربية',   suffix: 'AR' },
-        { code: 'zh', flag: '\uD83C\uDDE8\uD83C\uDDF3', label: '中文',       suffix: 'ZH' },
-        { code: 'ja', flag: '\uD83C\uDDEF\uD83C\uDDF5', label: '日本語',     suffix: 'JA' },
-        { code: 'ko', flag: '\uD83C\uDDF0\uD83C\uDDF7', label: '한국어',     suffix: 'KO' },
-        { code: 'id', flag: '\uD83C\uDDEE\uD83C\uDDE9', label: 'Indonesia',  suffix: 'ID' },
-        { code: 'de', flag: '\uD83C\uDDE9\uD83C\uDDEA', label: 'Deutsch',    suffix: 'DE' },
-        { code: 'fr', flag: '\uD83C\uDDEB\uD83C\uDDF7', label: 'Français',   suffix: 'FR' },
-        { code: 'it', flag: '\uD83C\uDDEE\uD83C\uDDF9', label: 'Italiano',   suffix: 'IT' },
-        { code: 'pt', flag: '\uD83C\uDDE7\uD83C\uDDF7', label: 'Português',  suffix: 'PT' },
-        { code: 'tr', flag: '\uD83C\uDDF9\uD83C\uDDF7', label: 'Türkçe',     suffix: 'TR' }
+        { code: 'es', flag: 'es', label: 'Español',   suffix: 'ES' },
+        { code: 'en', flag: 'us', label: 'English',   suffix: 'EN' },
+        { code: 'ar', flag: 'sa', label: 'العربية',  suffix: 'AR' },
+        { code: 'zh', flag: 'cn', label: '中文',      suffix: 'ZH' },
+        { code: 'ja', flag: 'jp', label: '日本語',    suffix: 'JA' },
+        { code: 'ko', flag: 'kr', label: '한국어',    suffix: 'KO' },
+        { code: 'id', flag: 'id', label: 'Indonesia', suffix: 'ID' },
+        { code: 'de', flag: 'de', label: 'Deutsch',   suffix: 'DE' },
+        { code: 'fr', flag: 'fr', label: 'Français',  suffix: 'FR' },
+        { code: 'it', flag: 'it', label: 'Italiano',  suffix: 'IT' },
+        { code: 'pt', flag: 'br', label: 'Português', suffix: 'PT' },
+        { code: 'tr', flag: 'tr', label: 'Türkçe',    suffix: 'TR' }
     ];
+
+    // Precargar Noto Sans para CJK — el dialog se construye antes de que i18n.js cargue esas fuentes
+    var CJK_FONTS = {
+        zh: 'https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap',
+        ja: 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap',
+        ko: 'https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap'
+    };
+    ['zh', 'ja', 'ko'].forEach(function (lang) {
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = CJK_FONTS[lang];
+        document.head.appendChild(link);
+    });
 
     var STORAGE_KEY = 'ecozox_lang';
     var SUPPORTED_CODES = languages.map(function (l) { return l.code; });
@@ -74,8 +88,12 @@
     function buildLangButtons() {
         return languages.map(function (l) {
             var active = l.code === currentLang ? ' active' : '';
+            var flagImg = '<img src="https://flagcdn.com/24x18/' + l.flag + '.png"'
+                + ' width="24" height="18" alt="' + l.suffix + '" class="region-flag"'
+                + ' style="border-radius:2px;flex-shrink:0;">';
             return '<button class="region-option' + active + '" data-region-lang="' + l.code + '">'
-                + '<span>' + l.flag + '&ensp;' + l.label
+                + '<span style="display:flex;align-items:center;gap:0.5rem;">'
+                + flagImg + l.label
                 + ' <span class="region-option__secondary">' + l.suffix + '</span></span>'
                 + CHECK_SVG
                 + '</button>';

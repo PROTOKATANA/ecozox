@@ -122,8 +122,8 @@
         /* ---------- Footer ---------- */
         footer_tagline: 'Simplicidade, funcionalidade e elegância para o dia a dia.',
         footer_legal_title: 'Links legais',
-        footer_terms: 'Terms & Conditions',
-        footer_privacy: 'Privacy Policy',
+        footer_terms: 'Termos e Condições',
+        footer_privacy: 'Política de Privacidade',
         footer_shipping: 'Envio e Devoluções',
         footer_support_title: 'Suporte',
         footer_email_label: 'E-mail:',
@@ -147,6 +147,32 @@
         shipping_s4_title: '4. Política de devolução',
         shipping_s4_text: 'Aceitamos devoluções até 30 dias após a entrega, se o item não foi usado e está em sua condição original. Reembolsaremos o valor total do pedido menos os custos de envio da devolução.',
         shipping_s5_title: '5. Itens danificados',
-        shipping_s5_text: 'Caso seu pedido chegue danificado de alguma forma, envie-nos um e-mail o mais rápido possível para ecozox@support@gmail.com com o número do pedido e uma foto do estado do item. Tratamos cada caso individualmente e faremos o possível para encontrar uma solução satisfatória.'
+        shipping_s5_text: 'Caso seu pedido chegue danificado de alguma forma, envie-nos um e-mail o mais rápido possível para ecozox@support@gmail.com com o número do pedido e uma foto do estado do item. Tratamos cada caso individualmente e faremos o possível para encontrar uma solução satisfatória.',
+
+        /* ---------- Terms & Conditions ---------- */
+        terms_page_title: 'Termos e Condições',
+        terms_s1_title: '1. Introdução',
+        terms_s1_text: 'Bem-vindo à EcoZox. Estes termos e condições descrevem as regras e regulamentos para o uso do site da EcoZox. Ao acessar este site, presumimos que você aceita integralmente estes termos e condições.',
+        terms_s2_title: '2. Licença',
+        terms_s2_text: 'Salvo indicação contrária, a EcoZox e/ou seus licenciadores possuem os direitos de propriedade intelectual de todo o material na EcoZox. Todos os direitos de propriedade intelectual estão reservados.',
+        terms_s3_title: '3. Uso da Loja',
+        terms_s3_text: 'Ao utilizar nossa loja, você se compromete a fornecer informações verdadeiras, precisas e atuais sobre seus dados pessoais e métodos de pagamento. O uso deste site para fins ilícitos ou não autorizados é proibido.',
+        terms_s4_title: '4. Modificações no Serviço e Preços',
+        terms_s4_text: 'Os preços dos nossos produtos estão sujeitos a alterações sem aviso prévio. Reservamo-nos o direito de modificar ou descontinuar o Serviço a qualquer momento sem aviso prévio.',
+        terms_s5_title: '5. Limitação de Responsabilidade',
+        terms_s5_text: 'A EcoZox, nossos diretores, funcionários ou afiliados não serão responsáveis por quaisquer danos diretos ou indiretos decorrentes do uso do serviço.',
+
+        /* ---------- Privacy Policy ---------- */
+        privacy_page_title: 'Política de Privacidade',
+        privacy_s1_title: '1. Informações que Coletamos',
+        privacy_s1_text: 'Ao visitar nosso site, coletamos automaticamente certas informações sobre seu dispositivo, incluindo navegador web, endereço IP, fuso horário e cookies. Ao realizar uma compra, também coletamos nome, endereço, informações de pagamento e e-mail.',
+        privacy_s2_title: '2. Como Usamos suas Informações',
+        privacy_s2_text: 'Usamos as informações coletadas para processar pedidos, organizar entregas, comunicar com você e prevenir fraudes.',
+        privacy_s3_title: '3. Compartilhamento de Informações',
+        privacy_s3_text: 'Compartilhamos suas informações com terceiros para nos ajudar a operar o site e processar pedidos, incluindo o Google Analytics.',
+        privacy_s4_title: '4. Retenção de Dados',
+        privacy_s4_text: 'Ao fazer um pedido, mantemos suas informações em nossos registros a menos que você solicite a exclusão.',
+        privacy_s5_title: '5. Seus Direitos',
+        privacy_s5_text: 'Você tem o direito de acessar, corrigir, atualizar ou excluir suas informações pessoais. Entre em contato conosco através das informações de contato do site.'
     };
-})();
+})()

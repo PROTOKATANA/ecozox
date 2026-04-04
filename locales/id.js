@@ -122,8 +122,8 @@
         /* ---------- Footer ---------- */
         footer_tagline: 'Kesederhanaan, fungsionalitas, dan keanggunan untuk kehidupan sehari-hari.',
         footer_legal_title: 'Tautan Hukum',
-        footer_terms: 'Terms & Conditions',
-        footer_privacy: 'Privacy Policy',
+        footer_terms: 'Syarat dan Ketentuan',
+        footer_privacy: 'Kebijakan Privasi',
         footer_shipping: 'Pengiriman & Pengembalian',
         footer_support_title: 'Dukungan',
         footer_email_label: 'Email:',
@@ -147,6 +147,32 @@
         shipping_s4_title: '4. Kebijakan Pengembalian',
         shipping_s4_text: 'Kami menerima pengembalian hingga 30 hari setelah pengiriman, jika barang belum digunakan dan dalam kondisi asli. Kami akan mengembalikan jumlah pesanan penuh dikurangi biaya pengiriman pengembalian.',
         shipping_s5_title: '5. Barang Rusak',
-        shipping_s5_text: 'Jika pesanan Anda tiba dalam keadaan rusak, silakan kirim email kepada kami sesegera mungkin ke ecozox@support@gmail.com dengan nomor pesanan dan foto kondisi barang. Kami menangani ini secara kasus per kasus dan akan berusaha sebaik mungkin untuk menemukan solusi yang memuaskan.'
+        shipping_s5_text: 'Jika pesanan Anda tiba dalam keadaan rusak, silakan kirim email kepada kami sesegera mungkin ke ecozox@support@gmail.com dengan nomor pesanan dan foto kondisi barang. Kami menangani ini secara kasus per kasus dan akan berusaha sebaik mungkin untuk menemukan solusi yang memuaskan.',
+
+        /* ---------- Terms & Conditions ---------- */
+        terms_page_title: 'Syarat dan Ketentuan',
+        terms_s1_title: '1. Pendahuluan',
+        terms_s1_text: 'Selamat datang di EcoZox. Syarat dan ketentuan ini menjelaskan aturan dan regulasi penggunaan situs web EcoZox. Dengan mengakses situs ini, kami asumsikan Anda menerima syarat dan ketentuan ini sepenuhnya.',
+        terms_s2_title: '2. Lisensi',
+        terms_s2_text: 'Kecuali dinyatakan lain, EcoZox dan/atau pemberi lisensinya memiliki hak kekayaan intelektual atas semua materi di EcoZox. Semua hak kekayaan intelektual dilindungi.',
+        terms_s3_title: '3. Penggunaan Toko',
+        terms_s3_text: 'Dengan menggunakan toko kami, Anda setuju untuk memberikan informasi yang benar, akurat, dan terkini tentang data pribadi dan metode pembayaran Anda. Penggunaan situs web ini untuk tujuan ilegal atau tidak sah dilarang.',
+        terms_s4_title: '4. Modifikasi Layanan dan Harga',
+        terms_s4_text: 'Harga produk kami dapat berubah tanpa pemberitahuan. Kami berhak untuk mengubah atau menghentikan Layanan kapan saja tanpa pemberitahuan.',
+        terms_s5_title: '5. Batasan Tanggung Jawab',
+        terms_s5_text: 'EcoZox, direktur, karyawan, atau afiliasi kami tidak bertanggung jawab atas kerugian langsung atau tidak langsung yang timbul dari penggunaan layanan.',
+
+        /* ---------- Privacy Policy ---------- */
+        privacy_page_title: 'Kebijakan Privasi',
+        privacy_s1_title: '1. Informasi yang Kami Kumpulkan',
+        privacy_s1_text: 'Saat mengunjungi situs kami, kami secara otomatis mengumpulkan informasi tentang perangkat Anda, termasuk browser web, alamat IP, zona waktu, dan cookie. Saat melakukan pembelian, kami juga mengumpulkan nama, alamat, informasi pembayaran, dan email Anda.',
+        privacy_s2_title: '2. Cara Kami Menggunakan Informasi Anda',
+        privacy_s2_text: 'Kami menggunakan informasi yang dikumpulkan untuk memproses pesanan, mengatur pengiriman, berkomunikasi dengan Anda, dan mencegah penipuan.',
+        privacy_s3_title: '3. Berbagi Informasi Anda',
+        privacy_s3_text: 'Kami berbagi informasi Anda dengan pihak ketiga untuk membantu kami mengoperasikan situs dan memproses pesanan, termasuk Google Analytics.',
+        privacy_s4_title: '4. Penyimpanan Data',
+        privacy_s4_text: 'Saat Anda memesan, kami menyimpan informasi pesanan Anda kecuali Anda meminta kami untuk menghapusnya.',
+        privacy_s5_title: '5. Hak Anda',
+        privacy_s5_text: 'Anda berhak mengakses, mengoreksi, memperbarui, atau menghapus informasi pribadi Anda. Hubungi kami melalui informasi kontak di situs.'
     };
-})();
+})()

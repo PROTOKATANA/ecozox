@@ -122,8 +122,8 @@
         /* ---------- Footer ---------- */
         footer_tagline: 'Schlichtheit, Funktionalität und Eleganz für den Alltag.',
         footer_legal_title: 'Rechtliche Links',
-        footer_terms: 'Terms & Conditions',
-        footer_privacy: 'Privacy Policy',
+        footer_terms: 'Allgemeine Geschäftsbedingungen',
+        footer_privacy: 'Datenschutzrichtlinie',
         footer_shipping: 'Versand & Rückgabe',
         footer_support_title: 'Support',
         footer_email_label: 'E-Mail:',
@@ -147,6 +147,32 @@
         shipping_s4_title: '4. Rückgaberichtlinie',
         shipping_s4_text: 'Wir akzeptieren Rückgaben bis zu 30 Tage nach Lieferung, sofern der Artikel nicht benutzt wurde und sich im Originalzustand befindet. Wir erstatten den vollen Bestellbetrag abzüglich der Rücksendekosten.',
         shipping_s5_title: '5. Beschädigte Artikel',
-        shipping_s5_text: 'Falls Ihre Bestellung in irgendeiner Weise beschädigt ankommt, senden Sie uns bitte so schnell wie möglich eine E-Mail an ecozox@support@gmail.com mit Ihrer Bestellnummer und einem Foto des Artikelzustands. Wir behandeln dies von Fall zu Fall und werden unser Bestes tun, eine zufriedenstellende Lösung zu finden.'
+        shipping_s5_text: 'Falls Ihre Bestellung in irgendeiner Weise beschädigt ankommt, senden Sie uns bitte so schnell wie möglich eine E-Mail an ecozox@support@gmail.com mit Ihrer Bestellnummer und einem Foto des Artikelzustands. Wir behandeln dies von Fall zu Fall und werden unser Bestes tun, eine zufriedenstellende Lösung zu finden.',
+
+        /* ---------- Terms & Conditions ---------- */
+        terms_page_title: 'Allgemeine Geschäftsbedingungen',
+        terms_s1_title: '1. Einführung',
+        terms_s1_text: 'Willkommen bei EcoZox. Diese Allgemeinen Geschäftsbedingungen beschreiben die Regeln und Vorschriften für die Nutzung der EcoZox-Website. Durch den Zugriff auf diese Website gehen wir davon aus, dass Sie diese Bedingungen vollständig akzeptieren.',
+        terms_s2_title: '2. Lizenz',
+        terms_s2_text: 'Sofern nicht anders angegeben, besitzen EcoZox und/oder seine Lizenzgeber die geistigen Eigentumsrechte für alle Materialien auf EcoZox. Alle geistigen Eigentumsrechte sind vorbehalten.',
+        terms_s3_title: '3. Nutzung des Shops',
+        terms_s3_text: 'Durch die Nutzung unseres Shops verpflichten Sie sich, wahre, genaue und aktuelle Informationen über Ihre persönlichen Daten und Zahlungsmethoden bereitzustellen. Die Nutzung dieser Website für illegale oder unbefugte Zwecke ist verboten.',
+        terms_s4_title: '4. Änderungen am Service und Preisen',
+        terms_s4_text: 'Die Preise unserer Produkte können ohne vorherige Ankündigung geändert werden. Wir behalten uns das Recht vor, den Service jederzeit ohne Ankündigung zu ändern oder einzustellen.',
+        terms_s5_title: '5. Haftungsbeschränkung',
+        terms_s5_text: 'EcoZox, unsere Direktoren, Mitarbeiter oder verbundenen Unternehmen haften in keinem Fall für direkte oder indirekte Schäden, die aus der Nutzung des Services entstehen.',
+
+        /* ---------- Privacy Policy ---------- */
+        privacy_page_title: 'Datenschutzrichtlinie',
+        privacy_s1_title: '1. Informationen, die wir sammeln',
+        privacy_s1_text: 'Beim Besuch unserer Website sammeln wir automatisch bestimmte Informationen über Ihr Gerät, einschließlich Webbrowser, IP-Adresse, Zeitzone und Cookies. Bei einem Kauf sammeln wir auch Ihren Namen, Ihre Adresse, Zahlungsinformationen und E-Mail-Adresse.',
+        privacy_s2_title: '2. Wie wir Ihre Informationen verwenden',
+        privacy_s2_text: 'Wir verwenden gesammelte Informationen zur Auftragsabwicklung, Versandorganisation, Kommunikation mit Ihnen und zur Betrugsprävention.',
+        privacy_s3_title: '3. Weitergabe Ihrer Informationen',
+        privacy_s3_text: 'Wir teilen Ihre Informationen mit Dritten, um den Betrieb der Website und die Auftragsabwicklung zu unterstützen, einschließlich Google Analytics.',
+        privacy_s4_title: '4. Datenspeicherung',
+        privacy_s4_text: 'Bei einer Bestellung speichern wir Ihre Bestellinformationen, es sei denn, Sie fordern deren Löschung.',
+        privacy_s5_title: '5. Ihre Rechte',
+        privacy_s5_text: 'Sie haben das Recht, auf Ihre persönlichen Daten zuzugreifen und deren Berichtigung, Aktualisierung oder Löschung zu verlangen. Kontaktieren Sie uns über die Kontaktinformationen auf der Website.'
     };
-})();
+})()

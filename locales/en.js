@@ -147,6 +147,32 @@
         shipping_s4_title: '4. Return Policy',
         shipping_s4_text: 'We accept returns up to 30 days after delivery, if the item has not been used and is in its original condition. We will refund the full order amount minus return shipping costs.',
         shipping_s5_title: '5. Damaged Items',
-        shipping_s5_text: 'In case your order arrives damaged in any way, please email us as soon as possible at ecozox@support@gmail.com with your order number and a photo of the item\'s condition. We address these on a case-by-case basis and will do our best to find a satisfactory solution.'
+        shipping_s5_text: 'In case your order arrives damaged in any way, please email us as soon as possible at ecozox@support@gmail.com with your order number and a photo of the item\'s condition. We address these on a case-by-case basis and will do our best to find a satisfactory solution.',
+
+        /* ---------- Terms & Conditions Page ---------- */
+        terms_page_title: 'Terms & Conditions',
+        terms_s1_title: '1. Introduction',
+        terms_s1_text: 'Welcome to EcoZox. These terms and conditions outline the rules and regulations for the use of the EcoZox website. By accessing this website, we assume you accept these terms and conditions in full.',
+        terms_s2_title: '2. License',
+        terms_s2_text: 'Unless otherwise stated, EcoZox and/or its licensors own the intellectual property rights for all material on EcoZox. All intellectual property rights are reserved.',
+        terms_s3_title: '3. Use of the Store',
+        terms_s3_text: 'By using our store, you agree to provide truthful, accurate and current information about your personal data and payment methods. Use of this website for unlawful or unauthorized purposes is prohibited.',
+        terms_s4_title: '4. Service and Price Modifications',
+        terms_s4_text: 'Prices for our products are subject to change without notice. We reserve the right at any time to modify or discontinue the Service without notice.',
+        terms_s5_title: '5. Limitation of Liability',
+        terms_s5_text: 'In no event shall EcoZox, our directors, officers, employees or affiliates be liable for any injury, loss, claim or any direct, indirect, incidental, punitive, special or consequential damages arising from your use of the service.',
+
+        /* ---------- Privacy Policy Page ---------- */
+        privacy_page_title: 'Privacy Policy',
+        privacy_s1_title: '1. Information We Collect',
+        privacy_s1_text: 'When you visit our site, we automatically collect certain information about your device, including information about your web browser, IP address, time zone, and some of the cookies installed on your device. Additionally, when you make a purchase, we collect your name, billing address, shipping address, payment information, email address and phone number.',
+        privacy_s2_title: '2. How We Use Your Information',
+        privacy_s2_text: 'We use the order information we collect to fulfill orders placed through the site, process payment information, arrange shipping, and provide invoices and order confirmations. We also use this information to communicate with you and screen for potential fraud.',
+        privacy_s3_title: '3. Sharing Your Information',
+        privacy_s3_text: 'We share your personal information with third parties to help us use your information as described above. We use Google Analytics to help us understand how our customers use the site.',
+        privacy_s4_title: '4. Data Retention',
+        privacy_s4_text: 'When you place an order through the site, we will maintain your order information for our records unless and until you ask us to delete this information.',
+        privacy_s5_title: '5. Your Rights',
+        privacy_s5_text: 'If you are a European resident, you have the right to access personal information we hold about you and to ask that your personal information be corrected, updated, or deleted. Please contact us through the contact information on the site.'
     };
 })();

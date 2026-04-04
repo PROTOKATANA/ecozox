@@ -122,8 +122,8 @@
         /* ---------- Footer ---------- */
         footer_tagline: '일상을 위한 심플함, 기능성 그리고 우아함.',
         footer_legal_title: '법적 링크',
-        footer_terms: 'Terms & Conditions',
-        footer_privacy: 'Privacy Policy',
+        footer_terms: '이용약관',
+        footer_privacy: '개인정보처리방침',
         footer_shipping: '배송 및 반품',
         footer_support_title: '지원',
         footer_email_label: '이메일:',
@@ -147,6 +147,32 @@
         shipping_s4_title: '4. 반품 정책',
         shipping_s4_text: '배송 후 30일 이내에 반품을 접수합니다. 단, 상품이 미사용이고 원래 상태여야 합니다. 반품 배송비를 제외한 주문 전액을 환불해 드립니다.',
         shipping_s5_title: '5. 파손 상품',
-        shipping_s5_text: '주문 상품이 파손된 상태로 도착한 경우, 가능한 빨리 ecozox@support@gmail.com으로 주문 번호와 상품 상태 사진을 보내주세요. 사안별로 대응하며 만족스러운 해결책을 찾기 위해 최선을 다하겠습니다.'
+        shipping_s5_text: '주문 상품이 파손된 상태로 도착한 경우, 가능한 빨리 ecozox@support@gmail.com으로 주문 번호와 상품 상태 사진을 보내주세요. 사안별로 대응하며 만족스러운 해결책을 찾기 위해 최선을 다하겠습니다.',
+
+        /* ---------- Terms & Conditions ---------- */
+        terms_page_title: '이용약관',
+        terms_s1_title: '1. 소개',
+        terms_s1_text: 'EcoZox에 오신 것을 환영합니다. 이 이용약관은 EcoZox 웹사이트 사용에 관한 규칙과 규정을 설명합니다. 본 웹사이트에 접속함으로써 이 이용약관에 전적으로 동의한 것으로 간주합니다.',
+        terms_s2_title: '2. 라이선스',
+        terms_s2_text: '별도로 명시되지 않는 한, EcoZox 또는 그 라이선서가 EcoZox의 모든 자료에 대한 지적재산권을 소유합니다. 모든 지적재산권은 보호됩니다.',
+        terms_s3_title: '3. 스토어 이용',
+        terms_s3_text: '당사 스토어를 이용함으로써 귀하는 개인 데이터 및 결제 방법에 관해 진실되고 정확하며 최신의 정보를 제공하는 데 동의합니다. 불법적이거나 허가되지 않은 목적으로 본 웹사이트를 사용하는 것은 금지됩니다.',
+        terms_s4_title: '4. 서비스 및 가격 변경',
+        terms_s4_text: '당사 제품의 가격은 사전 통보 없이 변경될 수 있습니다. 당사는 언제든지 사전 통보 없이 서비스를 수정하거나 중단할 권리를 보유합니다.',
+        terms_s5_title: '5. 책임 제한',
+        terms_s5_text: '어떠한 경우에도 EcoZox, 임원, 직원 또는 계열사는 서비스 이용으로 인해 발생하는 직접적 또는 간접적 손해에 대해 책임을 지지 않습니다.',
+
+        /* ---------- Privacy Policy ---------- */
+        privacy_page_title: '개인정보처리방침',
+        privacy_s1_title: '1. 수집하는 정보',
+        privacy_s1_text: '당사 사이트를 방문할 때 웹 브라우저, IP 주소, 시간대, 쿠키에 관한 정보를 자동으로 수집합니다. 구매 시에는 이름, 주소, 결제 정보, 이메일 주소도 수집합니다.',
+        privacy_s2_title: '2. 정보 사용 방법',
+        privacy_s2_text: '수집한 정보는 주문 처리, 배송 준비, 귀하와의 소통 및 사기 방지를 위해 사용합니다.',
+        privacy_s3_title: '3. 정보 공유',
+        privacy_s3_text: '사이트 운영 및 주문 처리를 위해 Google Analytics를 포함한 제3자와 정보를 공유합니다.',
+        privacy_s4_title: '4. 데이터 보유',
+        privacy_s4_text: '주문 시 수집한 정보는 삭제를 요청하지 않는 한 기록으로 보유합니다.',
+        privacy_s5_title: '5. 귀하의 권리',
+        privacy_s5_text: '당사가 보유한 개인 정보에 접근하거나 수정, 삭제를 요청할 권리가 있습니다. 사이트의 연락처 정보를 통해 문의하십시오.'
     };
-})();
+})()

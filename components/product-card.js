@@ -5,10 +5,10 @@
    ======================================== */
 
 (function () {
-    const el = document.querySelector('[data-component="product-grid"]');
-    if (!el) return;
+    var gridContainer = document.querySelector('[data-component="product-grid"]');
+    if (!gridContainer) return;
 
-    const products = [
+    var products = [
         {
             id: 'reloj-classic-mono',
             titleKey: 'product_reloj',
@@ -71,42 +71,60 @@
         }
     ];
 
-    const DISCOUNT = 0.30;
+    var DISCOUNT = 0.30;
 
-    const cardsHTML = products.map((product, index, arr) => {
-        const soldOut       = index >= arr.length - 2;
-        const salePrice     = product.price;
-        const originalPrice = (salePrice / (1 - DISCOUNT)).toFixed(2);
-        return `
-        <a href="${product.link}" class="product-card${soldOut ? ' product-card--sold-out' : ''}"
-           data-product-id="${product.id}"
-           data-product-title="${product.title}"
-           data-product-price="${salePrice}"
-           data-product-image="${product.imageThumb}"
-           data-product-link="${product.link}">
-            <div class="product-img-wrapper">
-                <img src="${product.image}" alt="${product.alt}" class="product-image" loading="lazy">
-                ${soldOut
-                    ? '<div class="sold-out-overlay" aria-label="Producto agotado">AGOTADO</div>'
-                    : '<span class="discount-badge" aria-label="Descuento del 30%">-30%</span>'
-                }
-            </div>
-            <div class="product-info">
-                <h2 class="product-title" data-i18n="${product.titleKey}">${product.title}</h2>
-                <div class="product-price-wrapper">
-                    <span class="product-price" data-i18n-price="${salePrice}">$${salePrice.toFixed(2)}</span>
-                    <span class="product-price-old">$${originalPrice}</span>
-                </div>
-                ${soldOut
-                    ? '<button class="btn add-to-cart-btn" disabled aria-disabled="true">Agotado</button>'
-                    : '<button class="btn btn-primary add-to-cart-btn js-add-to-cart" data-i18n="btn_add_to_cart">Añadir al carrito</button>'
-                }
-            </div>
-        </a>`;
-    }).join('');
+    function t(key) {
+        return (window.EcoI18n && window.EcoI18n.t) ? window.EcoI18n.t(key) : key;
+    }
 
-    el.outerHTML = `
-    <div class="product-grid">
-        ${cardsHTML}
-    </div>`;
+    function formatPrice(amount) {
+        return (window.EcoI18n && window.EcoI18n.formatPrice)
+            ? window.EcoI18n.formatPrice(amount)
+            : '$' + amount.toFixed(2);
+    }
+
+    function renderGrid() {
+        var cardsHTML = products.map(function (product, index, arr) {
+            var soldOut      = index >= arr.length - 2;
+            var salePrice    = product.price;
+            var originalPrice = (salePrice / (1 - DISCOUNT)).toFixed(2);
+            var titleText    = t(product.titleKey) || product.title;
+
+            return '<a href="' + product.link + '" class="product-card' + (soldOut ? ' product-card--sold-out' : '') + '"'
+                + ' data-product-id="' + product.id + '"'
+                + ' data-product-title="' + product.title + '"'
+                + ' data-product-price="' + salePrice + '"'
+                + ' data-product-image="' + product.imageThumb + '"'
+                + ' data-product-link="' + product.link + '">'
+                + '<div class="product-img-wrapper">'
+                +   '<img src="' + product.image + '" alt="' + product.alt + '" class="product-image" loading="lazy">'
+                +   (soldOut
+                        ? '<div class="sold-out-overlay" aria-label="Producto agotado" data-i18n="sold_out">' + t('sold_out') + '</div>'
+                        : '<span class="discount-badge" aria-label="Descuento del 30%">-30%</span>')
+                + '</div>'
+                + '<div class="product-info">'
+                +   '<h2 class="product-title" data-i18n="' + product.titleKey + '">' + titleText + '</h2>'
+                +   '<div class="product-price-wrapper">'
+                +     '<span class="product-price" data-i18n-price="' + salePrice + '">' + formatPrice(salePrice) + '</span>'
+                +     '<span class="product-price-old">' + formatPrice(parseFloat(originalPrice)) + '</span>'
+                +   '</div>'
+                +   (soldOut
+                        ? '<button class="btn add-to-cart-btn" disabled aria-disabled="true" data-i18n="sold_out_btn">' + t('sold_out_btn') + '</button>'
+                        : '<button class="btn btn-primary add-to-cart-btn js-add-to-cart" data-i18n="btn_add_to_cart">' + t('btn_add_to_cart') + '</button>')
+                + '</div>'
+                + '</a>';
+        }).join('');
+
+        var wrapper = document.querySelector('.product-grid') || document.querySelector('[data-component="product-grid"]');
+        if (wrapper) {
+            wrapper.innerHTML = cardsHTML;
+        }
+    }
+
+    /* Initial render — replace placeholder with real grid */
+    gridContainer.outerHTML = '<div class="product-grid"></div>';
+    renderGrid();
+
+    /* Expose update for i18n re-render */
+    window.EcoProductCards = { update: renderGrid };
 })();

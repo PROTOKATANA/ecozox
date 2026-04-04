@@ -28,16 +28,16 @@
     /* Sub-items that make up the bundle (placeholder data) */
     const BUNDLE_SUB_ITEMS = [
         {
-            img:   'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=80&h=80',
-            title: 'Auriculares Silence Pro',
+            img:    'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=80&h=80',
+            titleKey: 'product_auriculares',
         },
         {
-            img:   'https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&q=80&w=80&h=80',
-            title: 'Soporte para auriculares',
+            img:    'https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&q=80&w=80&h=80',
+            titleKey: 'po_bundle_item_stand',
         },
         {
-            img:   'https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&q=80&w=80&h=80',
-            title: 'Kit de limpieza',
+            img:    'https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&q=80&w=80&h=80',
+            titleKey: 'po_bundle_item_kit',
         },
     ];
 
@@ -99,9 +99,9 @@
         const discountedPrice = item.price * (1 - DISCOUNT_PERCENT / 100);
         const subRows = BUNDLE_SUB_ITEMS.map(sub => `
             <li class="cart-body-item">
-                <img src="${sub.img}" alt="${sub.title}" class="cart-body-img">
-                <span class="cart-body-title">${sub.title}</span>
-                <span class="cart-body-included">Incluido</span>
+                <img src="${sub.img}" alt="${ti(sub.titleKey)}" class="cart-body-img">
+                <span class="cart-body-title">${ti(sub.titleKey)}</span>
+                <span class="cart-body-included">${ti('cart_included')}</span>
             </li>`).join('');
 
         return `
@@ -115,7 +115,7 @@
                         <span class="price-discounted">${formatPrice(discountedPrice)}</span>
                     </div>
                 </div>
-                <ul class="cart-item-body" aria-label="Contenido del pack">
+                <ul class="cart-item-body" aria-label="${ti('cart_bundle_contents')}">
                     ${subRows}
                 </ul>
                 <div class="cart-item-footer">
@@ -153,7 +153,7 @@
 
         const savingsRow = subtotal > 0 ? `
                 <div class="cs__row">
-                    <span>• Descuento <span class="cs__row--green">(${DISCOUNT_PERCENT}%)</span></span>
+                    <span>• ${ti('cart_discount')} <span class="cs__row--green">(${DISCOUNT_PERCENT}%)</span></span>
                     <span class="cs__row--green">- ${formatPrice(savings)}</span>
                 </div>` : '';
 
@@ -168,7 +168,7 @@
                     ${savingsRow}
                     <div class="cs__row">
                         <span>• ${ti('cart_shipping')}</span>
-                        <span class="cs__free cs__row--green">GRATIS</span>
+                        <span class="cs__free cs__row--green">${ti('cart_shipping_free')}</span>
                     </div>
                 </div>
                 <div class="cs__total">

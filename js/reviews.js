@@ -122,7 +122,9 @@
 
     function formatDate(str) {
         const [y, m, d] = str.split('-').map(Number);
-        return new Date(y, m - 1, d).toLocaleDateString('es-ES', {
+        const locale = (window.EcoI18n && window.EcoI18n.getDateLocale)
+            ? window.EcoI18n.getDateLocale() : 'es-ES';
+        return new Date(y, m - 1, d).toLocaleDateString(locale, {
             year: 'numeric', month: 'long', day: 'numeric'
         });
     }
@@ -140,7 +142,8 @@
         const countEl  = document.getElementById('reviews-summary-count');
         if (scoreEl) scoreEl.textContent = avg;
         if (starsEl) starsEl.innerHTML   = renderStars(Math.round(parseFloat(avg)), 22);
-        if (countEl) countEl.textContent = `${REVIEWS.length} reseñas`;
+        const suffix = (window.EcoI18n && window.EcoI18n.t) ? window.EcoI18n.t('reviews_count_suffix') : 'reseñas';
+        if (countEl) countEl.textContent = REVIEWS.length + ' ' + suffix;
     }
 
     /* ---- Render reviews ---- */
@@ -177,6 +180,13 @@
 
     renderSummary();
     renderReviews();
+
+    window.EcoReviews = {
+        update: function () {
+            renderSummary();
+            renderReviews();
+        }
+    };
 
     /* ========================================
        Lightbox
