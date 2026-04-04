@@ -274,6 +274,7 @@
                     applyTranslations();
                     applyPrices();
                     updateLangSelector();
+                    if (window.EcoUrgencyBanner)  window.EcoUrgencyBanner.update();
                     if (window.EcoShippingWidget) window.EcoShippingWidget.update();
                     if (window.EcoProductCards)   window.EcoProductCards.update();
                     if (window.EcoReviews)        window.EcoReviews.update();
