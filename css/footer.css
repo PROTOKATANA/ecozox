@@ -54,7 +54,8 @@
 }
 
 .footer-bottom {
-  border-top: 1px solid #374151;
+  border-top: 2px dashed #374151;
+  border-image: repeating-linear-gradient(90deg, #374151 0, #374151 10px, transparent 10px, transparent 18px) 2;
   padding-top: 2rem;
   display: flex;
   flex-direction: column;

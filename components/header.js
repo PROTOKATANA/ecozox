@@ -93,8 +93,8 @@
                 + ' style="border-radius:2px;flex-shrink:0;">';
             return '<button class="region-option' + active + '" data-region-lang="' + l.code + '">'
                 + '<span style="display:flex;align-items:center;gap:0.5rem;">'
-                + flagImg + l.label
-                + ' <span class="region-option__secondary">' + l.suffix + '</span></span>'
+                + flagImg + l.label.toUpperCase()
+                + '</span>'
                 + CHECK_SVG
                 + '</button>';
         }).join('');

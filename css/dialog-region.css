@@ -13,7 +13,7 @@
   max-height: calc(100vh - 4rem);
   overflow-y: auto;
   outline: none;
-  font-family: var(--font-family);
+  font-family: var(--font-body);
   
   /* --- Estas 3 líneas garantizan el centrado perfecto --- */
   position: fixed;
@@ -103,7 +103,7 @@
   background: none;
   border: none;
   padding: 0.6rem 0.9rem;
-  font-family: var(--font-family);
+  font-family: var(--font-body);
   font-size: 0.875rem;
   font-weight: 450;
   color: var(--text-main);
@@ -145,3 +145,10 @@
   color: var(--text-muted);
   font-weight: 400;
 }
+
+/* --- Fuentes CJK para las etiquetas del selector de idioma ---
+   Garantiza que '中文', '日本語', '한국어' se rendericen
+   correctamente sin importar el idioma activo del sitio.    --- */
+.region-option[data-region-lang="zh"] { font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif; }
+.region-option[data-region-lang="ja"] { font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif; }
+.region-option[data-region-lang="ko"] { font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; }

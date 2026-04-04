@@ -30,26 +30,6 @@
             link: 'producto.html'
         },
         {
-            id: 'zapatillas-urban-walk',
-            titleKey: 'product_zapatillas',
-            title: 'Zapatillas Urban Walk',
-            price: 89.99,
-            image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=600&h=600',
-            imageThumb: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=200&h=200',
-            alt: 'Zapatillas Deportivas',
-            link: 'producto.html'
-        },
-        {
-            id: 'camara-retro-lens',
-            titleKey: 'product_camara',
-            title: 'Cámara Retro Lens',
-            price: 350.00,
-            image: 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&q=80&w=600&h=600',
-            imageThumb: 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&q=80&w=200&h=200',
-            alt: 'Cámara Vintage',
-            link: 'producto.html'
-        },
-        {
             id: 'mochila-canvas-explorer',
             titleKey: 'product_mochila',
             title: 'Mochila Canvas Explorer',
