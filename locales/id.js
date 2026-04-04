@@ -1,0 +1,152 @@
+/* ========================================
+   Locale: Bahasa Indonesia (id)
+   Bahasa netral — tanpa dialek daerah
+   ======================================== */
+(function () {
+    window.EcoLocales = window.EcoLocales || {};
+    window.EcoLocales.id = {
+
+        /* ---------- Header ---------- */
+        nav_contact: 'Kontak',
+        cart_alt: 'Keranjang',
+        region_dialog_title: 'Pengaturan Wilayah',
+        region_change_lang: 'Ubah bahasa',
+        region_change_currency: 'Ubah mata uang',
+        aria_close: 'Tutup',
+        aria_change_lang: 'Ubah bahasa',
+
+        /* ---------- Home / Index ---------- */
+        hero_title: 'Koleksi Esensial 2026',
+        hero_subtitle: 'Temukan lini produk minimalis baru kami yang dirancang untuk kehidupan sehari-hari. Kesederhanaan, fungsionalitas, dan keanggunan.',
+        title_home: 'EcoZox - Toko Minimalis',
+
+        /* ---------- Product Cards ---------- */
+        btn_add_to_cart: 'Tambah ke keranjang',
+        btn_added: 'Ditambahkan!',
+        btn_buy_now: 'Beli sekarang',
+        product_reloj: 'Jam Tangan Classic Mono',
+        product_auriculares: 'Headphone Silence Pro',
+        product_zapatillas: 'Sneakers Urban Walk',
+        product_camara: 'Kamera Retro Lens',
+        product_mochila: 'Ransel Canvas Explorer',
+        product_tazas: 'Set Mug Matte',
+        sold_out: 'HABIS',
+        sold_out_btn: 'Habis',
+
+        /* ---------- Product Detail ---------- */
+        product_silence_title: 'Headphone Silence Pro',
+        product_silence_desc: 'Rasakan suara imersif dengan peredam kebisingan aktif canggih. Desain ergonomis dan minimalis yang menjamin kenyamanan selama berjam-jam. Baterai tahan lama dengan pengisian cepat. Pendamping sempurna untuk musik, kerja, dan perjalanan Anda.',
+        title_product: 'Headphone Silence Pro - EcoZox',
+        po_individual_title: 'Item Satuan',
+        po_individual_cta: 'Beli item ini saja',
+        po_bundle_title: 'Paket Silence Pro',
+        po_bundle_item_stand: 'Dudukan Headphone',
+        po_bundle_item_kit: 'Kit Pembersih',
+        po_bundle_cta: 'Beli paket lengkap dan hemat 20%',
+        label_quantity: 'Jumlah:',
+        aria_decrease: 'Kurangi jumlah',
+        aria_increase: 'Tambah jumlah',
+        aria_quantity: 'Jumlah',
+
+        /* ---------- Shipping Widget ---------- */
+        shipping_free_title: 'Gratis Ongkir',
+        shipping_free_badge: 'GRATIS',
+        shipping_benefit_1: 'Pelacakan paket secara real-time',
+        shipping_benefit_2: 'Pengembalian terbuka kapan saja',
+        shipping_benefit_3: 'Jaminan waktu pengiriman',
+        shipping_delivery_in: 'Pengiriman dalam 4 hari',
+
+        /* ---------- Sticky Cart Bar ---------- */
+        sticky_cart_btn: 'KERANJANG',
+        sticky_pay_btn: 'BAYAR',
+
+        /* ---------- Reviews ---------- */
+        reviews_title: 'Ulasan Pelanggan',
+        reviews_write_btn: 'Tulis ulasan',
+        reviews_count_suffix: 'ulasan',
+        review_dialog_title: 'Tulis ulasan',
+        review_name_label: 'Nama',
+        review_name_placeholder: 'Nama Anda',
+        review_rating_label: 'Penilaian',
+        review_title_label: 'Judul',
+        review_title_placeholder: 'Ringkas pengalaman Anda',
+        review_body_label: 'Komentar',
+        review_body_placeholder: 'Ceritakan pengalaman Anda dengan produk ini...',
+        review_image_label: 'Foto produk',
+        review_image_optional: '(opsional)',
+        review_cancel_btn: 'Batal',
+        review_submit_btn: 'Kirim ulasan',
+
+        /* ---------- Video Labels ---------- */
+        video_label_noise: 'Peredam kebisingan',
+        video_label_design: 'Desain ergonomis',
+        video_label_battery: 'Baterai 40 jam',
+
+        /* ---------- Cart Page ---------- */
+        cart_title: 'Keranjang Belanja Anda',
+        cart_empty: 'Keranjang Anda kosong.',
+        cart_view_products: 'Jelajahi produk',
+        cart_summary_title: 'Ringkasan Pesanan',
+        cart_subtotal: 'Subtotal',
+        cart_shipping: 'Pengiriman',
+        cart_shipping_free: 'Gratis',
+        cart_tax: 'Perkiraan pajak',
+        cart_total: 'Total',
+        cart_checkout: 'Lanjut ke pembayaran',
+        cart_checkout_toast: 'Memulai proses pembayaran...',
+        btn_remove: 'Hapus',
+        cart_discount: 'Diskon',
+        cart_included: 'Termasuk',
+        cart_bundle_contents: 'Isi paket',
+        title_cart: 'Keranjang - EcoZox',
+
+        /* ---------- Contact Page ---------- */
+        contact_title: 'PENGEMBALIAN DANA',
+        contact_name_label: 'Nama lengkap',
+        contact_name_placeholder: 'Contoh: Budi Santoso',
+        contact_email_label: 'Alamat email',
+        contact_email_placeholder: 'anda@email.com',
+        contact_phone_label: 'Telepon',
+        contact_phone_placeholder: '+62 812 0000 0000',
+        contact_message_label: 'Pesan atau alasan pengembalian',
+        contact_message_placeholder: 'Jelaskan masalah dengan pesanan Anda atau pertanyaan Anda agar kami dapat membantu...',
+        contact_submit: 'Kirim Permintaan',
+        contact_toast: 'Permintaan terkirim. Kami akan segera menghubungi Anda.',
+        trust_title: 'Ketenangan pikiran Anda yang utama',
+        trust_desc: 'Kami tahu bahwa belanja online membutuhkan kepercayaan. Jika produk tidak memenuhi harapan Anda atau memiliki cacat, jangan khawatir. Kami telah merancang proses pengembalian yang berfokus pada kenyamanan Anda.',
+        trust_feature_1: 'Opsi pengembalian fleksibel hingga 30 hari setelah menerima pesanan.',
+        trust_feature_2: 'Proses mudah dan tanpa ribet: pengembalian dana dijamin dalam 48 jam setelah validasi.',
+        trust_feature_3: 'Dukungan pelanggan manusia untuk memandu Anda di setiap langkah.',
+        title_contact: 'Kontak & Pengembalian Dana - EcoZox',
+
+        /* ---------- Footer ---------- */
+        footer_tagline: 'Kesederhanaan, fungsionalitas, dan keanggunan untuk kehidupan sehari-hari.',
+        footer_legal_title: 'Tautan Hukum',
+        footer_terms: 'Terms & Conditions',
+        footer_privacy: 'Privacy Policy',
+        footer_shipping: 'Pengiriman & Pengembalian',
+        footer_support_title: 'Dukungan',
+        footer_email_label: 'Email:',
+        footer_phone_label: 'Telepon:',
+        footer_copyright: '&copy; 2026 Ecozox. Hak cipta dilindungi.',
+
+        /* ---------- Urgency Banner ---------- */
+        urgency_discount_text: 'Diskon <strong>{discount}%</strong> plus 1 hadiah kejutan!',
+        urgency_ends_in: 'Penawaran berakhir dalam:',
+
+        /* ---------- Shipping & Returns Page ---------- */
+        shipping_page_title: 'Pengiriman & Pengembalian',
+        shipping_s1_title: '1. Kebijakan Pengiriman',
+        shipping_s1_text: 'Kami memproses semua pesanan dalam 1 hingga 3 hari kerja (tidak termasuk akhir pekan dan hari libur) setelah menerima email konfirmasi pesanan Anda. Anda akan menerima pemberitahuan lain ketika pesanan Anda telah dikirim.',
+        shipping_s2_title: '2. Tarif & Waktu Pengiriman',
+        shipping_s2_text: 'Kami menawarkan pengiriman standar gratis ke seluruh dunia untuk semua pesanan di atas $50. Untuk pesanan di bawah $50, tarif pengiriman tetap sebesar $5 akan diterapkan saat checkout.',
+        shipping_s2_item_1: 'Pengiriman Standar: 5 - 10 hari kerja.',
+        shipping_s2_item_2: 'Pengiriman Ekspres: 2 - 4 hari kerja.',
+        shipping_s3_title: '3. Pelacakan Pesanan',
+        shipping_s3_text: 'Ketika pesanan Anda telah dikirim, kami akan mengirimkan pemberitahuan email yang mencakup nomor pelacakan yang dapat Anda gunakan untuk memeriksa statusnya. Mohon tunggu 48 jam agar informasi pelacakan tersedia.',
+        shipping_s4_title: '4. Kebijakan Pengembalian',
+        shipping_s4_text: 'Kami menerima pengembalian hingga 30 hari setelah pengiriman, jika barang belum digunakan dan dalam kondisi asli. Kami akan mengembalikan jumlah pesanan penuh dikurangi biaya pengiriman pengembalian.',
+        shipping_s5_title: '5. Barang Rusak',
+        shipping_s5_text: 'Jika pesanan Anda tiba dalam keadaan rusak, silakan kirim email kepada kami sesegera mungkin ke ecozox@support@gmail.com dengan nomor pesanan dan foto kondisi barang. Kami menangani ini secara kasus per kasus dan akan berusaha sebaik mungkin untuk menemukan solusi yang memuaskan.'
+    };
+})();

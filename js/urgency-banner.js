@@ -20,15 +20,22 @@
     // Evitar duplicados (por si el módulo se cargara dos veces)
     if (document.getElementById('urgency-banner')) return;
 
+    /* ---------- Helpers de texto i18n ---------- */
+    function getBannerText() {
+        var discountRaw = window.EcoI18n
+            ? window.EcoI18n.t('urgency_discount_text').replace('{discount}', DISCOUNT_PERCENT)
+            : '¡Descuento del <strong>' + DISCOUNT_PERCENT + '%</strong> más 1 regalo sorpresa!';
+        var endsIn = window.EcoI18n
+            ? window.EcoI18n.t('urgency_ends_in')
+            : 'Oferta termina en:';
+        return discountRaw + '&nbsp;&nbsp;' + endsIn + '&nbsp;<span id="urgency-timer" class="urgency-timer">15:00</span>';
+    }
+
     /* ---------- DOM ---------- */
     const banner = document.createElement('div');
     banner.id = 'urgency-banner';
     banner.setAttribute('role', 'banner');
-    banner.innerHTML = `
-        <span class="urgency-text">
-            ¡Descuento del <strong>${DISCOUNT_PERCENT}%</strong> más 1 regalo sorpresa!&nbsp;&nbsp;
-            Oferta termina en:&nbsp;<span id="urgency-timer" class="urgency-timer">15:00</span>
-        </span>`;
+    banner.innerHTML = '<span class="urgency-text">' + getBannerText() + '</span>';
 
     const header = document.querySelector('header.header');
     if (header) {
@@ -70,4 +77,15 @@
 
     tick();
     setInterval(tick, 1000);
+
+    /* ---------- Exponer API para EcoI18n ---------- */
+    window.EcoUrgencyBanner = {
+        update: function () {
+            var textEl = banner.querySelector('.urgency-text');
+            if (textEl) {
+                textEl.innerHTML = getBannerText();
+                tick();
+            }
+        }
+    };
 })();

@@ -1,0 +1,152 @@
+/* ========================================
+   Locale: Français (fr)
+   Langue neutre — sans régionalismes
+   ======================================== */
+(function () {
+    window.EcoLocales = window.EcoLocales || {};
+    window.EcoLocales.fr = {
+
+        /* ---------- Header ---------- */
+        nav_contact: 'Contact',
+        cart_alt: 'Panier',
+        region_dialog_title: 'Paramètres de région',
+        region_change_lang: 'Changer la langue',
+        region_change_currency: 'Changer la devise',
+        aria_close: 'Fermer',
+        aria_change_lang: 'Changer la langue',
+
+        /* ---------- Home / Index ---------- */
+        hero_title: 'Collection Essentielle 2026',
+        hero_subtitle: 'Découvrez notre nouvelle gamme de produits minimalistes conçus pour le quotidien. Simplicité, fonctionnalité et élégance.',
+        title_home: 'EcoZox - Boutique Minimaliste',
+
+        /* ---------- Product Cards ---------- */
+        btn_add_to_cart: 'Ajouter au panier',
+        btn_added: 'Ajouté !',
+        btn_buy_now: 'Acheter maintenant',
+        product_reloj: 'Montre Classic Mono',
+        product_auriculares: 'Casque Silence Pro',
+        product_zapatillas: 'Baskets Urban Walk',
+        product_camara: 'Appareil photo Retro Lens',
+        product_mochila: 'Sac à dos Canvas Explorer',
+        product_tazas: 'Set de tasses Matte',
+        sold_out: 'ÉPUISÉ',
+        sold_out_btn: 'Épuisé',
+
+        /* ---------- Product Detail ---------- */
+        product_silence_title: 'Casque Silence Pro',
+        product_silence_desc: 'Vivez un son immersif grâce à la réduction de bruit active de pointe. Un design ergonomique et minimaliste qui garantit un confort pendant des heures. Batterie longue durée avec charge rapide. Le compagnon idéal pour votre musique, votre travail et vos voyages.',
+        title_product: 'Casque Silence Pro - EcoZox',
+        po_individual_title: 'Article individuel',
+        po_individual_cta: 'Acheter cet article seul',
+        po_bundle_title: 'Pack Silence Pro',
+        po_bundle_item_stand: 'Support pour casque',
+        po_bundle_item_kit: 'Kit de nettoyage',
+        po_bundle_cta: 'Acheter le pack complet et économiser 20%',
+        label_quantity: 'Quantité :',
+        aria_decrease: 'Diminuer la quantité',
+        aria_increase: 'Augmenter la quantité',
+        aria_quantity: 'Quantité',
+
+        /* ---------- Shipping Widget ---------- */
+        shipping_free_title: 'Livraison gratuite',
+        shipping_free_badge: 'GRATUIT',
+        shipping_benefit_1: 'Suivi de colis en temps réel',
+        shipping_benefit_2: 'Retour ouvert à tout moment',
+        shipping_benefit_3: 'Délais de livraison garantis',
+        shipping_delivery_in: 'Livraison sous 4 jours',
+
+        /* ---------- Sticky Cart Bar ---------- */
+        sticky_cart_btn: 'PANIER',
+        sticky_pay_btn: 'PAYER',
+
+        /* ---------- Reviews ---------- */
+        reviews_title: 'Avis des clients',
+        reviews_write_btn: 'Écrire un avis',
+        reviews_count_suffix: 'avis',
+        review_dialog_title: 'Écrire un avis',
+        review_name_label: 'Nom',
+        review_name_placeholder: 'Votre nom',
+        review_rating_label: 'Note',
+        review_title_label: 'Titre',
+        review_title_placeholder: 'Résumez votre expérience',
+        review_body_label: 'Commentaire',
+        review_body_placeholder: 'Parlez-nous de votre expérience avec le produit...',
+        review_image_label: 'Photo du produit',
+        review_image_optional: '(facultatif)',
+        review_cancel_btn: 'Annuler',
+        review_submit_btn: 'Envoyer l\'avis',
+
+        /* ---------- Video Labels ---------- */
+        video_label_noise: 'Réduction de bruit',
+        video_label_design: 'Design ergonomique',
+        video_label_battery: '40h d\'autonomie',
+
+        /* ---------- Cart Page ---------- */
+        cart_title: 'Votre panier',
+        cart_empty: 'Votre panier est vide.',
+        cart_view_products: 'Parcourir les produits',
+        cart_summary_title: 'Récapitulatif de la commande',
+        cart_subtotal: 'Sous-total',
+        cart_shipping: 'Livraison',
+        cart_shipping_free: 'Gratuite',
+        cart_tax: 'Taxes estimées',
+        cart_total: 'Total',
+        cart_checkout: 'Passer à la caisse',
+        cart_checkout_toast: 'Lancement du processus de paiement...',
+        btn_remove: 'Supprimer',
+        cart_discount: 'Remise',
+        cart_included: 'Inclus',
+        cart_bundle_contents: 'Contenu du pack',
+        title_cart: 'Votre Panier - EcoZox',
+
+        /* ---------- Contact Page ---------- */
+        contact_title: 'REMBOURSEMENT',
+        contact_name_label: 'Nom complet',
+        contact_name_placeholder: 'ex. Jean Dupont',
+        contact_email_label: 'Adresse e-mail',
+        contact_email_placeholder: 'vous@email.com',
+        contact_phone_label: 'Téléphone',
+        contact_phone_placeholder: '+33 6 00 00 00 00',
+        contact_message_label: 'Message ou motif de retour',
+        contact_message_placeholder: 'Décrivez le problème avec votre commande ou votre question afin que nous puissions vous aider...',
+        contact_submit: 'Envoyer la demande',
+        contact_toast: 'Demande envoyée. Nous vous contacterons sous peu.',
+        trust_title: 'Votre tranquillité d\'esprit avant tout',
+        trust_desc: 'Nous savons qu\'acheter en ligne nécessite de la confiance. Si votre produit ne répond pas à vos attentes ou présente un défaut, ne vous inquiétez pas. Nous avons conçu un processus de retour axé sur votre confort.',
+        trust_feature_1: 'Options de retour flexibles jusqu\'à 30 jours après réception de votre commande.',
+        trust_feature_2: 'Processus simple et sans tracas : remboursement garanti sous 48h après validation.',
+        trust_feature_3: 'Un support client humain pour vous accompagner à chaque étape.',
+        title_contact: 'Contact & Remboursements - EcoZox',
+
+        /* ---------- Footer ---------- */
+        footer_tagline: 'Simplicité, fonctionnalité et élégance au quotidien.',
+        footer_legal_title: 'Liens juridiques',
+        footer_terms: 'Terms & Conditions',
+        footer_privacy: 'Privacy Policy',
+        footer_shipping: 'Livraison & Retours',
+        footer_support_title: 'Support',
+        footer_email_label: 'E-mail :',
+        footer_phone_label: 'Téléphone :',
+        footer_copyright: '&copy; 2026 Ecozox. Tous droits réservés.',
+
+        /* ---------- Urgency Banner ---------- */
+        urgency_discount_text: '<strong>{discount}%</strong> de réduction plus 1 cadeau surprise !',
+        urgency_ends_in: 'L\'offre se termine dans :',
+
+        /* ---------- Shipping & Returns Page ---------- */
+        shipping_page_title: 'Livraison & Retours',
+        shipping_s1_title: '1. Politique de livraison',
+        shipping_s1_text: 'Nous traitons toutes les commandes dans un délai de 1 à 3 jours ouvrables (hors week-ends et jours fériés) après réception de votre e-mail de confirmation. Vous recevrez une autre notification lorsque votre commande aura été expédiée.',
+        shipping_s2_title: '2. Tarifs et délais de livraison',
+        shipping_s2_text: 'Nous offrons la livraison standard gratuite dans le monde entier pour toutes les commandes supérieures à 50 $. Pour les commandes inférieures à 50 $, des frais de livraison forfaitaires de 5 $ seront appliqués lors du paiement.',
+        shipping_s2_item_1: 'Livraison standard : 5 à 10 jours ouvrables.',
+        shipping_s2_item_2: 'Livraison express : 2 à 4 jours ouvrables.',
+        shipping_s3_title: '3. Suivi de commande',
+        shipping_s3_text: 'Lorsque votre commande aura été expédiée, nous vous enverrons une notification par e-mail incluant un numéro de suivi que vous pourrez utiliser pour vérifier son statut. Veuillez prévoir 48 heures pour que les informations de suivi soient disponibles.',
+        shipping_s4_title: '4. Politique de retour',
+        shipping_s4_text: 'Nous acceptons les retours jusqu\'à 30 jours après la livraison, si l\'article n\'a pas été utilisé et est dans son état d\'origine. Nous rembourserons le montant total de la commande moins les frais de retour.',
+        shipping_s5_title: '5. Articles endommagés',
+        shipping_s5_text: 'Si votre commande arrive endommagée de quelque manière que ce soit, veuillez nous envoyer un e-mail dès que possible à ecozox@support@gmail.com avec votre numéro de commande et une photo de l\'état de l\'article. Nous traitons chaque cas individuellement et ferons de notre mieux pour trouver une solution satisfaisante.'
+    };
+})();

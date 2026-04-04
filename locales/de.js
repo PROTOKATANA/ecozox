@@ -1,0 +1,152 @@
+/* ========================================
+   Locale: Deutsch (de)
+   Neutrale Sprache — keine Regionalismen
+   ======================================== */
+(function () {
+    window.EcoLocales = window.EcoLocales || {};
+    window.EcoLocales.de = {
+
+        /* ---------- Header ---------- */
+        nav_contact: 'Kontakt',
+        cart_alt: 'Warenkorb',
+        region_dialog_title: 'Regionseinstellungen',
+        region_change_lang: 'Sprache ändern',
+        region_change_currency: 'Währung ändern',
+        aria_close: 'Schließen',
+        aria_change_lang: 'Sprache ändern',
+
+        /* ---------- Home / Index ---------- */
+        hero_title: 'Essential Kollektion 2026',
+        hero_subtitle: 'Entdecken Sie unsere neue Linie minimalistischer Produkte für den Alltag. Schlichtheit, Funktionalität und Eleganz.',
+        title_home: 'EcoZox - Minimalistischer Shop',
+
+        /* ---------- Product Cards ---------- */
+        btn_add_to_cart: 'In den Warenkorb',
+        btn_added: 'Hinzugefügt!',
+        btn_buy_now: 'Jetzt kaufen',
+        product_reloj: 'Classic Mono Uhr',
+        product_auriculares: 'Silence Pro Kopfhörer',
+        product_zapatillas: 'Urban Walk Sneakers',
+        product_camara: 'Retro Lens Kamera',
+        product_mochila: 'Canvas Explorer Rucksack',
+        product_tazas: 'Matte Tassen-Set',
+        sold_out: 'AUSVERKAUFT',
+        sold_out_btn: 'Ausverkauft',
+
+        /* ---------- Product Detail ---------- */
+        product_silence_title: 'Silence Pro Kopfhörer',
+        product_silence_desc: 'Erleben Sie immersiven Klang mit modernster aktiver Geräuschunterdrückung. Ergonomisches und minimalistisches Design garantiert stundenlangen Komfort. Langlebiger Akku mit Schnellladefunktion. Der perfekte Begleiter für Musik, Arbeit und Reisen.',
+        title_product: 'Silence Pro Kopfhörer - EcoZox',
+        po_individual_title: 'Einzelartikel',
+        po_individual_cta: 'Nur diesen Artikel kaufen',
+        po_bundle_title: 'Silence Pro Paket',
+        po_bundle_item_stand: 'Kopfhörerständer',
+        po_bundle_item_kit: 'Reinigungsset',
+        po_bundle_cta: 'Komplettpaket kaufen und 20% sparen',
+        label_quantity: 'Menge:',
+        aria_decrease: 'Menge verringern',
+        aria_increase: 'Menge erhöhen',
+        aria_quantity: 'Menge',
+
+        /* ---------- Shipping Widget ---------- */
+        shipping_free_title: 'Kostenloser Versand',
+        shipping_free_badge: 'GRATIS',
+        shipping_benefit_1: 'Echtzeit-Paketverfolgung',
+        shipping_benefit_2: 'Rückgabe jederzeit möglich',
+        shipping_benefit_3: 'Garantierte Lieferzeiten',
+        shipping_delivery_in: 'Lieferung in 4 Tagen',
+
+        /* ---------- Sticky Cart Bar ---------- */
+        sticky_cart_btn: 'WARENKORB',
+        sticky_pay_btn: 'BEZAHLEN',
+
+        /* ---------- Reviews ---------- */
+        reviews_title: 'Kundenbewertungen',
+        reviews_write_btn: 'Bewertung schreiben',
+        reviews_count_suffix: 'Bewertungen',
+        review_dialog_title: 'Bewertung schreiben',
+        review_name_label: 'Name',
+        review_name_placeholder: 'Ihr Name',
+        review_rating_label: 'Bewertung',
+        review_title_label: 'Titel',
+        review_title_placeholder: 'Fassen Sie Ihre Erfahrung zusammen',
+        review_body_label: 'Kommentar',
+        review_body_placeholder: 'Erzählen Sie uns von Ihrer Erfahrung mit dem Produkt...',
+        review_image_label: 'Produktfoto',
+        review_image_optional: '(optional)',
+        review_cancel_btn: 'Abbrechen',
+        review_submit_btn: 'Bewertung senden',
+
+        /* ---------- Video Labels ---------- */
+        video_label_noise: 'Geräuschunterdrückung',
+        video_label_design: 'Ergonomisches Design',
+        video_label_battery: '40h Akkulaufzeit',
+
+        /* ---------- Cart Page ---------- */
+        cart_title: 'Ihr Warenkorb',
+        cart_empty: 'Ihr Warenkorb ist leer.',
+        cart_view_products: 'Produkte ansehen',
+        cart_summary_title: 'Bestellübersicht',
+        cart_subtotal: 'Zwischensumme',
+        cart_shipping: 'Versand',
+        cart_shipping_free: 'Kostenlos',
+        cart_tax: 'Geschätzte Steuern',
+        cart_total: 'Gesamt',
+        cart_checkout: 'Zur Kasse',
+        cart_checkout_toast: 'Bezahlvorgang wird gestartet...',
+        btn_remove: 'Entfernen',
+        cart_discount: 'Rabatt',
+        cart_included: 'Enthalten',
+        cart_bundle_contents: 'Paketinhalt',
+        title_cart: 'Warenkorb - EcoZox',
+
+        /* ---------- Contact Page ---------- */
+        contact_title: 'RÜCKERSTATTUNG',
+        contact_name_label: 'Vollständiger Name',
+        contact_name_placeholder: 'z.B. Max Mustermann',
+        contact_email_label: 'E-Mail-Adresse',
+        contact_email_placeholder: 'ihre@email.com',
+        contact_phone_label: 'Telefon',
+        contact_phone_placeholder: '+49 170 0000000',
+        contact_message_label: 'Nachricht oder Rückgabegrund',
+        contact_message_placeholder: 'Beschreiben Sie das Problem mit Ihrer Bestellung oder Ihre Anfrage, damit wir Ihnen helfen können...',
+        contact_submit: 'Anfrage senden',
+        contact_toast: 'Anfrage gesendet. Wir werden uns in Kürze bei Ihnen melden.',
+        trust_title: 'Ihre Zufriedenheit steht an erster Stelle',
+        trust_desc: 'Wir wissen, dass Online-Shopping Vertrauen erfordert. Wenn Ihr Produkt Ihren Erwartungen nicht entspricht oder einen Mangel aufweist, machen Sie sich keine Sorgen. Wir haben einen Rückgabeprozess entwickelt, der auf Ihren Komfort ausgerichtet ist.',
+        trust_feature_1: 'Flexible Rückgabeoptionen bis zu 30 Tage nach Erhalt Ihrer Bestellung.',
+        trust_feature_2: 'Einfacher und unkomplizierter Prozess: Rückerstattung innerhalb von 48 Stunden nach Prüfung garantiert.',
+        trust_feature_3: 'Persönlicher Kundensupport, der Sie bei jedem Schritt begleitet.',
+        title_contact: 'Kontakt & Rückerstattung - EcoZox',
+
+        /* ---------- Footer ---------- */
+        footer_tagline: 'Schlichtheit, Funktionalität und Eleganz für den Alltag.',
+        footer_legal_title: 'Rechtliche Links',
+        footer_terms: 'Terms & Conditions',
+        footer_privacy: 'Privacy Policy',
+        footer_shipping: 'Versand & Rückgabe',
+        footer_support_title: 'Support',
+        footer_email_label: 'E-Mail:',
+        footer_phone_label: 'Telefon:',
+        footer_copyright: '&copy; 2026 Ecozox. Alle Rechte vorbehalten.',
+
+        /* ---------- Urgency Banner ---------- */
+        urgency_discount_text: '<strong>{discount}%</strong> Rabatt plus 1 Überraschungsgeschenk!',
+        urgency_ends_in: 'Angebot endet in:',
+
+        /* ---------- Shipping & Returns Page ---------- */
+        shipping_page_title: 'Versand & Rückgabe',
+        shipping_s1_title: '1. Versandrichtlinie',
+        shipping_s1_text: 'Wir bearbeiten alle Bestellungen innerhalb von 1 bis 3 Werktagen (ohne Wochenenden und Feiertage) nach Erhalt Ihrer Bestellbestätigungs-E-Mail. Sie erhalten eine weitere Benachrichtigung, wenn Ihre Bestellung versandt wurde.',
+        shipping_s2_title: '2. Versandkosten & Lieferzeiten',
+        shipping_s2_text: 'Wir bieten weltweit kostenlosen Standardversand für alle Bestellungen über 50 $. Für Bestellungen unter 50 $ wird an der Kasse eine pauschale Versandgebühr von 5 $ erhoben.',
+        shipping_s2_item_1: 'Standardversand: 5 - 10 Werktage.',
+        shipping_s2_item_2: 'Expressversand: 2 - 4 Werktage.',
+        shipping_s3_title: '3. Bestellverfolgung',
+        shipping_s3_text: 'Wenn Ihre Bestellung versandt wurde, senden wir Ihnen eine E-Mail-Benachrichtigung mit einer Sendungsverfolgungsnummer, mit der Sie den Status überprüfen können. Bitte erlauben Sie 48 Stunden, bis die Sendungsverfolgung verfügbar ist.',
+        shipping_s4_title: '4. Rückgaberichtlinie',
+        shipping_s4_text: 'Wir akzeptieren Rückgaben bis zu 30 Tage nach Lieferung, sofern der Artikel nicht benutzt wurde und sich im Originalzustand befindet. Wir erstatten den vollen Bestellbetrag abzüglich der Rücksendekosten.',
+        shipping_s5_title: '5. Beschädigte Artikel',
+        shipping_s5_text: 'Falls Ihre Bestellung in irgendeiner Weise beschädigt ankommt, senden Sie uns bitte so schnell wie möglich eine E-Mail an ecozox@support@gmail.com mit Ihrer Bestellnummer und einem Foto des Artikelzustands. Wir behandeln dies von Fall zu Fall und werden unser Bestes tun, eine zufriedenstellende Lösung zu finden.'
+    };
+})();

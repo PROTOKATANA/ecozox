@@ -1,0 +1,152 @@
+/* ========================================
+   Locale: Português (pt)
+   Linguagem neutra — sem regionalismos
+   ======================================== */
+(function () {
+    window.EcoLocales = window.EcoLocales || {};
+    window.EcoLocales.pt = {
+
+        /* ---------- Header ---------- */
+        nav_contact: 'Contato',
+        cart_alt: 'Carrinho',
+        region_dialog_title: 'Configurações de região',
+        region_change_lang: 'Alterar idioma',
+        region_change_currency: 'Alterar moeda',
+        aria_close: 'Fechar',
+        aria_change_lang: 'Alterar idioma',
+
+        /* ---------- Home / Index ---------- */
+        hero_title: 'Coleção Essencial 2026',
+        hero_subtitle: 'Descubra nossa nova linha de produtos minimalistas projetados para o dia a dia. Simplicidade, funcionalidade e elegância.',
+        title_home: 'EcoZox - Loja Minimalista',
+
+        /* ---------- Product Cards ---------- */
+        btn_add_to_cart: 'Adicionar ao carrinho',
+        btn_added: 'Adicionado!',
+        btn_buy_now: 'Comprar agora',
+        product_reloj: 'Relógio Classic Mono',
+        product_auriculares: 'Fone Silence Pro',
+        product_zapatillas: 'Tênis Urban Walk',
+        product_camara: 'Câmera Retro Lens',
+        product_mochila: 'Mochila Canvas Explorer',
+        product_tazas: 'Conjunto de Canecas Matte',
+        sold_out: 'ESGOTADO',
+        sold_out_btn: 'Esgotado',
+
+        /* ---------- Product Detail ---------- */
+        product_silence_title: 'Fone Silence Pro',
+        product_silence_desc: 'Experimente um som imersivo com cancelamento de ruído ativo de última geração. Design ergonômico e minimalista que garante conforto por horas. Bateria de longa duração com carregamento rápido. O companheiro perfeito para sua música, trabalho e viagens.',
+        title_product: 'Fone Silence Pro - EcoZox',
+        po_individual_title: 'Item individual',
+        po_individual_cta: 'Comprar apenas este item',
+        po_bundle_title: 'Pack Silence Pro',
+        po_bundle_item_stand: 'Suporte para fone',
+        po_bundle_item_kit: 'Kit de limpeza',
+        po_bundle_cta: 'Comprar pack completo e economizar 20%',
+        label_quantity: 'Quantidade:',
+        aria_decrease: 'Diminuir quantidade',
+        aria_increase: 'Aumentar quantidade',
+        aria_quantity: 'Quantidade',
+
+        /* ---------- Shipping Widget ---------- */
+        shipping_free_title: 'Frete grátis',
+        shipping_free_badge: 'GRÁTIS',
+        shipping_benefit_1: 'Rastreamento de pacotes em tempo real',
+        shipping_benefit_2: 'Devolução aberta a qualquer momento',
+        shipping_benefit_3: 'Prazos de entrega garantidos',
+        shipping_delivery_in: 'Entrega em 4 dias',
+
+        /* ---------- Sticky Cart Bar ---------- */
+        sticky_cart_btn: 'CARRINHO',
+        sticky_pay_btn: 'PAGAR',
+
+        /* ---------- Reviews ---------- */
+        reviews_title: 'Avaliações dos clientes',
+        reviews_write_btn: 'Escrever uma avaliação',
+        reviews_count_suffix: 'avaliações',
+        review_dialog_title: 'Escrever uma avaliação',
+        review_name_label: 'Nome',
+        review_name_placeholder: 'Seu nome',
+        review_rating_label: 'Nota',
+        review_title_label: 'Título',
+        review_title_placeholder: 'Resuma sua experiência',
+        review_body_label: 'Comentário',
+        review_body_placeholder: 'Conte-nos sobre sua experiência com o produto...',
+        review_image_label: 'Foto do produto',
+        review_image_optional: '(opcional)',
+        review_cancel_btn: 'Cancelar',
+        review_submit_btn: 'Enviar avaliação',
+
+        /* ---------- Video Labels ---------- */
+        video_label_noise: 'Cancelamento de ruído',
+        video_label_design: 'Design ergonômico',
+        video_label_battery: '40h de bateria',
+
+        /* ---------- Cart Page ---------- */
+        cart_title: 'Seu carrinho de compras',
+        cart_empty: 'Seu carrinho está vazio.',
+        cart_view_products: 'Ver produtos',
+        cart_summary_title: 'Resumo do pedido',
+        cart_subtotal: 'Subtotal',
+        cart_shipping: 'Frete',
+        cart_shipping_free: 'Grátis',
+        cart_tax: 'Impostos estimados',
+        cart_total: 'Total',
+        cart_checkout: 'Finalizar compra',
+        cart_checkout_toast: 'Iniciando processo de pagamento...',
+        btn_remove: 'Remover',
+        cart_discount: 'Desconto',
+        cart_included: 'Incluído',
+        cart_bundle_contents: 'Conteúdo do pack',
+        title_cart: 'Carrinho - EcoZox',
+
+        /* ---------- Contact Page ---------- */
+        contact_title: 'REEMBOLSO',
+        contact_name_label: 'Nome completo',
+        contact_name_placeholder: 'Ex: João Silva',
+        contact_email_label: 'Endereço de e-mail',
+        contact_email_placeholder: 'voce@email.com',
+        contact_phone_label: 'Telefone',
+        contact_phone_placeholder: '+55 11 90000 0000',
+        contact_message_label: 'Mensagem ou motivo da devolução',
+        contact_message_placeholder: 'Descreva o problema com seu pedido ou sua consulta para que possamos ajudá-lo...',
+        contact_submit: 'Enviar solicitação',
+        contact_toast: 'Solicitação enviada. Entraremos em contato em breve.',
+        trust_title: 'Sua tranquilidade em primeiro lugar',
+        trust_desc: 'Sabemos que comprar online requer confiança. Se o produto não atender às suas expectativas ou tiver algum defeito, não se preocupe. Projetamos um processo de devolução focado no seu conforto.',
+        trust_feature_1: 'Opções de devolução flexíveis até 30 dias após o recebimento do pedido.',
+        trust_feature_2: 'Processo fácil e sem complicações: reembolso garantido em 48h após a validação.',
+        trust_feature_3: 'Suporte ao cliente humano para orientá-lo em cada etapa.',
+        title_contact: 'Contato e Reembolsos - EcoZox',
+
+        /* ---------- Footer ---------- */
+        footer_tagline: 'Simplicidade, funcionalidade e elegância para o dia a dia.',
+        footer_legal_title: 'Links legais',
+        footer_terms: 'Terms & Conditions',
+        footer_privacy: 'Privacy Policy',
+        footer_shipping: 'Envio e Devoluções',
+        footer_support_title: 'Suporte',
+        footer_email_label: 'E-mail:',
+        footer_phone_label: 'Telefone:',
+        footer_copyright: '&copy; 2026 Ecozox. Todos os direitos reservados.',
+
+        /* ---------- Urgency Banner ---------- */
+        urgency_discount_text: '<strong>{discount}%</strong> de desconto mais 1 presente surpresa!',
+        urgency_ends_in: 'A oferta termina em:',
+
+        /* ---------- Shipping & Returns Page ---------- */
+        shipping_page_title: 'Envio e Devoluções',
+        shipping_s1_title: '1. Política de envio',
+        shipping_s1_text: 'Processamos todos os pedidos em 1 a 3 dias úteis (excluindo finais de semana e feriados) após o recebimento do e-mail de confirmação do pedido. Você receberá outra notificação quando o pedido for enviado.',
+        shipping_s2_title: '2. Taxas e prazos de envio',
+        shipping_s2_text: 'Oferecemos frete padrão gratuito mundial em todos os pedidos acima de $50. Para pedidos abaixo de $50, será aplicada uma taxa de frete fixa de $5 no checkout.',
+        shipping_s2_item_1: 'Envio padrão: 5 - 10 dias úteis.',
+        shipping_s2_item_2: 'Envio expresso: 2 - 4 dias úteis.',
+        shipping_s3_title: '3. Rastreamento do pedido',
+        shipping_s3_text: 'Quando seu pedido for enviado, enviaremos uma notificação por e-mail com um número de rastreamento que você pode usar para verificar o status. Por favor, aguarde 48 horas para que as informações de rastreamento fiquem disponíveis.',
+        shipping_s4_title: '4. Política de devolução',
+        shipping_s4_text: 'Aceitamos devoluções até 30 dias após a entrega, se o item não foi usado e está em sua condição original. Reembolsaremos o valor total do pedido menos os custos de envio da devolução.',
+        shipping_s5_title: '5. Itens danificados',
+        shipping_s5_text: 'Caso seu pedido chegue danificado de alguma forma, envie-nos um e-mail o mais rápido possível para ecozox@support@gmail.com com o número do pedido e uma foto do estado do item. Tratamos cada caso individualmente e faremos o possível para encontrar uma solução satisfatória.'
+    };
+})();
