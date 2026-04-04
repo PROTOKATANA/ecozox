@@ -27,6 +27,23 @@
         tr: { symbol: '₺',  code: 'TRY', rate: 32.10, locale: 'tr-TR' }
     };
 
+    /* ---------- Fuentes CJK ---------- */
+    var CJK_FONTS = {
+        zh: 'https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap',
+        ja: 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap',
+        ko: 'https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap'
+    };
+    var loadedFonts = {};
+
+    function loadCJKFont(lang) {
+        if (!CJK_FONTS[lang] || loadedFonts[lang]) return;
+        loadedFonts[lang] = true;
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = CJK_FONTS[lang];
+        document.head.appendChild(link);
+    }
+
     /* ---------- Cache de locales cargados ---------- */
     var localeCache = {};
     var pendingCallbacks = {};
@@ -115,6 +132,7 @@
     function setLang(lang) {
         if (SUPPORTED_LANGS.indexOf(lang) === -1) return;
 
+        loadCJKFont(lang);
         loadLocale(lang, function () {
             currentLang = lang;
             localStorage.setItem(STORAGE_KEY, lang);
@@ -243,6 +261,7 @@
     function init() {
         document.documentElement.lang = currentLang;
         document.documentElement.dir = isRTL(currentLang) ? 'rtl' : 'ltr';
+        loadCJKFont(currentLang);
 
         // Cargar inglés como fallback, luego el idioma actual
         loadLocale('en', function () {

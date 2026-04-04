@@ -13,6 +13,7 @@
   --text-muted: #6b7280;
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
   --font-heading: 'Montserrat', sans-serif;
+  --font-cjk: system-ui, -apple-system, sans-serif;
   --transition: all 0.3s ease;
   --border-radius: 8px;
 
@@ -54,6 +55,30 @@ h1, h2, h3, h4, h5, h6,
   font-family: var(--font-heading);
   font-weight: 700;
   letter-spacing: -0.01em;
+}
+
+/* ---------- CJK font overrides ----------
+   Applies when html[lang] is set to zh / ja / ko.
+   System fonts load instantly (no network round-trip);
+   Noto Sans SC/JP/KR are injected dynamically by i18n.js
+   as a reliable cross-platform fallback.
+   -------------------------------------------------- */
+:is(html[lang="zh"], html[lang="zh"] body) {
+  --font-body:    'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', 'Heiti SC', sans-serif;
+  --font-heading: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', 'Heiti SC', sans-serif;
+}
+:is(html[lang="ja"], html[lang="ja"] body) {
+  --font-body:    'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Meiryo', sans-serif;
+  --font-heading: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Meiryo', sans-serif;
+}
+:is(html[lang="ko"], html[lang="ko"] body) {
+  --font-body:    'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Gulim', sans-serif;
+  --font-heading: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Gulim', sans-serif;
+}
+/* Remove tight letter-spacing for CJK — it breaks glyph spacing */
+:is(html[lang="zh"], html[lang="ja"], html[lang="ko"]) :is(h1,h2,h3,h4,h5,h6,
+  .product-title, .section-title, .cart-item-title) {
+  letter-spacing: 0;
 }
 
 a {
