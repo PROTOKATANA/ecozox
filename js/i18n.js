@@ -29,9 +29,9 @@
 
     /* ---------- Fuentes CJK ---------- */
     var CJK_FONTS = {
-        zh: 'https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap',
-        ja: 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap',
-        ko: 'https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap'
+        zh: 'https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;800&display=swap',
+        ja: 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap',
+        ko: 'https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap'
     };
     var loadedFonts = {};
 
@@ -274,6 +274,7 @@
                     applyTranslations();
                     applyPrices();
                     updateLangSelector();
+                    if (window.EcoCartRenderer)   window.EcoCartRenderer.renderCart();
                     if (window.EcoUrgencyBanner)  window.EcoUrgencyBanner.update();
                     if (window.EcoShippingWidget) window.EcoShippingWidget.update();
                     if (window.EcoProductCards)   window.EcoProductCards.update();
