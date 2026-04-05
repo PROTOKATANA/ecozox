@@ -31,7 +31,8 @@ const modules = [
     'js/urgency-banner.js',
     'js/reviews.js',
     'js/wave-divider.js',
-    'js/purchase-options.js'
+    'js/purchase-options.js',
+    'js/checkout-widget.js'
 ];
 
 modules.forEach(mod => loadScript(base + mod));
