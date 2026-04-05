@@ -174,6 +174,10 @@
         privacy_s4_title: '4. Datenspeicherung',
         privacy_s4_text: 'Bei einer Bestellung speichern wir Ihre Bestellinformationen, es sei denn, Sie fordern deren Löschung.',
         privacy_s5_title: '5. Ihre Rechte',
-        privacy_s5_text: 'Sie haben das Recht, auf Ihre persönlichen Daten zuzugreifen und deren Berichtigung, Aktualisierung oder Löschung zu verlangen. Kontaktieren Sie uns über die Kontaktinformationen auf der Website.'
+        privacy_s5_text: 'Sie haben das Recht, auf Ihre persönlichen Daten zuzugreifen und deren Berichtigung, Aktualisierung oder Löschung zu verlangen. Kontaktieren Sie uns über die Kontaktinformationen auf der Website.',
+
+        /* ---------- Before / After Slider ---------- */
+        ba_after: 'Nachher',
+        ba_before: 'Vorher'
     };
 })()

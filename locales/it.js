@@ -174,6 +174,10 @@
         privacy_s4_title: '4. Conservazione dei dati',
         privacy_s4_text: 'Quando effettui un ordine, conserviamo le tue informazioni salvo richiesta di cancellazione.',
         privacy_s5_title: '5. I tuoi diritti',
-        privacy_s5_text: 'Hai il diritto di accedere, correggere, aggiornare o eliminare le tue informazioni personali. Contattaci tramite le informazioni di contatto del sito.'
+        privacy_s5_text: 'Hai il diritto di accedere, correggere, aggiornare o eliminare le tue informazioni personali. Contattaci tramite le informazioni di contatto del sito.',
+
+        /* ---------- Before / After Slider ---------- */
+        ba_after: 'Dopo',
+        ba_before: 'Prima'
     };
 })()

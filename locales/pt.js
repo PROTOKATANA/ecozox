@@ -174,6 +174,10 @@
         privacy_s4_title: '4. Retenção de Dados',
         privacy_s4_text: 'Ao fazer um pedido, mantemos suas informações em nossos registros a menos que você solicite a exclusão.',
         privacy_s5_title: '5. Seus Direitos',
-        privacy_s5_text: 'Você tem o direito de acessar, corrigir, atualizar ou excluir suas informações pessoais. Entre em contato conosco através das informações de contato do site.'
+        privacy_s5_text: 'Você tem o direito de acessar, corrigir, atualizar ou excluir suas informações pessoais. Entre em contato conosco através das informações de contato do site.',
+
+        /* ---------- Before / After Slider ---------- */
+        ba_after: 'Depois',
+        ba_before: 'Antes'
     };
 })()

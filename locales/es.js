@@ -174,6 +174,10 @@
         privacy_s4_title: '4. Retención de Datos',
         privacy_s4_text: 'Cuando realizas un pedido, mantendremos tu información para nuestros registros a menos que nos pidas que la eliminemos.',
         privacy_s5_title: '5. Tus Derechos',
-        privacy_s5_text: 'Si eres residente europeo, tienes derecho a acceder, corregir, actualizar o eliminar tu información personal. Comunícate con nosotros a través de la información de contacto del sitio.'
+        privacy_s5_text: 'Si eres residente europeo, tienes derecho a acceder, corregir, actualizar o eliminar tu información personal. Comunícate con nosotros a través de la información de contacto del sitio.',
+
+        /* ---------- Before / After Slider ---------- */
+        ba_after: 'Después',
+        ba_before: 'Antes'
     };
 })();

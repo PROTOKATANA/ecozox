@@ -174,6 +174,10 @@
         privacy_s4_title: '4. Data Retention',
         privacy_s4_text: 'When you place an order through the site, we will maintain your order information for our records unless and until you ask us to delete this information.',
         privacy_s5_title: '5. Your Rights',
-        privacy_s5_text: 'If you are a European resident, you have the right to access personal information we hold about you and to ask that your personal information be corrected, updated, or deleted. Please contact us through the contact information on the site.'
+        privacy_s5_text: 'If you are a European resident, you have the right to access personal information we hold about you and to ask that your personal information be corrected, updated, or deleted. Please contact us through the contact information on the site.',
+
+        /* ---------- Before / After Slider ---------- */
+        ba_after: 'After',
+        ba_before: 'Before'
     };
 })();

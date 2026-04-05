@@ -174,6 +174,10 @@
         privacy_s4_title: '4. Penyimpanan Data',
         privacy_s4_text: 'Saat Anda memesan, kami menyimpan informasi pesanan Anda kecuali Anda meminta kami untuk menghapusnya.',
         privacy_s5_title: '5. Hak Anda',
-        privacy_s5_text: 'Anda berhak mengakses, mengoreksi, memperbarui, atau menghapus informasi pribadi Anda. Hubungi kami melalui informasi kontak di situs.'
+        privacy_s5_text: 'Anda berhak mengakses, mengoreksi, memperbarui, atau menghapus informasi pribadi Anda. Hubungi kami melalui informasi kontak di situs.',
+
+        /* ---------- Before / After Slider ---------- */
+        ba_after: 'Sesudah',
+        ba_before: 'Sebelum'
     };
 })()

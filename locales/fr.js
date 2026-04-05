@@ -174,6 +174,10 @@
         privacy_s4_title: '4. Conservation des données',
         privacy_s4_text: 'Lors d\'une commande, nous conservons vos informations sauf si vous nous demandez de les supprimer.',
         privacy_s5_title: '5. Vos droits',
-        privacy_s5_text: 'Vous avez le droit d\'accéder à vos données personnelles et d\'en demander la correction, la mise à jour ou la suppression. Contactez-nous via les coordonnées du site.'
+        privacy_s5_text: 'Vous avez le droit d\'accéder à vos données personnelles et d\'en demander la correction, la mise à jour ou la suppression. Contactez-nous via les coordonnées du site.',
+
+        /* ---------- Before / After Slider ---------- */
+        ba_after: 'Après',
+        ba_before: 'Avant'
     };
 })()

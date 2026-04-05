@@ -174,6 +174,10 @@
         privacy_s4_title: '4. Veri Saklama',
         privacy_s4_text: 'Sipariş verdiğinizde, silmemizi talep etmediğiniz sürece sipariş bilgilerinizi kayıtlarımızda saklıyoruz.',
         privacy_s5_title: '5. Haklarınız',
-        privacy_s5_text: 'Kişisel bilgilerinize erişme, bunları düzeltme, güncelleme veya silme talep etme hakkınız vardır. Sitedeki iletişim bilgileri aracılığıyla bizimle iletişime geçin.'
+        privacy_s5_text: 'Kişisel bilgilerinize erişme, bunları düzeltme, güncelleme veya silme talep etme hakkınız vardır. Sitedeki iletişim bilgileri aracılığıyla bizimle iletişime geçin.',
+
+        /* ---------- Before / After Slider ---------- */
+        ba_after: 'Sonra',
+        ba_before: 'Önce'
     };
 })()
