@@ -102,6 +102,7 @@
 
     document.body.insertAdjacentHTML('beforeend',
         '<dialog id="region-dialog" aria-labelledby="region-dialog-title">'
+        + '<div class="region-dialog__handle" aria-hidden="true"></div>'
         + '<div class="region-dialog__header">'
         +   '<h2 class="region-dialog__title" id="region-dialog-title" data-i18n="region_dialog_title">Configuración de Región</h2>'
         +   '<button class="region-dialog__close" id="regionDialogClose" aria-label="Cerrar" data-i18n-aria="aria_close">'
@@ -126,6 +127,23 @@
     var closeBtn    = document.getElementById('regionDialogClose');
     var langOptions = document.getElementById('regionLangOptions');
 
+    /* ---------- Cerrar con animación ---------- */
+    function closeDialog() {
+        dialog.classList.add('is-closing');
+        var done = false;
+        function finish() {
+            if (done) return;
+            done = true;
+            dialog.classList.remove('is-closing');
+            dialog.close();
+        }
+        dialog.addEventListener('animationend', function handler() {
+            dialog.removeEventListener('animationend', handler);
+            finish();
+        });
+        setTimeout(finish, 400); /* fallback */
+    }
+
     /* ---------- Abrir dialog ---------- */
     toggle.addEventListener('click', function (e) {
         e.stopPropagation();
@@ -133,17 +151,21 @@
     });
 
     /* ---------- Cerrar con × ---------- */
-    closeBtn.addEventListener('click', function () {
-        dialog.close();
-    });
+    closeBtn.addEventListener('click', closeDialog);
 
     /* ---------- Cerrar al clicar backdrop ---------- */
     dialog.addEventListener('click', function (e) {
         var rect = dialog.getBoundingClientRect();
         if (e.clientX < rect.left || e.clientX > rect.right ||
             e.clientY < rect.top  || e.clientY > rect.bottom) {
-            dialog.close();
+            closeDialog();
         }
+    });
+
+    /* ---------- Interceptar ESC para animar el cierre ---------- */
+    dialog.addEventListener('cancel', function (e) {
+        e.preventDefault();
+        closeDialog();
     });
 
     /* ---------- Selección de idioma ---------- */
@@ -153,20 +175,18 @@
 
         var lang = btn.getAttribute('data-region-lang');
 
-        // Actualizar visual
         langOptions.querySelectorAll('.region-option').forEach(function (b) {
             b.classList.remove('active');
         });
         btn.classList.add('active');
 
-        // Aplicar vía EcoI18n (todos los idiomas soportados)
         if (window.EcoI18n) {
             window.EcoI18n.setLang(lang);
         } else {
             localStorage.setItem(STORAGE_KEY, lang);
         }
 
-        dialog.close();
+        closeDialog();
     });
 
 })();

@@ -88,15 +88,42 @@
                     '</div>' +
                 '</div>' +
 
-                /* Country */
-                '<div class="cwo__field">' +
-                    '<label class="cwo__label" for="cwo-country" data-i18n="checkout_country_label">País</label>' +
-                    '<select id="cwo-country" name="country" class="cwo__input cwo__select" ' +
-                        'autocomplete="country" required>' +
-                        '<option value="" data-i18n="checkout_country_placeholder">Selecciona un país</option>' +
-                        buildCountryOptions() +
-                    '</select>' +
-                    '<span class="cwo__error" id="err-country" hidden></span>' +
+                /* Country + ZIP */
+                '<div class="cwo__field-row">' +
+                    '<div class="cwo__field">' +
+                        '<label class="cwo__label" for="cwo-country" data-i18n="checkout_country_label">País</label>' +
+                        '<select id="cwo-country" name="country" class="cwo__input cwo__select" ' +
+                            'autocomplete="country" required>' +
+                            '<option value="" data-i18n="checkout_country_placeholder">Selecciona un país</option>' +
+                            buildCountryOptions() +
+                        '</select>' +
+                        '<span class="cwo__error" id="err-country" hidden></span>' +
+                    '</div>' +
+                    '<div class="cwo__field">' +
+                        '<label class="cwo__label" for="cwo-zip" data-i18n="checkout_zip_label">Código postal</label>' +
+                        '<input type="text" id="cwo-zip" name="postal-code" class="cwo__input" ' +
+                            'autocomplete="postal-code" required inputmode="numeric" ' +
+                            'data-i18n-placeholder="checkout_zip_placeholder">' +
+                        '<span class="cwo__error" id="err-zip" hidden></span>' +
+                    '</div>' +
+                '</div>' +
+
+                /* Province + City */
+                '<div class="cwo__field-row">' +
+                    '<div class="cwo__field">' +
+                        '<label class="cwo__label" for="cwo-province" data-i18n="checkout_province_label">Provincia</label>' +
+                        '<input type="text" id="cwo-province" name="address-level1" class="cwo__input" ' +
+                            'autocomplete="address-level1" required ' +
+                            'data-i18n-placeholder="checkout_province_placeholder">' +
+                        '<span class="cwo__error" id="err-province" hidden></span>' +
+                    '</div>' +
+                    '<div class="cwo__field">' +
+                        '<label class="cwo__label" for="cwo-city" data-i18n="checkout_city_label">Ciudad</label>' +
+                        '<input type="text" id="cwo-city" name="address-level2" class="cwo__input" ' +
+                            'autocomplete="address-level2" required ' +
+                            'data-i18n-placeholder="checkout_city_placeholder">' +
+                        '<span class="cwo__error" id="err-city" hidden></span>' +
+                    '</div>' +
                 '</div>' +
 
                 /* Address line 1 */
@@ -120,31 +147,6 @@
                     '<input type="text" id="cwo-address2" name="address-line2" class="cwo__input" ' +
                         'autocomplete="address-line2" ' +
                         'data-i18n-placeholder="checkout_address2_placeholder">' +
-                '</div>' +
-
-                /* Province + City + ZIP */
-                '<div class="cwo__field-row cwo__field-row--3">' +
-                    '<div class="cwo__field">' +
-                        '<label class="cwo__label" for="cwo-province" data-i18n="checkout_province_label">Provincia</label>' +
-                        '<input type="text" id="cwo-province" name="address-level1" class="cwo__input" ' +
-                            'autocomplete="address-level1" required ' +
-                            'data-i18n-placeholder="checkout_province_placeholder">' +
-                        '<span class="cwo__error" id="err-province" hidden></span>' +
-                    '</div>' +
-                    '<div class="cwo__field">' +
-                        '<label class="cwo__label" for="cwo-city" data-i18n="checkout_city_label">Ciudad</label>' +
-                        '<input type="text" id="cwo-city" name="address-level2" class="cwo__input" ' +
-                            'autocomplete="address-level2" required ' +
-                            'data-i18n-placeholder="checkout_city_placeholder">' +
-                        '<span class="cwo__error" id="err-city" hidden></span>' +
-                    '</div>' +
-                    '<div class="cwo__field">' +
-                        '<label class="cwo__label" for="cwo-zip" data-i18n="checkout_zip_label">Código postal</label>' +
-                        '<input type="text" id="cwo-zip" name="postal-code" class="cwo__input" ' +
-                            'autocomplete="postal-code" required inputmode="numeric" ' +
-                            'data-i18n-placeholder="checkout_zip_placeholder">' +
-                        '<span class="cwo__error" id="err-zip" hidden></span>' +
-                    '</div>' +
                 '</div>' +
 
                 /* Email */
