@@ -1,49 +1,50 @@
 /* ========================================
    Wave Divider Generator
    Creates dynamic SVG wave separators
+   using a single continuous path (no pattern tiling)
    ======================================== */
 
 (function () {
-    const dividers = document.querySelectorAll('.line-divider');
+    var dividers = document.querySelectorAll('.line-divider');
 
-    dividers.forEach((divider, index) => {
-        const width = parseFloat(divider.dataset.waveWidth) || 50;
-        const height = parseFloat(divider.dataset.waveHeight) || 20;
-        const strokeWidth = parseFloat(divider.dataset.strokeWidth) || 10;
-        const strokeColor = divider.dataset.strokeColor || '#e5e7eb';
-        const fillTop = divider.dataset.fillTop || 'transparent';
-        const fillBottom = divider.dataset.fillBottom || 'transparent';
+    dividers.forEach(function (divider, index) {
+        var waveWidth   = parseFloat(divider.dataset.waveWidth)   || 50;
+        var height      = parseFloat(divider.dataset.waveHeight)  || 20;
+        var strokeWidth = parseFloat(divider.dataset.strokeWidth) || 10;
+        var strokeColor = divider.dataset.strokeColor || '#e5e7eb';
+        var fillTop     = divider.dataset.fillTop     || 'transparent';
+        var fillBottom  = divider.dataset.fillBottom  || 'transparent';
 
-        const svgHeight = height + (strokeWidth * 2);
-        const midY = svgHeight / 2;
-        const amplitudeY = height / 2;
+        var svgHeight = height + strokeWidth * 2;
+        var midY      = svgHeight / 2;
+        var amp       = height / 2;
+        var halfWave  = waveWidth / 2;
 
-        const pathLine = `
-            M -${width} ${midY}
-            Q -${width * 0.75} ${midY - amplitudeY} -${width * 0.5} ${midY}
-            T 0 ${midY}
-            T ${width * 0.5} ${midY}
-            T ${width} ${midY}
-            T ${width * 1.5} ${midY}
-            T ${width * 2} ${midY}
-        `;
+        // Build a single continuous wave covering 4000 px (wider than any viewport)
+        var totalWidth = 4000;
+        var waveLine = 'M0 ' + midY;
+        var x   = 0;
+        var up  = true;
 
-        const pathFillTop = `${pathLine} L ${width * 2} -5 L -${width} -5 Z`;
-        const pathFillBottom = `${pathLine} L ${width * 2} ${svgHeight + 5} L -${width} ${svgHeight + 5} Z`;
+        while (x < totalWidth) {
+            var cx = x + halfWave / 2;
+            var cy = up ? midY - amp : midY + amp;
+            x += halfWave;
+            waveLine += ' Q' + cx + ' ' + cy + ' ' + x + ' ' + midY;
+            up = !up;
+        }
 
-        divider.innerHTML = `
-            <svg width="100%" height="${svgHeight}" xmlns="http://www.w3.org/2000/svg" style="display: block;">
-                <defs>
-                    <pattern id="wave-pattern-${index}" x="0" y="0" width="${width}" height="${svgHeight}" patternUnits="userSpaceOnUse">
-                        ${fillTop !== 'transparent' ? `<path d="${pathFillTop}" fill="${fillTop}" />` : ''}
-                        ${fillBottom !== 'transparent' ? `<path d="${pathFillBottom}" fill="${fillBottom}" />` : ''}
-                        <path d="${pathLine}" fill="none" stroke="${strokeColor}" stroke-width="${strokeWidth}" stroke-linecap="round" />
-                    </pattern>
-                </defs>
-                <rect x="0" y="0" width="100%" height="100%" fill="url(#wave-pattern-${index})" />
-            </svg>
-        `;
+        // Fill paths (single shapes, not tiled patterns)
+        var topPath    = waveLine + ' L' + totalWidth + ' 0 L0 0 Z';
+        var bottomPath = waveLine + ' L' + totalWidth + ' ' + svgHeight + ' L0 ' + svgHeight + ' Z';
 
-        divider.style.height = `${svgHeight}px`;
+        var svg = '<svg width="100%" height="' + svgHeight + '" xmlns="http://www.w3.org/2000/svg" style="display:block;overflow:hidden">'
+            + (fillTop    !== 'transparent' ? '<path d="' + topPath    + '" fill="' + fillTop    + '"/>' : '')
+            + (fillBottom !== 'transparent' ? '<path d="' + bottomPath + '" fill="' + fillBottom + '"/>' : '')
+            + '<path d="' + waveLine + '" fill="none" stroke="' + strokeColor + '" stroke-width="' + strokeWidth + '" stroke-linecap="round"/>'
+            + '</svg>';
+
+        divider.innerHTML = svg;
+        divider.style.height = svgHeight + 'px';
     });
 })();
