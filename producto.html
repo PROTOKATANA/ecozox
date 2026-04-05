@@ -22,29 +22,62 @@
                     <div class="product-gallery-wrapper">
 
                         <div class="gallery-main">
-                            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=800&h=800"
-                                 alt="Auriculares Silence Pro Vista Principal"
-                                 id="mainImage">
+                            <!-- Before / After Slider -->
+                            <div class="ba-slider" id="baSlider">
+
+                                <!-- BEFORE layer (negativo) — visible en la zona derecha -->
+                                <div class="ba-slider__before">
+                                    <img id="baBeforeImg"
+                                         src="https://images.unsplash.com/photo-1484704849700-f032a568e944?auto=format&fit=crop&q=80&w=800&h=800"
+                                         alt="Antes">
+                                </div>
+
+                                <!-- AFTER layer (positivo) — clippeada por --ba-pos -->
+                                <div class="ba-slider__after">
+                                    <img id="baAfterImg"
+                                         src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=800&h=800"
+                                         alt="Después">
+                                </div>
+
+                                <!-- Divisor draggable -->
+                                <div class="ba-slider__divider" id="baDivider">
+                                    <div class="ba-slider__handle" aria-hidden="true">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                            <path d="M8.5 5L1 12l7.5 7V5z"/>
+                                            <path d="M15.5 5L23 12l-7.5 7V5z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+
+                                <!-- Etiquetas -->
+                                <span class="ba-slider__label ba-slider__label--after">Después</span>
+                                <span class="ba-slider__label ba-slider__label--before">Antes</span>
+
+                            </div>
                         </div>
 
                         <div class="gallery-thumbnails">
                             <div class="thumbnail active"
                                  data-full-src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=800&h=800"
+                                 data-before-src="https://images.unsplash.com/photo-1484704849700-f032a568e944?auto=format&fit=crop&q=80&w=800&h=800"
                                  tabindex="0" role="button" aria-label="Vista 1">
                                 <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=160&h=160" alt="Miniatura 1">
                             </div>
                             <div class="thumbnail"
                                  data-full-src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&q=80&w=800&h=800"
+                                 data-before-src="https://images.unsplash.com/photo-1487215078519-e21cc028cb29?auto=format&fit=crop&q=80&w=800&h=800"
                                  tabindex="0" role="button" aria-label="Vista 2">
                                 <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&q=80&w=160&h=160" alt="Miniatura 2">
                             </div>
                             <div class="thumbnail"
                                  data-full-src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&q=80&w=800&h=800"
+                                 data-before-src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=800&h=800"
                                  tabindex="0" role="button" aria-label="Vista 3">
                                 <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&q=80&w=160&h=160" alt="Miniatura 3">
                             </div>
                             <div class="thumbnail"
                                  data-full-src="https://images.unsplash.com/photo-1524678606370-a47ad25cb82a?auto=format&fit=crop&q=80&w=800&h=800"
+                                 data-before-src="https://images.unsplash.com/photo-1484963703781-b73bb13d6acb?auto=format&fit=crop&q=80&w=800&h=800"
                                  tabindex="0" role="button" aria-label="Vista 4">
                                 <img src="https://images.unsplash.com/photo-1524678606370-a47ad25cb82a?auto=format&fit=crop&q=80&w=160&h=160" alt="Miniatura 4">
                             </div>

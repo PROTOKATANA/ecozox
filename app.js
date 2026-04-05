@@ -25,6 +25,7 @@ const modules = [
 	'js/toast.js',
     'js/cart.js',
     'js/gallery.js',
+    'js/before-after-slider.js',
     'js/quantity.js',
     'js/cart-items.js',
     'js/urgency-banner.js',
