@@ -179,29 +179,69 @@
   background: rgba(0, 0, 0, 0.55);
 }
 
+/* ── Label clip zones (mirrors image clip logic) ── */
+.ba-label-clip {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.ba-label-clip--after {
+  clip-path: inset(0 calc(100% - var(--ba-pos)) 0 0);
+}
+
+.ba-label-clip--before {
+  clip-path: inset(0 0 0 var(--ba-pos));
+}
+
 /* ── Labels ── */
 .ba-slider__label {
   position: absolute;
   top: 12px;
-  padding: 3px 9px;
-  background: rgba(0, 0, 0, 0.52);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px 5px 8px;
+  background: rgba(10, 10, 10, 0.62);
   color: #fff;
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.07em;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  border-radius: 3px;
+  border-radius: 5px;
   pointer-events: none;
   z-index: 1;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Dot de color antes del texto */
+.ba-slider__label::before {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
 }
 
 .ba-slider__label--after {
   left: 12px;
 }
 
+.ba-slider__label--after::before {
+  background: #22c55e;
+  box-shadow: 0 0 5px #22c55e;
+}
+
 .ba-slider__label--before {
   right: 12px;
+}
+
+.ba-slider__label--before::before {
+  background: #ef4444;
+  box-shadow: 0 0 5px #ef4444;
 }
 
 /* ========================================
