@@ -178,6 +178,22 @@
 
         /* ---------- Before / After Slider ---------- */
         ba_after: 'Dopo',
-        ba_before: 'Prima'
+        ba_before: 'Prima',
+
+        /* ---------- Reviews ---------- */
+        review_1_title: 'Qualità audio incredibile',
+        review_1_body: 'Cercavo cuffie ben adattate da mesi e queste hanno superato tutte le mie aspettative. Il suono è cristallino e la cancellazione del rumore è spettacolare.',
+        review_2_title: 'Il mio acquisto dell\'anno',
+        review_2_body: 'Design minimalista ed elegante, esattamente come descritto nel negozio. Comode anche dopo 6 ore di uso continuo. La batteria dura esattamente come promesso.',
+        review_3_title: 'Perfette per lavorare da casa',
+        review_3_body: 'Le uso nelle videochiamate e le persone mi dicono sempre che si sentono perfettamente. Il microfono cattura la voce con molta precisione e l\'isolamento è notevole.',
+        review_4_title: 'Superano marchi più costosi',
+        review_4_body: 'Venivo da un marchio molto più costoso e la differenza non giustifica il costo. Queste EcoZox sono superiori nel comfort e la cancellazione attiva del rumore è davvero efficace.',
+        review_5_title: 'Il regalo perfetto',
+        review_5_body: 'Le ho comprate per mio marito ed era entusiasta. Sono arrivate in una confezione molto curata e il prodotto è esattamente come nelle foto. Totalmente consigliate.',
+        review_6_title: 'Comode e durevoli',
+        review_6_body: 'Dopo 3 mesi di uso intenso sono ancora come il primo giorno. Il cuscinetto è molto morbido e i materiali trasmettono una solidità che non mi aspettavo a questo prezzo.',
+        review_7_title: 'Molto buone, con un piccolo neo',
+        review_7_body: 'La qualità audio e il design sono eccellenti. Tolgo una stella perché l\'app di accompagnamento potrebbe essere più intuitiva. Per il resto, un acquisto molto consigliato.'
     };
 })()

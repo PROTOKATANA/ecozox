@@ -178,6 +178,22 @@
 
         /* ---------- Before / After Slider ---------- */
         ba_after: 'Sesudah',
-        ba_before: 'Sebelum'
+        ba_before: 'Sebelum',
+
+        /* ---------- Reviews ---------- */
+        review_1_title: 'Kualitas suara yang luar biasa',
+        review_1_body: 'Saya sudah berbulan-bulan mencari headphone yang pas dan produk ini melampaui semua ekspektasi saya. Suaranya jernih dan peredam kebisingannya spektakuler.',
+        review_2_title: 'Pembelian terbaik tahun ini',
+        review_2_body: 'Desain minimalis dan elegan, persis seperti yang dijelaskan di toko. Nyaman bahkan setelah 6 jam penggunaan terus-menerus. Baterai tahan sesuai yang dijanjikan.',
+        review_3_title: 'Sempurna untuk bekerja dari rumah',
+        review_3_body: 'Saya menggunakannya di video call dan orang-orang selalu bilang suara saya terdengar jelas. Mikrofon menangkap suara dengan presisi tinggi dan isolasinya luar biasa.',
+        review_4_title: 'Mengalahkan merek yang lebih mahal',
+        review_4_body: 'Saya sebelumnya menggunakan merek yang jauh lebih mahal dan perbedaannya tidak sebanding. EcoZox ini unggul dalam kenyamanan dan peredam kebisingan aktifnya benar-benar efektif.',
+        review_5_title: 'Hadiah yang sempurna',
+        review_5_body: 'Saya membelinya untuk suami saya dan dia sangat senang. Datang dengan kemasan yang sangat rapi dan produknya persis seperti di foto. Sangat direkomendasikan.',
+        review_6_title: 'Nyaman dan tahan lama',
+        review_6_body: 'Setelah 3 bulan pemakaian intensif masih seperti hari pertama. Bantalannya sangat lembut dan materialnya memberikan kekokohan yang tidak saya harapkan di harga ini.',
+        review_7_title: 'Sangat bagus, dengan satu catatan kecil',
+        review_7_body: 'Kualitas suara dan desainnya sangat bagus. Saya kurangi satu bintang karena aplikasi pendampingnya bisa lebih intuitif. Selain itu, pembelian yang sangat direkomendasikan.'
     };
 })()

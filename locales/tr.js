@@ -178,6 +178,22 @@
 
         /* ---------- Before / After Slider ---------- */
         ba_after: 'Sonra',
-        ba_before: 'Önce'
+        ba_before: 'Önce',
+
+        /* ---------- Reviews ---------- */
+        review_1_title: 'İnanılmaz ses kalitesi',
+        review_1_body: 'Aylardır iyi oturan kulaklık arıyordum ve bu tüm beklentilerimi aştı. Ses kristal berraklığında ve gürültü engelleme muhteşem.',
+        review_2_title: 'Yılın en iyi alışverişim',
+        review_2_body: 'Minimalist ve şık tasarım, mağazada anlatıldığı gibi. 6 saat sürekli kullanımdan sonra bile rahat. Pil ömrü tam vaat edildiği kadar.',
+        review_3_title: 'Evden çalışmak için mükemmel',
+        review_3_body: 'Video görüşmelerinde kullanıyorum ve insanlar beni mükemmel duyduklarını söylüyor. Mikrofon sesi çok hassas yakalıyor ve yalıtım kayda değer.',
+        review_4_title: 'Daha pahalı markaları geride bırakıyor',
+        review_4_body: 'Çok daha pahalı bir markadan geçtim ve fark maliyeti haklı çıkarmıyor. Bu EcoZox konforta üstün ve aktif gürültü engelleme gerçekten etkili.',
+        review_5_title: 'Mükemmel bir hediye',
+        review_5_body: 'Kocam için aldım ve çok memnun kaldı. Çok özenli bir ambalajda geldi ve ürün fotoğraflardaki gibi. Kesinlikle tavsiye ederim.',
+        review_6_title: 'Rahat ve dayanıklı',
+        review_6_body: '3 aylık yoğun kullanımdan sonra hâlâ ilk günkü gibi. Yastıkçık çok yumuşak ve malzemeler bu fiyatta beklemediğim bir sağlamlık hissettiriyor.',
+        review_7_title: 'Çok iyi, küçük bir eksikle',
+        review_7_body: 'Ses kalitesi ve tasarım mükemmel. Yardımcı uygulama daha sezgisel olabilirdi diye bir yıldız eksiltiyorum. Bunun dışında çok tavsiye edilebilir bir alışveriş.'
     };
 })()

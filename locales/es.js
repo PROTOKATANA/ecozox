@@ -178,6 +178,22 @@
 
         /* ---------- Before / After Slider ---------- */
         ba_after: 'Después',
-        ba_before: 'Antes'
+        ba_before: 'Antes',
+
+        /* ---------- Reviews ---------- */
+        review_1_title: 'Increíble calidad de sonido',
+        review_1_body: 'Llevaba meses buscando unos auriculares que se adaptaran bien y estos superaron todas mis expectativas. El sonido es cristalino y la cancelación de ruido es espectacular.',
+        review_2_title: 'Mi compra del año',
+        review_2_body: 'Diseño minimalista y elegante, tal como lo describe la tienda. Son cómodos incluso después de 6 horas de uso continuo. La batería dura exactamente lo que prometen.',
+        review_3_title: 'Perfectos para trabajar desde casa',
+        review_3_body: 'Los uso en videollamadas y la gente siempre me dice que se me escucha perfecto. El micrófono captura la voz con mucha precisión y el aislamiento es notable.',
+        review_4_title: 'Superan a marcas de mayor precio',
+        review_4_body: 'Venía de usar otra marca mucho más cara y la diferencia no justifica el coste. Estos EcoZox son superiores en comodidad y la cancelación de ruido activa es verdaderamente efectiva.',
+        review_5_title: 'El regalo perfecto',
+        review_5_body: 'Los compré para mi marido y quedó encantado. Llegaron en un packaging muy cuidado y el producto es exactamente como aparece en las fotos. Totalmente recomendados.',
+        review_6_title: 'Cómodos y duraderos',
+        review_6_body: 'A los 3 meses de uso intenso siguen como el primer día. La almohadilla es muy suave y los materiales transmiten una solidez que no esperaba a este precio.',
+        review_7_title: 'Muy buenos, con un pequeño pero',
+        review_7_body: 'La calidad de sonido y el diseño son excelentes. Le quito una estrella porque la app de acompañamiento podría ser más intuitiva. De resto, una compra muy recomendable.'
     };
 })();

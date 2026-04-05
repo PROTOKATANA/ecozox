@@ -178,6 +178,22 @@
 
         /* ---------- Before / After Slider ---------- */
         ba_after: 'Nachher',
-        ba_before: 'Vorher'
+        ba_before: 'Vorher',
+
+        /* ---------- Reviews ---------- */
+        review_1_title: 'Unglaubliche Klangqualität',
+        review_1_body: 'Ich hatte monatelang nach einem gut sitzenden Kopfhörer gesucht und dieser übertraf alle meine Erwartungen. Der Klang ist kristallklar und die Geräuschunterdrückung ist spektakulär.',
+        review_2_title: 'Mein Kauf des Jahres',
+        review_2_body: 'Minimalistisches und elegantes Design, genau wie im Shop beschrieben. Bequem sogar nach 6 Stunden Dauergebrauch. Der Akku hält genau so lange wie versprochen.',
+        review_3_title: 'Perfekt für die Arbeit im Homeoffice',
+        review_3_body: 'Ich nutze sie in Videogesprächen und alle sagen mir, dass man mich perfekt hört. Das Mikrofon erfasst die Stimme sehr präzise und die Isolierung ist bemerkenswert.',
+        review_4_title: 'Übertreffen teurere Marken',
+        review_4_body: 'Ich kam von einer viel teureren Marke und der Unterschied rechtfertigt die Kosten nicht. Diese EcoZox sind beim Tragekomfort überlegen und die aktive Geräuschunterdrückung ist wirklich effektiv.',
+        review_5_title: 'Das perfekte Geschenk',
+        review_5_body: 'Ich kaufte sie für meinen Mann und er war begeistert. Sie kamen in einer sehr sorgfältigen Verpackung an und das Produkt ist genau wie auf den Fotos. Absolut empfehlenswert.',
+        review_6_title: 'Bequem und langlebig',
+        review_6_body: 'Nach 3 Monaten intensiver Nutzung sind sie noch wie am ersten Tag. Das Polster ist sehr weich und die Materialien vermitteln eine Robustheit, die ich zu diesem Preis nicht erwartet hätte.',
+        review_7_title: 'Sehr gut, mit einem kleinen Aber',
+        review_7_body: 'Klangqualität und Design sind ausgezeichnet. Ich ziehe einen Stern ab, weil die Begleit-App intuitiver sein könnte. Ansonsten ein sehr empfehlenswerter Kauf.'
     };
 })()

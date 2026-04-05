@@ -161,6 +161,10 @@
                     `).join('')}
                 </div>` : '';
 
+            const i18n  = window.EcoI18n;
+            const title = i18n ? i18n.t('review_' + r.id + '_title') : r.title;
+            const body  = i18n ? i18n.t('review_' + r.id + '_body')  : r.body;
+
             return `
             <article class="review-card">
                 <div class="review-card__top">
@@ -168,8 +172,8 @@
                         <div class="review-stars">${renderStars(r.stars)}</div>
                         <time class="review-date" datetime="${r.date}">${formatDate(r.date)}</time>
                     </div>
-                    <h4 class="review-title">${r.title}</h4>
-                    <p class="review-body">${r.body}</p>
+                    <h4 class="review-title">${title}</h4>
+                    <p class="review-body">${body}</p>
                 </div>
                 ${thumbsBlock}
                 <div class="review-card__divider"></div>
