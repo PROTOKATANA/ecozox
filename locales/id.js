@@ -92,7 +92,7 @@
         cart_shipping_free: 'Gratis',
         cart_tax: 'Perkiraan pajak',
         cart_total: 'Total',
-        cart_checkout: 'Lanjut ke pembayaran',
+        cart_checkout: 'Bayar',
         cart_checkout_toast: 'Memulai proses pembayaran...',
         btn_remove: 'Hapus',
         cart_discount: 'Diskon',

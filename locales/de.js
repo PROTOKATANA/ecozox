@@ -92,7 +92,7 @@
         cart_shipping_free: 'Kostenlos',
         cart_tax: 'Geschätzte Steuern',
         cart_total: 'Gesamt',
-        cart_checkout: 'Zur Kasse',
+        cart_checkout: 'Zahlen',
         cart_checkout_toast: 'Bezahlvorgang wird gestartet...',
         btn_remove: 'Entfernen',
         cart_discount: 'Rabatt',

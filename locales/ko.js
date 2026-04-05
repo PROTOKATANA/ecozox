@@ -92,7 +92,7 @@
         cart_shipping_free: '무료',
         cart_tax: '예상 세금',
         cart_total: '합계',
-        cart_checkout: '결제 진행',
+        cart_checkout: '결제',
         cart_checkout_toast: '결제 과정을 시작합니다...',
         btn_remove: '삭제',
         cart_discount: '할인',

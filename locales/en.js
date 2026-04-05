@@ -92,7 +92,7 @@
         cart_shipping_free: 'Free',
         cart_tax: 'Estimated tax',
         cart_total: 'Total',
-        cart_checkout: 'Proceed to checkout',
+        cart_checkout: 'Pay',
         cart_checkout_toast: 'Starting checkout process...',
         btn_remove: 'Remove',
         cart_discount: 'Discount',

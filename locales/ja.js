@@ -92,7 +92,7 @@
         cart_shipping_free: '無料',
         cart_tax: '推定税額',
         cart_total: '合計',
-        cart_checkout: 'レジに進む',
+        cart_checkout: '支払う',
         cart_checkout_toast: '決済処理を開始しています...',
         btn_remove: '削除',
         cart_discount: '割引',

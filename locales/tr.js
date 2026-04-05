@@ -92,7 +92,7 @@
         cart_shipping_free: 'Ücretsiz',
         cart_tax: 'Tahmini vergi',
         cart_total: 'Toplam',
-        cart_checkout: 'Ödemeye geç',
+        cart_checkout: 'Öde',
         cart_checkout_toast: 'Ödeme işlemi başlatılıyor...',
         btn_remove: 'Kaldır',
         cart_discount: 'İndirim',

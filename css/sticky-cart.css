@@ -105,13 +105,13 @@
   border-radius: 6px;
 }
 
-.scb__btn:not(.scb__btn--pay) { background-color: #f97316; color: #fff; }
-.scb__btn:not(.scb__btn--pay):hover  { background-color: #ea6c0a; }
-.scb__btn:not(.scb__btn--pay):active { background-color: #dc6107; transform: scale(0.98); }
+.scb__btn:not(.scb__btn--pay) { background-color: #1d4ed8; color: #fff; }
+.scb__btn:not(.scb__btn--pay):hover  { background-color: #1e40af; }
+.scb__btn:not(.scb__btn--pay):active { background-color: #1e3a8a; transform: scale(0.98); }
 
-.scb__btn--pay { background-color: #111827; color: #fff; }
-.scb__btn--pay:hover  { background-color: #1f2937; }
-.scb__btn--pay:active { background-color: #030712; transform: scale(0.98); }
+.scb__btn--pay { background-color: #f97316; color: #fff; }
+.scb__btn--pay:hover  { background-color: #ea6c0a; }
+.scb__btn--pay:active { background-color: #dc6107; transform: scale(0.98); }
 
 /* ════════════════════════════════════════
    ESCRITORIO — layout horizontal

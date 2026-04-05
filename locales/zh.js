@@ -92,7 +92,7 @@
         cart_shipping_free: '免费',
         cart_tax: '预估税费',
         cart_total: '总计',
-        cart_checkout: '去结算',
+        cart_checkout: '付款',
         cart_checkout_toast: '正在启动结算流程...',
         btn_remove: '删除',
         cart_discount: '折扣',

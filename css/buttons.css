@@ -34,6 +34,22 @@
   background-color: var(--bg-color);
 }
 
+.btn-orange {
+  background-color: #f97316;
+  color: white;
+}
+
+.btn-orange:hover  { background-color: #ea6c0a; }
+.btn-orange:active { background-color: #dc6107; }
+
+.btn-blue {
+  background-color: #1d4ed8;
+  color: white;
+}
+
+.btn-blue:hover  { background-color: #1e40af; }
+.btn-blue:active { background-color: #1e3a8a; }
+
 .btn-danger {
   background-color: #ef4444;
   color: white;

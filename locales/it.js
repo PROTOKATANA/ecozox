@@ -92,7 +92,7 @@
         cart_shipping_free: 'Gratuita',
         cart_tax: 'Tasse stimate',
         cart_total: 'Totale',
-        cart_checkout: 'Procedi al pagamento',
+        cart_checkout: 'Paga',
         cart_checkout_toast: 'Avvio del processo di pagamento...',
         btn_remove: 'Rimuovi',
         cart_discount: 'Sconto',

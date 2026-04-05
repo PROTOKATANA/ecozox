@@ -93,7 +93,7 @@
         cart_shipping_free: 'مجاني',
         cart_tax: 'الضريبة المقدرة',
         cart_total: 'الإجمالي',
-        cart_checkout: 'المتابعة إلى الدفع',
+        cart_checkout: 'ادفع',
         cart_checkout_toast: 'جارٍ بدء عملية الدفع...',
         btn_remove: 'حذف',
         cart_discount: 'خصم',
