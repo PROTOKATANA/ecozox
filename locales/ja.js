@@ -132,7 +132,7 @@
 
         /* ---------- Urgency Banner ---------- */
         urgency_discount_text: '{discount}%オフ と {num_gift}',
-                urgency_ends_in: '終了まで',
+        urgency_ends_in: '終了まで',
         urgency_gift: 'サプライズギフト1点',
 
         /* ---------- Shipping & Returns Page ---------- */

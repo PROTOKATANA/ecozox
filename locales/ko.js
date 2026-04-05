@@ -132,7 +132,7 @@
 
         /* ---------- Urgency Banner ---------- */
         urgency_discount_text: '{discount}% 할인 및 {num_gift}',
-                urgency_ends_in: '종료까지',
+        urgency_ends_in: '종료까지',
         urgency_gift: '깜짝 선물 1개',
 
         /* ---------- Shipping & Returns Page ---------- */

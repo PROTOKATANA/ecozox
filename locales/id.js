@@ -132,7 +132,7 @@
 
         /* ---------- Urgency Banner ---------- */
         urgency_discount_text: 'Diskon {discount}% dan {num_gift} kejutan',
-                urgency_ends_in: 'Berakhir dalam',
+        urgency_ends_in: 'Berakhir dalam',
         urgency_gift: '1 hadiah',
 
         /* ---------- Shipping & Returns Page ---------- */

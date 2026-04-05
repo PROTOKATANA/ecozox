@@ -132,7 +132,7 @@
 
         /* ---------- Urgency Banner ---------- */
         urgency_discount_text: '{discount}% 折扣 加 {num_gift}',
-                urgency_ends_in: '距结束',
+        urgency_ends_in: '距结束',
         urgency_gift: '1份惊喜礼物',
 
         /* ---------- Shipping & Returns Page ---------- */

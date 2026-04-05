@@ -132,7 +132,7 @@
 
         /* ---------- Urgency Banner ---------- */
         urgency_discount_text: '%{discount} indirim ve {num_gift}',
-                urgency_ends_in: 'Bitimine kalan',
+        urgency_ends_in: 'Bitimine kalan',
         urgency_gift: '1 sürpriz hediye',
 
         /* ---------- Shipping & Returns Page ---------- */
