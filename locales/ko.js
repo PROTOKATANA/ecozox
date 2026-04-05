@@ -131,8 +131,9 @@
         footer_copyright: '&copy; 2026 Ecozox. 모든 권리 보유.',
 
         /* ---------- Urgency Banner ---------- */
-        urgency_discount_text: '<strong>{discount}%</strong> 할인 + 깜짝 선물 1개!',
-        urgency_ends_in: '혜택 종료까지:',
+        urgency_discount_text: '{discount}% 할인 및 {num_gift}',
+                urgency_ends_in: '종료까지',
+        urgency_gift: '깜짝 선물 1개',
 
         /* ---------- Shipping & Returns Page ---------- */
         shipping_page_title: '배송 및 반품',

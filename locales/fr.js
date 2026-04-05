@@ -131,8 +131,9 @@
         footer_copyright: '&copy; 2026 Ecozox. Tous droits réservés.',
 
         /* ---------- Urgency Banner ---------- */
-        urgency_discount_text: '<strong>{discount}%</strong> de réduction plus 1 cadeau surprise !',
-        urgency_ends_in: 'L\'offre se termine dans :',
+        urgency_discount_text: '{discount}% de réduction et {num_gift} surprise',
+                urgency_ends_in: 'Se termine dans',
+        urgency_gift: '1 cadeau',
 
         /* ---------- Shipping & Returns Page ---------- */
         shipping_page_title: 'Livraison & Retours',

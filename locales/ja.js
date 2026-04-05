@@ -131,8 +131,9 @@
         footer_copyright: '&copy; 2026 Ecozox. 全著作権所有。',
 
         /* ---------- Urgency Banner ---------- */
-        urgency_discount_text: '<strong>{discount}%</strong>オフ＋サプライズギフト1点！',
-        urgency_ends_in: 'オファー終了まで：',
+        urgency_discount_text: '{discount}%オフ と {num_gift}',
+                urgency_ends_in: '終了まで',
+        urgency_gift: 'サプライズギフト1点',
 
         /* ---------- Shipping & Returns Page ---------- */
         shipping_page_title: '配送と返品',

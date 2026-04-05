@@ -21,14 +21,20 @@
     if (document.getElementById('urgency-banner')) return;
 
     /* ---------- Helpers de texto i18n ---------- */
+    var WAVE_SEP = '<span class="urgency-wave-sep" aria-hidden="true"></span>';
+
     function getBannerText() {
-        var discountRaw = window.EcoI18n
-            ? window.EcoI18n.t('urgency_discount_text').replace('{discount}', DISCOUNT_PERCENT)
-            : '¡Descuento del <strong>' + DISCOUNT_PERCENT + '%</strong> más 1 regalo sorpresa!';
+        var giftText = window.EcoI18n ? window.EcoI18n.t('urgency_gift') : '1 regalo';
+        var raw = window.EcoI18n
+            ? window.EcoI18n.t('urgency_discount_text')
+                .replace('{discount}%', '<span class="urgency-pct">' + DISCOUNT_PERCENT + '%</span>')
+                .replace('%{discount}', '<span class="urgency-pct">%' + DISCOUNT_PERCENT + '</span>')
+                .replace('{num_gift}', '<span class="urgency-num">' + giftText + '</span>')
+            : '<span class="urgency-pct">' + DISCOUNT_PERCENT + '%</span> de descuento y <span class="urgency-num">1 regalo</span> sorpresa';
         var endsIn = window.EcoI18n
             ? window.EcoI18n.t('urgency_ends_in')
-            : 'Oferta termina en:';
-        return discountRaw + '&nbsp;&nbsp;' + endsIn + '&nbsp;<span id="urgency-timer" class="urgency-timer">15:00</span>';
+            : 'Termina en';
+        return raw + WAVE_SEP + endsIn + '&nbsp;<span id="urgency-timer" class="urgency-timer">15:00</span>';
     }
 
     /* ---------- DOM ---------- */

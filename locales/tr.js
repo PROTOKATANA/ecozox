@@ -131,8 +131,9 @@
         footer_copyright: '&copy; 2026 Ecozox. Tüm hakları saklıdır.',
 
         /* ---------- Urgency Banner ---------- */
-        urgency_discount_text: '<strong>%{discount}</strong> indirim artı 1 sürpriz hediye!',
-        urgency_ends_in: 'Teklif şu sürede sona erer:',
+        urgency_discount_text: '%{discount} indirim ve {num_gift}',
+                urgency_ends_in: 'Bitimine kalan',
+        urgency_gift: '1 sürpriz hediye',
 
         /* ---------- Shipping & Returns Page ---------- */
         shipping_page_title: 'Kargo ve İade',
