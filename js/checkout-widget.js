@@ -67,56 +67,8 @@
             '<div class="cwo__body">' +
             '<form id="cwo-form" autocomplete="on" novalidate>' +
 
-            /* ── Treatment ── */
-            '<div class="cwo__section cwo__section--first">' +
-                '<div class="cwo__field">' +
-                    '<span class="cwo__label" data-i18n="checkout_treatment_label">Tratamiento</span>' +
-                    '<div class="cwo__radio-group" role="group">' +
-
-                        '<label class="cwo__radio-option">' +
-                            '<input type="radio" name="honorific" value="Sr." autocomplete="honorific-prefix">' +
-                            '<span class="cwo__radio-mark" aria-hidden="true"></span>' +
-                            '<span data-i18n="checkout_treatment_sr">Sr.</span>' +
-                        '</label>' +
-
-                        '<label class="cwo__radio-option">' +
-                            '<input type="radio" name="honorific" value="Sra." autocomplete="honorific-prefix">' +
-                            '<span class="cwo__radio-mark" aria-hidden="true"></span>' +
-                            '<span data-i18n="checkout_treatment_sra">Sra.</span>' +
-                        '</label>' +
-
-                    '</div>' +
-                    '<span class="cwo__error" id="err-honorific" hidden></span>' +
-                '</div>' +
-            '</div>' +
-
-            /* ── Contact ── */
-            '<div class="cwo__section">' +
-                '<h3 class="cwo__section-title" data-i18n="checkout_contact_section">Contacto</h3>' +
-
-                '<div class="cwo__field">' +
-                    '<label class="cwo__label" for="cwo-email" data-i18n="checkout_email_label">Correo electrónico</label>' +
-                    '<input type="email" id="cwo-email" name="email" class="cwo__input" ' +
-                        'autocomplete="email" required inputmode="email" ' +
-                        'data-i18n-placeholder="checkout_email_placeholder">' +
-                    '<span class="cwo__error" id="err-email" hidden></span>' +
-                '</div>' +
-            '</div>' +
-
             /* ── Shipping address ── */
-            '<div class="cwo__section">' +
-                '<h3 class="cwo__section-title" data-i18n="checkout_address_section">Dirección de envío</h3>' +
-
-                /* Country */
-                '<div class="cwo__field">' +
-                    '<label class="cwo__label" for="cwo-country" data-i18n="checkout_country_label">País</label>' +
-                    '<select id="cwo-country" name="country" class="cwo__input cwo__select" ' +
-                        'autocomplete="country" required>' +
-                        '<option value="" data-i18n="checkout_country_placeholder">Selecciona un país</option>' +
-                        buildCountryOptions() +
-                    '</select>' +
-                    '<span class="cwo__error" id="err-country" hidden></span>' +
-                '</div>' +
+            '<div class="cwo__section cwo__section--first">' +
 
                 /* First + Last name */
                 '<div class="cwo__field-row">' +
@@ -136,17 +88,31 @@
                     '</div>' +
                 '</div>' +
 
+                /* Country */
+                '<div class="cwo__field">' +
+                    '<label class="cwo__label" for="cwo-country" data-i18n="checkout_country_label">País</label>' +
+                    '<select id="cwo-country" name="country" class="cwo__input cwo__select" ' +
+                        'autocomplete="country" required>' +
+                        '<option value="" data-i18n="checkout_country_placeholder">Selecciona un país</option>' +
+                        buildCountryOptions() +
+                    '</select>' +
+                    '<span class="cwo__error" id="err-country" hidden></span>' +
+                '</div>' +
+
                 /* Address line 1 */
                 '<div class="cwo__field">' +
                     '<label class="cwo__label" for="cwo-address1" data-i18n="checkout_address1_label">Dirección y número de casa</label>' +
-                    '<input type="text" id="cwo-address1" name="address-line1" class="cwo__input" ' +
-                        'autocomplete="address-line1" required ' +
-                        'data-i18n-placeholder="checkout_address1_placeholder">' +
+                    '<div class="cwo__input-row">' +
+                        '<input type="text" id="cwo-address1" name="address-line1" class="cwo__input" ' +
+                            'autocomplete="address-line1" required ' +
+                            'data-i18n-placeholder="checkout_address1_placeholder">' +
+                        '<button type="button" id="cwo-addr2-toggle" class="cwo__add-line-btn" aria-expanded="false" aria-controls="cwo-addr2-wrap">+</button>' +
+                    '</div>' +
                     '<span class="cwo__error" id="err-address1" hidden></span>' +
                 '</div>' +
 
-                /* Address line 2 (optional) */
-                '<div class="cwo__field">' +
+                /* Address line 2 (optional — hidden until toggle) */
+                '<div id="cwo-addr2-wrap" class="cwo__field cwo__addr2-wrap" hidden>' +
                     '<label class="cwo__label" for="cwo-address2">' +
                         '<span data-i18n="checkout_address2_label">Edificio, apartamento, etc.</span>' +
                         '<span class="cwo__optional" data-i18n="checkout_address2_optional">(opcional)</span>' +
@@ -179,6 +145,15 @@
                             'data-i18n-placeholder="checkout_zip_placeholder">' +
                         '<span class="cwo__error" id="err-zip" hidden></span>' +
                     '</div>' +
+                '</div>' +
+
+                /* Email */
+                '<div class="cwo__field">' +
+                    '<label class="cwo__label" for="cwo-email" data-i18n="checkout_email_label">Correo electrónico</label>' +
+                    '<input type="email" id="cwo-email" name="email" class="cwo__input" ' +
+                        'autocomplete="email" required inputmode="email" ' +
+                        'data-i18n-placeholder="checkout_email_placeholder">' +
+                    '<span class="cwo__error" id="err-email" hidden></span>' +
                 '</div>' +
 
                 /* Phone */
@@ -225,6 +200,12 @@
         /* Reset scroll */
         var body = overlay.querySelector('.cwo__body');
         if (body) body.scrollTop = 0;
+
+        /* Collapse address line 2 */
+        var addr2Wrap   = document.getElementById('cwo-addr2-wrap');
+        var addr2Toggle = document.getElementById('cwo-addr2-toggle');
+        if (addr2Wrap)   addr2Wrap.hidden = true;
+        if (addr2Toggle) { addr2Toggle.textContent = '+'; addr2Toggle.setAttribute('aria-expanded', 'false'); }
 
         overlay.removeAttribute('hidden');
         /* Force reflow so CSS transition triggers from initial state */
@@ -300,20 +281,6 @@
        -------------------------------------------------------- */
     function validate() {
         var valid = true;
-
-        /* Honorific (radio group) */
-        var radios = document.querySelectorAll('#cwo-form input[name="honorific"]');
-        var honorificOk = Array.prototype.some.call(radios, function (r) { return r.checked; });
-        var honorificErr = document.getElementById('err-honorific');
-        if (!honorificOk) {
-            if (honorificErr) {
-                honorificErr.textContent = t('checkout_err_required');
-                honorificErr.removeAttribute('hidden');
-            }
-            valid = false;
-        } else {
-            if (honorificErr) honorificErr.setAttribute('hidden', '');
-        }
 
         /* Email */
         var emailEl  = document.getElementById('cwo-email');
@@ -455,6 +422,22 @@
             }
             handleFocusTrap(e);
         });
+
+        /* Address line 2 toggle */
+        var addr2Toggle = document.getElementById('cwo-addr2-toggle');
+        var addr2Wrap   = document.getElementById('cwo-addr2-wrap');
+        if (addr2Toggle && addr2Wrap) {
+            addr2Toggle.addEventListener('click', function () {
+                var open = addr2Wrap.hidden;
+                addr2Wrap.hidden = !open;
+                addr2Toggle.textContent = open ? '−' : '+';
+                addr2Toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+                if (open) {
+                    var input = document.getElementById('cwo-address2');
+                    if (input) input.focus();
+                }
+            });
+        }
 
         /* Live error clearing on input */
         if (overlay) {
