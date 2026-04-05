@@ -62,7 +62,7 @@
 
         /* ---------- Reviews ---------- */
         reviews_title: 'Customer Reviews',
-        reviews_write_btn: 'Write a review',
+        reviews_write_btn: 'Write review',
         reviews_count_suffix: 'reviews',
         review_dialog_title: 'Write a review',
         review_name_label: 'Name',

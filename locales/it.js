@@ -62,7 +62,7 @@
 
         /* ---------- Reviews ---------- */
         reviews_title: 'Recensioni dei clienti',
-        reviews_write_btn: 'Scrivi una recensione',
+        reviews_write_btn: 'Scrivi recensione',
         reviews_count_suffix: 'recensioni',
         review_dialog_title: 'Scrivi una recensione',
         review_name_label: 'Nome',

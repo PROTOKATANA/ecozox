@@ -146,6 +146,12 @@
 .add-to-cart-btn {
   margin-top: auto;
   width: 100%;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-radius: 5px;
 }
 
 /* ========================================

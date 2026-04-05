@@ -63,7 +63,7 @@
 
         /* ---------- Reviews ---------- */
         reviews_title: 'تقييمات العملاء',
-        reviews_write_btn: 'اكتب تقييمًا',
+        reviews_write_btn: 'كتابة تقييم',
         reviews_count_suffix: 'تقييمات',
         review_dialog_title: 'اكتب تقييمًا',
         review_name_label: 'الاسم',
