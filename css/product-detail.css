@@ -111,7 +111,7 @@
   overflow: hidden;
   aspect-ratio: 1;
   border-radius: 4px;
-  --ba-pos: 50%;
+  --ba-pos: 65%;
   user-select: none;
   touch-action: pan-y;
   cursor: col-resize;
@@ -163,16 +163,20 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 42px;
-  height: 42px;
-  background: #fff;
-  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(to bottom right, #ef4444 50%, #22c55e 50%);
+  border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.22);
-  color: #333;
+  color: #fff;
   transition: box-shadow 0.15s ease;
+}
+
+.ba-slider__handle svg {
+  transform: rotate(45deg);
 }
 
 .ba-slider__divider:hover .ba-slider__handle,

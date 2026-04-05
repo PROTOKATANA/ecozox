@@ -25,7 +25,7 @@
     }
 
     function resetPos() {
-        slider.style.setProperty('--ba-pos', '50%');
+        slider.style.setProperty('--ba-pos', '65%');
     }
 
     // ── Mouse ────────────────────────────────────────────────────
