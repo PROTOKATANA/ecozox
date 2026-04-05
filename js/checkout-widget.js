@@ -207,6 +207,18 @@
         if (addr2Wrap)   addr2Wrap.hidden = true;
         if (addr2Toggle) { addr2Toggle.textContent = '+'; addr2Toggle.setAttribute('aria-expanded', 'false'); }
 
+        /* Clear all validation errors */
+        var form = document.getElementById('cwo-form');
+        if (form) {
+            form.querySelectorAll('.cwo__input--error').forEach(function (el) {
+                el.classList.remove('cwo__input--error');
+            });
+            form.querySelectorAll('.cwo__error').forEach(function (el) {
+                el.setAttribute('hidden', '');
+                el.textContent = '';
+            });
+        }
+
         overlay.removeAttribute('hidden');
         /* Force reflow so CSS transition triggers from initial state */
         void overlay.offsetHeight;
