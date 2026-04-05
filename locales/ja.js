@@ -83,7 +83,6 @@
         video_label_battery: '40時間バッテリー',
 
         /* ---------- Cart Page ---------- */
-        cart_title: 'ショッピングカート',
         cart_empty: 'カートは空です。',
         cart_view_products: '商品を見る',
         cart_summary_title: '注文概要',

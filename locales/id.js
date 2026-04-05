@@ -83,7 +83,6 @@
         video_label_battery: 'Baterai 40 jam',
 
         /* ---------- Cart Page ---------- */
-        cart_title: 'Keranjang Belanja Anda',
         cart_empty: 'Keranjang Anda kosong.',
         cart_view_products: 'Jelajahi produk',
         cart_summary_title: 'Ringkasan Pesanan',

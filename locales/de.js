@@ -83,7 +83,6 @@
         video_label_battery: '40h Akkulaufzeit',
 
         /* ---------- Cart Page ---------- */
-        cart_title: 'Ihr Warenkorb',
         cart_empty: 'Ihr Warenkorb ist leer.',
         cart_view_products: 'Produkte ansehen',
         cart_summary_title: 'Bestellübersicht',

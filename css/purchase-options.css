@@ -182,7 +182,7 @@
 .purchase-option__bundle-price {
   font-size: 1.0625rem;
   font-weight: 700;
-  color: var(--text-main);
+  color: #16a34a;
   white-space: nowrap;
 }
 
@@ -248,12 +248,12 @@
 .po-bundle__price-sale {
   font-size: 1.0625rem;
   font-weight: 700;
-  color: var(--text-main);
+  color: #16a34a;
   font-family: var(--font-heading);
 }
 
 .purchase-option--bundle.purchase-option--selected .po-bundle__price-sale {
-  color: var(--primary-color);
+  color: #16a34a;
 }
 
 /* --- Cuerpo: lista de artículos --- */
@@ -357,12 +357,12 @@
 .po-single__price-sale {
   font-size: 1.0625rem;
   font-weight: 700;
-  color: var(--text-main);
+  color: #16a34a;
   font-family: var(--font-heading);
 }
 
 .purchase-option--selected .po-single__price-sale {
-  color: var(--primary-color);
+  color: #16a34a;
 }
 
 /* --- Cuerpo: artículo único --- */

@@ -83,7 +83,6 @@
         video_label_battery: '40h de batería',
 
         /* ---------- Cart Page ---------- */
-        cart_title: 'Tu Carrito de Compra',
         cart_empty: 'Tu carrito está vacío.',
         cart_view_products: 'Ver productos',
         cart_summary_title: 'Resumen del Pedido',

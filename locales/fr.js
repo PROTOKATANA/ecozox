@@ -83,7 +83,6 @@
         video_label_battery: '40h d\'autonomie',
 
         /* ---------- Cart Page ---------- */
-        cart_title: 'Votre panier',
         cart_empty: 'Votre panier est vide.',
         cart_view_products: 'Parcourir les produits',
         cart_summary_title: 'Récapitulatif de la commande',

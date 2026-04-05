@@ -83,7 +83,6 @@
         video_label_battery: '40h battery',
 
         /* ---------- Cart Page ---------- */
-        cart_title: 'Your Shopping Cart',
         cart_empty: 'Your cart is empty.',
         cart_view_products: 'Browse products',
         cart_summary_title: 'Order Summary',

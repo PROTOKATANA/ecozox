@@ -84,7 +84,6 @@
         video_label_battery: '40 ساعة بطارية',
 
         /* ---------- Cart Page ---------- */
-        cart_title: 'سلة التسوق',
         cart_empty: 'سلة التسوق فارغة.',
         cart_view_products: 'تصفح المنتجات',
         cart_summary_title: 'ملخص الطلب',

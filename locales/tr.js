@@ -83,7 +83,6 @@
         video_label_battery: '40 saat pil',
 
         /* ---------- Cart Page ---------- */
-        cart_title: 'Alışveriş Sepetiniz',
         cart_empty: 'Sepetiniz boş.',
         cart_view_products: 'Ürünleri incele',
         cart_summary_title: 'Sipariş Özeti',

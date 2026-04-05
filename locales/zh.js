@@ -83,7 +83,6 @@
         video_label_battery: '40小时续航',
 
         /* ---------- Cart Page ---------- */
-        cart_title: '您的购物车',
         cart_empty: '您的购物车为空。',
         cart_view_products: '浏览商品',
         cart_summary_title: '订单摘要',

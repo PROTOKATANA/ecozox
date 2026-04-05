@@ -27,7 +27,7 @@
 .product-card {
   background: var(--card-bg);
   border: 1px solid var(--border-color);
-  border-radius: var(--border-radius);
+  border-radius: 20px;
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: flex;
@@ -49,6 +49,7 @@
 .product-img-wrapper {
   position: relative;
   overflow: hidden;
+  isolation: isolate;
 }
 
 .product-image {
@@ -112,7 +113,7 @@
   flex-direction: column;
   flex-grow: 1;
   background: var(--card-bg);
-  border-radius: 16px 16px 0 0;
+  border-radius: 20px 20px 0 0;
   margin-top: -16px;
   position: relative;
   z-index: 1;
@@ -137,7 +138,7 @@
   font-size: 1.25rem;
   font-weight: 700;
   font-family: var(--font-heading);
-  color: var(--primary-color);
+  color: #16a34a;
 }
 
 /* Precio original tachado */

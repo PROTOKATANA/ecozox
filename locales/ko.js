@@ -83,7 +83,6 @@
         video_label_battery: '40시간 배터리',
 
         /* ---------- Cart Page ---------- */
-        cart_title: '장바구니',
         cart_empty: '장바구니가 비어 있습니다.',
         cart_view_products: '제품 둘러보기',
         cart_summary_title: '주문 요약',
