@@ -90,7 +90,7 @@
                 +   '</div>'
                 +   (soldOut
                         ? '<button class="btn add-to-cart-btn" disabled aria-disabled="true" data-i18n="sold_out_btn">' + t('sold_out_btn') + '</button>'
-                        : '<button class="btn btn-blue add-to-cart-btn js-add-to-cart" data-i18n="sticky_cart_btn">' + t('sticky_cart_btn') + '</button>')
+                        : '<button class="btn btn-blue add-to-cart-btn js-add-to-cart js-buy-now" data-i18n="sticky_cart_btn">' + t('sticky_cart_btn') + '</button>')
                 + '</div>'
                 + '</a>';
         }).join('');
