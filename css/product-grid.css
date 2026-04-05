@@ -137,7 +137,7 @@
 /* Precio original tachado */
 .product-price-old {
   font-family: var(--font-heading);
-  font-size: 0.9em;
+  font-size: 1.05em;
   font-weight: 500;
   color: var(--text-muted);
   text-decoration: line-through;
