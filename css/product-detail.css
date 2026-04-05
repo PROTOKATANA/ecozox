@@ -163,25 +163,20 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 32px;
-  height: 32px;
-  background: linear-gradient(to bottom right, #ef4444 50%, #22c55e 50%);
-  border-radius: 4px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.22);
+  gap: 5px;
+  padding: 6px 6px;
+  background: rgba(0, 0, 0, 0.38);
+  border-radius: 7px;
   color: #fff;
-  transition: box-shadow 0.15s ease;
+  backdrop-filter: blur(3px);
+  filter: drop-shadow(0 1px 4px rgba(0,0,0,0.35));
+  transition: background 0.15s ease;
 }
 
-.ba-slider__handle svg {
-  transform: rotate(45deg);
-}
-
-.ba-slider__divider:hover .ba-slider__handle,
-.ba-slider__divider:active .ba-slider__handle {
-  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.32);
+.ba-slider__divider:hover .ba-slider__handle {
+  background: rgba(0, 0, 0, 0.55);
 }
 
 /* ── Labels ── */
