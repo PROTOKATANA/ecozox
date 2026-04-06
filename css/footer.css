@@ -23,8 +23,8 @@
 .footer-dev-btn {
   display: block;
   padding: 1.25rem 2rem;
-  background-color: #f5f5f0;
-  color: var(--primary-color);
+  background-color: #16a34a;
+  color: #ffffff;
   text-align: center;
   border-radius: 6px;
   font-size: 1.1rem;
@@ -39,8 +39,8 @@
 }
 
 .footer-dev-btn:hover {
-  background-color: #ffffff;
-  color: var(--primary-color);
+  background-color: #15803d;
+  color: #ffffff;
 }
 
 @media (min-width: 768px) {
