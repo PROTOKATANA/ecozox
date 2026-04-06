@@ -14,6 +14,11 @@
         region_change_currency: '通貨を変更',
         aria_close: '閉じる',
         aria_change_lang: '言語を変更',
+        aria_change_currency: '通貨を変更',
+        /* ---------- Bottom Navigation ---------- */
+        nav_currency: '通貨',
+        nav_cart: 'カート',
+        nav_language: '言語',
         /* ---------- Home / Index ---------- */
         hero_title: 'エッセンシャルコレクション 2026',
         hero_subtitle: '日常のためにデザインされた新しいミニマリスト製品ラインをご覧ください。シンプルさ、機能性、そしてエレガンス。',
@@ -154,6 +159,7 @@
         footer_support_title: 'サポート',
         footer_email_label: 'メール：',
         footer_phone_label: '電話：',
+        footer_returns: '返品',
         footer_copyright: '&copy; 2026 Ecozox. 全著作権所有。',
         /* ---------- Urgency Banner ---------- */
         urgency_discount_text: '{discount}%オフ と {num_gift}',

@@ -14,6 +14,11 @@
         region_change_currency: 'Para birimini değiştir',
         aria_close: 'Kapat',
         aria_change_lang: 'Dili değiştir',
+        aria_change_currency: 'Para birimini değiştir',
+        /* ---------- Bottom Navigation ---------- */
+        nav_currency: 'Para Birimi',
+        nav_cart: 'Sepet',
+        nav_language: 'Dil',
         /* ---------- Home / Index ---------- */
         hero_title: 'Temel Koleksiyon 2026',
         hero_subtitle: 'Günlük yaşam için tasarlanmış yeni minimalist ürün serimizi keşfedin. Sadelik, işlevsellik ve zarafet.',
@@ -154,6 +159,7 @@
         footer_support_title: 'Destek',
         footer_email_label: 'E-posta:',
         footer_phone_label: 'Telefon:',
+        footer_returns: 'İadeler',
         footer_copyright: '&copy; 2026 Ecozox. Tüm hakları saklıdır.',
         /* ---------- Urgency Banner ---------- */
         urgency_discount_text: '%{discount} indirim ve {num_gift}',

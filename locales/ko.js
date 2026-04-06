@@ -14,6 +14,11 @@
         region_change_currency: '통화 변경',
         aria_close: '닫기',
         aria_change_lang: '언어 변경',
+        aria_change_currency: '통화 변경',
+        /* ---------- Bottom Navigation ---------- */
+        nav_currency: '통화',
+        nav_cart: '장바구니',
+        nav_language: '언어',
         /* ---------- Home / Index ---------- */
         hero_title: '에센셜 컬렉션 2026',
         hero_subtitle: '일상을 위해 디자인된 새로운 미니멀리스트 제품 라인을 만나보세요. 심플함, 기능성 그리고 우아함.',
@@ -154,6 +159,7 @@
         footer_support_title: '지원',
         footer_email_label: '이메일:',
         footer_phone_label: '전화:',
+        footer_returns: '반품',
         footer_copyright: '&copy; 2026 Ecozox. 모든 권리 보유.',
         /* ---------- Urgency Banner ---------- */
         urgency_discount_text: '{discount}% 할인 및 {num_gift}',

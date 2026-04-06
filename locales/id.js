@@ -14,6 +14,11 @@
         region_change_currency: 'Ubah mata uang',
         aria_close: 'Tutup',
         aria_change_lang: 'Ubah bahasa',
+        aria_change_currency: 'Ubah mata uang',
+        /* ---------- Bottom Navigation ---------- */
+        nav_currency: 'Mata Uang',
+        nav_cart: 'Keranjang',
+        nav_language: 'Bahasa',
         /* ---------- Home / Index ---------- */
         hero_title: 'Koleksi Esensial 2026',
         hero_subtitle: 'Temukan lini produk minimalis baru kami yang dirancang untuk kehidupan sehari-hari. Kesederhanaan, fungsionalitas, dan keanggunan.',
@@ -154,6 +159,7 @@
         footer_support_title: 'Dukungan',
         footer_email_label: 'Email:',
         footer_phone_label: 'Telepon:',
+        footer_returns: 'Pengembalian',
         footer_copyright: '&copy; 2026 Ecozox. Hak cipta dilindungi.',
         /* ---------- Urgency Banner ---------- */
         urgency_discount_text: 'Diskon {discount}% dan {num_gift} kejutan',

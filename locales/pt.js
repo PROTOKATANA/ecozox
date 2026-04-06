@@ -14,6 +14,11 @@
         region_change_currency: 'Alterar moeda',
         aria_close: 'Fechar',
         aria_change_lang: 'Alterar idioma',
+        aria_change_currency: 'Alterar moeda',
+        /* ---------- Bottom Navigation ---------- */
+        nav_currency: 'Moeda',
+        nav_cart: 'Carrinho',
+        nav_language: 'Idioma',
         /* ---------- Home / Index ---------- */
         hero_title: 'Coleção Essencial 2026',
         hero_subtitle: 'Descubra nossa nova linha de produtos minimalistas projetados para o dia a dia. Simplicidade, funcionalidade e elegância.',
@@ -154,6 +159,7 @@
         footer_support_title: 'Suporte',
         footer_email_label: 'E-mail:',
         footer_phone_label: 'Telefone:',
+        footer_returns: 'Devoluções',
         footer_copyright: '&copy; 2026 Ecozox. Todos os direitos reservados.',
         /* ---------- Urgency Banner ---------- */
         urgency_discount_text: '{discount}% de desconto e {num_gift} surpresa',

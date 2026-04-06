@@ -25,11 +25,10 @@
     <footer class="site-footer">
         <div class="container">
 
-            <a href="${base}contacto.html" class="footer-dev-btn" data-i18n="footer_returns">
-                Devoluciones
-            </a>
-
-            <div class="footer-grid">
+            <div class="footer-top">
+                <a href="${base}contacto.html" class="footer-dev-btn" data-i18n="footer_returns">
+                    Devoluciones
+                </a>
                 <div class="footer-col">
                     <h3 data-i18n="footer_legal_title">Enlaces Legales</h3>
                     <ul>

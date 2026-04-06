@@ -14,6 +14,11 @@
         region_change_currency: '更改货币',
         aria_close: '关闭',
         aria_change_lang: '更改语言',
+        aria_change_currency: '更改货币',
+        /* ---------- Bottom Navigation ---------- */
+        nav_currency: '货币',
+        nav_cart: '购物车',
+        nav_language: '语言',
         /* ---------- Home / Index ---------- */
         hero_title: '2026 基本系列',
         hero_subtitle: '探索我们全新的极简产品系列，专为日常生活设计。简约、实用、优雅。',
@@ -154,6 +159,7 @@
         footer_support_title: '客户支持',
         footer_email_label: '邮箱：',
         footer_phone_label: '电话：',
+        footer_returns: '退货',
         footer_copyright: '&copy; 2026 Ecozox. 保留所有权利。',
         /* ---------- Urgency Banner ---------- */
         urgency_discount_text: '{discount}% 折扣 加 {num_gift}',

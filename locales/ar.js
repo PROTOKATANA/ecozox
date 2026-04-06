@@ -15,6 +15,11 @@
         region_change_currency: 'تغيير العملة',
         aria_close: 'إغلاق',
         aria_change_lang: 'تغيير اللغة',
+        aria_change_currency: 'تغيير العملة',
+        /* ---------- Bottom Navigation ---------- */
+        nav_currency: 'العملة',
+        nav_cart: 'السلة',
+        nav_language: 'اللغة',
         /* ---------- Home / Index ---------- */
         hero_title: 'المجموعة الأساسية 2026',
         hero_subtitle: 'اكتشف مجموعتنا الجديدة من المنتجات البسيطة المصممة للحياة اليومية. بساطة، وظائف عملية وأناقة.',
@@ -155,6 +160,7 @@
         footer_support_title: 'الدعم',
         footer_email_label: 'البريد:',
         footer_phone_label: 'الهاتف:',
+        footer_returns: 'المرتجعات',
         footer_copyright: '&copy; 2026 Ecozox. جميع الحقوق محفوظة.',
         /* ---------- Urgency Banner ---------- */
         urgency_discount_text: 'خصم {discount}% و {num_gift} مفاجئة',
