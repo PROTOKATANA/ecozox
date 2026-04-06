@@ -43,6 +43,24 @@
   color: #ffffff;
 }
 
+@media (max-width: 767px) {
+  .footer-dev-btn {
+    padding: 1.75rem 2rem;
+    position: relative;
+  }
+
+  .footer-dev-btn::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -1rem;
+    left: 0;
+    right: 0;
+    border-top: 2px dashed #374151;
+    border-image: repeating-linear-gradient(90deg, #374151 0, #374151 10px, transparent 10px, transparent 18px) 2;
+  }
+}
+
 @media (min-width: 768px) {
   /* Desktop: row — [Devoluciones | Legal | Soporte] */
   .footer-top {
