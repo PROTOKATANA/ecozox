@@ -16,6 +16,7 @@
         aria_change_lang: 'Dili değiştir',
         aria_change_currency: 'Para birimini değiştir',
         /* ---------- Bottom Navigation ---------- */
+        nav_home: 'Ana Sayfa',
         nav_currency: 'Para Birimi',
         nav_cart: 'Sepet',
         nav_language: 'Dil',

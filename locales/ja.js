@@ -16,6 +16,7 @@
         aria_change_lang: '言語を変更',
         aria_change_currency: '通貨を変更',
         /* ---------- Bottom Navigation ---------- */
+        nav_home: 'ホーム',
         nav_currency: '通貨',
         nav_cart: 'カート',
         nav_language: '言語',

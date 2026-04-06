@@ -16,6 +16,7 @@
         aria_change_lang: 'Changer la langue',
         aria_change_currency: 'Changer la devise',
         /* ---------- Bottom Navigation ---------- */
+        nav_home: 'Accueil',
         nav_currency: 'Devise',
         nav_cart: 'Panier',
         nav_language: 'Langue',

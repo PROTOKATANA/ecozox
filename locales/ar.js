@@ -17,6 +17,7 @@
         aria_change_lang: 'تغيير اللغة',
         aria_change_currency: 'تغيير العملة',
         /* ---------- Bottom Navigation ---------- */
+        nav_home: 'الرئيسية',
         nav_currency: 'العملة',
         nav_cart: 'السلة',
         nav_language: 'اللغة',

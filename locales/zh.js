@@ -16,6 +16,7 @@
         aria_change_lang: '更改语言',
         aria_change_currency: '更改货币',
         /* ---------- Bottom Navigation ---------- */
+        nav_home: '首页',
         nav_currency: '货币',
         nav_cart: '购物车',
         nav_language: '语言',

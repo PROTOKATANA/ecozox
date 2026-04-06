@@ -16,6 +16,7 @@
         aria_change_lang: '언어 변경',
         aria_change_currency: '통화 변경',
         /* ---------- Bottom Navigation ---------- */
+        nav_home: '홈',
         nav_currency: '통화',
         nav_cart: '장바구니',
         nav_language: '언어',

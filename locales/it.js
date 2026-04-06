@@ -16,6 +16,7 @@
         aria_change_lang: 'Cambia lingua',
         aria_change_currency: 'Cambia valuta',
         /* ---------- Bottom Navigation ---------- */
+        nav_home: 'Home',
         nav_currency: 'Valuta',
         nav_cart: 'Carrello',
         nav_language: 'Lingua',

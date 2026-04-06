@@ -16,6 +16,7 @@
         aria_change_lang: 'Ubah bahasa',
         aria_change_currency: 'Ubah mata uang',
         /* ---------- Bottom Navigation ---------- */
+        nav_home: 'Beranda',
         nav_currency: 'Mata Uang',
         nav_cart: 'Keranjang',
         nav_language: 'Bahasa',
