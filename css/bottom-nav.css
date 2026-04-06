@@ -26,8 +26,12 @@
         align-items: center;
     }
 
-    /* Push body content above BNB */
+    /* Push footer content above BNB — sin gap gris */
     body {
+        padding-bottom: 0;
+    }
+
+    .site-footer {
         padding-bottom: 75px;
     }
 }
