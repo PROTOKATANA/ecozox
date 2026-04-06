@@ -82,8 +82,8 @@
 
 /* Botón desactivado en tarjetas agotadas */
 .product-card--sold-out .add-to-cart-btn {
-  background-color: var(--border-color);
-  color: #92400e;
+  background-color: #1e293b;
+  color: #ffffff;
   cursor: not-allowed;
   border: none;
   font-size: 1.125rem;
