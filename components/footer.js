@@ -24,11 +24,12 @@
 
     <footer class="site-footer">
         <div class="container">
+
+            <a href="${base}contacto.html" class="footer-dev-btn" data-i18n="footer_returns">
+                Devoluciones
+            </a>
+
             <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>EcoZox.</h3>
-                    <p class="text-muted" data-i18n="footer_tagline">Simplicidad, funcionalidad y elegancia para el día a día.</p>
-                </div>
                 <div class="footer-col">
                     <h3 data-i18n="footer_legal_title">Enlaces Legales</h3>
                     <ul>

@@ -1,0 +1,103 @@
+/* ========================================
+   Bottom Navigation Bar — Mobile only
+   ======================================== */
+
+.bottom-nav {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    /* Show BNB */
+    .bottom-nav {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 300;
+        background: rgba(255, 255, 255, 0.97);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border-top: 1px solid var(--border-color);
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+        padding: 0.5rem 0 calc(0.5rem + env(safe-area-inset-bottom, 0px));
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    /* Push body content above BNB */
+    body {
+        padding-bottom: 70px;
+    }
+}
+
+/* ---- Shared item styles ---- */
+.bnb-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    flex: 1;
+    padding: 0.3rem 0.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-family);
+    color: var(--primary-color);
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: opacity 0.12s ease;
+}
+
+.bnb-item:active {
+    opacity: 0.55;
+}
+
+/* ---- Icon ---- */
+.bnb-icon {
+    width: 24px;
+    height: 24px;
+    display: block;
+    flex-shrink: 0;
+}
+
+/* ---- Label ---- */
+.bnb-label {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #6b7280;
+    line-height: 1;
+}
+
+/* ---- Cart item ---- */
+.bnb-item--cart {
+    position: relative;
+}
+
+.bnb-cart-wrap {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bnb-cart-badge {
+    position: absolute;
+    top: -5px;
+    right: -9px;
+    min-width: 17px;
+    height: 17px;
+    background: #ef4444;
+    color: #fff;
+    font-size: 0.6rem;
+    font-weight: 700;
+    line-height: 1;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 3px;
+    pointer-events: none;
+}

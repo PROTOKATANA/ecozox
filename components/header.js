@@ -73,7 +73,7 @@
 
     el.outerHTML = [
         '<header class="header">',
-        '  <div class="container" style="display:flex;justify-content:space-between;align-items:center;">',
+        '  <div class="container header-inner" style="display:flex;justify-content:space-between;align-items:center;">',
         '    <a href="' + base + 'index.html" class="logo">',
         '      <img src="' + base + 'assets/logo.png" alt="EcoZox Logo" class="logo-img">',
         '    </a>',

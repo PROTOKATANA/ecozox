@@ -169,3 +169,23 @@
 .lang-option.active .lang-check {
   opacity: 1;
 }
+
+/* ========================================
+   Responsive: Comportamiento Móvil (BNB + Banner)
+   ======================================== */
+@media (max-width: 767px) {
+  /* Ocultar todos los hijos directos del header (como el .container) EXCEPTO el banner de urgencia */
+  .header > *:not(#urgency-banner) {
+    display: none !important;
+  }
+
+  /* Limpiamos los estilos del header para que se vuelva "invisible" 
+     y solo funcione como anclaje sticky para el banner */
+  .header {
+    padding: 0 !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+  }
+}

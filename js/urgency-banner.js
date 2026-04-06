@@ -43,11 +43,12 @@
     banner.setAttribute('role', 'banner');
     banner.innerHTML = '<span class="urgency-text">' + getBannerText() + '</span>';
 
-    const header = document.querySelector('header.header');
-    if (header) {
-        header.style.paddingBottom = '0';
-        header.appendChild(banner);
-    } else {
+	const header = document.querySelector('header.header');
+	if (header) {
+	    header.style.paddingBottom = '0';
+	    // El banner se inserta DENTRO del header para heredar el 'sticky'
+	    header.appendChild(banner);
+	}else {
         // Fallback si el header aún no está en el DOM
         const main = document.querySelector('main') || document.body;
         main.parentNode.insertBefore(banner, main);
