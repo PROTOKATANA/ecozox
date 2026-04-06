@@ -14,12 +14,10 @@
         region_change_currency: 'Para birimini değiştir',
         aria_close: 'Kapat',
         aria_change_lang: 'Dili değiştir',
-
         /* ---------- Home / Index ---------- */
         hero_title: 'Temel Koleksiyon 2026',
         hero_subtitle: 'Günlük yaşam için tasarlanmış yeni minimalist ürün serimizi keşfedin. Sadelik, işlevsellik ve zarafet.',
         title_home: 'EcoZox - Minimalist Mağaza',
-
         /* ---------- Product Cards ---------- */
         btn_add_to_cart: 'Sepete ekle',
         btn_added: 'Eklendi!',
@@ -32,7 +30,6 @@
         product_tazas: 'Matte Kupa Seti',
         sold_out: 'TÜKENDİ',
         sold_out_btn: 'Tükendi',
-
         /* ---------- Product Detail ---------- */
         product_silence_title: 'Silence Pro Kulaklık',
         product_silence_desc: 'Son teknoloji aktif gürültü engelleme ile sürükleyici ses deneyimi yaşayın. Saatlerce konfor sağlayan ergonomik ve minimalist tasarım. Hızlı şarjlı uzun ömürlü pil. Müziğiniz, işiniz ve seyahatleriniz için mükemmel eşlik.',
@@ -47,7 +44,6 @@
         aria_decrease: 'Miktarı azalt',
         aria_increase: 'Miktarı artır',
         aria_quantity: 'Miktar',
-
         /* ---------- Shipping Widget ---------- */
         shipping_free_title: 'Ücretsiz Kargo',
         shipping_free_badge: 'ÜCRETSİZ',
@@ -55,11 +51,9 @@
         shipping_benefit_2: 'Her zaman iade imkanı',
         shipping_benefit_3: 'Garantili teslimat süreleri',
         shipping_delivery_in: '4 gün içinde teslimat',
-
         /* ---------- Sticky Cart Bar ---------- */
         sticky_cart_btn: 'SEPET',
         sticky_pay_btn: 'ÖDE',
-
         /* ---------- Reviews ---------- */
         reviews_title: 'Müşteri Değerlendirmeleri',
         reviews_write_btn: 'Değerlendirme yaz',
@@ -76,12 +70,10 @@
         review_image_optional: '(isteğe bağlı)',
         review_cancel_btn: 'İptal',
         review_submit_btn: 'Değerlendirmeyi gönder',
-
         /* ---------- Video Labels ---------- */
         video_label_noise: 'Gürültü engelleme',
         video_label_design: 'Ergonomik tasarım',
         video_label_battery: '40 saat pil',
-
         /* ---------- Cart Page ---------- */
         cart_empty: 'Sepetiniz boş.',
         cart_view_products: 'Ürünleri incele',
@@ -98,7 +90,6 @@
         cart_included: 'Dahil',
         cart_bundle_contents: 'Paket içeriği',
         title_cart: 'Sepet - EcoZox',
-
         /* ---------- Checkout Widget ---------- */
         checkout_title: 'Teslimat Bilgileri',
         checkout_treatment_label: 'Unvan',
@@ -136,7 +127,6 @@
         checkout_err_email: 'Lütfen geçerli bir e-posta adresi girin',
         checkout_err_phone: 'Lütfen geçerli bir telefon numarası girin',
         checkout_success_toast: 'Teslimat bilgileri başarıyla kaydedildi.',
-
         /* ---------- Contact Page ---------- */
         contact_title: 'İADE',
         contact_name_label: 'Ad soyad',
@@ -155,7 +145,6 @@
         trust_feature_2: 'Kolay ve sorunsuz süreç: doğrulamadan sonra 48 saat içinde garanti iade.',
         trust_feature_3: 'Her adımda size rehberlik eden insan müşteri desteği.',
         title_contact: 'İletişim ve İade - EcoZox',
-
         /* ---------- Footer ---------- */
         footer_tagline: 'Günlük yaşam için sadelik, işlevsellik ve zarafet.',
         footer_legal_title: 'Yasal Bağlantılar',
@@ -166,12 +155,10 @@
         footer_email_label: 'E-posta:',
         footer_phone_label: 'Telefon:',
         footer_copyright: '&copy; 2026 Ecozox. Tüm hakları saklıdır.',
-
         /* ---------- Urgency Banner ---------- */
         urgency_discount_text: '%{discount} indirim ve {num_gift}',
         urgency_ends_in: 'Bitimine kalan',
         urgency_gift: '1 sürpriz hediye',
-
         /* ---------- Shipping & Returns Page ---------- */
         shipping_page_title: 'Kargo ve İade',
         shipping_s1_title: '1. Kargo Politikası',
@@ -186,7 +173,6 @@
         shipping_s4_text: 'Ürün kullanılmamış ve orijinal durumunda olması koşuluyla, teslimattan sonra 30 güne kadar iade kabul ediyoruz. İade kargo masrafları düşülerek sipariş tutarının tamamını iade edeceğiz.',
         shipping_s5_title: '5. Hasarlı Ürünler',
         shipping_s5_text: 'Siparişiniz herhangi bir şekilde hasarlı ulaşırsa, lütfen en kısa sürede sipariş numaranız ve ürünün durumunun fotoğrafı ile ecozox@support@gmail.com adresine e-posta gönderin. Her durumu ayrı ayrı değerlendiriyoruz ve tatmin edici bir çözüm bulmak için elimizden gelenin en iyisini yapacağız.',
-
         /* ---------- Terms & Conditions ---------- */
         terms_page_title: 'Şartlar ve Koşullar',
         terms_s1_title: '1. Giriş',
@@ -199,7 +185,6 @@
         terms_s4_text: 'Ürünlerimizin fiyatları önceden bildirimde bulunulmaksızın değiştirilebilir. Hizmeti önceden bildirimde bulunmaksızın her zaman değiştirme veya durdurmak hakkımızı saklı tutarız.',
         terms_s5_title: '5. Sorumluluk Sınırlaması',
         terms_s5_text: 'Hiçbir koşulda EcoZox, yöneticileri, çalışanları veya bağlı şirketleri, hizmetin kullanımından kaynaklanan doğrudan veya dolaylı zararlardan sorumlu tutulmaz.',
-
         /* ---------- Privacy Policy ---------- */
         privacy_page_title: 'Gizlilik Politikası',
         privacy_s1_title: '1. Topladığımız Bilgiler',
@@ -212,12 +197,9 @@
         privacy_s4_text: 'Sipariş verdiğinizde, silmemizi talep etmediğiniz sürece sipariş bilgilerinizi kayıtlarımızda saklıyoruz.',
         privacy_s5_title: '5. Haklarınız',
         privacy_s5_text: 'Kişisel bilgilerinize erişme, bunları düzeltme, güncelleme veya silme talep etme hakkınız vardır. Sitedeki iletişim bilgileri aracılığıyla bizimle iletişime geçin.',
-
         /* ---------- Before / After Slider ---------- */
         ba_after: 'Sonra',
         ba_before: 'Önce',
-
-        /* ---------- Reviews ---------- */
         review_1_title: 'İnanılmaz ses kalitesi',
         review_1_body: 'Aylardır iyi oturan kulaklık arıyordum ve bu tüm beklentilerimi aştı. Ses kristal berraklığında ve gürültü engelleme muhteşem.',
         review_2_title: 'Yılın en iyi alışverişim',

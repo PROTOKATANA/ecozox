@@ -14,12 +14,10 @@
         region_change_currency: '통화 변경',
         aria_close: '닫기',
         aria_change_lang: '언어 변경',
-
         /* ---------- Home / Index ---------- */
         hero_title: '에센셜 컬렉션 2026',
         hero_subtitle: '일상을 위해 디자인된 새로운 미니멀리스트 제품 라인을 만나보세요. 심플함, 기능성 그리고 우아함.',
         title_home: 'EcoZox - 미니멀리스트 스토어',
-
         /* ---------- Product Cards ---------- */
         btn_add_to_cart: '장바구니에 추가',
         btn_added: '추가됨!',
@@ -32,7 +30,6 @@
         product_tazas: 'Matte 머그 세트',
         sold_out: '품절',
         sold_out_btn: '품절',
-
         /* ---------- Product Detail ---------- */
         product_silence_title: 'Silence Pro 헤드폰',
         product_silence_desc: '최첨단 액티브 노이즈 캔슬링으로 몰입감 있는 사운드를 경험하세요. 인체공학적 미니멀 디자인으로 오랜 시간 편안함을 보장합니다. 고속 충전이 가능한 오래가는 배터리. 음악, 업무, 여행의 완벽한 동반자입니다.',
@@ -47,7 +44,6 @@
         aria_decrease: '수량 감소',
         aria_increase: '수량 증가',
         aria_quantity: '수량',
-
         /* ---------- Shipping Widget ---------- */
         shipping_free_title: '무료 배송',
         shipping_free_badge: '무료',
@@ -55,11 +51,9 @@
         shipping_benefit_2: '언제든지 반품 가능',
         shipping_benefit_3: '배송 기간 보장',
         shipping_delivery_in: '4일 이내 배송',
-
         /* ---------- Sticky Cart Bar ---------- */
         sticky_cart_btn: '장바구니',
         sticky_pay_btn: '결제',
-
         /* ---------- Reviews ---------- */
         reviews_title: '고객 리뷰',
         reviews_write_btn: '리뷰 작성',
@@ -76,12 +70,10 @@
         review_image_optional: '(선택사항)',
         review_cancel_btn: '취소',
         review_submit_btn: '리뷰 제출',
-
         /* ---------- Video Labels ---------- */
         video_label_noise: '노이즈 캔슬링',
         video_label_design: '인체공학 디자인',
         video_label_battery: '40시간 배터리',
-
         /* ---------- Cart Page ---------- */
         cart_empty: '장바구니가 비어 있습니다.',
         cart_view_products: '제품 둘러보기',
@@ -98,7 +90,6 @@
         cart_included: '포함',
         cart_bundle_contents: '패키지 내용',
         title_cart: '장바구니 - EcoZox',
-
         /* ---------- Checkout Widget ---------- */
         checkout_title: '배송 정보',
         checkout_treatment_label: '호칭',
@@ -136,7 +127,6 @@
         checkout_err_email: '유효한 이메일 주소를 입력해주세요',
         checkout_err_phone: '유효한 전화번호를 입력해주세요',
         checkout_success_toast: '배송 정보가 성공적으로 저장되었습니다.',
-
         /* ---------- Contact Page ---------- */
         contact_title: '환불',
         contact_name_label: '성명',
@@ -155,7 +145,6 @@
         trust_feature_2: '쉽고 번거롭지 않은 프로세스: 확인 후 48시간 이내 환불 보장.',
         trust_feature_3: '모든 단계에서 안내하는 전문 고객 지원.',
         title_contact: '문의 및 환불 - EcoZox',
-
         /* ---------- Footer ---------- */
         footer_tagline: '일상을 위한 심플함, 기능성 그리고 우아함.',
         footer_legal_title: '법적 링크',
@@ -166,12 +155,10 @@
         footer_email_label: '이메일:',
         footer_phone_label: '전화:',
         footer_copyright: '&copy; 2026 Ecozox. 모든 권리 보유.',
-
         /* ---------- Urgency Banner ---------- */
         urgency_discount_text: '{discount}% 할인 및 {num_gift}',
         urgency_ends_in: '종료까지',
         urgency_gift: '깜짝 선물 1개',
-
         /* ---------- Shipping & Returns Page ---------- */
         shipping_page_title: '배송 및 반품',
         shipping_s1_title: '1. 배송 정책',
@@ -186,7 +173,6 @@
         shipping_s4_text: '배송 후 30일 이내에 반품을 접수합니다. 단, 상품이 미사용이고 원래 상태여야 합니다. 반품 배송비를 제외한 주문 전액을 환불해 드립니다.',
         shipping_s5_title: '5. 파손 상품',
         shipping_s5_text: '주문 상품이 파손된 상태로 도착한 경우, 가능한 빨리 ecozox@support@gmail.com으로 주문 번호와 상품 상태 사진을 보내주세요. 사안별로 대응하며 만족스러운 해결책을 찾기 위해 최선을 다하겠습니다.',
-
         /* ---------- Terms & Conditions ---------- */
         terms_page_title: '이용약관',
         terms_s1_title: '1. 소개',
@@ -199,7 +185,6 @@
         terms_s4_text: '당사 제품의 가격은 사전 통보 없이 변경될 수 있습니다. 당사는 언제든지 사전 통보 없이 서비스를 수정하거나 중단할 권리를 보유합니다.',
         terms_s5_title: '5. 책임 제한',
         terms_s5_text: '어떠한 경우에도 EcoZox, 임원, 직원 또는 계열사는 서비스 이용으로 인해 발생하는 직접적 또는 간접적 손해에 대해 책임을 지지 않습니다.',
-
         /* ---------- Privacy Policy ---------- */
         privacy_page_title: '개인정보처리방침',
         privacy_s1_title: '1. 수집하는 정보',
@@ -212,12 +197,9 @@
         privacy_s4_text: '주문 시 수집한 정보는 삭제를 요청하지 않는 한 기록으로 보유합니다.',
         privacy_s5_title: '5. 귀하의 권리',
         privacy_s5_text: '당사가 보유한 개인 정보에 접근하거나 수정, 삭제를 요청할 권리가 있습니다. 사이트의 연락처 정보를 통해 문의하십시오.',
-
         /* ---------- Before / After Slider ---------- */
         ba_after: '이후',
         ba_before: '이전',
-
-        /* ---------- Reviews ---------- */
         review_1_title: '놀라운 음질',
         review_1_body: '몇 달 동안 잘 맞는 헤드폰을 찾고 있었는데 이 제품은 모든 기대를 뛰어넘었습니다. 소리가 수정처럼 맑고 노이즈 캔슬링이 탁월합니다.',
         review_2_title: '올해 최고의 구매',

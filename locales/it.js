@@ -14,12 +14,10 @@
         region_change_currency: 'Cambia valuta',
         aria_close: 'Chiudi',
         aria_change_lang: 'Cambia lingua',
-
         /* ---------- Home / Index ---------- */
         hero_title: 'Collezione Essenziale 2026',
         hero_subtitle: 'Scopri la nostra nuova linea di prodotti minimalisti progettati per la vita quotidiana. Semplicità, funzionalità ed eleganza.',
         title_home: 'EcoZox - Negozio Minimalista',
-
         /* ---------- Product Cards ---------- */
         btn_add_to_cart: 'Aggiungi al carrello',
         btn_added: 'Aggiunto!',
@@ -32,7 +30,6 @@
         product_tazas: 'Set Tazze Matte',
         sold_out: 'ESAURITO',
         sold_out_btn: 'Esaurito',
-
         /* ---------- Product Detail ---------- */
         product_silence_title: 'Cuffie Silence Pro',
         product_silence_desc: 'Vivi un suono immersivo con la cancellazione attiva del rumore di ultima generazione. Design ergonomico e minimalista che garantisce comfort per ore. Batteria a lunga durata con ricarica rapida. Il compagno perfetto per la tua musica, il lavoro e i viaggi.',
@@ -47,7 +44,6 @@
         aria_decrease: 'Diminuisci quantità',
         aria_increase: 'Aumenta quantità',
         aria_quantity: 'Quantità',
-
         /* ---------- Shipping Widget ---------- */
         shipping_free_title: 'Spedizione gratuita',
         shipping_free_badge: 'GRATIS',
@@ -55,11 +51,9 @@
         shipping_benefit_2: 'Reso aperto in qualsiasi momento',
         shipping_benefit_3: 'Tempi di consegna garantiti',
         shipping_delivery_in: 'Consegna in 4 giorni',
-
         /* ---------- Sticky Cart Bar ---------- */
         sticky_cart_btn: 'CARRELLO',
         sticky_pay_btn: 'PAGA',
-
         /* ---------- Reviews ---------- */
         reviews_title: 'Recensioni dei clienti',
         reviews_write_btn: 'Scrivi recensione',
@@ -76,12 +70,10 @@
         review_image_optional: '(facoltativo)',
         review_cancel_btn: 'Annulla',
         review_submit_btn: 'Invia recensione',
-
         /* ---------- Video Labels ---------- */
         video_label_noise: 'Cancellazione del rumore',
         video_label_design: 'Design ergonomico',
         video_label_battery: '40h di batteria',
-
         /* ---------- Cart Page ---------- */
         cart_empty: 'Il tuo carrello è vuoto.',
         cart_view_products: 'Sfoglia i prodotti',
@@ -98,7 +90,6 @@
         cart_included: 'Incluso',
         cart_bundle_contents: 'Contenuto del pack',
         title_cart: 'Carrello - EcoZox',
-
         /* ---------- Checkout Widget ---------- */
         checkout_title: 'Dettagli di consegna',
         checkout_treatment_label: 'Titolo',
@@ -136,7 +127,6 @@
         checkout_err_email: 'Inserisci un indirizzo e-mail valido',
         checkout_err_phone: 'Inserisci un numero di telefono valido',
         checkout_success_toast: 'Informazioni di consegna salvate con successo.',
-
         /* ---------- Contact Page ---------- */
         contact_title: 'RIMBORSO',
         contact_name_label: 'Nome completo',
@@ -155,7 +145,6 @@
         trust_feature_2: 'Processo semplice e senza complicazioni: rimborso garantito entro 48h dalla verifica.',
         trust_feature_3: 'Assistenza clienti umana per guidarti in ogni passo.',
         title_contact: 'Contatti e Rimborsi - EcoZox',
-
         /* ---------- Footer ---------- */
         footer_tagline: 'Semplicità, funzionalità ed eleganza per la vita quotidiana.',
         footer_legal_title: 'Link legali',
@@ -166,12 +155,10 @@
         footer_email_label: 'Email:',
         footer_phone_label: 'Telefono:',
         footer_copyright: '&copy; 2026 Ecozox. Tutti i diritti riservati.',
-
         /* ---------- Urgency Banner ---------- */
         urgency_discount_text: '{discount}% di sconto e {num_gift} sorpresa',
         urgency_ends_in: 'Termina tra',
         urgency_gift: '1 regalo',
-
         /* ---------- Shipping & Returns Page ---------- */
         shipping_page_title: 'Spedizione e Resi',
         shipping_s1_title: '1. Politica di spedizione',
@@ -186,7 +173,6 @@
         shipping_s4_text: 'Accettiamo resi fino a 30 giorni dalla consegna, se l\'articolo non è stato utilizzato e si trova nelle condizioni originali. Rimborseremo l\'importo totale dell\'ordine al netto delle spese di spedizione del reso.',
         shipping_s5_title: '5. Articoli danneggiati',
         shipping_s5_text: 'Nel caso in cui il tuo ordine arrivi danneggiato in qualsiasi modo, inviaci un\'email il prima possibile a ecozox@support@gmail.com con il numero d\'ordine e una foto dello stato dell\'articolo. Trattiamo ogni caso singolarmente e faremo del nostro meglio per trovare una soluzione soddisfacente.',
-
         /* ---------- Terms & Conditions ---------- */
         terms_page_title: 'Termini e Condizioni',
         terms_s1_title: '1. Introduzione',
@@ -199,7 +185,6 @@
         terms_s4_text: 'I prezzi dei nostri prodotti sono soggetti a modifiche senza preavviso. Ci riserviamo il diritto di modificare o interrompere il Servizio in qualsiasi momento senza preavviso.',
         terms_s5_title: '5. Limitazione di Responsabilità',
         terms_s5_text: 'In nessun caso EcoZox, i suoi amministratori, dipendenti o affiliati saranno responsabili per danni diretti o indiretti derivanti dall\'utilizzo del servizio.',
-
         /* ---------- Privacy Policy ---------- */
         privacy_page_title: 'Informativa sulla Privacy',
         privacy_s1_title: '1. Informazioni che raccogliamo',
@@ -212,12 +197,9 @@
         privacy_s4_text: 'Quando effettui un ordine, conserviamo le tue informazioni salvo richiesta di cancellazione.',
         privacy_s5_title: '5. I tuoi diritti',
         privacy_s5_text: 'Hai il diritto di accedere, correggere, aggiornare o eliminare le tue informazioni personali. Contattaci tramite le informazioni di contatto del sito.',
-
         /* ---------- Before / After Slider ---------- */
         ba_after: 'Dopo',
         ba_before: 'Prima',
-
-        /* ---------- Reviews ---------- */
         review_1_title: 'Qualità audio incredibile',
         review_1_body: 'Cercavo cuffie ben adattate da mesi e queste hanno superato tutte le mie aspettative. Il suono è cristallino e la cancellazione del rumore è spettacolare.',
         review_2_title: 'Il mio acquisto dell\'anno',

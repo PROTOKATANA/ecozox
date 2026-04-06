@@ -14,12 +14,10 @@
         region_change_currency: 'Währung ändern',
         aria_close: 'Schließen',
         aria_change_lang: 'Sprache ändern',
-
         /* ---------- Home / Index ---------- */
         hero_title: 'Essential Kollektion 2026',
         hero_subtitle: 'Entdecken Sie unsere neue Linie minimalistischer Produkte für den Alltag. Schlichtheit, Funktionalität und Eleganz.',
         title_home: 'EcoZox - Minimalistischer Shop',
-
         /* ---------- Product Cards ---------- */
         btn_add_to_cart: 'In den Warenkorb',
         btn_added: 'Hinzugefügt!',
@@ -32,7 +30,6 @@
         product_tazas: 'Matte Tassen-Set',
         sold_out: 'AUSVERKAUFT',
         sold_out_btn: 'Ausverkauft',
-
         /* ---------- Product Detail ---------- */
         product_silence_title: 'Silence Pro Kopfhörer',
         product_silence_desc: 'Erleben Sie immersiven Klang mit modernster aktiver Geräuschunterdrückung. Ergonomisches und minimalistisches Design garantiert stundenlangen Komfort. Langlebiger Akku mit Schnellladefunktion. Der perfekte Begleiter für Musik, Arbeit und Reisen.',
@@ -47,7 +44,6 @@
         aria_decrease: 'Menge verringern',
         aria_increase: 'Menge erhöhen',
         aria_quantity: 'Menge',
-
         /* ---------- Shipping Widget ---------- */
         shipping_free_title: 'Kostenloser Versand',
         shipping_free_badge: 'GRATIS',
@@ -55,11 +51,9 @@
         shipping_benefit_2: 'Rückgabe jederzeit möglich',
         shipping_benefit_3: 'Garantierte Lieferzeiten',
         shipping_delivery_in: 'Lieferung in 4 Tagen',
-
         /* ---------- Sticky Cart Bar ---------- */
         sticky_cart_btn: 'WARENKORB',
         sticky_pay_btn: 'BEZAHLEN',
-
         /* ---------- Reviews ---------- */
         reviews_title: 'Kundenbewertungen',
         reviews_write_btn: 'Bewertung schreiben',
@@ -76,12 +70,10 @@
         review_image_optional: '(optional)',
         review_cancel_btn: 'Abbrechen',
         review_submit_btn: 'Bewertung senden',
-
         /* ---------- Video Labels ---------- */
         video_label_noise: 'Geräuschunterdrückung',
         video_label_design: 'Ergonomisches Design',
         video_label_battery: '40h Akkulaufzeit',
-
         /* ---------- Cart Page ---------- */
         cart_empty: 'Ihr Warenkorb ist leer.',
         cart_view_products: 'Produkte ansehen',
@@ -98,7 +90,6 @@
         cart_included: 'Enthalten',
         cart_bundle_contents: 'Paketinhalt',
         title_cart: 'Warenkorb - EcoZox',
-
         /* ---------- Checkout Widget ---------- */
         checkout_title: 'Lieferdetails',
         checkout_treatment_label: 'Anrede',
@@ -136,7 +127,6 @@
         checkout_err_email: 'Bitte gib eine gültige E-Mail-Adresse ein',
         checkout_err_phone: 'Bitte gib eine gültige Telefonnummer ein',
         checkout_success_toast: 'Lieferinformationen erfolgreich gespeichert.',
-
         /* ---------- Contact Page ---------- */
         contact_title: 'RÜCKERSTATTUNG',
         contact_name_label: 'Vollständiger Name',
@@ -155,7 +145,6 @@
         trust_feature_2: 'Einfacher und unkomplizierter Prozess: Rückerstattung innerhalb von 48 Stunden nach Prüfung garantiert.',
         trust_feature_3: 'Persönlicher Kundensupport, der Sie bei jedem Schritt begleitet.',
         title_contact: 'Kontakt & Rückerstattung - EcoZox',
-
         /* ---------- Footer ---------- */
         footer_tagline: 'Schlichtheit, Funktionalität und Eleganz für den Alltag.',
         footer_legal_title: 'Rechtliche Links',
@@ -166,12 +155,10 @@
         footer_email_label: 'E-Mail:',
         footer_phone_label: 'Telefon:',
         footer_copyright: '&copy; 2026 Ecozox. Alle Rechte vorbehalten.',
-
         /* ---------- Urgency Banner ---------- */
         urgency_discount_text: '{discount}% Rabatt und {num_gift}',
         urgency_ends_in: 'Endet in',
         urgency_gift: '1 Überraschungsgeschenk',
-
         /* ---------- Shipping & Returns Page ---------- */
         shipping_page_title: 'Versand & Rückgabe',
         shipping_s1_title: '1. Versandrichtlinie',
@@ -186,7 +173,6 @@
         shipping_s4_text: 'Wir akzeptieren Rückgaben bis zu 30 Tage nach Lieferung, sofern der Artikel nicht benutzt wurde und sich im Originalzustand befindet. Wir erstatten den vollen Bestellbetrag abzüglich der Rücksendekosten.',
         shipping_s5_title: '5. Beschädigte Artikel',
         shipping_s5_text: 'Falls Ihre Bestellung in irgendeiner Weise beschädigt ankommt, senden Sie uns bitte so schnell wie möglich eine E-Mail an ecozox@support@gmail.com mit Ihrer Bestellnummer und einem Foto des Artikelzustands. Wir behandeln dies von Fall zu Fall und werden unser Bestes tun, eine zufriedenstellende Lösung zu finden.',
-
         /* ---------- Terms & Conditions ---------- */
         terms_page_title: 'Allgemeine Geschäftsbedingungen',
         terms_s1_title: '1. Einführung',
@@ -199,7 +185,6 @@
         terms_s4_text: 'Die Preise unserer Produkte können ohne vorherige Ankündigung geändert werden. Wir behalten uns das Recht vor, den Service jederzeit ohne Ankündigung zu ändern oder einzustellen.',
         terms_s5_title: '5. Haftungsbeschränkung',
         terms_s5_text: 'EcoZox, unsere Direktoren, Mitarbeiter oder verbundenen Unternehmen haften in keinem Fall für direkte oder indirekte Schäden, die aus der Nutzung des Services entstehen.',
-
         /* ---------- Privacy Policy ---------- */
         privacy_page_title: 'Datenschutzrichtlinie',
         privacy_s1_title: '1. Informationen, die wir sammeln',
@@ -212,12 +197,9 @@
         privacy_s4_text: 'Bei einer Bestellung speichern wir Ihre Bestellinformationen, es sei denn, Sie fordern deren Löschung.',
         privacy_s5_title: '5. Ihre Rechte',
         privacy_s5_text: 'Sie haben das Recht, auf Ihre persönlichen Daten zuzugreifen und deren Berichtigung, Aktualisierung oder Löschung zu verlangen. Kontaktieren Sie uns über die Kontaktinformationen auf der Website.',
-
         /* ---------- Before / After Slider ---------- */
         ba_after: 'Nachher',
         ba_before: 'Vorher',
-
-        /* ---------- Reviews ---------- */
         review_1_title: 'Unglaubliche Klangqualität',
         review_1_body: 'Ich hatte monatelang nach einem gut sitzenden Kopfhörer gesucht und dieser übertraf alle meine Erwartungen. Der Klang ist kristallklar und die Geräuschunterdrückung ist spektakulär.',
         review_2_title: 'Mein Kauf des Jahres',

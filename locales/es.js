@@ -11,15 +11,13 @@
         cart_alt: 'Carrito',
         region_dialog_title: 'Configuración de Región',
         region_change_lang: 'Cambiar idioma',
-        region_change_currency: 'Cambiar divisa',
+        region_change_currency: 'Cambiar moneda',
         aria_close: 'Cerrar',
         aria_change_lang: 'Cambiar idioma',
-
         /* ---------- Home / Index ---------- */
         hero_title: 'Colección Esencial 2026',
         hero_subtitle: 'Descubre nuestra nueva línea de productos minimalistas diseñados para el día a día. Simplicidad, funcionalidad y elegancia.',
         title_home: 'EcoZox - Tienda Minimalista',
-
         /* ---------- Product Cards ---------- */
         btn_add_to_cart: 'Añadir al carrito',
         btn_added: '¡Añadido!',
@@ -32,7 +30,6 @@
         product_tazas: 'Set Tazas Matte',
         sold_out: 'AGOTADO',
         sold_out_btn: 'Agotado',
-
         /* ---------- Product Detail ---------- */
         product_silence_title: 'Auriculares Silence Pro',
         product_silence_desc: 'Experimenta un sonido envolvente con cancelación de ruido activa de última generación. Diseño ergonómico y minimalista que garantiza comodidad durante horas. Batería de larga duración con carga rápida. El compañero perfecto para tu música, trabajo y viajes.',
@@ -47,7 +44,6 @@
         aria_decrease: 'Disminuir cantidad',
         aria_increase: 'Aumentar cantidad',
         aria_quantity: 'Cantidad',
-
         /* ---------- Shipping Widget ---------- */
         shipping_free_title: 'Envío Gratis',
         shipping_free_badge: 'GRATIS',
@@ -55,11 +51,9 @@
         shipping_benefit_2: 'Devolución abierta en cualquier momento',
         shipping_benefit_3: 'Plazos de entrega garantizados',
         shipping_delivery_in: 'Entrega en 4 días',
-
         /* ---------- Sticky Cart Bar ---------- */
         sticky_cart_btn: 'CARRITO',
         sticky_pay_btn: 'PAGAR',
-
         /* ---------- Reviews ---------- */
         reviews_title: 'Reseñas de Clientes',
         reviews_write_btn: 'Escribir reseña',
@@ -76,12 +70,10 @@
         review_image_optional: '(opcional)',
         review_cancel_btn: 'Cancelar',
         review_submit_btn: 'Enviar reseña',
-
         /* ---------- Video Labels ---------- */
         video_label_noise: 'Cancelación de ruido',
         video_label_design: 'Diseño ergonómico',
         video_label_battery: '40h de batería',
-
         /* ---------- Cart Page ---------- */
         cart_empty: 'Tu carrito está vacío.',
         cart_view_products: 'Ver productos',
@@ -98,7 +90,6 @@
         cart_included: 'Incluido',
         cart_bundle_contents: 'Contenido del pack',
         title_cart: 'Tu Carrito - EcoZox',
-
         /* ---------- Checkout Widget ---------- */
         checkout_title: 'Datos de entrega',
         checkout_treatment_label: 'Tratamiento',
@@ -136,7 +127,6 @@
         checkout_err_email: 'Introduce un correo electrónico válido',
         checkout_err_phone: 'Introduce un número de teléfono válido',
         checkout_success_toast: 'Información de entrega guardada correctamente.',
-
         /* ---------- Contact Page ---------- */
         contact_title: 'REEMBOLSO',
         contact_name_label: 'Nombre completo',
@@ -155,7 +145,6 @@
         trust_feature_2: 'Proceso fácil y sin complicaciones: reembolso garantizado en 48h tras la validación.',
         trust_feature_3: 'Atención al cliente humana para guiarte en cada paso.',
         title_contact: 'Contacto y Reembolsos - EcoZox',
-
         /* ---------- Footer ---------- */
         footer_tagline: 'Simplicidad, funcionalidad y elegancia para el día a día.',
         footer_legal_title: 'Enlaces Legales',
@@ -166,12 +155,10 @@
         footer_email_label: 'Email:',
         footer_phone_label: 'Teléfono:',
         footer_copyright: '&copy; 2026 Ecozox. Todos los derechos reservados.',
-
         /* ---------- Urgency Banner ---------- */
         urgency_discount_text: '{discount}% de descuento y {num_gift} sorpresa',
         urgency_ends_in: 'Termina en',
         urgency_gift: '1 regalo',
-
         /* ---------- Shipping & Returns Page ---------- */
         shipping_page_title: 'Envíos y Devoluciones',
         shipping_s1_title: '1. Políticas de Envío',
@@ -186,7 +173,6 @@
         shipping_s4_text: 'Aceptamos devoluciones hasta 30 días después de la entrega, si el artículo no ha sido usado y está en su condición original. Le reembolsaremos el monto total del pedido menos los costos de envío de la devolución.',
         shipping_s5_title: '5. Artículos Dañados',
         shipping_s5_text: 'En caso de que su pedido llegue dañado de alguna manera, envíenos un correo electrónico lo antes posible a ecozox@support@gmail.com con su número de pedido y una foto del estado del artículo. Abordamos esto caso por caso y haremos todo lo posible para encontrar una solución satisfactoria.',
-
         /* ---------- Terms & Conditions Page ---------- */
         terms_page_title: 'Términos y Condiciones',
         terms_s1_title: '1. Introducción',
@@ -199,7 +185,6 @@
         terms_s4_text: 'Los precios de nuestros productos están sujetos a cambios sin previo aviso. Nos reservamos el derecho de modificar o discontinuar el Servicio sin previo aviso.',
         terms_s5_title: '5. Limitación de Responsabilidad',
         terms_s5_text: 'En ningún caso EcoZox, nuestros directores, funcionarios, empleados o afiliados serán responsables de ningún daño directo, indirecto, incidental, punitivo o consecuente que surja del uso del servicio.',
-
         /* ---------- Privacy Policy Page ---------- */
         privacy_page_title: 'Política de Privacidad',
         privacy_s1_title: '1. Información que Recopilamos',
@@ -212,12 +197,9 @@
         privacy_s4_text: 'Cuando realizas un pedido, mantendremos tu información para nuestros registros a menos que nos pidas que la eliminemos.',
         privacy_s5_title: '5. Tus Derechos',
         privacy_s5_text: 'Si eres residente europeo, tienes derecho a acceder, corregir, actualizar o eliminar tu información personal. Comunícate con nosotros a través de la información de contacto del sitio.',
-
         /* ---------- Before / After Slider ---------- */
         ba_after: 'Después',
         ba_before: 'Antes',
-
-        /* ---------- Reviews ---------- */
         review_1_title: 'Increíble calidad de sonido',
         review_1_body: 'Llevaba meses buscando unos auriculares que se adaptaran bien y estos superaron todas mis expectativas. El sonido es cristalino y la cancelación de ruido es espectacular.',
         review_2_title: 'Mi compra del año',

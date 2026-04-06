@@ -14,12 +14,10 @@
         region_change_currency: '更改货币',
         aria_close: '关闭',
         aria_change_lang: '更改语言',
-
         /* ---------- Home / Index ---------- */
         hero_title: '2026 基本系列',
         hero_subtitle: '探索我们全新的极简产品系列，专为日常生活设计。简约、实用、优雅。',
         title_home: 'EcoZox - 极简商店',
-
         /* ---------- Product Cards ---------- */
         btn_add_to_cart: '加入购物车',
         btn_added: '已添加！',
@@ -32,7 +30,6 @@
         product_tazas: 'Matte 杯具套装',
         sold_out: '已售罄',
         sold_out_btn: '已售罄',
-
         /* ---------- Product Detail ---------- */
         product_silence_title: 'Silence Pro 耳机',
         product_silence_desc: '体验沉浸式音效，搭载尖端主动降噪技术。符合人体工学的极简设计，确保长时间佩戴的舒适感。长续航电池，支持快速充电。音乐、工作和旅行的完美伴侣。',
@@ -47,7 +44,6 @@
         aria_decrease: '减少数量',
         aria_increase: '增加数量',
         aria_quantity: '数量',
-
         /* ---------- Shipping Widget ---------- */
         shipping_free_title: '免费配送',
         shipping_free_badge: '免费',
@@ -55,11 +51,9 @@
         shipping_benefit_2: '随时可退货',
         shipping_benefit_3: '保证交货时间',
         shipping_delivery_in: '4天内送达',
-
         /* ---------- Sticky Cart Bar ---------- */
         sticky_cart_btn: '购物车',
         sticky_pay_btn: '结算',
-
         /* ---------- Reviews ---------- */
         reviews_title: '客户评价',
         reviews_write_btn: '撰写评价',
@@ -76,12 +70,10 @@
         review_image_optional: '（可选）',
         review_cancel_btn: '取消',
         review_submit_btn: '提交评价',
-
         /* ---------- Video Labels ---------- */
         video_label_noise: '降噪功能',
         video_label_design: '人体工学设计',
         video_label_battery: '40小时续航',
-
         /* ---------- Cart Page ---------- */
         cart_empty: '您的购物车为空。',
         cart_view_products: '浏览商品',
@@ -98,7 +90,6 @@
         cart_included: '已包含',
         cart_bundle_contents: '套装内容',
         title_cart: '购物车 - EcoZox',
-
         /* ---------- Checkout Widget ---------- */
         checkout_title: '配送信息',
         checkout_treatment_label: '称谓',
@@ -136,7 +127,6 @@
         checkout_err_email: '请输入有效的电子邮件地址',
         checkout_err_phone: '请输入有效的电话号码',
         checkout_success_toast: '配送信息已成功保存。',
-
         /* ---------- Contact Page ---------- */
         contact_title: '退款',
         contact_name_label: '全名',
@@ -155,7 +145,6 @@
         trust_feature_2: '轻松无忧的流程：验证后48小时内保证退款。',
         trust_feature_3: '人工客服在每一步为您提供指导。',
         title_contact: '联系与退款 - EcoZox',
-
         /* ---------- Footer ---------- */
         footer_tagline: '为日常生活带来简约、实用与优雅。',
         footer_legal_title: '法律链接',
@@ -166,12 +155,10 @@
         footer_email_label: '邮箱：',
         footer_phone_label: '电话：',
         footer_copyright: '&copy; 2026 Ecozox. 保留所有权利。',
-
         /* ---------- Urgency Banner ---------- */
         urgency_discount_text: '{discount}% 折扣 加 {num_gift}',
         urgency_ends_in: '距结束',
         urgency_gift: '1份惊喜礼物',
-
         /* ---------- Shipping & Returns Page ---------- */
         shipping_page_title: '配送与退货',
         shipping_s1_title: '1. 配送政策',
@@ -186,7 +173,6 @@
         shipping_s4_text: '我们接受交付后30天内的退货，前提是商品未使用且处于原始状态。我们将退还订单全额，扣除退货运费。',
         shipping_s5_title: '5. 损坏商品',
         shipping_s5_text: '如果您的订单到达时有任何损坏，请尽快发送电子邮件至 ecozox@support@gmail.com，附上订单号和商品状况的照片。我们将逐案处理，尽最大努力找到令人满意的解决方案。',
-
         /* ---------- Terms & Conditions ---------- */
         terms_page_title: '条款和条件',
         terms_s1_title: '1. 简介',
@@ -199,7 +185,6 @@
         terms_s4_text: '我们产品的价格可能随时更改，恕不另行通知。我们保留随时修改或中止服务的权利。',
         terms_s5_title: '5. 责任限制',
         terms_s5_text: 'EcoZox 及其董事、员工或关联方在任何情况下均不对因使用本服务而产生的任何直接或间接损害承担责任。',
-
         /* ---------- Privacy Policy ---------- */
         privacy_page_title: '隐私政策',
         privacy_s1_title: '1. 我们收集的信息',
@@ -212,12 +197,9 @@
         privacy_s4_text: '当您下订单时，我们会保留您的订单信息，除非您要求我们删除它。',
         privacy_s5_title: '5. 您的权利',
         privacy_s5_text: '您有权访问、更正或删除我们持有的您的个人信息。请通过网站联系方式与我们联系。',
-
         /* ---------- Before / After Slider ---------- */
         ba_after: '之后',
         ba_before: '之前',
-
-        /* ---------- Reviews ---------- */
         review_1_title: '令人惊叹的音质',
         review_1_body: '我找了几个月合适的耳机，这款超出了我所有期望。音质清晰通透，降噪效果非常出色。',
         review_2_title: '年度最佳购买',

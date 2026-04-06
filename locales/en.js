@@ -14,12 +14,10 @@
         region_change_currency: 'Change currency',
         aria_close: 'Close',
         aria_change_lang: 'Change language',
-
         /* ---------- Home / Index ---------- */
         hero_title: 'Essential Collection 2026',
         hero_subtitle: 'Discover our new line of minimalist products designed for everyday life. Simplicity, functionality and elegance.',
         title_home: 'EcoZox - Minimalist Store',
-
         /* ---------- Product Cards ---------- */
         btn_add_to_cart: 'Add to cart',
         btn_added: 'Added!',
@@ -32,7 +30,6 @@
         product_tazas: 'Matte Mug Set',
         sold_out: 'SOLD OUT',
         sold_out_btn: 'Sold Out',
-
         /* ---------- Product Detail ---------- */
         product_silence_title: 'Silence Pro Headphones',
         product_silence_desc: 'Experience immersive sound with cutting-edge active noise cancellation. Ergonomic and minimalist design that ensures comfort for hours. Long-lasting battery with fast charging. The perfect companion for your music, work and travel.',
@@ -47,7 +44,6 @@
         aria_decrease: 'Decrease quantity',
         aria_increase: 'Increase quantity',
         aria_quantity: 'Quantity',
-
         /* ---------- Shipping Widget ---------- */
         shipping_free_title: 'Free Shipping',
         shipping_free_badge: 'FREE',
@@ -55,11 +51,9 @@
         shipping_benefit_2: 'Open return at any time',
         shipping_benefit_3: 'Guaranteed delivery times',
         shipping_delivery_in: 'Delivery in 4 days',
-
         /* ---------- Sticky Cart Bar ---------- */
         sticky_cart_btn: 'CART',
         sticky_pay_btn: 'PAY',
-
         /* ---------- Reviews ---------- */
         reviews_title: 'Customer Reviews',
         reviews_write_btn: 'Write review',
@@ -76,12 +70,10 @@
         review_image_optional: '(optional)',
         review_cancel_btn: 'Cancel',
         review_submit_btn: 'Submit review',
-
         /* ---------- Video Labels ---------- */
         video_label_noise: 'Noise cancellation',
         video_label_design: 'Ergonomic design',
         video_label_battery: '40h battery',
-
         /* ---------- Cart Page ---------- */
         cart_empty: 'Your cart is empty.',
         cart_view_products: 'Browse products',
@@ -98,7 +90,6 @@
         cart_included: 'Included',
         cart_bundle_contents: 'Pack contents',
         title_cart: 'Your Cart - EcoZox',
-
         /* ---------- Checkout Widget ---------- */
         checkout_title: 'Delivery Details',
         checkout_treatment_label: 'Title',
@@ -136,7 +127,6 @@
         checkout_err_email: 'Please enter a valid email address',
         checkout_err_phone: 'Please enter a valid phone number',
         checkout_success_toast: 'Delivery information saved successfully.',
-
         /* ---------- Contact Page ---------- */
         contact_title: 'REFUND',
         contact_name_label: 'Full name',
@@ -155,7 +145,6 @@
         trust_feature_2: 'Easy and hassle-free process: refund guaranteed within 48h after validation.',
         trust_feature_3: 'Human customer support to guide you every step of the way.',
         title_contact: 'Contact & Refunds - EcoZox',
-
         /* ---------- Footer ---------- */
         footer_tagline: 'Simplicity, functionality and elegance for everyday life.',
         footer_legal_title: 'Legal Links',
@@ -166,12 +155,10 @@
         footer_email_label: 'Email:',
         footer_phone_label: 'Phone:',
         footer_copyright: '&copy; 2026 Ecozox. All rights reserved.',
-
         /* ---------- Urgency Banner ---------- */
         urgency_discount_text: '{discount}% off and {num_gift}',
         urgency_ends_in: 'Ends in',
         urgency_gift: '1 surprise gift',
-
         /* ---------- Shipping & Returns Page ---------- */
         shipping_page_title: 'Shipping & Returns',
         shipping_s1_title: '1. Shipping Policy',
@@ -186,7 +173,6 @@
         shipping_s4_text: 'We accept returns up to 30 days after delivery, if the item has not been used and is in its original condition. We will refund the full order amount minus return shipping costs.',
         shipping_s5_title: '5. Damaged Items',
         shipping_s5_text: 'In case your order arrives damaged in any way, please email us as soon as possible at ecozox@support@gmail.com with your order number and a photo of the item\'s condition. We address these on a case-by-case basis and will do our best to find a satisfactory solution.',
-
         /* ---------- Terms & Conditions Page ---------- */
         terms_page_title: 'Terms & Conditions',
         terms_s1_title: '1. Introduction',
@@ -199,7 +185,6 @@
         terms_s4_text: 'Prices for our products are subject to change without notice. We reserve the right at any time to modify or discontinue the Service without notice.',
         terms_s5_title: '5. Limitation of Liability',
         terms_s5_text: 'In no event shall EcoZox, our directors, officers, employees or affiliates be liable for any injury, loss, claim or any direct, indirect, incidental, punitive, special or consequential damages arising from your use of the service.',
-
         /* ---------- Privacy Policy Page ---------- */
         privacy_page_title: 'Privacy Policy',
         privacy_s1_title: '1. Information We Collect',
@@ -212,12 +197,9 @@
         privacy_s4_text: 'When you place an order through the site, we will maintain your order information for our records unless and until you ask us to delete this information.',
         privacy_s5_title: '5. Your Rights',
         privacy_s5_text: 'If you are a European resident, you have the right to access personal information we hold about you and to ask that your personal information be corrected, updated, or deleted. Please contact us through the contact information on the site.',
-
         /* ---------- Before / After Slider ---------- */
         ba_after: 'After',
         ba_before: 'Before',
-
-        /* ---------- Reviews ---------- */
         review_1_title: 'Incredible sound quality',
         review_1_body: 'I had been looking for headphones that fit well for months and these exceeded all my expectations. The sound is crystal clear and the noise cancellation is spectacular.',
         review_2_title: 'My purchase of the year',

@@ -14,12 +14,10 @@
         region_change_currency: '通貨を変更',
         aria_close: '閉じる',
         aria_change_lang: '言語を変更',
-
         /* ---------- Home / Index ---------- */
         hero_title: 'エッセンシャルコレクション 2026',
         hero_subtitle: '日常のためにデザインされた新しいミニマリスト製品ラインをご覧ください。シンプルさ、機能性、そしてエレガンス。',
         title_home: 'EcoZox - ミニマリストストア',
-
         /* ---------- Product Cards ---------- */
         btn_add_to_cart: 'カートに追加',
         btn_added: '追加しました！',
@@ -32,7 +30,6 @@
         product_tazas: 'Matte マグカップセット',
         sold_out: '売り切れ',
         sold_out_btn: '売り切れ',
-
         /* ---------- Product Detail ---------- */
         product_silence_title: 'Silence Pro ヘッドホン',
         product_silence_desc: '最先端のアクティブノイズキャンセリングで没入感のあるサウンドを体験してください。人間工学に基づいたミニマルなデザインで、長時間の快適さを保証します。急速充電対応の長持ちバッテリー。音楽、仕事、旅行の完璧なパートナーです。',
@@ -47,7 +44,6 @@
         aria_decrease: '数量を減らす',
         aria_increase: '数量を増やす',
         aria_quantity: '数量',
-
         /* ---------- Shipping Widget ---------- */
         shipping_free_title: '送料無料',
         shipping_free_badge: '無料',
@@ -55,11 +51,9 @@
         shipping_benefit_2: 'いつでも返品可能',
         shipping_benefit_3: '配送日保証',
         shipping_delivery_in: '4日以内にお届け',
-
         /* ---------- Sticky Cart Bar ---------- */
         sticky_cart_btn: 'カート',
         sticky_pay_btn: '購入',
-
         /* ---------- Reviews ---------- */
         reviews_title: 'カスタマーレビュー',
         reviews_write_btn: 'レビューを書く',
@@ -76,12 +70,10 @@
         review_image_optional: '（任意）',
         review_cancel_btn: 'キャンセル',
         review_submit_btn: 'レビューを送信',
-
         /* ---------- Video Labels ---------- */
         video_label_noise: 'ノイズキャンセリング',
         video_label_design: '人間工学デザイン',
         video_label_battery: '40時間バッテリー',
-
         /* ---------- Cart Page ---------- */
         cart_empty: 'カートは空です。',
         cart_view_products: '商品を見る',
@@ -98,7 +90,6 @@
         cart_included: '含まれています',
         cart_bundle_contents: 'パック内容',
         title_cart: 'カート - EcoZox',
-
         /* ---------- Checkout Widget ---------- */
         checkout_title: '配送情報',
         checkout_treatment_label: '敬称',
@@ -136,7 +127,6 @@
         checkout_err_email: '有効なメールアドレスを入力してください',
         checkout_err_phone: '有効な電話番号を入力してください',
         checkout_success_toast: '配送情報が正常に保存されました。',
-
         /* ---------- Contact Page ---------- */
         contact_title: '返金',
         contact_name_label: '氏名',
@@ -155,7 +145,6 @@
         trust_feature_2: '簡単で手間のないプロセス：検証後48時間以内の返金保証。',
         trust_feature_3: '各ステップでお客様をサポートする人間のカスタマーサポート。',
         title_contact: 'お問い合わせ・返金 - EcoZox',
-
         /* ---------- Footer ---------- */
         footer_tagline: '日常にシンプルさ、機能性、そしてエレガンスを。',
         footer_legal_title: '法的リンク',
@@ -166,12 +155,10 @@
         footer_email_label: 'メール：',
         footer_phone_label: '電話：',
         footer_copyright: '&copy; 2026 Ecozox. 全著作権所有。',
-
         /* ---------- Urgency Banner ---------- */
         urgency_discount_text: '{discount}%オフ と {num_gift}',
         urgency_ends_in: '終了まで',
         urgency_gift: 'サプライズギフト1点',
-
         /* ---------- Shipping & Returns Page ---------- */
         shipping_page_title: '配送と返品',
         shipping_s1_title: '1. 配送ポリシー',
@@ -186,7 +173,6 @@
         shipping_s4_text: '配達後30日以内の返品を受け付けています。商品が未使用で元の状態であることが条件です。返品送料を差し引いた注文全額を返金いたします。',
         shipping_s5_title: '5. 破損商品',
         shipping_s5_text: '注文が何らかの形で破損して届いた場合は、できるだけ早く ecozox@support@gmail.com まで注文番号と商品の状態の写真をお送りください。ケースバイケースで対応し、満足のいく解決策を見つけるよう最善を尽くします。',
-
         /* ---------- Terms & Conditions ---------- */
         terms_page_title: '利用規約',
         terms_s1_title: '1. はじめに',
@@ -199,7 +185,6 @@
         terms_s4_text: '当社製品の価格は予告なく変更される場合があります。当社はいつでも予告なくサービスを変更または中止する権利を留保します。',
         terms_s5_title: '5. 責任の制限',
         terms_s5_text: 'いかなる場合も EcoZox、その役員、従業員または関連会社は、サービスの使用から生じるいかなる直接的または間接的な損害についても責任を負いません。',
-
         /* ---------- Privacy Policy ---------- */
         privacy_page_title: 'プライバシーポリシー',
         privacy_s1_title: '1. 収集する情報',
@@ -212,12 +197,9 @@
         privacy_s4_text: '注文時に収集した情報は、削除をご要望いただくまで記録として保持します。',
         privacy_s5_title: '5. お客様の権利',
         privacy_s5_text: '当社が保有する個人情報へのアクセス、訂正、更新、または削除を要求する権利があります。サイトの連絡先情報からご連絡ください。',
-
         /* ---------- Before / After Slider ---------- */
         ba_after: '後',
         ba_before: '前',
-
-        /* ---------- Reviews ---------- */
         review_1_title: '驚くべき音質',
         review_1_body: '何ヶ月も自分に合うヘッドフォンを探していましたが、これはすべての期待を超えました。音は透き通るように澄んでいてノイズキャンセリングが抜群です。',
         review_2_title: '今年最高の買い物',

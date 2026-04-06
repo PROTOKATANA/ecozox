@@ -7,11 +7,12 @@
 
 (function () {
     var STORAGE_KEY = 'ecozox_lang';
+    var CURRENCY_STORAGE_KEY = 'ecozox_currency';
     var SUPPORTED_LANGS = ['es','en','ar','zh','ja','ko','id','de','fr','it','pt','tr'];
     var DEFAULT_LANG = 'es';
     var RTL_LANGS = ['ar'];
 
-    /* ---------- Configuración de moneda por idioma ---------- */
+    /* ---------- Configuración de moneda por idioma (fallback) ---------- */
     var currencyConfig = {
         es: { symbol: '€',  code: 'EUR', rate: 0.92,  locale: 'es-ES' },
         en: { symbol: '$',  code: 'USD', rate: 1,     locale: 'en-US' },
@@ -26,6 +27,29 @@
         pt: { symbol: 'R$', code: 'BRL', rate: 4.97,  locale: 'pt-BR' },
         tr: { symbol: '₺',  code: 'TRY', rate: 32.10, locale: 'tr-TR' }
     };
+
+    /* ---------- Todas las monedas disponibles ---------- */
+    var allCurrencies = {
+        USD: { symbol: '$',   rate: 1,      locale: 'en-US',  zeroDecimals: false },
+        EUR: { symbol: '€',   rate: 0.92,   locale: 'es-ES',  zeroDecimals: false },
+        JPY: { symbol: '¥',   rate: 149.50, locale: 'ja-JP',  zeroDecimals: true  },
+        GBP: { symbol: '£',   rate: 0.79,   locale: 'en-GB',  zeroDecimals: false },
+        CNY: { symbol: '¥',   rate: 7.24,   locale: 'zh-CN',  zeroDecimals: false },
+        KRW: { symbol: '₩',   rate: 1320,   locale: 'ko-KR',  zeroDecimals: true  },
+        SAR: { symbol: 'ر.س', rate: 3.75,   locale: 'ar-SA',  zeroDecimals: false },
+        IDR: { symbol: 'Rp',  rate: 15700,  locale: 'id-ID',  zeroDecimals: true  },
+        BRL: { symbol: 'R$',  rate: 4.97,   locale: 'pt-BR',  zeroDecimals: false },
+        MXN: { symbol: '$',   rate: 17.15,  locale: 'es-MX',  zeroDecimals: false },
+        CLP: { symbol: '$',   rate: 950,    locale: 'es-CL',  zeroDecimals: true  },
+        RUB: { symbol: '₽',   rate: 92,     locale: 'ru-RU',  zeroDecimals: false },
+        INR: { symbol: '₹',   rate: 83.10,  locale: 'hi-IN',  zeroDecimals: false },
+        CAD: { symbol: '$',   rate: 1.36,   locale: 'en-CA',  zeroDecimals: false },
+        AUD: { symbol: '$',   rate: 1.53,   locale: 'en-AU',  zeroDecimals: false },
+        NZD: { symbol: '$',   rate: 1.67,   locale: 'en-NZ',  zeroDecimals: false },
+        TRY: { symbol: '₺',   rate: 32.10,  locale: 'tr-TR',  zeroDecimals: false }
+    };
+
+    var SUPPORTED_CURRENCIES = Object.keys(allCurrencies);
 
     /* ---------- Fuentes CJK ---------- */
     var CJK_FONTS = {
@@ -112,6 +136,17 @@
 
     var currentLang = detectLang();
 
+    /* ---------- Detectar moneda ---------- */
+    function detectCurrency() {
+        var stored = localStorage.getItem(CURRENCY_STORAGE_KEY);
+        if (stored && allCurrencies[stored]) return stored;
+        // Derivar de idioma
+        var langConfig = currencyConfig[currentLang];
+        return langConfig ? langConfig.code : 'USD';
+    }
+
+    var currentCurrency = detectCurrency();
+
     /* ---------- API pública ---------- */
     function getLang() {
         return currentLang;
@@ -123,6 +158,22 @@
 
     function getCurrencyConfig(lang) {
         return currencyConfig[lang || currentLang] || currencyConfig.en;
+    }
+
+    function getCurrency() {
+        return currentCurrency;
+    }
+
+    function setCurrency(code) {
+        if (!allCurrencies[code]) return;
+        currentCurrency = code;
+        localStorage.setItem(CURRENCY_STORAGE_KEY, code);
+        applyPrices();
+        updateCurrencySelector();
+        if (window.EcoCartRenderer)   window.EcoCartRenderer.renderCart();
+        if (window.EcoProductCards)   window.EcoProductCards.update();
+        if (window.EcoUrgencyBanner)  window.EcoUrgencyBanner.update();
+        if (window.EcoShippingWidget) window.EcoShippingWidget.update();
     }
 
     function isRTL(lang) {
@@ -140,10 +191,17 @@
             document.documentElement.lang = lang;
             document.documentElement.dir = isRTL(lang) ? 'rtl' : 'ltr';
 
+            // Sincronizar moneda si el usuario no eligió una explícitamente
+            if (!localStorage.getItem(CURRENCY_STORAGE_KEY)) {
+                var langConfig = currencyConfig[lang];
+                if (langConfig) currentCurrency = langConfig.code;
+            }
+
             function applyAll() {
                 applyTranslations();
                 applyPrices();
                 updateLangSelector();
+                updateCurrencySelector();
                 if (window.EcoCartRenderer)    window.EcoCartRenderer.renderCart();
                 if (window.EcoUrgencyBanner)   window.EcoUrgencyBanner.update();
                 if (window.EcoShippingWidget)  window.EcoShippingWidget.update();
@@ -171,14 +229,15 @@
 
     /* ---------- Formateo de precios con conversión de moneda ---------- */
     function formatPrice(amountUSD) {
-        var config = currencyConfig[currentLang] || currencyConfig.en;
+        var config = allCurrencies[currentCurrency] || allCurrencies.USD;
         var converted = amountUSD * config.rate;
+        var decimals = config.zeroDecimals ? 0 : 2;
 
         return new Intl.NumberFormat(config.locale, {
             style: 'currency',
-            currency: config.code,
-            minimumFractionDigits: config.code === 'JPY' || config.code === 'KRW' || config.code === 'IDR' ? 0 : 2,
-            maximumFractionDigits: config.code === 'JPY' || config.code === 'KRW' || config.code === 'IDR' ? 0 : 2
+            currency: currentCurrency,
+            minimumFractionDigits: decimals,
+            maximumFractionDigits: decimals
         }).format(converted);
     }
 
@@ -243,6 +302,16 @@
         });
     }
 
+    /* ---------- Actualizar selector de moneda ---------- */
+    function updateCurrencySelector() {
+        var currencyOptions = document.getElementById('regionCurrencyOptions');
+        if (currencyOptions) {
+            currencyOptions.querySelectorAll('.region-option').forEach(function (btn) {
+                btn.classList.toggle('active', btn.getAttribute('data-region-currency') === currentCurrency);
+            });
+        }
+    }
+
     /* ---------- Actualizar selector de idioma ---------- */
     function updateLangSelector() {
         document.querySelectorAll('.lang-option').forEach(function (btn) {
@@ -274,6 +343,7 @@
                     applyTranslations();
                     applyPrices();
                     updateLangSelector();
+                    updateCurrencySelector();
                     if (window.EcoCartRenderer)   window.EcoCartRenderer.renderCart();
                     if (window.EcoUrgencyBanner)  window.EcoUrgencyBanner.update();
                     if (window.EcoShippingWidget) window.EcoShippingWidget.update();
@@ -304,6 +374,8 @@
     window.EcoI18n = {
         getLang: getLang,
         setLang: setLang,
+        getCurrency: getCurrency,
+        setCurrency: setCurrency,
         t: t,
         formatPrice: formatPrice,
         applyTranslations: applyTranslations,

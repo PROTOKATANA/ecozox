@@ -14,12 +14,10 @@
         region_change_currency: 'Changer la devise',
         aria_close: 'Fermer',
         aria_change_lang: 'Changer la langue',
-
         /* ---------- Home / Index ---------- */
         hero_title: 'Collection Essentielle 2026',
         hero_subtitle: 'Découvrez notre nouvelle gamme de produits minimalistes conçus pour le quotidien. Simplicité, fonctionnalité et élégance.',
         title_home: 'EcoZox - Boutique Minimaliste',
-
         /* ---------- Product Cards ---------- */
         btn_add_to_cart: 'Ajouter au panier',
         btn_added: 'Ajouté !',
@@ -32,7 +30,6 @@
         product_tazas: 'Set de tasses Matte',
         sold_out: 'ÉPUISÉ',
         sold_out_btn: 'Épuisé',
-
         /* ---------- Product Detail ---------- */
         product_silence_title: 'Casque Silence Pro',
         product_silence_desc: 'Vivez un son immersif grâce à la réduction de bruit active de pointe. Un design ergonomique et minimaliste qui garantit un confort pendant des heures. Batterie longue durée avec charge rapide. Le compagnon idéal pour votre musique, votre travail et vos voyages.',
@@ -47,7 +44,6 @@
         aria_decrease: 'Diminuer la quantité',
         aria_increase: 'Augmenter la quantité',
         aria_quantity: 'Quantité',
-
         /* ---------- Shipping Widget ---------- */
         shipping_free_title: 'Livraison gratuite',
         shipping_free_badge: 'GRATUIT',
@@ -55,11 +51,9 @@
         shipping_benefit_2: 'Retour ouvert à tout moment',
         shipping_benefit_3: 'Délais de livraison garantis',
         shipping_delivery_in: 'Livraison sous 4 jours',
-
         /* ---------- Sticky Cart Bar ---------- */
         sticky_cart_btn: 'PANIER',
         sticky_pay_btn: 'PAYER',
-
         /* ---------- Reviews ---------- */
         reviews_title: 'Avis des clients',
         reviews_write_btn: 'Écrire un avis',
@@ -76,12 +70,10 @@
         review_image_optional: '(facultatif)',
         review_cancel_btn: 'Annuler',
         review_submit_btn: 'Envoyer l\'avis',
-
         /* ---------- Video Labels ---------- */
         video_label_noise: 'Réduction de bruit',
         video_label_design: 'Design ergonomique',
         video_label_battery: '40h d\'autonomie',
-
         /* ---------- Cart Page ---------- */
         cart_empty: 'Votre panier est vide.',
         cart_view_products: 'Parcourir les produits',
@@ -98,7 +90,6 @@
         cart_included: 'Inclus',
         cart_bundle_contents: 'Contenu du pack',
         title_cart: 'Votre Panier - EcoZox',
-
         /* ---------- Checkout Widget ---------- */
         checkout_title: 'Détails de livraison',
         checkout_treatment_label: 'Civilité',
@@ -136,7 +127,6 @@
         checkout_err_email: 'Veuillez entrer une adresse e-mail valide',
         checkout_err_phone: 'Veuillez entrer un numéro de téléphone valide',
         checkout_success_toast: 'Informations de livraison enregistrées avec succès.',
-
         /* ---------- Contact Page ---------- */
         contact_title: 'REMBOURSEMENT',
         contact_name_label: 'Nom complet',
@@ -155,7 +145,6 @@
         trust_feature_2: 'Processus simple et sans tracas : remboursement garanti sous 48h après validation.',
         trust_feature_3: 'Un support client humain pour vous accompagner à chaque étape.',
         title_contact: 'Contact & Remboursements - EcoZox',
-
         /* ---------- Footer ---------- */
         footer_tagline: 'Simplicité, fonctionnalité et élégance au quotidien.',
         footer_legal_title: 'Liens juridiques',
@@ -166,12 +155,10 @@
         footer_email_label: 'E-mail :',
         footer_phone_label: 'Téléphone :',
         footer_copyright: '&copy; 2026 Ecozox. Tous droits réservés.',
-
         /* ---------- Urgency Banner ---------- */
         urgency_discount_text: '{discount}% de réduction et {num_gift} surprise',
         urgency_ends_in: 'Se termine dans',
         urgency_gift: '1 cadeau',
-
         /* ---------- Shipping & Returns Page ---------- */
         shipping_page_title: 'Livraison & Retours',
         shipping_s1_title: '1. Politique de livraison',
@@ -186,7 +173,6 @@
         shipping_s4_text: 'Nous acceptons les retours jusqu\'à 30 jours après la livraison, si l\'article n\'a pas été utilisé et est dans son état d\'origine. Nous rembourserons le montant total de la commande moins les frais de retour.',
         shipping_s5_title: '5. Articles endommagés',
         shipping_s5_text: 'Si votre commande arrive endommagée de quelque manière que ce soit, veuillez nous envoyer un e-mail dès que possible à ecozox@support@gmail.com avec votre numéro de commande et une photo de l\'état de l\'article. Nous traitons chaque cas individuellement et ferons de notre mieux pour trouver une solution satisfaisante.',
-
         /* ---------- Terms & Conditions ---------- */
         terms_page_title: 'Conditions Générales',
         terms_s1_title: '1. Introduction',
@@ -199,7 +185,6 @@
         terms_s4_text: 'Les prix de nos produits sont susceptibles d\'être modifiés sans préavis. Nous nous réservons le droit de modifier ou d\'interrompre le Service à tout moment sans préavis.',
         terms_s5_title: '5. Limitation de Responsabilité',
         terms_s5_text: 'En aucun cas EcoZox, nos administrateurs, employés ou affiliés ne seront responsables des dommages directs ou indirects résultant de votre utilisation du service.',
-
         /* ---------- Privacy Policy ---------- */
         privacy_page_title: 'Politique de Confidentialité',
         privacy_s1_title: '1. Informations que nous collectons',
@@ -212,12 +197,9 @@
         privacy_s4_text: 'Lors d\'une commande, nous conservons vos informations sauf si vous nous demandez de les supprimer.',
         privacy_s5_title: '5. Vos droits',
         privacy_s5_text: 'Vous avez le droit d\'accéder à vos données personnelles et d\'en demander la correction, la mise à jour ou la suppression. Contactez-nous via les coordonnées du site.',
-
         /* ---------- Before / After Slider ---------- */
         ba_after: 'Après',
         ba_before: 'Avant',
-
-        /* ---------- Reviews ---------- */
         review_1_title: 'Qualité sonore incroyable',
         review_1_body: 'Je cherchais un casque bien adapté depuis des mois et celui-ci a dépassé toutes mes attentes. Le son est cristallin et la réduction de bruit est spectaculaire.',
         review_2_title: 'Mon achat de l\'année',

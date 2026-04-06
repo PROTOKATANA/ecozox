@@ -14,12 +14,10 @@
         region_change_currency: 'Ubah mata uang',
         aria_close: 'Tutup',
         aria_change_lang: 'Ubah bahasa',
-
         /* ---------- Home / Index ---------- */
         hero_title: 'Koleksi Esensial 2026',
         hero_subtitle: 'Temukan lini produk minimalis baru kami yang dirancang untuk kehidupan sehari-hari. Kesederhanaan, fungsionalitas, dan keanggunan.',
         title_home: 'EcoZox - Toko Minimalis',
-
         /* ---------- Product Cards ---------- */
         btn_add_to_cart: 'Tambah ke keranjang',
         btn_added: 'Ditambahkan!',
@@ -32,7 +30,6 @@
         product_tazas: 'Set Mug Matte',
         sold_out: 'HABIS',
         sold_out_btn: 'Habis',
-
         /* ---------- Product Detail ---------- */
         product_silence_title: 'Headphone Silence Pro',
         product_silence_desc: 'Rasakan suara imersif dengan peredam kebisingan aktif canggih. Desain ergonomis dan minimalis yang menjamin kenyamanan selama berjam-jam. Baterai tahan lama dengan pengisian cepat. Pendamping sempurna untuk musik, kerja, dan perjalanan Anda.',
@@ -47,7 +44,6 @@
         aria_decrease: 'Kurangi jumlah',
         aria_increase: 'Tambah jumlah',
         aria_quantity: 'Jumlah',
-
         /* ---------- Shipping Widget ---------- */
         shipping_free_title: 'Gratis Ongkir',
         shipping_free_badge: 'GRATIS',
@@ -55,11 +51,9 @@
         shipping_benefit_2: 'Pengembalian terbuka kapan saja',
         shipping_benefit_3: 'Jaminan waktu pengiriman',
         shipping_delivery_in: 'Pengiriman dalam 4 hari',
-
         /* ---------- Sticky Cart Bar ---------- */
         sticky_cart_btn: 'KERANJANG',
         sticky_pay_btn: 'BAYAR',
-
         /* ---------- Reviews ---------- */
         reviews_title: 'Ulasan Pelanggan',
         reviews_write_btn: 'Tulis ulasan',
@@ -76,12 +70,10 @@
         review_image_optional: '(opsional)',
         review_cancel_btn: 'Batal',
         review_submit_btn: 'Kirim ulasan',
-
         /* ---------- Video Labels ---------- */
         video_label_noise: 'Peredam kebisingan',
         video_label_design: 'Desain ergonomis',
         video_label_battery: 'Baterai 40 jam',
-
         /* ---------- Cart Page ---------- */
         cart_empty: 'Keranjang Anda kosong.',
         cart_view_products: 'Jelajahi produk',
@@ -98,7 +90,6 @@
         cart_included: 'Termasuk',
         cart_bundle_contents: 'Isi paket',
         title_cart: 'Keranjang - EcoZox',
-
         /* ---------- Checkout Widget ---------- */
         checkout_title: 'Detail Pengiriman',
         checkout_treatment_label: 'Sapaan',
@@ -136,7 +127,6 @@
         checkout_err_email: 'Masukkan alamat email yang valid',
         checkout_err_phone: 'Masukkan nomor telepon yang valid',
         checkout_success_toast: 'Informasi pengiriman berhasil disimpan.',
-
         /* ---------- Contact Page ---------- */
         contact_title: 'PENGEMBALIAN DANA',
         contact_name_label: 'Nama lengkap',
@@ -155,7 +145,6 @@
         trust_feature_2: 'Proses mudah dan tanpa ribet: pengembalian dana dijamin dalam 48 jam setelah validasi.',
         trust_feature_3: 'Dukungan pelanggan manusia untuk memandu Anda di setiap langkah.',
         title_contact: 'Kontak & Pengembalian Dana - EcoZox',
-
         /* ---------- Footer ---------- */
         footer_tagline: 'Kesederhanaan, fungsionalitas, dan keanggunan untuk kehidupan sehari-hari.',
         footer_legal_title: 'Tautan Hukum',
@@ -166,12 +155,10 @@
         footer_email_label: 'Email:',
         footer_phone_label: 'Telepon:',
         footer_copyright: '&copy; 2026 Ecozox. Hak cipta dilindungi.',
-
         /* ---------- Urgency Banner ---------- */
         urgency_discount_text: 'Diskon {discount}% dan {num_gift} kejutan',
         urgency_ends_in: 'Berakhir dalam',
         urgency_gift: '1 hadiah',
-
         /* ---------- Shipping & Returns Page ---------- */
         shipping_page_title: 'Pengiriman & Pengembalian',
         shipping_s1_title: '1. Kebijakan Pengiriman',
@@ -186,7 +173,6 @@
         shipping_s4_text: 'Kami menerima pengembalian hingga 30 hari setelah pengiriman, jika barang belum digunakan dan dalam kondisi asli. Kami akan mengembalikan jumlah pesanan penuh dikurangi biaya pengiriman pengembalian.',
         shipping_s5_title: '5. Barang Rusak',
         shipping_s5_text: 'Jika pesanan Anda tiba dalam keadaan rusak, silakan kirim email kepada kami sesegera mungkin ke ecozox@support@gmail.com dengan nomor pesanan dan foto kondisi barang. Kami menangani ini secara kasus per kasus dan akan berusaha sebaik mungkin untuk menemukan solusi yang memuaskan.',
-
         /* ---------- Terms & Conditions ---------- */
         terms_page_title: 'Syarat dan Ketentuan',
         terms_s1_title: '1. Pendahuluan',
@@ -199,7 +185,6 @@
         terms_s4_text: 'Harga produk kami dapat berubah tanpa pemberitahuan. Kami berhak untuk mengubah atau menghentikan Layanan kapan saja tanpa pemberitahuan.',
         terms_s5_title: '5. Batasan Tanggung Jawab',
         terms_s5_text: 'EcoZox, direktur, karyawan, atau afiliasi kami tidak bertanggung jawab atas kerugian langsung atau tidak langsung yang timbul dari penggunaan layanan.',
-
         /* ---------- Privacy Policy ---------- */
         privacy_page_title: 'Kebijakan Privasi',
         privacy_s1_title: '1. Informasi yang Kami Kumpulkan',
@@ -212,12 +197,9 @@
         privacy_s4_text: 'Saat Anda memesan, kami menyimpan informasi pesanan Anda kecuali Anda meminta kami untuk menghapusnya.',
         privacy_s5_title: '5. Hak Anda',
         privacy_s5_text: 'Anda berhak mengakses, mengoreksi, memperbarui, atau menghapus informasi pribadi Anda. Hubungi kami melalui informasi kontak di situs.',
-
         /* ---------- Before / After Slider ---------- */
         ba_after: 'Sesudah',
         ba_before: 'Sebelum',
-
-        /* ---------- Reviews ---------- */
         review_1_title: 'Kualitas suara yang luar biasa',
         review_1_body: 'Saya sudah berbulan-bulan mencari headphone yang pas dan produk ini melampaui semua ekspektasi saya. Suaranya jernih dan peredam kebisingannya spektakuler.',
         review_2_title: 'Pembelian terbaik tahun ini',

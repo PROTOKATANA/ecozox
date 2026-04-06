@@ -37,13 +37,39 @@
         document.head.appendChild(link);
     });
 
+    var currencies = [
+        { code: 'USD', flag: 'us', label: 'Dólar estadounidense',  symbol: '$'   },
+        { code: 'EUR', flag: 'eu', label: 'Euro',                  symbol: '€'   },
+        { code: 'CAD', flag: 'ca', label: 'Dólar canadiense',      symbol: '$'   },
+        { code: 'AUD', flag: 'au', label: 'Dólar australiano',     symbol: '$'   },
+        { code: 'GBP', flag: 'gb', label: 'Libra esterlina',       symbol: '£'   },
+        { code: 'NZD', flag: 'nz', label: 'Dólar neozelandés',     symbol: '$'   },
+        { code: 'JPY', flag: 'jp', label: 'Yen japonés',           symbol: '¥'   },
+        { code: 'INR', flag: 'in', label: 'Rupia india',           symbol: '₹'   },
+        { code: 'CNY', flag: 'cn', label: 'Yuan chino',            symbol: '¥'   },
+        { code: 'KRW', flag: 'kr', label: 'Won surcoreano',        symbol: '₩'   },
+        { code: 'RUB', flag: 'ru', label: 'Rublo ruso',            symbol: '₽'   },
+        { code: 'BRL', flag: 'br', label: 'Real brasileño',        symbol: 'R$'  },
+        { code: 'SAR', flag: 'sa', label: 'Riyal saudí',           symbol: 'ر.س' },
+        { code: 'TRY', flag: 'tr', label: 'Lira turca',            symbol: '₺'   },
+        { code: 'MXN', flag: 'mx', label: 'Peso mexicano',         symbol: '$'   },
+        { code: 'CLP', flag: 'cl', label: 'Peso chileno',          symbol: '$'   },
+        { code: 'IDR', flag: 'id', label: 'Rupia indonesia',       symbol: 'Rp'  }
+    ];
+
     var STORAGE_KEY = 'ecozox_lang';
+    var CURRENCY_STORAGE_KEY = 'ecozox_currency';
     var SUPPORTED_CODES = languages.map(function (l) { return l.code; });
 
     // Leer idioma guardado para marcar el activo al renderizar
     var stored = localStorage.getItem(STORAGE_KEY)
         || (navigator.language || '').split('-')[0].toLowerCase();
     var currentLang = SUPPORTED_CODES.indexOf(stored) !== -1 ? stored : 'es';
+
+    // Moneda almacenada o derivada del idioma
+    var langToCurrency = { es:'EUR', en:'USD', ar:'SAR', zh:'CNY', ja:'JPY', ko:'KRW', id:'IDR', de:'EUR', fr:'EUR', it:'EUR', pt:'BRL', tr:'TRY' };
+    var storedCurrency = localStorage.getItem(CURRENCY_STORAGE_KEY);
+    var currentCurrency = storedCurrency || langToCurrency[currentLang] || 'USD';
 
     el.outerHTML = [
         '<header class="header">',
@@ -67,6 +93,16 @@
         '            <circle cx="12" cy="12" r="10"></circle>',
         '            <path d="M2 12h20"></path>',
         '            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>',
+        '          </svg>',
+        '        </button>',
+        '      </div>',
+        '      <div class="lang-switcher" id="currencySwitcher">',
+        '        <button class="lang-toggle icon-only-btn" id="currencyToggle"',
+        '                aria-label="Cambiar moneda" data-i18n-aria="aria_change_currency"',
+        '                aria-haspopup="dialog" aria-expanded="false">',
+        '          <svg class="lang-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">',
+        '            <line x1="12" y1="1" x2="12" y2="23"></line>',
+        '            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>',
         '          </svg>',
         '        </button>',
         '      </div>',
@@ -100,35 +136,65 @@
         }).join('');
     }
 
+    function buildCurrencyButtons() {
+        return currencies.map(function (c) {
+            var active = c.code === currentCurrency ? ' active' : '';
+            var flagImg = '<img src="https://flagcdn.com/24x18/' + c.flag + '.png"'
+                + ' width="24" height="18" alt="' + c.code + '" class="region-flag"'
+                + ' style="border-radius:2px;flex-shrink:0;">';
+            return '<button class="region-option' + active + '" data-region-currency="' + c.code + '">'
+                + '<span style="display:flex;align-items:center;gap:0.5rem;">'
+                + flagImg + c.label.toUpperCase()
+                + ' <span class="region-option__secondary">[' + c.symbol + ']</span>'
+                + '</span>'
+                + CHECK_SVG
+                + '</button>';
+        }).join('');
+    }
+
+    var CLOSE_SVG = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">'
+        + '<line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
+
+    /* --- Dialog de idioma --- */
     document.body.insertAdjacentHTML('beforeend',
-        '<dialog id="region-dialog" aria-labelledby="region-dialog-title">'
+        '<dialog id="region-dialog" class="region-dialog" aria-labelledby="region-dialog-title">'
         + '<div class="region-dialog__handle" aria-hidden="true"></div>'
         + '<div class="region-dialog__header">'
-        +   '<h2 class="region-dialog__title" id="region-dialog-title" data-i18n="region_dialog_title">Configuración de Región</h2>'
-        +   '<button class="region-dialog__close" id="regionDialogClose" aria-label="Cerrar" data-i18n-aria="aria_close">'
-        +     '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">'
-        +       '<line x1="18" y1="6" x2="6" y2="18"></line>'
-        +       '<line x1="6" y1="6" x2="18" y2="18"></line>'
-        +     '</svg>'
-        +   '</button>'
+        +   '<h2 class="region-dialog__title" id="region-dialog-title" data-i18n="region_change_lang">Cambiar idioma</h2>'
+        +   '<button class="region-dialog__close" id="regionDialogClose" aria-label="Cerrar" data-i18n-aria="aria_close">' + CLOSE_SVG + '</button>'
         + '</div>'
         + '<div class="region-dialog__body">'
-        +   '<p class="region-section__label" data-i18n="region_change_lang">Cambiar idioma</p>'
-        +   '<div class="region-options" id="regionLangOptions">'
-        +     buildLangButtons()
-        +   '</div>'
+        +   '<div class="region-options" id="regionLangOptions">' + buildLangButtons() + '</div>'
+        + '</div>'
+        + '</dialog>'
+    );
+
+    /* --- Dialog de moneda --- */
+    document.body.insertAdjacentHTML('beforeend',
+        '<dialog id="currency-dialog" class="region-dialog" aria-labelledby="currency-dialog-title">'
+        + '<div class="region-dialog__handle" aria-hidden="true"></div>'
+        + '<div class="region-dialog__header">'
+        +   '<h2 class="region-dialog__title" id="currency-dialog-title" data-i18n="region_change_currency">Cambiar moneda</h2>'
+        +   '<button class="region-dialog__close" id="currencyDialogClose" aria-label="Cerrar" data-i18n-aria="aria_close">' + CLOSE_SVG + '</button>'
+        + '</div>'
+        + '<div class="region-dialog__body">'
+        +   '<div class="region-options" id="regionCurrencyOptions">' + buildCurrencyButtons() + '</div>'
         + '</div>'
         + '</dialog>'
     );
 
     /* ---------- Referencias ---------- */
-    var dialog      = document.getElementById('region-dialog');
-    var toggle      = document.getElementById('langToggle');
-    var closeBtn    = document.getElementById('regionDialogClose');
-    var langOptions = document.getElementById('regionLangOptions');
+    var langDialog      = document.getElementById('region-dialog');
+    var currDialog      = document.getElementById('currency-dialog');
+    var toggle          = document.getElementById('langToggle');
+    var currencyToggle  = document.getElementById('currencyToggle');
+    var langCloseBtn    = document.getElementById('regionDialogClose');
+    var currCloseBtn    = document.getElementById('currencyDialogClose');
+    var langOptions     = document.getElementById('regionLangOptions');
+    var currencyOptions = document.getElementById('regionCurrencyOptions');
 
-    /* ---------- Cerrar con animación ---------- */
-    function closeDialog() {
+    /* ---------- Cerrar con animación (genérico) ---------- */
+    function closeDialog(dialog) {
         dialog.classList.add('is-closing');
         var done = false;
         function finish() {
@@ -141,32 +207,30 @@
             dialog.removeEventListener('animationend', handler);
             finish();
         });
-        setTimeout(finish, 400); /* fallback */
+        setTimeout(finish, 400);
     }
 
-    /* ---------- Abrir dialog ---------- */
-    toggle.addEventListener('click', function (e) {
-        e.stopPropagation();
-        dialog.showModal();
-    });
+    function bindDialog(dialog, openBtn, closeBtn) {
+        openBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            dialog.showModal();
+        });
+        closeBtn.addEventListener('click', function () { closeDialog(dialog); });
+        dialog.addEventListener('click', function (e) {
+            var rect = dialog.getBoundingClientRect();
+            if (e.clientX < rect.left || e.clientX > rect.right ||
+                e.clientY < rect.top  || e.clientY > rect.bottom) {
+                closeDialog(dialog);
+            }
+        });
+        dialog.addEventListener('cancel', function (e) {
+            e.preventDefault();
+            closeDialog(dialog);
+        });
+    }
 
-    /* ---------- Cerrar con × ---------- */
-    closeBtn.addEventListener('click', closeDialog);
-
-    /* ---------- Cerrar al clicar backdrop ---------- */
-    dialog.addEventListener('click', function (e) {
-        var rect = dialog.getBoundingClientRect();
-        if (e.clientX < rect.left || e.clientX > rect.right ||
-            e.clientY < rect.top  || e.clientY > rect.bottom) {
-            closeDialog();
-        }
-    });
-
-    /* ---------- Interceptar ESC para animar el cierre ---------- */
-    dialog.addEventListener('cancel', function (e) {
-        e.preventDefault();
-        closeDialog();
-    });
+    bindDialog(langDialog, toggle, langCloseBtn);
+    bindDialog(currDialog, currencyToggle, currCloseBtn);
 
     /* ---------- Selección de idioma ---------- */
     langOptions.addEventListener('click', function (e) {
@@ -186,7 +250,28 @@
             localStorage.setItem(STORAGE_KEY, lang);
         }
 
-        closeDialog();
+        closeDialog(langDialog);
+    });
+
+    /* ---------- Selección de moneda ---------- */
+    currencyOptions.addEventListener('click', function (e) {
+        var btn = e.target.closest('.region-option');
+        if (!btn) return;
+
+        var code = btn.getAttribute('data-region-currency');
+
+        currencyOptions.querySelectorAll('.region-option').forEach(function (b) {
+            b.classList.remove('active');
+        });
+        btn.classList.add('active');
+
+        if (window.EcoI18n) {
+            window.EcoI18n.setCurrency(code);
+        } else {
+            localStorage.setItem(CURRENCY_STORAGE_KEY, code);
+        }
+
+        closeDialog(currDialog);
     });
 
 })();
