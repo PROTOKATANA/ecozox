@@ -179,7 +179,7 @@
     display: none !important;
   }
 
-  /* Limpiamos los estilos del header para que se vuelva "invisible" 
+  /* Limpiamos los estilos del header para que se vuelva "invisible"
      y solo funcione como anclaje sticky para el banner */
   .header {
     padding: 0 !important;
@@ -187,5 +187,6 @@
     backdrop-filter: none !important;
     border-bottom: none !important;
     box-shadow: none !important;
+    top: -1px !important; /* Ancla 1px arriba para eliminar el subpixel gap */
   }
 }

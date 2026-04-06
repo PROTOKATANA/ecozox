@@ -257,6 +257,7 @@
   #urgency-banner {
     font-size: 0.8rem;
     padding: 0.65rem 0.75rem;
+    border-top: none;
   }
 
   .urgency-timer {
