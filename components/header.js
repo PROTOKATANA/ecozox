@@ -8,7 +8,6 @@
     var base = el.dataset.base || '';
 
     // Todos los idiomas soportados
-    // flag: código de país para flagcdn.com/24x18/{code}.png
     var languages = [
         { code: 'es', flag: 'es', label: 'Español',   suffix: 'ES' },
         { code: 'en', flag: 'us', label: 'English',   suffix: 'EN' },
@@ -24,7 +23,7 @@
         { code: 'tr', flag: 'tr', label: 'Türkçe',    suffix: 'TR' }
     ];
 
-    // Precargar Noto Sans para CJK — el dialog se construye antes de que i18n.js cargue esas fuentes
+    // Precargar Noto Sans para CJK
     var CJK_FONTS = {
         zh: 'https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;800&display=swap',
         ja: 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap',
@@ -61,12 +60,10 @@
     var CURRENCY_STORAGE_KEY = 'ecozox_currency';
     var SUPPORTED_CODES = languages.map(function (l) { return l.code; });
 
-    // Leer idioma guardado para marcar el activo al renderizar
     var stored = localStorage.getItem(STORAGE_KEY)
         || (navigator.language || '').split('-')[0].toLowerCase();
     var currentLang = SUPPORTED_CODES.indexOf(stored) !== -1 ? stored : 'es';
 
-    // Moneda almacenada o derivada del idioma
     var langToCurrency = { es:'EUR', en:'USD', ar:'SAR', zh:'CNY', ja:'JPY', ko:'KRW', id:'IDR', de:'EUR', fr:'EUR', it:'EUR', pt:'BRL', tr:'TRY' };
     var storedCurrency = localStorage.getItem(CURRENCY_STORAGE_KEY);
     var currentCurrency = storedCurrency || langToCurrency[currentLang] || 'USD';
@@ -78,13 +75,6 @@
         '      <img src="' + base + 'assets/logo.png" alt="EcoZox Logo" class="logo-img">',
         '    </a>',
         '    <div class="header-actions" style="display:flex;gap:0.75rem;align-items:center;">',
-        '      <a href="' + base + 'contacto.html" class="cart-button icon-only-btn"',
-        '         aria-label="Contacto" data-i18n-aria="nav_contact">',
-        '        <svg class="cart-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">',
-        '          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>',
-        '          <polyline points="22,6 12,13 2,6"></polyline>',
-        '        </svg>',
-        '      </a>',
         '      <div class="lang-switcher" id="langSwitcher">',
         '        <button class="lang-toggle icon-only-btn" id="langToggle"',
         '                aria-label="Cambiar idioma" data-i18n-aria="aria_change_lang"',
@@ -117,7 +107,7 @@
     ].join('\n');
 
     /* =============================================
-       Region Dialog — 12 idiomas
+        Region Dialog — 12 idiomas
        ============================================= */
     var CHECK_SVG = '<svg class="region-option__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
 
@@ -155,7 +145,6 @@
     var CLOSE_SVG = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">'
         + '<line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
 
-    /* --- Dialog de idioma --- */
     document.body.insertAdjacentHTML('beforeend',
         '<dialog id="region-dialog" class="region-dialog" aria-labelledby="region-dialog-title">'
         + '<div class="region-dialog__handle" aria-hidden="true"></div>'
@@ -169,7 +158,6 @@
         + '</dialog>'
     );
 
-    /* --- Dialog de moneda --- */
     document.body.insertAdjacentHTML('beforeend',
         '<dialog id="currency-dialog" class="region-dialog" aria-labelledby="currency-dialog-title">'
         + '<div class="region-dialog__handle" aria-hidden="true"></div>'
@@ -183,7 +171,6 @@
         + '</dialog>'
     );
 
-    /* ---------- Referencias ---------- */
     var langDialog      = document.getElementById('region-dialog');
     var currDialog      = document.getElementById('currency-dialog');
     var toggle          = document.getElementById('langToggle');
@@ -193,7 +180,6 @@
     var langOptions     = document.getElementById('regionLangOptions');
     var currencyOptions = document.getElementById('regionCurrencyOptions');
 
-    /* ---------- Cerrar con animación (genérico) ---------- */
     function closeDialog(dialog) {
         dialog.classList.add('is-closing');
         var done = false;
@@ -232,45 +218,35 @@
     bindDialog(langDialog, toggle, langCloseBtn);
     bindDialog(currDialog, currencyToggle, currCloseBtn);
 
-    /* ---------- Selección de idioma ---------- */
     langOptions.addEventListener('click', function (e) {
         var btn = e.target.closest('.region-option');
         if (!btn) return;
-
         var lang = btn.getAttribute('data-region-lang');
-
         langOptions.querySelectorAll('.region-option').forEach(function (b) {
             b.classList.remove('active');
         });
         btn.classList.add('active');
-
         if (window.EcoI18n) {
             window.EcoI18n.setLang(lang);
         } else {
             localStorage.setItem(STORAGE_KEY, lang);
         }
-
         closeDialog(langDialog);
     });
 
-    /* ---------- Selección de moneda ---------- */
     currencyOptions.addEventListener('click', function (e) {
         var btn = e.target.closest('.region-option');
         if (!btn) return;
-
         var code = btn.getAttribute('data-region-currency');
-
         currencyOptions.querySelectorAll('.region-option').forEach(function (b) {
             b.classList.remove('active');
         });
         btn.classList.add('active');
-
         if (window.EcoI18n) {
             window.EcoI18n.setCurrency(code);
         } else {
             localStorage.setItem(CURRENCY_STORAGE_KEY, code);
         }
-
         closeDialog(currDialog);
     });
 
