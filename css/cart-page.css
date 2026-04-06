@@ -201,7 +201,7 @@
    ======================================== */
 
 #urgency-banner {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d1515 100%);
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
   color: #fff;
   text-align: center;
   padding: 0.75rem 1rem;
@@ -212,11 +212,16 @@
 }
 
 .urgency-text {
-  display: inline-flex;
-  align-items: center;
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.25rem;
+  align-items: center;
+  column-gap: 1.25rem;
+  row-gap: 0.25rem;
+}
+
+.urgency-block {
+  white-space: nowrap;
 }
 
 /* Énfasis en el porcentaje y el símbolo + */
@@ -233,15 +238,6 @@
   font-size: 1.08em;
 }
 
-/* Separador discontinuo vertical */
-.urgency-wave-sep {
-  display: inline-block;
-  width: 0;
-  height: 1.1em;
-  border-left: 2px dashed rgba(255, 255, 255, 0.45);
-  margin: 0 0.85rem;
-  vertical-align: middle;
-}
 
 .urgency-timer {
   display: inline-block;

@@ -21,11 +21,9 @@
     if (document.getElementById('urgency-banner')) return;
 
     /* ---------- Helpers de texto i18n ---------- */
-    var WAVE_SEP = '<span class="urgency-wave-sep" aria-hidden="true"></span>';
-
     function getBannerText() {
         var giftText = window.EcoI18n ? window.EcoI18n.t('urgency_gift') : '1 regalo';
-        var raw = window.EcoI18n
+        var promoHtml = window.EcoI18n
             ? window.EcoI18n.t('urgency_discount_text')
                 .replace('{discount}%', '<span class="urgency-pct">' + DISCOUNT_PERCENT + '%</span>')
                 .replace('%{discount}', '<span class="urgency-pct">%' + DISCOUNT_PERCENT + '</span>')
@@ -34,7 +32,9 @@
         var endsIn = window.EcoI18n
             ? window.EcoI18n.t('urgency_ends_in')
             : 'Termina en';
-        return raw + WAVE_SEP + endsIn + '&nbsp;<span id="urgency-timer" class="urgency-timer">15:00</span>';
+        var promoBlock  = '<span class="urgency-block">' + promoHtml + '</span>';
+        var timerBlock  = '<span class="urgency-block">' + endsIn + '&nbsp;<span id="urgency-timer" class="urgency-timer">15:00</span></span>';
+        return promoBlock + timerBlock;
     }
 
     /* ---------- DOM ---------- */
