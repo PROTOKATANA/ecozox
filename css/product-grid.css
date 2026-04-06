@@ -24,6 +24,12 @@
   gap: var(--grid-gap);
 }
 
+@media (max-width: 767px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .product-card {
   background: var(--card-bg);
   border: 1px solid var(--border-color);
