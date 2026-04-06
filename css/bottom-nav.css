@@ -14,12 +14,13 @@
         bottom: 0;
         left: 0;
         right: 0;
-        z-index: 300;
+        z-index: 1100; /* Subido para estar por encima de todo */
         background: rgba(255, 255, 255, 0.97);
         backdrop-filter: blur(14px);
         -webkit-backdrop-filter: blur(14px);
         border-top: 1px solid var(--border-color);
         box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+        /* Altura aproximada de 65px a 70px dependiendo del contenido */
         padding: 0.5rem 0 calc(0.5rem + env(safe-area-inset-bottom, 0px));
         justify-content: space-around;
         align-items: center;
@@ -27,7 +28,7 @@
 
     /* Push body content above BNB */
     body {
-        padding-bottom: 70px;
+        padding-bottom: 75px;
     }
 }
 
