@@ -210,8 +210,9 @@
 
 /* ── Secondary text ─────────────────────── */
 .region-option__secondary {
-    color: var(--text-muted);
+    color: var(--primary-color);
     font-weight: 400;
+    font-size: 1rem;
 }
 
 /* ── CJK fonts for language labels ─────── */
