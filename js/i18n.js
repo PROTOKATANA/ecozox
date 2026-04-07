@@ -233,12 +233,13 @@
         var converted = amountUSD * config.rate;
         var decimals = config.zeroDecimals ? 0 : 2;
 
-        return new Intl.NumberFormat(config.locale, {
-            style: 'currency',
-            currency: currentCurrency,
-            minimumFractionDigits: decimals,
-            maximumFractionDigits: decimals
-        }).format(converted);
+    return new Intl.NumberFormat(config.locale, {
+        style: 'currency',
+        currency: currentCurrency,
+        currencyDisplay: 'narrowSymbol',
+        minimumFractionDigits: decimals,
+        maximumFractionDigits: decimals
+    }).format(converted).replace(/\s/g, '');
     }
 
     /* ---------- Locale para formato de fecha ---------- */
