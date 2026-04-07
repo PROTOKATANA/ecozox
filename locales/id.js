@@ -97,6 +97,7 @@
         cart_bundle_contents: 'Isi paket',
         cart_gift_label: 'Hadiah',
         cart_gift_item_name: 'Item Kejutan',
+        cart_gift_desc: 'Kami akan mengirimkan produk tambahan senilai hingga {amount}. Bisa berupa casing, tali, atau aksesori. Hanya hari ini dan eksklusif untuk penawaran ini.',
         title_cart: 'Keranjang - EcoZox',
         /* ---------- Checkout Widget ---------- */
         checkout_title: 'Detail Pengiriman',

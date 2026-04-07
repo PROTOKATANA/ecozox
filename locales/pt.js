@@ -97,6 +97,7 @@
         cart_bundle_contents: 'Conteúdo do pack',
         cart_gift_label: 'Presente',
         cart_gift_item_name: 'Item Surpresa',
+        cart_gift_desc: 'Enviaremos um produto adicional no valor de até {amount}. Pode ser uma capa, alça ou acessório. Somente hoje e exclusivo desta oferta.',
         title_cart: 'Carrinho - EcoZox',
         /* ---------- Checkout Widget ---------- */
         checkout_title: 'Detalhes de entrega',

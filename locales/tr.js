@@ -97,6 +97,7 @@
         cart_bundle_contents: 'Paket içeriği',
         cart_gift_label: 'Hediye',
         cart_gift_item_name: 'Sürpriz Ürün',
+        cart_gift_desc: 'Size {amount} değerinde ek bir ürün göndereceğiz. Kılıf, kayış veya aksesuar olabilir. Yalnızca bugün ve bu teklife özel.',
         title_cart: 'Sepet - EcoZox',
         /* ---------- Checkout Widget ---------- */
         checkout_title: 'Teslimat Bilgileri',

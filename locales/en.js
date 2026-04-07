@@ -97,6 +97,7 @@
         cart_bundle_contents: 'Pack contents',
         cart_gift_label: 'Gift',
         cart_gift_item_name: 'Surprise Item',
+        cart_gift_desc: 'We\'ll send you an additional product worth up to {amount}. It could be a case, strap, or accessory. Today only and exclusive to this offer.',
         title_cart: 'Your Cart - EcoZox',
         /* ---------- Checkout Widget ---------- */
         checkout_title: 'Delivery Details',

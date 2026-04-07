@@ -137,7 +137,7 @@
                     <li class="cart-body-item">
                         <img src="https://images.unsplash.com/photo-1513885535751-8b9238bd345a?auto=format&fit=crop&q=80&w=80&h=80"
                              alt="${ti('cart_gift_item_name')}" class="cart-body-img cart-body-img--single">
-                        <span class="cart-body-title">${ti('cart_gift_item_name')}</span>
+                        <span class="cart-body-title">${ti('cart_gift_desc').replace('{amount}', formatPrice(27.17))}</span>
                     </li>
                 </ul>
             </div>`;

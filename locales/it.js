@@ -97,6 +97,7 @@
         cart_bundle_contents: 'Contenuto del pack',
         cart_gift_label: 'Regalo',
         cart_gift_item_name: 'Articolo Sorpresa',
+        cart_gift_desc: 'Ti invieremo un prodotto aggiuntivo del valore fino a {amount}. Potrebbe essere una custodia, un cinturino o un accessorio. Solo per oggi ed esclusivo di questa offerta.',
         title_cart: 'Carrello - EcoZox',
         /* ---------- Checkout Widget ---------- */
         checkout_title: 'Dettagli di consegna',

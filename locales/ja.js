@@ -97,6 +97,7 @@
         cart_bundle_contents: 'パック内容',
         cart_gift_label: 'ギフト',
         cart_gift_item_name: 'サプライズアイテム',
+        cart_gift_desc: '{amount}相当の追加商品をお届けします。ケース、ストラップ、またはアクセサリーになります。本日限り、このオファー専用です。',
         title_cart: 'カート - EcoZox',
         /* ---------- Checkout Widget ---------- */
         checkout_title: '配送情報',
