@@ -86,7 +86,7 @@
                 +   '<h2 class="product-title" data-i18n="' + product.titleKey + '">' + titleText + '</h2>'
                 +   '<div class="product-price-wrapper">'
                 +     '<span class="product-price" data-i18n-price="' + salePrice + '">' + formatPrice(salePrice) + '</span>'
-                +     '<span class="product-price-old">' + formatPrice(parseFloat(originalPrice)) + '</span>'
+                +     '<span class="product-price-old">' + formatPrice(parseFloat(originalPrice)).replace(/[\.,]\d+$/, '') + '</span>'
                 +   '</div>'
                 +   (soldOut
                         ? '<button class="btn add-to-cart-btn" disabled aria-disabled="true" data-i18n="sold_out_btn">' + t('sold_out_btn') + '</button>'

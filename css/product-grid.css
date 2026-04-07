@@ -145,7 +145,7 @@
   font-size: 1.25rem;
   font-weight: 700;
   font-family: var(--font-heading);
-  color: #0d9488;
+  color: var(--primary-color);
 }
 
 /* Precio original tachado */
