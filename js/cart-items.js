@@ -222,8 +222,8 @@
             });
         });
 
-        // Quantity controls
-        cartItemsContainer.querySelectorAll('.cart-item').forEach(cartItem => {
+        // Quantity controls (skip gift item which has no controls)
+        cartItemsContainer.querySelectorAll('.cart-item:not(.cart-item--gift)').forEach(cartItem => {
             const productId = cartItem.dataset.productId;
             const minusBtn = cartItem.querySelector('.minus');
             const plusBtn = cartItem.querySelector('.plus');
