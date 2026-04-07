@@ -18,8 +18,8 @@
          data-wave-height="23"
          data-stroke-width="12"
          data-stroke-color="#374151"
-         data-fill-top="#f9fafb"
-         data-fill-bottom="#111827">
+          data-fill-top="#f7f4f0"
+          data-fill-bottom="#111827">
     </div>
 
     <footer class="site-footer">
