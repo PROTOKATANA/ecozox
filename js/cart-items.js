@@ -129,14 +129,9 @@
     function renderGiftItem() {
         return `
             <div class="cart-item cart-item--gift" data-product-id="__gift__">
-                <div class="cart-item-header">
-                    <h3 class="cart-item-title">
-                        <span class="cart-gift-badge">${ti('cart_gift_label')}</span>
-                        ${ti('cart_gift_item_name')}
-                    </h3>
-                    <div class="cart-item-price">
-                        <span class="price-discounted cs__row--green">${ti('cart_shipping_free')}</span>
-                    </div>
+                <div class="cart-item-header" style="flex-direction:row;justify-content:space-between;align-items:center;">
+                    <h3 class="cart-item-title">${ti('cart_gift_item_name')}</h3>
+                    <span class="price-discounted">${ti('cart_shipping_free').toUpperCase()}</span>
                 </div>
                 <ul class="cart-item-body">
                     <li class="cart-body-item">
