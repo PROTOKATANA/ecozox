@@ -199,7 +199,7 @@
                     ${giftRow}
                     <div class="cs__row">
                         <span>• ${ti('cart_shipping')}</span>
-                        <span class="cs__free cs__row--green">${ti('cart_shipping_free')}</span>
+                        <span class="cs__free cs__row--green">${ti('cart_shipping_free').toUpperCase()}</span>
                     </div>
                 </div>
                 <div class="cs__total">
