@@ -95,6 +95,8 @@
         cart_discount: 'İndirim',
         cart_included: 'Dahil',
         cart_bundle_contents: 'Paket içeriği',
+        cart_gift_label: 'Hediye',
+        cart_gift_item_name: 'Sürpriz Ürün',
         title_cart: 'Sepet - EcoZox',
         /* ---------- Checkout Widget ---------- */
         checkout_title: 'Teslimat Bilgileri',

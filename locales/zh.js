@@ -95,6 +95,8 @@
         cart_discount: '折扣',
         cart_included: '已包含',
         cart_bundle_contents: '套装内容',
+        cart_gift_label: '礼物',
+        cart_gift_item_name: '惊喜商品',
         title_cart: '购物车 - EcoZox',
         /* ---------- Checkout Widget ---------- */
         checkout_title: '配送信息',

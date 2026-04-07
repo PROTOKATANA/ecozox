@@ -95,6 +95,8 @@
         cart_discount: 'Desconto',
         cart_included: 'Incluído',
         cart_bundle_contents: 'Conteúdo do pack',
+        cart_gift_label: 'Presente',
+        cart_gift_item_name: 'Item Surpresa',
         title_cart: 'Carrinho - EcoZox',
         /* ---------- Checkout Widget ---------- */
         checkout_title: 'Detalhes de entrega',

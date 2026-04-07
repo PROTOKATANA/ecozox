@@ -125,6 +125,29 @@
             </div>`;
     }
 
+    /* --- Gift item template (no footer: no qty controls, no delete) --- */
+    function renderGiftItem() {
+        return `
+            <div class="cart-item cart-item--gift" data-product-id="__gift__">
+                <div class="cart-item-header">
+                    <h3 class="cart-item-title">
+                        <span class="cart-gift-badge">${ti('cart_gift_label')}</span>
+                        ${ti('cart_gift_item_name')}
+                    </h3>
+                    <div class="cart-item-price">
+                        <span class="price-discounted cs__row--green">${ti('cart_shipping_free')}</span>
+                    </div>
+                </div>
+                <ul class="cart-item-body">
+                    <li class="cart-body-item">
+                        <img src="https://images.unsplash.com/photo-1513885535751-8b9238bd345a?auto=format&fit=crop&q=80&w=80&h=80"
+                             alt="${ti('cart_gift_item_name')}" class="cart-body-img cart-body-img--single">
+                        <span class="cart-body-title">${ti('cart_gift_item_name')}</span>
+                    </li>
+                </ul>
+            </div>`;
+    }
+
     function renderCart() {
         const cart = window.EcoCart.getCart();
 
@@ -138,9 +161,15 @@
             return;
         }
 
-        cartItemsContainer.innerHTML = cart.map(item =>
+        const itemsHtml = cart.map(item =>
             item.id.includes('bundle') ? renderBundleItem(item) : renderNormalItem(item)
         ).join('');
+
+        const html = cart.length > 1
+            ? renderGiftItem() + itemsHtml
+            : itemsHtml;
+
+        cartItemsContainer.innerHTML = html;
 
         bindEvents();
         renderSummary(window.EcoCart.getSubtotal());

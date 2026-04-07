@@ -95,6 +95,8 @@
         cart_discount: '割引',
         cart_included: '含まれています',
         cart_bundle_contents: 'パック内容',
+        cart_gift_label: 'ギフト',
+        cart_gift_item_name: 'サプライズアイテム',
         title_cart: 'カート - EcoZox',
         /* ---------- Checkout Widget ---------- */
         checkout_title: '配送情報',

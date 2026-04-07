@@ -95,6 +95,8 @@
         cart_discount: '할인',
         cart_included: '포함',
         cart_bundle_contents: '패키지 내용',
+        cart_gift_label: '선물',
+        cart_gift_item_name: '서프라이즈 상품',
         title_cart: '장바구니 - EcoZox',
         /* ---------- Checkout Widget ---------- */
         checkout_title: '배송 정보',

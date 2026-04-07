@@ -96,6 +96,8 @@
         cart_discount: 'خصم',
         cart_included: 'مشمول',
         cart_bundle_contents: 'محتويات الحزمة',
+        cart_gift_label: 'هدية',
+        cart_gift_item_name: 'عنصر مفاجأة',
         title_cart: 'سلة التسوق - EcoZox',
         /* ---------- Checkout Widget ---------- */
         checkout_title: 'تفاصيل التسليم',

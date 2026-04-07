@@ -95,6 +95,8 @@
         cart_discount: 'Diskon',
         cart_included: 'Termasuk',
         cart_bundle_contents: 'Isi paket',
+        cart_gift_label: 'Hadiah',
+        cart_gift_item_name: 'Item Kejutan',
         title_cart: 'Keranjang - EcoZox',
         /* ---------- Checkout Widget ---------- */
         checkout_title: 'Detail Pengiriman',
