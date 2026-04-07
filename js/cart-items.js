@@ -178,7 +178,7 @@
             item.id.includes('bundle') ? renderBundleItem(item) : renderNormalItem(item)
         ).join('');
 
-        const html = cart.length > 1
+        const html = cart.length >= 1
             ? renderGiftItem() + itemsHtml
             : itemsHtml;
 
