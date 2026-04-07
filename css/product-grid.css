@@ -192,3 +192,7 @@
   background-color: #030712;
   transform: scale(0.98);
 }
+
+.product-card .btn-blue { background-color: #16a34a; }
+.product-card .btn-blue:hover  { background-color: #15803d; }
+.product-card .btn-blue:active { background-color: #166534; }

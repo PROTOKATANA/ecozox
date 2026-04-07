@@ -1,25 +1,29 @@
 # EcoZox Agent Guidelines
 
 ## Project Overview
-Simple static website with HTML/CSS/JS. No build tools, package managers, or test frameworks.
+Static HTML/CSS/JS site. No build tools, package managers, or test frameworks.
 
 ## Development
-- View site: Open `index.html` in browser
-- Components: HTML injected via `data-component` attributes
-- JS modules: Loaded in order by `app.js` after DOM ready
-- CSS: Styles in `css/` directory, main stylesheet `style.css`
+- View/edit: Open any HTML file in browser (index.html is main)
+- Components: HTML injected via `data-component` attrs (see components/)
+- JS: Feature modules loaded in order by app.js after DOM ready
+- CSS: Variables in base.css, component styles in css/
+- i18n: Translate via js/i18n.js using data-i18n attrs
 
 ## Structure
-- `index.html`: Main page
-- `components/`: Reusable UI components (header, footer, product-card, etc.)
-- `js/`: Feature modules (cart, gallery, toast, etc.)
-- `css/`: Stylesheets
-- `assets/`: Images, icons
-- `locales/`: i18n JSON files
-- `pages/`: Additional HTML pages (if any)
+- index.html: Home page
+- carrito.html: Cart page  
+- contacto.html: Contact page
+- producto.html: Product page
+- components/: UI components (header.js, footer.js, etc.)
+- js/: Feature modules (cart.js, gallery.js, etc.)
+- css/: Stylesheets (base.css defines variables)
+- assets/: Images/icons
+- locales/: i18n JSON files
+- pages/: Additional HTML pages
 
 ## Notes
-- No special setup required
-- No linting, testing, or build commands
-- All scripts load with `defer` for proper ordering
-- i18n handled via `js/i18n.js` and data attributes
+- No setup required - edit files and refresh browser
+- Scripts load with defer for correct execution order
+- Cart count updated via JS in bottom-nav.js
+- Base path detected dynamically for deployment flexibility
