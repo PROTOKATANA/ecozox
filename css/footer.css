@@ -71,7 +71,8 @@
 
   .footer-dev-btn {
     order: 0;
-    flex: 0 0 auto;
+    flex: 1 1 0;
+    min-width: 0;
     align-self: stretch;
     display: flex;
     align-items: center;
@@ -79,7 +80,13 @@
   }
 
   .footer-top .footer-col {
-    flex: 1;
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  /* Columna central: centrar contenido para equilibrar visualmente entre botón y soporte */
+  .footer-top .footer-col:nth-child(2) {
+    text-align: center;
   }
 }
 
