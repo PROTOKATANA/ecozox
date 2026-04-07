@@ -33,19 +33,22 @@
 
   /* Apply discount: data-bundle-discount="0.20" → 20% off
      The original price is tachado; the sale price goes to cart. */
-  (function applyBundleDiscount() {
+    (function applyBundleDiscount() {
     const discount = parseFloat(bundleCard.dataset.bundleDiscount || '0');
     if (!discount) return;
 
     const original = parseFloat(BUNDLE.price);
     const sale     = (original * (1 - discount)).toFixed(2);
-    const currency = '$';   /* matches the rest of the page */
 
     const originalEl = bundleCard.querySelector('.js-bundle-price-original');
     const saleEl     = bundleCard.querySelector('.js-bundle-price-sale');
 
-    if (originalEl) originalEl.textContent = currency + original.toFixed(2);
-    if (saleEl)     saleEl.textContent     = currency + sale;
+    if (originalEl) {
+      originalEl.textContent = (window.EcoI18n ? window.EcoI18n.formatPrice(original) : '$' + original.toFixed(2));
+    }
+    if (saleEl) {
+      saleEl.textContent = (window.EcoI18n ? window.EcoI18n.formatPrice(parseFloat(sale)) : '$' + sale);
+    }
 
     /* Cart receives the discounted price */
     BUNDLE.price = sale;
@@ -86,11 +89,14 @@
     const titleEl = stickyBar.querySelector('.sticky-cart-bar__title');
     if (titleEl) titleEl.textContent = data.title;
 
-    /* 3. Update visible price — preserve the currency prefix already in the DOM */
-    const priceEl = stickyBar.querySelector('.sticky-cart-bar__price');
-    if (priceEl) {
-      const prefix = priceEl.textContent.replace(/[\d.,\s]/g, '').trim() || '$';
-      priceEl.textContent = prefix + parseFloat(data.price).toFixed(2);
+    /* 3. Update visible prices using EcoI18n.formatPrice */
+    const origEl = stickyBar.querySelector('.scb__price-original');
+    const saleEl = stickyBar.querySelector('.scb__price-sale');
+    if (origEl) {
+      origEl.textContent = (window.EcoI18n ? window.EcoI18n.formatPrice(parseFloat(data.price) / 0.7) : '$' + (parseFloat(data.price) / 0.7).toFixed(2));
+    }
+    if (saleEl) {
+      saleEl.textContent = (window.EcoI18n ? window.EcoI18n.formatPrice(parseFloat(data.price)) : '$' + parseFloat(data.price).toFixed(2));
     }
   }
 
