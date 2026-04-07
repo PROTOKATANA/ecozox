@@ -92,7 +92,7 @@
 .scb__price-sale {
   font-size: 1.0625rem;
   font-weight: 700;
-  color: var(--text-main);
+  color: #16a34a;
   font-family: var(--font-heading);
 }
 

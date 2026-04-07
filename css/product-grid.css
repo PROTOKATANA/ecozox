@@ -127,13 +127,14 @@
 }
 
 .product-title {
-  font-size: 0.9375rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   margin-bottom: 0.25rem;
   color: var(--primary-color);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  text-transform: uppercase;
 }
 
 /* Contenedor flex para precio actual + tachado */
