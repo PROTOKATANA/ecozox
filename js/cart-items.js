@@ -167,10 +167,10 @@
         cartItemsContainer.innerHTML = html;
 
         bindEvents();
-        renderSummary(window.EcoCart.getSubtotal());
+        renderSummary(window.EcoCart.getSubtotal(), cart.length > 1);
     }
 
-    function renderSummary(subtotal) {
+    function renderSummary(subtotal, hasGift = false) {
         const discountedSubtotal = subtotal * (1 - DISCOUNT_PERCENT / 100);
         const savings = subtotal - discountedSubtotal;
         const total = discountedSubtotal;
@@ -179,6 +179,12 @@
                 <div class="cs__row">
                     <span>• ${ti('cart_discount')} <span class="cs__row--green">(${DISCOUNT_PERCENT}%)</span></span>
                     <span class="cs__row--green">- ${formatPrice(savings)}</span>
+                </div>` : '';
+
+        const giftRow = hasGift ? `
+                <div class="cs__row">
+                    <span>• 1 ${ti('cart_gift_label')}</span>
+                    <span class="cs__free cs__row--green">${ti('cart_shipping_free').toUpperCase()}</span>
                 </div>` : '';
 
         const summaryBody = cartSummary.querySelector('.summary-body');
@@ -190,6 +196,7 @@
                         <span>${subtotal > 0 ? `<del class="price-original">${formatPrice(subtotal)}</del>` : formatPrice(0)}</span>
                     </div>
                     ${savingsRow}
+                    ${giftRow}
                     <div class="cs__row">
                         <span>• ${ti('cart_shipping')}</span>
                         <span class="cs__free cs__row--green">${ti('cart_shipping_free')}</span>
