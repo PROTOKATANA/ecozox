@@ -97,7 +97,10 @@
         cart_bundle_contents: 'Paketinhalt',
         cart_gift_label: 'Geschenk',
         cart_gift_item_name: 'Überraschungsartikel',
-        cart_gift_desc: 'Wir senden dir ein zusätzliches Produkt im Wert von bis zu {amount}. Es könnte eine Hülle, ein Band oder ein Zubehör sein. Nur heute und exklusiv für dieses Angebot.',
+        cart_gift_desc_value: 'Wir senden Ihnen ein zusätzliches Produkt im Wert von {amount}.',
+        cart_gift_desc_content: 'Eine Hülle, ein Armband oder ein Zubehör aus unserer Kollektion.',
+        cart_gift_desc_condition: 'Nur heute und exklusiv für diese Bestellung.',
+        cart_gift_desc_urgency: 'Nutzen Sie es, bevor der Countdown null erreicht!',
         title_cart: 'Warenkorb - EcoZox',
         /* ---------- Checkout Widget ---------- */
         checkout_title: 'Lieferdetails',

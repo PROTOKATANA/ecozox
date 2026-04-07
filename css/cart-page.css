@@ -54,6 +54,42 @@
   border: 2px dashed #16a34a;
 }
 
+/* ---- Gift bullet list ---- */
+.gift-bullet-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0;
+}
+
+.gift-bullet-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.gift-bullet-icon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  margin-top: 0.1em;
+  color: #16a34a;
+}
+
+.gift-bullet-item--urgent {
+  color: #b45309;
+  font-weight: 600;
+}
+
+.gift-bullet-item--urgent .gift-bullet-icon {
+  color: #d97706;
+}
+
 .cart-gift-badge {
   display: inline-block;
   background: #16a34a;

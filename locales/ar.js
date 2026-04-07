@@ -98,7 +98,10 @@
         cart_bundle_contents: 'محتويات الحزمة',
         cart_gift_label: 'هدية',
         cart_gift_item_name: 'عنصر مفاجأة',
-        cart_gift_desc: 'سنرسل إليك منتجاً إضافياً بقيمة تصل إلى {amount}. يمكن أن يكون غطاءً، حزاماً أو ملحقاً. اليوم فقط وحصرياً لهذا العرض.',
+        cart_gift_desc_value: 'سنرسل إليك منتجاً إضافياً بقيمة {amount}.',
+        cart_gift_desc_content: 'جراب، حزام، أو إكسسوار من مجموعتنا.',
+        cart_gift_desc_condition: 'اليوم فقط وحصرياً لهذا الطلب.',
+        cart_gift_desc_urgency: 'اغتنم الفرصة قبل أن يصل العدّاد إلى الصفر!',
         title_cart: 'سلة التسوق - EcoZox',
         /* ---------- Checkout Widget ---------- */
         checkout_title: 'تفاصيل التسليم',

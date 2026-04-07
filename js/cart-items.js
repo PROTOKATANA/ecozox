@@ -133,11 +133,28 @@
                     <h3 class="cart-item-title">${ti('cart_gift_item_name')}</h3>
                     <span class="price-discounted">${ti('cart_shipping_free').toUpperCase()}</span>
                 </div>
-                <ul class="cart-item-body">
+                <ul class="cart-item-body cart-gift-bullets">
                     <li class="cart-body-item">
                         <img src="https://images.unsplash.com/photo-1513885535751-8b9238bd345a?auto=format&fit=crop&q=80&w=80&h=80"
                              alt="${ti('cart_gift_item_name')}" class="cart-body-img cart-body-img--single">
-                        <span class="cart-body-title">${ti('cart_gift_desc').replace('{amount}', formatPrice(27.17))}</span>
+                        <ul class="gift-bullet-list">
+                            <li class="gift-bullet-item">
+                                <svg class="gift-bullet-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3V2m0 1C8 1.34 6.66 1 6 2s.34 2 2 1zm0 0C8 1.34 9.34 1 10 2s-.34 2-2 1z"/><rect x="2" y="3" width="12" height="3" rx="1"/><path d="M3 6v7a1 1 0 001 1h8a1 1 0 001-1V6"/><line x1="8" y1="6" x2="8" y2="14"/></svg>
+                                <span>${ti('cart_gift_desc_value').replace('{amount}', formatPrice(27.17))}</span>
+                            </li>
+                            <li class="gift-bullet-item">
+                                <svg class="gift-bullet-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2H4a1 1 0 00-1 1v10a1 1 0 001 1h8a1 1 0 001-1V6z"/><polyline points="9 2 9 6 13 6"/></svg>
+                                <span>${ti('cart_gift_desc_content')}</span>
+                            </li>
+                            <li class="gift-bullet-item">
+                                <svg class="gift-bullet-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><polyline points="8 5 8 8 10 10"/></svg>
+                                <span>${ti('cart_gift_desc_condition')}</span>
+                            </li>
+                            <li class="gift-bullet-item gift-bullet-item--urgent">
+                                <svg class="gift-bullet-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="9 2 3 9 8 9 7 14 13 7 8 7 9 2"/></svg>
+                                <span>${ti('cart_gift_desc_urgency')}</span>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </div>`;

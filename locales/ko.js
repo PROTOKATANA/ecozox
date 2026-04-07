@@ -97,7 +97,10 @@
         cart_bundle_contents: '패키지 내용',
         cart_gift_label: '선물',
         cart_gift_item_name: '서프라이즈 상품',
-        cart_gift_desc: '{amount} 상당의 추가 제품을 보내드립니다. 케이스, 스트랩 또는 액세서리일 수 있습니다. 오늘만, 이 혜택 한정입니다.',
+        cart_gift_desc_value: '{amount} 상당의 추가 제품을 보내드립니다.',
+        cart_gift_desc_content: '저희 컬렉션의 케이스, 스트랩 또는 액세서리.',
+        cart_gift_desc_condition: '오늘 한정, 이 주문 전용입니다.',
+        cart_gift_desc_urgency: '카운트다운이 0에 도달하기 전에 기회를 잡으세요!',
         title_cart: '장바구니 - EcoZox',
         /* ---------- Checkout Widget ---------- */
         checkout_title: '배송 정보',

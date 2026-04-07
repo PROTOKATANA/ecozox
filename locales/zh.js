@@ -97,7 +97,10 @@
         cart_bundle_contents: '套装内容',
         cart_gift_label: '礼物',
         cart_gift_item_name: '惊喜商品',
-        cart_gift_desc: '我们将向您赠送一件价值高达{amount}的额外产品。可能是保护套、表带或配件。仅限今日，专属本次优惠。',
+        cart_gift_desc_value: '我们将赠送您一件价值{amount}的额外产品。',
+        cart_gift_desc_content: '来自我们系列的保护套、表带或配件。',
+        cart_gift_desc_condition: '仅限今日，本订单专属。',
+        cart_gift_desc_urgency: '在倒计时归零之前抓住机会！',
         title_cart: '购物车 - EcoZox',
         /* ---------- Checkout Widget ---------- */
         checkout_title: '配送信息',

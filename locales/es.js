@@ -97,7 +97,10 @@
         cart_bundle_contents: 'Contenido del pack',
         cart_gift_label: 'Regalo',
         cart_gift_item_name: 'Artículo Sorpresa',
-        cart_gift_desc: 'Te enviaremos un producto adicional de hasta {amount}. Puede ser una funda, correa o accesorio. Solo por hoy y exclusivo de esta oferta.',
+        cart_gift_desc_value: 'Te enviaremos un producto adicional valorado en {amount}.',
+        cart_gift_desc_content: 'Una funda, correa o accesorio de nuestra colección.',
+        cart_gift_desc_condition: 'Solo por hoy y exclusivo para este pedido.',
+        cart_gift_desc_urgency: '¡Aprovéchalo antes de que el contador llegue a cero!',
         title_cart: 'Tu Carrito - EcoZox',
         /* ---------- Checkout Widget ---------- */
         checkout_title: 'Datos de entrega',
