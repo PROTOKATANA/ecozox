@@ -9,6 +9,12 @@
   border-bottom: 1px solid var(--border-color);
 }
 
+@media (max-width: 767px) {
+  .product-videos-section .container {
+    padding: 0 0.85rem;
+  }
+}
+
 .product-videos-section__header {
   margin-bottom: 2rem;
   text-align: center;
