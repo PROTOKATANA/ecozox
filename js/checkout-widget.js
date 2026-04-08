@@ -491,14 +491,18 @@
             cartItems = window.EcoCart.getCart();
         }
 
+        console.log('Cart items:', cartItems);
+
         var items = cartItems.map(function(item) {
             return {
                 name: item.title || item.name,
-                price: Math.round((item.price || 0) * 100),
+                price: item.price || 0,
                 image: item.image || '',
                 quantity: item.quantity || 1
             };
         });
+
+        console.log('Mapped items:', items);
 
         if (items.length === 0) {
             if (window.EcoToast) window.EcoToast('Carrito vacío');
@@ -511,36 +515,42 @@
             total += item.price * item.quantity;
         });
 
+        console.log('Total:', total);
+
         try {
             // Obtener email del formulario si está abierto
             var email = '';
             var emailEl = document.getElementById('cwo-email');
             if (emailEl) email = emailEl.value;
 
-            var response = await fetch(getApiUrl() + '/api/payment/create-intent', {
+            // Enviar URL actual para cancel_url dinámico
+            var originUrl = window.location.href;
+
+            console.log('Sending request...');
+
+            var response = await fetch(getApiUrl() + '/api/checkout/create-session', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    amount: total,
+                    items: items,
                     email: email,
-                    items: items
+                    originUrl: originUrl
                 })
             });
 
             var data = await response.json();
 
-            if (!response.ok || !data.clientSecret) {
-                throw new Error(data.error || 'Error creating payment');
+            console.log('Response:', response.status, data);
+
+            if (!response.ok || !data.url) {
+                throw new Error(data.error || 'Error creating checkout');
             }
 
-            clientSecret = data.clientSecret;
-            
-            // Abrir widget y mostrar formulario de pago
-            open();
-            showPaymentForm(clientSecret);
+            // Redirigir a Stripe Checkout
+            window.location.href = data.url;
 
         } catch (err) {
-            console.error('Payment init error:', err);
+            console.error('Checkout error:', err);
             if (window.EcoToast) window.EcoToast(err.message || 'Error');
         }
     }

@@ -2,7 +2,7 @@ import { createCheckoutSession } from '../services/stripeService.js';
 
 export async function createCheckout(req, res, next) {
   try {
-    const { items, email } = req.body;
+    const { items, email, originUrl } = req.body;
 
     if (!items || !Array.isArray(items) || items.length === 0) {
       return res.status(400).json({ error: 'Cart is empty or invalid' });
@@ -14,13 +14,13 @@ export async function createCheckout(req, res, next) {
       return res.status(400).json({ error: 'No valid items in cart' });
     }
 
-    // Convertir precio a céntimos (el frontend envía en euros)
+    // El precio ya viene en céntimos del frontend
     const itemsInCents = validItems.map(item => ({
       ...item,
-      price: Math.round(item.price * 100)
+      price: Math.round(item.price)
     }));
 
-    const session = await createCheckoutSession(itemsInCents, email);
+    const session = await createCheckoutSession(itemsInCents, email, originUrl);
 
     res.json({ sessionId: session.id, url: session.url });
   } catch (error) {

@@ -1,7 +1,7 @@
 export default function errorHandler(err, req, res, next) {
   console.error('Error:', err.message);
 
-  if (err.type === 'StripeCardError' || err.type === 'StripeInvalidRequestError') {
+  if (err.type && err.type.startsWith('Stripe')) {
     return res.status(400).json({
       error: 'Payment error',
       message: err.message

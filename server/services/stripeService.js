@@ -9,7 +9,7 @@ function getStripe() {
   return stripe;
 }
 
-export async function createCheckoutSession(cartItems, customerEmail) {
+export async function createCheckoutSession(cartItems, customerEmail, originUrl) {
   const s = getStripe();
   const lineItems = cartItems.map(item => ({
     price_data: {
@@ -24,12 +24,12 @@ export async function createCheckoutSession(cartItems, customerEmail) {
   }));
 
   const session = await s.checkout.sessions.create({
-    payment_method_types: ['card'],
+    payment_method_types: ['card', 'paypal', 'klarna', 'bancontact'],
     line_items: lineItems,
     mode: 'payment',
     success_url: `${process.env.FRONTEND_URL}/success.html`,
-    cancel_url: `${process.env.FRONTEND_URL}/carrito.html`,
-    customer_email: customerEmail,
+    cancel_url: originUrl || `${process.env.FRONTEND_URL}/carrito.html`,
+    customer_email: customerEmail || undefined,
     metadata: {
       items: JSON.stringify(cartItems.map(item => ({ name: item.name, quantity: item.quantity || 1 })))
     }
@@ -55,6 +55,7 @@ export async function createPaymentIntent(amount, email, metadata) {
     amount,
     currency: 'eur',
     receipt_email: email,
+    payment_method_types: ['card'],
     metadata
   });
 }
