@@ -55,7 +55,6 @@
                     <img src="${base}assets/paypal.svg" alt="PayPal" style="height: 32px; background: white; padding: 6px; border-radius: 4px;">
                     <img src="${base}assets/klarna.svg" alt="Klarna" style="height: 32px; background: #F4B6C7; padding: 7.5px; border-radius: 4px;">
                     <img src="${base}assets/stripe.svg" alt="Stripe" style="height: 32px; background: #6772E5; padding: 7px; border-radius: 4px;">
-                    <img src="${base}assets/woo.svg" alt="Woo-Pay" style="height: 32px; background: white; padding: 11px 4px; border-radius: 4px;">
                 </div>
             </div>
         </div>
