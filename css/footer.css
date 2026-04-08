@@ -25,7 +25,7 @@
 .footer-dev-btn {
   display: block;
   padding: 1.25rem 2rem;
-  background-color: #7c3aed;
+  background-color: #00857a;
   color: #ffffff;
   text-align: center;
   border-radius: 6px;
@@ -41,7 +41,7 @@
 }
 
 .footer-dev-btn:hover {
-  background-color: #6d28d9;
+  background-color: #006b5e;
   color: #ffffff;
 }
 
