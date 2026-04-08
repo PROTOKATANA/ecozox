@@ -129,7 +129,7 @@
     function renderGiftItem() {
         return `
             <div class="cart-item cart-item--gift" data-product-id="__gift__">
-                <div class="cart-item-header" style="flex-direction:row;justify-content:space-between;align-items:center;">
+                <div class="cart-item-header">
                     <h3 class="cart-item-title">${ti('cart_gift_item_name')}</h3>
                     <span class="price-discounted">${ti('cart_shipping_free').toUpperCase()}</span>
                 </div>

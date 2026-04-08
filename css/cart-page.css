@@ -54,6 +54,26 @@
   border: 2px dashed #16a34a;
 }
 
+.cart-item--gift .cart-item-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cart-item--gift .cart-item-title {
+  font-size: clamp(0.95rem, 4vw, 1.35rem);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cart-item--gift .price-discounted {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
 /* ---- Gift body layout ---- */
 .cart-gift-body {
   display: flex;
