@@ -20,8 +20,8 @@
         var amp       = height / 2;
         var halfWave  = waveWidth / 2;
 
-        // Build a single continuous wave covering 4000 px (wider than any viewport)
-        var totalWidth = 4000;
+        // Use viewport width instead of fixed 4000px to avoid horizontal scroll
+        var totalWidth = window.innerWidth || 4000;
         var waveLine = 'M0 ' + midY;
         var x   = 0;
         var up  = true;
@@ -38,7 +38,7 @@
         var topPath    = waveLine + ' L' + totalWidth + ' 0 L0 0 Z';
         var bottomPath = waveLine + ' L' + totalWidth + ' ' + svgHeight + ' L0 ' + svgHeight + ' Z';
 
-        var svg = '<svg width="100%" height="' + svgHeight + '" xmlns="http://www.w3.org/2000/svg" style="display:block;overflow:hidden">'
+        var svg = '<svg width="100%" height="' + svgHeight + '" xmlns="http://www.w3.org/2000/svg" style="display:block;overflow:hidden;width:100vw;max-width:100vw">'
             + (fillTop    !== 'transparent' ? '<path d="' + topPath    + '" fill="' + fillTop    + '"/>' : '')
             + (fillBottom !== 'transparent' ? '<path d="' + bottomPath + '" fill="' + fillBottom + '"/>' : '')
             + '<path d="' + waveLine + '" fill="none" stroke="' + strokeColor + '" stroke-width="' + strokeWidth + '" stroke-linecap="round"/>'
@@ -46,5 +46,7 @@
 
         divider.innerHTML = svg;
         divider.style.height = svgHeight + 'px';
+        divider.style.width = '100vw';
+        divider.style.maxWidth = '100vw';
     });
 })();
