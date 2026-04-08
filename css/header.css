@@ -196,15 +196,13 @@
     overflow: hidden;
   }
 
-  /* Añadir padding-top al body para compensar el header fixed */
-  body {
-    padding-top: 65px;
+  /* Padding-top específico por página para compensar el header fixed */
+  body.page-home,
+  body.page-cart {
+    padding-top: 60px !important;
   }
 
-  /* Asegurar que el contenido no queda detrás del header */
-  .hero,
-  .catalog-section,
-  main {
-    padding-top: 0;
+  body.page-product {
+    padding-top: 80px !important;
   }
 }
