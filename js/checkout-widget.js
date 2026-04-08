@@ -7,6 +7,14 @@
 (function () {
     'use strict';
 
+    /* Load Stripe.js dynamically */
+    if (!document.getElementById('stripe-js')) {
+        var stripeScript = document.createElement('script');
+        stripeScript.id = 'stripe-js';
+        stripeScript.src = 'https://js.stripe.com/v3/';
+        document.head.appendChild(stripeScript);
+    }
+
     /* --------------------------------------------------------
        Countries (ISO 3166-1 alpha-2 → English display name)
        -------------------------------------------------------- */
@@ -68,7 +76,7 @@
             '<form id="cwo-form" autocomplete="on" novalidate>' +
 
             /* ── Shipping address ── */
-            '<div class="cwo__section cwo__section--first">' +
+            '<div id="cwo-shipping-section" class="cwo__section cwo__section--first">' +
 
                 /* First + Last name */
                 '<div class="cwo__field-row">' +
@@ -180,9 +188,16 @@
 
             '</div>' + /* end address section */
 
+            /* ── Payment Section (Stripe Elements) ── */
+            '<div id="cwo-payment-section" class="cwo__section">' +
+                '<h3 class="cwo__section-title" data-i18n="checkout_payment_title">Pago</h3>' +
+                '<div id="payment-element-container"></div>' +
+                '<div id="cwo-payment-error" class="cwo__error" hidden></div>' +
+            '</div>' +
+
             /* ── Footer ── */
             '<div class="cwo__footer">' +
-                '<button type="submit" class="cwo__submit-btn" data-i18n="checkout_continue_btn">Continuar</button>' +
+                '<button type="submit" class="cwo__submit-btn" id="cwo-primary-btn" data-i18n="checkout_continue_btn">Continuar</button>' +
             '</div>' +
 
             '</form>' +
@@ -348,13 +363,19 @@
     }
 
     /* --------------------------------------------------------
-       Success
+       Stripe Elements
        -------------------------------------------------------- */
-    function onSuccess() {
-        if (window.EcoToast) {
-            window.EcoToast(t('checkout_success_toast'));
-        }
-        close();
+    var stripe = null;
+    var elements = null;
+    var clientSecret = null;
+
+    function getApiUrl() {
+        if (window.ECOZOX_API_URL) return window.ECOZOX_API_URL;
+        return 'http://localhost:3000';
+    }
+
+    function getPublicKey() {
+        return window.ECOZOX_STRIPE_PUBLIC_KEY || 'pk_test_51RuBIlLdVh6ljLIpbzGAHxsmH8lvWrPY2YOOIkyBnGZjQPoUJr7lGnMPuEbJt8RpNtnQE42mLQJo1zbyO2EJ3gKu00qnn5Ag97';
     }
 
     /* --------------------------------------------------------
@@ -386,15 +407,153 @@
         }
     }
 
+    function showPaymentForm(clientSecret) {
+        console.log('showPaymentForm called', { clientSecret: clientSecret ? clientSecret.slice(0, 30) + '...' : null });
+        
+        var shippingSection = document.getElementById('cwo-shipping-section');
+        var paymentSection = document.getElementById('cwo-payment-section');
+        var container = document.getElementById('payment-element-container');
+        
+        if (!shippingSection || !paymentSection || !container) {
+            console.error('Missing DOM elements', { shippingSection, paymentSection, container });
+            return;
+        }
+        
+        // Hide shipping, show payment
+        shippingSection.style.display = 'none';
+        paymentSection.style.display = 'block';
+        
+        // Update title
+        var titleEl = document.getElementById('cwo-title');
+        if (titleEl) titleEl.textContent = t('checkout_payment_title');
+        
+        // Initialize Stripe
+        if (!stripe) {
+            console.log('Initializing Stripe...');
+            stripe = Stripe(getPublicKey());
+        }
+        
+        console.log('Creating Stripe elements...');
+        elements = stripe.elements({ clientSecret: clientSecret });
+        
+        console.log('Creating and mounting payment element...');
+        var paymentElement = elements.create('payment', {
+            layout: {
+                type: 'accordion',
+                defaultCollapsed: false,
+                spacedAccordionItems: true
+            }
+        });
+        paymentElement.mount(container);
+        
+        // Change button text and handler
+        var primaryBtn = document.getElementById('cwo-primary-btn');
+        if (primaryBtn) {
+            primaryBtn.textContent = t('checkout_pay_btn') || 'Pagar ahora';
+            primaryBtn.onclick = function(e) {
+                e.preventDefault();
+                confirmPayment();
+            };
+        }
+    }
+
+    async function confirmPayment() {
+        var primaryBtn = document.getElementById('cwo-primary-btn');
+        if (primaryBtn) {
+            primaryBtn.disabled = true;
+            primaryBtn.textContent = 'Procesando...';
+        }
+
+        try {
+            var result = await stripe.confirmPayment({
+                elements: elements,
+                confirmParams: {
+                    return_url: window.ECOZOX_SUCCESS_URL || window.location.href
+                }
+            });
+
+            if (result.error) {
+                throw new Error(result.error.message);
+            }
+        } catch (err) {
+            console.error('Payment error:', err);
+            if (window.EcoToast) window.EcoToast(err.message);
+            if (primaryBtn) {
+                primaryBtn.disabled = false;
+                primaryBtn.textContent = 'Pagar ahora';
+            }
+        }
+    }
+
+    async function goToStripePayment() {
+        var cartItems = [];
+        if (window.EcoCart && window.EcoCart.getCart) {
+            cartItems = window.EcoCart.getCart();
+        }
+
+        var items = cartItems.map(function(item) {
+            return {
+                name: item.title || item.name,
+                price: Math.round((item.price || 0) * 100),
+                image: item.image || '',
+                quantity: item.quantity || 1
+            };
+        });
+
+        if (items.length === 0) {
+            if (window.EcoToast) window.EcoToast('Carrito vacío');
+            return;
+        }
+
+        // Calcular total
+        var total = 0;
+        items.forEach(function(item) {
+            total += item.price * item.quantity;
+        });
+
+        try {
+            // Obtener email del formulario si está abierto
+            var email = '';
+            var emailEl = document.getElementById('cwo-email');
+            if (emailEl) email = emailEl.value;
+
+            var response = await fetch(getApiUrl() + '/api/payment/create-intent', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    amount: total,
+                    email: email,
+                    items: items
+                })
+            });
+
+            var data = await response.json();
+
+            if (!response.ok || !data.clientSecret) {
+                throw new Error(data.error || 'Error creating payment');
+            }
+
+            clientSecret = data.clientSecret;
+            
+            // Abrir widget y mostrar formulario de pago
+            open();
+            showPaymentForm(clientSecret);
+
+        } catch (err) {
+            console.error('Payment init error:', err);
+            if (window.EcoToast) window.EcoToast(err.message || 'Error');
+        }
+    }
+
     /* --------------------------------------------------------
        Bind events
        -------------------------------------------------------- */
     function bindEvents() {
-        /* Delegated click — opens on any .checkout-btn */
+        /* Delegated click — goes to Stripe Payment Element */
         document.addEventListener('click', function (e) {
             if (e.target.closest && e.target.closest('.checkout-btn')) {
                 e.preventDefault();
-                open();
+                goToStripePayment();
             }
         });
 
@@ -410,13 +569,14 @@
             });
         }
 
-        /* Form submit */
+        /* Form submit - only used when shipping form is showing */
         var form = document.getElementById('cwo-form');
         if (form) {
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
                 if (validate()) {
-                    onSuccess();
+                    // Just close - checkout button will handle payment
+                    close();
                 } else {
                     /* Scroll to first visible error */
                     var firstErr = form.querySelector('.cwo__input--error');

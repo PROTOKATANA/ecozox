@@ -148,6 +148,10 @@
     padding-top: 1rem;
 }
 
+#cwo-payment-section {
+    display: none;
+}
+
 .cwo__section-title {
     font-family: var(--font-heading, 'Montserrat', sans-serif);
     font-size: 0.6875rem;

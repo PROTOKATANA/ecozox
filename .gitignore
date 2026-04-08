@@ -1,0 +1,25 @@
+# Seguridad: Nunca subir claves secretas
+
+server/.env
+
+# Dependencias: No subir la carpeta pesada de librerías
+
+server/node_modules/
+
+# Logs: Archivos de registro de errores
+
+npm-debug.log*
+
+yarn-debug.log*
+
+yarn-error.log*
+
+# Archivos del sistema operativo
+
+.DS_Store
+
+Thumbs.db
+
+.vscode/
+
+.idea/
