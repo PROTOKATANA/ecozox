@@ -32,7 +32,8 @@ const modules = [
     'js/reviews.js',
     'js/wave-divider.js',
     'js/purchase-options.js',
-    'js/checkout-widget.js'
+    'js/checkout-widget.js',
+    'js/video-lightbox.js'
 ];
 
 modules.forEach(mod => loadScript(base + mod));

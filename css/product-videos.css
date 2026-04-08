@@ -99,3 +99,59 @@
     aspect-ratio: 2 / 1;
   }
 }
+
+/* ========================================
+   Video Lightbox Dialog Styles
+   ======================================== */
+
+.video-lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.video-lightbox-overlay[hidden] {
+  display: none;
+}
+
+.video-lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease;
+  z-index: 10;
+}
+
+.video-lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.video-lightbox-content {
+  width: 100%;
+  max-width: 800px;
+  position: relative;
+}
+
+.video-lightbox-player {
+  width: 100%;
+  border-radius: 8px;
+  background: #000;
+  display: block;
+}
