@@ -114,3 +114,12 @@ img {
   margin: 0 auto;
   padding: 0 1.5rem;
 }
+
+/* Padding específico para el contenido principal en cada página (sin afectar footer) */
+@media (max-width: 767px) {
+  body.page-home main .container,
+  body.page-cart main .container,
+  body.page-product main .container {
+    padding: 0 0.85rem;
+  }
+}
