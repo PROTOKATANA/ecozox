@@ -4,6 +4,17 @@
 
 .cart-section {
   padding: 2rem 0 2rem;
+  background-color: #f7f4f0;
+}
+
+/* Wave divider between header and cart */
+.cart-section + .line-divider,
+body.page-cart .line-divider:not(.footer-wave) {
+  margin-top: 0;
+}
+
+body.page-cart .line-divider {
+  display: block;
 }
 
 .cart-layout {
