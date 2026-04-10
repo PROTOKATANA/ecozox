@@ -98,6 +98,11 @@
       } else {
         delete stickyBtn.dataset.productSubItems;
       }
+      if (data.isBundle) {
+        stickyBtn.dataset.productBundleQty = data.qty;
+      } else {
+        delete stickyBtn.dataset.productBundleQty;
+      }
     }
 
     /* 2. Update visible title */
