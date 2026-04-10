@@ -22,25 +22,31 @@
     ],
     "resenas": [
       {
+        "id": 1,
         "autor": "María G.",
         "rating": 5,
-        "texto": "¡A mi golden retriever le encantan! Muy resistentes, llevan 3 semanas y siguen perfectos.",
         "fecha": "2025-02-10",
-        "verificado": true
+        "imagenes": [],
+        "titulo_fallback": "¡Los mejores juguetes para mi perro!",
+        "body_fallback": "¡A mi golden retriever le encantan! Muy resistentes, llevan 3 semanas y siguen perfectos."
       },
       {
+        "id": 2,
         "autor": "Carlos M.",
         "rating": 4,
-        "texto": "Buena calidad, el envío fue rápido. Le quito una estrella porque uno de los juguetes es bastante pequeño.",
         "fecha": "2025-01-28",
-        "verificado": true
+        "imagenes": [],
+        "titulo_fallback": "Buena calidad, envío rápido",
+        "body_fallback": "Buena calidad, el envío fue rápido. Le quito una estrella porque uno de los juguetes es bastante pequeño."
       },
       {
+        "id": 3,
         "autor": "Laura P.",
         "rating": 5,
-        "texto": "Mi perro dejó de morder los zapatos desde que tiene estos juguetes. ¡Los recomiendo totalmente!",
         "fecha": "2025-03-05",
-        "verificado": false
+        "imagenes": [],
+        "titulo_fallback": "Solución para los zapatos",
+        "body_fallback": "Mi perro dejó de morder los zapatos desde que tiene estos juguetes. ¡Los recomiendo totalmente!"
       }
     ]
   }
