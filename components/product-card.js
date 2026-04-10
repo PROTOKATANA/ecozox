@@ -41,7 +41,6 @@
             +     '<span class="product-price" data-i18n-price="' + salePrice + '">' + formatPrice(salePrice) + '</span>'
             +     '<span class="product-price-old" data-i18n-price="' + originalPrice.toFixed(2) + '">' + formatPrice(originalPrice) + '</span>'
             +   '</div>'
-            +   '<button class="btn btn-blue add-to-cart-btn" data-i18n="sticky_cart_btn">' + t('sticky_cart_btn') + '</button>'
             + '</div>'
             + '</a>';
     }
