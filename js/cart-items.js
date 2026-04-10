@@ -175,7 +175,7 @@
         }
 
         const itemsHtml = cart.map(item =>
-            item.id.includes('bundle') ? renderBundleItem(item) : renderNormalItem(item)
+            (Array.isArray(item.subItems) && item.subItems.length) ? renderBundleItem(item) : renderNormalItem(item)
         ).join('');
 
         const html = cart.length >= 1
