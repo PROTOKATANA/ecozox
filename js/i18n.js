@@ -85,15 +85,10 @@
 
     var basePath = getBasePath();
 
-    /* ---------- Cargar archivo de locale ---------- */
+    /* ---------- Cargar archivo de locale global ---------- */
     function loadLocale(lang, callback) {
-        // Ya cacheado
-        if (localeCache[lang]) {
-            callback();
-            return;
-        }
+        if (localeCache[lang]) { callback(); return; }
 
-        // Ya cargándose — añadir callback a la cola
         if (pendingCallbacks[lang]) {
             pendingCallbacks[lang].push(callback);
             return;
@@ -113,13 +108,37 @@
         };
         script.onerror = function () {
             delete pendingCallbacks[lang];
-            // Fallback a inglés si falla
-            if (lang !== 'en') {
-                loadLocale('en', callback);
-            } else {
-                callback();
-            }
+            if (lang !== 'en') { loadLocale('en', callback); } else { callback(); }
         };
+        document.head.appendChild(script);
+    }
+
+    /* ---------- Cargar locale específico del nicho ----------
+       Lee ECOZOX_BRAND.localesPath (relativo a la página actual).
+       Las claves del nicho sobreescriben las globales en localeCache.
+    --------------------------------------------------------- */
+    var nichoLangLoaded = {};
+
+    function loadNichoLocale(lang, callback) {
+        var nichoPath = window.ECOZOX_BRAND && window.ECOZOX_BRAND.localesPath;
+        if (!nichoPath || nichoLangLoaded[lang]) { callback(); return; }
+
+        nichoLangLoaded[lang] = true;
+
+        var script = document.createElement('script');
+        script.src = nichoPath + lang + '.js';
+        script.onload = function () {
+            if (window.EcoNichoLocales && window.EcoNichoLocales[lang]) {
+                // Mezclar sobre el cache global — el nicho tiene prioridad
+                localeCache[lang] = Object.assign(
+                    {},
+                    localeCache[lang] || {},
+                    window.EcoNichoLocales[lang]
+                );
+            }
+            callback();
+        };
+        script.onerror = function () { callback(); }; // falla silenciosa
         document.head.appendChild(script);
     }
 
@@ -185,36 +204,37 @@
 
         loadCJKFont(lang);
         loadLocale(lang, function () {
-            currentLang = lang;
-            localStorage.setItem(STORAGE_KEY, lang);
+            loadNichoLocale(lang, function () {
+                currentLang = lang;
+                localStorage.setItem(STORAGE_KEY, lang);
 
-            document.documentElement.lang = lang;
-            document.documentElement.dir = isRTL(lang) ? 'rtl' : 'ltr';
+                document.documentElement.lang = lang;
+                document.documentElement.dir = isRTL(lang) ? 'rtl' : 'ltr';
 
-            // Sincronizar moneda si el usuario no eligió una explícitamente
-            if (!localStorage.getItem(CURRENCY_STORAGE_KEY)) {
-                var langConfig = currencyConfig[lang];
-                if (langConfig) currentCurrency = langConfig.code;
-            }
+                if (!localStorage.getItem(CURRENCY_STORAGE_KEY)) {
+                    var langConfig = currencyConfig[lang];
+                    if (langConfig) currentCurrency = langConfig.code;
+                }
 
-            function applyAll() {
-                applyTranslations();
-                applyPrices();
-                updateLangSelector();
-                updateCurrencySelector();
-                if (window.EcoCartRenderer)    window.EcoCartRenderer.renderCart();
-                if (window.EcoUrgencyBanner)   window.EcoUrgencyBanner.update();
-                if (window.EcoShippingWidget)  window.EcoShippingWidget.update();
-                if (window.EcoProductCards)    window.EcoProductCards.update();
-                if (window.EcoReviews)         window.EcoReviews.update();
-            }
+                function applyAll() {
+                    applyTranslations();
+                    applyPrices();
+                    updateLangSelector();
+                    updateCurrencySelector();
+                    if (window.EcoCartRenderer)    window.EcoCartRenderer.renderCart();
+                    if (window.EcoUrgencyBanner)   window.EcoUrgencyBanner.update();
+                    if (window.EcoShippingWidget)  window.EcoShippingWidget.update();
+                    if (window.EcoProductCards)    window.EcoProductCards.update();
+                    if (window.EcoReviews)         window.EcoReviews.update();
+                }
 
-            var isCJK = ['zh','ja','ko'].indexOf(lang) !== -1;
-            if (isCJK && document.fonts && document.fonts.ready) {
-                document.fonts.ready.then(applyAll);
-            } else {
-                applyAll();
-            }
+                var isCJK = ['zh','ja','ko'].indexOf(lang) !== -1;
+                if (isCJK && document.fonts && document.fonts.ready) {
+                    document.fonts.ready.then(applyAll);
+                } else {
+                    applyAll();
+                }
+            });
         });
     }
 
@@ -336,32 +356,36 @@
         document.documentElement.dir = isRTL(currentLang) ? 'rtl' : 'ltr';
         loadCJKFont(currentLang);
 
-        // Cargar inglés como fallback, luego el idioma actual
+        // 1. Global inglés (fallback) → 2. Nicho inglés → 3. Idioma actual → 4. Nicho idioma actual
         loadLocale('en', function () {
-            var afterLoad = function () {
-                var isCJK = ['zh','ja','ko'].indexOf(currentLang) !== -1;
-                function applyAll() {
-                    applyTranslations();
-                    applyPrices();
-                    updateLangSelector();
-                    updateCurrencySelector();
-                    if (window.EcoCartRenderer)   window.EcoCartRenderer.renderCart();
-                    if (window.EcoUrgencyBanner)  window.EcoUrgencyBanner.update();
-                    if (window.EcoShippingWidget) window.EcoShippingWidget.update();
-                    if (window.EcoProductCards)   window.EcoProductCards.update();
-                    if (window.EcoReviews)        window.EcoReviews.update();
-                }
-                if (isCJK && document.fonts && document.fonts.ready) {
-                    document.fonts.ready.then(applyAll);
+            loadNichoLocale('en', function () {
+                var afterLoad = function () {
+                    var isCJK = ['zh','ja','ko'].indexOf(currentLang) !== -1;
+                    function applyAll() {
+                        applyTranslations();
+                        applyPrices();
+                        updateLangSelector();
+                        updateCurrencySelector();
+                        if (window.EcoCartRenderer)   window.EcoCartRenderer.renderCart();
+                        if (window.EcoUrgencyBanner)  window.EcoUrgencyBanner.update();
+                        if (window.EcoShippingWidget) window.EcoShippingWidget.update();
+                        if (window.EcoProductCards)   window.EcoProductCards.update();
+                        if (window.EcoReviews)        window.EcoReviews.update();
+                    }
+                    if (isCJK && document.fonts && document.fonts.ready) {
+                        document.fonts.ready.then(applyAll);
+                    } else {
+                        applyAll();
+                    }
+                };
+                if (currentLang === 'en') {
+                    afterLoad();
                 } else {
-                    applyAll();
+                    loadLocale(currentLang, function () {
+                        loadNichoLocale(currentLang, afterLoad);
+                    });
                 }
-            };
-            if (currentLang === 'en') {
-                afterLoad();
-            } else {
-                loadLocale(currentLang, afterLoad);
-            }
+            });
         });
     }
 

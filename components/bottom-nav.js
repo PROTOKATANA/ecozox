@@ -6,12 +6,32 @@
     var el = document.querySelector('[data-component="bottom-nav"]');
     if (!el) return;
 
-    var base = el.dataset.base || '';
+    var base  = el.dataset.base || '';
+    var brand = window.ECOZOX_BRAND || {};
+
+    // Resuelve una URL relativa a absoluta usando la ubicación actual
+    function toAbsolute(rel) {
+        var a = document.createElement('a');
+        a.href = rel;
+        return a.href;
+    }
+
+    // Si estamos en un nicho, persistimos las URLs absolutas del nicho
+    // para que páginas compartidas (legales, contacto) sepan a dónde volver
+    if (brand.homeUrl) {
+        sessionStorage.setItem('ecozox_nicho_home',    toAbsolute(brand.homeUrl));
+        sessionStorage.setItem('ecozox_nicho_carrito', toAbsolute(brand.carritoUrl || 'carrito.html'));
+    }
+
+    var homeUrl    = brand.homeUrl    ? toAbsolute(brand.homeUrl)
+                   : sessionStorage.getItem('ecozox_nicho_home')    || base + 'index.html';
+    var carritoUrl = brand.carritoUrl ? toAbsolute(brand.carritoUrl)
+                   : sessionStorage.getItem('ecozox_nicho_carrito') || base + 'carrito.html';
 
     el.outerHTML = [
         '<nav class="bottom-nav" role="navigation" aria-label="Navegación móvil">',
 
-        '  <a href="' + base + 'index.html" class="bnb-item"',
+        '  <a href="' + homeUrl + '" class="bnb-item"',
         '     aria-label="Inicio" data-i18n-aria="nav_home">',
         '    <svg class="bnb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"',
         '         stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">',
@@ -21,7 +41,7 @@
         '    <span class="bnb-label" data-i18n="nav_home">Inicio</span>',
         '  </a>',
 
-        '  <a href="' + base + 'carrito.html" class="bnb-item bnb-item--cart"',
+        '  <a href="' + carritoUrl + '" class="bnb-item bnb-item--cart"',
         '     aria-label="Carrito" data-i18n-aria="nav_cart">',
         '    <span class="bnb-cart-wrap">',
         '      <img src="' + base + 'assets/bag.svg" alt="" class="bnb-icon" aria-hidden="true">',

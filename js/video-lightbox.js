@@ -62,33 +62,25 @@
             document.body.style.overflow = '';
         }
         
-        // Attach click handlers to all video cards
-        document.querySelectorAll('.product-video-card').forEach(function (card) {
-            const video = card.querySelector('video');
-            if (video) {
-                card.style.cursor = 'pointer';
-                card.setAttribute('role', 'button');
-                card.setAttribute('tabindex', '0');
-                card.setAttribute('aria-label', 'Abrir video');
-                
-                // Remove old fullscreen behavior
-                card.onclick = null;
-                
-                card.addEventListener('click', function () {
-                    const source = video.querySelector('source');
-                    const videoSrc = source ? source.src : video.src;
-                    showLightbox(videoSrc);
-                });
-                
-                card.addEventListener('keydown', function (e) {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        const source = video.querySelector('source');
-                        const videoSrc = source ? source.src : video.src;
-                        showLightbox(videoSrc);
-                    }
-                });
-            }
+        // Event delegation — funciona con tarjetas añadidas dinámicamente
+        document.addEventListener('click', function (e) {
+            var card = e.target.closest('.product-video-card');
+            if (!card) return;
+            var video = card.querySelector('video');
+            if (!video) return;
+            var source = video.querySelector('source');
+            showLightbox(source ? source.src : video.src);
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key !== 'Enter' && e.key !== ' ') return;
+            var card = e.target.closest('.product-video-card');
+            if (!card) return;
+            e.preventDefault();
+            var video = card.querySelector('video');
+            if (!video) return;
+            var source = video.querySelector('source');
+            showLightbox(source ? source.src : video.src);
         });
     }
     

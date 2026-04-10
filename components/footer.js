@@ -8,8 +8,11 @@
     const el = document.querySelector('[data-component="footer"]');
     if (!el) return;
 
-    const base = el.dataset.base || '';
-    const pagesBase = el.dataset.pagesBase ?? 'pages/';
+    const base       = el.dataset.base || '';
+    const pagesBase  = el.dataset.pagesBase ?? 'pages/';
+    const brand      = window.ECOZOX_BRAND || {};
+    const brandNombre = brand.nombre || 'Ecozox';
+    const brandEmail  = brand.email  || 'ecozox@support@gmail.com';
 
     el.outerHTML = `
     <!-- Separador de Onda para el Footer -->
@@ -40,13 +43,13 @@
                 <div class="footer-col">
                     <h3 data-i18n="footer_support_title">Soporte</h3>
                     <ul>
-                        <li><span class="text-muted" data-i18n="footer_email_label">Email:</span> <a href="mailto:ecozox@support@gmail.com">ecozox@support@gmail.com</a></li>
+                        <li><span class="text-muted" data-i18n="footer_email_label">Email:</span> <a href="mailto:${brandEmail}">${brandEmail}</a></li>
                         <li><span class="text-muted" data-i18n="footer_phone_label">Teléfono:</span> <a href="tel:+34912345678">+34 912 345 678</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p data-i18n="footer_copyright">&copy; 2026 Ecozox. Todos los derechos reservados.</p>
+                <p data-i18n="footer_copyright">&copy; 2026 ${brandNombre}. Todos los derechos reservados.</p>
                 <div class="payment-icons">
                     <img src="${base}assets/mastercard.svg" alt="Mastercard" style="height: 32px; background: white; padding: 3px; border-radius: 4px;">
                     <img src="${base}assets/visa.svg" alt="Visa" style="height: 32px; background: white; padding: 1px; border-radius: 4px;">

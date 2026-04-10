@@ -495,9 +495,10 @@
 
         var items = cartItems.map(function(item) {
             return {
-                name: item.title || item.name,
-                price: item.price || 0,
-                image: item.image || '',
+                localId:  item.id || '',
+                name:     item.title || item.name,
+                price:    item.price || 0,
+                image:    item.image || '',
                 quantity: item.quantity || 1
             };
         });
@@ -528,13 +529,18 @@
 
             console.log('Sending request...');
 
+            var nicho = (window.ECOZOX_BRAND && window.ECOZOX_BRAND.nicho)
+                ? window.ECOZOX_BRAND.nicho
+                : window.location.pathname.split('/').filter(Boolean)[0] || 'default';
+
             var response = await fetch(getApiUrl() + '/api/checkout/create-session', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     items: items,
                     email: email,
-                    originUrl: originUrl
+                    originUrl: originUrl,
+                    nicho: nicho
                 })
             });
 

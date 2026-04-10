@@ -1,0 +1,47 @@
+[
+  {
+    "localId": "juguetes-perro-4pcs",
+    "titulo": "Pack 4 Juguetes Masticables para Perros",
+    "descripcion": "El pack perfecto para mantener a tu perro entretenido y proteger tus muebles. Fabricados en goma natural resistente, seguros para todas las razas. Incluye 4 modelos diferentes para estimular el instinto natural de tu mascota.",
+    "precio": 29.99,
+    "tipo": "simple",
+    "imagenes": [
+      "images/j1.jpg",
+      "images/j2.jpg",
+      "images/j3.jpg",
+      "images/j4.jpg",
+      "images/j5.png",
+      "images/j6.jpg",
+      "images/j7.jpg",
+      "images/j8.jpg"
+    ],
+    "videos": [
+      "videos/v1.mp4",
+      "videos/v2.mp4",
+      "videos/v3.mp4"
+    ],
+    "resenas": [
+      {
+        "autor": "María G.",
+        "rating": 5,
+        "texto": "¡A mi golden retriever le encantan! Muy resistentes, llevan 3 semanas y siguen perfectos.",
+        "fecha": "2025-02-10",
+        "verificado": true
+      },
+      {
+        "autor": "Carlos M.",
+        "rating": 4,
+        "texto": "Buena calidad, el envío fue rápido. Le quito una estrella porque uno de los juguetes es bastante pequeño.",
+        "fecha": "2025-01-28",
+        "verificado": true
+      },
+      {
+        "autor": "Laura P.",
+        "rating": 5,
+        "texto": "Mi perro dejó de morder los zapatos desde que tiene estos juguetes. ¡Los recomiendo totalmente!",
+        "fecha": "2025-03-05",
+        "verificado": false
+      }
+    ]
+  }
+]

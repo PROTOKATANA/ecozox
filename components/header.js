@@ -5,7 +5,11 @@
     var el = document.querySelector('[data-component="header"]');
     if (!el) return;
 
-    var base = el.dataset.base || '';
+    var base  = el.dataset.base || '';
+    var brand = window.ECOZOX_BRAND || {};
+    var logoSrc    = brand.logoSrc    ? base + brand.logoSrc    : base + 'assets/logo.png';
+    var logoAlt    = brand.logoAlt    || 'EcoZox';
+    var carritoUrl = brand.carritoUrl || base + 'carrito.html';
 
     // Todos los idiomas soportados
     var languages = [
@@ -71,8 +75,8 @@
     el.outerHTML = [
         '<header class="header">',
         '  <div class="container header-inner" style="display:flex;justify-content:space-between;align-items:center;">',
-        '    <a href="' + base + 'index.html" class="logo">',
-        '      <img src="' + base + 'assets/logo.png" alt="EcoZox Logo" class="logo-img">',
+        '    <a href="index.html" class="logo">',
+        '      <img src="' + logoSrc + '" alt="' + logoAlt + '" class="logo-img">',
         '    </a>',
         '    <div class="header-actions" style="display:flex;gap:0.75rem;align-items:center;">',
         '      <div class="lang-switcher" id="langSwitcher">',
@@ -96,7 +100,7 @@
         '          </svg>',
         '        </button>',
         '      </div>',
-        '      <a href="' + base + 'carrito.html" class="cart-button">',
+        '      <a href="' + carritoUrl + '" class="cart-button">',
         '        <img src="' + base + 'assets/bag.svg" data-i18n-alt="cart_alt" alt="Carrito" class="cart-btn-icon">',
         '        <span class="cart-btn-divider"></span>',
         '        <span class="cart-count">0</span>',
