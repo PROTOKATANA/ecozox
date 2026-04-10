@@ -66,6 +66,11 @@
       btn.dataset.productTitle = data.title;
       btn.dataset.productPrice = data.price;
       btn.dataset.productImage = data.image;
+      if (data.subItems && data.subItems.length) {
+        btn.dataset.productSubItems = JSON.stringify(data.subItems);
+      } else {
+        delete btn.dataset.productSubItems;
+      }
     });
   }
 
@@ -83,6 +88,11 @@
       stickyBtn.dataset.productTitle = data.title;
       stickyBtn.dataset.productPrice = data.price;
       stickyBtn.dataset.productImage = data.image;
+      if (data.subItems && data.subItems.length) {
+        stickyBtn.dataset.productSubItems = JSON.stringify(data.subItems);
+      } else {
+        delete stickyBtn.dataset.productSubItems;
+      }
     }
 
     /* 2. Update visible title */
@@ -100,10 +110,38 @@
     }
   }
 
+  /* ---------- Bundle quantity helpers ---------- */
+  const bundleQtyInput = bundleCard.querySelector('.js-bundle-qty');
+  const bundleQtyMinus = bundleCard.querySelector('.qty-btn.minus');
+  const bundleQtyPlus  = bundleCard.querySelector('.qty-btn.plus');
+
+  function getBundleQty() {
+    return bundleQtyInput ? (parseInt(bundleQtyInput.value) || 1) : 1;
+  }
+
+  function getBundleSubItems() {
+    return Array.from(bundleCard.querySelectorAll('.po-bundle__item')).map(function (li) {
+      const img  = li.querySelector('img');
+      const span = li.querySelector('span');
+      return {
+        img:   img  ? img.src               : '',
+        title: span ? span.textContent.trim() : '',
+      };
+    });
+  }
+
+  function bundleDataWithQty() {
+    const qty   = getBundleQty();
+    const price = (parseFloat(BUNDLE.price) * qty).toFixed(2);
+    return Object.assign({}, BUNDLE, { price: price, subItems: getBundleSubItems() });
+  }
+
   /* ---------- Selection logic ---------- */
   const qtyWrapper = widget.querySelector('.purchase-option__qty');
   const qtyInput   = widget.querySelector('.qty-input');
   const options    = widget.querySelectorAll('.purchase-option');
+
+  let activeOption = widget.querySelector('.purchase-option--selected') || null;
 
   function selectOption(chosen) {
     /* Deselect all */
@@ -115,21 +153,35 @@
     /* Select the clicked one */
     chosen.classList.add('purchase-option--selected');
     chosen.setAttribute('aria-checked', 'true');
+    activeOption = chosen;
 
     const isBundle = chosen.dataset.option === 'bundle';
 
     if (isBundle) {
-      /* Dim quantity controls — the bundle is always qty 1 */
+      /* Dim single quantity controls while bundle is active */
       if (qtyWrapper) qtyWrapper.classList.add('purchase-option__qty--disabled');
-      if (qtyInput)   qtyInput.value = '1';
-      updateCartButtons(BUNDLE);
-      syncStickyBar(BUNDLE);
+      updateCartButtons(bundleDataWithQty());
+      syncStickyBar(bundleDataWithQty());
     } else {
-      /* Restore quantity controls */
+      /* Restore single quantity controls */
       if (qtyWrapper) qtyWrapper.classList.remove('purchase-option__qty--disabled');
       updateCartButtons(BASE);
       syncStickyBar(BASE);
     }
+  }
+
+  /* Sync cart when bundle qty changes (after quantity.js has updated the value) */
+  function onBundleQtyChange() {
+    if (!activeOption || activeOption.dataset.option !== 'bundle') return;
+    updateCartButtons(bundleDataWithQty());
+    syncStickyBar(bundleDataWithQty());
+  }
+
+  if (bundleQtyMinus) bundleQtyMinus.addEventListener('click', onBundleQtyChange);
+  if (bundleQtyPlus)  bundleQtyPlus.addEventListener('click', onBundleQtyChange);
+  if (bundleQtyInput) {
+    bundleQtyInput.addEventListener('change', onBundleQtyChange);
+    bundleQtyInput.addEventListener('input',  onBundleQtyChange);
   }
 
   /* ---------- Event listeners ---------- */

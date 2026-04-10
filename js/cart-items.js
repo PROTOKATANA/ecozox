@@ -97,10 +97,13 @@
     /* --- Bundle item template (nested breakdown) --- */
     function renderBundleItem(item) {
         const discountedPrice = item.price * (1 - DISCOUNT_PERCENT / 100);
-        const subRows = BUNDLE_SUB_ITEMS.map(sub => `
+        const subs = (Array.isArray(item.subItems) && item.subItems.length)
+            ? item.subItems.map(sub => ({ img: sub.img, label: sub.title || '' }))
+            : BUNDLE_SUB_ITEMS.map(sub => ({ img: sub.img, label: ti(sub.titleKey) }));
+        const subRows = subs.map(sub => `
             <li class="cart-body-item">
-                <img src="${sub.img}" alt="${ti(sub.titleKey)}" class="cart-body-img">
-                <span class="cart-body-title">${ti(sub.titleKey)}</span>
+                <img src="${sub.img}" alt="${sub.label}" class="cart-body-img">
+                <span class="cart-body-title">${sub.label}</span>
                 <span class="cart-body-included">${ti('cart_included')}</span>
             </li>`).join('');
 

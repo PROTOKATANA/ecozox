@@ -56,6 +56,7 @@
                 price: product.price,
                 image: product.image,
                 link: product.link || null,
+                subItems: product.subItems || null,
                 quantity: quantity
             });
         }
@@ -104,6 +105,11 @@
         let productPrice = parseFloat(card.dataset.productPrice || btn.dataset.productPrice);
         let productImage = card.dataset.productImage || btn.dataset.productImage;
         let productLink = card.dataset.productLink || btn.dataset.productLink || null;
+        let productSubItems = null;
+        const subItemsRaw = card.dataset.productSubItems || btn.dataset.productSubItems;
+        if (subItemsRaw) {
+            try { productSubItems = JSON.parse(subItemsRaw); } catch (e) {}
+        }
 
         // Fallback: read product info from the DOM (producto.html)
         if (!productId || !productTitle || isNaN(productPrice)) {
@@ -129,7 +135,7 @@
         }
 
         addItem(
-            { id: productId, title: productTitle, price: productPrice, image: productImage, link: productLink },
+            { id: productId, title: productTitle, price: productPrice, image: productImage, link: productLink, subItems: productSubItems },
             quantity
         );
 

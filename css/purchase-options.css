@@ -294,6 +294,35 @@
   min-width: 0;
 }
 
+/* --- Control de cantidad del bundle --- */
+.po-bundle__qty-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  border-top: 1px dashed var(--border-color);
+  margin-left: 0;
+}
+
+.po-bundle__qty-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.po-bundle__qty-row .quantity-controls {
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.po-bundle__qty-row .qty-btn {
+  border-radius: 0;
+}
+
 /* --- Pie: radio + CTA --- */
 .po-bundle__footer {
   display: flex;
@@ -302,6 +331,7 @@
   padding: 0.875rem 1rem;
   width: 100%;
   box-sizing: border-box;
+  border-top: 1px dashed var(--border-color);
 }
 
 .po-bundle__cta {
