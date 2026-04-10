@@ -127,11 +127,16 @@
 
         if (!productId || !productTitle || isNaN(productPrice)) return;
 
-        // Get quantity from .qty-input (product detail page) or default to 1
+        // Get quantity: check for bundle qty first, fallback to product detail input
         let quantity = 1;
-        const qtyInput = document.querySelector('.product-info-detail .qty-input');
-        if (qtyInput) {
-            quantity = parseInt(qtyInput.value) || 1;
+        const bundleQty = btn.dataset.productBundleQty;
+        if (bundleQty) {
+            quantity = parseInt(bundleQty) || 1;
+        } else {
+            const qtyInput = document.querySelector('.product-info-detail .qty-input');
+            if (qtyInput) {
+                quantity = parseInt(qtyInput.value) || 1;
+            }
         }
 
         addItem(

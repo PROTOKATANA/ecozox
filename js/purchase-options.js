@@ -61,7 +61,7 @@
      both its data attributes and its visible text move in one atomic step. */
   function updateCartButtons(data) {
     document.querySelectorAll('.js-add-to-cart').forEach(function (btn) {
-      if (stickyBar && stickyBar.contains(btn)) return; /* skip — handled below */
+      if (stickyBar && stickyBar.contains(btn)) return;
       btn.dataset.productId    = data.id;
       btn.dataset.productTitle = data.title;
       btn.dataset.productPrice = data.price;
@@ -70,6 +70,11 @@
         btn.dataset.productSubItems = JSON.stringify(data.subItems);
       } else {
         delete btn.dataset.productSubItems;
+      }
+      if (data.isBundle) {
+        btn.dataset.productBundleQty = data.qty;
+      } else {
+        delete btn.dataset.productBundleQty;
       }
     });
   }
@@ -131,9 +136,8 @@
   }
 
   function bundleDataWithQty() {
-    const qty   = getBundleQty();
-    const price = (parseFloat(BUNDLE.price) * qty).toFixed(2);
-    return Object.assign({}, BUNDLE, { price: price, subItems: getBundleSubItems() });
+    const qty = getBundleQty();
+    return Object.assign({}, BUNDLE, { subItems: getBundleSubItems(), qty: qty, isBundle: true });
   }
 
   /* ---------- Selection logic ---------- */
