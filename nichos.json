@@ -1,9 +1,44 @@
 [
   {
-    "nicho":  "bebe",
+    "nicho":  "bandeja",
     "titulo": "Pack 4 Juguetes Masticables para Perros",
     "precio": 29.99,
-    "imagen": "bebe/images/j1.jpg",
-    "link":   "bebe/index.html"
+    "imagen": "ventanas/bandeja/pixel/j1.jpg",
+    "link":   "ventanas/bandeja/index.html"
+  },
+  {
+    "nicho":  "cabeza",
+    "titulo": "Pack 4 Juguetes Masticables para Perros",
+    "precio": 29.99,
+    "imagen": "ventanas/cabeza/pixel/j1.jpg",
+    "link":   "ventanas/cabeza/index.html"
+  },
+  {
+    "nicho":  "cangurera",
+    "titulo": "Pack 4 Juguetes Masticables para Perros",
+    "precio": 29.99,
+    "imagen": "ventanas/cangurera/pixel/j1.jpg",
+    "link":   "ventanas/cangurera/index.html"
+  },
+  {
+    "nicho":  "cinturon",
+    "titulo": "Pack 4 Juguetes Masticables para Perros",
+    "precio": 29.99,
+    "imagen": "ventanas/cinturon/pixel/j1.jpg",
+    "link":   "ventanas/cinturon/index.html"
+  },
+  {
+    "nicho":  "pezones",
+    "titulo": "Pack 4 Juguetes Masticables para Perros",
+    "precio": 29.99,
+    "imagen": "ventanas/pezones/pixel/j1.jpg",
+    "link":   "ventanas/pezones/index.html"
+  },
+  {
+    "nicho":  "rodilleras",
+    "titulo": "Pack 4 Juguetes Masticables para Perros",
+    "precio": 29.99,
+    "imagen": "ventanas/rodilleras/pixel/j1.jpg",
+    "link":   "ventanas/rodilleras/index.html"
   }
 ]
