@@ -1,0 +1,11 @@
+/* =============================================
+   BabyNest — Tema visual del nicho
+   Sobreescribe las variables CSS globales
+   ============================================= */
+:root {
+    --color-primary:     #f97316;   /* naranja cálido */
+    --color-primary-dark:#ea6c0a;
+    --color-accent:      #fb923c;
+    --color-bg:          #fffbf7;
+    --color-surface:     #fff8f2;
+}

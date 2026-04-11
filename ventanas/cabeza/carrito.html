@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es" data-i18n-title="title_cart">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Carrito - BabyNest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="brand/theme.css">
+
+    <!-- Identidad del nicho — debe ir ANTES de cargar los componentes -->
+    <script>
+        window.ECOZOX_BRAND = {
+            nombre:      'BabyNest',
+            logoSrc:     'brand/logo.svg',
+            logoAlt:     'BabyNest',
+            email:       'hola@babynest.com',
+            homeUrl:     'index.html',
+            carritoUrl:  'carrito.html',
+            nicho:       'bebe',
+            localesPath: 'locales/'
+        };
+        window.ECOZOX_API_URL     = 'http://localhost:3000';
+        window.ECOZOX_SUCCESS_URL = 'http://localhost:5173/bebe/exito.html';
+    </script>
+
+    <script src="../components/header.js" defer></script>
+    <script src="../components/bottom-nav.js" defer></script>
+</head>
+<body class="page-cart">
+
+    <div data-component="header" data-base="../"></div>
+
+    <main class="cart-section">
+        <div class="container">
+            <div class="cart-layout">
+                <div class="cart-items"></div>
+
+                <div class="cart-summary">
+                    <div class="cs__inner">
+                        <div class="cs__header">
+                            <h2 class="cs__title" data-i18n="cart_summary_title">Resumen del Pedido</h2>
+                        </div>
+                        <div class="summary-body"></div>
+                        <div class="cs__footer">
+                            <button class="cs__pay-btn checkout-btn" data-i18n="cart_checkout">PAGAR</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div data-component="footer" data-base="../" data-pages-base="../pages/"></div>
+    <div data-component="bottom-nav" data-base="../"></div>
+
+    <script src="../components/footer.js" defer></script>
+    <script src="../js/i18n.js" defer></script>
+    <script src="../app.js" defer></script>
+</body>
+</html>
