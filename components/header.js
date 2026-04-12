@@ -75,7 +75,7 @@
     el.outerHTML = [
         '<header class="header">',
         '  <div class="container header-inner" style="display:flex;justify-content:space-between;align-items:center;">',
-        '    <a href="index.html" class="logo">',
+        '    <a href="' + base + 'index.html" class="logo">',
         '      <img src="' + logoSrc + '" alt="' + logoAlt + '" class="logo-img">',
         '    </a>',
         '    <div class="header-actions" style="display:flex;gap:0.75rem;align-items:center;">',

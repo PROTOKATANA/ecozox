@@ -2,11 +2,14 @@
    Legal Pages
    ======================================== */
 
+body.page-legal {
+  background-color: #f7f4f0;
+}
+
 .legal-section {
   padding: 4rem 0 2rem;
   max-width: 800px;
   margin: 0 auto;
-  background-color: #f7f4f0;
 }
 
 .legal-section h1 {
