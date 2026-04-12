@@ -7,6 +7,12 @@
   background-color: #f7f4f0;
 }
 
+@media (min-width: 768px) {
+  .product-detail-section {
+    padding-top: 3.2rem;
+  }
+}
+
 .product-detail-grid {
   display: grid;
   grid-template-columns: 1fr;
