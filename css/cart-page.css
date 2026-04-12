@@ -12,7 +12,7 @@ body.page-cart #urgency-wave {
 }
 
 .cart-section {
-  padding: 2rem 0 2rem;
+  padding: 1rem 0 2rem;
   background-color: #f7f4f0;
 }
 
@@ -40,7 +40,7 @@ body.page-cart .line-divider {
 
 @media (min-width: 768px) {
   .cart-section {
-    padding-top: 3.6rem;
+    padding-top: 1.5rem;
     padding-bottom: 1.5rem;
   }
 }
@@ -53,7 +53,7 @@ body.page-cart .line-divider {
 
   .cart-summary {
     position: sticky;
-    top: calc(80px + 2rem);
+    top: 1.5rem;
   }
 }
 
