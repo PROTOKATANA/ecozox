@@ -163,6 +163,7 @@
         footer_terms: 'Syarat dan Ketentuan',
         footer_privacy: 'Kebijakan Privasi',
         footer_shipping: 'Pengiriman & Pengembalian',
+        footer_home: 'BERANDA',
         footer_support_title: 'Dukungan',
         footer_email_label: 'Email:',
         footer_phone_label: 'Telepon:',

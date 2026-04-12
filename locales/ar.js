@@ -164,6 +164,7 @@
         footer_terms: 'الشروط والأحكام',
         footer_privacy: 'سياسة الخصوصية',
         footer_shipping: 'الشحن والإرجاع',
+        footer_home: 'الرئيسية',
         footer_support_title: 'الدعم',
         footer_email_label: 'البريد:',
         footer_phone_label: 'الهاتف:',

@@ -163,6 +163,7 @@
         footer_terms: '条款和条件',
         footer_privacy: '隐私政策',
         footer_shipping: '配送与退货',
+        footer_home: '首页',
         footer_support_title: '客户支持',
         footer_email_label: '邮箱：',
         footer_phone_label: '电话：',

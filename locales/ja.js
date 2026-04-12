@@ -163,6 +163,7 @@
         footer_terms: '利用規約',
         footer_privacy: 'プライバシーポリシー',
         footer_shipping: '配送と返品',
+        footer_home: 'ホーム',
         footer_support_title: 'サポート',
         footer_email_label: 'メール：',
         footer_phone_label: '電話：',

@@ -163,6 +163,7 @@
         footer_terms: 'Términos y Condiciones',
         footer_privacy: 'Política de Privacidad',
         footer_shipping: 'Envíos y Devoluciones',
+        footer_home: 'INICIO',
         footer_support_title: 'Soporte',
         footer_email_label: 'Email:',
         footer_phone_label: 'Teléfono:',

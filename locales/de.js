@@ -163,6 +163,7 @@
         footer_terms: 'Allgemeine Geschäftsbedingungen',
         footer_privacy: 'Datenschutzrichtlinie',
         footer_shipping: 'Versand & Rückgabe',
+        footer_home: 'STARTSEITE',
         footer_support_title: 'Support',
         footer_email_label: 'E-Mail:',
         footer_phone_label: 'Telefon:',

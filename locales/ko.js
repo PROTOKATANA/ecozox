@@ -163,6 +163,7 @@
         footer_terms: '이용약관',
         footer_privacy: '개인정보처리방침',
         footer_shipping: '배송 및 반품',
+        footer_home: '홈',
         footer_support_title: '지원',
         footer_email_label: '이메일:',
         footer_phone_label: '전화:',

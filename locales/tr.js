@@ -163,6 +163,7 @@
         footer_terms: 'Şartlar ve Koşullar',
         footer_privacy: 'Gizlilik Politikası',
         footer_shipping: 'Kargo ve İade',
+        footer_home: 'ANA SAYFA',
         footer_support_title: 'Destek',
         footer_email_label: 'E-posta:',
         footer_phone_label: 'Telefon:',

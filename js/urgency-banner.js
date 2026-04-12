@@ -88,7 +88,7 @@
 
     const waveDiv = document.createElement('div');
     waveDiv.id = 'urgency-wave';
-    waveDiv.style.cssText = 'position:absolute;bottom:-35px;left:0;width:100vw;pointer-events:none;';
+    waveDiv.style.cssText = 'position:absolute;bottom:-36px;left:0;width:100vw;pointer-events:none;';
     waveDiv.innerHTML = buildWaveSVG(window.innerWidth || 400);
     banner.style.position = 'relative';
     banner.appendChild(waveDiv);
