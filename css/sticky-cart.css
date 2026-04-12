@@ -71,7 +71,7 @@
 .scb__perk--gift::before,
 .scb__perk--timer::before {
   content: '●';
-  font-size: 0.45rem;
+  font-size: 0.7rem;
   flex-shrink: 0;
 }
 
@@ -88,7 +88,7 @@
   font-weight: 700;
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.05em;
-  font-size: 0.72rem;
+  font-size: 0.84rem;
   color: #ef4444;
 }
 

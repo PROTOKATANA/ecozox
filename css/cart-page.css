@@ -227,7 +227,7 @@ body.page-cart .line-divider {
 .cp__item--gift::before,
 .cp__item--timer::before {
   content: '●';
-  font-size: 0.45rem;
+  font-size: 0.7rem;
   flex-shrink: 0;
 }
 
@@ -244,7 +244,7 @@ body.page-cart .line-divider {
   font-weight: 700;
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.05em;
-  font-size: 0.72rem;
+  font-size: 0.84rem;
   color: #ef4444;
 }
 
