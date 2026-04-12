@@ -52,7 +52,7 @@
   align-items: flex-start;
   gap: 0.3rem;
   padding: 0.5rem 1rem;
-  background: #f7f4f0;
+  background: #f3efe9;
 }
 
 .scb__perk {
@@ -114,11 +114,16 @@
 
 .scb__info {
   display: flex;
-  align-items: baseline;
-  gap: 0.5rem;
+  flex-direction: column;
+  gap: 0.2rem;
   flex: 1;
   min-width: 0;
-  flex-wrap: wrap;
+}
+
+.scb__prices {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
 }
 
 .scb__title {
@@ -131,7 +136,7 @@
 }
 
 .scb__price-original {
-  font-size: 0.8125rem;
+  font-size: 1.0625rem;
   font-weight: 400;
   color: var(--text-muted);
   text-decoration: line-through;
