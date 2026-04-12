@@ -94,13 +94,10 @@
     banner.appendChild(waveDiv);
 
     /* ---------- Padding-top dinámico ---------- */
-    const WAVE_BOTTOM_OFFSET = 23; // coincide con bottom:-33px del waveDiv
+    const WAVE_BOTTOM_OFFSET = 23;
 
     function updateBodyPadding() {
-        if (window.innerWidth > 767) return; // solo móvil
-        if (banner.offsetHeight === 0) return; // banner oculto (display:none)
-        var totalHeight = banner.offsetHeight + WAVE_BOTTOM_OFFSET;
-        document.body.style.paddingTop = totalHeight + 'px';
+        // Header ya no es fixed en móvil — no se necesita padding-top
     }
 
     window.addEventListener('resize', function () {

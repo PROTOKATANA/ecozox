@@ -179,36 +179,18 @@
     display: none !important;
   }
 
-  /* Limpiamos los estilos del header para que se vuelva "invisible"
-     y solo funcione como anclaje sticky para el banner */
+  /* El header se vuelve invisible pero fluye con el documento */
   .header {
     padding: 0 !important;
     background: transparent !important;
     backdrop-filter: none !important;
     border-bottom: none !important;
     box-shadow: none !important;
-    position: fixed !important;
-    top: 0 !important;
-    width: 100% !important;
-    left: 0 !important;
-    right: 0 !important;
-    z-index: 1200 !important;
+    position: relative !important;
     overflow: visible;
   }
 
-  /* Padding-top gestionado dinámicamente por urgency-banner.js
-     Este valor es el fallback antes de que el JS calcule la altura real */
-  body.page-home,
-  body.page-cart {
-    padding-top: 90px;
-  }
-
   body.page-product {
-    padding-top: 0;
     background-color: #f7f4f0 !important;
-  }
-
-  body.page-legal {
-    padding-top: 0;
   }
 }
