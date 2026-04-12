@@ -199,13 +199,16 @@
   /* Padding-top gestionado dinámicamente por urgency-banner.js
      Este valor es el fallback antes de que el JS calcule la altura real */
   body.page-home,
-  body.page-cart,
-  body.page-legal {
+  body.page-cart {
     padding-top: 90px;
   }
 
   body.page-product {
     padding-top: 68px;
     background-color: #f7f4f0 !important;
+  }
+
+  body.page-legal {
+    padding-top: 0;
   }
 }
