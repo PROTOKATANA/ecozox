@@ -32,7 +32,6 @@ const modules = [
     'js/reviews.js',
     'js/wave-divider.js',
     'js/purchase-options.js',
-    'js/checkout-widget.js',
     'js/video-grid.js',
     'js/video-lightbox.js'
 ];
