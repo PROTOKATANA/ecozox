@@ -58,6 +58,7 @@
     const STROKE_W     = 12;
     const STROKE_COLOR = '#fbbf24';
     const FILL_TOP     = '#16a34a';
+    const FILL_CROP    = 9;  // px recortados del tope del relleno verde
     const svgH         = WAVE_HEIGHT + STROKE_W * 2;
     const midY         = svgH / 2;
     const amp          = WAVE_HEIGHT / 2;
@@ -78,7 +79,7 @@
 
     function buildWaveSVG(totalWidth) {
         const waveLine  = buildWavePath(totalWidth);
-        const topPath   = waveLine + ' L' + totalWidth + ' 0 L0 0 Z';
+        const topPath   = waveLine + ' L' + totalWidth + ' ' + FILL_CROP + ' L0 ' + FILL_CROP + ' Z';
         return '<svg width="100%" height="' + svgH + '" xmlns="http://www.w3.org/2000/svg" style="display:block;overflow:hidden;width:100vw;max-width:100vw">'
             + '<path d="' + topPath + '" fill="' + FILL_TOP + '"/>'
             + '<path d="' + waveLine + '" fill="none" stroke="' + STROKE_COLOR + '" stroke-width="' + STROKE_W + '" stroke-linecap="round"/>'
@@ -87,7 +88,7 @@
 
     const waveDiv = document.createElement('div');
     waveDiv.id = 'urgency-wave';
-    waveDiv.style.cssText = 'position:absolute;bottom:-37px;left:0;width:100vw;pointer-events:none;';
+    waveDiv.style.cssText = 'position:absolute;bottom:-32px;left:0;width:100vw;pointer-events:none;';
     waveDiv.innerHTML = buildWaveSVG(window.innerWidth || 400);
     banner.style.position = 'relative';
     banner.appendChild(waveDiv);
