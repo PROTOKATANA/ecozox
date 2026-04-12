@@ -6,6 +6,11 @@ body.page-cart {
   background-color: #f7f4f0;
 }
 
+body.page-cart #urgency-banner,
+body.page-cart #urgency-wave {
+  display: none;
+}
+
 .cart-section {
   padding: 2rem 0 2rem;
   background-color: #f7f4f0;
