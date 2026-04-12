@@ -52,7 +52,7 @@
   align-items: flex-start;
   gap: 0.3rem;
   padding: 0.5rem 1rem;
-  background: #111827;
+  background: #374151;
 }
 
 .scb__perk {
@@ -60,7 +60,7 @@
   align-items: center;
   gap: 0.4rem;
   font-size: 0.72rem;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   white-space: nowrap;
@@ -84,15 +84,11 @@
 .scb__perk--timer::before { color: #ef4444; }
 
 .scb__timer {
-  display: inline-block;
-  background: #ef4444;
-  color: #fff;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
-  padding: 0.1rem 0.4rem;
-  border-radius: 3px;
   letter-spacing: 0.05em;
   font-size: 0.72rem;
+  color: #ef4444;
 }
 
 /* Imagen */
