@@ -346,6 +346,10 @@ body.page-cart .line-divider {
    Banner de Urgencia
    ======================================== */
 
+body.page-product #urgency-banner {
+  display: none;
+}
+
 #urgency-banner {
   background: #111827;
   color: #fff;

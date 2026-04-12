@@ -98,6 +98,7 @@
 
     function updateBodyPadding() {
         if (window.innerWidth > 767) return; // solo móvil
+        if (banner.offsetHeight === 0) return; // banner oculto (display:none)
         var totalHeight = banner.offsetHeight + WAVE_BOTTOM_OFFSET;
         document.body.style.paddingTop = totalHeight + 'px';
     }
