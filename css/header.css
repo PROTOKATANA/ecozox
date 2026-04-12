@@ -193,17 +193,21 @@
     left: 0 !important;
     right: 0 !important;
     z-index: 1200 !important;
-    overflow: hidden;
+    overflow: visible;
   }
 
   /* Padding-top específico por página para compensar el header fixed */
   body.page-home,
   body.page-cart {
-    padding-top: 60px !important;
+    padding-top: 90px !important;
   }
 
   body.page-product {
-    padding-top: 80px !important;
+    padding-top: 110px !important;
     background-color: #f7f4f0 !important;
+  }
+
+  body.page-legal {
+    padding-top: 90px !important;
   }
 }

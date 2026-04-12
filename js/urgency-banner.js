@@ -46,13 +46,55 @@
 	const header = document.querySelector('header.header');
 	if (header) {
 	    header.style.paddingBottom = '0';
-	    // El banner se inserta DENTRO del header para heredar el 'sticky'
 	    header.appendChild(banner);
-	}else {
-        // Fallback si el header aún no está en el DOM
+	} else {
         const main = document.querySelector('main') || document.body;
         main.parentNode.insertBefore(banner, main);
     }
+
+    /* ---------- Wave divider bajo el banner ---------- */
+    const WAVE_WIDTH   = 56;
+    const WAVE_HEIGHT  = 23;
+    const STROKE_W     = 12;
+    const STROKE_COLOR = '#fbbf24';
+    const FILL_TOP     = '#15803d';
+    const svgH         = WAVE_HEIGHT + STROKE_W * 2;
+    const midY         = svgH / 2;
+    const amp          = WAVE_HEIGHT / 2;
+    const halfWave     = WAVE_WIDTH / 2;
+
+    function buildWavePath(totalWidth) {
+        let d = 'M0 ' + midY;
+        let x = 0, up = true;
+        while (x < totalWidth) {
+            const cx = x + halfWave / 2;
+            const cy = up ? midY - amp : midY + amp;
+            x += halfWave;
+            d += ' Q' + cx + ' ' + cy + ' ' + x + ' ' + midY;
+            up = !up;
+        }
+        return d;
+    }
+
+    function buildWaveSVG(totalWidth) {
+        const waveLine  = buildWavePath(totalWidth);
+        const topPath   = waveLine + ' L' + totalWidth + ' 0 L0 0 Z';
+        return '<svg width="100%" height="' + svgH + '" xmlns="http://www.w3.org/2000/svg" style="display:block;overflow:hidden;width:100vw;max-width:100vw">'
+            + '<path d="' + topPath + '" fill="' + FILL_TOP + '"/>'
+            + '<path d="' + waveLine + '" fill="none" stroke="' + STROKE_COLOR + '" stroke-width="' + STROKE_W + '" stroke-linecap="round"/>'
+            + '</svg>';
+    }
+
+    const waveDiv = document.createElement('div');
+    waveDiv.id = 'urgency-wave';
+    waveDiv.style.cssText = 'position:absolute;bottom:-' + (svgH - 2) + 'px;left:0;width:100vw;pointer-events:none;';
+    waveDiv.innerHTML = buildWaveSVG(window.innerWidth || 400);
+    banner.style.position = 'relative';
+    banner.appendChild(waveDiv);
+
+    window.addEventListener('resize', function () {
+        waveDiv.innerHTML = buildWaveSVG(window.innerWidth || 400);
+    });
 
     /* ---------- Timer persistente ---------- */
     function getExpiresAt() {

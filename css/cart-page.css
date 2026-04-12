@@ -387,9 +387,10 @@ body.page-cart .line-divider {
     font-size: 0.8rem;
     padding: 0.65rem 0.75rem;
     border-top: none;
+    position: relative;
   }
 
-  .urgency-timer {
+.urgency-timer {
     font-size: 0.9rem;
   }
 }
