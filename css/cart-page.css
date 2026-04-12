@@ -200,6 +200,55 @@ body.page-cart .line-divider {
 }
 
 /* ========================================
+   Cart Perks Widget
+   ======================================== */
+.cart-perks {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3rem;
+  padding: 0.5rem 1rem;
+  background: #f3efe9;
+}
+
+.cp__item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-heading);
+  font-size: 0.84rem;
+  font-weight: 530;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.cp__item--discount::before,
+.cp__item--gift::before,
+.cp__item--timer::before {
+  content: '●';
+  font-size: 0.45rem;
+  flex-shrink: 0;
+}
+
+.cp__item--discount { color: #15803d; }
+.cp__item--discount::before { color: #15803d; }
+
+.cp__item--gift { color: #a16207; }
+.cp__item--gift::before { color: #a16207; }
+
+.cp__item--timer { color: #ef4444; }
+.cp__item--timer::before { color: #ef4444; }
+
+.cp__timer {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.05em;
+  font-size: 0.72rem;
+  color: #ef4444;
+}
+
+/* ========================================
    Cart Summary — Nested Card
    ======================================== */
 .cart-summary {
@@ -215,6 +264,14 @@ body.page-cart .line-divider {
   border: 1.5px solid var(--border-color);
   border-radius: var(--border-radius);
   overflow: hidden;
+}
+
+/* --- Perks dentro del resumen --- */
+.cs__inner .cart-perks {
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px dashed var(--border-color);
+  margin-bottom: 0;
 }
 
 /* --- Cabecera --- */

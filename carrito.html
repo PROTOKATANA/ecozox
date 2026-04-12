@@ -23,6 +23,13 @@
                 <div class="cart-summary">
                     <div class="cs__inner">
 
+                        <!-- Perks -->
+                        <div class="cart-perks">
+                            <span class="cp__item cp__item--discount" data-i18n="scb_perk_discount">30% descuento</span>
+                            <span class="cp__item cp__item--gift" data-i18n="scb_perk_gift">1 regalo sorpresa</span>
+                            <span class="cp__item cp__item--timer"><span data-i18n="scb_perk_ends">Termina en</span><span id="cart-perks-timer" class="cp__timer">15:00</span></span>
+                        </div>
+
                         <!-- Cabecera -->
                         <div class="cs__header">
                             <h2 class="cs__title" data-i18n="cart_summary_title">Resumen del Pedido</h2>
@@ -48,5 +55,32 @@
     <script src="components/footer.js" defer></script>
     <script src="js/i18n.js" defer></script>
     <script src="app.js" defer></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        (function () {
+            var STORAGE_KEY = 'ecozox_urgency_expires';
+            var DURATION_MS = 15 * 60 * 1000;
+            var el = document.getElementById('cart-perks-timer');
+            if (!el) return;
+            function getExpiry() {
+                var stored = localStorage.getItem(STORAGE_KEY);
+                var now = Date.now();
+                if (stored) { var exp = parseInt(stored, 10); if (exp > now) return exp; }
+                var newExp = now + DURATION_MS;
+                localStorage.setItem(STORAGE_KEY, newExp);
+                return newExp;
+            }
+            var expiresAt = getExpiry();
+            function tick() {
+                var remaining = expiresAt - Date.now();
+                if (remaining <= 0) { expiresAt = Date.now() + DURATION_MS; localStorage.setItem(STORAGE_KEY, expiresAt); remaining = DURATION_MS; }
+                var total = Math.max(0, Math.ceil(remaining / 1000));
+                el.textContent = String(Math.floor(total / 60)).padStart(2, '0') + ':' + String(total % 60).padStart(2, '0');
+            }
+            tick();
+            setInterval(tick, 1000);
+        })();
+    });
+    </script>
 </body>
 </html>
