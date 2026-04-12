@@ -33,6 +33,13 @@ body.page-cart .line-divider {
   gap: 1.6rem;
 }
 
+@media (min-width: 768px) {
+  .cart-section {
+    padding-top: 3.6rem;
+    padding-bottom: 1.5rem;
+  }
+}
+
 @media (min-width: 992px) {
   .cart-layout {
     grid-template-columns: 1fr 430px;
