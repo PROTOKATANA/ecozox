@@ -2,9 +2,19 @@
    Cart Page
    ======================================== */
 
+body.page-cart {
+  background-color: #f7f4f0;
+}
+
 .cart-section {
   padding: 2rem 0 2rem;
   background-color: #f7f4f0;
+}
+
+@media (max-width: 640px) {
+  .cart-section {
+    padding-bottom: 1.2rem;
+  }
 }
 
 /* Wave divider between header and cart */
@@ -20,7 +30,7 @@ body.page-cart .line-divider {
 .cart-layout {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 1.6rem;
 }
 
 @media (min-width: 992px) {
