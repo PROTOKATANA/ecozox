@@ -88,14 +88,26 @@
 
     const waveDiv = document.createElement('div');
     waveDiv.id = 'urgency-wave';
-    waveDiv.style.cssText = 'position:absolute;bottom:-32px;left:0;width:100vw;pointer-events:none;';
+    waveDiv.style.cssText = 'position:absolute;bottom:-35px;left:0;width:100vw;pointer-events:none;';
     waveDiv.innerHTML = buildWaveSVG(window.innerWidth || 400);
     banner.style.position = 'relative';
     banner.appendChild(waveDiv);
 
+    /* ---------- Padding-top dinámico ---------- */
+    const WAVE_BOTTOM_OFFSET = 23; // coincide con bottom:-33px del waveDiv
+
+    function updateBodyPadding() {
+        if (window.innerWidth > 767) return; // solo móvil
+        var totalHeight = banner.offsetHeight + WAVE_BOTTOM_OFFSET;
+        document.body.style.paddingTop = totalHeight + 'px';
+    }
+
     window.addEventListener('resize', function () {
         waveDiv.innerHTML = buildWaveSVG(window.innerWidth || 400);
+        updateBodyPadding();
     });
+
+    requestAnimationFrame(updateBodyPadding);
 
     /* ---------- Timer persistente ---------- */
     function getExpiresAt() {
@@ -135,7 +147,9 @@
             if (textEl) {
                 textEl.innerHTML = getBannerText();
                 tick();
+                requestAnimationFrame(updateBodyPadding);
             }
-        }
+        },
+        updatePadding: updateBodyPadding
     };
 })();
