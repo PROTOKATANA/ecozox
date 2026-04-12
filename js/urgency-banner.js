@@ -56,8 +56,8 @@
     const WAVE_WIDTH   = 56;
     const WAVE_HEIGHT  = 23;
     const STROKE_W     = 12;
-    const STROKE_COLOR = '#fbbf24';
-    const FILL_TOP     = '#16a34a';
+    const STROKE_COLOR = '#374151';
+    const FILL_TOP     = '#111827';
     const FILL_CROP    = 9;  // px recortados del tope del relleno verde
     const svgH         = WAVE_HEIGHT + STROKE_W * 2;
     const midY         = svgH / 2;
