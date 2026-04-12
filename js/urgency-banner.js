@@ -57,7 +57,7 @@
     const WAVE_HEIGHT  = 23;
     const STROKE_W     = 12;
     const STROKE_COLOR = '#fbbf24';
-    const FILL_TOP     = '#15803d';
+    const FILL_TOP     = '#16a34a';
     const svgH         = WAVE_HEIGHT + STROKE_W * 2;
     const midY         = svgH / 2;
     const amp          = WAVE_HEIGHT / 2;
@@ -87,7 +87,7 @@
 
     const waveDiv = document.createElement('div');
     waveDiv.id = 'urgency-wave';
-    waveDiv.style.cssText = 'position:absolute;bottom:-' + (svgH - 2) + 'px;left:0;width:100vw;pointer-events:none;';
+    waveDiv.style.cssText = 'position:absolute;bottom:-37px;left:0;width:100vw;pointer-events:none;';
     waveDiv.innerHTML = buildWaveSVG(window.innerWidth || 400);
     banner.style.position = 'relative';
     banner.appendChild(waveDiv);
