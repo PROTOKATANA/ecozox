@@ -13,24 +13,51 @@
 
   let buttonsHidden = false;
   let footerVisible = false;
+  let userCollapsed = false;
 
+  const isMobile = () => window.innerWidth < 768;
+
+  /* ---------- Toggle handle (móvil) ---------- */
+  const toggleBtn = document.createElement('button');
+  toggleBtn.className = 'scb__toggle';
+  toggleBtn.setAttribute('aria-label', 'Mostrar/ocultar carrito');
+  toggleBtn.innerHTML = '<span class="scb__toggle-handle"></span>';
+  bar.insertBefore(toggleBtn, bar.firstChild);
+
+  toggleBtn.addEventListener('click', function () {
+    if (!isMobile()) return;
+    userCollapsed = !userCollapsed;
+    bar.classList.toggle('scb--collapsed', userCollapsed);
+  });
+
+  /* ---------- Lógica de visibilidad ---------- */
   function update() {
-    const show = buttonsHidden && !footerVisible;
-    bar.classList.toggle('visible', show);
-    bar.setAttribute('aria-hidden', String(!show));
+    if (footerVisible) {
+      // Auto-ocultar solo cuando el footer es visible
+      bar.classList.remove('visible');
+      bar.setAttribute('aria-hidden', 'true');
+    } else if (buttonsHidden) {
+      // Mostrar cuando los botones de compra salen del viewport
+      bar.classList.add('visible');
+      bar.setAttribute('aria-hidden', 'false');
+      if (isMobile()) {
+        bar.classList.toggle('scb--collapsed', userCollapsed);
+      } else {
+        bar.classList.remove('scb--collapsed');
+      }
+    }
   }
 
-  const MARGIN = 120; // px — aumenta para que el banner aguante más visible
+  const MARGIN = 120;
 
   function checkButtons() {
     const rect = target.getBoundingClientRect();
-    // Los botones se consideran "visibles" solo cuando están MARGIN px dentro del viewport
     buttonsHidden = rect.top > window.innerHeight - MARGIN || rect.bottom < MARGIN;
     update();
   }
 
   window.addEventListener('scroll', checkButtons, { passive: true });
-  checkButtons(); // estado inicial
+  checkButtons();
 
   if (footer) {
     new IntersectionObserver(

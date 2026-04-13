@@ -24,10 +24,62 @@
 /* Ajuste específico para evitar superposición con el Bottom Nav en Móvil */
 @media (max-width: 767px) {
   .sticky-cart-bar {
-    /* Se eleva para quedar justo encima del BNB */
-    bottom: 63.7px !important; 
-    padding: 0.8rem 0.85rem;
+    bottom: 63.7px !important;
+    padding: 0.5rem 0.85rem 0.8rem;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 14px 14px 0 0;
+  }
+}
+
+/* ════════════════════════════════════════
+   Toggle handle — solo móvil
+   ════════════════════════════════════════ */
+.scb__toggle {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .scb__toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0.25rem 0 0.5rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .scb__toggle-handle {
+    display: block;
+    width: 44px;
+    height: 6px;
+    background: #374151;
+    border-radius: 3px;
+    transition: background 0.2s ease;
+  }
+
+  .scb__toggle:hover .scb__toggle-handle,
+  .scb__toggle:active .scb__toggle-handle {
+    background: #111827;
+  }
+
+  /* Animación de colapso */
+  .sticky-cart-bar__inner {
+    max-height: 600px;
+    opacity: 1;
+    overflow: hidden;
+    transition: max-height 0.35s ease, opacity 0.2s ease;
+  }
+
+  .scb--collapsed .sticky-cart-bar__inner {
+    max-height: 0;
+    opacity: 0;
+  }
+
+  .scb--collapsed .scb__toggle {
+    padding-bottom: 0.15rem;
   }
 }
 
