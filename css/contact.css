@@ -3,7 +3,7 @@
    ======================================== */
 
 .contact-section {
-  padding: 5rem 0;
+  padding: 2rem 0;
   background-color: #f7f4f0;
 }
 
@@ -102,6 +102,8 @@ textarea.form-control {
   font-size: 1.75rem;
   margin-bottom: 1rem;
   color: white;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .trust-message p {
@@ -113,29 +115,20 @@ textarea.form-control {
 
 .trust-features {
   list-style: none;
-  padding: 0;
+  padding-left: 0;
 }
 
+
 .trust-features li {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
   margin-bottom: 1.25rem;
   color: #f9fafb;
   font-weight: 500;
-}
-
-.trust-icon {
-  width: 24px;
-  height: 24px;
-  fill: var(--accent-color); /* Usamos tu color de acento azul */
-  flex-shrink: 0;
-  margin-top: 2px;
+  line-height: 1.6;
 }
 
 @media (max-width: 640px) {
   .contact-section {
-    padding: 2.5rem 0;
+    padding: 1rem 0;
   }
 
   .contact-header h1 {
