@@ -24,6 +24,10 @@
   opacity: 1;
 }
 
+.sticky-cart-bar.scb--no-transition {
+  transition: none !important;
+}
+
 /* Ajuste específico para evitar superposición con el Bottom Nav en Móvil */
 @media (max-width: 767px) {
   .sticky-cart-bar {

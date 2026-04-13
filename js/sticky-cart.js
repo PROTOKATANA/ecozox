@@ -26,8 +26,22 @@
 
   toggleBtn.addEventListener('click', function () {
     if (!isMobile()) return;
-    userCollapsed = !userCollapsed;
-    bar.classList.toggle('scb--collapsed', userCollapsed);
+    if (userCollapsed) {
+      // Expandir: teleportar abajo sin transición, luego slide-up
+      userCollapsed = false;
+      bar.classList.add('scb--no-transition');
+      bar.classList.remove('scb--collapsed');
+      bar.style.transform = 'translateY(110%)';
+      bar.style.opacity   = '0';
+      bar.offsetHeight;   // forzar reflow
+      bar.classList.remove('scb--no-transition');
+      bar.style.transform = '';
+      bar.style.opacity   = '';
+    } else {
+      // Colapsar: animación normal
+      userCollapsed = true;
+      bar.classList.add('scb--collapsed');
+    }
   });
 
   /* ---------- Lógica de visibilidad ---------- */
