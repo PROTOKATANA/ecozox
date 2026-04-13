@@ -119,7 +119,8 @@ img {
 @media (max-width: 767px) {
   body.page-home main .container,
   body.page-cart main .container,
-  body.page-product main .container {
+  body.page-product main .container,
+  body.page-contact main .container {
     padding: 0 0.85rem;
   }
 }
