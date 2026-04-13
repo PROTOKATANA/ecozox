@@ -21,6 +21,18 @@
   margin-bottom: 0.8rem;
 }
 
+/* ---- Fila de botones ---- */
+.footer-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  order: 10;
+}
+
+.footer-btns .footer-dev-btn {
+  flex: 1;
+}
+
 /* ---- Botón Devoluciones ---- */
 .footer-dev-btn {
   display: block;
@@ -61,6 +73,10 @@
     border-top: 2px dashed #374151;
     border-image: repeating-linear-gradient(90deg, #374151 0, #374151 10px, transparent 10px, transparent 18px) 2;
   }
+
+  .footer-btns .footer-dev-btn + .footer-dev-btn::before {
+    display: none;
+  }
 }
 
 @media (min-width: 768px) {
@@ -71,11 +87,16 @@
     gap: 2rem;
   }
 
-  .footer-dev-btn {
+  .footer-btns {
     order: 0;
     flex: 1 1 0;
     min-width: 0;
     align-self: stretch;
+    flex-direction: column;
+  }
+
+  .footer-dev-btn {
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -121,6 +142,7 @@
 .footer-col .text-muted {
   color: #9ca3af;
 }
+
 
 .footer-bottom {
   border-top: 2px dashed #374151;

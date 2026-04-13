@@ -29,9 +29,10 @@
         <div class="container">
 
             <div class="footer-top">
-                <a href="${base}contacto.html" class="footer-dev-btn" data-i18n="footer_returns">
-                    Devoluciones
-                </a>
+                <div class="footer-btns">
+                    <a href="${base}index.html" class="footer-dev-btn" data-i18n="footer_home">Inicio</a>
+                    <a href="${base}contacto.html" class="footer-dev-btn" data-i18n="footer_returns">Devoluciones</a>
+                </div>
                 <div class="footer-col">
                     <h3 data-i18n="footer_legal_title">Enlaces Legales</h3>
                     <ul>
@@ -43,7 +44,6 @@
                 <div class="footer-col">
                     <h3 data-i18n="footer_support_title">Soporte</h3>
                     <ul>
-                        <li><a href="${base}index.html" data-i18n="footer_home">Inicio</a></li>
                         <li><span class="text-muted" data-i18n="footer_email_label">Email:</span> <a href="mailto:${brandEmail}">${brandEmail}</a></li>
                         <li><span class="text-muted" data-i18n="footer_phone_label">Teléfono:</span> <a href="tel:+34912345678">+34 912 345 678</a></li>
                     </ul>
