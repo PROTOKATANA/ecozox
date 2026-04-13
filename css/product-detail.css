@@ -156,9 +156,15 @@
   bottom: 0;
   left: var(--ba-pos);
   transform: translateX(-50%);
-  width: 3px;
-  background: rgba(255, 255, 255, 0.92);
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  width: 5px;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.92) 0px,
+    rgba(255, 255, 255, 0.92) 12px,
+    transparent 12px,
+    transparent 20px
+  );
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.4));
   z-index: 2;
   cursor: ew-resize;
   touch-action: none;
