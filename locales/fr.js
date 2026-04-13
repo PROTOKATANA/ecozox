@@ -149,7 +149,7 @@
         contact_phone_placeholder: '+33 6 00 00 00 00',
         contact_message_label: 'Message ou motif de retour',
         contact_message_placeholder: 'Décrivez le problème avec votre commande ou votre question afin que nous puissions vous aider...',
-        contact_submit: 'Envoyer la demande',
+        contact_submit: 'ENVOYER',
         contact_toast: 'Demande envoyée. Nous vous contacterons sous peu.',
         trust_title: 'Votre tranquillité d\'esprit avant tout'esprit avant tout',
         trust_desc: 'Si votre produit ne répond pas à vos attentes ou présente un défaut, vous bénéficiez d\'une garantie de retour assurée.'acheter en ligne nécessite de la confiance. Si votre produit ne répond pas à vos attentes ou présente un défaut, ne vous inquiétez pas. Nous avons conçu un processus de retour axé sur votre confort.',

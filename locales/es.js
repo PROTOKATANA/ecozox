@@ -149,7 +149,7 @@
         contact_phone_placeholder: '+34 600 000 000',
         contact_message_label: 'Mensaje o motivo de devolución',
         contact_message_placeholder: 'Describe el problema con tu pedido o tu consulta para que podamos ayudarte...',
-        contact_submit: 'Enviar Solicitud',
+        contact_submit: 'ENVIAR',
         contact_toast: 'Solicitud enviada. Nos pondremos en contacto contigo en breve.',
         trust_title: 'Tu tranquilidad es lo primero',
         trust_desc: 'Si tu producto no cumple con las expectativas o tiene algún defecto, tienes una garantía de devolución asegurada.',

@@ -149,7 +149,7 @@
         contact_phone_placeholder: '+49 170 0000000',
         contact_message_label: 'Nachricht oder Rückgabegrund',
         contact_message_placeholder: 'Beschreiben Sie das Problem mit Ihrer Bestellung oder Ihre Anfrage, damit wir Ihnen helfen können...',
-        contact_submit: 'Anfrage senden',
+        contact_submit: 'SENDEN',
         contact_toast: 'Anfrage gesendet. Wir werden uns in Kürze bei Ihnen melden.',
         trust_title: 'Ihre Ruhe hat Priorität',
         trust_desc: 'Wenn Ihr Produkt nicht Ihren Erwartungen entspricht oder einen Mangel aufweist, haben Sie eine gesicherte Rückgabegarantie.',

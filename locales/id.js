@@ -149,7 +149,7 @@
         contact_phone_placeholder: '+62 812 0000 0000',
         contact_message_label: 'Pesan atau alasan pengembalian',
         contact_message_placeholder: 'Jelaskan masalah dengan pesanan Anda atau pertanyaan Anda agar kami dapat membantu...',
-        contact_submit: 'Kirim Permintaan',
+        contact_submit: 'KIRIM',
         contact_toast: 'Permintaan terkirim. Kami akan segera menghubungi Anda.',
         trust_title: 'Ketenangan Anda adalah prioritas kami',
         trust_desc: 'Jika produk Anda tidak sesuai harapan atau memiliki cacat, Anda memiliki jaminan pengembalian yang terjamin.',

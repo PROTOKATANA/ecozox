@@ -149,7 +149,7 @@
         contact_phone_placeholder: '+82 10 0000 0000',
         contact_message_label: '메시지 또는 반품 사유',
         contact_message_placeholder: '주문 관련 문제나 문의 사항을 설명해 주세요...',
-        contact_submit: '요청 제출',
+        contact_submit: '보내기',
         contact_toast: '요청이 제출되었습니다. 곧 연락드리겠습니다.',
         trust_title: '고객님의 안심이 최우선입니다',
         trust_desc: '제품이 기대에 미치지 못하거나 결함이 있을 경우, 보장된 반품 정책이 적용됩니다.',

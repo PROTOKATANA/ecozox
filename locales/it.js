@@ -149,7 +149,7 @@
         contact_phone_placeholder: '+39 320 000 0000',
         contact_message_label: 'Messaggio o motivo del reso',
         contact_message_placeholder: 'Descrivi il problema con il tuo ordine o la tua richiesta in modo che possiamo aiutarti...',
-        contact_submit: 'Invia richiesta',
+        contact_submit: 'INVIA',
         contact_toast: 'Richiesta inviata. Ti contatteremo a breve.',
         trust_title: 'La tua tranquillità viene prima',
         trust_desc: 'Se il tuo prodotto non soddisfa le aspettative o presenta un difetto, hai una garanzia di reso assicurata.',

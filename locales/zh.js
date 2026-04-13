@@ -149,7 +149,7 @@
         contact_phone_placeholder: '+86 138 0000 0000',
         contact_message_label: '消息或退货原因',
         contact_message_placeholder: '请描述您的订单问题或咨询内容，以便我们为您提供帮助...',
-        contact_submit: '提交请求',
+        contact_submit: '发送',
         contact_toast: '请求已提交。我们将尽快与您联系。',
         trust_title: '您的安心是我们的首要任务',
         trust_desc: '如果您的产品未达到预期或存在缺陷，您享有有保障的退货权利。',

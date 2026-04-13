@@ -149,7 +149,7 @@
         contact_phone_placeholder: '+81 90 0000 0000',
         contact_message_label: 'メッセージまたは返品理由',
         contact_message_placeholder: 'ご注文の問題やお問い合わせ内容をご記入ください...',
-        contact_submit: 'リクエストを送信',
+        contact_submit: '送信',
         contact_toast: 'リクエストが送信されました。まもなくご連絡いたします。',
         trust_title: 'お客様の安心が最優先です',
         trust_desc: '商品がご期待に添えない場合や欠陥がある場合、返品保証をご用意しています。',

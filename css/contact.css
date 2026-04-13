@@ -29,6 +29,8 @@
 
 .contact-grid > * {
   min-width: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 @media (min-width: 768px) {
@@ -46,10 +48,24 @@
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
   box-sizing: border-box;
   width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group--grow {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group--grow .form-control {
+  flex: 1;
+  resize: none;
 }
 
 .form-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
   display: flex;
   flex-direction: column;
 }
@@ -63,8 +79,11 @@
 
 .form-control {
   padding: 0.75rem 1rem;
+  height: 3rem;
   border: 1px solid var(--border-color);
   border-radius: 6px;
+  -webkit-appearance: none;
+  appearance: none;
   font-family: var(--font-family);
   font-size: 1rem;
   background-color: var(--bg-color);
@@ -80,9 +99,17 @@
   background-color: #fff;
 }
 
+.form-control:-webkit-autofill,
+.form-control:-webkit-autofill:hover,
+.form-control:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px var(--bg-color) inset;
+  box-shadow: 0 0 0px 1000px var(--bg-color) inset;
+}
+
 textarea.form-control {
   resize: vertical;
   min-height: 120px;
+  height: 100%;
 }
 
 /* Mensaje de Confianza */
@@ -111,6 +138,7 @@ textarea.form-control {
   font-size: 1.125rem;
   margin-bottom: 2rem;
   line-height: 1.7;
+  text-align: center;
 }
 
 .trust-features {
@@ -124,6 +152,7 @@ textarea.form-control {
   color: #f9fafb;
   font-weight: 500;
   line-height: 1.6;
+  text-align: center;
 }
 
 @media (max-width: 640px) {
@@ -146,5 +175,13 @@ textarea.form-control {
   .contact-form,
   .trust-message {
     padding: 1.25rem;
+  }
+
+  .contact-grid > *:has(.contact-form) {
+    order: 2;
+  }
+
+  .trust-message {
+    order: 1;
   }
 }

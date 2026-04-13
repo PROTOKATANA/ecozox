@@ -149,7 +149,7 @@
         contact_phone_placeholder: '+90 530 000 0000',
         contact_message_label: 'Mesaj veya iade nedeni',
         contact_message_placeholder: 'Siparişinizle ilgili sorunu veya sorunuzu açıklayın ki size yardımcı olabilelim...',
-        contact_submit: 'Talebi Gönder',
+        contact_submit: 'GÖNDER',
         contact_toast: 'Talep gönderildi. En kısa sürede sizinle iletişime geçeceğiz.',
         trust_title: 'Huzurunuz bizim önceliğimiz',
         trust_desc: 'Ürününüz beklentilerinizi karşılamıyorsa veya bir kusur varsa, güvenceli iade garantiniz bulunmaktadır.',

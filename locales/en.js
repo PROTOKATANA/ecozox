@@ -149,7 +149,7 @@
         contact_phone_placeholder: '+1 555 000 0000',
         contact_message_label: 'Message or reason for return',
         contact_message_placeholder: 'Describe the problem with your order or your inquiry so we can help you...',
-        contact_submit: 'Submit Request',
+        contact_submit: 'SEND',
         contact_toast: 'Request submitted. We will get in touch with you shortly.',
         trust_title: 'Your peace of mind comes first',
         trust_desc: 'If your product does not meet your expectations or has a defect, you have a guaranteed return policy.',

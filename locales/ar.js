@@ -150,7 +150,7 @@
         contact_phone_placeholder: '+966 50 000 0000',
         contact_message_label: 'الرسالة أو سبب الإرجاع',
         contact_message_placeholder: 'صف المشكلة في طلبك أو استفسارك حتى نتمكن من مساعدتك...',
-        contact_submit: 'إرسال الطلب',
+        contact_submit: 'إرسال',
         contact_toast: 'تم إرسال الطلب. سنتواصل معك قريبًا.',
         trust_title: 'راحة بالك تأتي أولاً',
         trust_desc: 'إذا لم يلبِّ منتجك توقعاتك أو كان به عيب، فلديك ضمان استرداد مؤكد.',

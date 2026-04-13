@@ -149,7 +149,7 @@
         contact_phone_placeholder: '+55 11 90000 0000',
         contact_message_label: 'Mensagem ou motivo da devolução',
         contact_message_placeholder: 'Descreva o problema com seu pedido ou sua consulta para que possamos ajudá-lo...',
-        contact_submit: 'Enviar solicitação',
+        contact_submit: 'ENVIAR',
         contact_toast: 'Solicitação enviada. Entraremos em contato em breve.',
         trust_title: 'A sua tranquilidade em primeiro lugar',
         trust_desc: 'Se o seu produto não corresponder às expectativas ou tiver algum defeito, tem uma garantia de devolução assegurada.',

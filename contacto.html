@@ -21,22 +21,18 @@
                 <div>
                     <form class="contact-form" onsubmit="event.preventDefault(); window.EcoToast(window.EcoI18n ? window.EcoI18n.t('contact_toast') : 'Solicitud enviada.'); this.reset();">
                         <div class="form-group">
-                            <label for="name" data-i18n="contact_name_label">Nombre completo</label>
                             <input type="text" id="name" class="form-control" data-i18n-placeholder="contact_name_placeholder" placeholder="Ej. Ana García" required>
                         </div>
                         <div class="form-group">
-                            <label for="email" data-i18n="contact_email_label">Correo electrónico</label>
                             <input type="email" id="email" class="form-control" data-i18n-placeholder="contact_email_placeholder" placeholder="tu@email.com" required>
                         </div>
                         <div class="form-group">
-                            <label for="phone" data-i18n="contact_phone_label">Teléfono</label>
                             <input type="tel" id="phone" class="form-control" data-i18n-placeholder="contact_phone_placeholder" placeholder="+34 600 000 000">
                         </div>
-                        <div class="form-group">
-                            <label for="message" data-i18n="contact_message_label">Mensaje o motivo de devolución</label>
+                        <div class="form-group form-group--grow">
                             <textarea id="message" class="form-control" data-i18n-placeholder="contact_message_placeholder" placeholder="Describe el problema con tu pedido o tu consulta para que podamos ayudarte..." required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;" data-i18n="contact_submit">Enviar Solicitud</button>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1.5rem; background-color: #16a34a; border-color: #16a34a;" data-i18n="contact_submit">ENVIAR</button>
                     </form>
                 </div>
 
