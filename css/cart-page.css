@@ -7,7 +7,9 @@ body.page-cart {
 }
 
 body.page-cart #urgency-banner,
-body.page-cart #urgency-wave {
+body.page-cart #urgency-wave,
+body.page-home #urgency-banner,
+body.page-home #urgency-wave {
   display: none;
 }
 
