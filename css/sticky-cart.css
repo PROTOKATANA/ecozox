@@ -179,8 +179,8 @@
 .scb__perk--discount { color: #15803d; }
 .scb__perk--discount::before { color: #15803d; }
 
-.scb__perk--gift { color: #a16207; }
-.scb__perk--gift::before { color: #a16207; }
+.scb__perk--gift { color: #15803d; }
+.scb__perk--gift::before { color: #15803d; }
 
 .scb__perk--timer { color: #ef4444; }
 .scb__perk--timer::before { color: #ef4444; }

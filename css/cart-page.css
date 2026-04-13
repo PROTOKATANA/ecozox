@@ -239,8 +239,8 @@ body.page-cart .line-divider {
 .cp__item--discount { color: #15803d; }
 .cp__item--discount::before { color: #15803d; }
 
-.cp__item--gift { color: #a16207; }
-.cp__item--gift::before { color: #a16207; }
+.cp__item--gift { color: #15803d; }
+.cp__item--gift::before { color: #15803d; }
 
 .cp__item--timer { color: #ef4444; }
 .cp__item--timer::before { color: #ef4444; }
