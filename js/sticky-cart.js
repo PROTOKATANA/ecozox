@@ -80,7 +80,7 @@
     ).observe(footer);
   }
 
-  /* ---------- Timer sincronizado con urgency-banner ---------- */
+  /* ---------- Timer sincronizado con carrito ---------- */
   const STORAGE_KEY   = 'ecozox_urgency_expires';
   const DURATION_MS   = 15 * 60 * 1000;
   const scbTimerEl    = document.getElementById('scb-timer');

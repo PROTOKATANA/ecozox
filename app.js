@@ -28,7 +28,7 @@ const modules = [
     'js/before-after-slider.js',
     'js/quantity.js',
     'js/cart-items.js',
-    'js/urgency-banner.js',
+
     'js/reviews.js',
     'js/wave-divider.js',
     'js/purchase-options.js',

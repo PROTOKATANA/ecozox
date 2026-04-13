@@ -191,7 +191,6 @@
         updateCurrencySelector();
         if (window.EcoCartRenderer)   window.EcoCartRenderer.renderCart();
         if (window.EcoProductCards)   window.EcoProductCards.update();
-        if (window.EcoUrgencyBanner)  window.EcoUrgencyBanner.update();
         if (window.EcoShippingWidget) window.EcoShippingWidget.update();
     }
 
@@ -222,7 +221,6 @@
                     updateLangSelector();
                     updateCurrencySelector();
                     if (window.EcoCartRenderer)    window.EcoCartRenderer.renderCart();
-                    if (window.EcoUrgencyBanner)   window.EcoUrgencyBanner.update();
                     if (window.EcoShippingWidget)  window.EcoShippingWidget.update();
                     if (window.EcoProductCards)    window.EcoProductCards.update();
                     if (window.EcoReviews)         window.EcoReviews.update();
@@ -367,7 +365,6 @@
                         updateLangSelector();
                         updateCurrencySelector();
                         if (window.EcoCartRenderer)   window.EcoCartRenderer.renderCart();
-                        if (window.EcoUrgencyBanner)  window.EcoUrgencyBanner.update();
                         if (window.EcoShippingWidget) window.EcoShippingWidget.update();
                         if (window.EcoProductCards)   window.EcoProductCards.update();
                         if (window.EcoReviews)        window.EcoReviews.update();

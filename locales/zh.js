@@ -173,9 +173,6 @@
         footer_returns: '退货',
         footer_copyright: '&copy; 2026 Ecozox. 保留所有权利。',
         /* ---------- Urgency Banner ---------- */
-        urgency_discount_text: '{discount}% 折扣 加 {num_gift}',
-        urgency_ends_in: '距结束',
-        urgency_gift: '1份惊喜礼物',
         /* ---------- Shipping & Returns Page ---------- */
         shipping_page_title: '配送与退货',
         shipping_s1_title: '1. 配送政策',

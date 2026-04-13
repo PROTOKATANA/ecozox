@@ -5,7 +5,7 @@
    ======================================== */
 
 (function () {
-    const DISCOUNT_PERCENT = 30;   // Mantener sincronizado con urgency-banner.js
+    const DISCOUNT_PERCENT = 30;
 
     const cartItemsContainer = document.querySelector('.cart-items');
     const cartSummary = document.querySelector('.cart-summary');

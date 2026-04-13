@@ -174,8 +174,8 @@
    Responsive: Comportamiento Móvil (BNB + Banner)
    ======================================== */
 @media (max-width: 767px) {
-  /* Ocultar todos los hijos directos del header (como el .container) EXCEPTO el banner de urgencia */
-  .header > *:not(#urgency-banner) {
+  /* Ocultar todos los hijos directos del header (como el .container) */
+  .header > * {
     display: none !important;
   }
 

@@ -173,9 +173,6 @@
         footer_returns: 'Devoluções',
         footer_copyright: '&copy; 2026 Ecozox. Todos os direitos reservados.',
         /* ---------- Urgency Banner ---------- */
-        urgency_discount_text: '{discount}% de desconto e {num_gift} surpresa',
-        urgency_ends_in: 'Termina em',
-        urgency_gift: '1 presente',
         /* ---------- Shipping & Returns Page ---------- */
         shipping_page_title: 'Envio e Devoluções',
         shipping_s1_title: '1. Política de envio',

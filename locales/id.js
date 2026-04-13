@@ -173,9 +173,6 @@
         footer_returns: 'Pengembalian',
         footer_copyright: '&copy; 2026 Ecozox. Hak cipta dilindungi.',
         /* ---------- Urgency Banner ---------- */
-        urgency_discount_text: 'Diskon {discount}% dan {num_gift} kejutan',
-        urgency_ends_in: 'Berakhir dalam',
-        urgency_gift: '1 hadiah',
         /* ---------- Shipping & Returns Page ---------- */
         shipping_page_title: 'Pengiriman & Pengembalian',
         shipping_s1_title: '1. Kebijakan Pengiriman',

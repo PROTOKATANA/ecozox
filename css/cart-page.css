@@ -6,12 +6,6 @@ body.page-cart {
   background-color: #f7f4f0;
 }
 
-body.page-cart #urgency-banner,
-body.page-cart #urgency-wave,
-body.page-home #urgency-banner,
-body.page-home #urgency-wave {
-  display: none;
-}
 
 .cart-section {
   padding: 1rem 0 2rem;
@@ -406,79 +400,6 @@ body.page-cart .line-divider {
   font-weight: 600;
 }
 
-/* ========================================
-   Banner de Urgencia
-   ======================================== */
-
-body.page-product #urgency-banner {
-  display: none;
-}
-
-#urgency-banner {
-  background: #111827;
-  color: #fff;
-  text-align: center;
-  padding: 0.75rem 1rem;
-  font-size: 0.9rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.urgency-text {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  column-gap: 0.5rem;
-  row-gap: 0.25rem;
-}
-
-.urgency-block {
-  white-space: nowrap;
-}
-
-/* Énfasis en el porcentaje y el símbolo + */
-.urgency-pct {
-  color: #fbbf24;
-  font-weight: 800;
-  font-size: 1.08em;
-  letter-spacing: 0.02em;
-}
-
-.urgency-num {
-  color: #fbbf24;
-  font-weight: 800;
-  font-size: 1.08em;
-}
-
-
-.urgency-timer {
-  display: inline-block;
-  background: #ef4444;
-  color: #fff;
-  font-weight: 700;
-  font-size: 1rem;
-  font-variant-numeric: tabular-nums;
-  padding: 0.15rem 0.55rem;
-  border-radius: 4px;
-  letter-spacing: 0.05em;
-  min-width: 3.5rem;
-  text-align: center;
-}
-
-@media (max-width: 640px) {
-  #urgency-banner {
-    font-size: 0.8rem;
-    padding: 0.65rem 0.75rem;
-    border-top: none;
-    position: relative;
-  }
-
-.urgency-timer {
-    font-size: 0.9rem;
-  }
-}
 
 /* ========================================
    Tamaño específico del selector en el carrito

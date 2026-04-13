@@ -174,9 +174,6 @@
         footer_returns: 'المرتجعات',
         footer_copyright: '&copy; 2026 Ecozox. جميع الحقوق محفوظة.',
         /* ---------- Urgency Banner ---------- */
-        urgency_discount_text: 'خصم {discount}% و {num_gift} مفاجئة',
-        urgency_ends_in: 'ينتهي خلال',
-        urgency_gift: '1 هدية',
         /* ---------- Shipping & Returns Page ---------- */
         shipping_page_title: 'الشحن والإرجاع',
         shipping_s1_title: '1. سياسة الشحن',
