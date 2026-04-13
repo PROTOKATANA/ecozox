@@ -24,8 +24,9 @@
 /* Ajuste específico para evitar superposición con el Bottom Nav en Móvil */
 @media (max-width: 767px) {
   .sticky-cart-bar {
-    bottom: 63.7px !important;
-    padding: 0.5rem 0.85rem 0.8rem;
+    bottom: 0 !important;
+    padding: 0.5rem 0.85rem 0;
+    padding-bottom: calc(63.7px + 0.8rem);
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
     border-radius: 14px 14px 0 0;
   }
