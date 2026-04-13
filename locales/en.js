@@ -164,6 +164,7 @@
         footer_privacy: 'Privacy Policy',
         footer_shipping: 'Shipping & Returns',
         scb_perk_discount: '30% off',
+        scb_perk_shipping: 'Free shipping',
         scb_perk_gift: '1 surprise gift',
         scb_perk_ends: 'Ends in',
         footer_home: 'HOME',

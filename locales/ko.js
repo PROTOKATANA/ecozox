@@ -164,6 +164,7 @@
         footer_privacy: '개인정보처리방침',
         footer_shipping: '배송 및 반품',
         scb_perk_discount: '30% 할인',
+        scb_perk_shipping: '무료 배송',
         scb_perk_gift: '서프라이즈 선물 1개',
         scb_perk_ends: '종료까지',
         footer_home: '홈',

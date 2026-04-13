@@ -164,6 +164,7 @@
         footer_privacy: 'Kebijakan Privasi',
         footer_shipping: 'Pengiriman & Pengembalian',
         scb_perk_discount: 'Diskon 30%',
+        scb_perk_shipping: 'Gratis ongkir',
         scb_perk_gift: '1 hadiah kejutan',
         scb_perk_ends: 'Berakhir dalam',
         footer_home: 'BERANDA',

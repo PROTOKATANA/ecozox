@@ -164,6 +164,7 @@
         footer_privacy: 'Gizlilik Politikası',
         footer_shipping: 'Kargo ve İade',
         scb_perk_discount: '30% indirim',
+        scb_perk_shipping: 'Ücretsiz kargo',
         scb_perk_gift: '1 sürpriz hediye',
         scb_perk_ends: 'Bitiş',
         footer_home: 'ANA SAYFA',

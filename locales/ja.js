@@ -164,6 +164,7 @@
         footer_privacy: 'プライバシーポリシー',
         footer_shipping: '配送と返品',
         scb_perk_discount: '30%オフ',
+        scb_perk_shipping: '送料無料',
         scb_perk_gift: 'サプライズギフト1個',
         scb_perk_ends: '終了まで',
         footer_home: 'ホーム',

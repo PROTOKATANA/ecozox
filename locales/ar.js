@@ -165,6 +165,7 @@
         footer_privacy: 'سياسة الخصوصية',
         footer_shipping: 'الشحن والإرجاع',
         scb_perk_discount: 'خصم 30%',
+        scb_perk_shipping: 'شحن مجاني',
         scb_perk_gift: 'هدية مفاجئة',
         scb_perk_ends: 'ينتهي في',
         footer_home: 'الرئيسية',

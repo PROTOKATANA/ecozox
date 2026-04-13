@@ -164,6 +164,7 @@
         footer_privacy: '隐私政策',
         footer_shipping: '配送与退货',
         scb_perk_discount: '7折优惠',
+        scb_perk_shipping: '免费配送',
         scb_perk_gift: '1份惊喜礼物',
         scb_perk_ends: '结束于',
         footer_home: '首页',

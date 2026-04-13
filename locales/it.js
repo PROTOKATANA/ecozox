@@ -164,6 +164,7 @@
         footer_privacy: 'Informativa sulla Privacy',
         footer_shipping: 'Spedizione e Resi',
         scb_perk_discount: '30% sconto',
+        scb_perk_shipping: 'Spedizione gratuita',
         scb_perk_gift: '1 regalo sorpresa',
         scb_perk_ends: 'Termina tra',
         footer_home: 'HOME',

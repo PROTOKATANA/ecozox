@@ -164,6 +164,7 @@
         footer_privacy: 'Politique de Confidentialité',
         footer_shipping: 'Livraison & Retours',
         scb_perk_discount: '30% de réduction',
+        scb_perk_shipping: 'Livraison gratuite',
         scb_perk_gift: '1 cadeau surprise',
         scb_perk_ends: 'Se termine dans',
         footer_home: 'ACCUEIL',

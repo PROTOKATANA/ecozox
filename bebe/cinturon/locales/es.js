@@ -2,6 +2,7 @@
     window.EcoNichoLocales = window.EcoNichoLocales || {};
     window.EcoNichoLocales.es = {
         scb_perk_discount: '30% descuento',
+        scb_perk_shipping: 'Envío gratis',
         scb_perk_gift: '1 regalo sorpresa',
         scb_perk_ends: 'Termina en',
         sticky_cart_btn: 'CARRITO',
