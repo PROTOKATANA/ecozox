@@ -80,7 +80,48 @@
   }
 
   .scb--collapsed .scb__toggle {
-    padding-bottom: 0.15rem;
+    padding: 0.4rem 0;
+  }
+
+  /* ---- Estado colapsado: píldora flotante centrada ---- */
+  .sticky-cart-bar.scb--collapsed {
+    position: fixed;
+    left: 50% !important;
+    right: auto !important;
+    bottom: calc(63.7px + 0.75rem) !important;
+    width: 120px !important;
+    height: 36px;
+    padding: 0 !important;
+    border-radius: 8px !important;
+    border-top: none;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+  }
+
+  /* Sacar __inner del flujo para que no imponga ancho */
+  .sticky-cart-bar.scb--collapsed .sticky-cart-bar__inner {
+    position: absolute;
+    visibility: hidden;
+    pointer-events: none;
+    width: 0;
+  }
+
+  /* El toggle cubre toda la píldora para maximizar el área de tap */
+  .sticky-cart-bar.scb--collapsed .scb__toggle {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sticky-cart-bar.scb--collapsed:not(.visible) {
+    transform: translateX(-50%) translateY(200%);
+  }
+
+  .sticky-cart-bar.scb--collapsed.visible {
+    transform: translateX(-50%) translateY(0);
   }
 }
 
