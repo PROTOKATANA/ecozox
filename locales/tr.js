@@ -26,7 +26,7 @@
         title_home: 'EcoZox - Minimalist Mağaza',
         /* ---------- Product Cards ---------- */
         btn_add_to_cart: 'Sepete ekle',
-        btn_added: 'Eklendi!',
+        btn_added: 'EKLENDİ!',
         btn_buy_now: 'Hemen satın al',
         product_reloj: 'Classic Mono Saat',
         product_auriculares: 'Silence Pro Kulaklık',

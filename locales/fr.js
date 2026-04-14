@@ -26,7 +26,7 @@
         title_home: 'EcoZox - Boutique Minimaliste',
         /* ---------- Product Cards ---------- */
         btn_add_to_cart: 'Ajouter au panier',
-        btn_added: 'Ajouté !',
+        btn_added: 'AJOUTÉ !',
         btn_buy_now: 'Acheter maintenant',
         product_reloj: 'Montre Classic Mono',
         product_auriculares: 'Casque Silence Pro',

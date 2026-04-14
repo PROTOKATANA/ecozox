@@ -7,23 +7,17 @@
 (function () {
     const STORAGE_KEY = 'ecozox_cart';
 
-    /* ---------- Clave dinámica por nicho ---------- */
-    function getStorageKey() {
-        var segment = window.location.pathname.split('/').filter(Boolean)[0];
-        return segment ? STORAGE_KEY + '_' + segment : STORAGE_KEY;
-    }
-
     /* ---------- Helpers ---------- */
     function getCart() {
         try {
-            return JSON.parse(localStorage.getItem(getStorageKey())) || [];
+            return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
         } catch (e) {
             return [];
         }
     }
 
     function saveCart(cart) {
-        localStorage.setItem(getStorageKey(), JSON.stringify(cart));
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
     }
 
     function getCount() {
@@ -82,7 +76,7 @@
     }
 
     function clearCart() {
-        localStorage.removeItem(getStorageKey());
+        localStorage.removeItem(STORAGE_KEY);
         syncCounterUI();
     }
 

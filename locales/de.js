@@ -26,7 +26,7 @@
         title_home: 'EcoZox - Minimalistischer Shop',
         /* ---------- Product Cards ---------- */
         btn_add_to_cart: 'In den Warenkorb',
-        btn_added: 'Hinzugefügt!',
+        btn_added: 'HINZUGEFÜGT!',
         btn_buy_now: 'Jetzt kaufen',
         product_reloj: 'Classic Mono Uhr',
         product_auriculares: 'Silence Pro Kopfhörer',

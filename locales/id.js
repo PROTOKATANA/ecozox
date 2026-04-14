@@ -26,7 +26,7 @@
         title_home: 'EcoZox - Toko Minimalis',
         /* ---------- Product Cards ---------- */
         btn_add_to_cart: 'Tambah ke keranjang',
-        btn_added: 'Ditambahkan!',
+        btn_added: 'DITAMBAHKAN!',
         btn_buy_now: 'Beli sekarang',
         product_reloj: 'Jam Tangan Classic Mono',
         product_auriculares: 'Headphone Silence Pro',

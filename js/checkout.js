@@ -54,9 +54,7 @@
             return;
         }
 
-        var nicho = (window.ECOZOX_BRAND && window.ECOZOX_BRAND.nicho)
-            ? window.ECOZOX_BRAND.nicho
-            : window.location.pathname.split('/').filter(Boolean)[0] || 'default';
+        var nicho = (window.ECOZOX_BRAND && window.ECOZOX_BRAND.nicho) || 'default';
 
         try {
             var response = await fetch(getApiUrl() + '/api/checkout/create-session', {

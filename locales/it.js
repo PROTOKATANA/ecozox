@@ -26,7 +26,7 @@
         title_home: 'EcoZox - Negozio Minimalista',
         /* ---------- Product Cards ---------- */
         btn_add_to_cart: 'Aggiungi al carrello',
-        btn_added: 'Aggiunto!',
+        btn_added: 'AGGIUNTO!',
         btn_buy_now: 'Acquista ora',
         product_reloj: 'Orologio Classic Mono',
         product_auriculares: 'Cuffie Silence Pro',
