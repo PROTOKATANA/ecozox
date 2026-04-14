@@ -16,6 +16,22 @@
 
     let dragging = false;
 
+    // ── Image preload cache ──────────────────────────────────────
+    // Precarga todas las imágenes full-size al inicio para que el
+    // cambio de thumbnail sea instantáneo (sin delay ni parpadeo).
+    const _imgCache = {};
+    function preload(url) {
+        if (url && !_imgCache[url]) {
+            const img = new Image();
+            img.src = url;
+            _imgCache[url] = img;
+        }
+    }
+    thumbnails.forEach(t => {
+        preload(t.dataset.fullSrc);
+        preload(t.dataset.beforeSrc);
+    });
+
     // ── Position ────────────────────────────────────────────────
     function setPos(clientX) {
         const rect = slider.getBoundingClientRect();

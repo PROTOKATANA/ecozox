@@ -5,7 +5,7 @@
    ======================================== */
 
 (function () {
-    const DISCOUNT_PERCENT = 30;
+    const DISCOUNT_PERCENT = (window.ECOZOX_CONFIG && window.ECOZOX_CONFIG.discountPercent) || 30;
 
     const cartItemsContainer = document.querySelector('.cart-items');
     const cartSummary = document.querySelector('.cart-summary');
@@ -187,7 +187,6 @@
 
         cartItemsContainer.innerHTML = html;
 
-        bindEvents();
         renderSummary(window.EcoCart.getSubtotal(), cart.length > 1);
     }
 
@@ -230,56 +229,80 @@
         }
     }
 
+    /* ---------- Event delegation — un único listener en el contenedor ---------- */
+    var _removeInProgress = new Set(); // evita doble-clic en eliminar
+
     function bindEvents() {
-        // Remove buttons
-        cartItemsContainer.querySelectorAll('.btn-danger').forEach(btn => {
-            btn.addEventListener('click', function () {
-                const cartItem = this.closest('.cart-item');
-                const productId = cartItem.dataset.productId;
+        cartItemsContainer.addEventListener('click', handleCartClick);
+        cartItemsContainer.addEventListener('change', handleCartChange);
+    }
 
-                cartItem.style.opacity = '0';
-                setTimeout(() => {
-                    window.EcoCart.removeItem(productId);
-                    renderCart();
-                }, 300);
-            });
-        });
-
-        // Quantity controls (skip gift item which has no controls)
-        cartItemsContainer.querySelectorAll('.cart-item:not(.cart-item--gift)').forEach(cartItem => {
+    function handleCartClick(e) {
+        // Eliminar item
+        const removeBtn = e.target.closest('.btn-danger');
+        if (removeBtn) {
+            const cartItem = removeBtn.closest('.cart-item');
+            if (!cartItem) return;
             const productId = cartItem.dataset.productId;
-            const minusBtn = cartItem.querySelector('.minus');
-            const plusBtn = cartItem.querySelector('.plus');
+            if (_removeInProgress.has(productId)) return; // evita doble-clic
+            _removeInProgress.add(productId);
+            cartItem.style.opacity = '0';
+            setTimeout(() => {
+                _removeInProgress.delete(productId);
+                window.EcoCart.removeItem(productId);
+                renderCart();
+            }, 300);
+            return;
+        }
+
+        // Botón minus
+        const minusBtn = e.target.closest('.qty-btn.minus');
+        if (minusBtn) {
+            const cartItem = minusBtn.closest('.cart-item');
+            if (!cartItem || cartItem.classList.contains('cart-item--gift')) return;
             const input = cartItem.querySelector('.qty-input');
-
-            minusBtn.addEventListener('click', () => {
-                let val = parseInt(input.value) || 1;
-                if (val > 1) {
-                    input.value = val - 1;
-                    window.EcoCart.updateQuantity(productId, val - 1);
-                    renderSummary(window.EcoCart.getSubtotal());
-                }
-            });
-
-            plusBtn.addEventListener('click', () => {
-                let val = parseInt(input.value) || 1;
-                input.value = val + 1;
-                window.EcoCart.updateQuantity(productId, val + 1);
-                renderSummary(window.EcoCart.getSubtotal());
-            });
-
-            input.addEventListener('change', () => {
-                let val = parseInt(input.value);
-                if (isNaN(val) || val < 1) val = 1;
+            const productId = cartItem.dataset.productId;
+            let val = parseInt(input.value) || 1;
+            if (val > 1) {
+                val -= 1;
                 input.value = val;
                 window.EcoCart.updateQuantity(productId, val);
                 renderSummary(window.EcoCart.getSubtotal());
-            });
-        });
+            }
+            return;
+        }
+
+        // Botón plus
+        const plusBtn = e.target.closest('.qty-btn.plus');
+        if (plusBtn) {
+            const cartItem = plusBtn.closest('.cart-item');
+            if (!cartItem || cartItem.classList.contains('cart-item--gift')) return;
+            const input = cartItem.querySelector('.qty-input');
+            const productId = cartItem.dataset.productId;
+            let val = (parseInt(input.value) || 1) + 1;
+            input.value = val;
+            window.EcoCart.updateQuantity(productId, val);
+            renderSummary(window.EcoCart.getSubtotal());
+        }
+    }
+
+    function handleCartChange(e) {
+        const input = e.target.closest('.qty-input');
+        if (!input) return;
+        const cartItem = input.closest('.cart-item');
+        if (!cartItem || cartItem.classList.contains('cart-item--gift')) return;
+        const productId = cartItem.dataset.productId;
+        let val = parseInt(input.value);
+        if (isNaN(val) || val < 1) val = 1;
+        input.value = val;
+        window.EcoCart.updateQuantity(productId, val);
+        renderSummary(window.EcoCart.getSubtotal());
     }
 
     // Expose renderCart so i18n can re-render on language change
     window.EcoCartRenderer = { renderCart: renderCart };
 
+    // Registrar delegación una única vez
+    bindEvents();
     renderCart();
 })();

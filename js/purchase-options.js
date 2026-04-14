@@ -11,15 +11,18 @@
   const widget = document.getElementById('purchaseOptions');
   if (!widget) return;
 
+  const DISCOUNT_FACTOR = 1 - ((window.ECOZOX_CONFIG && window.ECOZOX_CONFIG.discountPercent) || 30) / 100;
+
   /* ---------- Capture base (individual) product data ----------
      Read from the first .js-add-to-cart button — it's the
      source of truth baked into the HTML.                      */
   const firstBtn = document.querySelector('.js-add-to-cart');
+  if (!firstBtn) return;
   const BASE = {
-    id:    firstBtn.dataset.productId,
-    title: firstBtn.dataset.productTitle,
-    price: firstBtn.dataset.productPrice,
-    image: firstBtn.dataset.productImage,
+    id:    firstBtn.dataset.productId    || '',
+    title: firstBtn.dataset.productTitle || '',
+    price: firstBtn.dataset.productPrice || '0',
+    image: firstBtn.dataset.productImage || '',
   };
 
   /* ---------- Bundle data (stored on the bundle card) ---------- */
@@ -113,7 +116,7 @@
     const origEl = stickyBar.querySelector('.scb__price-original');
     const saleEl = stickyBar.querySelector('.scb__price-sale');
     if (origEl) {
-      origEl.textContent = (window.EcoI18n ? window.EcoI18n.formatPrice(parseFloat(data.price) / 0.7) : '$' + (parseFloat(data.price) / 0.7).toFixed(2));
+      origEl.textContent = (window.EcoI18n ? window.EcoI18n.formatPrice(parseFloat(data.price) / DISCOUNT_FACTOR) : '$' + (parseFloat(data.price) / DISCOUNT_FACTOR).toFixed(2));
     }
     if (saleEl) {
       saleEl.textContent = (window.EcoI18n ? window.EcoI18n.formatPrice(parseFloat(data.price)) : '$' + parseFloat(data.price).toFixed(2));

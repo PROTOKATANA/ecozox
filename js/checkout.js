@@ -8,7 +8,23 @@
     'use strict';
 
     function getApiUrl() {
-        return window.ECOZOX_API_URL || 'http://localhost:3000';
+        var url = window.ECOZOX_API_URL || '';
+        // En producción asegurarse de que la URL use HTTPS (excepto localhost)
+        if (url && url.indexOf('http://') === 0 && !url.match(/localhost|127\.0\.0\.1/)) {
+            url = 'https://' + url.slice(7);
+        }
+        return url;
+    }
+
+    var ALLOWED_REDIRECT_HOSTS = ['checkout.stripe.com', 'hooks.stripe.com'];
+    function isSafeStripeUrl(url) {
+        try {
+            var parsed = new URL(url);
+            return parsed.protocol === 'https:' &&
+                ALLOWED_REDIRECT_HOSTS.some(function (h) { return parsed.hostname === h; });
+        } catch (e) {
+            return false;
+        }
     }
 
     async function goToStripe(btn) {
@@ -71,6 +87,10 @@
 
             if (!response.ok || !data.url) {
                 throw new Error(data.error || 'Error al crear la sesión de pago');
+            }
+
+            if (!isSafeStripeUrl(data.url)) {
+                throw new Error('URL de pago no válida');
             }
 
             window.location.href = data.url;

@@ -19,6 +19,16 @@
         return fallback || key;
     }
 
+    /* Escapa caracteres HTML para usar texto dinámico dentro de innerHTML */
+    function esc(str) {
+        return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+    }
+
     function renderStars(rating, size) {
         size = size || 17;
         return Array.from({ length: 5 }, function (_, i) {
@@ -64,7 +74,7 @@
                 '<div class="review-card__divider"></div>'
                 + '<div class="review-thumbnails">'
                 + imagenes.map(function (src, i) {
-                    return '<img src="' + src + '" alt="Foto ' + (i + 1) + ' por ' + r.autor + '"'
+                    return '<img src="' + esc(src) + '" alt="Foto ' + (i + 1) + ' por ' + esc(r.autor) + '"'
                         + ' class="review-thumbnail" data-index="' + i + '" loading="lazy">';
                 }).join('')
                 + '</div>'
@@ -74,14 +84,14 @@
                 + '<div class="review-card__top">'
                 +   '<div class="review-card__header">'
                 +     '<div class="review-stars">' + renderStars(r.rating) + '</div>'
-                +     '<time class="review-date" datetime="' + r.fecha + '">' + formatDate(r.fecha) + '</time>'
+                +     '<time class="review-date" datetime="' + esc(r.fecha) + '">' + esc(formatDate(r.fecha)) + '</time>'
                 +   '</div>'
-                +   '<h4 class="review-title">' + titulo + '</h4>'
-                +   '<p class="review-body">' + body + '</p>'
+                +   '<h4 class="review-title">' + esc(titulo) + '</h4>'
+                +   '<p class="review-body">' + esc(body) + '</p>'
                 + '</div>'
                 + thumbsBlock
                 + '<div class="review-card__divider"></div>'
-                + '<p class="review-author">&bull; ' + r.autor + '</p>'
+                + '<p class="review-author">&bull; ' + esc(r.autor) + '</p>'
                 + '</article>';
         }).join('');
     }
@@ -93,13 +103,22 @@
     }
 
     /* ---- Cargar desde data.json del nicho ---- */
-    fetch('data.json')
-        .then(function (res) { return res.json(); })
+    var _reviewsController = new AbortController();
+    var _reviewsTimeout = setTimeout(function () { _reviewsController.abort(); }, 8000);
+
+    fetch('data.json', { signal: _reviewsController.signal })
+        .then(function (res) {
+            clearTimeout(_reviewsTimeout);
+            return res.json();
+        })
         .then(function (productos) {
             var resenas = (productos[0] && productos[0].resenas) ? productos[0].resenas : [];
             init(resenas);
         })
-        .catch(function () {
+        .catch(function (err) {
+            if (err.name !== 'AbortError') {
+                console.warn('[EcoReviews] No se pudo cargar data.json:', err);
+            }
             init([]);
         });
 
@@ -165,12 +184,13 @@
     lbClose.addEventListener('click', lbHide);
     lightbox.addEventListener('click', function (e) { if (e.target === lightbox) lbHide(); });
 
-    document.addEventListener('keydown', function (e) {
+    function lbKeyHandler(e) {
         if (lightbox.hasAttribute('hidden')) return;
         if (e.key === 'Escape')     lbHide();
         if (e.key === 'ArrowLeft')  lbGoTo(lbIndex - 1);
         if (e.key === 'ArrowRight') lbGoTo(lbIndex + 1);
-    });
+    }
+    document.addEventListener('keydown', lbKeyHandler);
 
     var touchStartX = 0;
     lbImg.addEventListener('touchstart', function (e) { touchStartX = e.touches[0].clientX; }, { passive: true });

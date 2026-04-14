@@ -8,7 +8,7 @@
     var placeholder = document.querySelector('[data-component="product-grid"]');
     if (!placeholder) return;
 
-    var DISCOUNT = 0.30;
+    var DISCOUNT = ((window.ECOZOX_CONFIG && window.ECOZOX_CONFIG.discountPercent) || 30) / 100;
 
     function t(key) {
         return (window.EcoI18n && window.EcoI18n.t) ? window.EcoI18n.t(key) : key;

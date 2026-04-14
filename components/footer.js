@@ -13,6 +13,8 @@
     const brand      = window.ECOZOX_BRAND || {};
     const brandNombre = brand.nombre || 'Ecozox';
     const brandEmail  = brand.email  || 'ecozox@support@gmail.com';
+    const brandPhone  = brand.phone  || '+34 912 345 678';
+    const brandPhoneTel = brandPhone.replace(/\s/g, '');
 
     el.outerHTML = `
     <!-- Separador de Onda para el Footer -->
@@ -45,7 +47,7 @@
                     <h3 data-i18n="footer_support_title">Soporte</h3>
                     <ul>
                         <li><span class="text-muted" data-i18n="footer_email_label">Email:</span> <a href="mailto:${brandEmail}">${brandEmail}</a></li>
-                        <li><span class="text-muted" data-i18n="footer_phone_label">Teléfono:</span> <a href="tel:+34912345678">+34 912 345 678</a></li>
+                        <li><span class="text-muted" data-i18n="footer_phone_label">Teléfono:</span> <a href="tel:${brandPhoneTel}">${brandPhone}</a></li>
                     </ul>
                 </div>
             </div>

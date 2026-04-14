@@ -2,6 +2,9 @@
 <html lang="es" data-i18n-title="title_cart">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tu Carrito - BabyNest</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,6 +22,7 @@
             nicho:       'bebe',
             localesPath: 'locales/'
         };
+                window.ECOZOX_CONFIG = window.ECOZOX_CONFIG || { discountPercent: 30 };
         window.ECOZOX_API_URL     = 'http://localhost:3000';
         window.ECOZOX_SUCCESS_URL = 'http://localhost:5173/bebe/exito.html';
     </script>
@@ -59,6 +63,7 @@
     <div data-component="bottom-nav" data-base="../../"></div>
 
     <script src="../../components/footer.js" defer></script>
+    <script src="../../js/precio-loader.js" defer></script>
     <script src="../../js/i18n.js" defer></script>
     <script src="../../app.js" defer></script>
     <script>

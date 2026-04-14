@@ -118,6 +118,10 @@
     }
 
     tickScb();
-    setInterval(tickScb, 1000);
+    var _scbTimerInterval = setInterval(tickScb, 1000);
+    // Limpiar el interval si el elemento desaparece del DOM
+    if (typeof window !== 'undefined') {
+      window.addEventListener('beforeunload', function () { clearInterval(_scbTimerInterval); });
+    }
   }
 })();

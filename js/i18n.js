@@ -142,9 +142,20 @@
         document.head.appendChild(script);
     }
 
+    /* ---------- Acceso seguro a localStorage (falla en modo privado) ---------- */
+    function lsGet(key) {
+        try { return localStorage.getItem(key); } catch (e) { return null; }
+    }
+    function lsSet(key, value) {
+        try { localStorage.setItem(key, value); } catch (e) {}
+    }
+    function lsRemove(key) {
+        try { localStorage.removeItem(key); } catch (e) {}
+    }
+
     /* ---------- Detectar idioma ---------- */
     function detectLang() {
-        var stored = localStorage.getItem(STORAGE_KEY);
+        var stored = lsGet(STORAGE_KEY);
         if (stored && SUPPORTED_LANGS.indexOf(stored) !== -1) return stored;
 
         var browserLang = (navigator.language || '').split('-')[0].toLowerCase();
@@ -157,7 +168,7 @@
 
     /* ---------- Detectar moneda ---------- */
     function detectCurrency() {
-        var stored = localStorage.getItem(CURRENCY_STORAGE_KEY);
+        var stored = lsGet(CURRENCY_STORAGE_KEY);
         if (stored && allCurrencies[stored]) return stored;
         // Derivar de idioma
         var langConfig = currencyConfig[currentLang];
@@ -186,7 +197,7 @@
     function setCurrency(code) {
         if (!allCurrencies[code]) return;
         currentCurrency = code;
-        localStorage.setItem(CURRENCY_STORAGE_KEY, code);
+        lsSet(CURRENCY_STORAGE_KEY, code);
         applyPrices();
         updateCurrencySelector();
         if (window.EcoCartRenderer)   window.EcoCartRenderer.renderCart();
@@ -205,12 +216,12 @@
         loadLocale(lang, function () {
             loadNichoLocale(lang, function () {
                 currentLang = lang;
-                localStorage.setItem(STORAGE_KEY, lang);
+                lsSet(STORAGE_KEY, lang);
 
                 document.documentElement.lang = lang;
                 document.documentElement.dir = isRTL(lang) ? 'rtl' : 'ltr';
 
-                if (!localStorage.getItem(CURRENCY_STORAGE_KEY)) {
+                if (!lsGet(CURRENCY_STORAGE_KEY)) {
                     var langConfig = currencyConfig[lang];
                     if (langConfig) currentCurrency = langConfig.code;
                 }
@@ -266,14 +277,22 @@
         return config ? config.locale : 'en-US';
     }
 
+    /* ---------- Decodifica entidades HTML (ej. &copy;) y devuelve texto plano ---------- */
+    var _entityDiv = document.createElement('div');
+    function decodeEntities(str) {
+        _entityDiv.innerHTML = str;
+        return _entityDiv.textContent || '';
+    }
+
     /* ---------- Aplicar traducciones al DOM ---------- */
     function applyTranslations() {
-        // Textos internos (textContent / innerHTML)
+        // Textos internos — se usa textContent para evitar XSS.
+        // decodeEntities convierte &copy; → © sin ejecutar ningún HTML.
         document.querySelectorAll('[data-i18n]').forEach(function (el) {
             var key = el.getAttribute('data-i18n');
             var value = t(key);
             if (value !== key) {
-                el.innerHTML = value;
+                el.textContent = decodeEntities(value);
             }
         });
 
