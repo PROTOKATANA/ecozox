@@ -146,15 +146,13 @@
         }).join('');
     }
 
-    var CLOSE_SVG = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">'
-        + '<line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
-
-    document.body.insertAdjacentHTML('beforeend',
+document.body.insertAdjacentHTML('beforeend',
         '<dialog id="region-dialog" class="region-dialog" aria-labelledby="region-dialog-title">'
-        + '<div class="region-dialog__handle" aria-hidden="true"></div>'
+        + '<button class="region-dialog__handle" id="regionDialogClose" aria-label="Cerrar" data-i18n-aria="aria_close">'
+        +   '<span class="region-dialog__handle-bar"></span>'
+        + '</button>'
         + '<div class="region-dialog__header">'
         +   '<h2 class="region-dialog__title" id="region-dialog-title" data-i18n="region_change_lang">Cambiar idioma</h2>'
-        +   '<button class="region-dialog__close" id="regionDialogClose" aria-label="Cerrar" data-i18n-aria="aria_close">' + CLOSE_SVG + '</button>'
         + '</div>'
         + '<div class="region-dialog__body">'
         +   '<div class="region-options" id="regionLangOptions">' + buildLangButtons() + '</div>'
@@ -164,10 +162,11 @@
 
     document.body.insertAdjacentHTML('beforeend',
         '<dialog id="currency-dialog" class="region-dialog" aria-labelledby="currency-dialog-title">'
-        + '<div class="region-dialog__handle" aria-hidden="true"></div>'
+        + '<button class="region-dialog__handle" id="currencyDialogClose" aria-label="Cerrar" data-i18n-aria="aria_close">'
+        +   '<span class="region-dialog__handle-bar"></span>'
+        + '</button>'
         + '<div class="region-dialog__header">'
         +   '<h2 class="region-dialog__title" id="currency-dialog-title" data-i18n="region_change_currency">Cambiar moneda</h2>'
-        +   '<button class="region-dialog__close" id="currencyDialogClose" aria-label="Cerrar" data-i18n-aria="aria_close">' + CLOSE_SVG + '</button>'
         + '</div>'
         + '<div class="region-dialog__body">'
         +   '<div class="region-options" id="regionCurrencyOptions">' + buildCurrencyButtons() + '</div>'
