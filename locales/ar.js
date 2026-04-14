@@ -76,7 +76,7 @@
         review_image_label: 'صورة المنتج',
         review_image_optional: '(اختياري)',
         review_cancel_btn: 'إلغاء',
-        review_submit_btn: 'إرسال التقييم',
+        review_submit_btn: 'إرسال',
         /* ---------- Video Labels ---------- */
         video_label_noise: 'إلغاء الضوضاء',
         video_label_design: 'تصميم مريح',

@@ -75,7 +75,7 @@
         review_image_label: '製品写真',
         review_image_optional: '（任意）',
         review_cancel_btn: 'キャンセル',
-        review_submit_btn: 'レビューを送信',
+        review_submit_btn: '送信',
         /* ---------- Video Labels ---------- */
         video_label_noise: 'ノイズキャンセリング',
         video_label_design: '人間工学デザイン',

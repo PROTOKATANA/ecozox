@@ -183,11 +183,10 @@
     /* ========================================
        Formulario para escribir reseña
        ======================================== */
-    var dialog    = document.getElementById('review-dialog');
-    var openBtn   = document.getElementById('openReviewDialog');
-    var closeBtn  = document.getElementById('reviewDialogClose');
-    var cancelBtn = document.getElementById('reviewCancelBtn');
-    var form      = document.getElementById('review-form');
+    var dialog   = document.getElementById('review-dialog');
+    var openBtn  = document.getElementById('openReviewDialog');
+    var closeBtn = document.getElementById('reviewDialogClose');
+    var form     = document.getElementById('review-form');
     var starBtns  = document.querySelectorAll('.star-picker__btn');
     var starsInput = document.getElementById('reviewStarsInput');
     var selectedStars = 0;
@@ -217,11 +216,35 @@
     });
     updateStarPicker(0);
 
-    function closeDialog() { if (dialog) dialog.close(); }
-    if (openBtn)   openBtn.addEventListener('click',  function () { selectedStars = 0; updateStarPicker(0); if (starsInput) starsInput.value = 0; if (form) form.reset(); if (dialog) dialog.showModal(); });
-    if (closeBtn)  closeBtn.addEventListener('click',  closeDialog);
-    if (cancelBtn) cancelBtn.addEventListener('click', closeDialog);
-    if (dialog)    dialog.addEventListener('click', function (e) {
+    function closeDialog() {
+        if (!dialog) return;
+        dialog.classList.add('is-closing');
+        var done = false;
+        function finish() {
+            if (done) return;
+            done = true;
+            dialog.classList.remove('is-closing');
+            dialog.close();
+            if (form) form.reset();
+            selectedStars = 0;
+            updateStarPicker(0);
+            if (starsInput) starsInput.value = 0;
+        }
+        dialog.addEventListener('animationend', function handler() {
+            dialog.removeEventListener('animationend', handler);
+            finish();
+        });
+        setTimeout(finish, 400);
+    }
+
+    if (openBtn) openBtn.addEventListener('click', function () {
+        selectedStars = 0; updateStarPicker(0);
+        if (starsInput) starsInput.value = 0;
+        if (form) form.reset();
+        if (dialog) dialog.showModal();
+    });
+    if (closeBtn) closeBtn.addEventListener('click', closeDialog);
+    if (dialog)   dialog.addEventListener('click', function (e) {
         var rect = dialog.getBoundingClientRect();
         if (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom) closeDialog();
     });

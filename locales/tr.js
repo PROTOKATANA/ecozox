@@ -75,7 +75,7 @@
         review_image_label: 'Ürün fotoğrafı',
         review_image_optional: '(isteğe bağlı)',
         review_cancel_btn: 'İptal',
-        review_submit_btn: 'Değerlendirmeyi gönder',
+        review_submit_btn: 'GÖNDER',
         /* ---------- Video Labels ---------- */
         video_label_noise: 'Gürültü engelleme',
         video_label_design: 'Ergonomik tasarım',

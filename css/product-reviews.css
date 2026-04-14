@@ -318,6 +318,23 @@
    Review Dialog
    ======================================== */
 
+@keyframes review-sheet-up {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+@keyframes review-sheet-down {
+  from { transform: translateY(0); }
+  to   { transform: translateY(100%); }
+}
+@keyframes review-modal-in {
+  from { transform: translateY(14px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+@keyframes review-modal-out {
+  from { transform: translateY(0);    opacity: 1; }
+  to   { transform: translateY(14px); opacity: 0; }
+}
+
 #review-dialog {
   border: none;
   border-radius: 14px;
@@ -334,109 +351,134 @@
   margin: auto;
 }
 
+#review-dialog[open] {
+  animation: review-modal-in 0.25s ease forwards;
+}
+
+#review-dialog.is-closing {
+  animation: review-modal-out 0.2s ease forwards;
+}
+
 #review-dialog::backdrop {
   background-color: rgba(0, 0, 0, 0.5);
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
 }
 
+/* ── Mobile: Bottom Sheet ── */
+@media (max-width: 767px) {
+  #review-dialog {
+    width: 100%;
+    max-width: 100%;
+    max-height: 85dvh;
+    max-height: 85vh;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -8px 48px rgba(0, 0, 0, 0.18);
+    position: fixed;
+    bottom: 0;
+    top: auto;
+    left: 0;
+    right: 0;
+    margin: 0;
+  }
+  #review-dialog[open]    { animation: review-sheet-up   0.35s cubic-bezier(0.32, 0.72, 0, 1) forwards; }
+  #review-dialog.is-closing { animation: review-sheet-down 0.3s ease forwards; }
+}
+
+/* ── Handle ── */
+.review-dialog__handle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.review-dialog__handle-bar {
+  display: block;
+  width: 44px;
+  height: 6px;
+  background: #374151;
+  border-radius: 3px;
+  transition: background 0.2s ease;
+}
+
+.review-dialog__handle:hover .review-dialog__handle-bar,
+.review-dialog__handle:active .review-dialog__handle-bar {
+  background: #111827;
+}
+
+/* ── Header ── */
 .review-dialog__header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 1.25rem 1.5rem;
-  border-bottom: 1px solid var(--border-color);
-  position: sticky;
-  top: 0;
-  background: var(--card-bg);
-  z-index: 1;
+  justify-content: center;
+  padding: 1rem 1.5rem;
+  border-top: 2px dashed var(--border-color);
+  border-bottom: 2px dashed var(--border-color);
 }
 
 .review-dialog__title {
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.1rem;
+  font-weight: 700;
   color: var(--primary-color);
   margin: 0;
+  text-transform: uppercase;
 }
 
-.review-dialog__close {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: none;
-  border: none;
-  cursor: pointer;
-  width: 30px;
-  height: 30px;
-  border-radius: 6px;
-  color: var(--text-muted);
-  transition: background 0.15s ease, color 0.15s ease;
-  padding: 0;
-  flex-shrink: 0;
-}
-
-.review-dialog__close:hover {
-  background: var(--bg-color);
-  color: var(--primary-color);
-}
-
-.review-dialog__body {
-  padding: 1.5rem;
+/* ── Form ── */
+.review-form {
+  padding: 1.25rem;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 0.5rem;
 }
 
-/* ---- Form fields ---- */
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-
-.form-group label {
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--primary-color);
-  letter-spacing: 0.01em;
-}
-
-.form-group input[type="text"],
-.form-group textarea {
+.review-input {
   width: 100%;
-  padding: 0.6rem 0.85rem;
+  height: 3rem;
+  padding: 0.75rem 1rem;
   border: 1px solid var(--border-color);
-  border-radius: var(--border-radius);
+  border-radius: 6px;
   font-family: var(--font-family);
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--text-main);
-  background: var(--card-bg);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background: var(--bg-color);
+  box-sizing: border-box;
   outline: none;
+  transition: border-color 0.2s ease;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
-.form-group input[type="text"]:focus,
-.form-group textarea:focus {
+.review-input:focus {
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(17, 24, 39, 0.08);
 }
 
-.form-group textarea {
-  resize: vertical;
-  min-height: 100px;
+.review-form__grow {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 120px;
+}
+
+textarea.review-input {
+  height: 100%;
+  min-height: 120px;
+  resize: none;
   line-height: 1.6;
 }
 
-.form-group input[type="file"] {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  cursor: pointer;
-}
-
-/* ---- Star picker ---- */
+/* ── Star picker ── */
 .star-picker {
   display: flex;
-  gap: 2px;
+  justify-content: center;
+  gap: 4px;
+  padding: 0.5rem 0;
 }
 
 .star-picker__btn {
@@ -451,16 +493,4 @@
 
 .star-picker__btn:hover {
   transform: scale(1.2);
-}
-
-/* ---- Dialog footer ---- */
-.review-dialog__footer {
-  display: flex;
-  justify-content: flex-end;
-  gap: 0.75rem;
-  padding: 1rem 1.5rem;
-  border-top: 1px solid var(--border-color);
-  position: sticky;
-  bottom: 0;
-  background: var(--card-bg);
 }

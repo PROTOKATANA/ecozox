@@ -75,7 +75,7 @@
         review_image_label: '제품 사진',
         review_image_optional: '(선택사항)',
         review_cancel_btn: '취소',
-        review_submit_btn: '리뷰 제출',
+        review_submit_btn: '보내기',
         /* ---------- Video Labels ---------- */
         video_label_noise: '노이즈 캔슬링',
         video_label_design: '인체공학 디자인',

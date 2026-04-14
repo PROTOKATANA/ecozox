@@ -75,7 +75,7 @@
         review_image_label: 'Foto del producto',
         review_image_optional: '(opcional)',
         review_cancel_btn: 'Cancelar',
-        review_submit_btn: 'Enviar reseña',
+        review_submit_btn: 'ENVIAR',
         /* ---------- Video Labels ---------- */
         video_label_noise: 'Cancelación de ruido',
         video_label_design: 'Diseño ergonómico',

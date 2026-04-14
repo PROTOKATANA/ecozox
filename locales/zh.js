@@ -75,7 +75,7 @@
         review_image_label: '产品照片',
         review_image_optional: '（可选）',
         review_cancel_btn: '取消',
-        review_submit_btn: '提交评价',
+        review_submit_btn: '发送',
         /* ---------- Video Labels ---------- */
         video_label_noise: '降噪功能',
         video_label_design: '人体工学设计',

@@ -75,7 +75,7 @@
         review_image_label: 'Foto produk',
         review_image_optional: '(opsional)',
         review_cancel_btn: 'Batal',
-        review_submit_btn: 'Kirim ulasan',
+        review_submit_btn: 'KIRIM',
         /* ---------- Video Labels ---------- */
         video_label_noise: 'Peredam kebisingan',
         video_label_design: 'Desain ergonomis',
