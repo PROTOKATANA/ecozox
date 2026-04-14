@@ -13,7 +13,7 @@
 
   let buttonsHidden = false;
   let footerVisible = false;
-  let userCollapsed = false;
+  let userCollapsed = true;
 
   const isMobile = () => window.innerWidth < 768;
 
@@ -50,6 +50,10 @@
       // Auto-ocultar solo cuando el footer es visible
       bar.classList.remove('visible');
       bar.setAttribute('aria-hidden', 'true');
+    } else if (isMobile() && userCollapsed) {
+      // En móvil colapsado: siempre visible como píldora
+      bar.classList.add('visible', 'scb--collapsed');
+      bar.setAttribute('aria-hidden', 'false');
     } else if (buttonsHidden) {
       // Mostrar cuando los botones de compra salen del viewport
       bar.classList.add('visible');
