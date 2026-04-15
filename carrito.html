@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/shipping-widget.css">
     <script src="components/header.js" defer></script>
     <script src="components/bottom-nav.js" defer></script>
 </head>
@@ -22,6 +23,44 @@
         <div class="container">
             <div class="cart-layout">
                 <div class="cart-items"></div>
+
+                <div class="cart-sidebar">
+
+                <div class="shipping-info-card" aria-label="Información de envío">
+
+                    <!-- Capa 1: Cabecera — icono camión + título + badge -->
+                    <div class="sic__header">
+                        <svg class="sic__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <rect x="1" y="3" width="15" height="13" rx="1"/>
+                            <path d="M16 8h4l3 5v4h-7V8z"/>
+                            <circle cx="5.5" cy="18.5" r="2.5"/>
+                            <circle cx="18.5" cy="18.5" r="2.5"/>
+                        </svg>
+                        <span class="sic__title" data-i18n="shipping_free_title">Envío Gratis</span>
+                        <span class="sic__badge" data-i18n="shipping_free_badge">GRATIS</span>
+                    </div>
+
+                    <!-- Capa 2: Beneficios — lista -->
+                    <div class="sic__row">
+                        <ul class="sic__list">
+                            <li data-i18n="shipping_benefit_1">Seguimiento de paquetes en tiempo real</li>
+                            <li data-i18n="shipping_benefit_2">Devolución abierta en cualquier momento</li>
+                            <li data-i18n="shipping_benefit_3">Plazos de entrega garantizados</li>
+                        </ul>
+                    </div>
+
+                    <!-- Capa 3: Urgencia — fecha dinámica -->
+                    <div class="sic__row">
+                        <svg class="sic__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="16" y1="2" x2="16" y2="6"/>
+                            <line x1="8" y1="2" x2="8" y2="6"/>
+                            <line x1="3" y1="10" x2="21" y2="10"/>
+                        </svg>
+                        <span class="sic__text"><span data-i18n="shipping_delivery_in">Entrega en 4 días</span>&thinsp;:&thinsp;<strong id="dynamic-delivery-date" class="delivery-highlight"></strong></span>
+                    </div>
+
+                </div>
 
                 <div class="cart-summary">
                     <div class="cs__inner">
@@ -48,6 +87,8 @@
 
                     </div>
                 </div>
+
+                </div><!-- /.cart-sidebar -->
             </div>
         </div>
     </main>
@@ -57,6 +98,7 @@
 
     <script src="components/footer.js" defer></script>
     <script src="js/i18n.js" defer></script>
+    <script src="js/shipping-widget.js" defer></script>
     <script src="app.js" defer></script>
     <script>
     document.addEventListener('DOMContentLoaded', function () {

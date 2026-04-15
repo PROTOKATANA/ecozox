@@ -34,6 +34,12 @@ body.page-cart .line-divider {
   gap: 1.6rem;
 }
 
+@media (max-width: 991px) {
+  .cart-layout {
+    row-gap: 0.7rem;
+  }
+}
+
 @media (min-width: 768px) {
   .cart-section {
     padding-top: 1.5rem;
@@ -47,9 +53,12 @@ body.page-cart .line-divider {
     align-items: start;
   }
 
-  .cart-summary {
+  .cart-sidebar {
     position: sticky;
     top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
   }
 }
 
