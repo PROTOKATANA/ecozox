@@ -305,11 +305,16 @@
 /* ========================================
    Gallery — Tira de miniaturas
    ======================================== */
+.gallery-thumbnails-wrap {
+  position: relative;
+  margin-top: 8px;
+}
+
+
 .gallery-thumbnails {
   width: 100%;
   display: flex;
   gap: 8px;
-  margin-top: 8px;
   overflow-x: auto;
   scrollbar-width: none;
 }
@@ -319,7 +324,7 @@
 }
 
 .thumbnail {
-  flex: 0 0 calc(25% - 6px);
+  flex: 0 0 calc(23% - 6px);
   aspect-ratio: 1;
   border-radius: 4px;
   overflow: hidden;
