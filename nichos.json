@@ -1,44 +1,9 @@
 [
   {
-    "nicho":  "bandeja",
-    "titulo": "Pack 4 Juguetes Masticables para Perros",
-    "precio": 29.99,
-    "imagen": "bebe/bandeja/pixel/j1.jpg",
-    "link":   "bebe/bandeja/index.html"
-  },
-  {
-    "nicho":  "cabeza",
-    "titulo": "Pack 4 Juguetes Masticables para Perros",
-    "precio": 29.99,
-    "imagen": "bebe/cabeza/pixel/j1.jpg",
-    "link":   "bebe/cabeza/index.html"
-  },
-  {
-    "nicho":  "cangurera",
-    "titulo": "Pack 4 Juguetes Masticables para Perros",
-    "precio": 29.99,
-    "imagen": "bebe/cangurera/pixel/j1.jpg",
-    "link":   "bebe/cangurera/index.html"
-  },
-  {
-    "nicho":  "cinturon",
-    "titulo": "Pack 4 Juguetes Masticables para Perros",
-    "precio": 29.99,
-    "imagen": "bebe/cinturon/pixel/j1.jpg",
-    "link":   "bebe/cinturon/index.html"
-  },
-  {
-    "nicho":  "pezones",
-    "titulo": "Pack 4 Juguetes Masticables para Perros",
-    "precio": 29.99,
-    "imagen": "bebe/pezones/pixel/j1.jpg",
-    "link":   "bebe/pezones/index.html"
-  },
-  {
-    "nicho":  "rodilleras",
-    "titulo": "Pack 4 Juguetes Masticables para Perros",
-    "precio": 29.99,
-    "imagen": "bebe/rodilleras/pixel/j1.jpg",
-    "link":   "bebe/rodilleras/index.html"
+    "nicho":  "caton",
+    "titulo": "CATON",
+    "precio": 18.99,
+    "imagen": "gatos/caton/pixel/t1.jpg",
+    "link":   "gatos/caton/index.html"
   }
 ]
