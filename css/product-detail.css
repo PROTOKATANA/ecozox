@@ -317,6 +317,11 @@
   gap: 8px;
   overflow-x: auto;
   scrollbar-width: none;
+  cursor: grab;
+}
+
+.gallery-thumbnails:active {
+  cursor: grabbing;
 }
 
 .gallery-thumbnails::-webkit-scrollbar {

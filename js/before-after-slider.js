@@ -120,6 +120,45 @@
         thumb.classList.add('active');
     }
 
+    // ── Drag-to-scroll en gallery-thumbnails (escritorio) ────────
+    var strip = document.querySelector('.gallery-thumbnails');
+    if (strip) {
+        var isDragging  = false;
+        var dragStartX  = 0;
+        var scrollStart = 0;
+        var dragMoved   = false;
+
+        strip.addEventListener('mousedown', function (e) {
+            isDragging  = true;
+            dragMoved   = false;
+            dragStartX  = e.clientX;
+            scrollStart = strip.scrollLeft;
+            strip.style.cursor = 'grabbing';
+            e.preventDefault();
+        });
+
+        document.addEventListener('mousemove', function (e) {
+            if (!isDragging) return;
+            var delta = e.clientX - dragStartX;
+            if (Math.abs(delta) > 4) dragMoved = true;
+            strip.scrollLeft = scrollStart - delta;
+        });
+
+        document.addEventListener('mouseup', function () {
+            if (!isDragging) return;
+            isDragging = false;
+            strip.style.cursor = '';
+        });
+
+        // Evita activar el thumbnail si el gesto fue un arrastre
+        strip.addEventListener('click', function (e) {
+            if (dragMoved) {
+                e.stopPropagation();
+                dragMoved = false;
+            }
+        }, true);
+    }
+
     // ── Wire events ──────────────────────────────────────────────
     thumbnails.forEach(function (thumb) {
         thumb.addEventListener('click', function () { activate(thumb); });
