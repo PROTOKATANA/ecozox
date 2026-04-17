@@ -359,19 +359,45 @@
 /* ========================================
    Product Info — ListBuilder card
    ======================================== */
+/* Desktop: un solo card que envuelve todo */
 .product-info__scroll {
   border: 1.5px solid var(--border-color);
   border-radius: var(--border-radius);
   background: var(--card-bg);
   padding: 1.15rem 1.10rem;
-}
-
-.product-info__scroll {
   margin-bottom: 0.8rem;
 }
 
 .product-info__scroll .purchase-options {
   margin-bottom: 0;
+}
+
+/* Móvil: dos cards separadas */
+@media (max-width: 1023px) {
+  .product-info__scroll {
+    border: none;
+    background: transparent;
+    padding: 0;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .product-info__desc-card {
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background: var(--card-bg);
+    padding: 1.15rem 1.10rem;
+  }
+
+  .product-info__scroll .purchase-options {
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background: var(--card-bg);
+    padding: 1.15rem 1.10rem;
+    margin-bottom: 0.8rem;
+  }
 }
 
 .product-info-detail h1 {
