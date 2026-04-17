@@ -375,7 +375,9 @@
 }
 
 .product-info-detail h1 {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  text-align: center;
   margin-bottom: 1rem;
 }
 
@@ -386,10 +388,48 @@
   margin-bottom: 1.5rem;
 }
 
+.desc-hook {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.75rem;
+}
+
 .product-info-detail .description {
   color: var(--text-muted);
-  margin-bottom: 2rem;
+  margin-bottom: 0.9rem;
   font-size: 1.125rem;
+}
+
+.desc-cta {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 1rem;
+}
+
+.product-benefits {
+  list-style: disc;
+  padding-left: 1.2rem;
+  margin: 0 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.product-benefits li {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.product-benefits strong {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.product-benefits strong::after {
+  content: ': ';
 }
 
 .quantity-selector {
