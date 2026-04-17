@@ -13,7 +13,7 @@
         product_desc1b:  'Tu gato no araña por maldad, lo hace por instinto y salud, para un felino, arañar no es un capricho destructivo, es un ejercicio físico vital que les permite estirar su musculatura y limar sus garras de forma natural, eliminando las capas muertas de piel y uñas.',
         product_desc2:   '¿Quieres mejorar la salud de tu gato?',
         product_desc3:   'Con nuestro rascador ajustable de madera de pino, proteges tus pertenencias y le das a tu mascota el mejor lugar de desahogo y descanso, siendo ideal para un uso continuo y muy resistente a mordidas o arañazos de forma prolongada.',
-        product_desc4:   'Tu casa impecable y tu gato Feliz 😸.',
+        product_desc4:   'Tu casa impecable y tu gato Feliz 😸',
         po_bundle_title: 'Pack x2 — Ahorra 20%',
 
         /* ---- Reseñas ---- */
