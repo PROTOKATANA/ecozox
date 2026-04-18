@@ -215,19 +215,5 @@
         /* ---------- Before / After Slider ---------- */
         ba_after: 'After',
         ba_before: 'Before',
-        review_1_title: 'Incredible sound quality',
-        review_1_body: 'I had been looking for headphones that fit well for months and these exceeded all my expectations. The sound is crystal clear and the noise cancellation is spectacular.',
-        review_2_title: 'My purchase of the year',
-        review_2_body: 'Minimalist and elegant design, just as described in the store. Comfortable even after 6 hours of continuous use. The battery lasts exactly as promised.',
-        review_3_title: 'Perfect for working from home',
-        review_3_body: 'I use them on video calls and people always tell me they can hear me perfectly. The microphone captures the voice with great precision and the isolation is remarkable.',
-        review_4_title: 'Surpass higher-priced brands',
-        review_4_body: 'I came from using a much more expensive brand and the difference does not justify the cost. These EcoZox are superior in comfort and the active noise cancellation is truly effective.',
-        review_5_title: 'The perfect gift',
-        review_5_body: 'I bought them for my husband and he was delighted. They arrived in very careful packaging and the product is exactly as it appears in the photos. Totally recommended.',
-        review_6_title: 'Comfortable and durable',
-        review_6_body: 'After 3 months of intensive use they are still like new. The cushion is very soft and the materials convey a solidity I did not expect at this price.',
-        review_7_title: 'Very good, with one small drawback',
-        review_7_body: 'The sound quality and design are excellent. I take off one star because the companion app could be more intuitive. Other than that, a very recommendable purchase.'
     };
 })();

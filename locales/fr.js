@@ -215,19 +215,5 @@
         /* ---------- Before / After Slider ---------- */
         ba_after: 'Après',
         ba_before: 'Avant',
-        review_1_title: 'Qualité sonore incroyable',
-        review_1_body: 'Je cherchais un casque bien adapté depuis des mois et celui-ci a dépassé toutes mes attentes. Le son est cristallin et la réduction de bruit est spectaculaire.',
-        review_2_title: 'Mon achat de l\'année',
-        review_2_body: 'Design minimaliste et élégant, exactement comme décrit dans la boutique. Confortable même après 6 heures d\'utilisation continue. La batterie dure exactement comme promis.',
-        review_3_title: 'Parfait pour travailler à domicile',
-        review_3_body: 'Je les utilise en visioconférence et les gens me disent toujours qu\'ils m\'entendent parfaitement. Le microphone capture la voix avec beaucoup de précision et l\'isolation est remarquable.',
-        review_4_title: 'Dépassent des marques plus chères',
-        review_4_body: 'Je venais d\'utiliser une marque bien plus chère et la différence ne justifie pas le coût. Ces EcoZox sont supérieurs en confort et la réduction de bruit active est vraiment efficace.',
-        review_5_title: 'Le cadeau parfait',
-        review_5_body: 'Je les ai achetés pour mon mari et il était ravi. Ils sont arrivés dans un emballage très soigné et le produit est exactement comme sur les photos. Totalement recommandé.',
-        review_6_title: 'Confortables et durables',
-        review_6_body: 'Après 3 mois d\'utilisation intensive, ils sont toujours comme au premier jour. Le coussin est très doux et les matériaux transmettent une solidité que je n\'attendais pas à ce prix.',
-        review_7_title: 'Très bons, avec un petit bémol',
-        review_7_body: 'La qualité sonore et le design sont excellents. Je retire une étoile car l\'application d\'accompagnement pourrait être plus intuitive. Sinon, un achat très recommandable.'
     };
 })()

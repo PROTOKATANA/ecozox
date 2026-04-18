@@ -17,11 +17,19 @@
         po_bundle_title: 'Pack x2 — Ahorra 20%',
 
         /* ---- Reseñas ---- */
-        review_1_titulo: '¡Los mejores juguetes para mi perro!',
-        review_1_body:   '¡A mi golden retriever le encantan! Muy resistentes, llevan 3 semanas y siguen perfectos.',
-        review_2_titulo: 'Buena calidad, envío rápido',
-        review_2_body:   'Buena calidad, el envío fue rápido. Le quito una estrella porque uno de los juguetes es bastante pequeño.',
-        review_3_titulo: 'Solución para los zapatos',
-        review_3_body:   'Mi perro dejó de morder los zapatos desde que tiene estos juguetes. ¡Los recomiendo totalmente!'
+        review_1_titulo: 'Adios a los arañazos',
+        review_1_body:   'Tenía el sofá lleno de tiras y arañazos, mi gato se entretenía destrozando las esquinas. Le puse hierva gatera al rascador y se volvió loco, se ve que le encanto y en seguida lo adoptó como suyo. La madera de pino se nota de buena calidad y no se astilla con los arañazos. Sin duda alguna lo recomiendo.',
+        review_2_titulo: 'Las cortinas ya no son una escalera',
+        review_2_body:   'Tengo 3 gatos y a 2 de ellos les encantaba arañar mis muebles, el sofá y hasta las cortinas. Necesitaba algo resistente y reutilizable. El montaje fue muy sencillo: en 3 minutos lo tenía listo. Mis gatos llevan 2 semanas utilizándolo y ya no veo arañazos en mi sofá. Incluso a uno de ellos le encanta tumbarse y dormir encima del rascador con la pancita arriba, es adorable 😭. Fue una gran compra, articulo muy recomendado.',
+        review_3_titulo: 'Salvando mis Sillones',
+        review_3_body:   'Suena exagerado pero es muy real. Mi gato es muy territorial y llevaba meses arañando el respaldo del sillón. Puse este rascador al lado de mis muebles y lo rocié un par de veces con catnip. En 2 días ya lo prefería. Ahora lo usa para afilarse las uñas en lugar de utilizar mi sillón. La madera de pino huele bien y no tiene químicos raros. ¡Lo recomiendo muchísimo!',
+        review_4_titulo: 'Diseño precioso y ajustable',
+        review_4_body:   'El rascador es precioso, se puede poner en diferentes ángulos y la madera se ve robusta y de buena calidad. A mi gatita Kitty le encanta. Ahora ya no me mira con ojos de maldad cuando la regaño por arañar lo que no debe 😅. El paquete llegó rápido y el vendedor utilizó una caja resistente de buena calidad para el envío. ¡Muy contenta con la compra!',
+        review_5_titulo: 'Base de madera y cartón barato',
+        review_5_body:   'El cartón corrugado me duró aproximadamente 2 meses antes de que tocara cambiarlo por los arañazos. Me gustó mucho el hecho de que solo tenga que cambiar la superficie de cartón, que es muy barata y económica, y que no tenga que cambiar la base de madera. Estoy muy encantada de no tener que comprar un rascador completo cada poco tiempo. Mamá es feliz cuando los gatos son felices. Espero que dure mucho tiempo.',
+        review_6_titulo: 'Cumple lo que promete',
+        review_6_body:   'Mi gato es pequeño de 3KG aproximadamente y le va de maravilla, lo usa para afilarse las uñas y para tomar el sol en mi patio trasero. Cumple totalmente con lo que promete, el articulo llegó bien embalado y sin golpes. Lo recomiendo.',
+        review_7_titulo: 'Ideal para gatos Gigantes',
+        review_7_body:   'Mi gato es un Maine Coon de 9 kg y pensé que igual se quedaría un poco pequeño, pero para mi sorpresa es lo suficientemente grande y comodo, incluso lo usa como cama. La construcción es sólida como una roca, no se mueve ni un milímetro mientras araña la superficie de carton. El diseño es ajustable y permite ponerlo en diferentes ángulos, ideal para que estire bien y por completo toda su espalda. Si aguanta a este Gigante peludo, aguanta a cualquier gato.'
     };
 })();

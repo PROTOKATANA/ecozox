@@ -215,19 +215,5 @@
         /* ---------- Before / After Slider ---------- */
         ba_after: 'Depois',
         ba_before: 'Antes',
-        review_1_title: 'Qualidade de som incrível',
-        review_1_body: 'Estava procurando fones que se encaixassem bem há meses e estes superaram todas as minhas expectativas. O som é cristalino e o cancelamento de ruído é espetacular.',
-        review_2_title: 'Minha compra do ano',
-        review_2_body: 'Design minimalista e elegante, exatamente como descrito na loja. Confortáveis mesmo após 6 horas de uso contínuo. A bateria dura exatamente o prometido.',
-        review_3_title: 'Perfeitos para trabalhar em casa',
-        review_3_body: 'Uso nas videochamadas e as pessoas sempre me dizem que me ouvem perfeitamente. O microfone captura a voz com muita precisão e o isolamento é notável.',
-        review_4_title: 'Superam marcas mais caras',
-        review_4_body: 'Vinha usando uma marca muito mais cara e a diferença não justifica o custo. Estes EcoZox são superiores em conforto e o cancelamento de ruído ativo é verdadeiramente eficaz.',
-        review_5_title: 'O presente perfeito',
-        review_5_body: 'Comprei para o meu marido e ele ficou encantado. Chegaram em uma embalagem muito cuidadosa e o produto é exatamente como nas fotos. Totalmente recomendados.',
-        review_6_title: 'Confortáveis e duráveis',
-        review_6_body: 'Após 3 meses de uso intenso continuam como no primeiro dia. O almofadão é muito macio e os materiais transmitem uma solidez que não esperava neste preço.',
-        review_7_title: 'Muito bons, com um pequeno porém',
-        review_7_body: 'A qualidade de som e o design são excelentes. Tiro uma estrela porque o app de acompanhamento poderia ser mais intuitivo. De resto, uma compra muito recomendável.'
     };
 })()
