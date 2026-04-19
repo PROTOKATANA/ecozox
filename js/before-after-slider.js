@@ -1,6 +1,6 @@
 /* ========================================
    Gallery Viewer — Multi-type
-   Soporta: video | imagen normal | ba-slider
+   Soporta: imagen normal | ba-slider
    Si los thumbnails no tienen data-type,
    funciona en modo ba-slider clásico.
    ======================================== */
@@ -17,7 +17,6 @@
     var beforeImg   = document.getElementById('baBeforeImg');
     var afterImg    = document.getElementById('baAfterImg');
     var divider     = document.getElementById('baDivider');
-    var galleryVideo = document.getElementById('galleryVideo');
     var galleryImage = document.getElementById('galleryImage');
 
     var isMultiType = !!thumbnails[0].dataset.type;
@@ -82,13 +81,8 @@
 
     // ── Show/hide viewers ────────────────────────────────────────
     function showViewer(type) {
-        if (galleryVideo) galleryVideo.style.display = type === 'video'     ? 'block' : 'none';
         if (galleryImage) galleryImage.style.display = type === 'image'     ? 'block' : 'none';
         slider.style.display                         = type === 'ba-slider' ? 'block' : 'none';
-
-        if (type !== 'video' && galleryVideo) {
-            galleryVideo.pause();
-        }
     }
 
     // ── Activate ─────────────────────────────────────────────────
@@ -99,13 +93,7 @@
             showViewer(type);
         }
 
-        if (type === 'video') {
-            if (galleryVideo) {
-                galleryVideo.src = thumb.dataset.src;
-                galleryVideo.load();
-                galleryVideo.play();
-            }
-        } else if (type === 'image') {
+        if (type === 'image') {
             if (galleryImage) galleryImage.src = thumb.dataset.src;
         } else {
             // ba-slider (multi-type o modo clásico)
@@ -167,17 +155,6 @@
                 e.preventDefault();
                 activate(thumb);
             }
-        });
-    });
-
-    // ── Primer fotograma en thumbnails de vídeo ─────────────────
-    // Busca vídeos dentro de thumbnails y los lleva al frame 0
-    // para que el navegador pinte el primer fotograma en lugar de negro.
-    thumbnails.forEach(function (thumb) {
-        var tv = thumb.querySelector('video');
-        if (!tv) return;
-        tv.addEventListener('loadedmetadata', function () {
-            tv.currentTime = 0.001;
         });
     });
 
