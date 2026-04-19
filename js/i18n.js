@@ -383,10 +383,11 @@
                         applyPrices();
                         updateLangSelector();
                         updateCurrencySelector();
-                        if (window.EcoCartRenderer)   window.EcoCartRenderer.renderCart();
-                        if (window.EcoShippingWidget) window.EcoShippingWidget.update();
-                        if (window.EcoProductCards)   window.EcoProductCards.update();
-                        if (window.EcoReviews)        window.EcoReviews.update();
+                        if (window.EcoCartRenderer)     window.EcoCartRenderer.renderCart();
+                        if (window.EcoShippingWidget)   window.EcoShippingWidget.update();
+                        if (window.EcoProductCards)     window.EcoProductCards.update();
+                        if (window.EcoReviews)          window.EcoReviews.update();
+                        if (window.EcoPurchaseOptions)  window.EcoPurchaseOptions.update();
                     }
                     if (isCJK && document.fonts && document.fonts.ready) {
                         document.fonts.ready.then(applyAll);

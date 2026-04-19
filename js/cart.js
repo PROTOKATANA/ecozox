@@ -51,6 +51,7 @@
             cart.push({
                 id: product.id,
                 title: product.title,
+                name: product.name || null,
                 price: product.price,
                 image: product.image,
                 link: product.link || null,
@@ -100,7 +101,8 @@
         const card = btn.closest('[data-product-id]') || btn;
         let productId = card.dataset.productId || btn.dataset.productId;
         let productTitle = card.dataset.productTitle || btn.dataset.productTitle;
-        let productPrice = parseFloat(card.dataset.productPrice || btn.dataset.productPrice);
+        let productName  = card.dataset.productName  || btn.dataset.productName  || null;
+        let productPrice = parseFloat(card.dataset.productPrice || btn.dataset.productPrice) / 100;
         let productImage = card.dataset.productImage || btn.dataset.productImage;
         let productLink = card.dataset.productLink || btn.dataset.productLink || null;
         let productSubItems = null;
@@ -127,6 +129,16 @@
 
         if (!productId || !productTitle || isNaN(productPrice)) return;
 
+        // Normalise image and link to absolute URLs so they work from any page
+        function toAbsUrl(src) {
+            if (!src) return src;
+            var a = document.createElement('a');
+            a.href = src;
+            return a.href;
+        }
+        productImage = toAbsUrl(productImage);
+        productLink  = productLink ? toAbsUrl(productLink) : window.location.href;
+
         // Get quantity: check for bundle qty first, fallback to product detail input
         let quantity = 1;
         const bundleQty = btn.dataset.productBundleQty;
@@ -140,7 +152,7 @@
         }
 
         addItem(
-            { id: productId, title: productTitle, price: productPrice, image: productImage, link: productLink, subItems: productSubItems },
+            { id: productId, title: productTitle, name: productName, price: productPrice, image: productImage, link: productLink, subItems: productSubItems },
             quantity
         );
 

@@ -20,7 +20,14 @@
   if (!firstBtn) return;
   const BASE = {
     id:    firstBtn.dataset.productId    || '',
-    title: firstBtn.dataset.productTitle || '',
+    get title() {
+      var h1 = document.querySelector('.product-info-detail h1');
+      return h1 ? h1.textContent.trim() : (firstBtn.dataset.productTitle || '');
+    },
+    get name() {
+      var h1 = document.querySelector('.product-info-detail h1');
+      return h1 ? h1.textContent.trim() : '';
+    },
     price: firstBtn.dataset.productPrice || '0',
     image: firstBtn.dataset.productImage || '',
   };
@@ -67,6 +74,7 @@
       if (stickyBar && stickyBar.contains(btn)) return;
       btn.dataset.productId    = data.id;
       btn.dataset.productTitle = data.title;
+      btn.dataset.productName  = data.name || data.title;
       btn.dataset.productPrice = data.price;
       btn.dataset.productImage = data.image;
       if (data.subItems && data.subItems.length) {
@@ -94,6 +102,7 @@
     if (stickyBtn) {
       stickyBtn.dataset.productId    = data.id;
       stickyBtn.dataset.productTitle = data.title;
+      stickyBtn.dataset.productName  = data.name || data.title;
       stickyBtn.dataset.productPrice = data.price;
       stickyBtn.dataset.productImage = data.image;
       if (data.subItems && data.subItems.length) {
@@ -145,7 +154,9 @@
 
   function bundleDataWithQty() {
     const qty = getBundleQty();
-    return Object.assign({}, BUNDLE, { subItems: getBundleSubItems(), qty: qty, isBundle: true });
+    const titleEl = bundleCard.querySelector('.po-bundle__title');
+    const title = titleEl ? titleEl.textContent.trim() : BUNDLE.title;
+    return Object.assign({}, BUNDLE, { title: title, subItems: getBundleSubItems(), qty: qty, isBundle: true });
   }
 
   /* ---------- Selection logic ---------- */
@@ -228,5 +239,22 @@
       }
     });
   });
+
+  /* ---------- Init: sync buttons with the pre-selected option ---------- */
+  function syncActive() {
+    if (!activeOption) return;
+    if (activeOption.dataset.option === 'bundle') {
+      updateCartButtons(bundleDataWithQty());
+      syncStickyBar(bundleDataWithQty());
+    } else {
+      updateCartButtons(BASE);
+      syncStickyBar(BASE);
+    }
+  }
+
+  syncActive();
+
+  /* Re-sync after i18n updates translated text (title, name) */
+  window.EcoPurchaseOptions = { update: syncActive };
 
 })();
