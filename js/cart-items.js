@@ -170,8 +170,10 @@
         if (cart.length === 0) {
             cartItemsContainer.innerHTML = `
                 <div class="cart-empty">
-                    <p data-i18n="cart_empty">${ti('cart_empty')}</p>
-                    <a href="index.html" class="btn btn-primary" data-i18n="cart_view_products">${ti('cart_view_products')}</a>
+                    <a href="index.html" class="btn btn-primary cart-empty__btn">
+                        <span class="cart-empty__label" data-i18n="cart_empty">${ti('cart_empty')}</span>
+                        <span class="cart-empty__cta" data-i18n="cart_view_products">${ti('cart_view_products')}</span>
+                    </a>
                 </div>`;
             renderSummary(0);
             return;

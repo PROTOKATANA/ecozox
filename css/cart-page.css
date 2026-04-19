@@ -368,13 +368,30 @@ body.page-cart .line-divider {
 
 .cart-empty {
   text-align: center;
-  padding: 3rem 1rem;
-  color: var(--text-muted);
+  margin: -1.5rem;
+  padding: 8px;
 }
 
-.cart-empty p {
+.cart-empty__btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 1.5rem 1rem;
+  min-height: 100px;
+  box-sizing: border-box;
+}
+
+.cart-empty__label {
   font-size: 1.125rem;
-  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.cart-empty__cta {
+  font-size: 0.95rem;
+  opacity: 0.9;
 }
 
 /* ========================================
