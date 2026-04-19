@@ -14,7 +14,9 @@
         product_desc2:   '¿Quieres mejorar la salud de tu gato?',
         product_desc3:   'Con nuestro rascador ajustable de madera de pino, proteges tus pertenencias y le das a tu mascota el mejor lugar de desahogo y descanso, siendo ideal para un uso continuo y muy resistente a mordidas o arañazos de forma prolongada.',
         product_desc4:   'Tu casa impecable y tu gato Feliz 😸',
-        po_bundle_title: 'Pack x2 — Ahorra 20%',
+        po_bundle_title: 'Rascador + 3 Recambios',
+        po_bundle_item2: 'Cartón corrugado de alta densidad x3',
+        po_bundle_item3: 'Hierba gatera 100% orgánica ¡Relajación Felina!',
 
         /* ---- Reseñas ---- */
         review_1_titulo: 'Adios a los arañazos',
