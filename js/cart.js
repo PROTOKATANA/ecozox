@@ -150,7 +150,9 @@
 
         // Si tiene la clase js-buy-now, redirigir al carrito
         if (btn.classList.contains('js-buy-now')) {
-            setTimeout(() => window.location.href = 'carrito.html', 500);
+            setTimeout(() => {
+                window.location.href = (window.ECOZOX_BRAND && window.ECOZOX_BRAND.carritoUrl) || 'carrito.html';
+            }, 500);
         } else {
             setTimeout(() => { btn.innerHTML = originalHTML; }, 1000);
         }
