@@ -11,7 +11,12 @@
   const widget = document.getElementById('purchaseOptions');
   if (!widget) return;
 
-  const DISCOUNT_FACTOR = 1 - ((window.ECOZOX_CONFIG && window.ECOZOX_CONFIG.discountPercent) || 30) / 100;
+  function getDiscountFactor() {
+    var d = (window.ECOZOX_CONFIG && window.ECOZOX_CONFIG.discountPercent != null)
+      ? window.ECOZOX_CONFIG.discountPercent
+      : (function () { try { var s = localStorage.getItem('ecozox_desc'); return s !== null ? parseFloat(s) : 30; } catch (e) { return 30; } }());
+    return 1 - d / 100;
+  }
 
   /* ---------- Capture base (individual) product data ----------
      Read from the first .js-add-to-cart button — it's the
@@ -125,7 +130,7 @@
     const origEl = stickyBar.querySelector('.scb__price-original');
     const saleEl = stickyBar.querySelector('.scb__price-sale');
     if (origEl) {
-      origEl.textContent = (window.EcoI18n ? window.EcoI18n.formatPrice(parseFloat(data.price) / DISCOUNT_FACTOR) : '$' + (parseFloat(data.price) / DISCOUNT_FACTOR).toFixed(2));
+      origEl.textContent = (window.EcoI18n ? window.EcoI18n.formatPrice(parseFloat(data.price) / getDiscountFactor()) : '$' + (parseFloat(data.price) / getDiscountFactor()).toFixed(2));
     }
     if (saleEl) {
       saleEl.textContent = (window.EcoI18n ? window.EcoI18n.formatPrice(parseFloat(data.price)) : '$' + parseFloat(data.price).toFixed(2));

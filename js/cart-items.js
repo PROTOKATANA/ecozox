@@ -5,7 +5,15 @@
    ======================================== */
 
 (function () {
-    const DISCOUNT_PERCENT = (window.ECOZOX_CONFIG && window.ECOZOX_CONFIG.discountPercent) || 30;
+    function getDiscountPercent() {
+        if (window.ECOZOX_CONFIG && window.ECOZOX_CONFIG.discountPercent != null)
+            return window.ECOZOX_CONFIG.discountPercent;
+        try {
+            var stored = localStorage.getItem('ecozox_desc');
+            if (stored !== null) return parseFloat(stored);
+        } catch (e) {}
+        return null;
+    }
 
     const cartItemsContainer = document.querySelector('.cart-items');
     const cartSummary = document.querySelector('.cart-summary');
@@ -68,7 +76,12 @@
 
     /* --- Normal item template --- */
     function renderNormalItem(item) {
-        const discountedPrice = item.price * (1 - DISCOUNT_PERCENT / 100);
+        const disc = getDiscountPercent() ?? 0;
+        const rawPrice = parseFloat(item.price);
+        const discountedPrice = rawPrice * (1 - disc / 100);
+        const priceHtml = (!isNaN(rawPrice) && rawPrice > 0)
+            ? `<del class="price-original">${formatPrice(rawPrice)}</del><span class="price-discounted">${formatPrice(discountedPrice)}</span>`
+            : `<span class="price-discounted price-discounted--unavailable">N/A(0)</span>`;
         return `
             <div class="cart-item" data-product-id="${item.id}">
                 <div class="cart-item-header">
@@ -76,8 +89,7 @@
                         <a href="${item.link || 'index.html'}" class="cart-body-link">${item.title}</a>
                     </h3>
                     <div class="cart-item-price">
-                        <del class="price-original">${formatPrice(item.price)}</del>
-                        <span class="price-discounted">${formatPrice(discountedPrice)}</span>
+                        ${priceHtml}
                     </div>
                 </div>
                 <ul class="cart-item-body">
@@ -96,7 +108,9 @@
 
     /* --- Bundle item template (nested breakdown) --- */
     function renderBundleItem(item) {
-        const discountedPrice = item.price * (1 - DISCOUNT_PERCENT / 100);
+        const disc = getDiscountPercent() ?? 0;
+        const rawPrice = parseFloat(item.price);
+        const discountedPrice = rawPrice * (1 - disc / 100);
         const subs = (Array.isArray(item.subItems) && item.subItems.length)
             ? item.subItems.map(sub => ({ img: sub.img, label: sub.title || '' }))
             : BUNDLE_SUB_ITEMS.map(sub => ({ img: sub.img, label: ti(sub.titleKey) }));
@@ -114,8 +128,9 @@
                         <a href="${item.link || 'index.html'}" class="cart-body-link">${item.title}</a>
                     </h3>
                     <div class="cart-item-price">
-                        <del class="price-original">${formatPrice(item.price)}</del>
-                        <span class="price-discounted">${formatPrice(discountedPrice)}</span>
+                        ${(!isNaN(rawPrice) && rawPrice > 0)
+                            ? `<del class="price-original">${formatPrice(rawPrice)}</del><span class="price-discounted">${formatPrice(discountedPrice)}</span>`
+                            : `<span class="price-discounted price-discounted--unavailable">N/A(0)</span>`}
                     </div>
                 </div>
                 <ul class="cart-item-body" aria-label="${ti('cart_bundle_contents')}">
@@ -193,13 +208,14 @@
     }
 
     function renderSummary(subtotal, hasGift = false) {
-        const discountedSubtotal = subtotal * (1 - DISCOUNT_PERCENT / 100);
+        const discount = getDiscountPercent() ?? 0;
+        const discountedSubtotal = subtotal * (1 - discount / 100);
         const savings = subtotal - discountedSubtotal;
         const total = discountedSubtotal;
 
         const savingsRow = subtotal > 0 ? `
                 <div class="cs__row">
-                    <span>• ${ti('cart_discount')} <span class="cs__row--green">(${DISCOUNT_PERCENT}%)</span></span>
+                    <span>• ${ti('cart_discount')} <span class="cs__row--green">(${discount}%)</span></span>
                     <span class="cs__row--green">- ${formatPrice(savings)}</span>
                 </div>` : '';
 

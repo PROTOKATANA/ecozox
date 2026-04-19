@@ -14,39 +14,39 @@
 
     /* ---------- Configuración de moneda por idioma (fallback) ---------- */
     var currencyConfig = {
-        es: { symbol: '€',  code: 'EUR', rate: 0.92,  locale: 'es-ES' },
-        en: { symbol: '$',  code: 'USD', rate: 1,     locale: 'en-US' },
-        ar: { symbol: 'ر.س', code: 'SAR', rate: 3.75,  locale: 'ar-SA' },
-        zh: { symbol: '¥',  code: 'CNY', rate: 7.24,  locale: 'zh-CN' },
-        ja: { symbol: '¥',  code: 'JPY', rate: 149.50, locale: 'ja-JP' },
-        ko: { symbol: '₩',  code: 'KRW', rate: 1320,  locale: 'ko-KR' },
-        id: { symbol: 'Rp', code: 'IDR', rate: 15700, locale: 'id-ID' },
-        de: { symbol: '€',  code: 'EUR', rate: 0.92,  locale: 'de-DE' },
-        fr: { symbol: '€',  code: 'EUR', rate: 0.92,  locale: 'fr-FR' },
-        it: { symbol: '€',  code: 'EUR', rate: 0.92,  locale: 'it-IT' },
-        pt: { symbol: 'R$', code: 'BRL', rate: 4.97,  locale: 'pt-BR' },
-        tr: { symbol: '₺',  code: 'TRY', rate: 32.10, locale: 'tr-TR' }
+        es: { symbol: '€',   code: 'EUR', rate: 1,      locale: 'es-ES' },
+        en: { symbol: '$',   code: 'USD', rate: 1.09,   locale: 'en-US' },
+        ar: { symbol: 'ر.س', code: 'SAR', rate: 4.08,   locale: 'ar-SA' },
+        zh: { symbol: '¥',   code: 'CNY', rate: 7.87,   locale: 'zh-CN' },
+        ja: { symbol: '¥',   code: 'JPY', rate: 162.50, locale: 'ja-JP' },
+        ko: { symbol: '₩',   code: 'KRW', rate: 1435,   locale: 'ko-KR' },
+        id: { symbol: 'Rp',  code: 'IDR', rate: 17065,  locale: 'id-ID' },
+        de: { symbol: '€',   code: 'EUR', rate: 1,      locale: 'de-DE' },
+        fr: { symbol: '€',   code: 'EUR', rate: 1,      locale: 'fr-FR' },
+        it: { symbol: '€',   code: 'EUR', rate: 1,      locale: 'it-IT' },
+        pt: { symbol: 'R$',  code: 'BRL', rate: 5.40,   locale: 'pt-BR' },
+        tr: { symbol: '₺',   code: 'TRY', rate: 34.89,  locale: 'tr-TR' }
     };
 
     /* ---------- Todas las monedas disponibles ---------- */
     var allCurrencies = {
-        USD: { symbol: '$',   rate: 1,      locale: 'en-US',  zeroDecimals: false },
-        EUR: { symbol: '€',   rate: 0.92,   locale: 'es-ES',  zeroDecimals: false },
-        JPY: { symbol: '¥',   rate: 149.50, locale: 'ja-JP',  zeroDecimals: true  },
-        GBP: { symbol: '£',   rate: 0.79,   locale: 'en-GB',  zeroDecimals: false },
-        CNY: { symbol: '¥',   rate: 7.24,   locale: 'zh-CN',  zeroDecimals: false },
-        KRW: { symbol: '₩',   rate: 1320,   locale: 'ko-KR',  zeroDecimals: true  },
-        SAR: { symbol: 'ر.س', rate: 3.75,   locale: 'ar-SA',  zeroDecimals: false },
-        IDR: { symbol: 'Rp',  rate: 15700,  locale: 'id-ID',  zeroDecimals: true  },
-        BRL: { symbol: 'R$',  rate: 4.97,   locale: 'pt-BR',  zeroDecimals: false },
-        MXN: { symbol: '$',   rate: 17.15,  locale: 'es-MX',  zeroDecimals: false },
-        CLP: { symbol: '$',   rate: 950,    locale: 'es-CL',  zeroDecimals: true  },
-        RUB: { symbol: '₽',   rate: 92,     locale: 'ru-RU',  zeroDecimals: false },
-        INR: { symbol: '₹',   rate: 83.10,  locale: 'hi-IN',  zeroDecimals: false },
-        CAD: { symbol: '$',   rate: 1.36,   locale: 'en-CA',  zeroDecimals: false },
-        AUD: { symbol: '$',   rate: 1.53,   locale: 'en-AU',  zeroDecimals: false },
-        NZD: { symbol: '$',   rate: 1.67,   locale: 'en-NZ',  zeroDecimals: false },
-        TRY: { symbol: '₺',   rate: 32.10,  locale: 'tr-TR',  zeroDecimals: false }
+        EUR: { symbol: '€',   rate: 1,      locale: 'es-ES',  zeroDecimals: false },
+        USD: { symbol: '$',   rate: 1.09,   locale: 'en-US',  zeroDecimals: false },
+        JPY: { symbol: '¥',   rate: 162.50, locale: 'ja-JP',  zeroDecimals: true  },
+        GBP: { symbol: '£',   rate: 0.86,   locale: 'en-GB',  zeroDecimals: false },
+        CNY: { symbol: '¥',   rate: 7.87,   locale: 'zh-CN',  zeroDecimals: false },
+        KRW: { symbol: '₩',   rate: 1435,   locale: 'ko-KR',  zeroDecimals: true  },
+        SAR: { symbol: 'ر.س', rate: 4.08,   locale: 'ar-SA',  zeroDecimals: false },
+        IDR: { symbol: 'Rp',  rate: 17065,  locale: 'id-ID',  zeroDecimals: true  },
+        BRL: { symbol: 'R$',  rate: 5.40,   locale: 'pt-BR',  zeroDecimals: false },
+        MXN: { symbol: '$',   rate: 18.64,  locale: 'es-MX',  zeroDecimals: false },
+        CLP: { symbol: '$',   rate: 1033,   locale: 'es-CL',  zeroDecimals: true  },
+        RUB: { symbol: '₽',   rate: 100,    locale: 'ru-RU',  zeroDecimals: false },
+        INR: { symbol: '₹',   rate: 90.33,  locale: 'hi-IN',  zeroDecimals: false },
+        CAD: { symbol: '$',   rate: 1.48,   locale: 'en-CA',  zeroDecimals: false },
+        AUD: { symbol: '$',   rate: 1.66,   locale: 'en-AU',  zeroDecimals: false },
+        NZD: { symbol: '$',   rate: 1.82,   locale: 'en-NZ',  zeroDecimals: false },
+        TRY: { symbol: '₺',   rate: 34.89,  locale: 'tr-TR',  zeroDecimals: false }
     };
 
     var SUPPORTED_CURRENCIES = Object.keys(allCurrencies);
@@ -271,6 +271,7 @@
     }).format(converted).replace(/\s/g, '');
     }
 
+
     /* ---------- Locale para formato de fecha ---------- */
     function getDateLocale() {
         var config = currencyConfig[currentLang];
@@ -288,11 +289,17 @@
     function applyTranslations() {
         // Textos internos — se usa textContent para evitar XSS.
         // decodeEntities convierte &copy; → © sin ejecutar ningún HTML.
+        var discountPct = (window.ECOZOX_CONFIG && window.ECOZOX_CONFIG.discountPercent != null)
+            ? window.ECOZOX_CONFIG.discountPercent
+            : (function () { try { var s = localStorage.getItem('ecozox_desc'); return s !== null ? parseFloat(s) : 30; } catch (e) { return 30; } }());
+        var bundleExtraPct = (window.ECOZOX_CONFIG && window.ECOZOX_CONFIG.bundleExtraDiscount != null)
+            ? window.ECOZOX_CONFIG.bundleExtraDiscount
+            : 20;
         document.querySelectorAll('[data-i18n]').forEach(function (el) {
             var key = el.getAttribute('data-i18n');
             var value = t(key);
             if (value !== key) {
-                el.textContent = decodeEntities(value);
+                el.textContent = decodeEntities(value).replace('{pct}', discountPct).replace('{bpct}', bundleExtraPct);
             }
         });
 

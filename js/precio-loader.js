@@ -29,6 +29,13 @@
     })
     .then(function (data) {
       clearTimeout(timeout);
+      // Propagar el descuento global para que cart-items, purchase-options
+      // y product-card lo lean desde window.ECOZOX_CONFIG
+      if (data.descuentoGlobal != null) {
+        window.ECOZOX_CONFIG = window.ECOZOX_CONFIG || {};
+        window.ECOZOX_CONFIG.discountPercent = data.descuentoGlobal;
+        try { localStorage.setItem('ecozox_desc', String(data.descuentoGlobal)); } catch (e) {}
+      }
       applyPrices(data.productos || []);
     })
     .catch(function (err) {
@@ -74,9 +81,16 @@
     var ventaDec = p.precioVentaCents / 100;
     var origDec  = p.precioOriginalCents / 100;
 
+    if (p.descuentoExtra != null) {
+      window.ECOZOX_CONFIG = window.ECOZOX_CONFIG || {};
+      window.ECOZOX_CONFIG.bundleExtraDiscount = p.descuentoExtra;
+    }
+
     // Actualizar atributos del bundle card
     document.querySelectorAll('[data-bundle-id="' + p.localId + '"]').forEach(function (el) {
       el.dataset.bundlePrice = p.precioVentaCents;
+      if (p.descuentoExtra != null)
+        el.dataset.bundleDiscount = (p.descuentoExtra / 100).toFixed(4);
     });
 
     // Actualizar precios de display
