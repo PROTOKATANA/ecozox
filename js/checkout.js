@@ -82,6 +82,7 @@
                     name:     item.title || item.name,
                     price:    item.price || 0,
                     image:    item.image || '',
+                    subItems: item.subItems || null,
                     quantity: item.quantity || 1
                 };
             });
