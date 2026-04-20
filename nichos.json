@@ -1,9 +1,9 @@
 [
   {
     "nicho":  "caton",
-    "titulo": "CATON",
-    "precio": 18.99,
-    "imagen": "gatos/caton/pixel/t1.jpg",
+    "titleKey": "product_title",
+    "localesPath": "gatos/caton/locales/",
+    "imagen": "gatos/caton/pixel/t2.jpg",
     "link":   "gatos/caton/index.html"
   }
 ]

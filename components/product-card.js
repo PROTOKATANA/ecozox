@@ -28,10 +28,45 @@
             : '€' + parseFloat(amount).toFixed(2);
     }
 
+    function resolveTitle(product) {
+        if (!product.titleKey) return product.titulo || '';
+        var lang = window.EcoI18n ? window.EcoI18n.getLang() : 'es';
+        var nl = window.EcoNichoLocales;
+        if (nl) {
+            if (nl[lang] && nl[lang][product.titleKey]) return nl[lang][product.titleKey];
+            if (nl['en'] && nl['en'][product.titleKey]) return nl['en'][product.titleKey];
+        }
+        var v = t(product.titleKey);
+        return v !== product.titleKey ? v : (product.titulo || '');
+    }
+
+    function loadNichoLocalesAndRender(products) {
+        var lang  = window.EcoI18n ? window.EcoI18n.getLang() : 'es';
+        var paths = [];
+        products.forEach(function (p) {
+            if (p.localesPath && paths.indexOf(p.localesPath) === -1) paths.push(p.localesPath);
+        });
+        if (!paths.length) { renderGrid(products); return; }
+
+        var langs = (lang === 'en') ? ['en'] : ['en', lang];
+        var total = paths.length * langs.length;
+        var done  = 0;
+        function check() { if (++done >= total) renderGrid(products); }
+
+        paths.forEach(function (path) {
+            langs.forEach(function (l) {
+                var s = document.createElement('script');
+                s.src = path + l + '.js';
+                s.onload = s.onerror = check;
+                document.head.appendChild(s);
+            });
+        });
+    }
+
     function buildCard(product) {
         var salePrice  = parseFloat(product.precio);
         var discount   = getDiscount();
-        var titulo     = product.titulo || '';
+        var titulo     = resolveTitle(product);
         var salePriceHtml = (!isNaN(salePrice) && salePrice > 0)
             ? '<span class="product-price" data-i18n-price="' + salePrice + '">' + formatPrice(salePrice) + '</span>'
             : '<span class="product-price product-price--unavailable">N/A(0)</span>';
@@ -106,15 +141,15 @@
     }
 
     fetchNichos()
-        .then(renderGrid)
+        .then(loadNichoLocalesAndRender)
         .catch(function (err) {
             console.error('product-grid:', err.message);
             // Fallback al JSON estático si falló la API
-            if (apiBase) fetch('nichos.json').then(function (r) { return r.json(); }).then(renderGrid).catch(function(){});
+            if (apiBase) fetch('nichos.json').then(function (r) { return r.json(); }).then(loadNichoLocalesAndRender).catch(function(){});
         });
 
-    // Exponer update para que i18n re-renderice precios al cambiar moneda
+    // Exponer update para que i18n re-renderice al cambiar idioma o moneda
     window.EcoProductCards = {
-        update: function () { fetchNichos().then(renderGrid).catch(function(){}); }
+        update: function () { fetchNichos().then(loadNichoLocalesAndRender).catch(function(){}); }
     };
 })();
