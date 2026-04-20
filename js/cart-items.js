@@ -26,6 +26,13 @@
         return window.EcoI18n ? window.EcoI18n.t(key) : key;
     }
 
+    /* Traduce una clave sólo si está disponible; si no, usa el texto guardado */
+    function tt(key, fallback) {
+        if (!key) return fallback;
+        var v = ti(key);
+        return v !== key ? v : fallback;
+    }
+
     function formatPrice(num) {
         if (window.EcoI18n) return window.EcoI18n.formatPrice(num);
         return '$' + num.toFixed(2);
@@ -88,7 +95,7 @@
             <div class="cart-item" data-product-id="${item.id}">
                 <div class="cart-item-header">
                     <h3 class="cart-item-title">
-                        <a href="${item.link || 'index.html'}" class="cart-body-link">${item.title}</a>
+                        <a href="${item.link || 'index.html'}" class="cart-body-link">${tt(item.titleKey, item.title)}</a>
                     </h3>
                     <div class="cart-item-price">
                         ${priceHtml}
@@ -96,13 +103,13 @@
                 </div>
                 <ul class="cart-item-body">
                     <li class="cart-body-item">
-                        <img src="${item.image}" alt="${item.title}"
+                        <img src="${item.image}" alt="${tt(item.titleKey, item.title)}"
                              class="cart-body-img cart-body-img--single">
-                        <span class="cart-body-title">${item.title}</span>
+                        <span class="cart-body-title">${tt(item.titleKey, item.title)}</span>
                     </li>
                 </ul>
                 <div class="cart-bundle-tag">
-                    <span class="cart-bundle-tag__piece"><span class="cart-bundle-tag__num">${disc}%</span> DESCUENTO GLOBAL</span>
+                    <span class="cart-bundle-tag__piece"><span class="cart-bundle-tag__num">${disc}%</span> ${ti('cart_global_discount_label')}</span>
                 </div>
                 <div class="cart-item-footer">
                     <div class="cart-item-actions">${qtyControls(item)}</div>
@@ -119,13 +126,16 @@
             ? parseFloat(item.origPrice)
             : (disc > 0 ? salePrice / (1 - disc / 100) : salePrice);
         const subs = (Array.isArray(item.subItems) && item.subItems.length)
-            ? item.subItems.map(sub => ({ img: sub.img, label: sub.title || '' }))
-            : BUNDLE_SUB_ITEMS.map(sub => ({ img: sub.img, label: ti(sub.titleKey) }));
-        const subRows = subs.map(sub => `
+            ? item.subItems.map(sub => ({ img: sub.img, label: sub.title || '', key: sub.key || '' }))
+            : BUNDLE_SUB_ITEMS.map(sub => ({ img: sub.img, label: ti(sub.titleKey), key: sub.titleKey || '' }));
+        const subRows = subs.map(sub => {
+            const label = tt(sub.key, sub.label);
+            return `
             <li class="cart-body-item">
-                <img src="${sub.img}" alt="${sub.label}" class="cart-body-img">
-                <span class="cart-body-title">${sub.label}</span>
-            </li>`).join('');
+                <img src="${sub.img}" alt="${label}" class="cart-body-img">
+                <span class="cart-body-title">${label}</span>
+            </li>`;
+        }).join('');
 
         const bundlePct = (item.bundleExtraDisc != null) ? item.bundleExtraDisc : 0;
         const globalPct = disc;
@@ -135,7 +145,7 @@
             <div class="cart-item" data-product-id="${item.id}">
                 <div class="cart-item-header">
                     <h3 class="cart-item-title">
-                        <a href="${item.link || 'index.html'}" class="cart-body-link">${item.title}</a>
+                        <a href="${item.link || 'index.html'}" class="cart-body-link">${tt(item.titleKey, item.title)}</a>
                     </h3>
                     <div class="cart-item-price">
                         ${(!isNaN(salePrice) && salePrice > 0)
@@ -147,11 +157,11 @@
                     ${subRows}
                 </ul>
                 <div class="cart-bundle-tag">
-                    <span class="cart-bundle-tag__piece"><span class="cart-bundle-tag__num">${bundlePct}%</span> KIT</span>
+                    <span class="cart-bundle-tag__piece"><span class="cart-bundle-tag__num">${bundlePct}%</span> ${ti('cart_bundle_label_kit')}</span>
                     <span class="cart-bundle-tag__op">+</span>
-                    <span class="cart-bundle-tag__piece"><span class="cart-bundle-tag__num">${globalPct}%</span> GLOBAL</span>
+                    <span class="cart-bundle-tag__piece"><span class="cart-bundle-tag__num">${globalPct}%</span> ${ti('cart_bundle_label_global')}</span>
                     <span class="cart-bundle-tag__op">=</span>
-                    <span class="cart-bundle-tag__piece cart-bundle-tag__piece--total"><span class="cart-bundle-tag__num">${totalPct}%</span> DESCUENTO</span>
+                    <span class="cart-bundle-tag__piece cart-bundle-tag__piece--total"><span class="cart-bundle-tag__num">${totalPct}%</span> ${ti('cart_bundle_label_discount')}</span>
                 </div>
                 <div class="cart-item-footer">
                     <div class="cart-item-actions">${qtyControls(item)}</div>

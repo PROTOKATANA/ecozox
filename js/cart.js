@@ -24,6 +24,16 @@
         }
     }
 
+    function saveNichoLocalesPath() {
+        var brand = window.ECOZOX_BRAND;
+        if (!brand || !brand.localesPath) return;
+        try {
+            var a = document.createElement('a');
+            a.href = brand.localesPath;
+            localStorage.setItem('ecozox_nicho_locales', a.href);
+        } catch (e) {}
+    }
+
     function getCount() {
         return getCart().reduce((sum, item) => sum + item.quantity, 0);
     }
@@ -51,6 +61,7 @@
             cart.push({
                 id: product.id,
                 title: product.title,
+                titleKey: product.titleKey || null,
                 name: product.name || null,
                 price: product.price,
                 origPrice: product.origPrice || null,
@@ -63,6 +74,7 @@
         }
 
         saveCart(cart);
+        saveNichoLocalesPath();
         syncCounterUI();
     }
 
@@ -103,6 +115,7 @@
         const card = btn.closest('[data-product-id]') || btn;
         let productId = card.dataset.productId || btn.dataset.productId;
         let productTitle = card.dataset.productTitle || btn.dataset.productTitle;
+        let productTitleKey = card.dataset.productTitleKey || btn.dataset.productTitleKey || null;
         let productName  = card.dataset.productName  || btn.dataset.productName  || null;
         let productPrice = parseFloat(card.dataset.productPrice || btn.dataset.productPrice) / 100;
         const origPriceRaw = card.dataset.productOrigPrice || btn.dataset.productOrigPrice;
@@ -163,7 +176,7 @@
         }
 
         addItem(
-            { id: productId, title: productTitle, name: productName, price: productPrice, origPrice: productOrigPrice, bundleExtraDisc: productBundleExtraDisc, image: productImage, link: productLink, subItems: productSubItems },
+            { id: productId, title: productTitle, titleKey: productTitleKey, name: productName, price: productPrice, origPrice: productOrigPrice, bundleExtraDisc: productBundleExtraDisc, image: productImage, link: productLink, subItems: productSubItems },
             quantity
         );
 

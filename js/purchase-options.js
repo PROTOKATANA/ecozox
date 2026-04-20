@@ -29,6 +29,10 @@
       var h1 = document.querySelector('.product-info-detail h1');
       return h1 ? h1.textContent.trim() : (firstBtn.dataset.productTitle || '');
     },
+    get titleKey() {
+      var h1 = document.querySelector('.product-info-detail h1');
+      return h1 ? (h1.dataset.i18n || '') : '';
+    },
     get name() {
       var h1 = document.querySelector('.product-info-detail h1');
       return h1 ? h1.textContent.trim() : '';
@@ -79,9 +83,10 @@
   function updateCartButtons(data) {
     document.querySelectorAll('.js-add-to-cart').forEach(function (btn) {
       if (stickyBar && stickyBar.contains(btn)) return;
-      btn.dataset.productId    = data.id;
-      btn.dataset.productTitle = data.title;
-      btn.dataset.productName  = data.name || data.title;
+      btn.dataset.productId       = data.id;
+      btn.dataset.productTitle    = data.title;
+      btn.dataset.productTitleKey = data.titleKey || '';
+      btn.dataset.productName     = data.name || data.title;
       if (!(data.isBundle && btn === firstBtn)) btn.dataset.productPrice = data.price;
       btn.dataset.productImage = data.image;
       if (data.origPrice != null) {
@@ -117,9 +122,10 @@
     /* 1. Update the add-to-cart button inside the sticky bar */
     const stickyBtn = stickyBar.querySelector('.js-add-to-cart');
     if (stickyBtn) {
-      stickyBtn.dataset.productId    = data.id;
-      stickyBtn.dataset.productTitle = data.title;
-      stickyBtn.dataset.productName  = data.name || data.title;
+      stickyBtn.dataset.productId       = data.id;
+      stickyBtn.dataset.productTitle    = data.title;
+      stickyBtn.dataset.productTitleKey = data.titleKey || '';
+      stickyBtn.dataset.productName     = data.name || data.title;
       stickyBtn.dataset.productPrice = data.price;
       stickyBtn.dataset.productImage = data.image;
       if (data.subItems && data.subItems.length) {
@@ -161,10 +167,11 @@
   function getBundleSubItems() {
     return Array.from(bundleCard.querySelectorAll('.po-bundle__item')).map(function (li) {
       const img  = li.querySelector('img');
-      const span = li.querySelector('span');
+      const span = li.querySelector('.po-bundle__item-name') || li.querySelector('span');
       return {
         img:   img  ? img.src               : '',
         title: span ? span.textContent.trim() : '',
+        key:   span ? (span.dataset.i18n || '') : '',
       };
     });
   }
@@ -172,9 +179,10 @@
   function bundleDataWithQty() {
     const qty = getBundleQty();
     const titleEl = bundleCard.querySelector('.po-bundle__title');
-    const title = titleEl ? titleEl.textContent.trim() : BUNDLE.title;
+    const title    = titleEl ? titleEl.textContent.trim() : BUNDLE.title;
+    const titleKey = titleEl ? (titleEl.dataset.i18n || '') : '';
     const origPrice = BUNDLE.origPriceCents ? parseFloat(BUNDLE.origPriceCents) / 100 : null;
-    return Object.assign({}, BUNDLE, { title: title, subItems: getBundleSubItems(), qty: qty, isBundle: true, origPrice: origPrice, descuentoExtra: BUNDLE.descuentoExtra });
+    return Object.assign({}, BUNDLE, { title, titleKey, subItems: getBundleSubItems(), qty, isBundle: true, origPrice, descuentoExtra: BUNDLE.descuentoExtra });
   }
 
   /* ---------- Selection logic ---------- */

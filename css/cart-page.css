@@ -4,6 +4,9 @@
 
 body.page-cart {
   background-color: #f7f4f0;
+  /* Fallback para caracteres CJK almacenados en el carrito */
+  font-family: var(--font-body, inherit), 'Noto Sans SC', 'Noto Sans JP', 'Noto Sans KR',
+               system-ui, -apple-system, sans-serif;
 }
 
 
