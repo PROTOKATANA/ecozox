@@ -82,7 +82,7 @@
       btn.dataset.productId    = data.id;
       btn.dataset.productTitle = data.title;
       btn.dataset.productName  = data.name || data.title;
-      btn.dataset.productPrice = data.price;
+      if (!(data.isBundle && btn === firstBtn)) btn.dataset.productPrice = data.price;
       btn.dataset.productImage = data.image;
       if (data.origPrice != null) {
         btn.dataset.productOrigPrice = data.origPrice;
@@ -135,19 +135,17 @@
     }
 
     /* 2. Update visible title */
-    const titleEl = stickyBar.querySelector('.sticky-cart-bar__title');
+    const titleEl = stickyBar.querySelector('.scb__title');
     if (titleEl) titleEl.textContent = data.title;
 
-    /* 3. Update visible prices using EcoI18n.formatPrice */
+    /* 3. Update visible prices — data.price is in cents, divide by 100 */
     const origEl = stickyBar.querySelector('.scb__price-original');
     const saleEl = stickyBar.querySelector('.scb__price-sale');
-    if (origEl) {
-      const salePrice = parseFloat(data.price);
+    if (origEl || saleEl) {
+      const salePrice = parseFloat(data.price) / 100;
       const origPrice = (data.origPrice != null) ? data.origPrice : salePrice / getDiscountFactor();
-      origEl.textContent = (window.EcoI18n ? window.EcoI18n.formatPrice(origPrice) : '$' + origPrice.toFixed(2));
-    }
-    if (saleEl) {
-      saleEl.textContent = (window.EcoI18n ? window.EcoI18n.formatPrice(parseFloat(data.price)) : '$' + parseFloat(data.price).toFixed(2));
+      if (origEl) origEl.textContent = (window.EcoI18n ? window.EcoI18n.formatPrice(origPrice) : '€' + origPrice.toFixed(2));
+      if (saleEl) saleEl.textContent = (window.EcoI18n ? window.EcoI18n.formatPrice(salePrice)  : '€' + salePrice.toFixed(2));
     }
   }
 
@@ -284,5 +282,12 @@
 
   /* Re-sync after i18n updates translated text (title, name) */
   window.EcoPurchaseOptions = { update: syncActive, refreshBundle: refreshBundle };
+
+  /* If precio-loader already resolved before this script loaded, the refreshBundle()
+     call it made was a no-op (window.EcoPurchaseOptions didn't exist yet). Re-run it
+     now so the correct server price replaces the IIFE's stale calculation. */
+  if (bundleCard.dataset.bundleOriginalPrice) {
+    refreshBundle();
+  }
 
 })();
