@@ -27,16 +27,34 @@
         }
     }
 
+    function showPriceError(btn) {
+        var msg = 'Los precios no están disponibles. Por favor, recarga la página e inténtalo de nuevo.';
+        if (window.EcoToast) { window.EcoToast(msg); return; }
+        var existing = document.getElementById('eco-price-error');
+        if (existing) return;
+        var err = document.createElement('p');
+        err.id = 'eco-price-error';
+        err.style.cssText = 'color:#c0392b;font-size:0.85rem;margin:0.5rem 0 0;text-align:center;font-weight:600;';
+        err.textContent = msg;
+        if (btn && btn.parentNode) btn.parentNode.insertAdjacentElement('afterend', err);
+        else document.body.appendChild(err);
+        setTimeout(function () { var el = document.getElementById('eco-price-error'); if (el) el.remove(); }, 6000);
+    }
+
+    function hasPriceZero(items) {
+        return items.some(function (it) { return !it.price || it.price <= 0 || isNaN(it.price); });
+    }
+
     async function goToStripe(btn) {
         var items = [];
 
         // Compra directa desde el botón del producto (data-product-*)
         var productId    = btn && btn.dataset.productId;
         var productTitle = btn && btn.dataset.productTitle;
-        var productPrice = btn && parseFloat(btn.dataset.productPrice);
+        var productPrice = btn && parseFloat(btn.dataset.productPrice) / 100;
         var productImage = btn && btn.dataset.productImage;
 
-        if (productId && productTitle && productPrice) {
+        if (productId && productTitle && productPrice > 0) {
             var qty = 1;
             var qtyInput = document.querySelector('.product-info-detail .qty-input');
             if (qtyInput) qty = parseInt(qtyInput.value) || 1;
@@ -48,6 +66,10 @@
                 image:    productImage || '',
                 quantity: qty
             }];
+        } else if (productId) {
+            // productId existe pero precio es 0 → servidor no respondió
+            showPriceError(btn);
+            return;
         } else {
             // Compra desde el carrito
             var cartItems = (window.EcoCart && window.EcoCart.getCart)
@@ -67,6 +89,11 @@
 
         if (items.length === 0) {
             if (window.EcoToast) window.EcoToast('Carrito vacío');
+            return;
+        }
+
+        if (hasPriceZero(items)) {
+            showPriceError(btn);
             return;
         }
 

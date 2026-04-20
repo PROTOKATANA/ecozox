@@ -77,10 +77,12 @@
     /* --- Normal item template --- */
     function renderNormalItem(item) {
         const disc = getDiscountPercent() ?? 0;
-        const rawPrice = parseFloat(item.price);
-        const discountedPrice = rawPrice * (1 - disc / 100);
-        const priceHtml = (!isNaN(rawPrice) && rawPrice > 0)
-            ? `<del class="price-original">${formatPrice(rawPrice)}</del><span class="price-discounted">${formatPrice(discountedPrice)}</span>`
+        const salePrice = parseFloat(item.price);
+        const origPrice = (item.origPrice != null && !isNaN(parseFloat(item.origPrice)))
+            ? parseFloat(item.origPrice)
+            : (disc > 0 ? salePrice / (1 - disc / 100) : salePrice);
+        const priceHtml = (!isNaN(salePrice) && salePrice > 0)
+            ? `<del class="price-original">${formatPrice(origPrice)}</del><span class="price-discounted">${formatPrice(salePrice)}</span>`
             : `<span class="price-discounted price-discounted--unavailable">N/A(0)</span>`;
         return `
             <div class="cart-item" data-product-id="${item.id}">
@@ -109,8 +111,10 @@
     /* --- Bundle item template (nested breakdown) --- */
     function renderBundleItem(item) {
         const disc = getDiscountPercent() ?? 0;
-        const rawPrice = parseFloat(item.price);
-        const discountedPrice = rawPrice * (1 - disc / 100);
+        const salePrice = parseFloat(item.price);
+        const origPrice = (item.origPrice != null && !isNaN(parseFloat(item.origPrice)))
+            ? parseFloat(item.origPrice)
+            : (disc > 0 ? salePrice / (1 - disc / 100) : salePrice);
         const subs = (Array.isArray(item.subItems) && item.subItems.length)
             ? item.subItems.map(sub => ({ img: sub.img, label: sub.title || '' }))
             : BUNDLE_SUB_ITEMS.map(sub => ({ img: sub.img, label: ti(sub.titleKey) }));
@@ -128,8 +132,8 @@
                         <a href="${item.link || 'index.html'}" class="cart-body-link">${item.title}</a>
                     </h3>
                     <div class="cart-item-price">
-                        ${(!isNaN(rawPrice) && rawPrice > 0)
-                            ? `<del class="price-original">${formatPrice(rawPrice)}</del><span class="price-discounted">${formatPrice(discountedPrice)}</span>`
+                        ${(!isNaN(salePrice) && salePrice > 0)
+                            ? `<del class="price-original">${formatPrice(origPrice)}</del><span class="price-discounted">${formatPrice(salePrice)}</span>`
                             : `<span class="price-discounted price-discounted--unavailable">N/A(0)</span>`}
                     </div>
                 </div>
@@ -209,9 +213,16 @@
 
     function renderSummary(subtotal, hasGift = false) {
         const discount = getDiscountPercent() ?? 0;
-        const discountedSubtotal = subtotal * (1 - discount / 100);
-        const savings = subtotal - discountedSubtotal;
-        const total = discountedSubtotal;
+        const cart = window.EcoCart.getCart();
+        const origSubtotal = cart.reduce(function (sum, item) {
+            const sale = parseFloat(item.price);
+            const orig = (item.origPrice != null && !isNaN(parseFloat(item.origPrice)))
+                ? parseFloat(item.origPrice)
+                : (discount > 0 ? sale / (1 - discount / 100) : sale);
+            return sum + orig * item.quantity;
+        }, 0);
+        const savings = origSubtotal - subtotal;
+        const total = subtotal;
 
         const savingsRow = subtotal > 0 ? `
                 <div class="cs__row">
@@ -231,7 +242,7 @@
                 <div class="cs__rows">
                     <div class="cs__row">
                         <span>• ${ti('cart_subtotal')}</span>
-                        <span>${subtotal > 0 ? `<del class="price-original">${formatPrice(subtotal)}</del>` : formatPrice(0)}</span>
+                        <span>${subtotal > 0 ? `<del class="price-original">${formatPrice(origSubtotal)}</del>` : formatPrice(0)}</span>
                     </div>
                     ${savingsRow}
                     ${giftRow}

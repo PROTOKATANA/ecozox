@@ -340,9 +340,11 @@
     /* ---------- Aplicar precios convertidos ---------- */
     function applyPrices() {
         document.querySelectorAll('[data-i18n-price]').forEach(function (el) {
-            var usdPrice = parseFloat(el.getAttribute('data-i18n-price'));
-            if (!isNaN(usdPrice)) {
-                el.textContent = formatPrice(usdPrice);
+            var price = parseFloat(el.getAttribute('data-i18n-price'));
+            if (isNaN(price) || price <= 0) {
+                el.textContent = '—';
+            } else {
+                el.textContent = formatPrice(price);
             }
         });
     }

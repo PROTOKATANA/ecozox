@@ -33,17 +33,18 @@
       var h1 = document.querySelector('.product-info-detail h1');
       return h1 ? h1.textContent.trim() : '';
     },
-    price: firstBtn.dataset.productPrice || '0',
+    get price() { return firstBtn.dataset.productPrice || '0'; },
     image: firstBtn.dataset.productImage || '',
   };
 
   /* ---------- Bundle data (stored on the bundle card) ---------- */
   const bundleCard = widget.querySelector('[data-option="bundle"]');
   const BUNDLE = {
-    id:    bundleCard.dataset.bundleId,
-    title: bundleCard.dataset.bundleTitle,
-    price: bundleCard.dataset.bundlePrice,   /* original price — overwritten below */
-    image: bundleCard.dataset.bundleImage,
+    id:             bundleCard.dataset.bundleId,
+    title:          bundleCard.dataset.bundleTitle,
+    price:          bundleCard.dataset.bundlePrice,
+    origPriceCents: bundleCard.dataset.bundleOriginalPrice || null,
+    image:          bundleCard.dataset.bundleImage,
   };
 
   /* Apply discount: data-bundle-discount="0.20" → 20% off
@@ -82,6 +83,11 @@
       btn.dataset.productName  = data.name || data.title;
       btn.dataset.productPrice = data.price;
       btn.dataset.productImage = data.image;
+      if (data.origPrice != null) {
+        btn.dataset.productOrigPrice = data.origPrice;
+      } else {
+        delete btn.dataset.productOrigPrice;
+      }
       if (data.subItems && data.subItems.length) {
         btn.dataset.productSubItems = JSON.stringify(data.subItems);
       } else {
@@ -130,7 +136,9 @@
     const origEl = stickyBar.querySelector('.scb__price-original');
     const saleEl = stickyBar.querySelector('.scb__price-sale');
     if (origEl) {
-      origEl.textContent = (window.EcoI18n ? window.EcoI18n.formatPrice(parseFloat(data.price) / getDiscountFactor()) : '$' + (parseFloat(data.price) / getDiscountFactor()).toFixed(2));
+      const salePrice = parseFloat(data.price);
+      const origPrice = (data.origPrice != null) ? data.origPrice : salePrice / getDiscountFactor();
+      origEl.textContent = (window.EcoI18n ? window.EcoI18n.formatPrice(origPrice) : '$' + origPrice.toFixed(2));
     }
     if (saleEl) {
       saleEl.textContent = (window.EcoI18n ? window.EcoI18n.formatPrice(parseFloat(data.price)) : '$' + parseFloat(data.price).toFixed(2));
@@ -161,7 +169,8 @@
     const qty = getBundleQty();
     const titleEl = bundleCard.querySelector('.po-bundle__title');
     const title = titleEl ? titleEl.textContent.trim() : BUNDLE.title;
-    return Object.assign({}, BUNDLE, { title: title, subItems: getBundleSubItems(), qty: qty, isBundle: true });
+    const origPrice = BUNDLE.origPriceCents ? parseFloat(BUNDLE.origPriceCents) / 100 : null;
+    return Object.assign({}, BUNDLE, { title: title, subItems: getBundleSubItems(), qty: qty, isBundle: true, origPrice: origPrice });
   }
 
   /* ---------- Selection logic ---------- */
@@ -259,7 +268,14 @@
 
   syncActive();
 
+  /* Llamado por precio-loader tras recibir los precios del servidor */
+  function refreshBundle() {
+    BUNDLE.price          = bundleCard.dataset.bundlePrice;
+    BUNDLE.origPriceCents = bundleCard.dataset.bundleOriginalPrice || null;
+    syncActive();
+  }
+
   /* Re-sync after i18n updates translated text (title, name) */
-  window.EcoPurchaseOptions = { update: syncActive };
+  window.EcoPurchaseOptions = { update: syncActive, refreshBundle: refreshBundle };
 
 })();

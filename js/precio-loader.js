@@ -88,7 +88,8 @@
 
     // Actualizar atributos del bundle card
     document.querySelectorAll('[data-bundle-id="' + p.localId + '"]').forEach(function (el) {
-      el.dataset.bundlePrice = p.precioVentaCents;
+      el.dataset.bundlePrice         = p.precioVentaCents;
+      el.dataset.bundleOriginalPrice = p.precioOriginalCents;
       if (p.descuentoExtra != null)
         el.dataset.bundleDiscount = (p.descuentoExtra / 100).toFixed(4);
     });
@@ -96,6 +97,11 @@
     // Actualizar precios de display
     setIi8nPrice('.js-bundle-price-sale',     ventaDec);
     setIi8nPrice('.js-bundle-price-original', origDec);
+
+    // Notificar a purchase-options para que relea el precio del servidor
+    if (window.EcoPurchaseOptions && window.EcoPurchaseOptions.refreshBundle) {
+      window.EcoPurchaseOptions.refreshBundle();
+    }
   }
 
   /* ---- Actualiza el atributo data-i18n-price de un selector ---- */

@@ -53,6 +53,7 @@
                 title: product.title,
                 name: product.name || null,
                 price: product.price,
+                origPrice: product.origPrice || null,
                 image: product.image,
                 link: product.link || null,
                 subItems: product.subItems || null,
@@ -103,6 +104,9 @@
         let productTitle = card.dataset.productTitle || btn.dataset.productTitle;
         let productName  = card.dataset.productName  || btn.dataset.productName  || null;
         let productPrice = parseFloat(card.dataset.productPrice || btn.dataset.productPrice) / 100;
+        const origPriceRaw = card.dataset.productOrigPrice || btn.dataset.productOrigPrice;
+        let productOrigPrice = origPriceRaw ? parseFloat(origPriceRaw) : null;
+        if (isNaN(productOrigPrice)) productOrigPrice = null;
         let productImage = card.dataset.productImage || btn.dataset.productImage;
         let productLink = card.dataset.productLink || btn.dataset.productLink || null;
         let productSubItems = null;
@@ -127,7 +131,10 @@
             }
         }
 
-        if (!productId || !productTitle || isNaN(productPrice)) return;
+        if (!productId || !productTitle || isNaN(productPrice) || productPrice <= 0) {
+            if (window.EcoToast) window.EcoToast('Los precios no están disponibles. Por favor, recarga la página.');
+            return;
+        }
 
         // Normalise image and link to absolute URLs so they work from any page
         function toAbsUrl(src) {
@@ -152,7 +159,7 @@
         }
 
         addItem(
-            { id: productId, title: productTitle, name: productName, price: productPrice, image: productImage, link: productLink, subItems: productSubItems },
+            { id: productId, title: productTitle, name: productName, price: productPrice, origPrice: productOrigPrice, image: productImage, link: productLink, subItems: productSubItems },
             quantity
         );
 
