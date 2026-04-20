@@ -208,7 +208,7 @@
 
         cartItemsContainer.innerHTML = html;
 
-        renderSummary(window.EcoCart.getSubtotal(), cart.length > 1);
+        renderSummary(window.EcoCart.getSubtotal(), cart.length >= 1);
     }
 
     function renderSummary(subtotal, hasGift = false) {
@@ -296,7 +296,7 @@
                 val -= 1;
                 input.value = val;
                 window.EcoCart.updateQuantity(productId, val);
-                renderSummary(window.EcoCart.getSubtotal());
+                renderSummary(window.EcoCart.getSubtotal(), window.EcoCart.getCart().length >= 1);
             }
             return;
         }
@@ -311,7 +311,7 @@
             let val = (parseInt(input.value) || 1) + 1;
             input.value = val;
             window.EcoCart.updateQuantity(productId, val);
-            renderSummary(window.EcoCart.getSubtotal());
+            renderSummary(window.EcoCart.getSubtotal(), window.EcoCart.getCart().length >= 1);
         }
     }
 
@@ -325,7 +325,7 @@
         if (isNaN(val) || val < 1) val = 1;
         input.value = val;
         window.EcoCart.updateQuantity(productId, val);
-        renderSummary(window.EcoCart.getSubtotal());
+        renderSummary(window.EcoCart.getSubtotal(), window.EcoCart.getCart().length >= 1);
     }
 
     // Expose renderCart so i18n can re-render on language change
