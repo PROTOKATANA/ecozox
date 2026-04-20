@@ -552,6 +552,44 @@ body.page-cart .line-divider {
   flex-shrink: 0;
 }
 
+/* Franja de descuento del bundle */
+.cart-bundle-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--border-color);
+  flex-wrap: wrap;
+}
+
+.cart-bundle-tag::before {
+  content: '•';
+  font-size: 0.9rem;
+  color: var(--text-main);
+  flex-shrink: 0;
+}
+
+.cart-bundle-tag__piece {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.cart-bundle-tag__num {
+  font-weight: 700;
+  color: #15803d;
+}
+
+.cart-bundle-tag__op {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.cart-bundle-tag__piece--total {
+}
+
 /* Pie: controles con separador dashed */
 .cart-item-footer {
   display: flex;

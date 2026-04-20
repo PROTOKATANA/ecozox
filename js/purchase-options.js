@@ -44,6 +44,7 @@
     title:          bundleCard.dataset.bundleTitle,
     price:          bundleCard.dataset.bundlePrice,
     origPriceCents: bundleCard.dataset.bundleOriginalPrice || null,
+    descuentoExtra: Math.round(parseFloat(bundleCard.dataset.bundleDiscount || '0') * 100),
     image:          bundleCard.dataset.bundleImage,
   };
 
@@ -87,6 +88,11 @@
         btn.dataset.productOrigPrice = data.origPrice;
       } else {
         delete btn.dataset.productOrigPrice;
+      }
+      if (data.descuentoExtra) {
+        btn.dataset.productBundleExtraDisc = data.descuentoExtra;
+      } else {
+        delete btn.dataset.productBundleExtraDisc;
       }
       if (data.subItems && data.subItems.length) {
         btn.dataset.productSubItems = JSON.stringify(data.subItems);
@@ -170,7 +176,7 @@
     const titleEl = bundleCard.querySelector('.po-bundle__title');
     const title = titleEl ? titleEl.textContent.trim() : BUNDLE.title;
     const origPrice = BUNDLE.origPriceCents ? parseFloat(BUNDLE.origPriceCents) / 100 : null;
-    return Object.assign({}, BUNDLE, { title: title, subItems: getBundleSubItems(), qty: qty, isBundle: true, origPrice: origPrice });
+    return Object.assign({}, BUNDLE, { title: title, subItems: getBundleSubItems(), qty: qty, isBundle: true, origPrice: origPrice, descuentoExtra: BUNDLE.descuentoExtra });
   }
 
   /* ---------- Selection logic ---------- */
@@ -272,6 +278,7 @@
   function refreshBundle() {
     BUNDLE.price          = bundleCard.dataset.bundlePrice;
     BUNDLE.origPriceCents = bundleCard.dataset.bundleOriginalPrice || null;
+    BUNDLE.descuentoExtra = Math.round(parseFloat(bundleCard.dataset.bundleDiscount || '0') * 100);
     syncActive();
   }
 

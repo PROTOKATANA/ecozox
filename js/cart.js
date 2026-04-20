@@ -54,6 +54,7 @@
                 name: product.name || null,
                 price: product.price,
                 origPrice: product.origPrice || null,
+                bundleExtraDisc: product.bundleExtraDisc || null,
                 image: product.image,
                 link: product.link || null,
                 subItems: product.subItems || null,
@@ -107,6 +108,9 @@
         const origPriceRaw = card.dataset.productOrigPrice || btn.dataset.productOrigPrice;
         let productOrigPrice = origPriceRaw ? parseFloat(origPriceRaw) : null;
         if (isNaN(productOrigPrice)) productOrigPrice = null;
+        const extraDiscRaw = card.dataset.productBundleExtraDisc || btn.dataset.productBundleExtraDisc;
+        let productBundleExtraDisc = extraDiscRaw ? parseInt(extraDiscRaw) : null;
+        if (isNaN(productBundleExtraDisc)) productBundleExtraDisc = null;
         let productImage = card.dataset.productImage || btn.dataset.productImage;
         let productLink = card.dataset.productLink || btn.dataset.productLink || null;
         let productSubItems = null;
@@ -159,7 +163,7 @@
         }
 
         addItem(
-            { id: productId, title: productTitle, name: productName, price: productPrice, origPrice: productOrigPrice, image: productImage, link: productLink, subItems: productSubItems },
+            { id: productId, title: productTitle, name: productName, price: productPrice, origPrice: productOrigPrice, bundleExtraDisc: productBundleExtraDisc, image: productImage, link: productLink, subItems: productSubItems },
             quantity
         );
 

@@ -101,6 +101,9 @@
                         <span class="cart-body-title">${item.title}</span>
                     </li>
                 </ul>
+                <div class="cart-bundle-tag">
+                    <span class="cart-bundle-tag__piece"><span class="cart-bundle-tag__num">${disc}%</span> DESCUENTO GLOBAL</span>
+                </div>
                 <div class="cart-item-footer">
                     <div class="cart-item-actions">${qtyControls(item)}</div>
                     ${trashBtn()}
@@ -122,8 +125,11 @@
             <li class="cart-body-item">
                 <img src="${sub.img}" alt="${sub.label}" class="cart-body-img">
                 <span class="cart-body-title">${sub.label}</span>
-                <span class="cart-body-included">${ti('cart_included')}</span>
             </li>`).join('');
+
+        const bundlePct = (item.bundleExtraDisc != null) ? item.bundleExtraDisc : 0;
+        const globalPct = disc;
+        const totalPct  = bundlePct + globalPct;
 
         return `
             <div class="cart-item" data-product-id="${item.id}">
@@ -140,6 +146,13 @@
                 <ul class="cart-item-body" aria-label="${ti('cart_bundle_contents')}">
                     ${subRows}
                 </ul>
+                <div class="cart-bundle-tag">
+                    <span class="cart-bundle-tag__piece"><span class="cart-bundle-tag__num">${bundlePct}%</span> KIT</span>
+                    <span class="cart-bundle-tag__op">+</span>
+                    <span class="cart-bundle-tag__piece"><span class="cart-bundle-tag__num">${globalPct}%</span> GLOBAL</span>
+                    <span class="cart-bundle-tag__op">=</span>
+                    <span class="cart-bundle-tag__piece cart-bundle-tag__piece--total"><span class="cart-bundle-tag__num">${totalPct}%</span> DESCUENTO</span>
+                </div>
                 <div class="cart-item-footer">
                     <div class="cart-item-actions">${qtyControls(item)}</div>
                     ${trashBtn()}
