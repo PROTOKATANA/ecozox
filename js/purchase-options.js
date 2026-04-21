@@ -23,6 +23,10 @@
      source of truth baked into the HTML.                      */
   const firstBtn = document.querySelector('.js-add-to-cart');
   if (!firstBtn) return;
+
+  /* Precio individual capturado por separado para que no lo sobreescriba el bundle */
+  let _individualPrice = firstBtn.dataset.productPrice || '0';
+
   const BASE = {
     id:    firstBtn.dataset.productId    || '',
     get title() {
@@ -37,7 +41,7 @@
       var h1 = document.querySelector('.product-info-detail h1');
       return h1 ? h1.textContent.trim() : '';
     },
-    get price() { return firstBtn.dataset.productPrice || '0'; },
+    get price() { return _individualPrice; },
     image: firstBtn.dataset.productImage || '',
   };
 
@@ -291,6 +295,10 @@
 
   /* Llamado por precio-loader tras recibir los precios del servidor */
   function refreshBundle() {
+    /* precio-loader ya actualizó firstBtn.dataset.productPrice con el precio individual correcto */
+    if (firstBtn.dataset.productPrice && firstBtn.dataset.productPrice !== '0') {
+      _individualPrice = firstBtn.dataset.productPrice;
+    }
     BUNDLE.price          = bundleCard.dataset.bundlePrice;
     BUNDLE.origPriceCents = bundleCard.dataset.bundleOriginalPrice || null;
     BUNDLE.descuentoExtra = Math.round(parseFloat(bundleCard.dataset.bundleDiscount || '0') * 100);
