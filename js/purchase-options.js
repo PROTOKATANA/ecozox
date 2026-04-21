@@ -87,7 +87,7 @@
       btn.dataset.productTitle    = data.title;
       btn.dataset.productTitleKey = data.titleKey || '';
       btn.dataset.productName     = data.name || data.title;
-      if (!(data.isBundle && btn === firstBtn)) btn.dataset.productPrice = data.price;
+      btn.dataset.productPrice = data.price;
       btn.dataset.productImage = data.image;
       if (data.origPrice != null) {
         btn.dataset.productOrigPrice = data.origPrice;
@@ -127,6 +127,16 @@
       stickyBtn.dataset.productName     = data.name || data.title;
       stickyBtn.dataset.productPrice    = data.price;
       stickyBtn.dataset.productImage    = data.image;
+      if (data.origPrice != null) {
+        stickyBtn.dataset.productOrigPrice = data.origPrice;
+      } else {
+        delete stickyBtn.dataset.productOrigPrice;
+      }
+      if (data.descuentoExtra) {
+        stickyBtn.dataset.productBundleExtraDisc = data.descuentoExtra;
+      } else {
+        delete stickyBtn.dataset.productBundleExtraDisc;
+      }
       if (data.subItems && data.subItems.length) {
         stickyBtn.dataset.productSubItems = JSON.stringify(data.subItems);
       } else {
