@@ -26,11 +26,16 @@
 
     function saveNichoLocalesPath() {
         var brand = window.ECOZOX_BRAND;
-        if (!brand || !brand.localesPath) return;
+        if (!brand) return;
         try {
-            var a = document.createElement('a');
-            a.href = brand.localesPath;
-            localStorage.setItem('ecozox_nicho_locales', a.href);
+            if (brand.localesPath) {
+                var a = document.createElement('a');
+                a.href = brand.localesPath;
+                localStorage.setItem('ecozox_nicho_locales', a.href);
+            }
+            if (brand.nicho) {
+                localStorage.setItem('ecozox_nicho', brand.nicho);
+            }
         } catch (e) {}
     }
 

@@ -13,11 +13,14 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/shipping-widget.css">
     <script>
+        window.ECOZOX_API_URL = 'https://api.ecozox.com';
         window.ECOZOX_BRAND = window.ECOZOX_BRAND || { carritoUrl: '/carrito.html' };
         (function () {
             try {
                 var p = localStorage.getItem('ecozox_nicho_locales');
                 if (p) window.ECOZOX_BRAND.localesPath = p;
+                var n = localStorage.getItem('ecozox_nicho');
+                if (n) window.ECOZOX_BRAND.nicho = n;
             } catch (e) {}
         }());
     </script>
