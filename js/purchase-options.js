@@ -81,7 +81,7 @@
      The sticky bar button is handled separately by syncStickyBar so that
      both its data attributes and its visible text move in one atomic step. */
   function updateCartButtons(data) {
-    document.querySelectorAll('.js-add-to-cart').forEach(function (btn) {
+    document.querySelectorAll('.js-add-to-cart, .checkout-btn').forEach(function (btn) {
       if (stickyBar && stickyBar.contains(btn)) return;
       btn.dataset.productId       = data.id;
       btn.dataset.productTitle    = data.title;
@@ -119,15 +119,14 @@
   function syncStickyBar(data) {
     if (!stickyBar) return;
 
-    /* 1. Update the add-to-cart button inside the sticky bar */
-    const stickyBtn = stickyBar.querySelector('.js-add-to-cart');
-    if (stickyBtn) {
+    /* 1. Update all action buttons inside the sticky bar */
+    stickyBar.querySelectorAll('.js-add-to-cart, .checkout-btn').forEach(function (stickyBtn) {
       stickyBtn.dataset.productId       = data.id;
       stickyBtn.dataset.productTitle    = data.title;
       stickyBtn.dataset.productTitleKey = data.titleKey || '';
       stickyBtn.dataset.productName     = data.name || data.title;
-      stickyBtn.dataset.productPrice = data.price;
-      stickyBtn.dataset.productImage = data.image;
+      stickyBtn.dataset.productPrice    = data.price;
+      stickyBtn.dataset.productImage    = data.image;
       if (data.subItems && data.subItems.length) {
         stickyBtn.dataset.productSubItems = JSON.stringify(data.subItems);
       } else {
@@ -138,7 +137,7 @@
       } else {
         delete stickyBtn.dataset.productBundleQty;
       }
-    }
+    });
 
     /* 2. Update visible title */
     const titleEl = stickyBar.querySelector('.scb__title');

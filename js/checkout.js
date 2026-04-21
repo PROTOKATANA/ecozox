@@ -45,6 +45,14 @@
         return items.some(function (it) { return !it.price || it.price <= 0 || isNaN(it.price); });
     }
 
+    function toAbsoluteImg(url) {
+        if (!url) return '';
+        if (url.startsWith('http')) return url;
+        var a = document.createElement('a');
+        a.href = url;
+        return a.href;
+    }
+
     async function goToStripe(btn) {
         var items = [];
 
@@ -53,17 +61,26 @@
         var productTitle = btn && btn.dataset.productTitle;
         var productPrice = btn && parseFloat(btn.dataset.productPrice) / 100;
         var productImage = btn && btn.dataset.productImage;
+        var productSubItems = null;
+        try {
+            if (btn && btn.dataset.productSubItems) productSubItems = JSON.parse(btn.dataset.productSubItems);
+        } catch (e) {}
 
         if (productId && productTitle && productPrice > 0) {
             var qty = 1;
             var qtyInput = document.querySelector('.product-info-detail .qty-input');
             if (qtyInput) qty = parseInt(qtyInput.value) || 1;
 
+            var subItems = productSubItems
+                ? productSubItems.map(function (s) { return { img: toAbsoluteImg(s.img), label: s.label, key: s.key }; })
+                : null;
+
             items = [{
                 localId:  productId,
                 name:     productTitle,
                 price:    productPrice,
-                image:    productImage || '',
+                image:    toAbsoluteImg(productImage),
+                subItems: subItems,
                 quantity: qty
             }];
         } else if (productId) {
@@ -81,8 +98,10 @@
                     localId:  item.id    || '',
                     name:     item.title || item.name,
                     price:    item.price || 0,
-                    image:    item.image || '',
-                    subItems: item.subItems || null,
+                    image:    toAbsoluteImg(item.image),
+                    subItems: item.subItems
+                        ? item.subItems.map(function (s) { return { img: toAbsoluteImg(s.img), label: s.label, key: s.key }; })
+                        : null,
                     quantity: item.quantity || 1
                 };
             });
