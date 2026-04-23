@@ -61,6 +61,22 @@
         { code: 'IDR', flag: 'id', label: 'Rupia indonesia',       symbol: 'Rp'  }
     ];
 
+    var currencyNames = {
+        es: { USD:'Dólar estadounidense', EUR:'Euro', CAD:'Dólar canadiense', AUD:'Dólar australiano', GBP:'Libra esterlina', NZD:'Dólar neozelandés', JPY:'Yen japonés', INR:'Rupia india', CNY:'Yuan chino', KRW:'Won surcoreano', RUB:'Rublo ruso', BRL:'Real brasileño', SAR:'Riyal saudí', TRY:'Lira turca', MXN:'Peso mexicano', CLP:'Peso chileno', IDR:'Rupia indonesia' },
+        en: { USD:'US Dollar', EUR:'Euro', CAD:'Canadian Dollar', AUD:'Australian Dollar', GBP:'British Pound', NZD:'New Zealand Dollar', JPY:'Japanese Yen', INR:'Indian Rupee', CNY:'Chinese Yuan', KRW:'South Korean Won', RUB:'Russian Ruble', BRL:'Brazilian Real', SAR:'Saudi Riyal', TRY:'Turkish Lira', MXN:'Mexican Peso', CLP:'Chilean Peso', IDR:'Indonesian Rupiah' },
+        ar: { USD:'دولار أمريكي', EUR:'يورو', CAD:'دولار كندي', AUD:'دولار أسترالي', GBP:'جنيه إسترليني', NZD:'دولار نيوزيلندي', JPY:'ين ياباني', INR:'روبية هندية', CNY:'يوان صيني', KRW:'وون كوري جنوبي', RUB:'روبل روسي', BRL:'ريال برازيلي', SAR:'ريال سعودي', TRY:'ليرة تركية', MXN:'بيسو مكسيكي', CLP:'بيسو تشيلي', IDR:'روبية إندونيسية' },
+        zh: { USD:'美元', EUR:'欧元', CAD:'加元', AUD:'澳元', GBP:'英镑', NZD:'新西兰元', JPY:'日元', INR:'印度卢比', CNY:'人民币', KRW:'韩元', RUB:'俄罗斯卢布', BRL:'巴西雷亚尔', SAR:'沙特里亚尔', TRY:'土耳其里拉', MXN:'墨西哥比索', CLP:'智利比索', IDR:'印尼盾' },
+        ja: { USD:'米ドル', EUR:'ユーロ', CAD:'カナダドル', AUD:'オーストラリアドル', GBP:'英ポンド', NZD:'ニュージーランドドル', JPY:'日本円', INR:'インドルピー', CNY:'中国人民元', KRW:'韓国ウォン', RUB:'ロシアルーブル', BRL:'ブラジルレアル', SAR:'サウジリヤル', TRY:'トルコリラ', MXN:'メキシコペソ', CLP:'チリペソ', IDR:'インドネシアルピア' },
+        ko: { USD:'미국 달러', EUR:'유로', CAD:'캐나다 달러', AUD:'호주 달러', GBP:'영국 파운드', NZD:'뉴질랜드 달러', JPY:'일본 엔', INR:'인도 루피', CNY:'중국 위안', KRW:'한국 원', RUB:'러시아 루블', BRL:'브라질 헤알', SAR:'사우디 리얄', TRY:'터키 리라', MXN:'멕시코 페소', CLP:'칠레 페소', IDR:'인도네시아 루피아' },
+        id: { USD:'Dolar AS', EUR:'Euro', CAD:'Dolar Kanada', AUD:'Dolar Australia', GBP:'Pound Inggris', NZD:'Dolar Selandia Baru', JPY:'Yen Jepang', INR:'Rupee India', CNY:'Yuan Tiongkok', KRW:'Won Korea Selatan', RUB:'Rubel Rusia', BRL:'Real Brasil', SAR:'Riyal Saudi', TRY:'Lira Turki', MXN:'Peso Meksiko', CLP:'Peso Chili', IDR:'Rupiah Indonesia' },
+        de: { USD:'US-Dollar', EUR:'Euro', CAD:'Kanadischer Dollar', AUD:'Australischer Dollar', GBP:'Britisches Pfund', NZD:'Neuseeland-Dollar', JPY:'Japanischer Yen', INR:'Indische Rupie', CNY:'Chinesischer Yuan', KRW:'Südkoreanischer Won', RUB:'Russischer Rubel', BRL:'Brasilianischer Real', SAR:'Saudi-Riyal', TRY:'Türkische Lira', MXN:'Mexikanischer Peso', CLP:'Chilenischer Peso', IDR:'Indonesische Rupiah' },
+        fr: { USD:'Dollar américain', EUR:'Euro', CAD:'Dollar canadien', AUD:'Dollar australien', GBP:'Livre sterling', NZD:'Dollar néo-zélandais', JPY:'Yen japonais', INR:'Roupie indienne', CNY:'Yuan chinois', KRW:'Won sud-coréen', RUB:'Rouble russe', BRL:'Réal brésilien', SAR:'Riyal saoudien', TRY:'Livre turque', MXN:'Peso mexicain', CLP:'Peso chilien', IDR:'Roupie indonésienne' },
+        it: { USD:'Dollaro statunitense', EUR:'Euro', CAD:'Dollaro canadese', AUD:'Dollaro australiano', GBP:'Sterlina britannica', NZD:'Dollaro neozelandese', JPY:'Yen giapponese', INR:'Rupia indiana', CNY:'Yuan cinese', KRW:'Won sudcoreano', RUB:'Rublo russo', BRL:'Real brasiliano', SAR:'Riyal saudita', TRY:'Lira turca', MXN:'Peso messicano', CLP:'Peso cileno', IDR:'Rupia indonesiana' },
+        pt: { USD:'Dólar americano', EUR:'Euro', CAD:'Dólar canadense', AUD:'Dólar australiano', GBP:'Libra esterlina', NZD:'Dólar neozelandês', JPY:'Iene japonês', INR:'Rúpia indiana', CNY:'Yuan chinês', KRW:'Won sul-coreano', RUB:'Rublo russo', BRL:'Real brasileiro', SAR:'Riyal saudita', TRY:'Lira turca', MXN:'Peso mexicano', CLP:'Peso chileno', IDR:'Rúpia indonésia' },
+        tr: { USD:'ABD Doları', EUR:'Euro', CAD:'Kanada Doları', AUD:'Avustralya Doları', GBP:'İngiliz Sterlini', NZD:'Yeni Zelanda Doları', JPY:'Japon Yeni', INR:'Hint Rupisi', CNY:'Çin Yuanı', KRW:'Güney Kore Wonu', RUB:'Rus Rublesi', BRL:'Brezilya Reali', SAR:'Suudi Riyali', TRY:'Türk Lirası', MXN:'Meksika Pesosu', CLP:'Şili Pesosu', IDR:'Endonezya Rupiası' },
+        ru: { USD:'Доллар США', EUR:'Евро', CAD:'Канадский доллар', AUD:'Австралийский доллар', GBP:'Британский фунт', NZD:'Новозеландский доллар', JPY:'Японская иена', INR:'Индийская рупия', CNY:'Китайский юань', KRW:'Южнокорейская вона', RUB:'Российский рубль', BRL:'Бразильский реал', SAR:'Саудовский риял', TRY:'Турецкая лира', MXN:'Мексиканское песо', CLP:'Чилийское песо', IDR:'Индонезийская рупия' }
+    };
+
     var STORAGE_KEY = 'ecozox_lang';
     var CURRENCY_STORAGE_KEY = 'ecozox_currency';
     var SUPPORTED_CODES = languages.map(function (l) { return l.code; });
@@ -131,16 +147,18 @@
         }).join('');
     }
 
-    function buildCurrencyButtons() {
+    function buildCurrencyButtons(lang) {
+        var names = currencyNames[lang || currentLang] || currencyNames['es'];
         return currencies.map(function (c) {
             var active = c.code === currentCurrency ? ' active' : '';
             var flagImg = '<img src="https://flagcdn.com/24x18/' + c.flag + '.png"'
                 + ' width="24" height="18" alt="' + c.code + '" class="region-flag"'
                 + ' style="border-radius:2px;flex-shrink:0;">';
+            var label = (names[c.code] || c.label).toUpperCase();
             return '<button class="region-option' + active + '" data-region-currency="' + c.code + '">'
                 + '<span style="display:flex;align-items:center;gap:0.5rem;">'
-                + flagImg + c.label.toUpperCase()
-                + ' <span class="region-option__secondary">[' + c.symbol + ']</span>'
+                + flagImg + label
+                + ' <span class="region-option__secondary">(' + c.symbol + ')</span>'
                 + '</span>'
                 + CHECK_SVG
                 + '</button>';
@@ -230,11 +248,13 @@ document.body.insertAdjacentHTML('beforeend',
             b.classList.remove('active');
         });
         btn.classList.add('active');
+        currentLang = lang;
         if (window.EcoI18n) {
             window.EcoI18n.setLang(lang);
         } else {
             localStorage.setItem(STORAGE_KEY, lang);
         }
+        currencyOptions.innerHTML = buildCurrencyButtons(lang);
         closeDialog(langDialog);
     });
 
