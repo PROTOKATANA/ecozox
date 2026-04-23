@@ -92,10 +92,24 @@ h1, h2, h3, h4, h5, h6,
   --font-body:    'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Gulim', sans-serif;
   --font-heading: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Gulim', sans-serif;
 }
-/* Remove tight letter-spacing for CJK — it breaks glyph spacing */
-:is(html[lang="zh"], html[lang="ja"], html[lang="ko"]) :is(h1,h2,h3,h4,h5,h6,
+:is(html[lang="hi"], html[lang="hi"] body) {
+  --font-body:    'Noto Sans Devanagari', sans-serif;
+  --font-heading: 'Noto Sans Devanagari', sans-serif;
+}
+:is(html[lang="ar"], html[lang="ar"] body),
+:is(html[lang="ur"], html[lang="ur"] body) {
+  --font-body:    'Noto Sans Arabic', sans-serif;
+  --font-heading: 'Noto Sans Arabic', sans-serif;
+}
+/* Remove tight letter-spacing for CJK and Arabic scripts */
+:is(html[lang="zh"], html[lang="ja"], html[lang="ko"],
+    html[lang="ar"], html[lang="ur"]) :is(h1,h2,h3,h4,h5,h6,
   .product-title, .section-title, .cart-item-title) {
   letter-spacing: 0;
+}
+/* Prevent browser from synthesizing fake bold/italic — use real loaded weights */
+:is(html[lang="hi"], html[lang="ar"], html[lang="ur"]) * {
+  font-synthesis: none;
 }
 
 a {
