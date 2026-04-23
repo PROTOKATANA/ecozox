@@ -8,9 +8,9 @@
 (function () {
     var STORAGE_KEY = 'ecozox_lang';
     var CURRENCY_STORAGE_KEY = 'ecozox_currency';
-    var SUPPORTED_LANGS = ['es','en','ar','zh','ja','ko','id','de','fr','it','pt','tr','ru','hi','pl'];
+    var SUPPORTED_LANGS = ['es','en','ar','zh','ja','ko','id','de','fr','it','pt','tr','ru','hi','pl','ur'];
     var DEFAULT_LANG = 'es';
-    var RTL_LANGS = ['ar'];
+    var RTL_LANGS = ['ar', 'ur'];
 
     /* ---------- Configuración de moneda por idioma (fallback) ---------- */
     var currencyConfig = {
@@ -28,7 +28,8 @@
         tr: { symbol: '₺',   code: 'TRY', rate: 34.89,  locale: 'tr-TR' },
         ru: { symbol: '₽',   code: 'RUB', rate: 100,    locale: 'ru-RU' },
         hi: { symbol: '₹',   code: 'INR', rate: 90.33,  locale: 'hi-IN' },
-        pl: { symbol: 'zł',  code: 'PLN', rate: 4.27,   locale: 'pl-PL' }
+        pl: { symbol: 'zł',  code: 'PLN', rate: 4.27,   locale: 'pl-PL' },
+        ur: { symbol: '₨',   code: 'PKR', rate: 305,    locale: 'ur-PK' }
     };
 
     /* ---------- Todas las monedas disponibles ---------- */
@@ -50,7 +51,8 @@
         AUD: { symbol: '$',   rate: 1.66,   locale: 'en-AU',  zeroDecimals: false },
         NZD: { symbol: '$',   rate: 1.82,   locale: 'en-NZ',  zeroDecimals: false },
         TRY: { symbol: '₺',   rate: 34.89,  locale: 'tr-TR',  zeroDecimals: false },
-        PLN: { symbol: 'zł',  rate: 4.27,   locale: 'pl-PL',  zeroDecimals: false }
+        PLN: { symbol: 'zł',  rate: 4.27,   locale: 'pl-PL',  zeroDecimals: false },
+        PKR: { symbol: '₨',   rate: 305,    locale: 'ur-PK',  zeroDecimals: true  }
     };
 
     var SUPPORTED_CURRENCIES = Object.keys(allCurrencies);
