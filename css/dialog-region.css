@@ -183,8 +183,8 @@
 .region-option:hover  { background: var(--bg-color); }
 
 .region-option.active {
-    font-weight: 600;
-    color: var(--primary-color);
+    font-weight: 450;
+    color: #15803d;
     background: var(--bg-color);
 }
 
@@ -200,6 +200,7 @@
 }
 
 .region-option.active .region-option__check { opacity: 1; }
+.region-option.active .region-option__secondary { color: #15803d; }
 
 /* ── Secondary text ─────────────────────── */
 .region-option__secondary {

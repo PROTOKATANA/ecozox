@@ -158,7 +158,7 @@
             return '<button class="region-option' + active + '" data-region-currency="' + c.code + '">'
                 + '<span style="display:flex;align-items:center;gap:0.5rem;">'
                 + flagImg + label
-                + ' <span class="region-option__secondary">(' + c.symbol + ')</span>'
+                + '<span class="region-option__secondary">(' + c.symbol + ')</span>'
                 + '</span>'
                 + CHECK_SVG
                 + '</button>';
