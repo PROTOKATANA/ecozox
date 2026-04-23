@@ -1,0 +1,37 @@
+(function () {
+    window.EcoNichoLocales = window.EcoNichoLocales || {};
+    window.EcoNichoLocales.pl = {
+        scb_perk_discount: '{pct}% rabatu',
+        scb_perk_shipping: 'Darmowa dostawa',
+        scb_perk_gift:     '1 niespodzianka',
+        scb_perk_ends:     'Kończy się za',
+        sticky_cart_btn:   'KOSZYK',
+        sticky_pay_btn:    'ZAPŁAĆ',
+        title_product:     'Łóżko-drapak dla kota z drewna sosnowego',
+        product_title:     'Łóżko-drapak dla kota z drewna sosnowego',
+        product_desc:      'Twoja sofa czy Twój kot? Wybierz oboje — koniec z wojną o zadrapania. Twój kot musi ostrzyć pazury, ale nie musi robić tego na Twoich rzeczach.',
+        product_desc1b:    'Twój kot nie drapie z wyrachowania, lecz z instynktu i dla zdrowia. Dla kota drapanie nie jest destrukcyjnym kaprysem — to kluczowe ćwiczenie fizyczne, które pozwala mu rozciągać mięśnie i naturalnie ścierać pazury, usuwając martwe warstwy skóry i pazurów.',
+        product_desc2:     'Chcesz poprawić zdrowie swojego kota?',
+        product_desc3:     'Dzięki naszemu regulowanemu drapakowi z drewna sosnowego ochronisz swoje rzeczy i dasz pupilowi najlepsze miejsce do relaksu i odpoczynku — idealny do codziennego użytku i bardzo odporny na długotrwałe gryzienie lub drapanie.',
+        product_desc4:     'Twój dom nieskazitelny, a Twój kot szczęśliwy 😸',
+        po_bundle_title:   'Drapak + 3 wkłady',
+        po_bundle_item2:   'Tektura falista wysokiej gęstości x3',
+        po_bundle_item3:   '100% organiczna kocimiętka — Kocia relaksacja!',
+
+        /* ---- Reviews ---- */
+        review_1_titulo: 'Żegnaj, zadrapania',
+        review_1_body:   'Sofa była pokryta pasami i zadrapaniami, mój kot bawił się niszcząc narożniki. Posmarowałem drapak kocimiętką i oszalał — było widać, że mu się spodobało, i od razu uznał go za swój. Drewno sosnowe jest wyraźnie dobrej jakości i nie odpryskuje od zadrapań. Polecam bez żadnych wątpliwości.',
+        review_2_titulo: 'Zasłony to już nie drabina',
+        review_2_body:   'Mam 3 koty, 2 z nich uwielbiały drapać meble, sofę, a nawet zasłony. Potrzebowałem czegoś wytrzymałego i wielokrotnego użytku. Montaż był bardzo prosty: gotowe w 3 minuty. Moje koty używają go od 2 tygodni i nie widzę już żadnych zadrapań na sofie. Jedna z nich lubi nawet leżeć na plecach i spać na drapaku z brzuszkiem do góry — to takie słodkie 😭. Świetny zakup, bardzo polecam.',
+        review_3_titulo: 'Ratując moje fotele',
+        review_3_body:   'Brzmi przesadnie, ale to czysta prawda. Mój kot jest bardzo terytorialny i od miesięcy drapał oparcie fotela. Postawiłem drapak obok mebli i kilka razy spryskałem kocimiętką. W 2 dni już go preferował. Teraz ostrzy pazury na drapaku, a nie na fotelu. Drewno sosnowe pachnie dobrze i nie ma dziwnych chemikaliów. Gorąco polecam!',
+        review_4_titulo: 'Piękny i regulowany design',
+        review_4_body:   'Drapak jest piękny, można go ustawiać pod różnymi kątami, drewno wygląda solidnie i jest dobrej jakości. Moja kotka Kitty go uwielbia. Teraz nie patrzy na mnie złym wzrokiem, gdy ją ganię za drapanie w nieodpowiednich miejscach 😅. Paczka dotarła szybko, sprzedawca użył solidnego pudełka dobrej jakości. Jestem bardzo zadowolona z zakupu!',
+        review_5_titulo: 'Drewniana podstawa i tania tektura',
+        review_5_body:   'Tektura falista wytrzymała około 2 miesięcy, zanim trzeba było ją wymienić z powodu zadrapań. Bardzo mi się spodobało to, że trzeba wymieniać tylko powierzchnię z tektury — bardzo tanią i ekonomiczną — bez konieczności wymiany drewnianej podstawy. Cieszę się, że nie muszę kupować całego nowego drapaka co jakiś czas. Mama jest szczęśliwa, gdy koty są szczęśliwe.',
+        review_6_titulo: 'Spełnia obietnicę',
+        review_6_body:   'Mój kot jest mały, około 3 kg, i pasuje mu idealnie — używa go do ostrzenia pazurów i opalania na moim podwórku. W pełni spełnia to, co obiecuje, produkt dotarł dobrze zapakowany i bez uszkodzeń. Polecam.',
+        review_7_titulo: 'Idealny dla dużych kotów',
+        review_7_body:   'Mój kot to Maine Coon ważący 9 kg i myślałem, że może być trochę za mały, ale ku mojemu zaskoczeniu jest wystarczająco duży i wygodny — nawet używa go jako łóżka. Konstrukcja jest solidna jak skała, nie przesuwa się ani milimetra podczas drapania. Regulowany design pozwala ustawiać go pod różnymi kątami — idealne do pełnego rozciągnięcia całego grzbietu. Jeśli wytrzymuje tego futrzastego olbrzyma, wytrzyma każdego kota.',
+    };
+})();
