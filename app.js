@@ -3,7 +3,7 @@
    Loads all feature modules after DOM is ready
 
    Execution order (all 'defer'):
-   1. Components: header.js, footer.js, product-card.js
+   1. Components: header.js, footer.js
       → inject HTML into placeholder divs
    2. This script (app.js)
       → loads feature modules that attach behaviors

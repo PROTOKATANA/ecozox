@@ -11,11 +11,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script>window.ECOZOX_API_URL = 'https://api.ecozox.com';</script>
+    <script>
+        window.ECOZOX_API_URL = 'https://api.ecozox.com';
+        window.ECOZOX_BRAND = { localesPath: 'gatos/caton/locales/' };
+    </script>
     <script src="components/header.js" defer></script>
     <script src="components/bottom-nav.js" defer></script>
     <script src="components/footer.js" defer></script>
-    <script src="components/product-card.js" defer></script>
+    <link rel="preload" as="image" href="gatos/caton/pixel/t2.jpg">
     <script src="js/i18n.js" defer></script>
 </head>
 <body class="page-home">
@@ -41,7 +44,16 @@
 
     <main class="catalog-section">
         <div class="container">
-            <div data-component="product-grid"></div>
+            <div class="product-grid">
+                <a href="gatos/caton/index.html" class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="gatos/caton/pixel/t2.jpg" alt="Cama rascadora para gatos de madera de pino" class="product-image" loading="eager">
+                    </div>
+                    <div class="product-info">
+                        <h2 class="product-title"><span class="product-title__text" data-i18n="product_title">Cama rascadora para gatos de madera de pino</span></h2>
+                    </div>
+                </a>
+            </div>
         </div>
     </main>
 
