@@ -24,7 +24,8 @@
         { code: 'fr', flag: 'fr', label: 'Français',  suffix: 'FR' },
         { code: 'it', flag: 'it', label: 'Italiano',  suffix: 'IT' },
         { code: 'pt', flag: 'br', label: 'Português', suffix: 'PT' },
-        { code: 'tr', flag: 'tr', label: 'Türkçe',    suffix: 'TR' }
+        { code: 'tr', flag: 'tr', label: 'Türkçe',    suffix: 'TR' },
+        { code: 'ru', flag: 'ru', label: 'Русский',   suffix: 'RU' }
     ];
 
     // Precargar Noto Sans para CJK
@@ -68,7 +69,7 @@
         || (navigator.language || '').split('-')[0].toLowerCase();
     var currentLang = SUPPORTED_CODES.indexOf(stored) !== -1 ? stored : 'es';
 
-    var langToCurrency = { es:'EUR', en:'USD', ar:'SAR', zh:'CNY', ja:'JPY', ko:'KRW', id:'IDR', de:'EUR', fr:'EUR', it:'EUR', pt:'BRL', tr:'TRY' };
+    var langToCurrency = { es:'EUR', en:'USD', ar:'SAR', zh:'CNY', ja:'JPY', ko:'KRW', id:'IDR', de:'EUR', fr:'EUR', it:'EUR', pt:'BRL', tr:'TRY', ru:'RUB' };
     var storedCurrency = localStorage.getItem(CURRENCY_STORAGE_KEY);
     var currentCurrency = storedCurrency || langToCurrency[currentLang] || 'USD';
 

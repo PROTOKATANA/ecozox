@@ -8,7 +8,7 @@
 (function () {
     var STORAGE_KEY = 'ecozox_lang';
     var CURRENCY_STORAGE_KEY = 'ecozox_currency';
-    var SUPPORTED_LANGS = ['es','en','ar','zh','ja','ko','id','de','fr','it','pt','tr'];
+    var SUPPORTED_LANGS = ['es','en','ar','zh','ja','ko','id','de','fr','it','pt','tr','ru'];
     var DEFAULT_LANG = 'es';
     var RTL_LANGS = ['ar'];
 
@@ -25,7 +25,8 @@
         fr: { symbol: '€',   code: 'EUR', rate: 1,      locale: 'fr-FR' },
         it: { symbol: '€',   code: 'EUR', rate: 1,      locale: 'it-IT' },
         pt: { symbol: 'R$',  code: 'BRL', rate: 5.40,   locale: 'pt-BR' },
-        tr: { symbol: '₺',   code: 'TRY', rate: 34.89,  locale: 'tr-TR' }
+        tr: { symbol: '₺',   code: 'TRY', rate: 34.89,  locale: 'tr-TR' },
+        ru: { symbol: '₽',   code: 'RUB', rate: 100,    locale: 'ru-RU' }
     };
 
     /* ---------- Todas las monedas disponibles ---------- */
