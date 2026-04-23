@@ -31,14 +31,16 @@
         { code: 'ur', flag: 'pk', label: 'اردو',       suffix: 'UR' }
     ];
 
-    // Precargar Noto Sans para CJK
+    // Precargar Noto Sans para CJK y scripts árabe/urdu
     var CJK_FONTS = {
         zh: 'https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;800&display=swap',
         ja: 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap',
         ko: 'https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap',
-        hi: 'https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;700;800&display=swap'
+        hi: 'https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;700;800&display=swap',
+        ar: 'https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;700;800&display=swap',
+        ur: 'https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;700;800&display=swap'
     };
-    ['zh', 'ja', 'ko', 'hi'].forEach(function (lang) {
+    ['zh', 'ja', 'ko', 'hi', 'ar', 'ur'].forEach(function (lang) {
         var link = document.createElement('link');
         link.rel = 'stylesheet';
         link.href = CJK_FONTS[lang];

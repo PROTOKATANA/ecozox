@@ -57,11 +57,14 @@
 
     var SUPPORTED_CURRENCIES = Object.keys(allCurrencies);
 
-    /* ---------- Fuentes CJK ---------- */
+    /* ---------- Fuentes CJK y scripts especiales ---------- */
     var CJK_FONTS = {
         zh: 'https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;800&display=swap',
         ja: 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap',
-        ko: 'https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap'
+        ko: 'https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap',
+        hi: 'https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;700;800&display=swap',
+        ar: 'https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;700;800&display=swap',
+        ur: 'https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;700;800&display=swap'
     };
     var loadedFonts = {};
 
@@ -243,7 +246,7 @@
                     if (window.EcoReviews)         window.EcoReviews.update();
                 }
 
-                var isCJK = ['zh','ja','ko'].indexOf(lang) !== -1;
+                var isCJK = ['zh','ja','ko','hi','ar','ur'].indexOf(lang) !== -1;
                 if (isCJK && document.fonts && document.fonts.ready) {
                     document.fonts.ready.then(applyAll);
                 } else {
@@ -392,7 +395,7 @@
         loadLocale('en', function () {
             loadNichoLocale('en', function () {
                 var afterLoad = function () {
-                    var isCJK = ['zh','ja','ko'].indexOf(currentLang) !== -1;
+                    var isCJK = ['zh','ja','ko','hi','ar','ur'].indexOf(currentLang) !== -1;
                     function applyAll() {
                         applyTranslations();
                         applyPrices();
