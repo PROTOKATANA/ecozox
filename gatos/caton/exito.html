@@ -22,7 +22,9 @@
             localesPath: 'locales/'
         };
                 window.ECOZOX_CONFIG = window.ECOZOX_CONFIG || { discountPercent: 30 };
-        window.ECOZOX_API_URL = 'https://api-6tn32nl4ea-uc.a.run.app';
+        window.ECOZOX_API_URL = (location.hostname === 'localhost' || location.hostname === '127.0.0.1')
+            ? 'http://localhost:3000'
+            : 'https://api-6tn32nl4ea-uc.a.run.app';
     </script>
 
     <script src="../../components/header.js" defer></script>

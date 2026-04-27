@@ -47,7 +47,13 @@
     });
 
   function applyPrices(productos) {
-    var individual = productos.find(function (p) { return p.tipo === 'individual'; });
+    // Encontrar el ID del producto principal en esta página (el del primer botón de compra)
+    var firstBtn   = document.querySelector('.js-add-to-cart');
+    var mainId     = firstBtn ? firstBtn.dataset.productId : null;
+
+    // Buscar el individual que coincida con el botón principal; si no, fallback al primero
+    var individual = productos.find(function (p) { return p.tipo === 'individual' && p.localId === mainId; })
+                  || productos.find(function (p) { return p.tipo === 'individual'; });
     var bundle     = productos.find(function (p) { return p.tipo === 'bundle'; });
 
     if (individual) applyIndividual(individual);
@@ -74,6 +80,8 @@
     setIi8nPrice('.po-single__price-original', origDec);
     setIi8nPrice('.scb__price-sale',           ventaDec);
     setIi8nPrice('.scb__price-original',       origDec);
+
+    notifyIndividualUpdate();
   }
 
   /* ---- Actualiza precios del bundle ---- */
@@ -101,6 +109,13 @@
     // Notificar a purchase-options para que relea el precio del servidor
     if (window.EcoPurchaseOptions && window.EcoPurchaseOptions.refreshBundle) {
       window.EcoPurchaseOptions.refreshBundle();
+    }
+  }
+
+  /* ---- Notifica a purchase-options que el precio individual se actualizó ---- */
+  function notifyIndividualUpdate() {
+    if (window.EcoPurchaseOptions && window.EcoPurchaseOptions.refreshIndividual) {
+      window.EcoPurchaseOptions.refreshIndividual();
     }
   }
 

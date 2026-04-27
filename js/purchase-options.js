@@ -295,18 +295,22 @@
 
   /* Llamado por precio-loader tras recibir los precios del servidor */
   function refreshBundle() {
-    /* precio-loader ya actualizó firstBtn.dataset.productPrice con el precio individual correcto */
-    if (firstBtn.dataset.productPrice && firstBtn.dataset.productPrice !== '0') {
-      _individualPrice = firstBtn.dataset.productPrice;
-    }
     BUNDLE.price          = bundleCard.dataset.bundlePrice;
     BUNDLE.origPriceCents = bundleCard.dataset.bundleOriginalPrice || null;
     BUNDLE.descuentoExtra = Math.round(parseFloat(bundleCard.dataset.bundleDiscount || '0') * 100);
     syncActive();
   }
 
+  /* Llamado por precio-loader cuando actualiza el precio individual */
+  function refreshIndividual() {
+    if (firstBtn.dataset.productPrice && firstBtn.dataset.productPrice !== '0') {
+      _individualPrice = firstBtn.dataset.productPrice;
+    }
+    syncActive();
+  }
+
   /* Re-sync after i18n updates translated text (title, name) */
-  window.EcoPurchaseOptions = { update: syncActive, refreshBundle: refreshBundle };
+  window.EcoPurchaseOptions = { update: syncActive, refreshBundle: refreshBundle, refreshIndividual: refreshIndividual };
 
   /* If precio-loader already resolved before this script loaded, the refreshBundle()
      call it made was a no-op (window.EcoPurchaseOptions didn't exist yet). Re-run it
