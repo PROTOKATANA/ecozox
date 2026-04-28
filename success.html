@@ -64,8 +64,10 @@
         }
         .success-card h1 {
             font-family: var(--font-heading);
-            font-size: 1.75rem;
+            font-size: clamp(1.2rem, 4.2vw, 1.75rem);
             color: var(--text-main);
+            text-transform: uppercase;
+            white-space: nowrap;
             margin-bottom: 0.75rem;
         }
         .success-card p {
