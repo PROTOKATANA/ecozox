@@ -31,6 +31,5 @@
         success_message_1: 'Terima kasih atas pembelian Anda. Kami telah menerima pesanan Anda dan sedang memprosesnya.',
         success_message_2: 'Anda akan segera menerima email konfirmasi.',
         success_reference: 'Referensi:',
-        success_back_home: 'Kembali ke toko',
     };
 })();

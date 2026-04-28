@@ -224,6 +224,5 @@
         success_message_1: '感谢您的购买。我们已收到您的订单，正在处理中。',
         success_message_2: '您将很快收到一封确认邮件。',
         success_reference: '参考编号：',
-        success_back_home: '返回商店',
     };
 })()

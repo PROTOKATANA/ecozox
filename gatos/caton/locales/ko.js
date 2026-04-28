@@ -31,6 +31,5 @@
         success_message_1: '구매해 주셔서 감사합니다. 주문을 접수하여 처리 중입니다.',
         success_message_2: '곧 확인 이메일을 받으실 수 있습니다.',
         success_reference: '참조번호:',
-        success_back_home: '상점으로 돌아가기',
     };
 })();

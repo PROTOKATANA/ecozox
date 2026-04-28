@@ -224,6 +224,5 @@
         success_message_1: 'Satın alımınız için teşekkür ederiz. Siparişinizi aldık ve işleme koyduk.',
         success_message_2: 'Kısa süre içinde bir onay e-postası alacaksınız.',
         success_reference: 'Referans:',
-        success_back_home: 'Mağazaya dön',
     };
 })()

@@ -31,6 +31,5 @@
         success_message_1: 'ご購入ありがとうございます。ご注文を受け付け、処理中です。',
         success_message_2: '確認メールをまもなくお送りいたします。',
         success_reference: '参照番号：',
-        success_back_home: 'ストアに戻る',
     };
 })();

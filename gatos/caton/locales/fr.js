@@ -31,6 +31,5 @@
         success_message_1: 'Merci pour votre achat. Nous avons bien reçu votre commande et la traitons.',
         success_message_2: 'Vous recevrez bientôt un e-mail de confirmation.',
         success_reference: 'Référence :',
-        success_back_home: 'Retour à la boutique',
     };
 })();

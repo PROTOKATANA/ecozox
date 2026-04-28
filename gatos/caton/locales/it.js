@@ -31,6 +31,5 @@
         success_message_1: 'Grazie per il tuo acquisto. Abbiamo ricevuto il tuo ordine e lo stiamo elaborando.',
         success_message_2: 'Riceverai presto un\'email di conferma.',
         success_reference: 'Riferimento:',
-        success_back_home: 'Torna al negozio',
     };
 })();
