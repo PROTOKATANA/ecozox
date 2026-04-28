@@ -222,7 +222,7 @@
         /* ---------- Success Page ---------- */
         success_title: 'Sipariş Onaylandı!',
         success_message_1: 'Satın alımınız için teşekkür ederiz. Siparişinizi aldık ve işleme koyduk.',
-        success_message_2: 'Kısa süre içinde bir onay e-postası alacaksınız.',
+        success_message_2: 'Kısa süre içinde takip numaranızı içeren bir e-posta alacaksınız.',
         success_reference: 'Referans:',
     };
 })()

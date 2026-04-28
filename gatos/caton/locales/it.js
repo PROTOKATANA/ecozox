@@ -29,7 +29,7 @@
         review_7_body:   'Il mio gatto è un Maine Coon da 9 kg e pensavo che potesse essere un po\' piccolo, ma con mia sorpresa è abbastanza grande e comodo — lo usa persino come letto. La costruzione è solida come una roccia, non si muove di un millimetro mentre graffia la superficie di cartone. Il design è regolabile e consente diverse angolazioni, ideale per distendere completamente la schiena. Se regge questo Gigante peloso, regge qualsiasi gatto.',
         success_title: 'Ordine Confermato!',
         success_message_1: 'Grazie per il tuo acquisto. Abbiamo ricevuto il tuo ordine e lo stiamo elaborando.',
-        success_message_2: 'Riceverai presto un\'email di conferma.',
+        success_message_2: 'Riceverai presto un\'email con il tuo numero di tracciamento.',
         success_reference: 'Riferimento:',
     };
 })();

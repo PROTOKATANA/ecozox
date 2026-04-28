@@ -155,8 +155,8 @@
         contact_message_placeholder: 'Décrivez le problème avec votre commande ou votre question afin que nous puissions vous aider...',
         contact_submit: 'ENVOYER',
         contact_toast: 'Demande envoyée. Nous vous contacterons sous peu.',
-        trust_title: 'Votre tranquillité d\'esprit avant tout'esprit avant tout',
-        trust_desc: 'Si votre produit ne répond pas à vos attentes ou présente un défaut, vous bénéficiez d\'une garantie de retour assurée.'acheter en ligne nécessite de la confiance. Si votre produit ne répond pas à vos attentes ou présente un défaut, ne vous inquiétez pas. Nous avons conçu un processus de retour axé sur votre confort.',
+        trust_title: 'Votre tranquillité d\'esprit avant tout',
+        trust_desc: 'Si votre produit ne répond pas à vos attentes ou présente un défaut, vous bénéficiez d\'une garantie de retour assurée.',
         trust_feature_1: '🛡️ 30 jours de garantie à partir de la réception de votre commande, si quelque chose ne va pas, nous le réglons immédiatement, sans explications inutiles.',
         trust_feature_2: '⚡ Remboursement rapide, une fois le retour validé, votre argent sera de retour sur votre compte sous 48 heures, garanti.',
         trust_feature_3: '🙋🏽 Support 100% humain, pas de bots. Notre équipe vous accompagnera pas à pas pour résoudre toutes vos questions.',
@@ -222,7 +222,7 @@
         /* ---------- Success Page ---------- */
         success_title: 'Commande confirmée !',
         success_message_1: 'Merci pour votre achat. Nous avons bien reçu votre commande et la traitons.',
-        success_message_2: 'Vous recevrez bientôt un e-mail de confirmation.',
+        success_message_2: 'Vous recevrez bientôt un e-mail avec votre numéro de suivi.',
         success_reference: 'Référence :',
     };
 })()

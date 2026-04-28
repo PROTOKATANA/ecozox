@@ -35,7 +35,7 @@
         review_7_body:   'Mój kot to Maine Coon ważący 9 kg i myślałem, że może być trochę za mały, ale ku mojemu zaskoczeniu jest wystarczająco duży i wygodny — nawet używa go jako łóżka. Konstrukcja jest solidna jak skała, nie przesuwa się ani milimetra podczas drapania. Regulowany design pozwala ustawiać go pod różnymi kątami — idealne do pełnego rozciągnięcia całego grzbietu. Jeśli wytrzymuje tego futrzastego olbrzyma, wytrzyma każdego kota.',
         success_title: 'Zamówienie Potwierdzone!',
         success_message_1: 'Dziękujemy za zakup. Otrzymaliśmy Twoje zamówienie i przetwarzamy je.',
-        success_message_2: 'Wkrótce otrzymasz e-mail z potwierdzeniem.',
+        success_message_2: 'Wkrótce otrzymasz e-mail z numerem śledzenia.',
         success_reference: 'Numer referencyjny:',
     };
 })();

@@ -36,6 +36,12 @@
             padding: 3rem 1rem;
             background: #f7f4f0;
         }
+        @media (max-width: 640px) {
+            .success-section {
+                min-height: auto;
+                padding: 2.6rem 1.9rem 1.9rem;
+            }
+        }
         .success-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -131,7 +137,7 @@
                 </div>
                 <h1 data-i18n="success_title">¡Pedido Confirmado!</h1>
                 <p data-i18n="success_message_1">Gracias por tu compra. Hemos recibido tu pedido y lo estamos procesando.</p>
-                <p data-i18n="success_message_2">Recibirás un correo de confirmación en breve.</p>
+                <p data-i18n="success_message_2">Recibirás un correo con tu número de seguimiento en breve.</p>
                 <div class="success-session" id="sessionInfo" style="display:none">
                     <span data-i18n="success_reference">Referencia:</span> <span id="sessionId"></span>
                 </div>

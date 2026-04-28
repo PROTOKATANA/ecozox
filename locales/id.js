@@ -222,7 +222,7 @@
         /* ---------- Success Page ---------- */
         success_title: 'Pesanan Dikonfirmasi!',
         success_message_1: 'Terima kasih atas pembelian Anda. Kami telah menerima pesanan Anda dan sedang memprosesnya.',
-        success_message_2: 'Anda akan segera menerima email konfirmasi.',
+        success_message_2: 'Anda akan segera menerima email dengan nomor pelacakan Anda.',
         success_reference: 'Referensi:',
     };
 })()

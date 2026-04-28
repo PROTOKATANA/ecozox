@@ -29,7 +29,7 @@
         review_7_body:   'Kucing saya adalah Maine Coon 9 kg dan saya pikir mungkin sedikit kecil, tapi sungguh mengejutkan ternyata cukup besar dan nyaman — dia bahkan menggunakannya sebagai tempat tidur. Konstruksinya kokoh seperti batu, tidak bergerak satu milimeter pun saat dia mencakar permukaan kardus. Desainnya bisa disesuaikan dan memungkinkan berbagai sudut, ideal untuk meregangkan punggungnya sepenuhnya. Jika bisa menahan si Raksasa berbulu ini, bisa menahan kucing mana pun.',
         success_title: 'Pesanan Dikonfirmasi!',
         success_message_1: 'Terima kasih atas pembelian Anda. Kami telah menerima pesanan Anda dan sedang memprosesnya.',
-        success_message_2: 'Anda akan segera menerima email konfirmasi.',
+        success_message_2: 'Anda akan segera menerima email dengan nomor pelacakan Anda.',
         success_reference: 'Referensi:',
     };
 })();

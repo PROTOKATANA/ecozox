@@ -29,7 +29,7 @@
         review_7_body:   'O meu gato é um Maine Coon de 9 kg e pensei que podia ser um pouco pequeno, mas para minha surpresa é suficientemente grande e confortável — até o usa como cama. A construção é sólida como uma rocha, não se move um milímetro enquanto arranha a superfície de cartão. O design é ajustável e permite diferentes ângulos, ideal para esticar completamente as costas. Se aguenta este Gigante peludo, aguenta qualquer gato.',
         success_title: 'Pedido Confirmado!',
         success_message_1: 'Obrigado pela sua compra. Recebemos o seu pedido e estamos a processá-lo.',
-        success_message_2: 'Receberá um e-mail de confirmação em breve.',
+        success_message_2: 'Receberá em breve um e-mail com o seu número de rastreio.',
         success_reference: 'Referência:',
     };
 })();

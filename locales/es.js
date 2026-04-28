@@ -222,7 +222,7 @@
         /* ---------- Success Page ---------- */
         success_title: '¡Pedido Confirmado!',
         success_message_1: 'Gracias por tu compra. Hemos recibido tu pedido y lo estamos procesando.',
-        success_message_2: 'Recibirás un correo de confirmación en breve.',
+        success_message_2: 'Recibirás un correo con tu número de seguimiento en breve.',
         success_reference: 'Referencia:',
     };
 })();

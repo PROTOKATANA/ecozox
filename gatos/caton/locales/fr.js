@@ -29,7 +29,7 @@
         review_7_body:   'Mon chat est un Maine Coon de 9 kg et je pensais que ce serait peut-être un peu petit, mais à ma grande surprise il est suffisamment grand et confortable — il l\'utilise même comme lit. La construction est solide comme un roc, il ne bouge pas d\'un millimètre pendant qu\'il griffe la surface en carton. Le design est réglable et permet différents angles, idéal pour qu\'il étire complètement son dos. S\'il supporte ce Géant poilu, il supporte n\'importe quel chat.',
         success_title: 'Commande confirmée !',
         success_message_1: 'Merci pour votre achat. Nous avons bien reçu votre commande et la traitons.',
-        success_message_2: 'Vous recevrez bientôt un e-mail de confirmation.',
+        success_message_2: 'Vous recevrez bientôt un e-mail avec votre numéro de suivi.',
         success_reference: 'Référence :',
     };
 })();
