@@ -14,7 +14,7 @@
   function getDiscountFactor() {
     var d = (window.ECOZOX_CONFIG && window.ECOZOX_CONFIG.discountPercent != null)
       ? window.ECOZOX_CONFIG.discountPercent
-      : (function () { try { var s = localStorage.getItem('ecozox_desc'); return s !== null ? parseFloat(s) : 30; } catch (e) { return 30; } }());
+      : (function () { try { var s = localStorage.getItem('ecozox_desc'); return s !== null ? parseFloat(s) : 0; } catch (e) { return 0; } }());
     return 1 - d / 100;
   }
 
@@ -98,7 +98,7 @@
       } else {
         delete btn.dataset.productOrigPrice;
       }
-      if (data.descuentoExtra) {
+      if (data.descuentoExtra != null) {
         btn.dataset.productBundleExtraDisc = data.descuentoExtra;
       } else {
         delete btn.dataset.productBundleExtraDisc;
@@ -136,7 +136,7 @@
       } else {
         delete stickyBtn.dataset.productOrigPrice;
       }
-      if (data.descuentoExtra) {
+      if (data.descuentoExtra != null) {
         stickyBtn.dataset.productBundleExtraDisc = data.descuentoExtra;
       } else {
         delete stickyBtn.dataset.productBundleExtraDisc;

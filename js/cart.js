@@ -70,7 +70,7 @@
                 name: product.name || null,
                 price: product.price,
                 origPrice: product.origPrice || null,
-                bundleExtraDisc: product.bundleExtraDisc || null,
+                bundleExtraDisc: (product.bundleExtraDisc != null ? product.bundleExtraDisc : null),
                 image: product.image,
                 link: product.link || null,
                 subItems: product.subItems || null,

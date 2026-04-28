@@ -300,10 +300,10 @@
         // decodeEntities convierte &copy; → © sin ejecutar ningún HTML.
         var discountPct = (window.ECOZOX_CONFIG && window.ECOZOX_CONFIG.discountPercent != null)
             ? window.ECOZOX_CONFIG.discountPercent
-            : (function () { try { var s = localStorage.getItem('ecozox_desc'); return s !== null ? parseFloat(s) : 30; } catch (e) { return 30; } }());
+            : (function () { try { var s = localStorage.getItem('ecozox_desc'); return s !== null ? parseFloat(s) : 0; } catch (e) { return 0; } }());
         var bundleExtraPct = (window.ECOZOX_CONFIG && window.ECOZOX_CONFIG.bundleExtraDiscount != null)
             ? window.ECOZOX_CONFIG.bundleExtraDiscount
-            : 20;
+            : 0;
         document.querySelectorAll('[data-i18n]').forEach(function (el) {
             var key = el.getAttribute('data-i18n');
             var value = t(key);

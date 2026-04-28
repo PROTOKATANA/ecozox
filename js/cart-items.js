@@ -1,7 +1,9 @@
 /* ========================================
    Cart Page Renderer
    Reads localStorage and renders cart items,
-   handles quantity changes, removal & totals
+   handles quantity changes, removal & totals.
+   Prices are recalculated from the live catalog
+   (window.ECOZOX_CATALOG) whenever available.
    ======================================== */
 
 (function () {
@@ -13,6 +15,55 @@
             if (stored !== null) return parseFloat(stored);
         } catch (e) {}
         return null;
+    }
+
+    function getGiftValue() {
+        if (window.ECOZOX_CONFIG && window.ECOZOX_CONFIG.giftValue != null)
+            return window.ECOZOX_CONFIG.giftValue;
+        return 27.17;
+    }
+
+    function getLiveProduct(itemId) {
+        if (!window.ECOZOX_CATALOG) return null;
+        return window.ECOZOX_CATALOG.find(function (p) { return p.localId === itemId; }) || null;
+    }
+
+    function getLivePrice(item) {
+        var live = getLiveProduct(item.id);
+        if (live && live.precioVentaCents != null) return live.precioVentaCents / 100;
+        return parseFloat(item.price);
+    }
+
+    function getLiveOrigPrice(item) {
+        var live = getLiveProduct(item.id);
+        if (live && live.precioOriginalCents != null) return live.precioOriginalCents / 100;
+        if (item.origPrice != null && !isNaN(parseFloat(item.origPrice))) return parseFloat(item.origPrice);
+        return null;
+    }
+
+    function getLiveBundleExtraDisc(item) {
+        var live = getLiveProduct(item.id);
+        if (live && live.descuento != null) return live.descuento;
+        if (item.bundleExtraDisc != null) return item.bundleExtraDisc;
+        if (window.ECOZOX_CONFIG && window.ECOZOX_CONFIG.bundleExtraDiscount != null)
+            return window.ECOZOX_CONFIG.bundleExtraDiscount;
+        return 0;
+    }
+
+    function getCartSubtotalLive() {
+        var cart = window.EcoCart.getCart();
+        return cart.reduce(function (sum, item) {
+            return sum + getLivePrice(item) * item.quantity;
+        }, 0);
+    }
+
+    function getCartOrigSubtotalLive() {
+        var cart = window.EcoCart.getCart();
+        return cart.reduce(function (sum, item) {
+            var orig = getLiveOrigPrice(item);
+            if (orig != null) return sum + orig * item.quantity;
+            return sum + getLivePrice(item) * item.quantity;
+        }, 0);
     }
 
     const cartItemsContainer = document.querySelector('.cart-items');
@@ -84,12 +135,11 @@
     /* --- Normal item template --- */
     function renderNormalItem(item) {
         const disc = getDiscountPercent() ?? 0;
-        const salePrice = parseFloat(item.price);
-        const origPrice = (item.origPrice != null && !isNaN(parseFloat(item.origPrice)))
-            ? parseFloat(item.origPrice)
-            : (disc > 0 ? salePrice / (1 - disc / 100) : salePrice);
+        const salePrice = getLivePrice(item);
+        const origPrice = getLiveOrigPrice(item);
+        const displayOrig = origPrice != null ? origPrice : salePrice;
         const priceHtml = (!isNaN(salePrice) && salePrice > 0)
-            ? `<del class="price-original">${formatPrice(origPrice)}</del><span class="price-discounted">${formatPrice(salePrice)}</span>`
+            ? `<del class="price-original">${formatPrice(displayOrig)}</del><span class="price-discounted">${formatPrice(salePrice)}</span>`
             : `<span class="price-discounted price-discounted--unavailable">N/A(0)</span>`;
         return `
             <div class="cart-item" data-product-id="${item.id}">
@@ -121,10 +171,9 @@
     /* --- Bundle item template (nested breakdown) --- */
     function renderBundleItem(item) {
         const disc = getDiscountPercent() ?? 0;
-        const salePrice = parseFloat(item.price);
-        const origPrice = (item.origPrice != null && !isNaN(parseFloat(item.origPrice)))
-            ? parseFloat(item.origPrice)
-            : (disc > 0 ? salePrice / (1 - disc / 100) : salePrice);
+        const salePrice = getLivePrice(item);
+        const origPrice = getLiveOrigPrice(item);
+        const displayOrig = origPrice != null ? origPrice : salePrice;
         const subs = (Array.isArray(item.subItems) && item.subItems.length)
             ? item.subItems.map(sub => ({ img: sub.img, label: sub.title || '', key: sub.key || '' }))
             : BUNDLE_SUB_ITEMS.map(sub => ({ img: sub.img, label: ti(sub.titleKey), key: sub.titleKey || '' }));
@@ -137,7 +186,7 @@
             </li>`;
         }).join('');
 
-        const bundlePct = (item.bundleExtraDisc != null) ? item.bundleExtraDisc : 0;
+        const bundlePct = getLiveBundleExtraDisc(item);
         const globalPct = disc;
         const totalPct  = bundlePct + globalPct;
 
@@ -149,7 +198,7 @@
                     </h3>
                     <div class="cart-item-price">
                         ${(!isNaN(salePrice) && salePrice > 0)
-                            ? `<del class="price-original">${formatPrice(origPrice)}</del><span class="price-discounted">${formatPrice(salePrice)}</span>`
+                            ? `<del class="price-original">${formatPrice(displayOrig)}</del><span class="price-discounted">${formatPrice(salePrice)}</span>`
                             : `<span class="price-discounted price-discounted--unavailable">N/A(0)</span>`}
                     </div>
                 </div>
@@ -172,6 +221,7 @@
 
     /* --- Gift item template (no footer: no qty controls, no delete) --- */
     function renderGiftItem() {
+        const giftValue = getGiftValue();
         return `
             <div class="cart-item cart-item--gift" data-product-id="__gift__">
                 <div class="cart-item-header">
@@ -182,7 +232,7 @@
                     <ul class="gift-bullet-list">
                         <li class="gift-bullet-item">
                             <svg class="gift-bullet-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3V2m0 1C8 1.34 6.66 1 6 2s.34 2 2 1zm0 0C8 1.34 9.34 1 10 2s-.34 2-2 1z"/><rect x="2" y="3" width="12" height="3" rx="1"/><path d="M3 6v7a1 1 0 001 1h8a1 1 0 001-1V6"/><line x1="8" y1="6" x2="8" y2="14"/></svg>
-                            <span>${ti('cart_gift_desc_value').replace('{amount}', formatPrice(27.17))}</span>
+                            <span>${ti('cart_gift_desc_value').replace('{amount}', formatPrice(giftValue))}</span>
                         </li>
                         <li class="gift-bullet-item">
                             <svg class="gift-bullet-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2H4a1 1 0 00-1 1v10a1 1 0 001 1h8a1 1 0 001-1V6z"/><polyline points="9 2 9 6 13 6"/></svg>
@@ -231,19 +281,12 @@
 
         cartItemsContainer.innerHTML = html;
 
-        renderSummary(window.EcoCart.getSubtotal(), cart.length >= 1);
+        renderSummary(getCartSubtotalLive(), cart.length >= 1);
     }
 
     function renderSummary(subtotal, hasGift = false) {
         const discount = getDiscountPercent() ?? 0;
-        const cart = window.EcoCart.getCart();
-        const origSubtotal = cart.reduce(function (sum, item) {
-            const sale = parseFloat(item.price);
-            const orig = (item.origPrice != null && !isNaN(parseFloat(item.origPrice)))
-                ? parseFloat(item.origPrice)
-                : (discount > 0 ? sale / (1 - discount / 100) : sale);
-            return sum + orig * item.quantity;
-        }, 0);
+        const origSubtotal = getCartOrigSubtotalLive();
         const savings = origSubtotal - subtotal;
         const total = subtotal;
 
@@ -319,7 +362,7 @@
                 val -= 1;
                 input.value = val;
                 window.EcoCart.updateQuantity(productId, val);
-                renderSummary(window.EcoCart.getSubtotal(), window.EcoCart.getCart().length >= 1);
+                renderSummary(getCartSubtotalLive(), window.EcoCart.getCart().length >= 1);
             }
             return;
         }
@@ -334,7 +377,7 @@
             let val = (parseInt(input.value) || 1) + 1;
             input.value = val;
             window.EcoCart.updateQuantity(productId, val);
-            renderSummary(window.EcoCart.getSubtotal(), window.EcoCart.getCart().length >= 1);
+            renderSummary(getCartSubtotalLive(), window.EcoCart.getCart().length >= 1);
         }
     }
 
@@ -348,7 +391,7 @@
         if (isNaN(val) || val < 1) val = 1;
         input.value = val;
         window.EcoCart.updateQuantity(productId, val);
-        renderSummary(window.EcoCart.getSubtotal(), window.EcoCart.getCart().length >= 1);
+        renderSummary(getCartSubtotalLive(), window.EcoCart.getCart().length >= 1);
     }
 
     // Expose renderCart so i18n can re-render on language change
