@@ -32,6 +32,11 @@
         review_6_titulo: 'Cumple lo que promete',
         review_6_body:   'Mi gato es pequeño de 3KG aproximadamente y le va de maravilla, lo usa para afilarse las uñas y para tomar el sol en mi patio trasero. Cumple totalmente con lo que promete, el articulo llegó bien embalado y sin golpes. Lo recomiendo.',
         review_7_titulo: 'Ideal para gatos Gigantes',
-        review_7_body:   'Mi gato es un Maine Coon de 9 kg y pensé que igual se quedaría un poco pequeño, pero para mi sorpresa es lo suficientemente grande y comodo, incluso lo usa como cama. La construcción es sólida como una roca, no se mueve ni un milímetro mientras araña la superficie de carton. El diseño es ajustable y permite ponerlo en diferentes ángulos, ideal para que estire bien y por completo toda su espalda. Si aguanta a este Gigante peludo, aguanta a cualquier gato.'
+        review_7_body:   'Mi gato es un Maine Coon de 9 kg y pensé que igual se quedaría un poco pequeño, pero para mi sorpresa es lo suficientemente grande y comodo, incluso lo usa como cama. La construcción es sólida como una roca, no se mueve ni un milímetro mientras araña la superficie de carton. El diseño es ajustable y permite ponerlo en diferentes ángulos, ideal para que estire bien y por completo toda su espalda. Si aguanta a este Gigante peludo, aguanta a cualquier gato.',
+        success_title: '¡Pedido Confirmado!',
+        success_message_1: 'Gracias por tu compra. Hemos recibido tu pedido y lo estamos procesando.',
+        success_message_2: 'Recibirás un correo de confirmación en breve.',
+        success_reference: 'Referencia:',
+        success_back_home: 'Volver a la tienda',
     };
 })();

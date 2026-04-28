@@ -32,6 +32,11 @@
         review_6_titulo: 'Does what it promises',
         review_6_body:   'My cat is small at approximately 3kg and it works perfectly for him — he uses it to sharpen his claws and sunbathe in my backyard. It fully delivers on its promises, the item arrived well packaged and undamaged. I recommend it.',
         review_7_titulo: 'Great size for Giant cats',
-        review_7_body:   'My cat is a 9kg Maine Coon and I thought it might be a bit small, but to my surprise it\'s large and comfortable enough — he even uses it as a bed. The construction is solid as a rock, it doesn\'t move an inch while he scratches the cardboard surface. The design is adjustable and allows different angles, perfect for a full back stretch. If it handles this fluffy Giant, it handles any cat.'
+        review_7_body:   'My cat is a 9kg Maine Coon and I thought it might be a bit small, but to my surprise it\'s large and comfortable enough — he even uses it as a bed. The construction is solid as a rock, it doesn\'t move an inch while he scratches the cardboard surface. The design is adjustable and allows different angles, perfect for a full back stretch. If it handles this fluffy Giant, it handles any cat.',
+        success_title: 'Order Confirmed!',
+        success_message_1: 'Thank you for your purchase. We have received your order and are processing it.',
+        success_message_2: 'You will receive a confirmation email shortly.',
+        success_reference: 'Reference:',
+        success_back_home: 'Back to store',
     };
 })();

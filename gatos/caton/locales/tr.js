@@ -26,6 +26,11 @@
         review_6_titulo: 'Vaat Ettiğini Yapıyor',
         review_6_body:   'Kedim küçük, yaklaşık 3 kg, ve ona mükemmel uyuyor — tırnaklarını bilemek ve arka bahçemde güneşlenmek için kullanıyor. Vaat ettiklerini tamamen yerine getiriyor, ürün iyi paketlenmiş ve hasarsız geldi. Tavsiye ederim.',
         review_7_titulo: 'Dev Kediler için Harika Boyut',
-        review_7_body:   'Kedim 9 kg\'lık bir Maine Coon ve biraz küçük kalabilir diye düşündüm, ama beni şaşırtarak yeterince büyük ve rahat — hatta onu yatak olarak bile kullanıyor. Yapı kaya gibi sağlam, karton yüzeyini tırnarken bir milimetre bile kıpırdamıyor. Tasarım ayarlanabilir ve farklı açılara izin veriyor, sırtını tamamen gererek uzatması için ideal. Bu tüylü Devi kaldırıyorsa, her kediyi kaldırır.'
+        review_7_body:   'Kedim 9 kg\'lık bir Maine Coon ve biraz küçük kalabilir diye düşündüm, ama beni şaşırtarak yeterince büyük ve rahat — hatta onu yatak olarak bile kullanıyor. Yapı kaya gibi sağlam, karton yüzeyini tırnarken bir milimetre bile kıpırdamıyor. Tasarım ayarlanabilir ve farklı açılara izin veriyor, sırtını tamamen gererek uzatması için ideal. Bu tüylü Devi kaldırıyorsa, her kediyi kaldırır.',
+        success_title: 'Sipariş Onaylandı!',
+        success_message_1: 'Satın alımınız için teşekkür ederiz. Siparişinizi aldık ve işleme koyduk.',
+        success_message_2: 'Kısa süre içinde bir onay e-postası alacaksınız.',
+        success_reference: 'Referans:',
+        success_back_home: 'Mağazaya dön',
     };
 })();

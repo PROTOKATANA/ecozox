@@ -26,6 +26,11 @@
         review_6_titulo: 'Fait ce qu\'il promet',
         review_6_body:   'Mon chat est petit, environ 3 kg, et ça lui convient parfaitement — il l\'utilise pour faire ses griffes et se prélasser au soleil dans mon jardin. Il tient totalement ses promesses, l\'article est arrivé bien emballé et sans dommages. Je le recommande.',
         review_7_titulo: 'Idéal pour les chats Géants',
-        review_7_body:   'Mon chat est un Maine Coon de 9 kg et je pensais que ce serait peut-être un peu petit, mais à ma grande surprise il est suffisamment grand et confortable — il l\'utilise même comme lit. La construction est solide comme un roc, il ne bouge pas d\'un millimètre pendant qu\'il griffe la surface en carton. Le design est réglable et permet différents angles, idéal pour qu\'il étire complètement son dos. S\'il supporte ce Géant poilu, il supporte n\'importe quel chat.'
+        review_7_body:   'Mon chat est un Maine Coon de 9 kg et je pensais que ce serait peut-être un peu petit, mais à ma grande surprise il est suffisamment grand et confortable — il l\'utilise même comme lit. La construction est solide comme un roc, il ne bouge pas d\'un millimètre pendant qu\'il griffe la surface en carton. Le design est réglable et permet différents angles, idéal pour qu\'il étire complètement son dos. S\'il supporte ce Géant poilu, il supporte n\'importe quel chat.',
+        success_title: 'Commande confirmée !',
+        success_message_1: 'Merci pour votre achat. Nous avons bien reçu votre commande et la traitons.',
+        success_message_2: 'Vous recevrez bientôt un e-mail de confirmation.',
+        success_reference: 'Référence :',
+        success_back_home: 'Retour à la boutique',
     };
 })();

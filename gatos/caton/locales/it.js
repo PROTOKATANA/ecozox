@@ -26,6 +26,11 @@
         review_6_titulo: 'Mantiene quello che promette',
         review_6_body:   'Il mio gatto è piccolo, circa 3 kg, e funziona perfettamente — lo usa per affilare le unghie e prendere il sole nel mio cortile. Mantiene completamente quello che promette, l\'articolo è arrivato ben imballato e senza danni. Lo consiglio.',
         review_7_titulo: 'Ideale per i gatti Giganti',
-        review_7_body:   'Il mio gatto è un Maine Coon da 9 kg e pensavo che potesse essere un po\' piccolo, ma con mia sorpresa è abbastanza grande e comodo — lo usa persino come letto. La costruzione è solida come una roccia, non si muove di un millimetro mentre graffia la superficie di cartone. Il design è regolabile e consente diverse angolazioni, ideale per distendere completamente la schiena. Se regge questo Gigante peloso, regge qualsiasi gatto.'
+        review_7_body:   'Il mio gatto è un Maine Coon da 9 kg e pensavo che potesse essere un po\' piccolo, ma con mia sorpresa è abbastanza grande e comodo — lo usa persino come letto. La costruzione è solida come una roccia, non si muove di un millimetro mentre graffia la superficie di cartone. Il design è regolabile e consente diverse angolazioni, ideale per distendere completamente la schiena. Se regge questo Gigante peloso, regge qualsiasi gatto.',
+        success_title: 'Ordine Confermato!',
+        success_message_1: 'Grazie per il tuo acquisto. Abbiamo ricevuto il tuo ordine e lo stiamo elaborando.',
+        success_message_2: 'Riceverai presto un\'email di conferma.',
+        success_reference: 'Riferimento:',
+        success_back_home: 'Torna al negozio',
     };
 })();

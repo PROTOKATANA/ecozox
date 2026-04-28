@@ -33,5 +33,10 @@
         review_6_body:   'Mój kot jest mały, około 3 kg, i pasuje mu idealnie — używa go do ostrzenia pazurów i opalania na moim podwórku. W pełni spełnia to, co obiecuje, produkt dotarł dobrze zapakowany i bez uszkodzeń. Polecam.',
         review_7_titulo: 'Idealny dla dużych kotów',
         review_7_body:   'Mój kot to Maine Coon ważący 9 kg i myślałem, że może być trochę za mały, ale ku mojemu zaskoczeniu jest wystarczająco duży i wygodny — nawet używa go jako łóżka. Konstrukcja jest solidna jak skała, nie przesuwa się ani milimetra podczas drapania. Regulowany design pozwala ustawiać go pod różnymi kątami — idealne do pełnego rozciągnięcia całego grzbietu. Jeśli wytrzymuje tego futrzastego olbrzyma, wytrzyma każdego kota.',
+        success_title: 'Zamówienie Potwierdzone!',
+        success_message_1: 'Dziękujemy za zakup. Otrzymaliśmy Twoje zamówienie i przetwarzamy je.',
+        success_message_2: 'Wkrótce otrzymasz e-mail z potwierdzeniem.',
+        success_reference: 'Numer referencyjny:',
+        success_back_home: 'Powrót do sklepu',
     };
 })();

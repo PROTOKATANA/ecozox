@@ -26,6 +26,11 @@
         review_6_titulo: 'Sesuai yang Dijanjikan',
         review_6_body:   'Kucing saya kecil sekitar 3kg dan bekerja dengan sempurna untuknya — dia menggunakannya untuk mengasah cakar dan berjemur di halaman belakang. Benar-benar memenuhi apa yang dijanjikan, barang tiba dengan baik dikemas dan tanpa kerusakan. Saya merekomendasikannya.',
         review_7_titulo: 'Ukuran Tepat untuk Kucing Raksasa',
-        review_7_body:   'Kucing saya adalah Maine Coon 9 kg dan saya pikir mungkin sedikit kecil, tapi sungguh mengejutkan ternyata cukup besar dan nyaman — dia bahkan menggunakannya sebagai tempat tidur. Konstruksinya kokoh seperti batu, tidak bergerak satu milimeter pun saat dia mencakar permukaan kardus. Desainnya bisa disesuaikan dan memungkinkan berbagai sudut, ideal untuk meregangkan punggungnya sepenuhnya. Jika bisa menahan si Raksasa berbulu ini, bisa menahan kucing mana pun.'
+        review_7_body:   'Kucing saya adalah Maine Coon 9 kg dan saya pikir mungkin sedikit kecil, tapi sungguh mengejutkan ternyata cukup besar dan nyaman — dia bahkan menggunakannya sebagai tempat tidur. Konstruksinya kokoh seperti batu, tidak bergerak satu milimeter pun saat dia mencakar permukaan kardus. Desainnya bisa disesuaikan dan memungkinkan berbagai sudut, ideal untuk meregangkan punggungnya sepenuhnya. Jika bisa menahan si Raksasa berbulu ini, bisa menahan kucing mana pun.',
+        success_title: 'Pesanan Dikonfirmasi!',
+        success_message_1: 'Terima kasih atas pembelian Anda. Kami telah menerima pesanan Anda dan sedang memprosesnya.',
+        success_message_2: 'Anda akan segera menerima email konfirmasi.',
+        success_reference: 'Referensi:',
+        success_back_home: 'Kembali ke toko',
     };
 })();

@@ -26,6 +26,11 @@
         review_6_titulo: 'Hält, was er verspricht',
         review_6_body:   'Meine Katze ist klein, ungefähr 3 kg, und es funktioniert perfekt für sie — sie benutzt ihn zum Krallenschärfen und zum Sonnenbaden in meinem Hinterhof. Er hält völlig, was er verspricht, der Artikel kam gut verpackt und unbeschädigt an. Ich empfehle ihn.',
         review_7_titulo: 'Ideal für Riesen-Katzen',
-        review_7_body:   'Meine Katze ist ein 9 kg schwerer Maine Coon und ich dachte, er könnte etwas klein sein, aber zu meiner Überraschung ist er groß und bequem genug — sie benutzt ihn sogar als Bett. Die Konstruktion ist solide wie ein Fels, er bewegt sich keinen Millimeter, während sie die Kartonoberfläche kratzt. Das Design ist verstellbar und erlaubt verschiedene Winkel, ideal damit sie ihren ganzen Rücken vollständig strecken kann. Wenn er diesen flauschigen Riesen aushält, hält er jede Katze aus.'
+        review_7_body:   'Meine Katze ist ein 9 kg schwerer Maine Coon und ich dachte, er könnte etwas klein sein, aber zu meiner Überraschung ist er groß und bequem genug — sie benutzt ihn sogar als Bett. Die Konstruktion ist solide wie ein Fels, er bewegt sich keinen Millimeter, während sie die Kartonoberfläche kratzt. Das Design ist verstellbar und erlaubt verschiedene Winkel, ideal damit sie ihren ganzen Rücken vollständig strecken kann. Wenn er diesen flauschigen Riesen aushält, hält er jede Katze aus.',
+        success_title: 'Bestellung bestätigt!',
+        success_message_1: 'Vielen Dank für Ihren Einkauf. Wir haben Ihre Bestellung erhalten und bearbeiten sie.',
+        success_message_2: 'Sie erhalten in Kürze eine Bestätigungs-E-Mail.',
+        success_reference: 'Referenz:',
+        success_back_home: 'Zurück zum Shop',
     };
 })();
