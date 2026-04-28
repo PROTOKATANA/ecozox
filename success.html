@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-i18n-title="success_title">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
@@ -10,23 +10,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../style.css">
-    <link rel="stylesheet" href="brand/theme.css">
+    <link rel="stylesheet" href="style.css">
 
     <script>
         window.ECOZOX_BRAND = {
             email:       'hola@babynest.com',
             homeUrl:     'index.html',
             carritoUrl:  '/carrito.html',
-            nicho:       'bandeja',
-            localesPath: 'locales/'
+            nicho:       'gatos',
+            localesPath: 'gatos/caton/locales/'
         };
         window.ECOZOX_CONFIG = window.ECOZOX_CONFIG || {};
     </script>
-    <script src="../../js/config.js"></script>
+    <script src="js/config.js"></script>
 
-    <script src="../../components/header.js" defer></script>
-    <script src="../../components/bottom-nav.js" defer></script>
+    <script src="components/header.js" defer></script>
+    <script src="components/bottom-nav.js" defer></script>
 
     <style>
         .success-section {
@@ -116,7 +115,7 @@
 </head>
 <body class="page-success">
 
-    <div data-component="header" data-base="../../"></div>
+    <div data-component="header" data-base=""></div>
 
     <main class="success-section">
         <div class="container">
@@ -126,25 +125,25 @@
                         <polyline points="20 6 9 17 4 12"></polyline>
                     </svg>
                 </div>
-                <h1>¡Pedido Confirmado!</h1>
-                <p>Gracias por tu compra. Hemos recibido tu pedido y lo estamos procesando.</p>
-                <p>Recibirás un correo de confirmación en breve.</p>
+                <h1 data-i18n="success_title">¡Pedido Confirmado!</h1>
+                <p data-i18n="success_message_1">Gracias por tu compra. Hemos recibido tu pedido y lo estamos procesando.</p>
+                <p data-i18n="success_message_2">Recibirás un correo de confirmación en breve.</p>
                 <div class="success-session" id="sessionInfo" style="display:none">
-                    Referencia: <span id="sessionId"></span>
+                    <span data-i18n="success_reference">Referencia:</span> <span id="sessionId"></span>
                 </div>
                 <div class="success-actions">
-                    <a href="index.html" class="btn-home">Volver a la tienda</a>
+                    <a href="index.html" class="btn-home" data-i18n="success_back_home">Volver a la tienda</a>
                 </div>
             </div>
         </div>
     </main>
 
-    <div data-component="footer" data-base="../../" data-pages-base="../../pages/"></div>
-    <div data-component="bottom-nav" data-base="../../"></div>
+    <div data-component="footer" data-base="" data-pages-base="pages/"></div>
+    <div data-component="bottom-nav" data-base=""></div>
 
-    <script src="../../components/footer.js" defer></script>
-    <script src="../../js/i18n.js" defer></script>
-    <script src="../../app.js" defer></script>
+    <script src="components/footer.js" defer></script>
+    <script src="js/i18n.js" defer></script>
+    <script src="app.js" defer></script>
     <script>
         (function () {
             var params = new URLSearchParams(window.location.search);

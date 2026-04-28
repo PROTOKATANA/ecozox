@@ -217,5 +217,11 @@
         /* ---------- Before / After Slider ---------- */
         ba_after: 'Po',
         ba_before: 'Przed',
+        /* ---------- Success Page ---------- */
+        success_title: 'Zamówienie Potwierdzone!',
+        success_message_1: 'Dziękujemy za zakup. Otrzymaliśmy Twoje zamówienie i przetwarzamy je.',
+        success_message_2: 'Wkrótce otrzymasz e-mail z potwierdzeniem.',
+        success_reference: 'Numer referencyjny:',
+        success_back_home: 'Powrót do sklepu',
     };
 })();

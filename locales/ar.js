@@ -220,5 +220,11 @@
         /* ---------- Before / After Slider ---------- */
         ba_after: 'بعد',
         ba_before: 'قبل',
+        /* ---------- Success Page ---------- */
+        success_title: 'تم تأكيد الطلب!',
+        success_message_1: 'شكراً لشرائك. لقد استلمنا طلبك ونقوم بمعالجته.',
+        success_message_2: 'ستتلقى رسالة تأكيد عبر البريد الإلكتروني قريباً.',
+        success_reference: 'المرجع:',
+        success_back_home: 'العودة إلى المتجر',
     };
 })();

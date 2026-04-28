@@ -217,5 +217,11 @@
         /* ---------- Before / After Slider ---------- */
         ba_after: 'بعد',
         ba_before: 'پہلے',
+        /* ---------- Success Page ---------- */
+        success_title: 'آرڈر کی تصدیق ہو گئی!',
+        success_message_1: 'خریداری کا شکریہ۔ ہمیں آپ کا آرڈر موصول ہو گیا ہے اور ہم اس پر کام کر رہے ہیں۔',
+        success_message_2: 'آپ کو جلد ہی ایک تصدیقی ای میل موصول ہو گی۔',
+        success_reference: 'حوالہ:',
+        success_back_home: 'اسٹور پر واپس جائیں',
     };
 })();

@@ -219,5 +219,11 @@
         /* ---------- Before / After Slider ---------- */
         ba_after: 'After',
         ba_before: 'Before',
+        /* ---------- Success Page ---------- */
+        success_title: 'Order Confirmed!',
+        success_message_1: 'Thank you for your purchase. We have received your order and are processing it.',
+        success_message_2: 'You will receive a confirmation email shortly.',
+        success_reference: 'Reference:',
+        success_back_home: 'Back to store',
     };
 })();

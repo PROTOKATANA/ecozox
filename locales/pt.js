@@ -219,5 +219,11 @@
         /* ---------- Before / After Slider ---------- */
         ba_after: 'Depois',
         ba_before: 'Antes',
+        /* ---------- Success Page ---------- */
+        success_title: 'Pedido Confirmado!',
+        success_message_1: 'Obrigado pela sua compra. Recebemos o seu pedido e estamos a processá-lo.',
+        success_message_2: 'Receberá um e-mail de confirmação em breve.',
+        success_reference: 'Referência:',
+        success_back_home: 'Voltar à loja',
     };
 })()
