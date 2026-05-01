@@ -1,5 +1,5 @@
 /* ========================================
-   Cart Page Renderer
+   Cart Page Renderer (Secure DOM Build)
    Reads localStorage and renders cart items,
    handles quantity changes, removal & totals.
    Prices are recalculated from the live catalog
@@ -77,7 +77,6 @@
         return window.EcoI18n ? window.EcoI18n.t(key) : key;
     }
 
-    /* Traduce una clave sólo si está disponible; si no, usa el texto guardado */
     function tt(key, fallback) {
         if (!key) return fallback;
         var v = ti(key);
@@ -90,8 +89,6 @@
     }
 
     /* ---------- Bundle helpers ---------- */
-
-    /* Sub-items that make up the bundle (placeholder data) */
     const BUNDLE_SUB_ITEMS = [
         {
             img:    'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=80&h=80',
@@ -107,225 +104,349 @@
         },
     ];
 
-    /* Shared trash-icon button (reused in both item types) */
-    function trashBtn() {
-        return `
-            <button class="btn btn-danger" aria-label="${ti('btn_remove')}" title="${ti('btn_remove')}"
-                    style="width:63px;height:45px;padding:0.5rem;display:flex;align-items:center;justify-content:center;border-radius:6px;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="3 6 5 6 21 6"></polyline>
-                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                    <line x1="10" y1="11" x2="10" y2="17"></line>
-                    <line x1="14" y1="11" x2="14" y2="17"></line>
-                </svg>
-            </button>`;
+    /* ---------- Secure DOM Builders ---------- */
+    function el(tag, attrs, children) {
+        var node = document.createElement(tag);
+        if (attrs) {
+            for (var key in attrs) {
+                if (!Object.prototype.hasOwnProperty.call(attrs, key)) continue;
+                var val = attrs[key];
+                if (val == null) continue;
+                if (key === 'textContent') {
+                    node.textContent = val;
+                } else if (key === 'className') {
+                    node.className = val;
+                } else if (key.startsWith('on') || key === 'innerHTML') {
+                    continue; // security: disallow inline events / innerHTML
+                } else {
+                    node.setAttribute(key, val);
+                }
+            }
+        }
+        if (children) {
+            children.forEach(function (c) {
+                if (c == null) return;
+                if (typeof c === 'string') {
+                    node.appendChild(document.createTextNode(c));
+                } else {
+                    node.appendChild(c);
+                }
+            });
+        }
+        return node;
     }
 
-    /* Quantity controls (reused in both item types) */
+    function svgEl(tag, attrs, children) {
+        var ns = 'http://www.w3.org/2000/svg';
+        var node = document.createElementNS(ns, tag);
+        if (attrs) {
+            for (var key in attrs) {
+                if (!Object.prototype.hasOwnProperty.call(attrs, key)) continue;
+                var val = attrs[key];
+                if (val == null) continue;
+                node.setAttribute(key, val);
+            }
+        }
+        if (children) {
+            children.forEach(function (c) {
+                if (c == null) return;
+                if (typeof c === 'string') {
+                    node.appendChild(document.createTextNode(c));
+                } else {
+                    node.appendChild(c);
+                }
+            });
+        }
+        return node;
+    }
+
+    function createTrashIcon() {
+        return svgEl('svg', {
+            width: '20', height: '20', viewBox: '0 0 24 24',
+            fill: 'none', stroke: 'currentColor', 'stroke-width': '2',
+            'stroke-linecap': 'round', 'stroke-linejoin': 'round'
+        }, [
+            svgEl('polyline', { points: '3 6 5 6 21 6' }),
+            svgEl('path', { d: 'M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2' }),
+            svgEl('line', { x1: '10', y1: '11', x2: '10', y2: '17' }),
+            svgEl('line', { x1: '14', y1: '11', x2: '14', y2: '17' })
+        ]);
+    }
+
+    function createGiftIcon(type) {
+        var common = { className: 'gift-bullet-icon', viewBox: '0 0 16 16', fill: 'none', stroke: 'currentColor', 'stroke-width': '1.8', 'stroke-linecap': 'round', 'stroke-linejoin': 'round' };
+        if (type === 'gift') {
+            return svgEl('svg', common, [
+                svgEl('path', { d: 'M8 3V2m0 1C8 1.34 6.66 1 6 2s.34 2 2 1zm0 0C8 1.34 9.34 1 10 2s-.34 2-2 1z' }),
+                svgEl('rect', { x: '2', y: '3', width: '12', height: '3', rx: '1' }),
+                svgEl('path', { d: 'M3 6v7a1 1 0 001 1h8a1 1 0 001-1V6' }),
+                svgEl('line', { x1: '8', y1: '6', x2: '8', y2: '14' })
+            ]);
+        } else if (type === 'doc') {
+            return svgEl('svg', common, [
+                svgEl('path', { d: 'M9 2H4a1 1 0 00-1 1v10a1 1 0 001 1h8a1 1 0 001-1V6z' }),
+                svgEl('polyline', { points: '9 2 9 6 13 6' })
+            ]);
+        } else if (type === 'clock') {
+            return svgEl('svg', common, [
+                svgEl('circle', { cx: '8', cy: '8', r: '6' }),
+                svgEl('polyline', { points: '8 5 8 8 10 10' })
+            ]);
+        } else if (type === 'bolt') {
+            return svgEl('svg', common, [
+                svgEl('polygon', { points: '9 2 3 9 8 9 7 14 13 7 8 7 9 2' })
+            ]);
+        }
+        return svgEl('svg', common);
+    }
+
+    function trashBtn() {
+        return el('button', {
+            className: 'btn btn-danger',
+            'aria-label': ti('btn_remove'),
+            title: ti('btn_remove'),
+            style: 'width:63px;height:45px;padding:0.5rem;display:flex;align-items:center;justify-content:center;border-radius:6px;'
+        }, [createTrashIcon()]);
+    }
+
     function qtyControls(item) {
-        return `
-            <div class="quantity-controls">
-                <button class="qty-btn minus" aria-label="${ti('aria_decrease')}">-</button>
-                <input type="number" class="qty-input" value="${item.quantity}" min="1" aria-label="${ti('aria_quantity')}">
-                <button class="qty-btn plus" aria-label="${ti('aria_increase')}">+</button>
-            </div>`;
+        return el('div', { className: 'quantity-controls' }, [
+            el('button', { className: 'qty-btn minus', 'aria-label': ti('aria_decrease') }, ['-']),
+            el('input', {
+                type: 'number',
+                className: 'qty-input',
+                value: String(item.quantity),
+                min: '1',
+                'aria-label': ti('aria_quantity')
+            }),
+            el('button', { className: 'qty-btn plus', 'aria-label': ti('aria_increase') }, ['+'])
+        ]);
+    }
+
+    function createPriceNode(salePrice, displayOrig) {
+        if (!isNaN(salePrice) && salePrice > 0) {
+            return el('span', null, [
+                el('del', { className: 'price-original' }, [formatPrice(displayOrig)]),
+                el('span', { className: 'price-discounted' }, [formatPrice(salePrice)])
+            ]);
+        }
+        return el('span', { className: 'price-discounted price-discounted--unavailable' }, ['N/A(0)']);
     }
 
     /* --- Normal item template --- */
     function renderNormalItem(item) {
-        const disc = getDiscountPercent() ?? 0;
-        const salePrice = getLivePrice(item);
-        const origPrice = getLiveOrigPrice(item);
-        const displayOrig = origPrice != null ? origPrice : salePrice;
-        const priceHtml = (!isNaN(salePrice) && salePrice > 0)
-            ? `<del class="price-original">${formatPrice(displayOrig)}</del><span class="price-discounted">${formatPrice(salePrice)}</span>`
-            : `<span class="price-discounted price-discounted--unavailable">N/A(0)</span>`;
-        return `
-            <div class="cart-item" data-product-id="${item.id}">
-                <div class="cart-item-header">
-                    <h3 class="cart-item-title">
-                        <a href="${item.link || 'index.html'}" class="cart-body-link">${tt(item.titleKey, item.title)}</a>
-                    </h3>
-                    <div class="cart-item-price">
-                        ${priceHtml}
-                    </div>
-                </div>
-                <ul class="cart-item-body">
-                    <li class="cart-body-item">
-                        <img src="${item.image}" alt="${tt(item.titleKey, item.title)}"
-                             class="cart-body-img cart-body-img--single">
-                        <span class="cart-body-title">${tt(item.titleKey, item.title)}</span>
-                    </li>
-                </ul>
-                <div class="cart-bundle-tag">
-                    <span class="cart-bundle-tag__piece"><span class="cart-bundle-tag__num">${disc}%</span> ${ti('cart_global_discount_label')}</span>
-                </div>
-                <div class="cart-item-footer">
-                    <div class="cart-item-actions">${qtyControls(item)}</div>
-                    ${trashBtn()}
-                </div>
-            </div>`;
+        var disc = getDiscountPercent() ?? 0;
+        var salePrice = getLivePrice(item);
+        var origPrice = getLiveOrigPrice(item);
+        var displayOrig = origPrice != null ? origPrice : salePrice;
+        var titleText = tt(item.titleKey, item.title);
+
+        var header = el('div', { className: 'cart-item-header' }, [
+            el('h3', { className: 'cart-item-title' }, [
+                el('a', { href: item.link || 'index.html', className: 'cart-body-link' }, [titleText])
+            ]),
+            el('div', { className: 'cart-item-price' }, [createPriceNode(salePrice, displayOrig)])
+        ]);
+
+        var body = el('ul', { className: 'cart-item-body' }, [
+            el('li', { className: 'cart-body-item' }, [
+                el('img', { src: item.image, alt: titleText, className: 'cart-body-img cart-body-img--single' }),
+                el('span', { className: 'cart-body-title' }, [titleText])
+            ])
+        ]);
+
+        var tag = el('div', { className: 'cart-bundle-tag' }, [
+            el('span', { className: 'cart-bundle-tag__piece' }, [
+                el('span', { className: 'cart-bundle-tag__num' }, [String(disc) + '%']),
+                ' ' + ti('cart_global_discount_label')
+            ])
+        ]);
+
+        var footer = el('div', { className: 'cart-item-footer' }, [
+            el('div', { className: 'cart-item-actions' }, [qtyControls(item)]),
+            trashBtn()
+        ]);
+
+        return el('div', { className: 'cart-item', 'data-product-id': item.id }, [header, body, tag, footer]);
     }
 
-    /* --- Bundle item template (nested breakdown) --- */
+    /* --- Bundle item template --- */
     function renderBundleItem(item) {
-        const disc = getDiscountPercent() ?? 0;
-        const salePrice = getLivePrice(item);
-        const origPrice = getLiveOrigPrice(item);
-        const displayOrig = origPrice != null ? origPrice : salePrice;
-        const subs = (Array.isArray(item.subItems) && item.subItems.length)
-            ? item.subItems.map(sub => ({ img: sub.img, label: sub.title || '', key: sub.key || '' }))
-            : BUNDLE_SUB_ITEMS.map(sub => ({ img: sub.img, label: ti(sub.titleKey), key: sub.titleKey || '' }));
-        const subRows = subs.map(sub => {
-            const label = tt(sub.key, sub.label);
-            return `
-            <li class="cart-body-item">
-                <img src="${sub.img}" alt="${label}" class="cart-body-img">
-                <span class="cart-body-title">${label}</span>
-            </li>`;
-        }).join('');
+        var disc = getDiscountPercent() ?? 0;
+        var salePrice = getLivePrice(item);
+        var origPrice = getLiveOrigPrice(item);
+        var displayOrig = origPrice != null ? origPrice : salePrice;
+        var titleText = tt(item.titleKey, item.title);
 
-        const bundlePct = getLiveBundleExtraDisc(item);
-        const globalPct = disc;
-        const totalPct  = bundlePct + globalPct;
+        var subs = (Array.isArray(item.subItems) && item.subItems.length)
+            ? item.subItems.map(function (sub) { return { img: sub.img, label: sub.title || '', key: sub.key || '' }; })
+            : BUNDLE_SUB_ITEMS.map(function (sub) { return { img: sub.img, label: ti(sub.titleKey), key: sub.titleKey || '' }; });
 
-        return `
-            <div class="cart-item" data-product-id="${item.id}">
-                <div class="cart-item-header">
-                    <h3 class="cart-item-title">
-                        <a href="${item.link || 'index.html'}" class="cart-body-link">${tt(item.titleKey, item.title)}</a>
-                    </h3>
-                    <div class="cart-item-price">
-                        ${(!isNaN(salePrice) && salePrice > 0)
-                            ? `<del class="price-original">${formatPrice(displayOrig)}</del><span class="price-discounted">${formatPrice(salePrice)}</span>`
-                            : `<span class="price-discounted price-discounted--unavailable">N/A(0)</span>`}
-                    </div>
-                </div>
-                <ul class="cart-item-body" aria-label="${ti('cart_bundle_contents')}">
-                    ${subRows}
-                </ul>
-                <div class="cart-bundle-tag">
-                    <span class="cart-bundle-tag__piece"><span class="cart-bundle-tag__num">${bundlePct}%</span> ${ti('cart_bundle_label_kit')}</span>
-                    <span class="cart-bundle-tag__op">+</span>
-                    <span class="cart-bundle-tag__piece"><span class="cart-bundle-tag__num">${globalPct}%</span> ${ti('cart_bundle_label_global')}</span>
-                    <span class="cart-bundle-tag__op">=</span>
-                    <span class="cart-bundle-tag__piece cart-bundle-tag__piece--total"><span class="cart-bundle-tag__num">${totalPct}%</span> ${ti('cart_bundle_label_discount')}</span>
-                </div>
-                <div class="cart-item-footer">
-                    <div class="cart-item-actions">${qtyControls(item)}</div>
-                    ${trashBtn()}
-                </div>
-            </div>`;
+        var subRows = subs.map(function (sub) {
+            var label = tt(sub.key, sub.label);
+            return el('li', { className: 'cart-body-item' }, [
+                el('img', { src: sub.img, alt: label, className: 'cart-body-img' }),
+                el('span', { className: 'cart-body-title' }, [label])
+            ]);
+        });
+
+        var bundlePct = getLiveBundleExtraDisc(item);
+        var globalPct = disc;
+        var totalPct = bundlePct + globalPct;
+
+        var header = el('div', { className: 'cart-item-header' }, [
+            el('h3', { className: 'cart-item-title' }, [
+                el('a', { href: item.link || 'index.html', className: 'cart-body-link' }, [titleText])
+            ]),
+            el('div', { className: 'cart-item-price' }, [createPriceNode(salePrice, displayOrig)])
+        ]);
+
+        var body = el('ul', { className: 'cart-item-body', 'aria-label': ti('cart_bundle_contents') }, subRows);
+
+        var tag = el('div', { className: 'cart-bundle-tag' }, [
+            el('span', { className: 'cart-bundle-tag__piece' }, [
+                el('span', { className: 'cart-bundle-tag__num' }, [String(bundlePct) + '%']),
+                ' ' + ti('cart_bundle_label_kit')
+            ]),
+            el('span', { className: 'cart-bundle-tag__op' }, ['+']),
+            el('span', { className: 'cart-bundle-tag__piece' }, [
+                el('span', { className: 'cart-bundle-tag__num' }, [String(globalPct) + '%']),
+                ' ' + ti('cart_bundle_label_global')
+            ]),
+            el('span', { className: 'cart-bundle-tag__op' }, ['=']),
+            el('span', { className: 'cart-bundle-tag__piece cart-bundle-tag__piece--total' }, [
+                el('span', { className: 'cart-bundle-tag__num' }, [String(totalPct) + '%']),
+                ' ' + ti('cart_bundle_label_discount')
+            ])
+        ]);
+
+        var footer = el('div', { className: 'cart-item-footer' }, [
+            el('div', { className: 'cart-item-actions' }, [qtyControls(item)]),
+            trashBtn()
+        ]);
+
+        return el('div', { className: 'cart-item', 'data-product-id': item.id }, [header, body, tag, footer]);
     }
 
-    /* --- Gift item template (no footer: no qty controls, no delete) --- */
+    /* --- Gift item template --- */
     function renderGiftItem() {
-        const giftValue = getGiftValue();
-        return `
-            <div class="cart-item cart-item--gift" data-product-id="__gift__">
-                <div class="cart-item-header">
-                    <h3 class="cart-item-title">${ti('cart_gift_item_name')}</h3>
-                    <span class="price-discounted">${ti('cart_shipping_free').toUpperCase()}</span>
-                </div>
-                <div class="cart-gift-body">
-                    <ul class="gift-bullet-list">
-                        <li class="gift-bullet-item">
-                            <svg class="gift-bullet-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3V2m0 1C8 1.34 6.66 1 6 2s.34 2 2 1zm0 0C8 1.34 9.34 1 10 2s-.34 2-2 1z"/><rect x="2" y="3" width="12" height="3" rx="1"/><path d="M3 6v7a1 1 0 001 1h8a1 1 0 001-1V6"/><line x1="8" y1="6" x2="8" y2="14"/></svg>
-                            <span>${ti('cart_gift_desc_value').replace('{amount}', formatPrice(giftValue))}</span>
-                        </li>
-                        <li class="gift-bullet-item">
-                            <svg class="gift-bullet-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2H4a1 1 0 00-1 1v10a1 1 0 001 1h8a1 1 0 001-1V6z"/><polyline points="9 2 9 6 13 6"/></svg>
-                            <span>${ti('cart_gift_desc_content')}</span>
-                        </li>
-                        <li class="gift-bullet-item">
-                            <svg class="gift-bullet-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><polyline points="8 5 8 8 10 10"/></svg>
-                            <span>${ti('cart_gift_desc_condition')}</span>
-                        </li>
-                        <li class="gift-bullet-item gift-bullet-item--urgent">
-                            <svg class="gift-bullet-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="9 2 3 9 8 9 7 14 13 7 8 7 9 2"/></svg>
-                            <span>${ti('cart_gift_desc_urgency')}</span>
-                        </li>
-                    </ul>
-                    <div class="cart-gift-gallery">
-                        <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&q=80&w=120&h=120" alt="${ti('cart_gift_item_name')}" class="cart-gift-thumb">
-                        <img src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?auto=format&fit=crop&q=80&w=120&h=120" alt="${ti('cart_gift_item_name')}" class="cart-gift-thumb">
-                        <img src="https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?auto=format&fit=crop&q=80&w=120&h=120" alt="${ti('cart_gift_item_name')}" class="cart-gift-thumb">
-                    </div>
-                </div>
-            </div>`;
+        var giftValue = getGiftValue();
+        var giftName = ti('cart_gift_item_name');
+
+        var list = el('ul', { className: 'gift-bullet-list' }, [
+            el('li', { className: 'gift-bullet-item' }, [
+                createGiftIcon('gift'),
+                el('span', null, [ti('cart_gift_desc_value').replace('{amount}', formatPrice(giftValue))])
+            ]),
+            el('li', { className: 'gift-bullet-item' }, [
+                createGiftIcon('doc'),
+                el('span', null, [ti('cart_gift_desc_content')])
+            ]),
+            el('li', { className: 'gift-bullet-item' }, [
+                createGiftIcon('clock'),
+                el('span', null, [ti('cart_gift_desc_condition')])
+            ]),
+            el('li', { className: 'gift-bullet-item gift-bullet-item--urgent' }, [
+                createGiftIcon('bolt'),
+                el('span', null, [ti('cart_gift_desc_urgency')])
+            ])
+        ]);
+
+        var gallery = el('div', { className: 'cart-gift-gallery' }, [
+            el('img', { src: 'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&q=80&w=120&h=120', alt: giftName, className: 'cart-gift-thumb' }),
+            el('img', { src: 'https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?auto=format&fit=crop&q=80&w=120&h=120', alt: giftName, className: 'cart-gift-thumb' }),
+            el('img', { src: 'https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?auto=format&fit=crop&q=80&w=120&h=120', alt: giftName, className: 'cart-gift-thumb' })
+        ]);
+
+        var header = el('div', { className: 'cart-item-header' }, [
+            el('h3', { className: 'cart-item-title' }, [giftName]),
+            el('span', { className: 'price-discounted' }, [ti('cart_shipping_free').toUpperCase()])
+        ]);
+
+        var body = el('div', { className: 'cart-gift-body' }, [list, gallery]);
+
+        return el('div', { className: 'cart-item cart-item--gift', 'data-product-id': '__gift__' }, [header, body]);
     }
 
     function renderCart() {
-        const cart = window.EcoCart.getCart();
+        var cart = window.EcoCart.getCart();
 
         if (cart.length === 0) {
-            cartItemsContainer.innerHTML = `
-                <div class="cart-empty">
-                    <a href="index.html" class="btn btn-primary cart-empty__btn">
-                        <span class="cart-empty__label" data-i18n="cart_empty">${ti('cart_empty')}</span>
-                        <span class="cart-empty__cta" data-i18n="cart_view_products">${ti('cart_view_products')}</span>
-                    </a>
-                </div>`;
+            var emptyNode = el('div', { className: 'cart-empty' }, [
+                el('a', { href: 'index.html', className: 'btn btn-primary cart-empty__btn' }, [
+                    el('span', { className: 'cart-empty__label', 'data-i18n': 'cart_empty' }, [ti('cart_empty')]),
+                    el('span', { className: 'cart-empty__cta', 'data-i18n': 'cart_view_products' }, [ti('cart_view_products')])
+                ])
+            ]);
+            cartItemsContainer.replaceChildren(emptyNode);
             renderSummary(0);
             return;
         }
 
-        const itemsHtml = cart.map(item =>
-            (Array.isArray(item.subItems) && item.subItems.length) ? renderBundleItem(item) : renderNormalItem(item)
-        ).join('');
+        var nodes = [];
+        if (cart.length >= 1) {
+            nodes.push(renderGiftItem());
+        }
+        cart.forEach(function (item) {
+            nodes.push((Array.isArray(item.subItems) && item.subItems.length) ? renderBundleItem(item) : renderNormalItem(item));
+        });
 
-        const html = cart.length >= 1
-            ? renderGiftItem() + itemsHtml
-            : itemsHtml;
-
-        cartItemsContainer.innerHTML = html;
-
+        cartItemsContainer.replaceChildren.apply(cartItemsContainer, nodes);
         renderSummary(getCartSubtotalLive(), cart.length >= 1);
     }
 
-    function renderSummary(subtotal, hasGift = false) {
-        const discount = getDiscountPercent() ?? 0;
-        const origSubtotal = getCartOrigSubtotalLive();
-        const savings = origSubtotal - subtotal;
-        const total = subtotal;
+    function renderSummary(subtotal, hasGift) {
+        var discount = getDiscountPercent() ?? 0;
+        var origSubtotal = getCartOrigSubtotalLive();
+        var savings = origSubtotal - subtotal;
+        var total = subtotal;
 
-        const savingsRow = subtotal > 0 ? `
-                <div class="cs__row">
-                    <span>• ${ti('cart_discount')} <span class="cs__row--green">(${discount}%)</span></span>
-                    <span class="cs__row--green">- ${formatPrice(savings)}</span>
-                </div>` : '';
+        var rows = [];
 
-        const giftRow = hasGift ? `
-                <div class="cs__row">
-                    <span>• 1 ${ti('cart_gift_label')}</span>
-                    <span class="cs__free cs__row--green">${ti('cart_shipping_free').toUpperCase()}</span>
-                </div>` : '';
+        var subtotalRow = el('div', { className: 'cs__row' }, [
+            el('span', null, ['• ' + ti('cart_subtotal')]),
+            el('span', null, subtotal > 0
+                ? [el('del', { className: 'price-original' }, [formatPrice(origSubtotal)])]
+                : [formatPrice(0)])
+        ]);
+        rows.push(subtotalRow);
 
-        const summaryBody = cartSummary.querySelector('.summary-body');
+        if (subtotal > 0) {
+            rows.push(el('div', { className: 'cs__row' }, [
+                el('span', null, [
+                    '• ' + ti('cart_discount') + ' ',
+                    el('span', { className: 'cs__row--green' }, ['(' + discount + '%)'])
+                ]),
+                el('span', { className: 'cs__row--green' }, ['- ' + formatPrice(savings)])
+            ]));
+        }
+
+        if (hasGift) {
+            rows.push(el('div', { className: 'cs__row' }, [
+                el('span', null, ['• 1 ' + ti('cart_gift_label')]),
+                el('span', { className: 'cs__free cs__row--green' }, [ti('cart_shipping_free').toUpperCase()])
+            ]));
+        }
+
+        rows.push(el('div', { className: 'cs__row' }, [
+            el('span', null, ['• ' + ti('cart_shipping')]),
+            el('span', { className: 'cs__free cs__row--green' }, [ti('cart_shipping_free').toUpperCase()])
+        ]));
+
+        var rowsContainer = el('div', { className: 'cs__rows' }, rows);
+        var totalContainer = el('div', { className: 'cs__total' }, [
+            el('span', null, [ti('cart_total')]),
+            el('span', null, [formatPrice(total)])
+        ]);
+
+        var summaryBody = cartSummary.querySelector('.summary-body');
         if (summaryBody) {
-            summaryBody.innerHTML = `
-                <div class="cs__rows">
-                    <div class="cs__row">
-                        <span>• ${ti('cart_subtotal')}</span>
-                        <span>${subtotal > 0 ? `<del class="price-original">${formatPrice(origSubtotal)}</del>` : formatPrice(0)}</span>
-                    </div>
-                    ${savingsRow}
-                    ${giftRow}
-                    <div class="cs__row">
-                        <span>• ${ti('cart_shipping')}</span>
-                        <span class="cs__free cs__row--green">${ti('cart_shipping_free').toUpperCase()}</span>
-                    </div>
-                </div>
-                <div class="cs__total">
-                    <span>${ti('cart_total')}</span>
-                    <span>${formatPrice(total)}</span>
-                </div>`;
+            summaryBody.replaceChildren(rowsContainer, totalContainer);
         }
     }
 
-    /* ---------- Event delegation — un único listener en el contenedor ---------- */
-    var _removeInProgress = new Set(); // evita doble-clic en eliminar
+    /* ---------- Event delegation ---------- */
+    var _removeInProgress = new Set();
 
     function bindEvents() {
         cartItemsContainer.addEventListener('click', handleCartClick);
@@ -333,16 +454,15 @@
     }
 
     function handleCartClick(e) {
-        // Eliminar item
-        const removeBtn = e.target.closest('.btn-danger');
+        var removeBtn = e.target.closest('.btn-danger');
         if (removeBtn) {
-            const cartItem = removeBtn.closest('.cart-item');
+            var cartItem = removeBtn.closest('.cart-item');
             if (!cartItem) return;
-            const productId = cartItem.dataset.productId;
-            if (_removeInProgress.has(productId)) return; // evita doble-clic
+            var productId = cartItem.dataset.productId;
+            if (_removeInProgress.has(productId)) return;
             _removeInProgress.add(productId);
             cartItem.style.opacity = '0';
-            setTimeout(() => {
+            setTimeout(function () {
                 _removeInProgress.delete(productId);
                 window.EcoCart.removeItem(productId);
                 renderCart();
@@ -350,14 +470,13 @@
             return;
         }
 
-        // Botón minus
-        const minusBtn = e.target.closest('.qty-btn.minus');
+        var minusBtn = e.target.closest('.qty-btn.minus');
         if (minusBtn) {
-            const cartItem = minusBtn.closest('.cart-item');
+            var cartItem = minusBtn.closest('.cart-item');
             if (!cartItem || cartItem.classList.contains('cart-item--gift')) return;
-            const input = cartItem.querySelector('.qty-input');
-            const productId = cartItem.dataset.productId;
-            let val = parseInt(input.value) || 1;
+            var input = cartItem.querySelector('.qty-input');
+            var productId = cartItem.dataset.productId;
+            var val = parseInt(input.value) || 1;
             if (val > 1) {
                 val -= 1;
                 input.value = val;
@@ -367,14 +486,13 @@
             return;
         }
 
-        // Botón plus
-        const plusBtn = e.target.closest('.qty-btn.plus');
+        var plusBtn = e.target.closest('.qty-btn.plus');
         if (plusBtn) {
-            const cartItem = plusBtn.closest('.cart-item');
+            var cartItem = plusBtn.closest('.cart-item');
             if (!cartItem || cartItem.classList.contains('cart-item--gift')) return;
-            const input = cartItem.querySelector('.qty-input');
-            const productId = cartItem.dataset.productId;
-            let val = (parseInt(input.value) || 1) + 1;
+            var input = cartItem.querySelector('.qty-input');
+            var productId = cartItem.dataset.productId;
+            var val = (parseInt(input.value) || 1) + 1;
             input.value = val;
             window.EcoCart.updateQuantity(productId, val);
             renderSummary(getCartSubtotalLive(), window.EcoCart.getCart().length >= 1);
@@ -382,22 +500,20 @@
     }
 
     function handleCartChange(e) {
-        const input = e.target.closest('.qty-input');
+        var input = e.target.closest('.qty-input');
         if (!input) return;
-        const cartItem = input.closest('.cart-item');
+        var cartItem = input.closest('.cart-item');
         if (!cartItem || cartItem.classList.contains('cart-item--gift')) return;
-        const productId = cartItem.dataset.productId;
-        let val = parseInt(input.value);
+        var productId = cartItem.dataset.productId;
+        var val = parseInt(input.value);
         if (isNaN(val) || val < 1) val = 1;
         input.value = val;
         window.EcoCart.updateQuantity(productId, val);
         renderSummary(getCartSubtotalLive(), window.EcoCart.getCart().length >= 1);
     }
 
-    // Expose renderCart so i18n can re-render on language change
     window.EcoCartRenderer = { renderCart: renderCart };
 
-    // Registrar delegación una única vez
     bindEvents();
     renderCart();
 })();
