@@ -102,7 +102,6 @@
         cart_gift_label: 'Cadeau',
         cart_gift_item_name: 'Article Surprise',
         cart_gift_desc_value: 'Nous vous enverrons un produit supplémentaire d\'une valeur de {amount}.',
-        cart_gift_desc_content: 'Un étui, une sangle ou un accessoire de notre collection.',
         cart_gift_desc_condition: 'Uniquement aujourd\'hui et exclusif à cette commande.',
         cart_gift_desc_urgency: 'Profitez-en avant que le compte à rebours atteigne zéro !',
         title_cart: 'Votre Panier - EcoZox',

@@ -173,33 +173,6 @@
         ]);
     }
 
-    function createGiftIcon(type) {
-        var common = { className: 'gift-bullet-icon', viewBox: '0 0 16 16', fill: 'none', stroke: 'currentColor', 'stroke-width': '1.8', 'stroke-linecap': 'round', 'stroke-linejoin': 'round' };
-        if (type === 'gift') {
-            return svgEl('svg', common, [
-                svgEl('path', { d: 'M8 3V2m0 1C8 1.34 6.66 1 6 2s.34 2 2 1zm0 0C8 1.34 9.34 1 10 2s-.34 2-2 1z' }),
-                svgEl('rect', { x: '2', y: '3', width: '12', height: '3', rx: '1' }),
-                svgEl('path', { d: 'M3 6v7a1 1 0 001 1h8a1 1 0 001-1V6' }),
-                svgEl('line', { x1: '8', y1: '6', x2: '8', y2: '14' })
-            ]);
-        } else if (type === 'doc') {
-            return svgEl('svg', common, [
-                svgEl('path', { d: 'M9 2H4a1 1 0 00-1 1v10a1 1 0 001 1h8a1 1 0 001-1V6z' }),
-                svgEl('polyline', { points: '9 2 9 6 13 6' })
-            ]);
-        } else if (type === 'clock') {
-            return svgEl('svg', common, [
-                svgEl('circle', { cx: '8', cy: '8', r: '6' }),
-                svgEl('polyline', { points: '8 5 8 8 10 10' })
-            ]);
-        } else if (type === 'bolt') {
-            return svgEl('svg', common, [
-                svgEl('polygon', { points: '9 2 3 9 8 9 7 14 13 7 8 7 9 2' })
-            ]);
-        }
-        return svgEl('svg', common);
-    }
-
     function trashBtn() {
         return el('button', {
             className: 'btn btn-danger',
@@ -335,19 +308,12 @@
 
         var list = el('ul', { className: 'gift-bullet-list' }, [
             el('li', { className: 'gift-bullet-item' }, [
-                createGiftIcon('gift'),
                 el('span', null, [ti('cart_gift_desc_value').replace('{amount}', formatPrice(giftValue))])
             ]),
             el('li', { className: 'gift-bullet-item' }, [
-                createGiftIcon('doc'),
-                el('span', null, [ti('cart_gift_desc_content')])
-            ]),
-            el('li', { className: 'gift-bullet-item' }, [
-                createGiftIcon('clock'),
                 el('span', null, [ti('cart_gift_desc_condition')])
             ]),
             el('li', { className: 'gift-bullet-item gift-bullet-item--urgent' }, [
-                createGiftIcon('bolt'),
                 el('span', null, [ti('cart_gift_desc_urgency')])
             ])
         ]);

@@ -101,7 +101,6 @@
         cart_gift_label: 'تحفہ',
         cart_gift_item_name: 'سرپرائز آئٹم',
         cart_gift_desc_value: 'ہم آپ کو {amount} مالیت کا ایک اضافی مصنوع بھیجیں گے۔',
-        cart_gift_desc_content: 'ہمارے کلیکشن سے ایک کور، اسٹریپ یا ایکسیسری۔',
         cart_gift_desc_condition: 'صرف آج اور اس آرڈر کے لیے خصوصی۔',
         cart_gift_desc_urgency: 'کاؤنٹر صفر ہونے سے پہلے اس کا فائدہ اٹھائیں!',
         title_cart: 'آپ کا کارٹ - EcoZox',

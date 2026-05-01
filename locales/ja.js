@@ -102,7 +102,6 @@
         cart_gift_label: 'ギフト',
         cart_gift_item_name: 'サプライズアイテム',
         cart_gift_desc_value: '{amount}相当の追加商品をお届けします。',
-        cart_gift_desc_content: '当コレクションのケース、ストラップ、またはアクセサリー。',
         cart_gift_desc_condition: '本日限定、このご注文専用です。',
         cart_gift_desc_urgency: 'カウントダウンがゼロになる前にお見逃しなく！',
         title_cart: 'カート - EcoZox',

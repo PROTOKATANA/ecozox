@@ -102,7 +102,6 @@
         cart_gift_label: 'Hediye',
         cart_gift_item_name: 'Sürpriz Ürün',
         cart_gift_desc_value: 'Size {amount} değerinde ek bir ürün göndereceğiz.',
-        cart_gift_desc_content: 'Koleksiyonumuzdan bir kılıf, kayış veya aksesuar.',
         cart_gift_desc_condition: 'Yalnızca bugün ve bu siparişe özel.',
         cart_gift_desc_urgency: 'Sayaç sıfıra ulaşmadan fırsatı kaçırmayın!',
         title_cart: 'Sepet - EcoZox',

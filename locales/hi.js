@@ -101,7 +101,6 @@
         cart_gift_label: 'उपहार',
         cart_gift_item_name: 'सरप्राइज़ आइटम',
         cart_gift_desc_value: 'हम आपको {amount} मूल्य का एक अतिरिक्त उत्पाद भेजेंगे।',
-        cart_gift_desc_content: 'हमारे संग्रह से एक कवर, स्ट्रैप या एक्सेसरी।',
         cart_gift_desc_condition: 'केवल आज और इस ऑर्डर के लिए विशेष।',
         cart_gift_desc_urgency: 'काउंटर शून्य होने से पहले इसका फ़ायदा उठाएं!',
         title_cart: 'आपका कार्ट - EcoZox',

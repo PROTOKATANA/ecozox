@@ -101,7 +101,6 @@
         cart_gift_label: 'Подарок',
         cart_gift_item_name: 'Сюрприз-подарок',
         cart_gift_desc_value: 'Мы отправим вам дополнительный товар стоимостью {amount}.',
-        cart_gift_desc_content: 'Чехол, ремешок или аксессуар из нашей коллекции.',
         cart_gift_desc_condition: 'Только сегодня и исключительно для этого заказа.',
         cart_gift_desc_urgency: 'Успейте воспользоваться предложением до окончания обратного отсчёта!',
         title_cart: 'Ваша корзина — EcoZox',

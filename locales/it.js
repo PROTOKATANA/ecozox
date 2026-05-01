@@ -102,7 +102,6 @@
         cart_gift_label: 'Regalo',
         cart_gift_item_name: 'Articolo Sorpresa',
         cart_gift_desc_value: 'Ti invieremo un prodotto aggiuntivo del valore di {amount}.',
-        cart_gift_desc_content: 'Una custodia, un cinturino o un accessorio della nostra collezione.',
         cart_gift_desc_condition: 'Solo per oggi ed esclusivo per questo ordine.',
         cart_gift_desc_urgency: 'Approfittane prima che il conto alla rovescia raggiunga lo zero!',
         title_cart: 'Carrello - EcoZox',

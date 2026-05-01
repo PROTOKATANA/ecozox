@@ -101,7 +101,6 @@
         cart_gift_label: 'Prezent',
         cart_gift_item_name: 'Niespodzianka',
         cart_gift_desc_value: 'Wyślemy Ci dodatkowy produkt o wartości {amount}.',
-        cart_gift_desc_content: 'Etui, pasek lub akcesorium z naszej kolekcji.',
         cart_gift_desc_condition: 'Tylko dzisiaj i wyłącznie dla tego zamówienia.',
         cart_gift_desc_urgency: 'Skorzystaj z tego zanim licznik dojdzie do zera!',
         title_cart: 'Twój Koszyk - EcoZox',
