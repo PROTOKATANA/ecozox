@@ -23,7 +23,7 @@
         /* ---------- Home / Index ---------- */
         hero_title: 'Temel Koleksiyon 2026',
         hero_subtitle: 'Günlük yaşam için tasarlanmış yeni minimalist ürün serimizi keşfedin. Sadelik, işlevsellik ve zarafet.',
-        title_home: 'EcoZox - Minimalist Mağaza',
+        title_home: 'ecozox - Minimalist Mağaza',
         /* ---------- Product Cards ---------- */
         btn_add_to_cart: 'Sepete ekle',
         btn_added: 'EKLENDİ!',
@@ -39,7 +39,7 @@
         /* ---------- Product Detail ---------- */
         product_silence_title: 'Silence Pro Kulaklık',
         product_silence_desc: 'Son teknoloji aktif gürültü engelleme ile sürükleyici ses deneyimi yaşayın. Saatlerce konfor sağlayan ergonomik ve minimalist tasarım. Hızlı şarjlı uzun ömürlü pil. Müziğiniz, işiniz ve seyahatleriniz için mükemmel eşlik.',
-        title_product: 'Silence Pro Kulaklık - EcoZox',
+        title_product: 'Silence Pro Kulaklık - ecozox',
         po_individual_title: 'Tekli Ürün',
         po_individual_cta: 'Sadece bu ürünü satın al',
         po_bundle_title: 'Silence Pro Paketi',
@@ -104,7 +104,7 @@
         cart_gift_desc_value: 'Size {amount} değerinde ek bir ürün göndereceğiz.',
         cart_gift_desc_condition: 'Yalnızca bugün ve bu siparişe özel.',
         cart_gift_desc_urgency: 'Sayaç sıfıra ulaşmadan fırsatı kaçırmayın!',
-        title_cart: 'Sepet - EcoZox',
+        title_cart: 'Sepet - ecozox',
         /* ---------- Checkout Widget ---------- */
         checkout_title: 'Teslimat Bilgileri',
         checkout_treatment_label: 'Unvan',
@@ -159,7 +159,7 @@
         trust_feature_1: '🛡️ Siparişinizi teslim aldığınız andan itibaren 30 gün garanti, bir sorun çıkarsa anında çözüyoruz, gereksiz hiçbir açıklama istemiyoruz.',
         trust_feature_2: '⚡ Hızlı iade, iadeyi onayladıktan sonra paranız 48 saat içinde hesabınıza iade edilir, garantili.',
         trust_feature_3: '🙋🏽 %100 insan desteği, bot yok. Ekibimiz her sorunuzu adım adım çözmenize yardımcı olacak.',
-        title_contact: 'İletişim ve İade - EcoZox',
+        title_contact: 'İletişim ve İade - ecozox',
         /* ---------- Footer ---------- */
         footer_tagline: 'Günlük yaşam için sadelik, işlevsellik ve zarafet.',
         footer_legal_title: 'Yasal Bağlantılar',
@@ -175,7 +175,7 @@
         footer_email_label: 'E-posta:',
         footer_phone_label: 'Telefon:',
         footer_returns: 'İadeler',
-        footer_copyright: '&copy; 2026 Ecozox. Tüm hakları saklıdır.',
+        footer_copyright: '&copy; 2026 ecozox. Tüm hakları saklıdır.',
         /* ---------- Urgency Banner ---------- */
         /* ---------- Shipping & Returns Page ---------- */
         shipping_page_title: 'Kargo ve İade',
@@ -194,15 +194,15 @@
         /* ---------- Terms & Conditions ---------- */
         terms_page_title: 'Şartlar ve Koşullar',
         terms_s1_title: '1. Giriş',
-        terms_s1_text: 'EcoZox\'a hoş geldiniz. Bu şartlar ve koşullar, EcoZox web sitesinin kullanımına ilişkin kuralları ve düzenlemeleri açıklamaktadır. Bu web sitesine erişerek bu şartları tamamen kabul ettiğinizi varsayıyoruz.',
+        terms_s1_text: 'ecozox\'a hoş geldiniz. Bu şartlar ve koşullar, ecozox web sitesinin kullanımına ilişkin kuralları ve düzenlemeleri açıklamaktadır. Bu web sitesine erişerek bu şartları tamamen kabul ettiğinizi varsayıyoruz.',
         terms_s2_title: '2. Lisans',
-        terms_s2_text: 'Aksi belirtilmedikçe, EcoZox ve/veya lisans verenler EcoZox\'taki tüm materyaller üzerindeki fikri mülkiyet haklarına sahiptir. Tüm fikri mülkiyet hakları saklıdır.',
+        terms_s2_text: 'Aksi belirtilmedikçe, ecozox ve/veya lisans verenler ecozox\'taki tüm materyaller üzerindeki fikri mülkiyet haklarına sahiptir. Tüm fikri mülkiyet hakları saklıdır.',
         terms_s3_title: '3. Mağaza Kullanımı',
         terms_s3_text: 'Mağazamızı kullanarak kişisel verileriniz ve ödeme yöntemleriniz hakkında doğru, kesin ve güncel bilgi sağlamayı kabul edersiniz. Bu web sitesinin yasa dışı veya izinsiz amaçlarla kullanılması yasaktır.',
         terms_s4_title: '4. Hizmet ve Fiyat Değişiklikleri',
         terms_s4_text: 'Ürünlerimizin fiyatları önceden bildirimde bulunulmaksızın değiştirilebilir. Hizmeti önceden bildirimde bulunmaksızın her zaman değiştirme veya durdurmak hakkımızı saklı tutarız.',
         terms_s5_title: '5. Sorumluluk Sınırlaması',
-        terms_s5_text: 'Hiçbir koşulda EcoZox, yöneticileri, çalışanları veya bağlı şirketleri, hizmetin kullanımından kaynaklanan doğrudan veya dolaylı zararlardan sorumlu tutulmaz.',
+        terms_s5_text: 'Hiçbir koşulda ecozox, yöneticileri, çalışanları veya bağlı şirketleri, hizmetin kullanımından kaynaklanan doğrudan veya dolaylı zararlardan sorumlu tutulmaz.',
         /* ---------- Privacy Policy ---------- */
         privacy_page_title: 'Gizlilik Politikası',
         privacy_s1_title: '1. Topladığımız Bilgiler',

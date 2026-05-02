@@ -12,7 +12,7 @@
     const pagesBase  = el.dataset.pagesBase ?? 'pages/';
     const brand      = window.ECOZOX_BRAND || {};
     const brandNombre = brand.nombre || 'Ecozox';
-    const brandEmail  = brand.email  || 'ecozox@support@gmail.com';
+    const brandEmail  = brand.email  || 'ecozox@proton.me';
     const brandPhone  = brand.phone  || '+34 912 345 678';
     const brandPhoneTel = brandPhone.replace(/\s/g, '');
 

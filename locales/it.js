@@ -23,7 +23,7 @@
         /* ---------- Home / Index ---------- */
         hero_title: 'Collezione Essenziale 2026',
         hero_subtitle: 'Scopri la nostra nuova linea di prodotti minimalisti progettati per la vita quotidiana. Semplicità, funzionalità ed eleganza.',
-        title_home: 'EcoZox - Negozio Minimalista',
+        title_home: 'ecozox - Negozio Minimalista',
         /* ---------- Product Cards ---------- */
         btn_add_to_cart: 'Aggiungi al carrello',
         btn_added: 'AGGIUNTO!',
@@ -39,7 +39,7 @@
         /* ---------- Product Detail ---------- */
         product_silence_title: 'Cuffie Silence Pro',
         product_silence_desc: 'Vivi un suono immersivo con la cancellazione attiva del rumore di ultima generazione. Design ergonomico e minimalista che garantisce comfort per ore. Batteria a lunga durata con ricarica rapida. Il compagno perfetto per la tua musica, il lavoro e i viaggi.',
-        title_product: 'Cuffie Silence Pro - EcoZox',
+        title_product: 'Cuffie Silence Pro - ecozox',
         po_individual_title: 'Articolo singolo',
         po_individual_cta: 'Acquista solo questo articolo',
         po_bundle_title: 'Pack Silence Pro',
@@ -104,7 +104,7 @@
         cart_gift_desc_value: 'Ti invieremo un prodotto aggiuntivo del valore di {amount}.',
         cart_gift_desc_condition: 'Solo per oggi ed esclusivo per questo ordine.',
         cart_gift_desc_urgency: 'Approfittane prima che il conto alla rovescia raggiunga lo zero!',
-        title_cart: 'Carrello - EcoZox',
+        title_cart: 'Carrello - ecozox',
         /* ---------- Checkout Widget ---------- */
         checkout_title: 'Dettagli di consegna',
         checkout_treatment_label: 'Titolo',
@@ -159,7 +159,7 @@
         trust_feature_1: '🛡️ 30 giorni di garanzia dalla ricezione dell\'ordine, se qualcosa non va, lo risolviamo subito, senza chiederti spiegazioni inutili.',
         trust_feature_2: '⚡ Rimborso rapido, una volta validato il reso, il tuo denaro sarà di nuovo sul tuo conto entro 48 ore, garantito.',
         trust_feature_3: '🙋🏽 Supporto 100% umano, nessun bot. Il nostro team ti guiderà passo dopo passo per risolvere qualsiasi dubbio.',
-        title_contact: 'Contatti e Rimborsi - EcoZox',
+        title_contact: 'Contatti e Rimborsi - ecozox',
         /* ---------- Footer ---------- */
         footer_tagline: 'Semplicità, funzionalità ed eleganza per la vita quotidiana.',
         footer_legal_title: 'Link legali',
@@ -175,7 +175,7 @@
         footer_email_label: 'Email:',
         footer_phone_label: 'Telefono:',
         footer_returns: 'Resi',
-        footer_copyright: '&copy; 2026 Ecozox. Tutti i diritti riservati.',
+        footer_copyright: '&copy; 2026 ecozox. Tutti i diritti riservati.',
         /* ---------- Urgency Banner ---------- */
         /* ---------- Shipping & Returns Page ---------- */
         shipping_page_title: 'Spedizione e Resi',
@@ -194,15 +194,15 @@
         /* ---------- Terms & Conditions ---------- */
         terms_page_title: 'Termini e Condizioni',
         terms_s1_title: '1. Introduzione',
-        terms_s1_text: 'Benvenuto su EcoZox. Questi termini e condizioni descrivono le regole e i regolamenti per l\'utilizzo del sito web di EcoZox. Accedendo a questo sito, assumiamo che tu accetti integralmente questi termini e condizioni.',
+        terms_s1_text: 'Benvenuto su ecozox. Questi termini e condizioni descrivono le regole e i regolamenti per l\'utilizzo del sito web di ecozox. Accedendo a questo sito, assumiamo che tu accetti integralmente questi termini e condizioni.',
         terms_s2_title: '2. Licenza',
-        terms_s2_text: 'Salvo indicazione contraria, EcoZox e/o i suoi licenzianti possiedono i diritti di proprietà intellettuale su tutto il materiale presente su EcoZox. Tutti i diritti di proprietà intellettuale sono riservati.',
+        terms_s2_text: 'Salvo indicazione contraria, ecozox e/o i suoi licenzianti possiedono i diritti di proprietà intellettuale su tutto il materiale presente su ecozox. Tutti i diritti di proprietà intellettuale sono riservati.',
         terms_s3_title: '3. Utilizzo del Negozio',
         terms_s3_text: 'Utilizzando il nostro negozio, ti impegni a fornire informazioni veritiere, accurate e aggiornate sui tuoi dati personali e metodi di pagamento. L\'uso di questo sito per scopi illeciti o non autorizzati è vietato.',
         terms_s4_title: '4. Modifiche al Servizio e ai Prezzi',
         terms_s4_text: 'I prezzi dei nostri prodotti sono soggetti a modifiche senza preavviso. Ci riserviamo il diritto di modificare o interrompere il Servizio in qualsiasi momento senza preavviso.',
         terms_s5_title: '5. Limitazione di Responsabilità',
-        terms_s5_text: 'In nessun caso EcoZox, i suoi amministratori, dipendenti o affiliati saranno responsabili per danni diretti o indiretti derivanti dall\'utilizzo del servizio.',
+        terms_s5_text: 'In nessun caso ecozox, i suoi amministratori, dipendenti o affiliati saranno responsabili per danni diretti o indiretti derivanti dall\'utilizzo del servizio.',
         /* ---------- Privacy Policy ---------- */
         privacy_page_title: 'Informativa sulla Privacy',
         privacy_s1_title: '1. Informazioni che raccogliamo',

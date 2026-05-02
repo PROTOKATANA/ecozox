@@ -23,7 +23,7 @@
         /* ---------- Home / Index ---------- */
         hero_title: '에센셜 컬렉션 2026',
         hero_subtitle: '일상을 위해 디자인된 새로운 미니멀리스트 제품 라인을 만나보세요. 심플함, 기능성 그리고 우아함.',
-        title_home: 'EcoZox - 미니멀리스트 스토어',
+        title_home: 'ecozox - 미니멀리스트 스토어',
         /* ---------- Product Cards ---------- */
         btn_add_to_cart: '장바구니에 추가',
         btn_added: '추가됨!',
@@ -39,7 +39,7 @@
         /* ---------- Product Detail ---------- */
         product_silence_title: 'Silence Pro 헤드폰',
         product_silence_desc: '최첨단 액티브 노이즈 캔슬링으로 몰입감 있는 사운드를 경험하세요. 인체공학적 미니멀 디자인으로 오랜 시간 편안함을 보장합니다. 고속 충전이 가능한 오래가는 배터리. 음악, 업무, 여행의 완벽한 동반자입니다.',
-        title_product: 'Silence Pro 헤드폰 - EcoZox',
+        title_product: 'Silence Pro 헤드폰 - ecozox',
         po_individual_title: '단품',
         po_individual_cta: '이 제품만 구매',
         po_bundle_title: 'Silence Pro 패키지',
@@ -104,7 +104,7 @@
         cart_gift_desc_value: '{amount} 상당의 추가 제품을 보내드립니다.',
         cart_gift_desc_condition: '오늘 한정, 이 주문 전용입니다.',
         cart_gift_desc_urgency: '카운트다운이 0에 도달하기 전에 기회를 잡으세요!',
-        title_cart: '장바구니 - EcoZox',
+        title_cart: '장바구니 - ecozox',
         /* ---------- Checkout Widget ---------- */
         checkout_title: '배송 정보',
         checkout_treatment_label: '호칭',
@@ -159,7 +159,7 @@
         trust_feature_1: '🛡️ 주문 수령일로부터 30일 보증, 문제가 생기면 즉시 해결해 드립니다, 불필요한 설명은 요구하지 않습니다.',
         trust_feature_2: '⚡ 빠른 환불, 반품 확인 후 48시간 이내에 환불해 드립니다. 보장됩니다.',
         trust_feature_3: '🙋🏽 100% 인간 지원, 봇 없음. 저희 팀이 모든 문의를 단계별로 안내해 드립니다.',
-        title_contact: '문의 및 환불 - EcoZox',
+        title_contact: '문의 및 환불 - ecozox',
         /* ---------- Footer ---------- */
         footer_tagline: '일상을 위한 심플함, 기능성 그리고 우아함.',
         footer_legal_title: '법적 링크',
@@ -175,7 +175,7 @@
         footer_email_label: '이메일:',
         footer_phone_label: '전화:',
         footer_returns: '반품',
-        footer_copyright: '&copy; 2026 Ecozox. 모든 권리 보유.',
+        footer_copyright: '&copy; 2026 ecozox. 모든 권리 보유.',
         /* ---------- Urgency Banner ---------- */
         /* ---------- Shipping & Returns Page ---------- */
         shipping_page_title: '배송 및 반품',
@@ -194,15 +194,15 @@
         /* ---------- Terms & Conditions ---------- */
         terms_page_title: '이용약관',
         terms_s1_title: '1. 소개',
-        terms_s1_text: 'EcoZox에 오신 것을 환영합니다. 이 이용약관은 EcoZox 웹사이트 사용에 관한 규칙과 규정을 설명합니다. 본 웹사이트에 접속함으로써 이 이용약관에 전적으로 동의한 것으로 간주합니다.',
+        terms_s1_text: 'ecozox에 오신 것을 환영합니다. 이 이용약관은 ecozox 웹사이트 사용에 관한 규칙과 규정을 설명합니다. 본 웹사이트에 접속함으로써 이 이용약관에 전적으로 동의한 것으로 간주합니다.',
         terms_s2_title: '2. 라이선스',
-        terms_s2_text: '별도로 명시되지 않는 한, EcoZox 또는 그 라이선서가 EcoZox의 모든 자료에 대한 지적재산권을 소유합니다. 모든 지적재산권은 보호됩니다.',
+        terms_s2_text: '별도로 명시되지 않는 한, ecozox 또는 그 라이선서가 ecozox의 모든 자료에 대한 지적재산권을 소유합니다. 모든 지적재산권은 보호됩니다.',
         terms_s3_title: '3. 스토어 이용',
         terms_s3_text: '당사 스토어를 이용함으로써 귀하는 개인 데이터 및 결제 방법에 관해 진실되고 정확하며 최신의 정보를 제공하는 데 동의합니다. 불법적이거나 허가되지 않은 목적으로 본 웹사이트를 사용하는 것은 금지됩니다.',
         terms_s4_title: '4. 서비스 및 가격 변경',
         terms_s4_text: '당사 제품의 가격은 사전 통보 없이 변경될 수 있습니다. 당사는 언제든지 사전 통보 없이 서비스를 수정하거나 중단할 권리를 보유합니다.',
         terms_s5_title: '5. 책임 제한',
-        terms_s5_text: '어떠한 경우에도 EcoZox, 임원, 직원 또는 계열사는 서비스 이용으로 인해 발생하는 직접적 또는 간접적 손해에 대해 책임을 지지 않습니다.',
+        terms_s5_text: '어떠한 경우에도 ecozox, 임원, 직원 또는 계열사는 서비스 이용으로 인해 발생하는 직접적 또는 간접적 손해에 대해 책임을 지지 않습니다.',
         /* ---------- Privacy Policy ---------- */
         privacy_page_title: '개인정보처리방침',
         privacy_s1_title: '1. 수집하는 정보',

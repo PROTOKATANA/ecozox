@@ -23,7 +23,7 @@
         /* ---------- Home / Index ---------- */
         hero_title: 'Coleção Essencial 2026',
         hero_subtitle: 'Descubra nossa nova linha de produtos minimalistas projetados para o dia a dia. Simplicidade, funcionalidade e elegância.',
-        title_home: 'EcoZox - Loja Minimalista',
+        title_home: 'ecozox - Loja Minimalista',
         /* ---------- Product Cards ---------- */
         btn_add_to_cart: 'Adicionar ao carrinho',
         btn_added: 'ADICIONADO!',
@@ -39,7 +39,7 @@
         /* ---------- Product Detail ---------- */
         product_silence_title: 'Fone Silence Pro',
         product_silence_desc: 'Experimente um som imersivo com cancelamento de ruído ativo de última geração. Design ergonômico e minimalista que garante conforto por horas. Bateria de longa duração com carregamento rápido. O companheiro perfeito para sua música, trabalho e viagens.',
-        title_product: 'Fone Silence Pro - EcoZox',
+        title_product: 'Fone Silence Pro - ecozox',
         po_individual_title: 'Item individual',
         po_individual_cta: 'Comprar apenas este item',
         po_bundle_title: 'Pack Silence Pro',
@@ -104,7 +104,7 @@
         cart_gift_desc_value: 'Enviaremos um produto adicional avaliado em {amount}.',
         cart_gift_desc_condition: 'Somente hoje e exclusivo para este pedido.',
         cart_gift_desc_urgency: 'Aproveite antes que o contador chegue a zero!',
-        title_cart: 'Carrinho - EcoZox',
+        title_cart: 'Carrinho - ecozox',
         /* ---------- Checkout Widget ---------- */
         checkout_title: 'Detalhes de entrega',
         checkout_treatment_label: 'Tratamento',
@@ -159,7 +159,7 @@
         trust_feature_1: '🛡️ 30 dias de garantia a partir da receção do pedido, se algo falhar, resolvemos de imediato, não te pediremos explicações desnecessárias.',
         trust_feature_2: '⚡ Reembolso rápido, assim que validarmos a devolução, o seu dinheiro estará de volta na sua conta em 48 horas, garantido.',
         trust_feature_3: '🙋🏽 Suporte 100% humano, sem bots. A nossa equipa irá guiá-lo passo a passo para resolver qualquer dúvida.',
-        title_contact: 'Contato e Reembolsos - EcoZox',
+        title_contact: 'Contato e Reembolsos - ecozox',
         /* ---------- Footer ---------- */
         footer_tagline: 'Simplicidade, funcionalidade e elegância para o dia a dia.',
         footer_legal_title: 'Links legais',
@@ -175,7 +175,7 @@
         footer_email_label: 'E-mail:',
         footer_phone_label: 'Telefone:',
         footer_returns: 'Devoluções',
-        footer_copyright: '&copy; 2026 Ecozox. Todos os direitos reservados.',
+        footer_copyright: '&copy; 2026 ecozox. Todos os direitos reservados.',
         /* ---------- Urgency Banner ---------- */
         /* ---------- Shipping & Returns Page ---------- */
         shipping_page_title: 'Envio e Devoluções',
@@ -194,15 +194,15 @@
         /* ---------- Terms & Conditions ---------- */
         terms_page_title: 'Termos e Condições',
         terms_s1_title: '1. Introdução',
-        terms_s1_text: 'Bem-vindo à EcoZox. Estes termos e condições descrevem as regras e regulamentos para o uso do site da EcoZox. Ao acessar este site, presumimos que você aceita integralmente estes termos e condições.',
+        terms_s1_text: 'Bem-vindo à ecozox. Estes termos e condições descrevem as regras e regulamentos para o uso do site da ecozox. Ao acessar este site, presumimos que você aceita integralmente estes termos e condições.',
         terms_s2_title: '2. Licença',
-        terms_s2_text: 'Salvo indicação contrária, a EcoZox e/ou seus licenciadores possuem os direitos de propriedade intelectual de todo o material na EcoZox. Todos os direitos de propriedade intelectual estão reservados.',
+        terms_s2_text: 'Salvo indicação contrária, a ecozox e/ou seus licenciadores possuem os direitos de propriedade intelectual de todo o material na ecozox. Todos os direitos de propriedade intelectual estão reservados.',
         terms_s3_title: '3. Uso da Loja',
         terms_s3_text: 'Ao utilizar nossa loja, você se compromete a fornecer informações verdadeiras, precisas e atuais sobre seus dados pessoais e métodos de pagamento. O uso deste site para fins ilícitos ou não autorizados é proibido.',
         terms_s4_title: '4. Modificações no Serviço e Preços',
         terms_s4_text: 'Os preços dos nossos produtos estão sujeitos a alterações sem aviso prévio. Reservamo-nos o direito de modificar ou descontinuar o Serviço a qualquer momento sem aviso prévio.',
         terms_s5_title: '5. Limitação de Responsabilidade',
-        terms_s5_text: 'A EcoZox, nossos diretores, funcionários ou afiliados não serão responsáveis por quaisquer danos diretos ou indiretos decorrentes do uso do serviço.',
+        terms_s5_text: 'A ecozox, nossos diretores, funcionários ou afiliados não serão responsáveis por quaisquer danos diretos ou indiretos decorrentes do uso do serviço.',
         /* ---------- Privacy Policy ---------- */
         privacy_page_title: 'Política de Privacidade',
         privacy_s1_title: '1. Informações que Coletamos',

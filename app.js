@@ -1,5 +1,5 @@
 /* ========================================
-   EcoZox - App Entry Point
+   ecozox - App Entry Point
    Loads all feature modules after DOM is ready
 
    Execution order (all 'defer'):

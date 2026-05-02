@@ -23,7 +23,7 @@
         /* ---------- Home / Index ---------- */
         hero_title: 'エッセンシャルコレクション 2026',
         hero_subtitle: '日常のためにデザインされた新しいミニマリスト製品ラインをご覧ください。シンプルさ、機能性、そしてエレガンス。',
-        title_home: 'EcoZox - ミニマリストストア',
+        title_home: 'ecozox - ミニマリストストア',
         /* ---------- Product Cards ---------- */
         btn_add_to_cart: 'カートに追加',
         btn_added: '追加しました！',
@@ -39,7 +39,7 @@
         /* ---------- Product Detail ---------- */
         product_silence_title: 'Silence Pro ヘッドホン',
         product_silence_desc: '最先端のアクティブノイズキャンセリングで没入感のあるサウンドを体験してください。人間工学に基づいたミニマルなデザインで、長時間の快適さを保証します。急速充電対応の長持ちバッテリー。音楽、仕事、旅行の完璧なパートナーです。',
-        title_product: 'Silence Pro ヘッドホン - EcoZox',
+        title_product: 'Silence Pro ヘッドホン - ecozox',
         po_individual_title: '単品',
         po_individual_cta: 'この商品のみ購入',
         po_bundle_title: 'Silence Pro パック',
@@ -104,7 +104,7 @@
         cart_gift_desc_value: '{amount}相当の追加商品をお届けします。',
         cart_gift_desc_condition: '本日限定、このご注文専用です。',
         cart_gift_desc_urgency: 'カウントダウンがゼロになる前にお見逃しなく！',
-        title_cart: 'カート - EcoZox',
+        title_cart: 'カート - ecozox',
         /* ---------- Checkout Widget ---------- */
         checkout_title: '配送情報',
         checkout_treatment_label: '敬称',
@@ -159,7 +159,7 @@
         trust_feature_1: '🛡️ 商品受取日から30日間の保証、何か問題があればすぐに解決します、余計な説明は一切不要です。',
         trust_feature_2: '⚡ 迅速な返金、返品を確認後、48時間以内にご返金いたします。保証済み。',
         trust_feature_3: '🙋🏽 100%人間によるサポート、ボットなし。担当スタッフがすべての疑問を丁寧にサポートします。',
-        title_contact: 'お問い合わせ・返金 - EcoZox',
+        title_contact: 'お問い合わせ・返金 - ecozox',
         /* ---------- Footer ---------- */
         footer_tagline: '日常にシンプルさ、機能性、そしてエレガンスを。',
         footer_legal_title: '法的リンク',
@@ -175,7 +175,7 @@
         footer_email_label: 'メール：',
         footer_phone_label: '電話：',
         footer_returns: '返品',
-        footer_copyright: '&copy; 2026 Ecozox. 全著作権所有。',
+        footer_copyright: '&copy; 2026 ecozox. 全著作権所有。',
         /* ---------- Urgency Banner ---------- */
         /* ---------- Shipping & Returns Page ---------- */
         shipping_page_title: '配送と返品',
@@ -194,15 +194,15 @@
         /* ---------- Terms & Conditions ---------- */
         terms_page_title: '利用規約',
         terms_s1_title: '1. はじめに',
-        terms_s1_text: 'EcoZox へようこそ。本利用規約は EcoZox ウェブサイトの使用に関する規則と規定を定めています。本ウェブサイトにアクセスすることで、本利用規約に全面的に同意したものとみなします。',
+        terms_s1_text: 'ecozox へようこそ。本利用規約は ecozox ウェブサイトの使用に関する規則と規定を定めています。本ウェブサイトにアクセスすることで、本利用規約に全面的に同意したものとみなします。',
         terms_s2_title: '2. ライセンス',
-        terms_s2_text: '特に明記されていない限り、EcoZox またはそのライセンサーは EcoZox 上のすべての素材の知的財産権を所有しています。すべての知的財産権は留保されます。',
+        terms_s2_text: '特に明記されていない限り、ecozox またはそのライセンサーは ecozox 上のすべての素材の知的財産権を所有しています。すべての知的財産権は留保されます。',
         terms_s3_title: '3. ショップの利用',
         terms_s3_text: '当ショップを利用することで、個人データおよびお支払い方法に関して真実で正確かつ最新の情報を提供することに同意したことになります。違法または許可されていない目的での本ウェブサイトの使用は禁止されています。',
         terms_s4_title: '4. サービスおよび価格の変更',
         terms_s4_text: '当社製品の価格は予告なく変更される場合があります。当社はいつでも予告なくサービスを変更または中止する権利を留保します。',
         terms_s5_title: '5. 責任の制限',
-        terms_s5_text: 'いかなる場合も EcoZox、その役員、従業員または関連会社は、サービスの使用から生じるいかなる直接的または間接的な損害についても責任を負いません。',
+        terms_s5_text: 'いかなる場合も ecozox、その役員、従業員または関連会社は、サービスの使用から生じるいかなる直接的または間接的な損害についても責任を負いません。',
         /* ---------- Privacy Policy ---------- */
         privacy_page_title: 'プライバシーポリシー',
         privacy_s1_title: '1. 収集する情報',

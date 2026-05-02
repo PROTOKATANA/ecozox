@@ -23,7 +23,7 @@
         /* ---------- Home / Index ---------- */
         hero_title: 'Koleksi Esensial 2026',
         hero_subtitle: 'Temukan lini produk minimalis baru kami yang dirancang untuk kehidupan sehari-hari. Kesederhanaan, fungsionalitas, dan keanggunan.',
-        title_home: 'EcoZox - Toko Minimalis',
+        title_home: 'ecozox - Toko Minimalis',
         /* ---------- Product Cards ---------- */
         btn_add_to_cart: 'Tambah ke keranjang',
         btn_added: 'DITAMBAHKAN!',
@@ -39,7 +39,7 @@
         /* ---------- Product Detail ---------- */
         product_silence_title: 'Headphone Silence Pro',
         product_silence_desc: 'Rasakan suara imersif dengan peredam kebisingan aktif canggih. Desain ergonomis dan minimalis yang menjamin kenyamanan selama berjam-jam. Baterai tahan lama dengan pengisian cepat. Pendamping sempurna untuk musik, kerja, dan perjalanan Anda.',
-        title_product: 'Headphone Silence Pro - EcoZox',
+        title_product: 'Headphone Silence Pro - ecozox',
         po_individual_title: 'Item Satuan',
         po_individual_cta: 'Beli item ini saja',
         po_bundle_title: 'Paket Silence Pro',
@@ -104,7 +104,7 @@
         cart_gift_desc_value: 'Kami akan mengirimkan produk tambahan senilai {amount}.',
         cart_gift_desc_condition: 'Hanya hari ini dan eksklusif untuk pesanan ini.',
         cart_gift_desc_urgency: 'Manfaatkan sebelum hitungan mundur mencapai nol!',
-        title_cart: 'Keranjang - EcoZox',
+        title_cart: 'Keranjang - ecozox',
         /* ---------- Checkout Widget ---------- */
         checkout_title: 'Detail Pengiriman',
         checkout_treatment_label: 'Sapaan',
@@ -159,7 +159,7 @@
         trust_feature_1: '🛡️ Garansi 30 hari sejak penerimaan pesanan, jika ada masalah kami langsung mengatasinya, tanpa meminta penjelasan yang tidak perlu.',
         trust_feature_2: '⚡ Pengembalian dana cepat, setelah pengembalian divalidasi, uang Anda akan kembali ke akun dalam 48 jam, dijamin.',
         trust_feature_3: '🙋🏽 Dukungan 100% manusia, tanpa bot. Tim kami akan membimbing Anda langkah demi langkah untuk menyelesaikan pertanyaan apa pun.',
-        title_contact: 'Kontak & Pengembalian Dana - EcoZox',
+        title_contact: 'Kontak & Pengembalian Dana - ecozox',
         /* ---------- Footer ---------- */
         footer_tagline: 'Kesederhanaan, fungsionalitas, dan keanggunan untuk kehidupan sehari-hari.',
         footer_legal_title: 'Tautan Hukum',
@@ -175,7 +175,7 @@
         footer_email_label: 'Email:',
         footer_phone_label: 'Telepon:',
         footer_returns: 'Pengembalian',
-        footer_copyright: '&copy; 2026 Ecozox. Hak cipta dilindungi.',
+        footer_copyright: '&copy; 2026 ecozox. Hak cipta dilindungi.',
         /* ---------- Urgency Banner ---------- */
         /* ---------- Shipping & Returns Page ---------- */
         shipping_page_title: 'Pengiriman & Pengembalian',
@@ -194,15 +194,15 @@
         /* ---------- Terms & Conditions ---------- */
         terms_page_title: 'Syarat dan Ketentuan',
         terms_s1_title: '1. Pendahuluan',
-        terms_s1_text: 'Selamat datang di EcoZox. Syarat dan ketentuan ini menjelaskan aturan dan regulasi penggunaan situs web EcoZox. Dengan mengakses situs ini, kami asumsikan Anda menerima syarat dan ketentuan ini sepenuhnya.',
+        terms_s1_text: 'Selamat datang di ecozox. Syarat dan ketentuan ini menjelaskan aturan dan regulasi penggunaan situs web ecozox. Dengan mengakses situs ini, kami asumsikan Anda menerima syarat dan ketentuan ini sepenuhnya.',
         terms_s2_title: '2. Lisensi',
-        terms_s2_text: 'Kecuali dinyatakan lain, EcoZox dan/atau pemberi lisensinya memiliki hak kekayaan intelektual atas semua materi di EcoZox. Semua hak kekayaan intelektual dilindungi.',
+        terms_s2_text: 'Kecuali dinyatakan lain, ecozox dan/atau pemberi lisensinya memiliki hak kekayaan intelektual atas semua materi di ecozox. Semua hak kekayaan intelektual dilindungi.',
         terms_s3_title: '3. Penggunaan Toko',
         terms_s3_text: 'Dengan menggunakan toko kami, Anda setuju untuk memberikan informasi yang benar, akurat, dan terkini tentang data pribadi dan metode pembayaran Anda. Penggunaan situs web ini untuk tujuan ilegal atau tidak sah dilarang.',
         terms_s4_title: '4. Modifikasi Layanan dan Harga',
         terms_s4_text: 'Harga produk kami dapat berubah tanpa pemberitahuan. Kami berhak untuk mengubah atau menghentikan Layanan kapan saja tanpa pemberitahuan.',
         terms_s5_title: '5. Batasan Tanggung Jawab',
-        terms_s5_text: 'EcoZox, direktur, karyawan, atau afiliasi kami tidak bertanggung jawab atas kerugian langsung atau tidak langsung yang timbul dari penggunaan layanan.',
+        terms_s5_text: 'ecozox, direktur, karyawan, atau afiliasi kami tidak bertanggung jawab atas kerugian langsung atau tidak langsung yang timbul dari penggunaan layanan.',
         /* ---------- Privacy Policy ---------- */
         privacy_page_title: 'Kebijakan Privasi',
         privacy_s1_title: '1. Informasi yang Kami Kumpulkan',

@@ -57,14 +57,23 @@
         var items = [];
 
         // Compra directa desde el botón del producto (data-product-*)
-        var productId    = btn && btn.dataset.productId;
-        var productTitle = btn && btn.dataset.productTitle;
-        var productPrice = btn && parseFloat(btn.dataset.productPrice) / 100;
-        var productImage = btn && btn.dataset.productImage;
+        var productId       = btn && btn.dataset.productId;
+        var productTitle    = btn && btn.dataset.productTitle;
+        var productTitleKey = btn && btn.dataset.productTitleKey;
+        var productPrice    = btn && parseFloat(btn.dataset.productPrice) / 100;
+        var productImage    = btn && btn.dataset.productImage;
         var productSubItems = null;
         try {
             if (btn && btn.dataset.productSubItems) productSubItems = JSON.parse(btn.dataset.productSubItems);
         } catch (e) {}
+
+        function localizedTitle(titleKey, fallback) {
+            if (titleKey && window.EcoI18n && window.EcoI18n.t) {
+                var translated = window.EcoI18n.t(titleKey);
+                if (translated && translated !== titleKey) return translated;
+            }
+            return fallback;
+        }
 
         if (productId && productTitle && productPrice > 0) {
             var qty = 1;
@@ -77,7 +86,7 @@
 
             items = [{
                 localId:  productId,
-                name:     productTitle,
+                name:     localizedTitle(productTitleKey, productTitle),
                 price:    productPrice,
                 image:    toAbsoluteImg(productImage),
                 subItems: subItems,
@@ -96,7 +105,7 @@
             items = cartItems.map(function (item) {
                 return {
                     localId:  item.id    || '',
-                    name:     item.title || item.name,
+                    name:     localizedTitle(item.titleKey, item.title || item.name),
                     price:    item.price || 0,
                     image:    toAbsoluteImg(item.image),
                     subItems: item.subItems
@@ -118,6 +127,7 @@
         }
 
         var nicho = (window.ECOZOX_BRAND && window.ECOZOX_BRAND.nicho) || 'default';
+        var lang = (window.EcoI18n && window.EcoI18n.getLang) ? window.EcoI18n.getLang() : 'es';
 
         try {
             var response = await fetch(getApiUrl() + '/api/checkout/create-session', {
@@ -126,7 +136,8 @@
                 body:    JSON.stringify({
                     items:     items,
                     originUrl: window.location.href,
-                    nicho:     nicho
+                    nicho:     nicho,
+                    lang:      lang
                 })
             });
 

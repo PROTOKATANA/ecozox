@@ -23,7 +23,7 @@
         /* ---------- Home / Index ---------- */
         hero_title: '2026 基本系列',
         hero_subtitle: '探索我们全新的极简产品系列，专为日常生活设计。简约、实用、优雅。',
-        title_home: 'EcoZox - 极简商店',
+        title_home: 'ecozox - 极简商店',
         /* ---------- Product Cards ---------- */
         btn_add_to_cart: '加入购物车',
         btn_added: '已添加！',
@@ -39,7 +39,7 @@
         /* ---------- Product Detail ---------- */
         product_silence_title: 'Silence Pro 耳机',
         product_silence_desc: '体验沉浸式音效，搭载尖端主动降噪技术。符合人体工学的极简设计，确保长时间佩戴的舒适感。长续航电池，支持快速充电。音乐、工作和旅行的完美伴侣。',
-        title_product: 'Silence Pro 耳机 - EcoZox',
+        title_product: 'Silence Pro 耳机 - ecozox',
         po_individual_title: '单品',
         po_individual_cta: '仅购买此商品',
         po_bundle_title: 'Silence Pro 套装',
@@ -104,7 +104,7 @@
         cart_gift_desc_value: '我们将赠送您一件价值{amount}的额外产品。',
         cart_gift_desc_condition: '仅限今日，本订单专属。',
         cart_gift_desc_urgency: '在倒计时归零之前抓住机会！',
-        title_cart: '购物车 - EcoZox',
+        title_cart: '购物车 - ecozox',
         /* ---------- Checkout Widget ---------- */
         checkout_title: '配送信息',
         checkout_treatment_label: '称谓',
@@ -159,7 +159,7 @@
         trust_feature_1: '🛡️ 自收到订单之日起享有30天保障，如有任何问题我们立即解决，无需任何多余的解释。',
         trust_feature_2: '⚡ 快速退款，一旦我们验证退货，您的款项将在48小时内退回您的账户，有保证。',
         trust_feature_3: '🙋🏽 100%真人客服，无机器人。我们的团队将一步步引导您解决任何疑问。',
-        title_contact: '联系与退款 - EcoZox',
+        title_contact: '联系与退款 - ecozox',
         /* ---------- Footer ---------- */
         footer_tagline: '为日常生活带来简约、实用与优雅。',
         footer_legal_title: '法律链接',
@@ -175,7 +175,7 @@
         footer_email_label: '邮箱：',
         footer_phone_label: '电话：',
         footer_returns: '退货',
-        footer_copyright: '&copy; 2026 Ecozox. 保留所有权利。',
+        footer_copyright: '&copy; 2026 ecozox. 保留所有权利。',
         /* ---------- Urgency Banner ---------- */
         /* ---------- Shipping & Returns Page ---------- */
         shipping_page_title: '配送与退货',
@@ -194,15 +194,15 @@
         /* ---------- Terms & Conditions ---------- */
         terms_page_title: '条款和条件',
         terms_s1_title: '1. 简介',
-        terms_s1_text: '欢迎使用 EcoZox。这些条款和条件概述了使用 EcoZox 网站的规则和规定。访问本网站即表示您完全接受这些条款和条件。',
+        terms_s1_text: '欢迎使用 ecozox。这些条款和条件概述了使用 ecozox 网站的规则和规定。访问本网站即表示您完全接受这些条款和条件。',
         terms_s2_title: '2. 许可证',
-        terms_s2_text: '除非另有说明，EcoZox 及其许可方拥有 EcoZox 上所有材料的知识产权。所有知识产权保留。',
+        terms_s2_text: '除非另有说明，ecozox 及其许可方拥有 ecozox 上所有材料的知识产权。所有知识产权保留。',
         terms_s3_title: '3. 商店使用',
         terms_s3_text: '使用我们的商店，您同意提供关于您个人数据和支付方式的真实、准确和最新的信息。禁止将本网站用于非法或未经授权的目的。',
         terms_s4_title: '4. 服务和价格修改',
         terms_s4_text: '我们产品的价格可能随时更改，恕不另行通知。我们保留随时修改或中止服务的权利。',
         terms_s5_title: '5. 责任限制',
-        terms_s5_text: 'EcoZox 及其董事、员工或关联方在任何情况下均不对因使用本服务而产生的任何直接或间接损害承担责任。',
+        terms_s5_text: 'ecozox 及其董事、员工或关联方在任何情况下均不对因使用本服务而产生的任何直接或间接损害承担责任。',
         /* ---------- Privacy Policy ---------- */
         privacy_page_title: '隐私政策',
         privacy_s1_title: '1. 我们收集的信息',
