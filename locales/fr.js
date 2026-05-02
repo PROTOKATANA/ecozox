@@ -222,6 +222,6 @@
         success_title: 'Commande confirmée !',
         success_message_1: 'Merci pour votre achat. Nous avons bien reçu votre commande et la traitons.',
         success_message_2: 'Vous recevrez bientôt un e-mail avec votre numéro de suivi.',
-        success_reference: 'Référence :',
+        success_order_label: 'Votre commande quitte l\'entrepôt',
     };
 })()

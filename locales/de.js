@@ -222,6 +222,6 @@
         success_title: 'Bestellung bestätigt!',
         success_message_1: 'Vielen Dank für Ihren Einkauf. Wir haben Ihre Bestellung erhalten und bearbeiten sie.',
         success_message_2: 'Sie erhalten in Kürze eine E-Mail mit Ihrer Tracking-Nummer.',
-        success_reference: 'Referenz:',
+        success_order_label: 'Ihre Bestellung verlässt das Lager',
     };
 })()

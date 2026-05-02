@@ -222,6 +222,6 @@
         success_title: 'Pesanan Dikonfirmasi!',
         success_message_1: 'Terima kasih atas pembelian Anda. Kami telah menerima pesanan Anda dan sedang memprosesnya.',
         success_message_2: 'Anda akan segera menerima email dengan nomor pelacakan Anda.',
-        success_reference: 'Referensi:',
+        success_order_label: 'Pesanan Anda sedang keluar dari gudang',
     };
 })()

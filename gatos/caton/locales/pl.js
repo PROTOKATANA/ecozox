@@ -36,6 +36,6 @@
         success_title: 'Zamówienie Potwierdzone!',
         success_message_1: 'Dziękujemy za zakup. Otrzymaliśmy Twoje zamówienie i przetwarzamy je.',
         success_message_2: 'Wkrótce otrzymasz e-mail z numerem śledzenia.',
-        success_reference: 'Numer referencyjny:',
+        success_order_label: 'Twoje zamówienie opuszcza magazyn',
     };
 })();

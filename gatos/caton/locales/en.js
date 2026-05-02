@@ -36,6 +36,6 @@
         success_title: 'Order Confirmed!',
         success_message_1: 'Thank you for your purchase. We have received your order and are processing it.',
         success_message_2: 'You will receive an email with your tracking number shortly.',
-        success_reference: 'Reference:',
+        success_order_label: 'Your order is leaving the warehouse',
     };
 })();

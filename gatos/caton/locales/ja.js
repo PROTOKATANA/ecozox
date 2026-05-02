@@ -30,6 +30,6 @@
         success_title: 'ご注文が確定しました！',
         success_message_1: 'ご購入ありがとうございます。ご注文を受け付け、処理中です。',
         success_message_2: '追跡番号が記載されたメールをまもなくお送りいたします。',
-        success_reference: '参照番号：',
+        success_order_label: 'ご注文が倉庫を出発しました',
     };
 })();

@@ -222,6 +222,6 @@
         success_title: 'Pedido Confirmado!',
         success_message_1: 'Obrigado pela sua compra. Recebemos o seu pedido e estamos a processá-lo.',
         success_message_2: 'Receberá em breve um e-mail com o seu número de rastreio.',
-        success_reference: 'Referência:',
+        success_order_label: 'O seu pedido está a sair do armazém',
     };
 })()

@@ -30,6 +30,6 @@
         success_title: '주문이 확인되었습니다!',
         success_message_1: '구매해 주셔서 감사합니다. 주문을 접수하여 처리 중입니다.',
         success_message_2: '곧 추적 번호가 포함된 이메일을 받으실 수 있습니다。',
-        success_reference: '참조번호:',
+        success_order_label: '주문이 창고에서 출발하고 있습니다',
     };
 })();
