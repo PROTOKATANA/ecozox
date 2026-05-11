@@ -1,0 +1,84 @@
+[
+  {
+    "videos": [
+      "videos/v1.mp4"
+    ],
+    "resenas": [
+      {
+        "id": 1,
+        "autor": "Marco Rodríguez",
+        "rating": 5,
+        "fecha": "2026-01-18",
+        "imagenes": [
+          "pixel/reviews/r1/1.avif",
+          "pixel/reviews/r1/2.avif",
+          "pixel/reviews/r1/3.avif",
+          "pixel/reviews/r1/4.avif",
+          "pixel/reviews/r1/5.avif",
+          "pixel/reviews/r1/6.avif"
+        ],
+        "titulo_fallback": "Descubrí que mi gato pelea con el gato de mi vecino",
+        "body_fallback": "La imagen y el audio son de buena calidad, especialmente durante el día, la cámara no decepciona. Con esta cámara descubrí que mi gato está peleando con el gato de mi vecino. Creo que tan pronto como le puse la cámara no le gustó mucho, pero es normal ya que no está acostumbrado. Es un artículo que recomiendo especialmente si quieres saber qué hace tu gato cuando sale de casa."
+      },
+      {
+        "id": 2,
+        "autor": "Miguel Fernández",
+        "rating": 5,
+        "fecha": "2026-02-05",
+        "imagenes": [
+          "pixel/reviews/r2/1.jpg",
+          "pixel/reviews/r2/2.avif",
+          "pixel/reviews/r2/3.avif",
+          "pixel/reviews/r2/4.avif",
+          "pixel/reviews/r2/5.avif"
+        ],
+        "titulo_fallback": "Cámara + GPS: buena combinación",
+        "body_fallback": "La calidad de vídeo de la cámara es razonablemente alta y es capaz de grabar hasta un máximo de 3 horas seguidas. El kit que compré venía con un rastreador GPS y unas almohadillas de tinta. Además, puse la cámara y el rastreador GPS en un mismo collar; creo que es una buena combinación."
+      },
+      {
+        "id": 3,
+        "autor": "Ana García",
+        "rating": 5,
+        "fecha": "2026-02-22",
+        "imagenes": [
+          "pixel/reviews/r3/1.avif",
+          "pixel/reviews/r3/2.avif",
+          "pixel/reviews/r3/3.avif",
+          "pixel/reviews/r3/4.avif"
+        ],
+        "titulo_fallback": "Vídeo y audio de buena calidad",
+        "body_fallback": "Todo llego en un mismo paquete y la caja llegó en buenas condiciones, la cámara graba y hace fotos de alta calidad, el rastreador GPS fue fácil de configurar y muestra la ubicación de mi gato en tiempo real. Todo funciona como se supone."
+      },
+      {
+        "id": 4,
+        "autor": "Carlos Martín",
+        "rating": 5,
+        "fecha": "2026-03-14",
+        "imagenes": [
+          "pixel/reviews/r4/1.avif",
+          "pixel/reviews/r4/2.avif",
+          "pixel/reviews/r4/3.avif",
+          "pixel/reviews/r4/4.avif"
+        ],
+        "titulo_fallback": "Mi gato no puede quitársela solo",
+        "body_fallback": "La cámara es de buena calidad. El cierre es bastante fuerte, es prácticamente imposible que el gato se quite la cámara por sí solo. Graba vídeos con buena resolución y audio. La cámara es muy ligera y mi gato ni la nota. Además he grabado una pelea de mi gato con el gato del vecino 😂"
+      },
+      {
+        "id": 5,
+        "autor": "Sofía Pérez",
+        "rating": 5,
+        "fecha": "2026-04-08",
+        "imagenes": [
+          "pixel/reviews/r5/1.avif",
+          "pixel/reviews/r5/2.avif",
+          "pixel/reviews/r5/3.avif",
+          "pixel/reviews/r5/4.avif",
+          "pixel/reviews/r5/5.avif",
+          "pixel/reviews/r5/6.avif"
+        ],
+        "titulo_fallback": "Vecinos conflictivos",
+        "body_fallback": "A mi gato le gusta pasear por los tejados y tengo algunos vecinos conflictivos, así que compré el kit de cámara + rastreador GPS. Ahora puedo saber dónde está mi gato en cada momento desde mi teléfono. El kit también venía con 2 almohadillas de estampado de huella para conservar un bello recuerdo de tu mascota. Una inversión muy positiva porque amo a mi gato y me preocupo por él."
+      }
+    ]
+  }
+]

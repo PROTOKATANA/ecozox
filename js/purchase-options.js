@@ -1,6 +1,7 @@
 /* ========================================
    Purchase Options Widget
    Handles individual / bundle selection.
+   Supports pages with 1 or multiple bundle cards.
    Syncs data-product-* on ALL .js-add-to-cart
    buttons so cart.js works without changes.
    ======================================== */
@@ -45,45 +46,61 @@
     image: firstBtn.dataset.productImage || '',
   };
 
-  /* ---------- Bundle data (stored on the bundle card) ---------- */
-  const bundleCard = widget.querySelector('[data-option="bundle"]');
-  const BUNDLE = {
-    id:             bundleCard.dataset.bundleId,
-    title:          bundleCard.dataset.bundleTitle,
-    price:          bundleCard.dataset.bundlePrice,
-    origPriceCents: bundleCard.dataset.bundleOriginalPrice || null,
-    descuentoExtra: Math.round(parseFloat(bundleCard.dataset.bundleDiscount || '0') * 100),
-    image:          bundleCard.dataset.bundleImage,
-  };
+  /* ---------- Bundle cards — supports 1 or multiple ---------- */
+  let activeBundleCard = widget.querySelector('[data-option="bundle"][aria-checked="true"]')
+                       || widget.querySelector('[data-option="bundle"]');
 
-  /* Apply discount: data-bundle-discount="0.20" → 20% off
-     The original price is tachado; the sale price goes to cart. */
-    (function applyBundleDiscount() {
-    const discount = parseFloat(bundleCard.dataset.bundleDiscount || '0');
-    if (!discount) return;
+  function getBundleSubItems(card) {
+    return Array.from(card.querySelectorAll('.po-bundle__item')).map(function (li) {
+      const img  = li.querySelector('img');
+      const span = li.querySelector('.po-bundle__item-name') || li.querySelector('span');
+      return {
+        img:   img  ? img.src               : '',
+        title: span ? span.textContent.trim() : '',
+        key:   span ? (span.dataset.i18n || '') : '',
+      };
+    });
+  }
 
-    const original = parseFloat(BUNDLE.price);
-    const sale     = (original * (1 - discount)).toFixed(2);
+  function bundleDataWithQty() {
+    const card     = activeBundleCard;
+    const qtyInput = card.querySelector('.js-bundle-qty');
+    const qty      = qtyInput ? (parseInt(qtyInput.value) || 1) : 1;
+    const titleEl  = card.querySelector('.po-bundle__title');
+    const title    = titleEl ? titleEl.textContent.trim() : (card.dataset.bundleTitle || '');
+    const titleKey = titleEl ? (titleEl.dataset.i18n || '') : '';
+    const origPrice = card.dataset.bundleOriginalPrice
+                    ? parseFloat(card.dataset.bundleOriginalPrice) / 100
+                    : null;
+    const descuentoExtra = Math.round(parseFloat(card.dataset.bundleDiscount || '0') * 100);
 
-    const originalEl = bundleCard.querySelector('.js-bundle-price-original');
-    const saleEl     = bundleCard.querySelector('.js-bundle-price-sale');
-
-    if (originalEl) {
-      originalEl.textContent = (window.EcoI18n ? window.EcoI18n.formatPrice(original) : '$' + original.toFixed(2));
+    /* Apply inline discount display (only on initial load, not after precio-loader) */
+    const discount = parseFloat(card.dataset.bundleDiscount || '0');
+    if (discount) {
+      const original = parseFloat(card.dataset.bundlePrice);
+      const sale     = (original * (1 - discount)).toFixed(2);
+      const origEl   = card.querySelector('.js-bundle-price-original');
+      const saleEl   = card.querySelector('.js-bundle-price-sale');
+      if (origEl) origEl.textContent = (window.EcoI18n ? window.EcoI18n.formatPrice(original) : '€' + original.toFixed(2));
+      if (saleEl) saleEl.textContent = (window.EcoI18n ? window.EcoI18n.formatPrice(parseFloat(sale)) : '€' + sale);
     }
-    if (saleEl) {
-      saleEl.textContent = (window.EcoI18n ? window.EcoI18n.formatPrice(parseFloat(sale)) : '$' + sale);
-    }
 
-    /* Cart receives the discounted price */
-    BUNDLE.price = sale;
-  }());
+    return {
+      id:             card.dataset.bundleId,
+      title,
+      titleKey,
+      price:          card.dataset.bundlePrice,
+      image:          card.dataset.bundleImage,
+      origPrice,
+      descuentoExtra,
+      subItems:       getBundleSubItems(card),
+      qty,
+      isBundle:       true,
+    };
+  }
 
   /* ---------- Helpers ---------- */
 
-  /* Update data-product-* on every .js-add-to-cart outside the sticky bar.
-     The sticky bar button is handled separately by syncStickyBar so that
-     both its data attributes and its visible text move in one atomic step. */
   function updateCartButtons(data) {
     document.querySelectorAll('.js-add-to-cart, .checkout-btn').forEach(function (btn) {
       if (stickyBar && stickyBar.contains(btn)) return;
@@ -91,8 +108,8 @@
       btn.dataset.productTitle    = data.title;
       btn.dataset.productTitleKey = data.titleKey || '';
       btn.dataset.productName     = data.name || data.title;
-      btn.dataset.productPrice = data.price;
-      btn.dataset.productImage = data.image;
+      btn.dataset.productPrice    = data.price;
+      btn.dataset.productImage    = data.image;
       if (data.origPrice != null) {
         btn.dataset.productOrigPrice = data.origPrice;
       } else {
@@ -116,14 +133,11 @@
     });
   }
 
-  /* Cache the sticky bar container once — null if it doesn't exist on this page */
   const stickyBar = document.getElementById('sticky-cart-bar');
 
-  /* Sync sticky bar: data-product-* on its button + visible title/price text */
   function syncStickyBar(data) {
     if (!stickyBar) return;
 
-    /* 1. Update all action buttons inside the sticky bar */
     stickyBar.querySelectorAll('.js-add-to-cart, .checkout-btn').forEach(function (stickyBtn) {
       stickyBtn.dataset.productId       = data.id;
       stickyBtn.dataset.productTitle    = data.title;
@@ -153,11 +167,9 @@
       }
     });
 
-    /* 2. Update visible title */
     const titleEl = stickyBar.querySelector('.scb__title');
     if (titleEl) titleEl.textContent = data.title;
 
-    /* 3. Update visible prices — data.price is in cents, divide by 100 */
     const origEl = stickyBar.querySelector('.scb__price-original');
     const saleEl = stickyBar.querySelector('.scb__price-sale');
     if (origEl || saleEl) {
@@ -168,51 +180,49 @@
     }
   }
 
-  /* ---------- Bundle quantity helpers ---------- */
-  const bundleQtyInput = bundleCard.querySelector('.js-bundle-qty');
-  const bundleQtyMinus = bundleCard.querySelector('.qty-btn.minus');
-  const bundleQtyPlus  = bundleCard.querySelector('.qty-btn.plus');
-
-  function getBundleQty() {
-    return bundleQtyInput ? (parseInt(bundleQtyInput.value) || 1) : 1;
+  /* ---------- Bundle qty: event delegation on the widget ---------- */
+  /* Handles qty changes for whichever bundle card is currently active */
+  function onBundleQtyChange() {
+    if (!activeOption || activeOption.dataset.option !== 'bundle') return;
+    updateCartButtons(bundleDataWithQty());
+    syncStickyBar(bundleDataWithQty());
   }
 
-  function getBundleSubItems() {
-    return Array.from(bundleCard.querySelectorAll('.po-bundle__item')).map(function (li) {
-      const img  = li.querySelector('img');
-      const span = li.querySelector('.po-bundle__item-name') || li.querySelector('span');
-      return {
-        img:   img  ? img.src               : '',
-        title: span ? span.textContent.trim() : '',
-        key:   span ? (span.dataset.i18n || '') : '',
-      };
-    });
-  }
+  widget.addEventListener('click', function (e) {
+    const btn = e.target.closest('.qty-btn');
+    if (!btn) return;
+    const card = btn.closest('[data-option="bundle"]');
+    if (!card || card !== activeBundleCard) return;
+    /* quantity.js updates the input value; read after it runs */
+    setTimeout(onBundleQtyChange, 0);
+  });
 
-  function bundleDataWithQty() {
-    const qty = getBundleQty();
-    const titleEl = bundleCard.querySelector('.po-bundle__title');
-    const title    = titleEl ? titleEl.textContent.trim() : BUNDLE.title;
-    const titleKey = titleEl ? (titleEl.dataset.i18n || '') : '';
-    const origPrice = BUNDLE.origPriceCents ? parseFloat(BUNDLE.origPriceCents) / 100 : null;
-    return Object.assign({}, BUNDLE, { title, titleKey, subItems: getBundleSubItems(), qty, isBundle: true, origPrice, descuentoExtra: BUNDLE.descuentoExtra });
-  }
+  widget.addEventListener('change', function (e) {
+    if (!e.target.classList.contains('js-bundle-qty')) return;
+    const card = e.target.closest('[data-option="bundle"]');
+    if (!card || card !== activeBundleCard) return;
+    onBundleQtyChange();
+  });
+
+  widget.addEventListener('input', function (e) {
+    if (!e.target.classList.contains('js-bundle-qty')) return;
+    const card = e.target.closest('[data-option="bundle"]');
+    if (!card || card !== activeBundleCard) return;
+    onBundleQtyChange();
+  });
 
   /* ---------- Selection logic ---------- */
   const qtyWrapper = widget.querySelector('.purchase-option__qty');
-  const qtyInput   = widget.querySelector('.qty-input');
   const options    = widget.querySelectorAll('.purchase-option');
 
   let activeOption = widget.querySelector('.purchase-option--selected') || null;
 
   function selectOption(chosen) {
-    /* Deselect all */
     options.forEach(function (opt) {
       opt.classList.remove('purchase-option--selected');
       opt.setAttribute('aria-checked', 'false');
     });
 
-    /* Select the clicked one */
     chosen.classList.add('purchase-option--selected');
     chosen.setAttribute('aria-checked', 'true');
     activeOption = chosen;
@@ -220,46 +230,28 @@
     const isBundle = chosen.dataset.option === 'bundle';
 
     if (isBundle) {
-      /* Dim single quantity controls while bundle is active */
+      activeBundleCard = chosen;
       if (qtyWrapper) qtyWrapper.classList.add('purchase-option__qty--disabled');
       updateCartButtons(bundleDataWithQty());
       syncStickyBar(bundleDataWithQty());
     } else {
-      /* Restore single quantity controls */
       if (qtyWrapper) qtyWrapper.classList.remove('purchase-option__qty--disabled');
       updateCartButtons(BASE);
       syncStickyBar(BASE);
     }
   }
 
-  /* Sync cart when bundle qty changes (after quantity.js has updated the value) */
-  function onBundleQtyChange() {
-    if (!activeOption || activeOption.dataset.option !== 'bundle') return;
-    updateCartButtons(bundleDataWithQty());
-    syncStickyBar(bundleDataWithQty());
-  }
-
-  if (bundleQtyMinus) bundleQtyMinus.addEventListener('click', onBundleQtyChange);
-  if (bundleQtyPlus)  bundleQtyPlus.addEventListener('click', onBundleQtyChange);
-  if (bundleQtyInput) {
-    bundleQtyInput.addEventListener('change', onBundleQtyChange);
-    bundleQtyInput.addEventListener('input',  onBundleQtyChange);
-  }
-
   /* ---------- Event listeners ---------- */
   options.forEach(function (option) {
-    /* Click */
     option.addEventListener('click', function () {
       selectOption(option);
     });
 
-    /* Keyboard: Space / Enter activate the option */
     option.addEventListener('keydown', function (e) {
       if (e.key === ' ' || e.key === 'Enter') {
         e.preventDefault();
         selectOption(option);
       }
-      /* Arrow keys navigate between options */
       if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
         e.preventDefault();
         const next = option.nextElementSibling;
@@ -295,13 +287,10 @@
 
   /* Llamado por precio-loader tras recibir los precios del servidor */
   function refreshBundle() {
-    BUNDLE.price          = bundleCard.dataset.bundlePrice;
-    BUNDLE.origPriceCents = bundleCard.dataset.bundleOriginalPrice || null;
-    BUNDLE.descuentoExtra = Math.round(parseFloat(bundleCard.dataset.bundleDiscount || '0') * 100);
+    /* precio-loader ya actualizó data-bundle-price en activeBundleCard vía data-bundle-id */
     syncActive();
   }
 
-  /* Llamado por precio-loader cuando actualiza el precio individual */
   function refreshIndividual() {
     if (firstBtn.dataset.productPrice && firstBtn.dataset.productPrice !== '0') {
       _individualPrice = firstBtn.dataset.productPrice;
@@ -309,13 +298,10 @@
     syncActive();
   }
 
-  /* Re-sync after i18n updates translated text (title, name) */
   window.EcoPurchaseOptions = { update: syncActive, refreshBundle: refreshBundle, refreshIndividual: refreshIndividual };
 
-  /* If precio-loader already resolved before this script loaded, the refreshBundle()
-     call it made was a no-op (window.EcoPurchaseOptions didn't exist yet). Re-run it
-     now so the correct server price replaces the IIFE's stale calculation. */
-  if (bundleCard.dataset.bundleOriginalPrice) {
+  /* Si precio-loader ya resolvió antes de que este script cargara, re-ejecutar */
+  if (activeBundleCard && activeBundleCard.dataset.bundleOriginalPrice) {
     refreshBundle();
   }
 

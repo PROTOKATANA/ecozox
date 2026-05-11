@@ -33,10 +33,10 @@
   color: var(--text-muted);
 }
 
-/* ── Grid: 3 columnas en escritorio ── */
+/* ── Grid: columnas adaptativas según número de vídeos ── */
 .product-videos-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.25rem;
 }
 
@@ -45,10 +45,14 @@
   border-radius: var(--border-radius);
   overflow: hidden;
   background-color: var(--primary-color);
-  aspect-ratio: 9 / 16;
+  aspect-ratio: 1 / 1;
   position: relative;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.product-video-card:only-child {
+  aspect-ratio: 16 / 9;
 }
 
 .product-video-card:hover {
@@ -81,10 +85,9 @@
   pointer-events: none;
 }
 
-/* ── Responsive: cuadrícula 2x2 en móvil ── */
+/* ── Responsive: 2 columnas en móvil ── */
 @media (max-width: 768px) {
   .product-videos-grid {
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 0.75rem;
   }
@@ -93,10 +96,9 @@
     aspect-ratio: 1;
   }
 
-  /* El tercer vídeo ocupa todo el ancho */
-  .product-video-card:last-child {
+  .product-video-card:only-child {
+    aspect-ratio: 16 / 9;
     grid-column: 1 / -1;
-    aspect-ratio: 2 / 1;
   }
 }
 

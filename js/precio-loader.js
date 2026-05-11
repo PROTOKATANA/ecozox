@@ -61,10 +61,13 @@
 
     var individual = productos.find(function (p) { return p.tipo === 'individual' && p.localId === mainId; })
                   || productos.find(function (p) { return p.tipo === 'individual'; });
-    var bundle     = productos.find(function (p) { return p.tipo === 'bundle'; });
 
+    /* Aplicar precio individual si existe */
     if (individual) applyIndividual(individual);
-    if (bundle)     applyBundle(bundle);
+
+    /* Aplicar precio a TODOS los bundles (soporta páginas con múltiples bundles) */
+    var bundles = productos.filter(function (p) { return p.tipo === 'bundle'; });
+    bundles.forEach(function (b) { applyBundle(b); });
 
     if (window.EcoI18n && window.EcoI18n.applyPrices) {
       window.EcoI18n.applyPrices();
@@ -102,15 +105,19 @@
       window.ECOZOX_CONFIG.bundleExtraDiscount = p.descuento;
     }
 
+    /* Actualizar data-attributes y precios visibles acotados al card específico */
     document.querySelectorAll('[data-bundle-id="' + p.localId + '"]').forEach(function (el) {
       el.dataset.bundlePrice         = p.precioVentaCents;
       el.dataset.bundleOriginalPrice = p.precioOriginalCents;
       if (p.descuento != null)
         el.dataset.bundleDiscount = (p.descuento / 100).toFixed(4);
-    });
 
-    setIi8nPrice('.js-bundle-price-sale',     ventaDec);
-    setIi8nPrice('.js-bundle-price-original', origDec);
+      /* Acotar los selectores de precio al card concreto (evita colisiones con otros bundles) */
+      var saleEl = el.querySelector('.js-bundle-price-sale');
+      var origEl = el.querySelector('.js-bundle-price-original');
+      if (saleEl) saleEl.setAttribute('data-i18n-price', ventaDec);
+      if (origEl) origEl.setAttribute('data-i18n-price', origDec);
+    });
 
     if (window.EcoPurchaseOptions && window.EcoPurchaseOptions.refreshBundle) {
       window.EcoPurchaseOptions.refreshBundle();
