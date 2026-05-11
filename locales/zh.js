@@ -21,8 +21,9 @@
         nav_cart: '购物车',
         nav_language: '语言',
         /* ---------- Home / Index ---------- */
-        hero_title: '2026 基本系列',
-        hero_subtitle: '探索我们全新的极简产品系列，专为日常生活设计。简约、实用、优雅。',
+        hero_title: '给您的宠物最好的',
+        hero_subtitle: '我们知道，一声吠叫或咕噜声就能让您的一天充满阳光。',
+        hero_subtitle2: '因此，在ecozox，我们专注于寻找关注宠物健康与幸福的产品。',
         title_home: 'ecozox - 极简商店',
         /* ---------- Product Cards ---------- */
         btn_add_to_cart: '加入购物车',

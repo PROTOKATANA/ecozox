@@ -21,8 +21,9 @@
         nav_cart: '장바구니',
         nav_language: '언어',
         /* ---------- Home / Index ---------- */
-        hero_title: '에센셜 컬렉션 2026',
-        hero_subtitle: '일상을 위해 디자인된 새로운 미니멀리스트 제품 라인을 만나보세요. 심플함, 기능성 그리고 우아함.',
+        hero_title: '반려동물에게 최고를 선물하세요',
+        hero_subtitle: '짖는 소리나 골골대는 소리가 하루를 밝게 해준다는 걸 우리는 알아요.',
+        hero_subtitle2: '그래서 ecozox에서는 반려동물의 건강과 행복에 집중한 제품을 찾습니다.',
         title_home: 'ecozox - 미니멀리스트 스토어',
         /* ---------- Product Cards ---------- */
         btn_add_to_cart: '장바구니에 추가',

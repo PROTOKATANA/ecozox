@@ -21,8 +21,9 @@
         nav_cart: 'Sepet',
         nav_language: 'Dil',
         /* ---------- Home / Index ---------- */
-        hero_title: 'Temel Koleksiyon 2026',
-        hero_subtitle: 'Günlük yaşam için tasarlanmış yeni minimalist ürün serimizi keşfedin. Sadelik, işlevsellik ve zarafet.',
+        hero_title: 'PETİNİZE EN İYİSİNİ VERİN',
+        hero_subtitle: 'Bir havlama ya da mırıltının gününüzü aydınlatabileceğini biliyoruz.',
+        hero_subtitle2: 'Bu yüzden ecozox\'ta evcil hayvanınızın sağlığına ve mutluluğuna odaklanan ürünler arıyoruz.',
         title_home: 'ecozox - Minimalist Mağaza',
         /* ---------- Product Cards ---------- */
         btn_add_to_cart: 'Sepete ekle',

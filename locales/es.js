@@ -21,8 +21,9 @@
         nav_cart: 'Carrito',
         nav_language: 'Idioma',
         /* ---------- Home / Index ---------- */
-        hero_title: 'Colección Esencial 2026',
-        hero_subtitle: 'Descubre nuestra nueva línea de productos minimalistas diseñados para el día a día. Simplicidad, funcionalidad y elegancia.',
+        hero_title: 'DALE LO MEJOR A TU MASCOTA',
+        hero_subtitle: 'Sabemos que un ladrido o un ronroneo te pueden alegrar el día.',
+        hero_subtitle2: 'Por eso en ecozox buscamos artículos que se centran en la salud y la felicidad de tu mascota.',
         title_home: 'ecozox - Tienda Minimalista',
         /* ---------- Product Cards ---------- */
         btn_add_to_cart: 'Añadir al carrito',

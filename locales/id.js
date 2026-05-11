@@ -21,8 +21,9 @@
         nav_cart: 'Keranjang',
         nav_language: 'Bahasa',
         /* ---------- Home / Index ---------- */
-        hero_title: 'Koleksi Esensial 2026',
-        hero_subtitle: 'Temukan lini produk minimalis baru kami yang dirancang untuk kehidupan sehari-hari. Kesederhanaan, fungsionalitas, dan keanggunan.',
+        hero_title: 'BERIKAN YANG TERBAIK UNTUK HEWAN PELIHARAANMU',
+        hero_subtitle: 'Kami tahu bahwa gonggongan atau dengkuran bisa mencerahkan harimu.',
+        hero_subtitle2: 'Karena itu di ecozox kami mencari produk yang berfokus pada kesehatan dan kebahagiaan hewan peliharaanmu.',
         title_home: 'ecozox - Toko Minimalis',
         /* ---------- Product Cards ---------- */
         btn_add_to_cart: 'Tambah ke keranjang',

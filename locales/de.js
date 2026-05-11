@@ -21,8 +21,9 @@
         nav_cart: 'Warenkorb',
         nav_language: 'Sprache',
         /* ---------- Home / Index ---------- */
-        hero_title: 'Essential Kollektion 2026',
-        hero_subtitle: 'Entdecken Sie unsere neue Linie minimalistischer Produkte für den Alltag. Schlichtheit, Funktionalität und Eleganz.',
+        hero_title: 'GIB DEINEM HAUSTIER DAS BESTE',
+        hero_subtitle: 'Wir wissen, dass ein Bellen oder Schnurren deinen Tag erhellen kann.',
+        hero_subtitle2: 'Deshalb suchen wir bei ecozox Artikel, die auf die Gesundheit und das Wohlbefinden deines Haustieres ausgerichtet sind.',
         title_home: 'ecozox - Minimalistischer Shop',
         /* ---------- Product Cards ---------- */
         btn_add_to_cart: 'In den Warenkorb',

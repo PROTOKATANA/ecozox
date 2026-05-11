@@ -21,8 +21,9 @@
         nav_cart: 'Cart',
         nav_language: 'Language',
         /* ---------- Home / Index ---------- */
-        hero_title: 'Essential Collection 2026',
-        hero_subtitle: 'Discover our new line of minimalist products designed for everyday life. Simplicity, functionality and elegance.',
+        hero_title: 'GIVE YOUR PET THE BEST',
+        hero_subtitle: 'We know that a bark or a purr can brighten your day.',
+        hero_subtitle2: 'That\'s why at ecozox we look for products focused on your pet\'s health and happiness.',
         title_home: 'ecozox - Minimalist Store',
         /* ---------- Product Cards ---------- */
         btn_add_to_cart: 'Add to cart',
