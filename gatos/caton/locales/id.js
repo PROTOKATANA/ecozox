@@ -10,7 +10,8 @@
         product_desc4:  'Rumah Anda bersih dan kucing Anda Bahagia 😸',
         po_bundle_title: 'Penggaruk + 3 Pengganti',
         po_bundle_item2: 'Kardus bergelombang kepadatan tinggi x3',
-        po_bundle_item3: 'Catnip organik 100% — Relaksasi Kucing!',
+        po_bundle_item3: 'Catnip organik 100%',
+        po_bundle_cta:   'Pilih kit ini dan hemat {bpct}%',
 
         /* ---- Ulasan ---- */
         review_1_titulo: 'Selamat Tinggal Goresan',

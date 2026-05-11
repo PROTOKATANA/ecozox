@@ -10,7 +10,8 @@
         product_desc4:  'La tua casa impeccabile e il tuo gatto Felice 😸',
         po_bundle_title: 'Tiragraffi + 3 Ricambi',
         po_bundle_item2: 'Cartone ondulato ad alta densità x3',
-        po_bundle_item3: 'Erba gatta 100% biologica — Relax Felino!',
+        po_bundle_item3: 'Erba gatta 100% biologica',
+        po_bundle_cta:   'Scegli questo kit e risparmia il {bpct}%',
 
         /* ---- Recensioni ---- */
         review_1_titulo: 'Addio ai graffi',

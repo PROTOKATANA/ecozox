@@ -10,7 +10,8 @@
         product_desc4:  '집은 깔끔하고 고양이는 행복하게 😸',
         po_bundle_title: '스크래처 + 교체용 3개',
         po_bundle_item2: '고밀도 골판지 x3',
-        po_bundle_item3: '100% 유기농 캣닢 — 고양이 릴렉세이션!',
+        po_bundle_item3: '100% 유기농 캣닢',
+        po_bundle_cta:   '이 키트 선택 시 {bpct}% 절약',
 
         /* ---- 리뷰 ---- */
         review_1_titulo: '긁힘과 작별',

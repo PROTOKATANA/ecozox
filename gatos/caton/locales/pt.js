@@ -10,7 +10,8 @@
         product_desc4:  'A tua casa impecável e o teu gato Feliz 😸',
         po_bundle_title: 'Arranhador + 3 Recargas',
         po_bundle_item2: 'Cartão canelado de alta densidade x3',
-        po_bundle_item3: 'Erva-gato 100% orgânica — Relaxamento Felino!',
+        po_bundle_item3: 'Erva-gato 100% orgânica',
+        po_bundle_cta:   'Escolher este kit e economizar {bpct}%',
 
         /* ---- Resenhas ---- */
         review_1_titulo: 'Adeus aos arranhões',

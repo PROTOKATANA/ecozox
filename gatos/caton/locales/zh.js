@@ -10,7 +10,8 @@
         product_desc4:  '你的家一尘不染，你的猫快乐 😸',
         po_bundle_title: '猫抓板 + 3件替换装',
         po_bundle_item2: '高密度瓦楞纸板 x3',
-        po_bundle_item3: '100%有机猫薄荷 — 猫咪放松!',
+        po_bundle_item3: '100%有机猫薄荷',
+        po_bundle_cta:   '选择此套装，立省{bpct}%',
 
         /* ---- 评价 ---- */
         review_1_titulo: '告别抓痕',

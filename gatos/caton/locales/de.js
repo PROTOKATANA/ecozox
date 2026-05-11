@@ -10,7 +10,8 @@
         product_desc4:  'Ihr Zuhause makellos und Ihre Katze glücklich 😸',
         po_bundle_title: 'Kratzbaum + 3 Ersatzteile',
         po_bundle_item2: 'Hochdichte Wellpappe x3',
-        po_bundle_item3: '100% Bio-Katzenminze — Feline Entspannung!',
+        po_bundle_item3: '100% Bio-Katzenminze',
+        po_bundle_cta:   'Dieses Set wählen und {bpct}% sparen',
 
         /* ---- Bewertungen ---- */
         review_1_titulo: 'Tschüss Kratzer',

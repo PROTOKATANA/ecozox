@@ -16,7 +16,8 @@
         product_desc4:     'Twój dom nieskazitelny, a Twój kot szczęśliwy 😸',
         po_bundle_title:   'Drapak + 3 wkłady',
         po_bundle_item2:   'Tektura falista wysokiej gęstości x3',
-        po_bundle_item3:   '100% organiczna kocimiętka — Kocia relaksacja!',
+        po_bundle_item3:   '100% organiczna kocimiętka',
+        po_bundle_cta:   'Wybierz ten zestaw i oszczędź {bpct}%',
 
         /* ---- Reviews ---- */
         review_1_titulo: 'Żegnaj, zadrapania',

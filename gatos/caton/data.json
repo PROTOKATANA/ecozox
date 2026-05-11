@@ -12,7 +12,9 @@
         "fecha": "2026-01-09",
         "imagenes": [
           "pixel/reviews/r1/1.avif",
-          "pixel/reviews/r1/2.avif"
+          "pixel/reviews/r1/2.avif",
+          "pixel/reviews/r1/3.avif",
+          "pixel/reviews/r1/4.avif"
         ],
         "titulo_fallback": "Adios a los arañazos",
         "body_fallback": "Tenía el sofá lleno de tiras y arañazos, mi gato se entretenía destrozando las esquinas. Le puse hierva gatera al rascador y se volvió loco, se ve que le encanto y en seguida lo adoptó como suyo. La madera de pino se nota de buena calidad y no se astilla con los arañazos. Sin duda alguna lo recomiendo."
@@ -37,7 +39,7 @@
         "rating": 5,
         "fecha": "2026-02-25",
         "imagenes": [
-          "pixel/reviews/r3/1.jpeg",
+          "pixel/reviews/r3/1.jpg",
           "pixel/reviews/r3/2.webp",
           "pixel/reviews/r3/3.webp",
           "pixel/reviews/r3/4.avif"
@@ -52,7 +54,9 @@
         "fecha": "2026-03-10",
         "imagenes": [
           "pixel/reviews/r4/1.jpg",
-          "pixel/reviews/r4/2.avif"
+          "pixel/reviews/r4/2.webp",
+          "pixel/reviews/r4/3.avif",
+          "pixel/reviews/r4/4.avif"
         ],
         "titulo_fallback": "Diseño precioso y ajustable",
         "body_fallback": "El rascador es precioso, se puede poner en diferentes ángulos y la madera se ve robusta y de buena calidad. A mi gatita Kitty le encanta. Ahora ya no me mira con ojos de maldad cuando la regaño por arañar lo que no debe 😅. El paquete llegó rápido y el vendedor utilizó una caja resistente de buena calidad para el envío. ¡Muy contenta con la compra!"

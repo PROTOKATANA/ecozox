@@ -10,7 +10,8 @@
         product_desc4:  'お家は清潔で猫は幸せ 😸',
         po_bundle_title: 'スクラッチャー + 交換用3枚',
         po_bundle_item2: '高密度段ボール x3',
-        po_bundle_item3: '100%オーガニックキャットニップ — 猫のリラックスに!',
+        po_bundle_item3: '100%オーガニックキャットニップ',
+        po_bundle_cta:   'このキットを選んで{bpct}%お得',
 
         /* ---- レビュー ---- */
         review_1_titulo: '傷跡とさよなら',

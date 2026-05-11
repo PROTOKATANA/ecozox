@@ -16,7 +16,8 @@
         product_desc4:   'Tu casa impecable y tu gato Feliz 😸',
         po_bundle_title: 'Rascador + 3 Recambios',
         po_bundle_item2: 'Cartón corrugado de alta densidad x3',
-        po_bundle_item3: 'Hierba gatera 100% orgánica ¡Relajación Felina!',
+        po_bundle_item3: 'Hierba gatera 100% orgánica',
+        po_bundle_cta:   'Elegir este kit y ahorrar {bpct}%',
 
         /* ---- Reseñas ---- */
         review_1_titulo: 'Adios a los arañazos',
@@ -24,9 +25,9 @@
         review_2_titulo: 'Las cortinas ya no son una escalera',
         review_2_body:   'Tengo 3 gatos y a 2 de ellos les encantaba arañar mis muebles, el sofá y hasta las cortinas. Necesitaba algo resistente y reutilizable. El montaje fue muy sencillo: en 3 minutos lo tenía listo. Mis gatos llevan 2 semanas utilizándolo y ya no veo arañazos en mi sofá. Incluso a uno de ellos le encanta tumbarse y dormir encima del rascador con la pancita arriba, es adorable 😭. Fue una gran compra, articulo muy recomendado.',
         review_3_titulo: 'Salvando mis Sillones',
-        review_3_body:   'Suena exagerado pero es muy real. Mi gato es muy territorial y llevaba meses arañando el respaldo del sillón. Puse este rascador al lado de mis muebles y lo rocié un par de veces con catnip. En 2 días ya lo prefería. Ahora lo usa para afilarse las uñas en lugar de utilizar mi sillón. La madera de pino huele bien y no tiene químicos raros. ¡Lo recomiendo muchísimo!',
+        review_3_body:   'Suena exagerado pero es muy real. Mi gato es muy territorial y llevaba meses arañando el respaldo del sillón. Puse este rascador al lado de mis muebles y lo rocié un par de veces con catnip. En 2 días ya lo prefería. Ahora lo usa para afilarse las uñas en lugar de utilizar mi sillón. La madera de pino huele bien y no tiene químicos raros.',
         review_4_titulo: 'Diseño precioso y ajustable',
-        review_4_body:   'El rascador es precioso, se puede poner en diferentes ángulos y la madera se ve robusta y de buena calidad. A mi gatita Kitty le encanta. Ahora ya no me mira con ojos de maldad cuando la regaño por arañar lo que no debe 😅. El paquete llegó rápido y el vendedor utilizó una caja resistente de buena calidad para el envío. ¡Muy contenta con la compra!',
+        review_4_body:   'El rascador es precioso, se puede poner en diferentes ángulos y la madera se ve robusta y de buena calidad. A mi gatita Kitty le encanta. Ahora ya no me mira con ojos de maldad cuando la regaño por arañar lo que no debe 😅. El paquete llegó rápido y el vendedor utilizó una caja resistente de buena calidad para el envío.',
         review_5_titulo: 'Base de madera y cartón barato',
         review_5_body:   'El cartón corrugado me duró aproximadamente 2 meses antes de que tocara cambiarlo por los arañazos. Me gustó mucho el hecho de que solo tenga que cambiar la superficie de cartón, que es muy barata y económica, y que no tenga que cambiar la base de madera. Estoy muy encantada de no tener que comprar un rascador completo cada poco tiempo. Mamá es feliz cuando los gatos son felices. Espero que dure mucho tiempo.',
         success_title: '¡Pedido Confirmado!',

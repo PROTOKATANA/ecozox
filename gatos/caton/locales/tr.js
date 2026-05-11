@@ -10,7 +10,8 @@
         product_desc4:  'Eviniz tertemiz ve kediniz Mutlu 😸',
         po_bundle_title: 'Tırmalamacı + 3 Yedek Parça',
         po_bundle_item2: 'Yüksek yoğunluklu oluklu karton x3',
-        po_bundle_item3: '%100 Organik Kedi Otu — Kedi Rahatlaması!',
+        po_bundle_item3: '%100 Organik Kedi Otu',
+        po_bundle_cta:   'Bu kiti seç ve %{bpct} tasarruf et',
 
         /* ---- Yorumlar ---- */
         review_1_titulo: 'Çiziklerle Elveda',

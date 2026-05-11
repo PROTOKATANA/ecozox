@@ -10,7 +10,8 @@
         product_desc4:  'Votre maison impeccable et votre chat Heureux 😸',
         po_bundle_title: 'Griffoir + 3 Recharges',
         po_bundle_item2: 'Carton ondulé haute densité x3',
-        po_bundle_item3: 'Herbe à chat 100% bio — Relaxation Féline !',
+        po_bundle_item3: 'Herbe à chat 100% bio',
+        po_bundle_cta:   'Choisir ce kit et économiser {bpct}%',
 
         /* ---- Avis ---- */
         review_1_titulo: 'Adieu aux griffures',

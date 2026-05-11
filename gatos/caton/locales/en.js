@@ -16,7 +16,8 @@
         product_desc4:     'Your home spotless and your cat Happy 😸',
         po_bundle_title:   'Scratcher + 3 Refills',
         po_bundle_item2:   'High-density corrugated cardboard x3',
-        po_bundle_item3:   '100% Organic Catnip — Feline Relaxation!',
+        po_bundle_item3:   '100% Organic Catnip',
+        po_bundle_cta:   'Choose this kit and save {bpct}%',
 
         /* ---- Reviews ---- */
         review_1_titulo: 'Goodbye to the scratches',
