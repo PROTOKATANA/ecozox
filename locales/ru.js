@@ -31,7 +31,7 @@
         product_reloj: 'Классические часы Mono',
         product_auriculares: 'Наушники Silence Pro',
         product_zapatillas: 'Кроссовки Urban Walk',
-        product_camara: 'Ретро-камера Lens',
+        product_camara: 'Камера-ошейник для питомцев',
         product_mochila: 'Рюкзак Canvas Explorer',
         product_tazas: 'Набор матовых кружек',
         sold_out: 'РАСПРОДАНО',

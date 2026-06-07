@@ -31,7 +31,7 @@
         product_reloj: 'Zegarek Classic Mono',
         product_auriculares: 'Słuchawki Silence Pro',
         product_zapatillas: 'Buty Urban Walk',
-        product_camara: 'Aparat Retro Lens',
+        product_camara: 'Kamera na Obrożę dla Zwierząt',
         product_mochila: 'Plecak Canvas Explorer',
         product_tazas: 'Zestaw Kubków Matte',
         sold_out: 'WYPRZEDANO',

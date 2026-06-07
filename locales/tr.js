@@ -32,7 +32,7 @@
         product_reloj: 'Classic Mono Saat',
         product_auriculares: 'Silence Pro Kulaklık',
         product_zapatillas: 'Urban Walk Spor Ayakkabı',
-        product_camara: 'Retro Lens Kamera',
+        product_camara: 'Evcil Hayvan Tasma Kamerası',
         product_mochila: 'Canvas Explorer Sırt Çantası',
         product_tazas: 'Matte Kupa Seti',
         sold_out: 'TÜKENDİ',

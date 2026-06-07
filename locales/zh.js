@@ -32,7 +32,7 @@
         product_reloj: 'Classic Mono 腕表',
         product_auriculares: 'Silence Pro 耳机',
         product_zapatillas: 'Urban Walk 运动鞋',
-        product_camara: 'Retro Lens 相机',
+        product_camara: '宠物项圈摄像头',
         product_mochila: 'Canvas Explorer 背包',
         product_tazas: 'Matte 杯具套装',
         sold_out: '已售罄',

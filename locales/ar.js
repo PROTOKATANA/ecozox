@@ -33,7 +33,7 @@
         product_reloj: 'ساعة كلاسيك مونو',
         product_auriculares: 'سماعات سايلنس برو',
         product_zapatillas: 'حذاء أوربان ووك',
-        product_camara: 'كاميرا ريترو لينس',
+        product_camara: 'كاميرا طوق للحيوانات الأليفة',
         product_mochila: 'حقيبة كانفاس إكسبلورر',
         product_tazas: 'طقم أكواب مات',
         sold_out: 'نفذ المخزون',

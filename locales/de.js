@@ -32,7 +32,7 @@
         product_reloj: 'Classic Mono Uhr',
         product_auriculares: 'Silence Pro Kopfhörer',
         product_zapatillas: 'Urban Walk Sneakers',
-        product_camara: 'Retro Lens Kamera',
+        product_camara: 'Haustier-Halsband-Kamera',
         product_mochila: 'Canvas Explorer Rucksack',
         product_tazas: 'Matte Tassen-Set',
         sold_out: 'AUSVERKAUFT',

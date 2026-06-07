@@ -32,7 +32,7 @@
         product_reloj: 'Reloj Classic Mono',
         product_auriculares: 'Auriculares Silence Pro',
         product_zapatillas: 'Zapatillas Urban Walk',
-        product_camara: 'Cámara Retro Lens',
+        product_camara: 'Cámara de Collar para Mascotas',
         product_mochila: 'Mochila Canvas Explorer',
         product_tazas: 'Set Tazas Matte',
         sold_out: 'AGOTADO',

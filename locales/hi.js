@@ -31,7 +31,7 @@
         product_reloj: 'क्लासिक मोनो वॉच',
         product_auriculares: 'साइलेंस प्रो हेडफ़ोन',
         product_zapatillas: 'अर्बन वॉक स्नीकर्स',
-        product_camara: 'रेट्रो लेंस कैमरा',
+        product_camara: 'पालतू जानवर के कॉलर कैमरा',
         product_mochila: 'कैनवस एक्सप्लोरर बैकपैक',
         product_tazas: 'मैट मग सेट',
         sold_out: 'स्टॉक खत्म',

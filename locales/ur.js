@@ -31,7 +31,7 @@
         product_reloj: 'کلاسک مونو واچ',
         product_auriculares: 'سائلنس پرو ہیڈفونز',
         product_zapatillas: 'اربن واک اسنیکرز',
-        product_camara: 'ریٹرو لینس کیمرہ',
+        product_camara: 'پالتو جانور کالر کیمرہ',
         product_mochila: 'کینوس ایکسپلورر بیگ پیک',
         product_tazas: 'میٹ مگ سیٹ',
         sold_out: 'ختم ہو گیا',

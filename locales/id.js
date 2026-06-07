@@ -32,7 +32,7 @@
         product_reloj: 'Jam Tangan Classic Mono',
         product_auriculares: 'Headphone Silence Pro',
         product_zapatillas: 'Sneakers Urban Walk',
-        product_camara: 'Kamera Retro Lens',
+        product_camara: 'Kamera Kalung untuk Hewan Peliharaan',
         product_mochila: 'Ransel Canvas Explorer',
         product_tazas: 'Set Mug Matte',
         sold_out: 'HABIS',

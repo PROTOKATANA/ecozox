@@ -575,7 +575,7 @@ body.page-cart .line-divider {
 }
 
 .cart-bundle-tag__piece {
-  font-size: 0.78rem;
+  font-size: 0.7rem;
   color: var(--text-muted);
 }
 
@@ -585,12 +585,26 @@ body.page-cart .line-divider {
 }
 
 .cart-bundle-tag__op {
-  font-size: 0.78rem;
+  font-size: 0.7rem;
   font-weight: 600;
   color: var(--text-muted);
 }
 
 .cart-bundle-tag__piece--total {
+}
+
+/* Scripts visualmente más pequeños: Devanagari, CJK, árabe */
+:lang(hi) .cart-bundle-tag__piece,
+:lang(ur) .cart-bundle-tag__piece,
+:lang(zh) .cart-bundle-tag__piece,
+:lang(ko) .cart-bundle-tag__piece,
+:lang(ar) .cart-bundle-tag__piece,
+:lang(hi) .cart-bundle-tag__op,
+:lang(ur) .cart-bundle-tag__op,
+:lang(zh) .cart-bundle-tag__op,
+:lang(ko) .cart-bundle-tag__op,
+:lang(ar) .cart-bundle-tag__op {
+  font-size: 0.85rem;
 }
 
 /* Pie: controles con separador dashed */

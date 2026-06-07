@@ -32,7 +32,7 @@
         product_reloj: 'Orologio Classic Mono',
         product_auriculares: 'Cuffie Silence Pro',
         product_zapatillas: 'Sneakers Urban Walk',
-        product_camara: 'Fotocamera Retro Lens',
+        product_camara: 'Telecamera da Collare per Animali',
         product_mochila: 'Zaino Canvas Explorer',
         product_tazas: 'Set Tazze Matte',
         sold_out: 'ESAURITO',

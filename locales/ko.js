@@ -32,7 +32,7 @@
         product_reloj: 'Classic Mono 시계',
         product_auriculares: 'Silence Pro 헤드폰',
         product_zapatillas: 'Urban Walk 스니커즈',
-        product_camara: 'Retro Lens 카메라',
+        product_camara: '반려동물 목줄 카메라',
         product_mochila: 'Canvas Explorer 배낭',
         product_tazas: 'Matte 머그 세트',
         sold_out: '품절',
