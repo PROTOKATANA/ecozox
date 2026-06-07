@@ -26,8 +26,10 @@
   border-color: var(--secondary-color);
 }
 
-.purchase-option:focus-visible {
-  box-shadow: 0 0 0 3px rgba(17, 24, 39, 0.12);
+@media (pointer: fine) {
+  .purchase-option:focus-visible {
+    box-shadow: 0 0 0 3px rgba(17, 24, 39, 0.12);
+  }
 }
 
 /* ---------- Selected state ---------- */

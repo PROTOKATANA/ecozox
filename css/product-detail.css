@@ -453,6 +453,7 @@
   font-size: 1.25rem;
   cursor: pointer;
   transition: var(--transition);
+  outline: none;
 }
 
 .qty-btn:hover {
