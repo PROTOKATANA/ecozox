@@ -9,7 +9,7 @@
     var STORAGE_KEY = 'ecozox_lang';
     var CURRENCY_STORAGE_KEY = 'ecozox_currency';
     var SUPPORTED_LANGS = ['es','en','ar','zh','ja','ko','id','de','fr','it','pt','tr','ru','hi','pl','ur'];
-    var DEFAULT_LANG = 'es';
+    var DEFAULT_LANG = 'en';
     var RTL_LANGS = ['ar', 'ur'];
 
     /* ---------- Configuración de moneda por idioma (fallback) ---------- */
