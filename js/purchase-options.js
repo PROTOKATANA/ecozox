@@ -74,17 +74,6 @@
                     : null;
     const descuentoExtra = Math.round(parseFloat(card.dataset.bundleDiscount || '0') * 100);
 
-    /* Apply inline discount display (only on initial load, not after precio-loader) */
-    const discount = parseFloat(card.dataset.bundleDiscount || '0');
-    if (discount) {
-      const original = parseFloat(card.dataset.bundlePrice);
-      const sale     = (original * (1 - discount)).toFixed(2);
-      const origEl   = card.querySelector('.js-bundle-price-original');
-      const saleEl   = card.querySelector('.js-bundle-price-sale');
-      if (origEl) origEl.textContent = (window.EcoI18n ? window.EcoI18n.formatPrice(original) : '€' + original.toFixed(2));
-      if (saleEl) saleEl.textContent = (window.EcoI18n ? window.EcoI18n.formatPrice(parseFloat(sale)) : '€' + sale);
-    }
-
     return {
       id:             card.dataset.bundleId,
       title,
