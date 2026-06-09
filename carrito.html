@@ -119,8 +119,6 @@
         (function () {
             var STORAGE_KEY = 'ecozox_urgency_expires';
             var DURATION_MS = 15 * 60 * 1000;
-            var el = document.getElementById('cart-perks-timer');
-            if (!el) return;
             function getExpiry() {
                 var stored = localStorage.getItem(STORAGE_KEY);
                 var now = Date.now();
@@ -134,7 +132,11 @@
                 var remaining = expiresAt - Date.now();
                 if (remaining <= 0) { expiresAt = Date.now() + DURATION_MS; localStorage.setItem(STORAGE_KEY, expiresAt); remaining = DURATION_MS; }
                 var total = Math.max(0, Math.ceil(remaining / 1000));
-                el.textContent = String(Math.floor(total / 60)).padStart(2, '0') + ':' + String(total % 60).padStart(2, '0');
+                var formatted = String(Math.floor(total / 60)).padStart(2, '0') + ':' + String(total % 60).padStart(2, '0');
+                var el  = document.getElementById('cart-perks-timer');
+                var el2 = document.getElementById('cart-banner-timer');
+                if (el)  el.textContent  = formatted;
+                if (el2) el2.textContent = formatted;
             }
             tick();
             setInterval(tick, 1000);

@@ -51,7 +51,7 @@
         aria_increase: 'Увеличить количество',
         aria_quantity: 'Количество',
         /* ---------- Shipping Widget ---------- */
-        shipping_free_title: 'Бесплатная доставка',
+        shipping_free_title: 'Международная доставка',
         shipping_free_badge: 'БЕСПЛАТНО',
         shipping_benefit_1: 'Отслеживание посылки в реальном времени',
         shipping_benefit_2: 'Открытый возврат в любое время',
@@ -100,9 +100,6 @@
         cart_bundle_label_discount: 'СКИДКА',
         cart_global_discount_label: 'ГЛОБАЛЬНАЯ СКИДКА',
         cart_gift_label: 'Подарок',
-        cart_gift_item_name: 'Сюрприз-подарок',
-        cart_gift_desc_value: 'Мы отправим вам дополнительный товар стоимостью {amount}.',
-        cart_gift_desc_condition: 'Только сегодня и исключительно для этого заказа.',
         cart_gift_desc_urgency: 'Успейте воспользоваться предложением до окончания обратного отсчёта!',
         title_cart: 'Ваша корзина — ecozox',
         /* ---------- Checkout Widget ---------- */

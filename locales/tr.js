@@ -52,7 +52,7 @@
         aria_increase: 'Miktarı artır',
         aria_quantity: 'Miktar',
         /* ---------- Shipping Widget ---------- */
-        shipping_free_title: 'Ücretsiz Kargo',
+        shipping_free_title: 'Dünya Geneli Kargo',
         shipping_free_badge: 'ÜCRETSİZ',
         shipping_benefit_1: 'Gerçek zamanlı paket takibi',
         shipping_benefit_2: 'Her zaman iade imkanı',
@@ -101,9 +101,6 @@
         cart_bundle_label_discount: 'İNDİRİM',
         cart_global_discount_label: 'GENEL İNDİRİM',
         cart_gift_label: 'Hediye',
-        cart_gift_item_name: 'Sürpriz Ürün',
-        cart_gift_desc_value: 'Size {amount} değerinde ek bir ürün göndereceğiz.',
-        cart_gift_desc_condition: 'Yalnızca bugün ve bu siparişe özel.',
         cart_gift_desc_urgency: 'Sayaç sıfıra ulaşmadan fırsatı kaçırmayın!',
         title_cart: 'Sepet - ecozox',
         /* ---------- Checkout Widget ---------- */

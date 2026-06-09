@@ -51,7 +51,7 @@
         aria_increase: 'मात्रा बढ़ाएं',
         aria_quantity: 'मात्रा',
         /* ---------- Shipping Widget ---------- */
-        shipping_free_title: 'मुफ़्त शिपिंग',
+        shipping_free_title: 'विश्वव्यापी शिपिंग',
         shipping_free_badge: 'मुफ़्त',
         shipping_benefit_1: 'रियल-टाइम पैकेज ट्रैकिंग',
         shipping_benefit_2: 'कभी भी वापसी की सुविधा',
@@ -100,9 +100,6 @@
         cart_bundle_label_discount: 'छूट',
         cart_global_discount_label: 'ग्लोबल छूट',
         cart_gift_label: 'उपहार',
-        cart_gift_item_name: 'सरप्राइज़ आइटम',
-        cart_gift_desc_value: 'हम आपको {amount} मूल्य का एक अतिरिक्त उत्पाद भेजेंगे।',
-        cart_gift_desc_condition: 'केवल आज और इस ऑर्डर के लिए विशेष।',
         cart_gift_desc_urgency: 'काउंटर शून्य होने से पहले इसका फ़ायदा उठाएं!',
         title_cart: 'आपका कार्ट - ecozox',
         /* ---------- Checkout Widget ---------- */

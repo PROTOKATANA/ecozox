@@ -53,9 +53,9 @@
         aria_increase: 'زيادة الكمية',
         aria_quantity: 'الكمية',
         /* ---------- Shipping Widget ---------- */
-        shipping_free_title: 'شحن مجاني',
+        shipping_free_title: 'شحن عالمي',
         shipping_free_badge: 'مجاني',
-        shipping_benefit_1: 'تتبع الطرود في الوقت الفعلي',
+        shipping_benefit_1: 'تتبع الطرد في الوقت الفعلي',
         shipping_benefit_2: 'إرجاع مفتوح في أي وقت',
         shipping_benefit_3: 'مواعيد تسليم مضمونة',
         shipping_delivery_in: 'التسليم خلال 4 أيام',
@@ -102,9 +102,6 @@
         cart_bundle_label_discount: 'خصم',
         cart_global_discount_label: 'خصم عام',
         cart_gift_label: 'هدية',
-        cart_gift_item_name: 'عنصر مفاجأة',
-        cart_gift_desc_value: 'سنرسل إليك منتجاً إضافياً بقيمة {amount}.',
-        cart_gift_desc_condition: 'اليوم فقط وحصرياً لهذا الطلب.',
         cart_gift_desc_urgency: 'اغتنم الفرصة قبل أن يصل العدّاد إلى الصفر!',
         title_cart: 'سلة التسوق - ecozox',
         /* ---------- Checkout Widget ---------- */

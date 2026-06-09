@@ -52,7 +52,7 @@
         aria_increase: '增加数量',
         aria_quantity: '数量',
         /* ---------- Shipping Widget ---------- */
-        shipping_free_title: '免费配送',
+        shipping_free_title: '全球配送',
         shipping_free_badge: '免费',
         shipping_benefit_1: '实时包裹追踪',
         shipping_benefit_2: '随时可退货',
@@ -101,9 +101,6 @@
         cart_bundle_label_discount: '折扣',
         cart_global_discount_label: '全球折扣',
         cart_gift_label: '礼物',
-        cart_gift_item_name: '惊喜商品',
-        cart_gift_desc_value: '我们将赠送您一件价值{amount}的额外产品。',
-        cart_gift_desc_condition: '仅限今日，本订单专属。',
         cart_gift_desc_urgency: '在倒计时归零之前抓住机会！',
         title_cart: '购物车 - ecozox',
         /* ---------- Checkout Widget ---------- */

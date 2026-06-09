@@ -93,6 +93,39 @@ body.page-cart .line-divider {
   margin-bottom: 0.25rem;
 }
 
+/* ========================================
+   Urgency Banner (replaces gift item)
+   ======================================== */
+.cart-urgency-banner {
+  background: var(--bg-color);
+  border: 2px dashed #6b7280;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.cub__heading {
+  text-align: center;
+  padding: 0.875rem 1rem;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #15803d;
+  background: #ffffff;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+.cub__perks {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3rem;
+  padding: 0.625rem 1rem;
+  background: #f3efe9;
+  border-top: none;
+}
+
 /* ---- Gift item ---- */
 .cart-item--gift {
   border: 2px dashed #16a34a;
@@ -240,6 +273,7 @@ body.page-cart .line-divider {
 }
 
 .cp__item--discount::before,
+.cp__item--shipping::before,
 .cp__item--gift::before,
 .cp__item--timer::before {
   content: '●';
@@ -249,6 +283,9 @@ body.page-cart .line-divider {
 
 .cp__item--discount { color: #15803d; }
 .cp__item--discount::before { color: #15803d; }
+
+.cp__item--shipping { color: #15803d; }
+.cp__item--shipping::before { color: #15803d; }
 
 .cp__item--gift { color: #15803d; }
 .cp__item--gift::before { color: #15803d; }

@@ -52,7 +52,7 @@
         aria_increase: 'Menge erhöhen',
         aria_quantity: 'Menge',
         /* ---------- Shipping Widget ---------- */
-        shipping_free_title: 'Kostenloser Versand',
+        shipping_free_title: 'Weltweiter Versand',
         shipping_free_badge: 'GRATIS',
         shipping_benefit_1: 'Echtzeit-Paketverfolgung',
         shipping_benefit_2: 'Rückgabe jederzeit möglich',
@@ -101,9 +101,6 @@
         cart_bundle_label_discount: 'RABATT',
         cart_global_discount_label: 'GLOBALER RABATT',
         cart_gift_label: 'Geschenk',
-        cart_gift_item_name: 'Überraschungsartikel',
-        cart_gift_desc_value: 'Wir senden Ihnen ein zusätzliches Produkt im Wert von {amount}.',
-        cart_gift_desc_condition: 'Nur heute und exklusiv für diese Bestellung.',
         cart_gift_desc_urgency: 'Nutzen Sie es, bevor der Countdown null erreicht!',
         title_cart: 'Warenkorb - ecozox',
         /* ---------- Checkout Widget ---------- */

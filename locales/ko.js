@@ -52,7 +52,7 @@
         aria_increase: '수량 증가',
         aria_quantity: '수량',
         /* ---------- Shipping Widget ---------- */
-        shipping_free_title: '무료 배송',
+        shipping_free_title: '전 세계 배송',
         shipping_free_badge: '무료',
         shipping_benefit_1: '실시간 배송 추적',
         shipping_benefit_2: '언제든지 반품 가능',
@@ -101,9 +101,6 @@
         cart_bundle_label_discount: '할인',
         cart_global_discount_label: '전체 할인',
         cart_gift_label: '선물',
-        cart_gift_item_name: '서프라이즈 상품',
-        cart_gift_desc_value: '{amount} 상당의 추가 제품을 보내드립니다.',
-        cart_gift_desc_condition: '오늘 한정, 이 주문 전용입니다.',
         cart_gift_desc_urgency: '카운트다운이 0에 도달하기 전에 기회를 잡으세요!',
         title_cart: '장바구니 - ecozox',
         /* ---------- Checkout Widget ---------- */

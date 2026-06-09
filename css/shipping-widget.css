@@ -22,11 +22,12 @@
 }
 
 .sic__title {
-  font-size: 0.9375rem;
-  font-weight: 600;
+  font-size: 0.8rem;
+  font-weight: 500;
   color: var(--text-main);
   flex: 1;
   line-height: 1.3;
+  text-transform: uppercase;
 }
 
 .sic__badge {
@@ -73,6 +74,6 @@
 
 /* ---------- Fecha dinámica ---------- */
 .delivery-highlight {
-  font-weight: 700;
+  font-weight: 500;
   color: var(--text-main);
 }

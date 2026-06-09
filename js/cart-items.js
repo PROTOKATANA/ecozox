@@ -301,37 +301,25 @@
         return el('div', { className: 'cart-item', 'data-product-id': item.id }, [header, body, tag, footer]);
     }
 
-    /* --- Gift item template --- */
-    function renderGiftItem() {
-        var giftValue = getGiftValue();
-        var giftName = ti('cart_gift_item_name');
+    /* --- Urgency banner (replaces gift item) --- */
+    function renderUrgencyBanner() {
+        var disc = getDiscountPercent() ?? 0;
 
-        var list = el('ul', { className: 'gift-bullet-list' }, [
-            el('li', { className: 'gift-bullet-item' }, [
-                el('span', null, [ti('cart_gift_desc_value').replace('{amount}', formatPrice(giftValue))])
-            ]),
-            el('li', { className: 'gift-bullet-item' }, [
-                el('span', null, [ti('cart_gift_desc_condition')])
-            ]),
-            el('li', { className: 'gift-bullet-item gift-bullet-item--urgent' }, [
-                el('span', null, [ti('cart_gift_desc_urgency')])
-            ])
+        var heading = el('p', { className: 'cub__heading' }, [ti('cart_gift_desc_urgency')]);
+
+        var timerSpan = el('span', { id: 'cart-banner-timer', className: 'cp__timer' }, ['15:00']);
+        var timerItem = el('span', { className: 'cp__item cp__item--timer' }, [
+            ti('scb_perk_ends') + ' ', timerSpan
         ]);
 
-        var gallery = el('div', { className: 'cart-gift-gallery' }, [
-            el('img', { src: 'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&q=80&w=120&h=120', alt: giftName, className: 'cart-gift-thumb' }),
-            el('img', { src: 'https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?auto=format&fit=crop&q=80&w=120&h=120', alt: giftName, className: 'cart-gift-thumb' }),
-            el('img', { src: 'https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?auto=format&fit=crop&q=80&w=120&h=120', alt: giftName, className: 'cart-gift-thumb' })
+        var perks = el('div', { className: 'cub__perks' }, [
+            el('span', { className: 'cp__item cp__item--discount' }, [disc + '% ' + ti('cart_global_discount_label')]),
+            el('span', { className: 'cp__item cp__item--shipping' }, [ti('scb_perk_shipping')]),
+            el('span', { className: 'cp__item cp__item--gift' }, [ti('scb_perk_gift')]),
+            timerItem
         ]);
 
-        var header = el('div', { className: 'cart-item-header' }, [
-            el('h3', { className: 'cart-item-title' }, [giftName]),
-            el('span', { className: 'price-discounted' }, [ti('cart_shipping_free').toUpperCase()])
-        ]);
-
-        var body = el('div', { className: 'cart-gift-body' }, [list, gallery]);
-
-        return el('div', { className: 'cart-item cart-item--gift', 'data-product-id': '__gift__' }, [header, body]);
+        return el('div', { className: 'cart-urgency-banner' }, [heading, perks]);
     }
 
     function renderCart() {
@@ -351,7 +339,7 @@
 
         var nodes = [];
         if (cart.length >= 1) {
-            nodes.push(renderGiftItem());
+            nodes.push(renderUrgencyBanner());
         }
         cart.forEach(function (item) {
             nodes.push((Array.isArray(item.subItems) && item.subItems.length) ? renderBundleItem(item) : renderNormalItem(item));

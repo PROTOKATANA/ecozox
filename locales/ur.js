@@ -51,7 +51,7 @@
         aria_increase: 'مقدار بڑھائیں',
         aria_quantity: 'مقدار',
         /* ---------- Shipping Widget ---------- */
-        shipping_free_title: 'مفت شپنگ',
+        shipping_free_title: 'عالمی شپنگ',
         shipping_free_badge: 'مفت',
         shipping_benefit_1: 'ریئل ٹائم پیکج ٹریکنگ',
         shipping_benefit_2: 'کسی بھی وقت واپسی کی سہولت',
@@ -100,9 +100,6 @@
         cart_bundle_label_discount: 'رعایت',
         cart_global_discount_label: 'گلوبل رعایت',
         cart_gift_label: 'تحفہ',
-        cart_gift_item_name: 'سرپرائز آئٹم',
-        cart_gift_desc_value: 'ہم آپ کو {amount} مالیت کا ایک اضافی مصنوع بھیجیں گے۔',
-        cart_gift_desc_condition: 'صرف آج اور اس آرڈر کے لیے خصوصی۔',
         cart_gift_desc_urgency: 'کاؤنٹر صفر ہونے سے پہلے اس کا فائدہ اٹھائیں!',
         title_cart: 'آپ کا کارٹ - ecozox',
         /* ---------- Checkout Widget ---------- */

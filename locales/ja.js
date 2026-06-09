@@ -52,7 +52,7 @@
         aria_increase: '数量を増やす',
         aria_quantity: '数量',
         /* ---------- Shipping Widget ---------- */
-        shipping_free_title: '送料無料',
+        shipping_free_title: '世界配送',
         shipping_free_badge: '無料',
         shipping_benefit_1: 'リアルタイム荷物追跡',
         shipping_benefit_2: 'いつでも返品可能',
@@ -101,9 +101,6 @@
         cart_bundle_label_discount: '割引',
         cart_global_discount_label: '全体割引',
         cart_gift_label: 'ギフト',
-        cart_gift_item_name: 'サプライズアイテム',
-        cart_gift_desc_value: '{amount}相当の追加商品をお届けします。',
-        cart_gift_desc_condition: '本日限定、このご注文専用です。',
         cart_gift_desc_urgency: 'カウントダウンがゼロになる前にお見逃しなく！',
         title_cart: 'カート - ecozox',
         /* ---------- Checkout Widget ---------- */

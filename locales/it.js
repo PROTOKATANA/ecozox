@@ -52,9 +52,9 @@
         aria_increase: 'Aumenta quantità',
         aria_quantity: 'Quantità',
         /* ---------- Shipping Widget ---------- */
-        shipping_free_title: 'Spedizione gratuita',
+        shipping_free_title: 'Spedizione Mondiale',
         shipping_free_badge: 'GRATIS',
-        shipping_benefit_1: 'Tracciamento pacchi in tempo reale',
+        shipping_benefit_1: 'Tracciamento del pacco in tempo reale',
         shipping_benefit_2: 'Reso aperto in qualsiasi momento',
         shipping_benefit_3: 'Tempi di consegna garantiti',
         shipping_delivery_in: 'Consegna in 4 giorni',
@@ -101,9 +101,6 @@
         cart_bundle_label_discount: 'SCONTO',
         cart_global_discount_label: 'SCONTO GLOBALE',
         cart_gift_label: 'Regalo',
-        cart_gift_item_name: 'Articolo Sorpresa',
-        cart_gift_desc_value: 'Ti invieremo un prodotto aggiuntivo del valore di {amount}.',
-        cart_gift_desc_condition: 'Solo per oggi ed esclusivo per questo ordine.',
         cart_gift_desc_urgency: 'Approfittane prima che il conto alla rovescia raggiunga lo zero!',
         title_cart: 'Carrello - ecozox',
         /* ---------- Checkout Widget ---------- */

@@ -52,7 +52,7 @@
         aria_increase: 'Tambah jumlah',
         aria_quantity: 'Jumlah',
         /* ---------- Shipping Widget ---------- */
-        shipping_free_title: 'Gratis Ongkir',
+        shipping_free_title: 'Pengiriman Dunia',
         shipping_free_badge: 'GRATIS',
         shipping_benefit_1: 'Pelacakan paket secara real-time',
         shipping_benefit_2: 'Pengembalian terbuka kapan saja',
@@ -101,9 +101,6 @@
         cart_bundle_label_discount: 'DISKON',
         cart_global_discount_label: 'DISKON GLOBAL',
         cart_gift_label: 'Hadiah',
-        cart_gift_item_name: 'Item Kejutan',
-        cart_gift_desc_value: 'Kami akan mengirimkan produk tambahan senilai {amount}.',
-        cart_gift_desc_condition: 'Hanya hari ini dan eksklusif untuk pesanan ini.',
         cart_gift_desc_urgency: 'Manfaatkan sebelum hitungan mundur mencapai nol!',
         title_cart: 'Keranjang - ecozox',
         /* ---------- Checkout Widget ---------- */
