@@ -24,7 +24,6 @@ const base = appScript ? appScript.src.replace('app.js', '') : '';
 const modules = [
 	'js/toast.js',
     'js/cart.js',
-    'js/gallery.js',
     'js/before-after-slider.js',
     'js/quantity.js',
     'js/cart-items.js',
