@@ -7,9 +7,11 @@
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pack 4 Juguetes Masticables - BabyNest</title>
+    <meta name="description" content="Cama rascadora de madera de pino para gatos. Protege tus muebles y cuida la salud de tu gato. Incluye regalo sorpresa. Envío rápido a toda Europa.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@600;700;800&display=swap"></noscript>
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="brand/theme.css">
 
@@ -25,7 +27,7 @@
         window.ECOZOX_CONFIG = window.ECOZOX_CONFIG || {};
         window.ECOZOX_SUCCESS_URL = 'https://ecozox.com/success.html';
     </script>
-    <script src="../../js/config.js"></script>
+    <script src="../../js/config.js" defer></script>
 
     <script src="../../components/header.js" defer></script>
     <script src="../../components/bottom-nav.js" defer></script>
@@ -44,7 +46,7 @@
                         <div class="gallery-main">
 
                             <!-- Viewer: Imagen normal -->
-                            <img id="galleryImage" alt="Producto" style="display:none">
+                            <img id="galleryImage" src="pixel/1.webp" alt="Producto" fetchpriority="high" loading="eager">
 
                             <!-- Viewer: Before/After Slider -->
                             <div class="ba-slider" id="baSlider" style="display:none">
@@ -74,17 +76,17 @@
                         <div class="gallery-thumbnails">
 
                             <!-- Imágenes normales -->
-                            <div class="thumbnail" data-type="image" data-src="pixel/1.jpg"
+                            <div class="thumbnail" data-type="image" data-src="pixel/1.webp"
                                  tabindex="0" role="button" aria-label="Vista 1">
-                                <img src="pixel/1.jpg" alt="Vista 1">
+                                <img src="pixel/1.webp" alt="Vista 1">
                             </div>
                             <div class="thumbnail" data-type="image" data-src="pixel/2.jpg"
                                  tabindex="0" role="button" aria-label="Vista 2">
                                 <img src="pixel/2.jpg" alt="Vista 2">
                             </div>
-                            <div class="thumbnail" data-type="image" data-src="pixel/3.png"
+                            <div class="thumbnail" data-type="image" data-src="pixel/3.webp"
                                  tabindex="0" role="button" aria-label="Vista 3">
-                                <img src="pixel/3.png" alt="Vista 3">
+                                <img src="pixel/3.webp" alt="Vista 3">
                             </div>
                             <div class="thumbnail" data-type="image" data-src="pixel/4.webp"
                                  tabindex="0" role="button" aria-label="Vista 4">
@@ -94,16 +96,16 @@
                                  tabindex="0" role="button" aria-label="Vista 5">
                                 <img src="pixel/5.webp" alt="Vista 5">
                             </div>
-                            <div class="thumbnail" data-type="image" data-src="pixel/6.jpg"
+                            <div class="thumbnail" data-type="image" data-src="pixel/6.webp"
                                  tabindex="0" role="button" aria-label="Vista 6">
-                                <img src="pixel/6.jpg" alt="Vista 6">
+                                <img src="pixel/6.webp" alt="Vista 6">
                             </div>
 
                             <!-- Before/After Slider -->
                             <div class="thumbnail" data-type="ba-slider"
-                                 data-before-src="pixel/9.jpg" data-after-src="pixel/10.avif"
+                                 data-before-src="pixel/9.webp" data-after-src="pixel/10.avif"
                                  tabindex="0" role="button" aria-label="Antes/Después">
-                                <img src="pixel/9.jpg" alt="Antes/Después">
+                                <img src="pixel/9.webp" alt="Antes/Después">
                             </div>
 
                         </div><!-- /.gallery-thumbnails -->

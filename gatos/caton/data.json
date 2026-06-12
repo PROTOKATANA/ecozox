@@ -39,7 +39,7 @@
         "rating": 5,
         "fecha": "2026-02-25",
         "imagenes": [
-          "pixel/reviews/r3/1.jpg",
+          "pixel/reviews/r3/1.webp",
           "pixel/reviews/r3/2.webp",
           "pixel/reviews/r3/3.webp",
           "pixel/reviews/r3/4.avif"
@@ -53,7 +53,7 @@
         "rating": 5,
         "fecha": "2026-03-10",
         "imagenes": [
-          "pixel/reviews/r4/1.jpg",
+          "pixel/reviews/r4/1.webp",
           "pixel/reviews/r4/2.webp",
           "pixel/reviews/r4/3.avif",
           "pixel/reviews/r4/4.avif"

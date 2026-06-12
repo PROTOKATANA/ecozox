@@ -7,14 +7,16 @@
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ecozox - Tienda Minimalista</title>
+    <meta name="description" content="Tienda de accesorios para mascotas. Rascadores, camas y cámaras de collar para gatos. Envío a toda Europa. ¡Descubre nuestro catálogo!">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@600;700;800&display=swap"></noscript>
     <link rel="stylesheet" href="style.css">
     <script>
         window.ECOZOX_BRAND = { localesPath: 'gatos/caton/locales/' };
     </script>
-    <script src="js/config.js"></script>
+    <script src="js/config.js" defer></script>
     <script src="components/header.js" defer></script>
     <script src="components/bottom-nav.js" defer></script>
     <script src="components/footer.js" defer></script>
@@ -57,7 +59,7 @@
                 </a>
                 <a href="gatos/camara/index.html" class="product-card">
                     <div class="product-img-wrapper">
-                        <img src="gatos/camara/pixel/f1.jpg" alt="Cámara de Collar para Mascotas" class="product-image" loading="lazy">
+                        <img src="gatos/camara/pixel/f1.webp" alt="Cámara de Collar para Mascotas" class="product-image" loading="eager">
                     </div>
                     <div class="product-info">
                         <h2 class="product-title"><span class="product-title__text" data-i18n="product_camara">Cámara de Collar para Mascotas</span></h2>

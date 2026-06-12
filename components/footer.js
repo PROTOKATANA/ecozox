@@ -54,13 +54,13 @@
             <div class="footer-bottom">
                 <p data-i18n="footer_copyright">&copy; 2026 ${brandNombre}. Todos los derechos reservados.</p>
                 <div class="payment-icons">
-                    <img src="${base}assets/mastercard.svg" alt="Mastercard" style="height: 32px; background: white; padding: 3px; border-radius: 4px;">
-                    <img src="${base}assets/visa.svg" alt="Visa" style="height: 32px; background: white; padding: 1px; border-radius: 4px;">
-                    <img src="${base}assets/google.svg" alt="Google-Pay" style="height: 32px; background: white; padding: 6px; border-radius: 4px;">
-                    <img src="${base}assets/apple.svg" alt="Apple-Pay" style="height: 32px; background: white; padding: 6px; border-radius: 4px;">
-                    <img src="${base}assets/paypal.svg" alt="PayPal" style="height: 32px; background: white; padding: 6px; border-radius: 4px;">
-                    <img src="${base}assets/klarna.svg" alt="Klarna" style="height: 32px; background: #F4B6C7; padding: 7.5px; border-radius: 4px;">
-                    <img src="${base}assets/stripe.svg" alt="Stripe" style="height: 32px; background: #6772E5; padding: 7px; border-radius: 4px;">
+                    <img src="${base}assets/mastercard.svg" alt="Mastercard" width="32" height="32" style="height: 32px; background: white; padding: 3px; border-radius: 4px;">
+                    <img src="${base}assets/visa.svg" alt="Visa" width="32" height="32" style="height: 32px; background: white; padding: 1px; border-radius: 4px;">
+                    <img src="${base}assets/google.svg" alt="Google-Pay" width="32" height="32" style="height: 32px; background: white; padding: 6px; border-radius: 4px;">
+                    <img src="${base}assets/apple.svg" alt="Apple-Pay" width="32" height="32" style="height: 32px; background: white; padding: 6px; border-radius: 4px;">
+                    <img src="${base}assets/paypal.svg" alt="PayPal" width="32" height="32" style="height: 32px; background: white; padding: 6px; border-radius: 4px;">
+                    <img src="${base}assets/klarna.svg" alt="Klarna" width="32" height="32" style="height: 32px; background: #F4B6C7; padding: 7.5px; border-radius: 4px;">
+                    <img src="${base}assets/stripe.svg" alt="Stripe" width="32" height="32" style="height: 32px; background: #6772E5; padding: 7px; border-radius: 4px;">
                 </div>
             </div>
         </div>

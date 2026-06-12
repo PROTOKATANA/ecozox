@@ -7,7 +7,7 @@
 
     var base  = el.dataset.base || '';
     var brand = window.ECOZOX_BRAND || {};
-    var logoSrc    = brand.logoSrc    ? base + brand.logoSrc    : base + 'assets/logo.png';
+    var logoSrc    = brand.logoSrc    ? base + brand.logoSrc    : base + 'assets/logo.webp';
     var logoAlt    = brand.logoAlt    || 'ecozox';
     var carritoUrl = brand.carritoUrl || base + 'carrito.html';
 
