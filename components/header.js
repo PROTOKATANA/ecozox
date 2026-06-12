@@ -31,7 +31,7 @@
         { code: 'ur', flag: 'pk', label: 'اردو',       suffix: 'UR' }
     ];
 
-    // Precargar Noto Sans para CJK y scripts árabe/urdu
+    // Cargar fuente CJK solo si el idioma activo lo requiere
     var CJK_FONTS = {
         zh: 'https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;800&display=swap',
         ja: 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap',
@@ -40,12 +40,13 @@
         ar: 'https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;700;800&display=swap',
         ur: 'https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;700;800&display=swap'
     };
-    ['zh', 'ja', 'ko', 'hi', 'ar', 'ur'].forEach(function (lang) {
-        var link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = CJK_FONTS[lang];
-        document.head.appendChild(link);
-    });
+    var activeLang = localStorage.getItem('ecozox_lang') || 'en';
+    if (CJK_FONTS[activeLang]) {
+        var fontLink = document.createElement('link');
+        fontLink.rel = 'stylesheet';
+        fontLink.href = CJK_FONTS[activeLang];
+        document.head.appendChild(fontLink);
+    }
 
     var currencies = [
         { code: 'USD', flag: 'us', label: 'Dólar estadounidense',  symbol: '$'   },
