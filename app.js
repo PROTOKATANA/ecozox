@@ -29,7 +29,6 @@ const modules = [
     'js/cart-items.js',
 
     'js/reviews.js',
-    'js/wave-divider.js',
     'js/purchase-options.js',
     'js/video-grid.js',
     'js/video-lightbox.js',
