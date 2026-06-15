@@ -18,13 +18,11 @@
 
     // Si estamos en un nicho, persistimos las URLs absolutas del nicho
     // para que páginas compartidas (legales, contacto) sepan a dónde volver
-    if (brand.homeUrl) {
-        sessionStorage.setItem('ecozox_nicho_home',    toAbsolute(brand.homeUrl));
-        sessionStorage.setItem('ecozox_nicho_carrito', toAbsolute(brand.carritoUrl || 'carrito.html'));
+    if (brand.carritoUrl) {
+        sessionStorage.setItem('ecozox_nicho_carrito', toAbsolute(brand.carritoUrl));
     }
 
-    var homeUrl    = brand.homeUrl    ? base + brand.homeUrl
-                   : sessionStorage.getItem('ecozox_nicho_home')    || base + 'index.html';
+    var homeUrl    = brand.homeUrl    ? base + brand.homeUrl : base + 'index.html';
     var carritoUrl = brand.carritoUrl ? toAbsolute(brand.carritoUrl)
                    : sessionStorage.getItem('ecozox_nicho_carrito') || base + 'carrito.html';
 
