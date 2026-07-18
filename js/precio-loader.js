@@ -23,7 +23,7 @@
   }
 
   var ctrl    = new AbortController();
-  var timeout = setTimeout(function () { ctrl.abort(); }, 6000);
+  var timeout = setTimeout(function () { ctrl.abort(); }, 12000);
 
   fetch(apiBase + '/api/productos/' + encodeURIComponent(nicho), { signal: ctrl.signal })
     .then(function (res) {
