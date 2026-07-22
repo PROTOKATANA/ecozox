@@ -1,12 +1,6 @@
 (function () {
     window.EcoNichoLocales = window.EcoNichoLocales || {};
     window.EcoNichoLocales.hi = {
-        scb_perk_discount: '{pct}% छूट',
-        scb_perk_shipping: 'मुफ़्त शिपिंग',
-        scb_perk_gift:     '1 सरप्राइज़ उपहार',
-        scb_perk_ends:     'समाप्त होता है',
-        sticky_cart_btn:   'कार्ट',
-        sticky_pay_btn:    'भुगतान करें',
         title_product:     'पाइन की लकड़ी से बनी बिल्ली की स्क्रैचिंग बेड',
         product_title:     'पाइन की लकड़ी से बनी बिल्ली की स्क्रैचिंग बेड',
         product_desc:      'आपका सोफ़ा या आपकी बिल्ली? दोनों को चुनें — खरोंच की लड़ाई खत्म। आपकी बिल्ली को अपने नाखून तेज़ करने की ज़रूरत है, लेकिन आपकी चीज़ों पर नहीं।',

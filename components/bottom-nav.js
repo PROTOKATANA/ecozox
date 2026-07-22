@@ -26,17 +26,42 @@
     var carritoUrl = brand.carritoUrl ? toAbsolute(brand.carritoUrl)
                    : sessionStorage.getItem('ecozox_nicho_carrito') || base + 'carrito.html';
 
+    // El primer item cambia de función según la vista: en el producto salta
+    // a reseñas (ancla en la misma página); en cualquier otra vista (carrito,
+    // contacto, legales) vuelve al producto.
+    // "index.html" al final se normaliza fuera: https://ecozox.com/ y
+    // https://ecozox.com/index.html son la misma página pero strings distintos.
+    function stripIndex(u) {
+        return u.replace(/index\.html$/, '');
+    }
+    var homeUrlAbs     = stripIndex(toAbsolute(homeUrl).split('#')[0].split('?')[0]);
+    var currentUrlBase = stripIndex(location.href.split('#')[0].split('?')[0]);
+    var isProductPage  = currentUrlBase === homeUrlAbs;
+
+    var firstItemHref, firstItemKey, firstItemLabel, firstItemIcon;
+
+    if (isProductPage) {
+        firstItemHref  = homeUrl + '#reviews';
+        firstItemKey   = 'nav_reviews';
+        firstItemLabel = 'Reseñas';
+        firstItemIcon  = '<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>';
+    } else {
+        firstItemHref  = homeUrl;
+        firstItemKey   = 'nav_back';
+        firstItemLabel = 'Volver';
+        firstItemIcon  = '<line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline>';
+    }
+
     el.outerHTML = [
         '<nav class="bottom-nav" role="navigation" aria-label="Navegación móvil">',
 
-        '  <a href="' + homeUrl + '" class="bnb-item"',
-        '     aria-label="Inicio" data-i18n-aria="nav_home">',
+        '  <a href="' + firstItemHref + '" class="bnb-item"',
+        '     aria-label="' + firstItemLabel + '" data-i18n-aria="' + firstItemKey + '">',
         '    <svg class="bnb-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"',
         '         stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">',
-        '      <path d="M3 9.5L12 3l9 6.5V21H3V9.5z"></path>',
-        '      <path d="M9 21V12h6v9"></path>',
+              firstItemIcon,
         '    </svg>',
-        '    <span class="bnb-label" data-i18n="nav_home">Inicio</span>',
+        '    <span class="bnb-label" data-i18n="' + firstItemKey + '">' + firstItemLabel + '</span>',
         '  </a>',
 
         '  <a href="' + carritoUrl + '" class="bnb-item bnb-item--cart"',

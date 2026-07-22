@@ -1,12 +1,6 @@
 (function () {
     window.EcoNichoLocales = window.EcoNichoLocales || {};
     window.EcoNichoLocales.en = {
-        scb_perk_discount: '{pct}% off',
-        scb_perk_shipping: 'Free shipping',
-        scb_perk_gift:     '1 surprise gift',
-        scb_perk_ends:     'Ends in',
-        sticky_cart_btn:   'CART',
-        sticky_pay_btn:    'PAY',
         title_product:     'Pine Wood Cat Scratcher Bed',
         product_title:     'Pine Wood Cat Scratcher Bed',
         product_desc:      'Your sofa or your cat? Choose both — the war against scratches is over. Your cat needs to sharpen its claws, but it doesn\'t have to be on your belongings.',

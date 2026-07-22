@@ -1,12 +1,6 @@
 (function () {
     window.EcoNichoLocales = window.EcoNichoLocales || {};
     window.EcoNichoLocales.pl = {
-        scb_perk_discount: '{pct}% rabatu',
-        scb_perk_shipping: 'Darmowa dostawa',
-        scb_perk_gift:     '1 niespodzianka',
-        scb_perk_ends:     'Kończy się za',
-        sticky_cart_btn:   'KOSZYK',
-        sticky_pay_btn:    'ZAPŁAĆ',
         title_product:     'Łóżko-drapak dla kota z drewna sosnowego',
         product_title:     'Łóżko-drapak dla kota z drewna sosnowego',
         product_desc:      'Twoja sofa czy Twój kot? Wybierz oboje — koniec z wojną o zadrapania. Twój kot musi ostrzyć pazury, ale nie musi robić tego na Twoich rzeczach.',

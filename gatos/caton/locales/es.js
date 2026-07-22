@@ -1,12 +1,6 @@
 (function () {
     window.EcoNichoLocales = window.EcoNichoLocales || {};
     window.EcoNichoLocales.es = {
-        scb_perk_discount: '{pct}% descuento',
-        scb_perk_shipping: 'Envío gratis',
-        scb_perk_gift: '1 regalo sorpresa',
-        scb_perk_ends: 'Termina en',
-        sticky_cart_btn: 'CARRITO',
-        sticky_pay_btn: 'PAGAR',
         title_product:   'Cama rascadora para gatos de madera de pino',
         product_title:   'Cama rascadora para gatos de madera de pino',
         product_desc:    '¿Tu sofá o tu gato? Elige ambos, se acabó la guerra contra los arañazos, tu gato necesita afilarse las uñas, pero no tiene por qué ser con tus pertenencias.',

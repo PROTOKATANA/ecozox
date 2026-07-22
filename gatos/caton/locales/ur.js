@@ -1,12 +1,6 @@
 (function () {
     window.EcoNichoLocales = window.EcoNichoLocales || {};
     window.EcoNichoLocales.ur = {
-        scb_perk_discount: '{pct}% رعایت',
-        scb_perk_shipping: 'مفت شپنگ',
-        scb_perk_gift:     '1 سرپرائز تحفہ',
-        scb_perk_ends:     'ختم ہوتا ہے',
-        sticky_cart_btn:   'کارٹ',
-        sticky_pay_btn:    'ادائیگی کریں',
         title_product:     'پائن لکڑی سے بنی بلی کی کھرچنے والی بیڈ',
         product_title:     'پائن لکڑی سے بنی بلی کی کھرچنے والی بیڈ',
         product_desc:      'آپ کا صوفہ یا آپ کی بلی؟ دونوں کا انتخاب کریں — خراشوں کی جنگ ختم۔ آپ کی بلی کو اپنے پنجے تیز کرنے کی ضرورت ہے، لیکن آپ کی چیزوں پر نہیں۔',

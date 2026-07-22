@@ -32,7 +32,6 @@
 
             <div class="footer-top">
                 <div class="footer-btns">
-                    <a href="${base}index.html" class="footer-dev-btn" data-i18n="footer_home">Inicio</a>
                     <a href="${base}contacto.html" class="footer-dev-btn" data-i18n="footer_returns">Devoluciones</a>
                 </div>
                 <div class="footer-col">

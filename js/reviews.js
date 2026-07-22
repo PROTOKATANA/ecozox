@@ -11,6 +11,14 @@
     /* ---- Helpers ---- */
     const STAR_PATH = 'points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"';
 
+    /* data.json y las imágenes de reseñas (rutas relativas dentro del JSON,
+       ej. "pixel/reviews/r1/1.avif") viven junto al producto, no junto a
+       este script. Se deriva la base real de ECOZOX_BRAND.localesPath. */
+    const NICHO_BASE = (function () {
+        var lp = window.ECOZOX_BRAND && window.ECOZOX_BRAND.localesPath;
+        return lp ? lp.replace(/locales\/?$/, '') : '';
+    })();
+
     function t(key, fallback) {
         if (window.EcoI18n && window.EcoI18n.t) {
             var val = window.EcoI18n.t(key);
@@ -74,7 +82,7 @@
                 '<div class="review-card__divider"></div>'
                 + '<div class="review-thumbnails">'
                 + imagenes.map(function (src, i) {
-                    return '<img src="' + esc(src) + '" alt="Foto ' + (i + 1) + ' por ' + esc(r.autor) + '"'
+                    return '<img src="' + esc(NICHO_BASE + src) + '" alt="Foto ' + (i + 1) + ' por ' + esc(r.autor) + '"'
                         + ' class="review-thumbnail" data-index="' + i + '" loading="lazy">';
                 }).join('')
                 + '</div>'
@@ -106,7 +114,7 @@
     var _reviewsController = new AbortController();
     var _reviewsTimeout = setTimeout(function () { _reviewsController.abort(); }, 8000);
 
-    fetch('data.json', { signal: _reviewsController.signal })
+    fetch(NICHO_BASE + 'data.json', { signal: _reviewsController.signal })
         .then(function (res) {
             clearTimeout(_reviewsTimeout);
             return res.json();

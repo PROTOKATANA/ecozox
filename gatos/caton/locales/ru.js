@@ -1,12 +1,6 @@
 (function () {
     window.EcoNichoLocales = window.EcoNichoLocales || {};
     window.EcoNichoLocales.ru = {
-        scb_perk_discount: 'Скидка {pct}%',
-        scb_perk_shipping: 'Бесплатная доставка',
-        scb_perk_gift:     '1 подарок-сюрприз',
-        scb_perk_ends:     'Заканчивается через',
-        sticky_cart_btn:   'КОРЗИНА',
-        sticky_pay_btn:    'ОПЛАТИТЬ',
         title_product:     'Когтеточка-кровать из сосны',
         product_title:     'Когтеточка-кровать из сосны',
         product_desc:      'Ваш диван или ваш кот? Выбирайте обоих — война с царапинами окончена. Кошке нужно точить когти, но не обязательно на ваших вещах.',
