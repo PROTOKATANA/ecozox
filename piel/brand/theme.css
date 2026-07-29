@@ -1,0 +1,8 @@
+/* theme.css — Rutina de Piel (skincare) */
+:root {
+    --color-primary:      #db2777;   /* rosa blush */
+    --color-primary-dark: #be185d;
+    --color-accent:       #f472b6;
+    --color-bg:           #fff7fa;
+    --color-surface:      #fff0f6;
+}

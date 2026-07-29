@@ -30,7 +30,7 @@
         po_bundle_item_stand: 'Support pour casque',
         po_bundle_item_kit: 'Kit de nettoyage',
         po_bundle_cta: 'Acheter le kit complet et économiser {bpct}%',
-        label_quantity: 'Quantité :',
+        label_quantity: 'QUANTITÉ',
         aria_decrease: 'Diminuer la quantité',
         aria_increase: 'Augmenter la quantité',
         aria_quantity: 'Quantité',

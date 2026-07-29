@@ -29,7 +29,7 @@
         po_bundle_item_stand: 'Stojak na słuchawki',
         po_bundle_item_kit: 'Zestaw do czyszczenia',
         po_bundle_cta: 'Kup pełny zestaw i oszczędź {bpct}%',
-        label_quantity: 'Ilość:',
+        label_quantity: 'ILOŚĆ',
         aria_decrease: 'Zmniejsz ilość',
         aria_increase: 'Zwiększ ilość',
         aria_quantity: 'Ilość',

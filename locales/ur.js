@@ -29,7 +29,7 @@
         po_bundle_item_stand: 'ہیڈفون اسٹینڈ',
         po_bundle_item_kit: 'صفائی کا کٹ',
         po_bundle_cta: 'مکمل کٹ خریدیں اور {bpct}% بچائیں',
-        label_quantity: 'مقدار:',
+        label_quantity: 'مقدار',
         aria_decrease: 'مقدار کم کریں',
         aria_increase: 'مقدار بڑھائیں',
         aria_quantity: 'مقدار',

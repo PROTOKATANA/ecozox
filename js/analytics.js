@@ -128,18 +128,23 @@
     // ═══════════════════════════════════════════════════════════════════
     if (PAGE_TYPE === 'product') {
 
-        // view_item — wait for precio-loader to populate prices
+        // view_item — wait for precio-loader to populate prices.
+        // Se lee directo de la tarjeta-bundle "Rutina Completa" (siempre
+        // presente), no de un botón: ya no hay ningún botón de compra
+        // poblado antes de que el usuario haga clic en una tarjeta.
         document.addEventListener('DOMContentLoaded', function () {
             setTimeout(function () {
-                var btn = document.querySelector('.checkout-btn[data-product-id]');
-                if (!btn) return;
-                var price = parseFloat(btn.dataset.productPrice || 0) / 100;
+                var card = document.querySelector('[data-bundle-id="piel-rutina-completa-kit"]');
+                if (!card) return;
+                var price = parseFloat(card.dataset.bundlePrice || 0) / 100;
+                if (!price) return;
+                var titleEl = card.querySelector('.po-bundle__title');
                 track('view_item', {
                     currency: currentCurrency,
                     value:    price,
                     items: [{
-                        item_id:   btn.dataset.productId || '',
-                        item_name: btn.dataset.productTitle || '',
+                        item_id:   card.dataset.bundleId || '',
+                        item_name: card.dataset.bundleTitle || (titleEl ? titleEl.textContent.trim() : ''),
                         price:     price,
                         quantity:  1
                     }]
@@ -225,14 +230,16 @@
             }
         });
 
-        // begin_checkout from product page
+        // begin_checkout from product page. La cantidad se lee de
+        // data-product-bundle-qty, que concern-widget.js ya deja puesta en
+        // el propio botón (su listener corre antes que este, en fase de
+        // burbujeo) — no de un selector de cantidad de página, que ya no
+        // existe fuera de cada tarjeta.
         document.addEventListener('click', function (e) {
             var btn = e.target.closest('.checkout-btn[data-product-id]');
             if (!btn) return;
             var price = parseFloat(btn.dataset.productPrice || 0) / 100;
-            var qty   = 1;
-            var qi    = document.querySelector('.product-info-detail .qty-input');
-            if (qi) qty = parseInt(qi.value) || 1;
+            var qty   = parseInt(btn.dataset.productBundleQty) || 1;
             track('begin_checkout', {
                 currency: currentCurrency,
                 value:    price * qty,
@@ -242,29 +249,6 @@
                     price:     price,
                     quantity:  qty
                 }]
-            });
-        });
-
-        // Sticky cart bar — becomes visible
-        setTimeout(function () {
-            var bar = document.getElementById('sticky-cart-bar');
-            if (!bar || !window.MutationObserver) return;
-            var fired = false;
-            var obs = new MutationObserver(function () {
-                if (!fired && bar.classList.contains('visible')) {
-                    fired = true;
-                    track('sticky_cart_visible', {});
-                }
-            });
-            obs.observe(bar, { attributes: true, attributeFilter: ['class'] });
-        }, 1500);
-
-        // Sticky cart toggle
-        document.addEventListener('click', function (e) {
-            if (!e.target.closest('.scb__toggle')) return;
-            var bar = document.getElementById('sticky-cart-bar');
-            track('sticky_cart_toggle', {
-                action: (bar && bar.classList.contains('expanded')) ? 'collapse' : 'expand'
             });
         });
 

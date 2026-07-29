@@ -31,7 +31,7 @@
         po_bundle_item_stand: 'حامل سماعات',
         po_bundle_item_kit: 'طقم تنظيف',
         po_bundle_cta: 'اشترِ الطقم الكامل ووفّر {bpct}%',
-        label_quantity: 'الكمية:',
+        label_quantity: 'الكمية',
         aria_decrease: 'تقليل الكمية',
         aria_increase: 'زيادة الكمية',
         aria_quantity: 'الكمية',

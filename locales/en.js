@@ -30,7 +30,7 @@
         po_bundle_item_stand: 'Headphone Stand',
         po_bundle_item_kit: 'Cleaning Kit',
         po_bundle_cta: 'Buy the complete kit and save {bpct}%',
-        label_quantity: 'Quantity:',
+        label_quantity: 'QUANTITY',
         aria_decrease: 'Decrease quantity',
         aria_increase: 'Increase quantity',
         aria_quantity: 'Quantity',

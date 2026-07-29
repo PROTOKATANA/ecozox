@@ -13,6 +13,6 @@
         location.protocol === 'file:'
     );
     window.ECOZOX_API_URL = isLocal
-        ? 'http://localhost:3000'
+        ? 'http://localhost:5000'
         : 'https://api-6tn32nl4ea-uc.a.run.app';
 })();

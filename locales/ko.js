@@ -30,7 +30,7 @@
         po_bundle_item_stand: '헤드폰 스탠드',
         po_bundle_item_kit: '클리닝 키트',
         po_bundle_cta: '전체 세트 구매 시 {bpct}% 절약',
-        label_quantity: '수량:',
+        label_quantity: '수량',
         aria_decrease: '수량 감소',
         aria_increase: '수량 증가',
         aria_quantity: '수량',

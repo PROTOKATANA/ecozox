@@ -30,7 +30,7 @@
         po_bundle_item_stand: 'Dudukan Headphone',
         po_bundle_item_kit: 'Kit Pembersih',
         po_bundle_cta: 'Beli kit lengkap dan hemat {bpct}%',
-        label_quantity: 'Jumlah:',
+        label_quantity: 'JUMLAH',
         aria_decrease: 'Kurangi jumlah',
         aria_increase: 'Tambah jumlah',
         aria_quantity: 'Jumlah',

@@ -88,8 +88,6 @@
 
     setIi8nPrice('.po-single__price-sale',     ventaDec);
     setIi8nPrice('.po-single__price-original', origDec);
-    setIi8nPrice('.scb__price-sale',           ventaDec);
-    setIi8nPrice('.scb__price-original',       origDec);
 
     if (window.EcoPurchaseOptions && window.EcoPurchaseOptions.refreshIndividual) {
       window.EcoPurchaseOptions.refreshIndividual();

@@ -30,7 +30,7 @@
         po_bundle_item_stand: '耳机支架',
         po_bundle_item_kit: '清洁套件',
         po_bundle_cta: '购买完整套装，立省{bpct}%',
-        label_quantity: '数量：',
+        label_quantity: '数量',
         aria_decrease: '减少数量',
         aria_increase: '增加数量',
         aria_quantity: '数量',

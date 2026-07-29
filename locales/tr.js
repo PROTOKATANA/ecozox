@@ -30,7 +30,7 @@
         po_bundle_item_stand: 'Kulaklık Standı',
         po_bundle_item_kit: 'Temizlik Kiti',
         po_bundle_cta: 'Tam kiti satın al ve %{bpct} tasarruf et',
-        label_quantity: 'Miktar:',
+        label_quantity: 'MİKTAR',
         aria_decrease: 'Miktarı azalt',
         aria_increase: 'Miktarı artır',
         aria_quantity: 'Miktar',

@@ -72,6 +72,19 @@
         if (countEl) countEl.textContent = RESENAS.length + ' ' + suffix;
     }
 
+    /* Lee título/imagen en vivo de la propia tarjeta-bundle (misma fuente
+       que concern-widget.js) en vez de duplicarlos en data.json — así el
+       chip nunca se desincroniza si cambia el nombre o la foto. */
+    function getBundleChipData(bundleId) {
+        var card = document.querySelector('[data-bundle-id="' + bundleId + '"]');
+        if (!card) return null;
+        var titleEl = card.querySelector('.po-bundle__title');
+        return {
+            title: card.dataset.bundleTitle || (titleEl ? titleEl.textContent.trim() : ''),
+            image: card.dataset.bundleImage || ''
+        };
+    }
+
     function renderReviews() {
         grid.innerHTML = RESENAS.map(function (r) {
             var titulo = t('review_' + r.id + '_titulo', r.titulo_fallback || '');
@@ -88,12 +101,25 @@
                 + '</div>'
             ) : '';
 
+            var chipBlock = '';
+            if (r.bundleId) {
+                var chip = getBundleChipData(r.bundleId);
+                if (chip) {
+                    chipBlock = '<button type="button" class="review-product-chip" data-scroll-to-bundle="' + esc(r.bundleId) + '"'
+                        + ' aria-label="Ir a ' + esc(chip.title) + ' en la ficha de producto">'
+                        + '<img src="' + esc(chip.image) + '" alt="" class="po-bundle__item-img">'
+                        + '<span class="po-bundle__item-name">' + esc(chip.title) + '</span>'
+                        + '</button>';
+                }
+            }
+
             return '<article class="review-card">'
                 + '<div class="review-card__top">'
                 +   '<div class="review-card__header">'
                 +     '<div class="review-stars">' + renderStars(r.rating) + '</div>'
                 +     '<time class="review-date" datetime="' + esc(r.fecha) + '">' + esc(formatDate(r.fecha)) + '</time>'
                 +   '</div>'
+                +   chipBlock
                 +   '<h4 class="review-title">' + esc(titulo) + '</h4>'
                 +   '<p class="review-body">' + esc(body) + '</p>'
                 + '</div>'
@@ -149,14 +175,23 @@
     lightbox.innerHTML =
         '<button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">&#x2715;</button>'
         + '<button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Anterior">&#8249;</button>'
-        + '<img class="lightbox-img" id="lightboxImg" src="" alt="">'
+        + '<div class="lightbox-sheet">'
+        +   '<button class="lightbox-handle" id="lightboxHandle" aria-label="Cerrar">'
+        +     '<span class="lightbox-handle-bar"></span>'
+        +   '</button>'
+        +   '<div class="lightbox-header"><h2 class="lightbox-title">Imágenes de usuarios</h2></div>'
+        +   '<div class="lightbox-body">'
+        +     '<img class="lightbox-img" id="lightboxImg" src="" alt="">'
+        +   '</div>'
+        + '</div>'
         + '<button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Siguiente">&#8250;</button>';
     document.body.appendChild(lightbox);
 
-    var lbImg   = document.getElementById('lightboxImg');
-    var lbClose = document.getElementById('lightboxClose');
-    var lbPrev  = document.getElementById('lightboxPrev');
-    var lbNext  = document.getElementById('lightboxNext');
+    var lbImg    = document.getElementById('lightboxImg');
+    var lbClose  = document.getElementById('lightboxClose');
+    var lbHandle = document.getElementById('lightboxHandle');
+    var lbPrev   = document.getElementById('lightboxPrev');
+    var lbNext   = document.getElementById('lightboxNext');
     var lbImages = [];
     var lbIndex  = 0;
 
@@ -182,14 +217,56 @@
 
     grid.addEventListener('click', function (e) {
         var thumb = e.target.closest('.review-thumbnail');
-        if (!thumb) return;
-        var all    = Array.from(thumb.closest('.review-thumbnails').querySelectorAll('.review-thumbnail'));
-        lbShow(all.map(function (img) { return img.src; }), parseInt(thumb.dataset.index, 10));
+        if (thumb) {
+            var all = Array.from(thumb.closest('.review-thumbnails').querySelectorAll('.review-thumbnail'));
+            lbShow(all.map(function (img) { return img.src; }), parseInt(thumb.dataset.index, 10));
+            return;
+        }
+
+        var chip = e.target.closest('.review-product-chip');
+        if (!chip) return;
+        var target = document.querySelector('[data-bundle-id="' + chip.dataset.scrollToBundle + '"]');
+        if (!target) return;
+
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        target.classList.remove('concern-card--pulse');
+        void target.offsetWidth; // reinicia la animación si ya se había disparado
+        target.classList.add('concern-card--pulse');
     });
 
     lbPrev.addEventListener('click',  function (e) { e.stopPropagation(); lbGoTo(lbIndex - 1); });
     lbNext.addEventListener('click',  function (e) { e.stopPropagation(); lbGoTo(lbIndex + 1); });
     lbClose.addEventListener('click', lbHide);
+    lbHandle.addEventListener('click', lbHide);
+
+    /* ---- Navegación en móvil: deslizar o pulsar mitad izq/der de la imagen ---- */
+    var lbTouchStartX = 0;
+    var lbTouchStartY = 0;
+    var lbTouchActive = false;
+
+    lbImg.addEventListener('touchstart', function (e) {
+        if (e.touches.length !== 1) return;
+        lbTouchActive = true;
+        lbTouchStartX  = e.touches[0].clientX;
+        lbTouchStartY  = e.touches[0].clientY;
+    }, { passive: true });
+
+    lbImg.addEventListener('touchend', function (e) {
+        if (!lbTouchActive || lbImages.length <= 1) { lbTouchActive = false; return; }
+        lbTouchActive = false;
+        var touch = e.changedTouches[0];
+        var dx = touch.clientX - lbTouchStartX;
+        var dy = touch.clientY - lbTouchStartY;
+        if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+            lbGoTo(lbIndex + (dx < 0 ? 1 : -1));
+        }
+    }, { passive: true });
+
+    lbImg.addEventListener('click', function (e) {
+        if (lbImages.length <= 1) return;
+        var rect = lbImg.getBoundingClientRect();
+        lbGoTo(lbIndex + (e.clientX < rect.left + rect.width / 2 ? -1 : 1));
+    });
     lightbox.addEventListener('click', function (e) { if (e.target === lightbox) lbHide(); });
 
     function lbKeyHandler(e) {
@@ -218,6 +295,16 @@
     var starBtns  = document.querySelectorAll('.star-picker__btn');
     var starsInput = document.getElementById('reviewStarsInput');
     var selectedStars = 0;
+    var photosInput = document.getElementById('reviewPhotos');
+    var photosCountEl = document.getElementById('reviewPhotosCount');
+
+    function updatePhotosCount() {
+        if (!photosInput || !photosCountEl) return;
+        var n = photosInput.files ? photosInput.files.length : 0;
+        photosCountEl.textContent = n;
+        photosCountEl.hidden = n === 0;
+    }
+    if (photosInput) photosInput.addEventListener('change', updatePhotosCount);
 
     function buildStarSvg(on, size) {
         size = size || 28;
@@ -257,6 +344,7 @@
             selectedStars = 0;
             updateStarPicker(0);
             if (starsInput) starsInput.value = 0;
+            updatePhotosCount();
         }
         dialog.addEventListener('animationend', function handler() {
             dialog.removeEventListener('animationend', handler);
@@ -269,6 +357,7 @@
         selectedStars = 0; updateStarPicker(0);
         if (starsInput) starsInput.value = 0;
         if (form) form.reset();
+        updatePhotosCount();
         if (dialog) dialog.showModal();
     });
     if (closeBtn) closeBtn.addEventListener('click', closeDialog);

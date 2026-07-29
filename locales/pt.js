@@ -30,7 +30,7 @@
         po_bundle_item_stand: 'Suporte para fone',
         po_bundle_item_kit: 'Kit de limpeza',
         po_bundle_cta: 'Comprar o kit completo e economizar {bpct}%',
-        label_quantity: 'Quantidade:',
+        label_quantity: 'QUANTIDADE',
         aria_decrease: 'Diminuir quantidade',
         aria_increase: 'Aumentar quantidade',
         aria_quantity: 'Quantidade',

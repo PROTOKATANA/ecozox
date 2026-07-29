@@ -29,7 +29,7 @@
         po_bundle_item_stand: 'Подставка для наушников',
         po_bundle_item_kit: 'Набор для чистки',
         po_bundle_cta: 'Купить полный набор и сэкономить {bpct}%',
-        label_quantity: 'Количество:',
+        label_quantity: 'КОЛИЧЕСТВО',
         aria_decrease: 'Уменьшить количество',
         aria_increase: 'Увеличить количество',
         aria_quantity: 'Количество',

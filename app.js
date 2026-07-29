@@ -29,10 +29,14 @@ const modules = [
     'js/cart-items.js',
 
     'js/reviews.js',
-    'js/purchase-options.js',
+    'js/urgency-timer.js',
+    'js/live-viewers.js',
+    'js/concern-widget.js',
+    'js/concern-gallery.js',
     'js/video-grid.js',
     'js/video-lightbox.js',
-    'js/checkout.js'
+    'js/checkout.js',
+    'js/mobile-story-reposition.js'
 ];
 
 modules.forEach(mod => loadScript(base + mod));

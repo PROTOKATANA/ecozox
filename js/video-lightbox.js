@@ -8,29 +8,45 @@
         // Check if lightbox already exists
         if (document.getElementById('video-lightbox')) return;
         
-        // Create lightbox container
+        /* Mismo contenedor/espaciado que el lightbox de imágenes de
+           concern-gallery.js: .lightbox-overlay (blur + centrado) /
+           .lightbox-sheet (card, bottom-sheet en móvil) / .lightbox-header
+           con título entre líneas discontinuas / .lightbox-body. El botón
+           de cerrar conserva también la clase video-lightbox-close, que
+           analytics.js usa para trackear el evento video_close. */
         const lightbox = document.createElement('div');
         lightbox.id = 'video-lightbox';
-        lightbox.className = 'video-lightbox-overlay';
+        lightbox.className = 'lightbox-overlay';
         lightbox.setAttribute('hidden', '');
         lightbox.setAttribute('role', 'dialog');
         lightbox.setAttribute('aria-modal', 'true');
-        lightbox.setAttribute('aria-label', 'Video dialog');
-        
+        lightbox.setAttribute('aria-label', 'Video a pantalla completa');
+
         lightbox.innerHTML = `
-            <button class="video-lightbox-close" aria-label="Cerrar">✕</button>
-            <div class="video-lightbox-content">
-                <video controls class="video-lightbox-player" playsinline></video>
+            <button type="button" class="lightbox-close video-lightbox-close" aria-label="Cerrar">&#x2715;</button>
+            <div class="lightbox-sheet">
+                <button type="button" class="lightbox-handle" aria-label="Cerrar">
+                    <span class="lightbox-handle-bar"></span>
+                </button>
+                <div class="lightbox-body">
+                    <video controls class="video-lightbox-player" playsinline></video>
+                </div>
             </div>
         `;
-        
+
         document.body.appendChild(lightbox);
-        
-        const closeBtn = lightbox.querySelector('.video-lightbox-close');
-        const player = lightbox.querySelector('.video-lightbox-player');
-        
+
+        const closeBtn  = lightbox.querySelector('.video-lightbox-close');
+        const handleBtn = lightbox.querySelector('.lightbox-handle');
+        const player    = lightbox.querySelector('.video-lightbox-player');
+
         // Close on button click
         closeBtn.addEventListener('click', function () {
+            hideLightbox();
+        });
+
+        // Cerrar arrastrando/pulsando el tirador (bottom sheet en móvil)
+        handleBtn.addEventListener('click', function () {
             hideLightbox();
         });
         

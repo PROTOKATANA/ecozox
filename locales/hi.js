@@ -29,7 +29,7 @@
         po_bundle_item_stand: 'हेडफ़ोन स्टैंड',
         po_bundle_item_kit: 'क्लीनिंग किट',
         po_bundle_cta: 'पूरा किट खरीदें और {bpct}% बचाएं',
-        label_quantity: 'मात्रा:',
+        label_quantity: 'मात्रा',
         aria_decrease: 'मात्रा घटाएं',
         aria_increase: 'मात्रा बढ़ाएं',
         aria_quantity: 'मात्रा',

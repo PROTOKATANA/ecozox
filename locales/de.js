@@ -30,7 +30,7 @@
         po_bundle_item_stand: 'Kopfhörerständer',
         po_bundle_item_kit: 'Reinigungsset',
         po_bundle_cta: 'Komplett-Kit kaufen und {bpct}% sparen',
-        label_quantity: 'Menge:',
+        label_quantity: 'MENGE',
         aria_decrease: 'Menge verringern',
         aria_increase: 'Menge erhöhen',
         aria_quantity: 'Menge',

@@ -30,7 +30,7 @@
         po_bundle_item_stand: 'Soporte para auriculares',
         po_bundle_item_kit: 'Kit de limpieza',
         po_bundle_cta: 'Comprar el kit completo y ahorrar {bpct}%',
-        label_quantity: 'Cantidad:',
+        label_quantity: 'CANTIDAD',
         aria_decrease: 'Disminuir cantidad',
         aria_increase: 'Aumentar cantidad',
         aria_quantity: 'Cantidad',

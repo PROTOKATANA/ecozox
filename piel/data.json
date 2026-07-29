@@ -1,0 +1,118 @@
+[
+  {
+    "videos": [
+      "videos/v1.mp4",
+      "videos/v2.mp4",
+      "videos/v3.mp4"
+    ],
+    "resenas": [
+      {
+        "id": 1,
+        "autor": "Lucía Romero",
+        "rating": 5,
+        "fecha": "2026-02-03",
+        "imagenes": [
+          "pixel/reviews/r1/1.avif",
+          "pixel/reviews/r1/2.avif",
+          "pixel/reviews/r1/3.avif",
+          "pixel/reviews/r1/4.avif"
+        ],
+        "titulo_fallback": "Mi piel ya no tira todo el día",
+        "body_fallback": "Tengo la piel mixta y siempre notaba tirantez por las mejillas. Llevo 3 semanas usando la crema Dr. Althea por la noche y el sérum de niacinamida por la mañana, y la diferencia se nota muchísimo. La crema es densa pero se absorbe rápido, no deja esa capa pegajosa que odio. Repetiré sin duda."
+      },
+      {
+        "id": 2,
+        "autor": "Marta Iglesias",
+        "rating": 5,
+        "fecha": "2026-02-19",
+        "bundleId": "piel-rutina-completa-kit",
+        "imagenes": [
+          "pixel/reviews/r2/1.avif",
+          "pixel/reviews/r2/2.avif",
+          "pixel/reviews/r2/3.avif",
+          "pixel/reviews/r2/4.avif"
+        ],
+        "titulo_fallback": "Las manchas de acné se ven más claras",
+        "body_fallback": "Compré la rutina completa porque tenía marcas de acné en la barbilla que no se iban con nada. Combinando la tretinoína por la noche (empecé usándola 2 veces por semana para no irritar la piel) con el sérum de niacinamida, en un mes y medio las manchas están notablemente más claras. Eso sí, avisa que al principio puede dar algo de sequedad, así que hidratad bien."
+      },
+      {
+        "id": 3,
+        "autor": "Elena Vidal",
+        "rating": 5,
+        "fecha": "2026-03-07",
+        "bundleId": "rnw-niacinamide-serum-30x",
+        "imagenes": [
+          "pixel/reviews/r3/1.webp",
+          "pixel/reviews/r3/2.webp",
+          "pixel/reviews/r3/3.webp",
+          "pixel/reviews/r3/4.avif"
+        ],
+        "titulo_fallback": "30 ampollas cunden un montón",
+        "body_fallback": "Pedí el sérum de niacinamida suelto para probar antes de dar el salto a la rutina completa. Cada ampolla es monodosis así que no se contamina ni pierde eficacia como pasa con otros botes abiertos. La piel se ve más luminosa desde la primera semana. El envío tardó lo normal, llegó todo bien protegido."
+      },
+      {
+        "id": 4,
+        "autor": "Nuria Campos",
+        "rating": 4,
+        "fecha": "2026-03-22",
+        "bundleId": "dr-althea-345-cream",
+        "imagenes": [
+          "pixel/reviews/r4/1.webp",
+          "pixel/reviews/r4/2.webp",
+          "pixel/reviews/r4/3.avif",
+          "pixel/reviews/r4/4.avif"
+        ],
+        "titulo_fallback": "Buena relación calidad-precio",
+        "body_fallback": "La crema Dr. Althea 345 es mi favorita del pack, tiene una textura muy agradable y un olor suave nada empalagoso. Le quito una estrella porque me hubiera gustado que el bote fuera un poco más grande, pero para el precio que tiene no me puedo quejar. La seguiré comprando."
+      },
+      {
+        "id": 5,
+        "autor": "Cristina Bravo",
+        "rating": 5,
+        "fecha": "2026-04-05",
+        "bundleId": "piel-rutina-completa-kit",
+        "imagenes": [
+          "pixel/reviews/r5/1.avif",
+          "pixel/reviews/r5/2.avif",
+          "pixel/reviews/r5/3.avif"
+        ],
+        "titulo_fallback": "Por fin encontré una rutina que no me irrita",
+        "body_fallback": "Tengo la piel sensible y suelo reaccionar mal a los ácidos, pero introduciendo la tretinoína poco a poco (una noche sí, una no) no he tenido ningún problema. El kit completo compensa mucho frente a comprar cada producto por separado, y saber que los tres productos combinan bien entre sí me quitó la duda de tener que investigar qué mezclar."
+      },
+      {
+        "id": 6,
+        "autor": "Jasmine Mitchell",
+        "rating": 5,
+        "fecha": "2026-04-18",
+        "bundleId": "dr-althea-345-cream",
+        "imagenes": [
+          "pixel/reviews/r6/5.webp",
+          "pixel/reviews/r6/1.webp",
+          "pixel/reviews/r6/2.webp",
+          "pixel/reviews/r6/3.webp",
+          "pixel/reviews/r6/4.webp",
+          "pixel/reviews/r6/6.webp"
+        ],
+        "titulo_fallback": "Adiós a la resequedad, hola brillo",
+        "body_fallback": "Me encanta esta crema, elimina la resequedad y deja mi piel muy hidratada y luminosa, con ese efecto de brillo que tanto buscaba, además el paquete llegó en 4 días."
+      },
+      {
+        "id": 7,
+        "autor": "Beatriz Soto",
+        "rating": 5,
+        "fecha": "2026-04-25",
+        "bundleId": "dr-althea-345-cream",
+        "imagenes": [
+          "pixel/reviews/r7/1.webp",
+          "pixel/reviews/r7/2.webp",
+          "pixel/reviews/r7/3.webp",
+          "pixel/reviews/r7/4.webp",
+          "pixel/reviews/r7/5.webp",
+          "pixel/reviews/r7/6.webp"
+        ],
+        "titulo_fallback": "Segunda vez que la pido, no defrauda",
+        "body_fallback": "Es súper hidratante y tiene muy buena textura, además no es una crema pesada o que deje la piel grasosa. Es la segunda vez que la pido y me gusta porque deja mi piel suave y brillante."
+      }
+    ]
+  }
+]

@@ -7,7 +7,14 @@
     var grid = document.getElementById('product-videos-grid');
     if (!grid) return;
 
-    fetch('data.json')
+    /* data.json vive junto al producto (ej. piel/data.json), no junto a
+       este script — misma derivación que usa reviews.js. */
+    var nichoBase = (function () {
+        var lp = window.ECOZOX_BRAND && window.ECOZOX_BRAND.localesPath;
+        return lp ? lp.replace(/locales\/?$/, '') : '';
+    })();
+
+    fetch(nichoBase + 'data.json')
         .then(function (res) {
             if (!res.ok) throw new Error('data.json no encontrado');
             return res.json();
@@ -26,7 +33,7 @@
                 card.setAttribute('aria-label', 'Abrir video');
 
                 var video = document.createElement('video');
-                video.src = src;
+                video.src = nichoBase + src;
                 video.autoplay = true;
                 video.loop = true;
                 video.muted = true;

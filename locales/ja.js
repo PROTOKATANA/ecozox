@@ -30,7 +30,7 @@
         po_bundle_item_stand: 'ヘッドホンスタンド',
         po_bundle_item_kit: 'クリーニングキット',
         po_bundle_cta: 'セット購入で{bpct}%お得',
-        label_quantity: '数量：',
+        label_quantity: '数量',
         aria_decrease: '数量を減らす',
         aria_increase: '数量を増やす',
         aria_quantity: '数量',
